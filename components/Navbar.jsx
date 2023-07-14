@@ -4,7 +4,6 @@ import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import CogitoLogo from "../public/cogito_white.svg";
-import { motion } from "framer-motion";
 
 const Navbar = () => {
     const links = [
