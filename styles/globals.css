@@ -1,9 +1,15 @@
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("../public/font/Lexend/Lexend-VariableFont_wght.ttf");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Lexend Deca';
+  background-color: white;
+
 }
 
 a {
@@ -16,7 +22,6 @@ a {
 }
 
 img {
-  max-width: 100%;
   height: auto;
 }
 
@@ -25,11 +30,6 @@ h2,
 p,
 ul {
   margin: 0;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
 }
 
 button {

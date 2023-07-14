@@ -1,91 +1,68 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.sun {
+  position: absolute;
+  z-index: 1;
+  transition: 1s;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.sun_img {
+  filter: brightness(100%);
+  
 }
 
-.title {
-  margin: 0 0 1rem;
-  line-height: 1.15;
-  font-size: 3.6rem;
+.theatre {
+  position: absolute;
+  z-index: 3;
+  transition: 0.45s;
 }
 
-.title {
+.stage {
+  position: absolute;
+  padding-bottom: 12vh;
+  z-index: 5;
+  transition: 0.4s;
+}
+
+.text_div {
+  
+}
+
+.text {
+  position: absolute;
+  color: #FFF;
   text-align: center;
+  font-family: Lexend Deca;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  z-index: 100;
+  left: 33%;
+  top: 40%;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.title,
-.description {
+.text2 {
+  position: absolute;
+  color: #FFF;
   text-align: center;
+  font-family: Lexend Deca;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -1px;
+  z-index: 100;
+  left: 33%;
+  top: 50%;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
