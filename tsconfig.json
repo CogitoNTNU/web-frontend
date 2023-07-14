@@ -16,13 +16,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "target": "es5"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "components/Navbar.jsx", "components/HomeP1.jsx"  ],
+    "**/*.tsx",
+    "components/Navbar.tsx",
+    "components/HomeP1.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

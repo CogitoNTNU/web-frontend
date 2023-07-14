@@ -1,6 +1,9 @@
+"use client";
+
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import HomeP1 from "../components/HomeP1";
+import Component from "../components/Component";
 
 const Home = () => {
     return (
