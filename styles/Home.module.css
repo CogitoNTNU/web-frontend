@@ -6,6 +6,68 @@
   
 }
 
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.footer {
+  position: absolute;
+  left: 40vh;
+  padding-top: 4vh;
+}
+
+.erfaringTitle {
+  position: absolute;
+  color: #FFF;
+  font-family: Lexend Deca;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  z-index: 50;
+  top: 35vh;
+  left: 54%;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.test {
+  position: absolute;
+  padding-top: 100vh;
+}
+
+.erfaring {
+  position: absolute;
+  color: #FFF;
+  font-family: Lexend Deca;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  z-index: 50;
+  top: 43vh;
+  left: 54%;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.cogitoBrain {
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  z-index: 2;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.link {
+  list-style-type: none;
+}
+
+.subg {
+  transform: translateX(calc(-2.5%));
+}
+
 .sun {
   position: absolute;
   z-index: 1;
@@ -15,7 +77,6 @@
 .sun_img {
   transform: translateX(calc(-2.5%));
   transform: translateY(calc(-5%));
-  
 }
 
 .theatre {
@@ -35,8 +96,17 @@
   transform: translateY(calc(-15%));
 }
 
-.text_div {
-  
+.textdiv {
+  color: #FFF;
+  font-family: Lexend Deca;
+  bottom: 2vh;
+  left: 2vh;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  z-index: 50;
 }
 
 .text {
@@ -72,3 +142,29 @@
   filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.button {
+  display: inline-flex;
+  padding: 15px 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  background: #1E90FF;
+  border: none;
+}
+
+.buttonText {
+  color: #FFF;
+  font-family: Lexend Deca;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.buttonDiv {
+  padding-top: 4vh;
+}
+
+.bgbacks {
+  transform: translateY(calc(-24%));
+}

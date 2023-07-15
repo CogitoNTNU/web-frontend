@@ -13,47 +13,52 @@ const links = [
     { href: "/team", text: "Medlemmer" },
 ];
 
-const Navbar = () => (
-    <>
-        <motion.nav
-            initial={{ opacity: 0, y: -60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-                duration: 1,
-                delay: 1.2,
-                ease: [0, 0.71, 0.2, 1.01],
-            }}
-            className={styles.navigation}
-        >
-            <div className={styles.setup}>
-                <motion.div whileHover={{ scale: 1.05 }}>
-                    <Link href="/">
-                        <Image
-                            src={CogitoLogo}
-                            height="90"
-                            width="80"
-                            alt="CogitoLogo"
-                        />
-                    </Link>
-                </motion.div>
+const Navbar = () => {
 
-                <ul className={styles.links}>
-                    {links.map((link) => (
-                        <Link className={styles.link} href={link.href}>
-                            {link.text}
+    return (
+        <>
+            <motion.nav
+                initial={{ opacity: 0, y: -60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                    duration: 1,
+                    delay: 1.2,
+                    ease: [0, 0.71, 0.2, 1.01],
+                }}
+                className={styles.navigation}
+            >
+                <div className={styles.setup}>
+                    <motion.div whileHover={{ scale: 1.05 }}>
+                        <Link href="/">
+                            <Image
+                                draggable={false}
+                                src={CogitoLogo}
+                                height="90"
+                                width="80"
+                                alt="CogitoLogo"
+                            />
                         </Link>
-                    ))}
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className={styles.button}
-                    >
-                        <p className={styles.buttonText}>Søk opptak</p>
-                    </motion.button>
-                </ul>
-            </div>
-        </motion.nav>
-    </>
-);
+                    </motion.div>
+
+                    <ul className={styles.links}>
+                        {links.map((link) => (
+                            <Link className={styles.link} key={link.href} href={link.href}>
+                                {link.text}
+                            </Link>
+                        ))}
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={styles.button}
+                        >
+                            <p className={styles.buttonText}>Søk opptak</p>
+                        </motion.button>
+                    </ul>
+                </div>
+            </motion.nav>
+        </>
+    );
+};
 
 export default Navbar;

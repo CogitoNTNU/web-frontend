@@ -2,11 +2,13 @@
 
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import Navbar from "./Navbar";
 import Sun_Img from "../public/HomePage/Bg_sun.png";
 import Stage_Img from "../public/HomePage/Bg_stage.png";
 import Theatre_Img from "../public/HomePage/Bg_theatre.png";
 import { useEffect, useState, useRef } from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const HomeP1 = () => {
     const [mousePos, setMousePos] = useState({});
@@ -29,10 +31,12 @@ const HomeP1 = () => {
     return (
         <>
             <div className={styles.main}>
+                <Navbar/>
                 <div className={styles.sun}>
                     <motion.div
                         initial={{ opacity: 0, scale: 20 }}
                         animate={{ opacity: 1, scale: 1 }}
+                        
                         transition={{
                             duration: 1,
                             delay: 0.2,
@@ -40,6 +44,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
+                            draggable={false}
                             src={Sun_Img}
                             style={{
                                 transform: `translateX(calc(-2.5% + ${
@@ -105,6 +110,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
+                            draggable={false}
                             src={Theatre_Img}
                             alt="Theatre"
                             style={{
@@ -130,6 +136,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
+                            draggable={false}
                             src={Stage_Img}
                             alt="Stage"
                             style={{
@@ -143,7 +150,23 @@ const HomeP1 = () => {
                         />
                     </motion.div>
                 </div>
+                <motion.div 
+                    className={styles.textdiv}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.4,
+                        ease: [0, 0.71, 0.2, 1.0],
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    >
+                    <AiOutlineInfoCircle style={{color: 'white', fontSize: '14px'}}/>
+                    <a href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial"> Théâtre d'Opéra Spatial - Jason M. Allen </a>
+                </motion.div>
             </div>
+            
         </>
     );
 };

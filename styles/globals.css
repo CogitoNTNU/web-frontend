@@ -8,7 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Lexend Deca';
-  background-color: white;
+  background-color: #13395B;
 
 }
 
@@ -36,3 +36,10 @@ button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+

@@ -1,0 +1,40 @@
+.OrgCopy {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;  
+  }
+
+.OrgNr {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;  
+  }
+
+.icons {
+    position: absolute;
+    left: 100vh;
+}
+
+.ficons {
+    position: absolute;
+    left: 100vh;
+}
+.iicons {
+    position: absolute;
+    left: 60%;
+
+}
+.licons {
+    position: absolute;
+    left: 60%;
+}
+.gicons {
+    position: absolute;
+    left: 60%;
+}
