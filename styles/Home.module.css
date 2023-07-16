@@ -171,6 +171,13 @@
 
 /* --- css for Widescreen laptops --- */
 @media only screen and (max-height: 750px) {
+  .main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    
+  }
   .bgbacks {
     transform: translateY(calc(-35%));
   }
