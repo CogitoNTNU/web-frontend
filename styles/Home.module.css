@@ -170,7 +170,7 @@
 }
 
 /* --- css for Widescreen laptops --- */
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 750px) {
   .bgbacks {
     transform: translateY(calc(-45%));
   }
