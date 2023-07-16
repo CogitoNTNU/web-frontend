@@ -172,13 +172,28 @@
 /* --- css for Widescreen laptops --- */
 @media only screen and (max-height: 750px) {
   .bgbacks {
-    transform: translateY(calc(-45%));
+    transform: translateY(calc(-35%));
   }
 
   .footer {
+    overflow-x: hidden;
     position: absolute;
     left: 50vh;
-    padding-top: 6.5vh;
+    padding-top: 5.5vh;
+  }
+
+  .stage {
+    position: absolute;
+    padding-bottom: 12vh;
+    z-index: 5;
+    transition: 0.4s;
+    transform: translateX(calc(-2%));
+    transform: translateY(calc(-22%));
+  }
+
+  .subg {
+    transform: translateX(calc(-2.5%));
+    transform: translateY(calc(-10%));
   }
 }
 
