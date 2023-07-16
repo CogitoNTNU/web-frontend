@@ -168,3 +168,17 @@
 .bgbacks {
   transform: translateY(calc(-24%));
 }
+
+/* --- css for Widescreen laptops --- */
+@media only screen and (max-height: 700px) {
+  .bgbacks {
+    transform: translateY(calc(-45%));
+  }
+
+  .footer {
+    position: absolute;
+    left: 50vh;
+    padding-top: 6.5vh;
+  }
+}
+

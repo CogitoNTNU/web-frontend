@@ -25,46 +25,42 @@ const HomeP3 = () => {
                     </div>
                 </div>
                 <div className={stylesFooter.icons}>
-                    <motion.div className={stylesFooter.ficon}>
-                        <a href="https://www.facebook.com/CogitoNTNU">
-                            <AiFillFacebook
-                                style={{
-                                    color: "white",
-                                    fontSize: "3.5rem",
-                                }}
-                            />
-                        </a>
-                    </motion.div>
-                    <motion.div className={stylesFooter.iicon}>
-                        <a href="https://www.instagram.com/cogitontnu/">
-                            <AiFillInstagram
-                                style={{
-                                    color: "white",
-                                    fontSize: "3.5rem",
-                                }}
-                            />
-                        </a>
-                    </motion.div>
-                    <motion.div className={stylesFooter.licon}>
-                        <a href="https://www.linkedin.com/company/cogito-ntnu/">
-                            <AiFillLinkedin
-                                style={{
-                                    color: "white",
-                                    fontSize: "3.5rem",
-                                }}
-                            />
-                        </a>
-                    </motion.div>
-                    <motion.div className={stylesFooter.gicon}>
-                        <a href="https://github.com/CogitoNTNU">
-                            <AiFillGithub
-                                style={{
-                                    color: "white",
-                                    fontSize: "3.5rem",
-                                }}
-                            />
-                        </a>
-                    </motion.div>
+                    <a href="https://www.facebook.com/CogitoNTNU">
+                        <AiFillFacebook
+                            style={{
+                                color: "white",
+                                fontSize: "3.5rem",
+                            }}
+                            className={stylesFooter.ficons}
+                        />
+                    </a>
+                    <a href="https://www.instagram.com/cogitontnu/">
+                        <AiFillInstagram
+                            style={{
+                                color: "white",
+                                fontSize: "3.5rem",
+                            }}
+                            className={stylesFooter.iicons}
+                        />
+                    </a>
+                    <a href="https://www.linkedin.com/company/cogito-ntnu/">
+                        <AiFillLinkedin
+                            style={{
+                                color: "white",
+                                fontSize: "3.5rem",
+                            }}
+                            className={stylesFooter.licons}
+                        />
+                    </a>
+                    <a href="https://github.com/CogitoNTNU">
+                        <AiFillGithub
+                            style={{
+                                color: "white",
+                                fontSize: "3.5rem",
+                            }}
+                            className={stylesFooter.gicons}
+                        />
+                    </a>
                 </div>
             </div>
         </div>

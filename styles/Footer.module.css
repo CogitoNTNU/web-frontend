@@ -19,22 +19,38 @@
 .icons {
     position: absolute;
     left: 100vh;
+    padding-top: 4vh;
+    overflow: hidden;
 }
 
-.ficons {
-    position: absolute;
-    left: 100vh;
+.ficons:hover {
+    transition: .5s;
+    transform: scale(1.12);
+    filter: drop-shadow(2px 2px 2px black);
 }
-.iicons {
-    position: absolute;
-    left: 60%;
 
+.iicons:hover {
+    transition: .5s;
+    transform: scale(1.12);
+    filter: drop-shadow(2px 2px 2px black);
 }
-.licons {
-    position: absolute;
-    left: 60%;
+.licons:hover {
+    transition: .5s;
+    transform: scale(1.12);
+    filter: drop-shadow(2px 2px 2px black);
 }
-.gicons {
-    position: absolute;
-    left: 60%;
+.gicons:hover {
+    transition: .5s;
+    transform: scale(1.12);
+    filter: drop-shadow(2px 2px 2px black);
 }
+
+/* --- css for Widescreen laptops --- */
+@media only screen and (max-height: 750px) {
+    .icons {
+        position: absolute;
+        left: 130vh;
+        padding-top: 7vh;
+        overflow: hidden;
+    }
+  }
