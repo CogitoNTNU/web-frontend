@@ -30,13 +30,15 @@ const HomeP1 = () => {
 
     return (
         <>
-            <div className={styles.main}>
-                <Navbar/>
+            <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1}}
+            className={styles.main} id="section-0">
                 <div className={styles.sun}>
                     <motion.div
                         initial={{ opacity: 0, scale: 20 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 20 }}
                         transition={{
                             duration: 1,
                             delay: 0.2,
@@ -90,6 +92,7 @@ const HomeP1 = () => {
                         }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
+                        
                         transition={{
                             duration: 2,
                             delay: 1.2,
@@ -102,7 +105,7 @@ const HomeP1 = () => {
                 <div className={styles.theatre}>
                     <motion.div
                         initial={{ opacity: 0, scale: 10 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         transition={{
                             duration: 0.8,
                             delay: 0.5,
@@ -162,10 +165,10 @@ const HomeP1 = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
                     >
-                    <AiOutlineInfoCircle style={{color: 'white', fontSize: '14px'}}/>
-                    <a href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial"> Théâtre d'Opéra Spatial - Jason M. Allen </a>
+                    <AiOutlineInfoCircle style={{color: 'white', fontSize: '12px'}}/>
+                    <a href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial"> Théâtre d'Opéra Spatial </a>
                 </motion.div>
-            </div>
+            </motion.div>
             
         </>
     );

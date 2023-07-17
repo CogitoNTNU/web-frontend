@@ -3,7 +3,61 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  
+  scroll-behavior: smooth;
+}
+
+.contact {
+  position:absolute;
+  border-radius: 20px;
+  width: 75vw;
+  height: 55vh;
+  top: 43vh;
+  left: 12vw;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contactText {
+  position: absolute;
+  left: 5vh;
+  top: 4vh;
+}
+
+.contactTitle {
+  color: #1E90FF;
+  font-family: Lexend Deca;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.5px;
+}
+
+.contactDesc {
+  color: #2F3542;
+  font-family: Lexend Deca;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  max-width: 60vh;
+  padding-top: 1vh;
+}
+
+.map {
+  position: absolute;
+  overflow: 'hidden';
+  border-radius: 20px;
+  border-radius: 20px;
+  top: 43vh;
+  left: 51vw;
+  height: 54.7vh;
+  width: 35vw;
+  opacity: 85%;
+}
+
+.hrline {
+  background-color: #2F3542;
 }
 
 .container {
@@ -31,11 +85,6 @@
   top: 35vh;
   left: 54%;
   filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.test {
-  position: absolute;
-  padding-top: 100vh;
 }
 
 .erfaring {
@@ -101,9 +150,9 @@
   font-family: Lexend Deca;
   bottom: 2vh;
   left: 2vh;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
   position: absolute;
   z-index: 50;
@@ -119,7 +168,7 @@
   font-weight: 900;
   line-height: normal;
   letter-spacing: -0.8px;
-  z-index: 100;
+  z-index: 90;
   left: 33%;
   top: 40%;
 
@@ -136,7 +185,7 @@
   font-weight: 900;
   line-height: normal;
   letter-spacing: -1px;
-  z-index: 100;
+  z-index: 90;
   left: 33%;
   top: 50%;
   filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
@@ -168,6 +217,7 @@
 .bgbacks {
   transform: translateY(calc(-24%));
 }
+
 
 /* --- css for Widescreen laptops --- */
 @media only screen and (max-height: 750px) {

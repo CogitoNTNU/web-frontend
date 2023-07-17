@@ -20,7 +20,6 @@ const Navbar = () => {
             <motion.nav
                 initial={{ opacity: 0, y: -60 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{
                     duration: 1,
                     delay: 1.2,
@@ -30,7 +29,7 @@ const Navbar = () => {
             >
                 <div className={styles.setup}>
                     <motion.div whileHover={{ scale: 1.05 }}>
-                        <Link href="/">
+                        <Link href="./">
                             <Image
                                 draggable={false}
                                 src={CogitoLogo}
