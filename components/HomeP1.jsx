@@ -2,7 +2,6 @@
 
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-import Navbar from "./Navbar";
 import Sun_Img from "../public/HomePage/Bg_sun.png";
 import Stage_Img from "../public/HomePage/Bg_stage.png";
 import Theatre_Img from "../public/HomePage/Bg_theatre.png";

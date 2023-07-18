@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import styles from "../styles/About.module.css";
+import main from "../public/HomePage/FolkFraCogito.png";
 import { motion } from "framer-motion";
 
 import { useCallback } from "react";
@@ -103,7 +104,7 @@ const About = () => {
             <div className={styles.main}>
                 <motion.div
                     initial={{ opacity: 0, y: 500 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{
                         duration: 0.6,
                         delay: 0.4,
@@ -136,9 +137,39 @@ const About = () => {
                             </a>
                         </div>
                     </div>
+                    <div className={styles.descImage}>
+                        <Image
+                            src={main}
+                            draggable={false}
+                            alt="Cogito"
+                            className={styles.descImg}
+                        />
+                    </div>
                 </motion.div>
             </div>
-            <Footer />
+            <motion.div
+                initial={{ opacity: 0, y: 500 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.8,
+                    ease: [0, 0.71, 0.2, 1.0],
+                }}
+                className={styles.spons}
+            >
+                <div className={styles.sponsText}>
+                    <div className={styles.sponsTitle}>
+                        <a>Våre Hovedpartnere </a>
+
+                        <a>Partnere i</a>
+                    </div>
+                    <hr className={styles.line2} />
+                </div>
+            </motion.div>
+            <div className={styles.footer}>
+                <Footer />
+            </div>
+            <div className={styles.footer}></div>
         </>
     );
 };

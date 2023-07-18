@@ -1,9 +1,42 @@
 .main {
     position: relative;
-    height: 150vh;
+    height: 90vh;
     width: 100vw;
     overflow: hidden;
     scroll-behavior: smooth;
+}
+
+.footer {
+    padding-bottom: 8vh;
+}
+
+.spons {
+    position: relative;
+    height: 70vh;
+    width: 85vw;
+    left: 13vh;
+    top: 0;
+
+    border-radius: 20px;
+    background: rgba(206, 214, 224, 0.95);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
+.sponsText {
+    padding-top: 5vh;
+    padding-left: 5vh;
+}
+
+.sponsTitle {
+    color: #2F3542;
+    text-align: center;
+    font-family: Lexend Deca;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.5px;
 }
 
 .desc {
@@ -16,6 +49,21 @@
     background: rgba(47, 53, 66, 0.95);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     z-index: 10;
+}
+
+.descImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 20px;
+
+}
+
+.descImg {
+    width: 68.5vh;
+    border-radius: 20px;
+    object-fit: fill;
+
 }
 
 .descTitle {
@@ -32,7 +80,6 @@
 .descText {
     padding-top: 5vh;
     padding-left: 5vh;
-    
 }
 
 .descTextDesc {
@@ -56,6 +103,14 @@
 .line {
     position: absolute;
     background-color: white;
+    top: 14vh;
+    border-radius: 10px;
+    height: 3px;
+    width: 70vh;
+}
+
+.line2 {
+    background-color: #747D8C;
     top: 14vh;
     border-radius: 10px;
     height: 3px;
