@@ -50,7 +50,17 @@
     .icons {
         overflow-x: hidden;
         position: absolute;
-        left: 130vh;
+        left: 150vh;
+        padding-top: 6vh;
+        overflow: hidden;
+    }
+  }
+
+  @media only screen and (max-height: 750px) {
+    .icons {
+        overflow-x: hidden;
+        position: absolute;
+        left: 150vh;
         padding-top: 6vh;
         overflow: hidden;
     }

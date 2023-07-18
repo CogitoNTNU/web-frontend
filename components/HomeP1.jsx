@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const HomeP1 = () => {
-    const [mousePos, setMousePos] = useState({});
+    const [mousePos, setMousePos] = useState({x: 0, y: 0});
 
     useEffect(() => {
         const handleMouseMove = (event) => {
@@ -35,17 +35,17 @@ const HomeP1 = () => {
             className={styles.main} id="section-0">
                 <div className={styles.sun}>
                     <motion.div
-                        initial={{ opacity: 0, scale: 20 }}
+                        initial={{ opacity: 0, scale: 25 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 20 }}
                         transition={{
-                            duration: 1,
-                            delay: 0.2,
+                            duration: 1.2,
+                            delay: 0.4,
                             ease: [0, 0.71, 0.2, 1.0],
                         }}
                     >
                         <Image
                             priority={true}
+                            placeholder="blur"
                             draggable={false}
                             src={Sun_Img}
                             style={{
@@ -74,8 +74,8 @@ const HomeP1 = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{
-                            duration: 2,
-                            delay: 1.2,
+                            duration: 0.6,
+                            delay: 2,
                             ease: [0, 0.71, 0.2, 1.0],
                         }}
                     >
@@ -94,8 +94,8 @@ const HomeP1 = () => {
                         animate={{ opacity: 1 }}
                         
                         transition={{
-                            duration: 2,
-                            delay: 1.2,
+                            duration: 0.6,
+                            delay: 2.6,
                             ease: [0, 0.71, 0.2, 1.0],
                         }}
                     >
@@ -108,13 +108,14 @@ const HomeP1 = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{
                             duration: 0.8,
-                            delay: 0.5,
+                            delay: 0.8,
                             ease: [0, 0.71, 0.2, 1.0],
                         }}
                     >
                         <Image
                             priority={true} 
                             draggable={false}
+                            placeholder="blur"
                             src={Theatre_Img}
                             alt="Theatre"
                             style={{
@@ -131,17 +132,18 @@ const HomeP1 = () => {
                 </div>
                 <div className={styles.stage}>
                     <motion.div
-                        initial={{ opacity: 1, y: 500 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 1, scale: 200, y: 200 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{
-                            duration: 0.6,
-                            delay: 0.8,
-                            ease: [0, 0.71, 0.2, 1.0],
+                            duration: 1,
+                            delay: 0.6,
+                            ease: [0, 0.9, 0.2, 1.0],
                         }}
                     >
                         <Image
                             priority={true}
                             draggable={false}
+                            placeholder="blur"
                             src={Stage_Img}
                             alt="Stage"
                             style={{

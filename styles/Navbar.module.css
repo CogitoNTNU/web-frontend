@@ -50,6 +50,10 @@
     border: none;
 }
 
+.buttonPos {
+    position: relative;
+}
+
 .buttonText {
     color: #FFF;
     font-family: Lexend Deca;
@@ -57,4 +61,34 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.hoverUnderlineAnimation {
+    display: inline-block;
+    position: relative;
+    top: 2vh;
+    color: white;
+  }
+  
+.hoverUnderlineAnimation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    top: 3vh;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.hoverUnderlineAnimation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hoverUnderlineAnimation:focus {
+    text-decoration: underline 2px;
+    text-underline-offset: 1vh;
 }

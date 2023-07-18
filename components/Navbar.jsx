@@ -42,18 +42,21 @@ const Navbar = () => {
 
                     <ul className={styles.links}>
                         {links.map((link) => (
-                            <Link className={styles.link} key={link.href} href={link.href}>
+                            <Link className={(styles.link, styles.hoverUnderlineAnimation)} key={link.href} href={link.href}>
                                 {link.text}
                             </Link>
                         ))}
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={styles.button}
-                        >
-                            <p className={styles.buttonText}>Søk opptak</p>
-                        </motion.button>
+                        <div className={styles.buttonPos}>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className={styles.button}
+                            >
+                                <p className={styles.buttonText}>Søk opptak</p>
+                            </motion.button>
+                        </div>
                     </ul>
+                    
                 </div>
             </motion.nav>
         </>
