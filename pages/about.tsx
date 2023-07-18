@@ -139,6 +139,7 @@ const About = () => {
                     </div>
                     <div className={styles.descImage}>
                         <Image
+                            priority={true}
                             src={main}
                             draggable={false}
                             alt="Cogito"
