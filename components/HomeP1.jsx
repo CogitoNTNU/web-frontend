@@ -2,9 +2,9 @@
 
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
-import Sun_Img from "../public/HomePage/Bg_sun.png";
-import Stage_Img from "../public/HomePage/Bg_stage.png";
-import Theatre_Img from "../public/HomePage/Bg_theatre.png";
+import Sun_Img from "../public/HomePage/Bg_sun.webp";
+import Stage_Img from "../public/HomePage/Bg_stage.webp";
+import Theatre_Img from "../public/HomePage/Bg_theatre.webp";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -45,6 +45,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
+                            priority={true}
                             draggable={false}
                             src={Sun_Img}
                             style={{
@@ -112,6 +113,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
+                            priority={true} 
                             draggable={false}
                             src={Theatre_Img}
                             alt="Theatre"
@@ -138,6 +140,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
+                            priority={true}
                             draggable={false}
                             src={Stage_Img}
                             alt="Stage"

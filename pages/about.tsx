@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import styles from "../styles/About.module.css";
-import main from "../public/HomePage/FolkFraCogito.png";
+import main from "../public/HomePage/FolkFraCogito.webp";
 import { motion } from "framer-motion";
 
 import { useCallback } from "react";

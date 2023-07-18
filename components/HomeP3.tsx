@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "../styles/Home.module.css";
-import bgbacks from "../public/HomePage/back.jpeg";
+import bgbacks from "../public/HomePage/back.webp";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -34,7 +34,13 @@ const HomeP3 = () => {
     return (
         <div className={styles.main}>
             <div className={styles.bgbacks}>
-                <Image src={bgbacks} alt="bg" height={1000} width={1650} />
+                <Image
+                    priority={true}
+                    src={bgbacks}
+                    alt="bg"
+                    height={1000}
+                    width={1650}
+                />
                 <div className={styles.contact}>
                     <div className={styles.contactText}>
                         <div className={styles.contactTitle}>

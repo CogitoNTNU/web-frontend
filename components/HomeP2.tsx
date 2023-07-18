@@ -1,7 +1,7 @@
 "use client";
 
-import Bg from "../public/HomePage/SanneUlrik.jpeg";
-import CogitoBrain from "../public/HomePage/CogitoBrain1.png";
+import Bg from "../public/HomePage/SanneUlrik.webp";
+import CogitoBrain from "../public/HomePage/CogitoBrain1.webp";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
@@ -57,11 +57,22 @@ const HomeP2 = () => {
                     ease: [0, 0.71, 0.2, 1.01],
                 }}
             >
-                <Image draggable={false} alt="Brain" src={CogitoBrain} />
+                <Image
+                    priority={true}
+                    draggable={false}
+                    alt="Brain"
+                    src={CogitoBrain}
+                />
             </motion.div>
 
             <div className={styles.subg}>
-                <Image src={Bg} alt="Background" width={1600} height={1400} />
+                <Image
+                    priority={true}
+                    src={Bg}
+                    alt="Background"
+                    width={1600}
+                    height={1400}
+                />
             </div>
         </div>
     );
