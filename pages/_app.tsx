@@ -5,10 +5,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
+import React from "react";
 
 const App = ({ Component, pageProps }) => {
     const router = useRouter();
@@ -32,7 +33,6 @@ const App = ({ Component, pageProps }) => {
         );
     } else {
         const particlesInit = useCallback(async (engine) => {
-            console.log(engine);
             // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
             // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
             // starting from v2 you can add only the features you need reducing the bundle size
@@ -53,6 +53,7 @@ const App = ({ Component, pageProps }) => {
                         href="/cogito_white.svg"
                     />
                 </Head>
+
                 <Navbar />
                 <Particles
                     id="tsparticles"

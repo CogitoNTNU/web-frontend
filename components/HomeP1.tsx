@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const HomeP1 = () => {
-    const [mousePos, setMousePos] = useState({x: 0, y: 0});
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
         const handleMouseMove = (event) => {
@@ -30,9 +30,11 @@ const HomeP1 = () => {
     return (
         <>
             <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1}}
-            className={styles.main} id="section-0">
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className={styles.main}
+                id="section-0"
+            >
                 <div className={styles.sun}>
                     <motion.div
                         initial={{ opacity: 0, scale: 25 }}
@@ -92,7 +94,6 @@ const HomeP1 = () => {
                         }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        
                         transition={{
                             duration: 0.6,
                             delay: 2.6,
@@ -113,7 +114,7 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
-                            priority={true} 
+                            priority={true}
                             draggable={false}
                             placeholder="blur"
                             src={Theatre_Img}
@@ -157,23 +158,30 @@ const HomeP1 = () => {
                         />
                     </motion.div>
                 </div>
-                <motion.div 
+                <motion.div
                     className={styles.textdiv}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{
                         duration: 0.6,
-                        delay: 0.4,
+
                         ease: [0, 0.71, 0.2, 1.0],
                     }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
-                    >
-                    <AiOutlineInfoCircle style={{color: 'white', fontSize: '12px'}}/>
-                    <a href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial"> Théâtre d'Opéra Spatial </a>
+                >
+                    <AiOutlineInfoCircle
+                        style={{
+                            color: "white",
+                            fontSize: "14px",
+                            paddingTop: "4px",
+                        }}
+                    />
+                    <a href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial">
+                        "Théâtre D’opéra Spatial" © 2022 Jason M. Allen
+                    </a>
                 </motion.div>
             </motion.div>
-            
         </>
     );
 };

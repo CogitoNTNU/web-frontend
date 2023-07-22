@@ -21,7 +21,7 @@
 .bgImg {
     height: 56vh;
     width: 85vw;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .brainImg {
@@ -41,8 +41,8 @@
     font-weight: 900;
     line-height: normal;
     letter-spacing: -1px;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
+    
 }
 
 .buttons {
@@ -50,32 +50,44 @@
     margin: 0;
     display: flex;
     flex-direction: row;
-    padding-left: 9vh;
+    padding-left: 8vh;
     padding-top: 10vh;
-    gap: 8.5rem;
-    
+    gap: 24vh;
+}
+
+.buttonsP1 {
+    display: flex;
+    gap: 4vh;
+}
+
+.buttonsP2 {
+    display: flex;
+    gap: 4vh;
 }
 
 .button {
     display: inline-flex;
-    padding: 10px 44px;
+    word-break:break-all;
+    width: 25vh;
+    height: 5vh;
     justify-content: center;
     align-items: center;
     border-radius: 24px;
-    background: #D9D9D9;
-    color: #000;
     border: none;
     z-index: 100;
+    cursor: pointer;
 }
 
-.button:focus {
-    background: #747D8C;
-    color: #FFF;
+.button:hover {
+    transform: scale(0.99);
+    transition: 0.2s;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
 }
+
   
 .buttonText {
     font-family: Lexend Deca;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

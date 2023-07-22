@@ -22,6 +22,13 @@
     margin-right: auto;
 }
 
+.textUnderline {
+    position: absolute;
+    bottom: 4.73vh;
+    height: 2px;
+    background-color: white;
+}
+
 .links {
     list-style-type: none;
     margin: 0;
@@ -88,7 +95,7 @@
     transform-origin: bottom left;
 }
 
-.hoverUnderlineAnimation:focus {
+.hoverUnderline {
     text-decoration: underline 2px;
     text-underline-offset: 1vh;
 }

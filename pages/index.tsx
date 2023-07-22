@@ -8,33 +8,31 @@ import styles from "../styles/Home.module.css";
 import { useEffect } from "react";
 
 const Home = () => {
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    useEffect(() => {
-        async function fetchData() {
-            let i = 0;
-            while (true) {
-                try {
-                    /*
-                    document
-                        .getElementById("part-" + i)
-                        .scrollIntoView({ behavior: "smooth" });
-                    if (i < 2) {
-                        i++;
-                    } else {
-                        i = 0;
-                    }
-                    */
-                } catch (error) {
-                    console.log("Error trying to scroll. Maybe changed page?");
-                }
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         let i = 0;
+    //         while (true) {
+    //             try {
+    //                 document
+    //                     .getElementById("part-" + i)
+    //                     .scrollIntoView({ behavior: "smooth" });
+    //                 if (i < 2) {
+    //                     i++;
+    //                 } else {
+    //                     i = 0;
+    //                 }
+    //             } catch (error) {
+    //                 console.log("Error trying to scroll. Maybe changed page?");
+    //             }
 
-                await delay(10000);
-            }
-        }
+    //             await delay(10000);
+    //         }
+    //     }
 
-        fetchData();
-    });
+    //     fetchData();
+    // });
 
     return (
         <>
