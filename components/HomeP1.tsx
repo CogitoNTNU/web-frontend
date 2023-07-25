@@ -5,7 +5,7 @@ import Image from "next/image";
 import Sun_Img from "../public/HomePage/Bg_sun.webp";
 import Stage_Img from "../public/HomePage/Bg_stage.webp";
 import Theatre_Img from "../public/HomePage/Bg_theatre.webp";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
@@ -38,7 +38,7 @@ const HomeP1 = () => {
                 <div className={styles.sun}>
                     <motion.div
                         initial={{ opacity: 0, scale: 25 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         transition={{
                             duration: 1.2,
                             delay: 0.4,
@@ -106,7 +106,7 @@ const HomeP1 = () => {
                 <div className={styles.theatre}>
                     <motion.div
                         initial={{ opacity: 0, scale: 10 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         transition={{
                             duration: 0.8,
                             delay: 0.8,

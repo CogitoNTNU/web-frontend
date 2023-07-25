@@ -5,19 +5,53 @@ import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import CogitoLogo from "../public/cogito_white.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+    const router = useRouter();
+    const [goTop, setGoTop] = useState(false);
     const [isActiveHome, setIsActiveHome] = useState(true);
     const [isActiveAbout, setIsActiveAbout] = useState(false);
     const [isActiveProjects, setIsActiveProjects] = useState(false);
     const [isActiveTeam, setIsActiveTeam] = useState(false);
+    const functions = Array<Function>(
+        setIsActiveHome,
+        setIsActiveAbout,
+        setIsActiveProjects,
+        setIsActiveTeam
+    );
 
-    const handleClicked = (setFunc: Function, funcList: Array<Function>) => {
-        setFunc((current) => !current);
-        funcList.map((func) => {
+    function timeout(delay: number) {
+        return new Promise((res) => setTimeout(res, delay));
+    }
+
+    const handleClicked = (setFunc: Function) => {
+        functions.map((func) => {
             func(false);
         });
+        setFunc(true);
+    };
+
+    useEffect(() => {
+        if (router.pathname == "/") {
+            handleClicked(setIsActiveHome);
+        } else if (router.pathname == "/about") {
+            handleClicked(setIsActiveAbout);
+        } else if (router.pathname == "/projects") {
+            handleClicked(setIsActiveProjects);
+        } else if (router.pathname == "/team") {
+            handleClicked(setIsActiveTeam);
+        }
+    }, [router]);
+
+    const scrollToTop = async () => {
+        await timeout(100);
+        if (router.pathname == "/") {
+            document
+                .getElementById("part-0")
+                .scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (
@@ -41,16 +75,7 @@ const Navbar = () => {
                                 height="90"
                                 width="80"
                                 alt="CogitoLogo"
-                                onClick={() => {
-                                    handleClicked(
-                                        setIsActiveHome,
-                                        Array(
-                                            setIsActiveAbout,
-                                            setIsActiveProjects,
-                                            setIsActiveTeam
-                                        )
-                                    );
-                                }}
+                                onClick={() => scrollToTop()}
                             />
                         </Link>
                     </motion.div>
@@ -66,16 +91,6 @@ const Navbar = () => {
                                     : "",
                                 textUnderlineOffset: isActiveHome ? "1vh" : "",
                             }}
-                            onClick={() => {
-                                handleClicked(
-                                    setIsActiveHome,
-                                    Array(
-                                        setIsActiveAbout,
-                                        setIsActiveProjects,
-                                        setIsActiveTeam
-                                    )
-                                );
-                            }}
                             key="/"
                             href="/"
                         >
@@ -90,16 +105,6 @@ const Navbar = () => {
                                     ? "underline 2px"
                                     : "",
                                 textUnderlineOffset: isActiveAbout ? "1vh" : "",
-                            }}
-                            onClick={() => {
-                                handleClicked(
-                                    setIsActiveAbout,
-                                    Array(
-                                        setIsActiveHome,
-                                        setIsActiveProjects,
-                                        setIsActiveTeam
-                                    )
-                                );
                             }}
                             key="/about"
                             href="/about"
@@ -118,16 +123,6 @@ const Navbar = () => {
                                     ? "1vh"
                                     : "",
                             }}
-                            onClick={() => {
-                                handleClicked(
-                                    setIsActiveProjects,
-                                    Array(
-                                        setIsActiveHome,
-                                        setIsActiveAbout,
-                                        setIsActiveTeam
-                                    )
-                                );
-                            }}
                             key="/projects"
                             href="/projects"
                         >
@@ -142,16 +137,6 @@ const Navbar = () => {
                                     ? "underline 2px"
                                     : "",
                                 textUnderlineOffset: isActiveTeam ? "1vh" : "",
-                            }}
-                            onClick={() => {
-                                handleClicked(
-                                    setIsActiveTeam,
-                                    Array(
-                                        setIsActiveHome,
-                                        setIsActiveAbout,
-                                        setIsActiveProjects
-                                    )
-                                );
                             }}
                             key="/team"
                             href="/team"

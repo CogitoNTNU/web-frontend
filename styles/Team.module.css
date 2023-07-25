@@ -1,21 +1,28 @@
 .main {
     position: relative;
-    height: 120vh;
+    min-height: 160vh;
+    max-height: 280vh;
     width: 100vw;
-    overflow: hidden;
-    scroll-behavior: smooth;
+    
 }
 
 .bg {
     position: relative;
-    height: 100vh;
     width: 85vw;
     left: 13vh;
     top: 15vh;
     border-radius: 20px;
     background: rgba(47, 53, 66, 0.95);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
     z-index: 10;
+}
+
+.bgGradient {
+    position: absolute;
+    top: 0;
+    height: 56vh;
+    width: 85vw;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 75%, rgba(47, 53, 66, 0.95) 100%);
 }
 
 .bgImg {
@@ -91,4 +98,28 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.members {
+    padding-top: 8vh;
+    padding-bottom: 10vh;
+    max-width: 130vh;
+    padding-left: 19.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-count: 3;
+    row-gap: 4.5vh;
+    column-gap: 9vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.member {
+    display:inline-block;
+}
+
+.footer {
+    padding-top: 18vh;
+
 }

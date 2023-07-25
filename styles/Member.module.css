@@ -1,0 +1,114 @@
+.main {
+    height: 40vh;
+    width: 30vh;
+    border-radius: 20px;
+    background-color: white;
+    filter: drop-shadow(2px 2px 4px black);
+    padding-bottom: 1vh;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 41vh;
+    width: 30vh;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 60%, #F8F8F8 90%);
+}
+
+.gradient:hover {
+    animation: gradient-fill 0.5s forwards ease-out;
+}
+
+.gradient .text {
+    transition: 1s;
+}
+
+.gradient:hover .text {
+    transition: 0.2s;
+    opacity: 0%;
+}
+
+.text {
+    position: absolute;
+    opacity: 100%;
+    bottom: 1.5vh;
+    padding-left: 2vh;
+    transition: 1s;
+}
+
+.gradient:hover .icons {
+    transition: 1s;
+    transform: scale(1.05);
+    opacity: 100%;
+    padding-top: 29vh;
+}
+
+.gradient .icons {
+    opacity: 0%;
+}
+
+.image {
+    transition: transform 0.5s;
+    border-radius: 20px;
+}
+
+.image:hover {
+    transform: scale(1.05);
+    transform-origin: 50% 50%;
+}
+
+.imageImg {
+    width: 30vh;
+    height: 40vh;
+    border-radius: 20px;
+}
+
+.icons {
+    color: #13395B;
+    padding-left: 8.5vh;
+    padding-top: 33vh;
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+}
+
+.icons {
+    transform: scale(1);
+    -webkit-transition: 100ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    transition: 250ms ease-in-out;
+    -webkit-transition: 250ms ease-in-out;
+}
+
+@keyframes gradient-fill {
+    0% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 60%, #F8F8F8 80%);
+    }
+    10% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 55%, #F8F8F8 70%);
+    }
+    20% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 50%, #F8F8F8 67%);
+    }
+    35% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 47%, #F8F8F8 66%);
+    }
+    50% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 45%, #F8F8F8 65%);
+    }
+    70% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 43%, #F8F8F8 63%);
+    }
+    90% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 41%, #F8F8F8 61%);
+    }
+    100% {
+        background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 40%, #F8F8F8 60%);
+    }
+}

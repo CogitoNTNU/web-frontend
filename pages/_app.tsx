@@ -122,6 +122,7 @@ const App = ({ Component, pageProps }) => {
                 />
                 <div>
                     <Component {...pageProps} />
+                    <div id="bottom"></div>
                 </div>
             </>
         );

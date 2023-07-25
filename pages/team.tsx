@@ -1,11 +1,19 @@
+"use client";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import bg from "../public/Team/team2023.jpg";
 import brain from "../public/Team/CogitoBrain.png";
 import styles from "../styles/Team.module.css";
+import Member from "../components/Member";
+import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 const Team = () => {
+    useEffect(() => {
+        getData();
+    }, []);
+    const [members, setMembers] = useState([]);
     const [showAll, setShowAll] = useState(true);
     const [showLeaders, setShowLeaders] = useState(false);
     const [showWeb, setShowWeb] = useState(false);
@@ -23,12 +31,29 @@ const Team = () => {
         setFunc(true);
     };
 
+    const getData = async () => {
+        const membersResponse = await fetch(
+            "http://127.0.0.1:8000/members/all_members/"
+        );
+        const membersData = await membersResponse.json();
+        setMembers(membersData);
+    };
+
     return (
         <>
             <Head>
                 <title>Medlemmer - Cogito NTNU</title>
             </Head>
-            <div className={styles.main}>
+            <motion.div
+                className={styles.main}
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                    ease: [0, 0.71, 0.2, 1.0],
+                }}
+            >
                 <div className={styles.bg}>
                     <Image
                         className={styles.bgImg}
@@ -37,6 +62,7 @@ const Team = () => {
                         src={bg}
                         alt="bg"
                     />
+                    <div className={styles.bgGradient}></div>
                     <Image
                         className={styles.brainImg}
                         draggable={false}
@@ -44,6 +70,7 @@ const Team = () => {
                         src={brain}
                         alt="brain"
                     />
+
                     <div className={styles.brainText}>
                         <a>COGITO 2023</a>
                     </div>
@@ -111,8 +138,25 @@ const Team = () => {
                             </button>
                         </div>
                     </div>
+                    <div className={styles.members}>
+                        {members.map((member) => (
+                            <div className={styles.member} key={member.name}>
+                                <Member
+                                    name={member.name}
+                                    title={member.title}
+                                    imageURL={member.image}
+                                    mailURL={member.email}
+                                    linkedinURL={member.linkedIn}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
+            </motion.div>
+            <div className={styles.footer}>
+                <Footer />
             </div>
+            <div className={styles.footer}></div>
         </>
     );
 };

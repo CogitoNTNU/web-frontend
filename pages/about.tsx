@@ -7,8 +7,23 @@ import Footer from "../components/Footer";
 import styles from "../styles/About.module.css";
 import main from "../public/HomePage/FolkFraCogito.webp";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const About = () => {
+    function timeout(delay: number) {
+        return new Promise((res) => setTimeout(res, delay));
+    }
+
+    const router = useRouter();
+
+    const changeAndScrollToBottom = async () => {
+        router.push("/");
+        await timeout(1000);
+        document
+            .getElementById("part-2")
+            .scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <>
             <Head>
@@ -44,9 +59,20 @@ const About = () => {
                                 studenter på tvers av flere av de tekniske
                                 linjene ved NTNU Trondheim.
                                 <br />
-                                <br />
-                                Vårt mål er å være en åpen studentorganisasjon
-                                der alle som er nysgjerrige kan delta.
+                                <div className={styles.buttonDiv}>
+                                    <motion.button
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className={styles.button}
+                                        onClick={() =>
+                                            changeAndScrollToBottom()
+                                        }
+                                    >
+                                        <p className={styles.buttonText}>
+                                            Kontakt Oss
+                                        </p>
+                                    </motion.button>
+                                </div>
                             </a>
                         </div>
                     </div>
