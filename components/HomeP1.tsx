@@ -47,7 +47,6 @@ const HomeP1 = () => {
                     >
                         <Image
                             priority={true}
-                            placeholder="blur"
                             draggable={false}
                             src={Sun_Img}
                             style={{
@@ -114,9 +113,9 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
-                            priority={true}
+                            priority
                             draggable={false}
-                            placeholder="blur"
+                            loading="eager"
                             src={Theatre_Img}
                             alt="Theatre"
                             style={{
@@ -142,9 +141,9 @@ const HomeP1 = () => {
                         }}
                     >
                         <Image
-                            priority={true}
+                            priority
                             draggable={false}
-                            placeholder="blur"
+                            loading="eager"
                             src={Stage_Img}
                             alt="Stage"
                             style={{

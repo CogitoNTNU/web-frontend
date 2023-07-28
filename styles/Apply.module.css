@@ -1,9 +1,46 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url("../public/font/Lexend/Lexend-VariableFont_wght.ttf");
+  }
+
 .main {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    animation: background-change 0.5s forwards ease-in;
-    
+    animation: background-change 1s forwards ease-in;
+}
+
+.projectButton {
+    position: absolute;
+    top: 14vh;
+    left: 13vh;
+    display: inline-flex;
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    z-index: 2;
+    filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.8));
+
+}
+
+.vervButton {
+    position: absolute;
+    top: 14vh;
+    left: 30vh;
+    display: inline-flex;
+    padding: 10px 70px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 20px 0px 0px;
+    border: none;
+    background-color: #DFE4EA;
+    cursor: pointer;
+    z-index: 1;
+    filter: drop-shadow(-1px 0px 0px rgba(0, 0, 0, 0.8));
 }
 
 .projectCard {
@@ -11,14 +48,15 @@
     height: 66vh;
     width: 85vw;
     left: 13vh;
-    top: 20vh;
-    border-radius: 20px;
+    top: 18vh;
+    border-radius: 0px 20px 20px 20px;
     background-color: white;
+    z-index: 3;
     filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.8));
 }
 
 .projectTitle {
-    font-size: 45px;
+    font-size: 40px;
     color: #2f3542;
     filter: drop-shadow(2px 2px 1px #f1f2f6);
     font-weight: 900;
@@ -35,80 +73,63 @@
     border-radius: 20px;
 }
 
-.projectPersonalInfoText {
-    font-size: 30px;
-    color: #2f3542;
-    filter: drop-shadow(2px 2px 1px #a4b0be);
-    font-weight: 700;
-    padding-top: 2vh;
-    padding-left: 3vh;
-
-}
-
-.line {
-    position: absolute;
-    height: 4px;
-    border-radius: 4px;
-    border-style: none;
-    background-color: white;
-    top: 17vh;
-    left: 4vh;
-    width: 35%;
-}
-
 .input {
     position: relative;
     padding-left: 1vh;
     border-radius: 10px;
     height: 4.5vh;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
-    font-size: 18px;
+    font-size: 16px;
+    font-family: "Lexend Deca";
     font-weight: 400;
+    z-index: 10;
     background-color: #F1F2F6;
     border-style: none;
 }
 
 .projectFirstName {
-    position: absolute;
+    position: relative;
+    display: flex;
     font-size: 18px;
     color: #2f3542;
     font-weight: 500;
     padding-left: 3vh;
-    padding-top: 4vh;
-}
-
-.projectLastName {
-    position: absolute;
-    font-size: 18px;
-    color: #2f3542;
-    font-weight: 500;
-    padding-left: 29vh;
-    padding-top: 4vh;
+    padding-top: 2vh;
+    gap: 18vh;
 }
 
 .projectEmail {
-    position: absolute;
+    position: relative;
     font-size: 18px;
     color: #2f3542;
     font-weight: 500;
     padding-left: 3vh;
-    padding-top: 15vh;
+    padding-top: 2vh;
+}
+
+.projectWhy {
+    position: relative;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 3vh;
+    padding-top: 2vh;
 }
 
 .projectChosen {
-    position: absolute;
+    position: relative;
     font-size: 18px;
     color: #2f3542;
     font-weight: 500;
     padding-left: 3vh;
-    padding-top: 26vh;
-    z-index: 8;
+    padding-top: 2vh;
+    z-index: 2;
 }
 
 .input:focus {
     outline: none;
-    border: 1px solid #FF6348;
-    box-shadow: 0 0 2px #FF6348;
+    border: 1px solid #ff4757;
+    box-shadow: 0 0 2px #ff4757;
 }
 
 .projects {
@@ -152,7 +173,7 @@
     align-items: center;
     border-radius: 20px;
     border: none;
-    background-color: #FF6348;
+    background-color: #ff4757;
     cursor: pointer;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
 }
@@ -166,11 +187,18 @@
     line-height: normal;
 }
 
+.buttonTabText {
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+}
+
 .selectorPosition {
     position: relative;
     max-width: 50vh;
     left: 3vh;
-    top: 25vh;
+    top: 0.5vh;
     border-radius: 20px;
 }
 
@@ -179,8 +207,9 @@
 }
 
 .footer {
+    z-index: 1;
     position:relative;
-    bottom: 15vh;
+    bottom: 16vh;
 }
 
 @keyframes background-change {
@@ -188,6 +217,6 @@
         background-color: #13395B;
     }
     to {
-        background-color: #E35C44;
+        background-color: #ff4757;
     }
 }

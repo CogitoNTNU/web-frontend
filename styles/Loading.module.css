@@ -1,0 +1,19 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+}
+
+.imagePos {
+    position: absolute;
+    top: 40vh;
+    left: 80vh;
+}
+
+.loading {
+    margin: auto;
+    padding-top: 50vh;
+    padding-left: 43.5vw;
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+}

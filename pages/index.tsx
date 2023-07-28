@@ -5,10 +5,8 @@ import HomeP1 from "../components/HomeP1";
 import HomeP2 from "../components/HomeP2";
 import HomeP3 from "../components/HomeP3";
 import styles from "../styles/Home.module.css";
-import { useEffect } from "react";
-
 const Home = () => {
-    // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     // useEffect(() => {
     //     async function fetchData() {
@@ -39,6 +37,7 @@ const Home = () => {
             <Head>
                 <title>Hjem - Cogito NTNU</title>
             </Head>
+
             <div className={styles.container}>
                 <section id="part-0">
                     <HomeP1 />

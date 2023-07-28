@@ -39,21 +39,33 @@ const Navbar = (color) => {
     useEffect(() => {
         if (router.pathname == "/") {
             handleClicked(setIsActiveHome);
-            setButtonColor("#FF6348");
+            setButtonColor("#ff4757");
         } else if (router.pathname == "/about") {
             handleClicked(setIsActiveAbout);
-            setButtonColor("#FF6348");
+            setButtonColor("#ff4757");
         } else if (router.pathname == "/projects") {
             handleClicked(setIsActiveProjects);
-            setButtonColor("#FF6348");
+            setButtonColor("#ff4757");
         } else if (router.pathname == "/team") {
             handleClicked(setIsActiveTeam);
-            setButtonColor("#FF6348");
+            setButtonColor("#ff4757");
         } else if (router.pathname == "/apply") {
             setButtonColor("#13395B");
             handleClicked(null);
         }
     }, [router]);
+
+    const changeAndGo = async () => {
+        router.push("/loading");
+        await timeout(500);
+        router.push("/");
+    };
+
+    useEffect(() => {
+        if (router.pathname == "/") {
+            changeAndGo();
+        }
+    }, []);
 
     const scrollToTop = async () => {
         await timeout(100);

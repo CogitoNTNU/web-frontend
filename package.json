@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "antd": "^5.7.3",
     "axios": "^1.4.0",
     "eslint-config-next": "^13.4.10",
     "framer-motion": "^7.6.12",
@@ -14,6 +15,7 @@
     "next": "^13.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-forms-hooks": "^1.2.4",
     "react-icons": "^4.10.1",
     "react-select": "^5.7.4",
     "react-tsparticles": "^2.11.0",

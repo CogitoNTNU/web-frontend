@@ -30,8 +30,8 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
             >
                 <motion.div
                     className={styles.image}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                 >
                     <div className={styles.projectText}>
                         <p>{title}</p>
@@ -47,7 +47,7 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                         loader={imageLoader}
                         style={{
                             borderStyle: clicked ? "solid" : "none",
-                            borderColor: "#FF6348",
+                            borderColor: "#ff6b81",
                             borderWidth: "medium",
                         }}
                         className={styles.tempImg}
