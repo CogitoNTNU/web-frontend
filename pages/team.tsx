@@ -10,10 +10,8 @@ import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
 const Team = () => {
-    useEffect(() => {
-        getData();
-    }, []);
     const [members, setMembers] = useState([]);
+    const [switchMembers, setSwitchMembers] = useState(0);
     const [showAll, setShowAll] = useState(true);
     const [showLeaders, setShowLeaders] = useState(false);
     const [showWeb, setShowWeb] = useState(false);
@@ -31,9 +29,49 @@ const Team = () => {
         setFunc(true);
     };
 
+    const scrollToMembers = () => {
+        if (switchMembers != 0) {
+            if (showAll) {
+                window.scrollTo({
+                    top: 720,
+                    behavior: "smooth",
+                });
+            } else if (showLeaders) {
+                window.scrollTo({
+                    top: 715,
+                    behavior: "smooth",
+                });
+            } else {
+                window.scrollTo({
+                    top: 550,
+                    behavior: "smooth",
+                });
+            }
+        }
+    };
+
+    const memberSwitch = () => {
+        setSwitchMembers(switchMembers + 1);
+    };
+
+    useEffect(() => {
+        getData();
+        scrollToMembers();
+    }, [switchMembers]);
+
     const getData = async () => {
+        let rest_url = "";
+        if (showAll) {
+            rest_url = "/members/all_members/";
+        } else if (showLeaders) {
+            rest_url = "/members/lead_members/";
+        } else if (showWeb) {
+            rest_url = "/members/web_members/";
+        } else if (showHR) {
+            rest_url = "/members/hr_members/";
+        }
         const membersResponse = await fetch(
-            "http://127.0.0.1:8000/members/all_members/"
+            "http://127.0.0.1:8000/" + rest_url
         );
         const membersData = await membersResponse.json();
         setMembers(membersData);
@@ -85,7 +123,10 @@ const Team = () => {
                                         ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
                                         : "",
                                 }}
-                                onClick={() => setShow(setShowAll)}
+                                onClick={() => {
+                                    setShow(setShowAll);
+                                    memberSwitch();
+                                }}
                             >
                                 <a className={styles.buttonText}>
                                     Alle Medlemmer
@@ -102,7 +143,10 @@ const Team = () => {
                                         ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
                                         : "",
                                 }}
-                                onClick={() => setShow(setShowLeaders)}
+                                onClick={() => {
+                                    setShow(setShowLeaders);
+                                    memberSwitch();
+                                }}
                             >
                                 <a className={styles.buttonText}>Styret</a>
                             </button>
@@ -117,7 +161,10 @@ const Team = () => {
                                         ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
                                         : "",
                                 }}
-                                onClick={() => setShow(setShowWeb)}
+                                onClick={() => {
+                                    setShow(setShowWeb);
+                                    memberSwitch();
+                                }}
                             >
                                 <a className={styles.buttonText}>WebDev</a>
                             </button>
@@ -130,7 +177,10 @@ const Team = () => {
                                         ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
                                         : "",
                                 }}
-                                onClick={() => setShow(setShowHR)}
+                                onClick={() => {
+                                    setShow(setShowHR);
+                                    memberSwitch();
+                                }}
                             >
                                 <a className={styles.buttonText}>
                                     Tillitsvalgte
@@ -138,7 +188,8 @@ const Team = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={styles.members}>
+                    <hr className={styles.line} />
+                    <div className={styles.members} id="members">
                         {members.map((member) => (
                             <div className={styles.member} key={member.name}>
                                 <Member

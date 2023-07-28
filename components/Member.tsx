@@ -16,8 +16,8 @@ const Member = ({ name, title, imageURL, linkedinURL, mailURL }) => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                    duration: 1,
-                    delay: 1,
+                    duration: 0.5,
+                    delay: 0.2,
                     ease: [0, 0.71, 0.2, 1.01],
                 }}
             >
@@ -30,11 +30,11 @@ const Member = ({ name, title, imageURL, linkedinURL, mailURL }) => {
                                     fontSize: "20px",
                                 }}
                             >
-                                {name != null ? name : "Simon Sandvik Lee"}
+                                {name != null ? name : "Member"}
                             </a>
                             <br />
-                            <a style={{ fontWeight: "bold", fontSize: "16px" }}>
-                                {title != null ? title : "Webdeveloper"}
+                            <a style={{ fontWeight: "500", fontSize: "16px" }}>
+                                {title != null ? title : "Member"}
                             </a>
                         </div>
                         <div className={styles.icons}>

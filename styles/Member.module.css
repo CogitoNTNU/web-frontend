@@ -55,15 +55,17 @@
 }
 
 .image:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     transform-origin: 50% 50%;
 }
 
 .imageImg {
     width: 30vh;
     height: 40vh;
+    transition: transform 0.5s;
     border-radius: 20px;
 }
+
 
 .icons {
     color: #13395B;

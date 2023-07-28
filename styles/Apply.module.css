@@ -1,0 +1,193 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    animation: background-change 0.5s forwards ease-in;
+    
+}
+
+.projectCard {
+    position: absolute;
+    height: 66vh;
+    width: 85vw;
+    left: 13vh;
+    top: 20vh;
+    border-radius: 20px;
+    background-color: white;
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.8));
+}
+
+.projectTitle {
+    font-size: 45px;
+    color: #2f3542;
+    filter: drop-shadow(2px 2px 1px #f1f2f6);
+    font-weight: 900;
+    padding-left: 3vh;
+    padding-top: 3vh;
+    padding-bottom: 1vh;   
+}
+
+.projectInputCard {
+    margin: auto;
+    height: 54vh;
+    width: 83vw;
+    background-color: #DFE4EA;
+    border-radius: 20px;
+}
+
+.projectPersonalInfoText {
+    font-size: 30px;
+    color: #2f3542;
+    filter: drop-shadow(2px 2px 1px #a4b0be);
+    font-weight: 700;
+    padding-top: 2vh;
+    padding-left: 3vh;
+
+}
+
+.line {
+    position: absolute;
+    height: 4px;
+    border-radius: 4px;
+    border-style: none;
+    background-color: white;
+    top: 17vh;
+    left: 4vh;
+    width: 35%;
+}
+
+.input {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #F1F2F6;
+    border-style: none;
+}
+
+.projectFirstName {
+    position: absolute;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 3vh;
+    padding-top: 4vh;
+}
+
+.projectLastName {
+    position: absolute;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 29vh;
+    padding-top: 4vh;
+}
+
+.projectEmail {
+    position: absolute;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 3vh;
+    padding-top: 15vh;
+}
+
+.projectChosen {
+    position: absolute;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 3vh;
+    padding-top: 26vh;
+    z-index: 8;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid #FF6348;
+    box-shadow: 0 0 2px #FF6348;
+}
+
+.projects {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    column-count: 4;
+    row-gap: 4.2vh;
+    column-gap: 3vh;
+    height: 45vh;
+    width: 45vw;
+    border-radius: 20px;
+    right: 5vh;
+    bottom: 3vh;
+    background-color: #F1F2F6;
+}
+
+
+.projectsText {
+    position: absolute;
+    font-size: 30px;
+    color: #2f3542;
+    filter: drop-shadow(2px 2px 1px #a4b0be);
+    font-weight: 700;
+    top: 12vh;
+    left: 65vh;
+}
+
+.applyButton {
+    position: absolute;
+    bottom: 4vh;
+    left: 5vh;
+}
+
+.button {
+    display: inline-flex;
+    padding: 15px 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    background-color: #FF6348;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+}
+
+.buttonText {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.selectorPosition {
+    position: relative;
+    max-width: 50vh;
+    left: 3vh;
+    top: 25vh;
+    border-radius: 20px;
+}
+
+.selector {
+    border-radius: 20px;
+}
+
+.footer {
+    position:relative;
+    bottom: 15vh;
+}
+
+@keyframes background-change {
+    from {
+        background-color: #13395B;
+    }
+    to {
+        background-color: #E35C44;
+    }
+}

@@ -1,0 +1,71 @@
+.main {
+    height: 16vh;
+    width: 16vh;
+    background-color: #FF6348;
+    border-radius: 15px;
+    border-style: none;
+    margin-top: 0vh;
+    margin-left: 1ch;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.projectText {
+    position: absolute;
+    padding-top: 17vh;
+    font-size: 18px;
+    left: 4.5vh;
+}
+
+.image {
+    position: absolute;
+}
+
+.tempImg {
+    height: 16vh;
+    width: 16vh;
+    border-radius: 15px;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+}
+
+.hoverpopup {
+    position: absolute;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40vh;
+    min-width: 40vh;
+    max-width: 40vh;
+    bottom: 17vh;
+    left: -12vh;
+    font-size: 18px;
+    background-color: #FF6348;
+    border-radius: 10px;
+    padding: 1.5em;
+    z-index: 100;
+    transform: scale(0);
+    transition: transform 200ms ease;
+    transform-origin: 50% 100%;
+}
+
+.main:hover .hoverpopup{
+    transform: scale(1);
+}
+
+.popup {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    animation: bouncing 3s alternate infinite ease-in-out;
+}
+@keyframes bouncing {
+    from {
+        transform: translateY(-0.5vh);
+    }
+    to {
+        transform: translateY(0.5vh);
+    }
+}

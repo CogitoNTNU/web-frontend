@@ -8,9 +8,9 @@ import CogitoLogo from "../public/cogito_white.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const Navbar = () => {
+const Navbar = (color) => {
     const router = useRouter();
-    const [goTop, setGoTop] = useState(false);
+    const [buttonColor, setButtonColor] = useState("#FF6348");
     const [isActiveHome, setIsActiveHome] = useState(true);
     const [isActiveAbout, setIsActiveAbout] = useState(false);
     const [isActiveProjects, setIsActiveProjects] = useState(false);
@@ -30,18 +30,28 @@ const Navbar = () => {
         functions.map((func) => {
             func(false);
         });
+        if (setFunc == null) {
+            return;
+        }
         setFunc(true);
     };
 
     useEffect(() => {
         if (router.pathname == "/") {
             handleClicked(setIsActiveHome);
+            setButtonColor("#FF6348");
         } else if (router.pathname == "/about") {
             handleClicked(setIsActiveAbout);
+            setButtonColor("#FF6348");
         } else if (router.pathname == "/projects") {
             handleClicked(setIsActiveProjects);
+            setButtonColor("#FF6348");
         } else if (router.pathname == "/team") {
             handleClicked(setIsActiveTeam);
+            setButtonColor("#FF6348");
+        } else if (router.pathname == "/apply") {
+            setButtonColor("#13395B");
+            handleClicked(null);
         }
     }, [router]);
 
@@ -144,13 +154,18 @@ const Navbar = () => {
                             Medlemmer
                         </Link>
                         <div className={styles.buttonPos}>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className={styles.button}
-                            >
-                                <p className={styles.buttonText}>Søk opptak</p>
-                            </motion.button>
+                            <Link href="/apply">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{ backgroundColor: buttonColor }}
+                                    className={styles.button}
+                                >
+                                    <p className={styles.buttonText}>
+                                        Søk opptak
+                                    </p>
+                                </motion.button>
+                            </Link>
                         </div>
                     </ul>
                 </div>

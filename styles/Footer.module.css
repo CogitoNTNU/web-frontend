@@ -21,27 +21,46 @@
     left: 110vh;
     padding-top: 4.5vh;
     overflow: hidden;
+    
+}
+
+.ficons {
+    transition: .5s;
 }
 
 .ficons:hover {
     transition: .5s;
-    transform: scale(1.12);
+    transform: scale(1.1);
     filter: drop-shadow(2px 2px 2px black);
+}
+
+.iicons {
+    transition: .5s;
 }
 
 .iicons:hover {
     transition: .5s;
-    transform: scale(1.12);
+    transform: scale(1.1);
     filter: drop-shadow(2px 2px 2px black);
 }
+
+.licons {
+    transition: .5s;
+}
+
 .licons:hover {
     transition: .5s;
-    transform: scale(1.12);
+    transform: scale(1.1);
     filter: drop-shadow(2px 2px 2px black);
 }
+
+.gicons {
+    transition: .5s;
+}
+
 .gicons:hover {
     transition: .5s;
-    transform: scale(1.12);
+    transform: scale(1.1);
     filter: drop-shadow(2px 2px 2px black);
 }
 
