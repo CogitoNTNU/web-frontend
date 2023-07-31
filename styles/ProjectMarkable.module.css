@@ -50,6 +50,7 @@
     transform: scale(0);
     transition: transform 200ms ease;
     transform-origin: 50% 100%;
+    pointer-events: none;
 }
 
 .main:hover .hoverpopup{

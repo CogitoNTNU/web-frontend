@@ -21,51 +21,49 @@ const Member = ({ name, title, imageURL, linkedinURL, mailURL }) => {
                     ease: [0, 0.71, 0.2, 1.01],
                 }}
             >
+                <div className={styles.gradient}>
+                    <div className={styles.text}>
+                        <a
+                            style={{
+                                fontWeight: "light",
+                                fontSize: "20px",
+                            }}
+                        >
+                            {name != null ? name : "Member"}
+                        </a>
+                        <br />
+                        <a style={{ fontWeight: "500", fontSize: "16px" }}>
+                            {title != null ? title : "Member"}
+                        </a>
+                    </div>
+                    <div className={styles.icons}>
+                        <div>
+                            <a href={linkedinURL}>
+                                <AiFillLinkedin
+                                    className={styles.icon}
+                                    style={{ fontSize: "50px" }}
+                                />
+                            </a>
+                        </div>
+                        <div>
+                            <a href={"mailto:" + mailURL}>
+                                <AiFillMail
+                                    className={styles.icon}
+                                    style={{ fontSize: "50px" }}
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div className={styles.image}>
-                    <div className={styles.gradient}>
-                        <div className={styles.text}>
-                            <a
-                                style={{
-                                    fontWeight: "light",
-                                    fontSize: "20px",
-                                }}
-                            >
-                                {name != null ? name : "Member"}
-                            </a>
-                            <br />
-                            <a style={{ fontWeight: "500", fontSize: "16px" }}>
-                                {title != null ? title : "Member"}
-                            </a>
-                        </div>
-                        <div className={styles.icons}>
-                            <div>
-                                <a href={linkedinURL}>
-                                    <AiFillLinkedin
-                                        className={styles.icon}
-                                        style={{ fontSize: "50px" }}
-                                    />
-                                </a>
-                            </div>
-                            <div>
-                                <a href={"mailto:" + mailURL}>
-                                    <AiFillMail
-                                        className={styles.icon}
-                                        style={{ fontSize: "50px" }}
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.image}>
-                        <Image
-                            loader={imageLoader}
-                            className={styles.imageImg}
-                            src={imageURL != "null" ? imageURL : tempImage}
-                            alt="image"
-                            width={30}
-                            height={40}
-                        />
-                    </div>
+                    <Image
+                        loader={imageLoader}
+                        className={styles.imageImg}
+                        src={imageURL != "null" ? imageURL : tempImage}
+                        alt="image"
+                        width={30}
+                        height={40}
+                    />
                 </div>
             </motion.div>
         </>

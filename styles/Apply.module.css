@@ -7,7 +7,34 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    animation: background-change 1s forwards ease-in;
+    animation: backgroundColor-change 1s forwards ease-in-out;
+}
+
+.backgroundColor {
+    position: absolute;
+    top: 5vh;
+    right: 14vh;
+    width: 20vh;
+    height: 4vh;
+    background-color: #ff4757;
+    border-radius: 20px;
+    opacity: 95%;
+    animation: background-change 0.5s forwards ease-in-out;
+}
+
+.sentText {
+    margin: auto;
+    width: 100vh;
+    padding-top: 30vh;
+    text-align: center;
+    font-size: large;
+}
+
+.errorText {
+    position: absolute;
+    color: red;
+    bottom: 5vh;
+    left: 30vh;
 }
 
 .projectButton {
@@ -62,7 +89,8 @@
     font-weight: 900;
     padding-left: 3vh;
     padding-top: 3vh;
-    padding-bottom: 1vh;   
+    padding-bottom: 1vh;  
+    cursor: default; 
 }
 
 .projectInputCard {
@@ -89,6 +117,7 @@
 
 .projectFirstName {
     position: relative;
+    cursor: default; 
     display: flex;
     font-size: 18px;
     color: #2f3542;
@@ -100,6 +129,7 @@
 
 .projectEmail {
     position: relative;
+    cursor: default; 
     font-size: 18px;
     color: #2f3542;
     font-weight: 500;
@@ -109,6 +139,7 @@
 
 .projectWhy {
     position: relative;
+    cursor: default; 
     font-size: 18px;
     color: #2f3542;
     font-weight: 500;
@@ -118,6 +149,7 @@
 
 .projectChosen {
     position: relative;
+    cursor: default; 
     font-size: 18px;
     color: #2f3542;
     font-weight: 500;
@@ -152,6 +184,7 @@
 
 .projectsText {
     position: absolute;
+    cursor: default; 
     font-size: 30px;
     color: #2f3542;
     filter: drop-shadow(2px 2px 1px #a4b0be);
@@ -176,10 +209,23 @@
     background-color: #ff4757;
     cursor: pointer;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    color: #FFF;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.button:disabled {
+    background-color: #ff4756c0;
+    color: rgba(255, 255, 255, 0.384);
+    transform: scale(1);
+    cursor:default;
 }
 
 .buttonText {
-    color: #FFF;
     font-family: Lexend Deca;
     font-size: 18px;
     font-style: normal;
@@ -214,9 +260,18 @@
 
 @keyframes background-change {
     from {
-        background-color: #13395B;
+        transform: scale(0);
     }
     to {
-        background-color: #ff4757;
+       transform: scale(46);
+       
+    }
+}
+
+@keyframes backgroundColor-change {
+
+    to {
+       background-color: #ff4757;
+       
     }
 }

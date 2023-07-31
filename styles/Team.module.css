@@ -7,6 +7,7 @@
 
 .bg {
     position: relative;
+    opacity: 90%;
     width: 85vw;
     left: 13vh;
     top: 15vh;
@@ -47,7 +48,7 @@
     font-weight: 900;
     line-height: normal;
     letter-spacing: -1px;
-    filter: drop-shadow(0px 2px 1px white);
+    filter: drop-shadow(0px 2px 1px black);
     
 }
 
@@ -113,6 +114,7 @@
     column-gap: 9vh;
     align-items: center;
     justify-content: center;
+    opacity: 100%;
 }
 
 .member {

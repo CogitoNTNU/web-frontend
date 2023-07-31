@@ -22,6 +22,7 @@ const HomeP2 = () => {
                     FÅ ERFARING MED <a style={{ color: "#1E90FF" }}>AI</a>!
                 </motion.p>
             </div>
+
             <motion.div
                 className={styles.erfaring}
                 initial={{ opacity: 0, scale: 0 }}
@@ -47,6 +48,7 @@ const HomeP2 = () => {
                     </motion.button>
                 </div>
             </motion.div>
+
             <motion.div
                 className={styles.cogitoBrain}
                 initial={{ opacity: 0, scale: 0 }}

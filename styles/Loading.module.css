@@ -7,13 +7,22 @@
     position: absolute;
     top: 40vh;
     left: 80vh;
+    animation: colorChange 0.5s forwards ease-out;
 }
 
-.loading {
-    margin: auto;
-    padding-top: 50vh;
-    padding-left: 43.5vw;
-    font-size: 22px;
-    font-weight: 900;
-    color: white;
+
+.loadingPos {
+    position: relative;
+    top: 51vh;
+    left: 83vh;
 }
+
+@keyframes colorChange {
+    from {
+        fill: #13395B;
+    }
+    to {
+        fill: white;
+    }
+}
+
