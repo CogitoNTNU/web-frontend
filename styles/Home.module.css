@@ -234,13 +234,6 @@
     transform: translateY(calc(-35%));
   }
 
-  .footer {
-    overflow-x: hidden;
-    position: absolute;
-    left: 50vh;
-    padding-top: 5.5vh;
-  }
-
   .stage {
     position: absolute;
     padding-bottom: 12vh;

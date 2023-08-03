@@ -9,6 +9,10 @@ import main from "../public/HomePage/FolkFraCogito.webp";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
+//Images
+import NTNU from "../public/Logos/NTNU.png";
+import NAIL from "../public/Logos/norwegian_open_ai_lab.png";
+
 const About = () => {
     function timeout(delay: number) {
         return new Promise((res) => setTimeout(res, delay));
@@ -102,6 +106,26 @@ const About = () => {
                         <a>Våre Hovedpartnere </a>
                     </div>
                     <hr className={styles.line2} />
+                    <div className={styles.positionSponsor}>
+                        <a href="https://www.ntnu.no/">
+                            <Image
+                                className={styles.imgNTNU}
+                                priority
+                                src={NTNU}
+                                alt="NTNU logo"
+                            />
+                        </a>
+                    </div>
+                    <div className={styles.positionSponsor}>
+                        <a href="https://www.ntnu.edu/ailab">
+                            <Image
+                                className={styles.imgNAIL}
+                                priority
+                                src={NAIL}
+                                alt="NAIL logo"
+                            />
+                        </a>
+                    </div>
                 </div>
             </motion.div>
             <div className={styles.footer}>

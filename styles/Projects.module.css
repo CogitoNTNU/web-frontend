@@ -1,8 +1,10 @@
 .main {
-    position: absolute;
-    left: 13vh;
-    top: 15vh;
-    height: 90vh;
+    position: relative;
+    margin: auto;
+    margin-top: 14vh;
+    min-height: 110vh;
+    max-height: 140vh;
+    z-index: 20;
     width: 85vw;
     border-radius: 20px;
     background-color: #2f3542;
@@ -10,20 +12,26 @@
     box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
+.projectTypeText {
+    color: white;
+    font-size: 90px;
+    font-weight: 900;
+    cursor: default;
+    filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.8));
+}
+
 .gradient {
     position: absolute;
-    z-index: 100;
-    top: 0;
-    height: 60vh;
+    z-index: 12;
+    top: 4vh;
+    height: 70vh;
     width: 85vw;
     background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 60%, #2f3542 100%);
 }
 
 .changeCategory {
-    position: absolute;
-    top: 10vh;
-    background-color: white;
-    z-index: 20;
+    position: relative;
+    z-index: 21;
 }
 
 .img {
@@ -59,4 +67,37 @@
 .image {
     transform: scale(0.25);
 }
+
+.projectContainer {
+    z-index: 22;
+    min-height: 30vh;
+    max-height: 120vh;
+    padding-top: 6vh;
+    padding-bottom: 4vh;
+}
+
+.projects {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    column-count: 4;
+    row-gap: 8vh;
+    column-gap: 12vh;
+    height: 45vh;
+    width: 60vw;
+    border-radius: 20px;
+    bottom: 3vh;
+    margin: auto;
+}
+
+.footer {
+    padding-bottom: 14vh;
+    margin-bottom: 2vh;
+}
+
+
 

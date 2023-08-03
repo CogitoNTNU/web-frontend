@@ -41,8 +41,8 @@ const Loading = () => {
                     <ReactLoading
                         type={"cylon"}
                         color={"white"}
-                        height={"3%"}
-                        width={"3%"}
+                        height={"5%"}
+                        width={"5%"}
                     />
                 </div>
             </div>

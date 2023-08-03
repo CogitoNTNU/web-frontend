@@ -20,6 +20,7 @@
     "react-google-forms-hooks": "^1.2.4",
     "react-icons": "^4.10.1",
     "react-loading": "^2.0.3",
+    "react-responsive-carousel": "^3.2.23",
     "react-select": "^5.7.4",
     "react-tsparticles": "^2.11.0",
     "sass": "^1.64.1",

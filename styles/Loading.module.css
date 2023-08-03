@@ -4,17 +4,20 @@
 }
 
 .imagePos {
-    position: absolute;
-    top: 40vh;
-    left: 80vh;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding-top: 25%;
     animation: colorChange 0.5s forwards ease-out;
 }
 
 
 .loadingPos {
-    position: relative;
-    top: 51vh;
-    left: 83vh;
+    margin: auto;
+    align-items: center;
+    padding-left: 49vw;
+    padding-top: 1vh;
+
 }
 
 @keyframes colorChange {

@@ -103,7 +103,6 @@ const HomeP3 = () => {
                         />
                     </GoogleMapReact>
                 </div>
-
                 <Footer />
             </div>
         </div>

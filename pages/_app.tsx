@@ -5,11 +5,12 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
 import React from "react";
+import Footer from "../components/Footer";
 
 const App = ({ Component, pageProps }) => {
     const router = useRouter();
@@ -55,6 +56,10 @@ const App = ({ Component, pageProps }) => {
                 </Head>
 
                 <Navbar />
+                <div>
+                    <Component {...pageProps} />
+                    <div id="bottom"></div>
+                </div>
                 <Particles
                     id="tsparticles"
                     init={particlesInit}
@@ -120,10 +125,6 @@ const App = ({ Component, pageProps }) => {
                         detectRetina: true,
                     }}
                 />
-                <div>
-                    <Component {...pageProps} />
-                    <div id="bottom"></div>
-                </div>
             </>
         );
     }

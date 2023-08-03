@@ -1,4 +1,4 @@
-.awsBtn {
+.imageSlider {
     --slider-height-percentage: 40%;
     --slider-transition-duration: 700ms;
     --organic-arrow-thickness: 4px;
@@ -12,4 +12,14 @@
     --control-bullet-active-color: #26456f;
     --loader-bar-color: #851515;
     --loader-bar-height: 6px;
-    }
+}
+
+.textSlider {
+    --slider-height-percentage: 10%;
+    --organic-arrow-thickness: 4px;
+    --organic-arrow-border-radius: 0px;
+    --organic-arrow-height: 50px;
+    --organic-arrow-color: white;
+    --content-background-color: transparent;
+    --control-button-width: 20%;
+}

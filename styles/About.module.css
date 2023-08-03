@@ -6,10 +6,6 @@
     scroll-behavior: smooth;
 }
 
-.footer {
-    padding-bottom: 8vh;
-}
-
 .spons {
     position: relative;
     height: 70vh;
@@ -122,17 +118,50 @@
     background: #1E90FF;
     border: none;
     cursor: pointer;
-  }
+}
   
-  .buttonText {
+.buttonText {
     color: #FFF;
     font-family: Lexend Deca;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-  }
+}
   
-  .buttonDiv {
+.buttonDiv {
     padding-top: 5vh;
-  }
+}
+
+.positionSponsor {
+    position: relative;
+    width: 100%;
+    padding-top: 8vh;
+    text-align: center; 
+}
+
+.imgNTNU {
+    height: 10vh;
+    width: 50vh;
+    transition: 0.5s;
+}
+
+.imgNTNU:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.25));
+}
+
+.imgNAIL {
+    transition: 0.5s;
+    height: 20vh;
+    width: 40vh;
+}
+
+.imgNAIL:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.25));
+}
+
+.footer {
+    padding-bottom: 8vh;
+}
