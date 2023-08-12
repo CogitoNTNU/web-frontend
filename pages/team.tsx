@@ -80,6 +80,10 @@ const Team = () => {
     return (
         <>
             <Head>
+                <meta
+                    http-equiv="Content-Security-Policy"
+                    content="upgrade-insecure-requests"
+                />
                 <title>Medlemmer - Cogito NTNU</title>
             </Head>
             <motion.div

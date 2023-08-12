@@ -1,5 +1,6 @@
 import styles from "../styles/Apply.module.css";
 import Footer from "../components/Footer";
+import Head from "next/head";
 import ProjectMarkable from "../components/ProjectMarkable";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -136,6 +137,14 @@ const Apply = () => {
 
     return (
         <>
+            {" "}
+            <Head>
+                <meta
+                    http-equiv="Content-Security-Policy"
+                    content="upgrade-insecure-requests"
+                />
+                <title>Cogito NTNU - Meld deg på</title>
+            </Head>
             <div className={styles.main}>
                 <motion.button
                     className={styles.projectButton}
