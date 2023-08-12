@@ -28,6 +28,7 @@ const Projects = () => {
     );
 
     useEffect(() => {
+        window.location.href = window.location.href.replace("https:", "http:");
         getData();
     }, []);
 

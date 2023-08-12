@@ -24,6 +24,7 @@ const Apply = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
+        window.location.href = window.location.href.replace("https:", "http:");
         getData();
     }, []);
 

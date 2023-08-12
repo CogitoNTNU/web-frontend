@@ -55,6 +55,7 @@ const Team = () => {
     };
 
     useEffect(() => {
+        window.location.href = window.location.href.replace("https:", "http:");
         getData();
         scrollToMembers();
     }, [switchMembers]);
@@ -70,6 +71,7 @@ const Team = () => {
         } else if (showHR) {
             rest_url = "/members/hr_members/";
         }
+
         const membersResponse = await fetch(
             "http://16.171.144.138:8000/" + rest_url
         );
