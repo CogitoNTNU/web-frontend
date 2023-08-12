@@ -26,7 +26,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'http://127.0.0.1:8000',
+        hostname: 'http://16.171.144.138:8000',
       },
     ],
     // when true, every image will be unoptimized

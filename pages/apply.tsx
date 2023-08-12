@@ -49,7 +49,7 @@ const Apply = () => {
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
         const projectsResponse = await fetch(
-            "http://127.0.0.1:8000/" + rest_url
+            "http://16.171.144.138:8000/" + rest_url
         );
         const projectsData = await projectsResponse.json();
         setProjets(projectsData);
@@ -401,19 +401,19 @@ const Apply = () => {
                     </div>
                 </motion.div>
                 <div className={styles.backgroundColor}></div>
+                <motion.div
+                    className={styles.footer}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.4,
+                        ease: [0, 0.71, 0.2, 1.0],
+                    }}
+                >
+                    <Footer />
+                </motion.div>
             </div>
-            <motion.div
-                className={styles.footer}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                    duration: 0.6,
-                    delay: 0.4,
-                    ease: [0, 0.71, 0.2, 1.0],
-                }}
-            >
-                <Footer />
-            </motion.div>
         </>
     );
 };

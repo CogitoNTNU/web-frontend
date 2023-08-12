@@ -106,32 +106,28 @@ const About = () => {
                         <a>Våre Hovedpartnere </a>
                     </div>
                     <hr className={styles.line2} />
-                    <div className={styles.positionSponsor}>
-                        <a href="https://www.ntnu.no/">
-                            <Image
-                                className={styles.imgNTNU}
-                                priority
-                                src={NTNU}
-                                alt="NTNU logo"
-                            />
-                        </a>
-                    </div>
-                    <div className={styles.positionSponsor}>
-                        <a href="https://www.ntnu.edu/ailab">
-                            <Image
-                                className={styles.imgNAIL}
-                                priority
-                                src={NAIL}
-                                alt="NAIL logo"
-                            />
-                        </a>
-                    </div>
+                </div>
+                <div className={styles.positionSponsor}>
+                    <a href="https://www.ntnu.no/">
+                        <Image
+                            className={styles.imgNTNU}
+                            priority
+                            src={NTNU}
+                            alt="NTNU logo"
+                        />
+                    </a>
+                    
+                    <a href="https://www.ntnu.edu/ailab">
+                        <Image
+                            className={styles.imgNAIL}
+                            priority
+                            src={NAIL}
+                            alt="NAIL logo"
+                        />
+                    </a>
                 </div>
             </motion.div>
-            <div className={styles.footer}>
-                <Footer />
-            </div>
-            <div className={styles.footer}></div>
+            <Footer />
         </>
     );
 };

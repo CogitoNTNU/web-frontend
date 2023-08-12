@@ -1,21 +1,21 @@
 .main {
     height: 16vh;
     width: 16vh;
-    background-color: #FF6348;
     border-radius: 15px;
     border-style: none;
     margin-top: 0vh;
     margin-left: 1ch;
     overflow: hidden;
     cursor: pointer;
-    z-index: 100;
+    z-index: 50;
 }
 
 .projectText {
-    position: absolute;
-    padding-top: 17vh;
+    position: relative;
+    white-space: nowrap;
+    padding-top: 0.5vh;
+    text-align: center;
     font-size: 18px;
-    left: 4.1vh;
 }
 
 .image {
@@ -41,12 +41,11 @@
     min-width: 40vh;
     max-width: 40vh;
     bottom: 17vh;
-    left: -12vh;
+    left: -13vh;
     font-size: 18px;
     background-color: #ff6b81;
     border-radius: 10px;
     padding: 1.5em;
-    z-index: 100;
     transform: scale(0);
     transition: transform 200ms ease;
     transform-origin: 50% 100%;
@@ -60,7 +59,7 @@
 .popup {
     z-index: 100;
     position: absolute;
-    bottom: 0;
+    bottom: 3vh;
     animation: bouncing 3s alternate infinite ease-in-out;
 }
 @keyframes bouncing {

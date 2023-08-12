@@ -18,8 +18,14 @@ import img4 from "../public/Projects/Img4.jpeg";
 import img5 from "../public/Projects/Img5.jpeg";
 import Project from "../components/Project";
 
+//Icons
+import { AiFillPlayCircle, AiFillFileText, AiFillGithub } from "react-icons/ai";
+
 const Projects = () => {
     const [projects, setProjets] = useState([]);
+    const [text, setText] = useState(
+        "Prosjektene har et eller flere av disse attributtene"
+    );
 
     useEffect(() => {
         getData();
@@ -28,7 +34,7 @@ const Projects = () => {
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
         const projectsResponse = await fetch(
-            "http://127.0.0.1:8000/" + rest_url
+            "http://16.171.144.138:8000/" + rest_url
         );
         const projectsData = await projectsResponse.json();
         setProjets(projectsData);
@@ -49,7 +55,6 @@ const Projects = () => {
                     ease: [0, 0.71, 0.2, 1.0],
                 }}
             >
-                <div className={styles.gradient}></div>
                 <AutoplaySlider
                     className={AwsSliderstyles.imageSlider}
                     play={true}
@@ -111,6 +116,68 @@ const Projects = () => {
                         <p className={styles.projectTypeText}>PROSJEKTER V22</p>
                     </AwesomeSlider>
                 </div>
+                <div className={styles.textContainer}>
+                    <p className={styles.title}>
+                        Her finner du tidligere semesters prosjekter
+                    </p>
+                    <p className={styles.desc}>{text}</p>
+                    <div className={styles.icons}>
+                        <AiFillGithub
+                            style={{
+                                color: "#f1f2f6",
+                                fontSize: "4rem",
+                            }}
+                            className={styles.gicons}
+                            onMouseEnter={() =>
+                                setText(
+                                    "Prosjektet har et public repository tilgjengelig"
+                                )
+                            }
+                            onMouseLeave={() =>
+                                setText(
+                                    "Prosjektene har et eller flere av disse attributtene"
+                                )
+                            }
+                        />
+                        <AiFillFileText
+                            style={{
+                                color: "#70a1ff",
+                                fontSize: "4rem",
+                            }}
+                            className={styles.ficons}
+                            onMouseEnter={() =>
+                                setText(
+                                    "Prosjektet har et eller flere leselige dokument"
+                                )
+                            }
+                            onMouseLeave={() =>
+                                setText(
+                                    "Prosjektene har et eller flere av disse attributtene"
+                                )
+                            }
+                        />
+                        <AiFillPlayCircle
+                            style={{
+                                color: "#ff4757",
+                                fontSize: "4rem",
+                            }}
+                            className={styles.picons}
+                            onMouseEnter={() =>
+                                setText(
+                                    "Prosjektet er mulig å teste på nettsiden"
+                                )
+                            }
+                            onMouseLeave={() =>
+                                setText(
+                                    "Prosjektene har et eller flere av disse attributtene"
+                                )
+                            }
+                        />
+                    </div>
+                </div>
+                <div className={styles.projectBlocker}>
+                    <p>[ UNDER UTVIKLING ]</p>
+                </div>
                 <div className={styles.projectContainer}>
                     <div className={styles.projects}>
                         {projects.map((project) => (
@@ -124,9 +191,7 @@ const Projects = () => {
                     </div>
                 </div>
             </motion.div>
-            <div className={styles.footer}>
-                <Footer />
-            </div>
+            <Footer />
         </>
     );
 };

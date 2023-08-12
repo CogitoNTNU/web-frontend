@@ -1,5 +1,4 @@
-import styles from "../styles/Home.module.css";
-import stylesFooter from "../styles/Footer.module.css";
+import styles from "../styles/Footer.module.css";
 import {
     AiFillInstagram,
     AiFillFacebook,
@@ -9,55 +8,31 @@ import {
 
 const Footer = () => {
     return (
-        <>
-            <div className={styles.footer}>
-                <div className={stylesFooter.OrgCopy}>
+        <div className={styles.main}>
+            <div className={styles.text}>
+                <div className={styles.OrgCopy}>
                     <p>Cogito NTNU © 2023</p>
                 </div>
-                <div className={stylesFooter.OrgNr}>
+                <div className={styles.OrgNr}>
                     <p>Org.Nr. 920 628 788</p>
                 </div>
             </div>
 
-            <div className={stylesFooter.icons}>
+            <div className={styles.icons}>
                 <a href="https://www.facebook.com/CogitoNTNU">
-                    <AiFillFacebook
-                        style={{
-                            color: "white",
-                            fontSize: "3.5rem",
-                        }}
-                        className={stylesFooter.ficons}
-                    />
+                    <AiFillFacebook className={styles.ficons} />
                 </a>
                 <a href="https://www.instagram.com/cogitontnu/">
-                    <AiFillInstagram
-                        style={{
-                            color: "white",
-                            fontSize: "3.5rem",
-                        }}
-                        className={stylesFooter.iicons}
-                    />
+                    <AiFillInstagram className={styles.iicons} />
                 </a>
                 <a href="https://www.linkedin.com/company/cogito-ntnu/">
-                    <AiFillLinkedin
-                        style={{
-                            color: "white",
-                            fontSize: "3.5rem",
-                        }}
-                        className={stylesFooter.licons}
-                    />
+                    <AiFillLinkedin className={styles.licons} />
                 </a>
                 <a href="https://github.com/CogitoNTNU">
-                    <AiFillGithub
-                        style={{
-                            color: "white",
-                            fontSize: "3.5rem",
-                        }}
-                        className={stylesFooter.gicons}
-                    />
+                    <AiFillGithub className={styles.gicons} />
                 </a>
             </div>
-        </>
+        </div>
     );
 };
 

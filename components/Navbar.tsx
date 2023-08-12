@@ -103,68 +103,81 @@ const Navbar = (color) => {
                     </motion.div>
 
                     <ul className={styles.links}>
-                        <Link
-                            className={
-                                (styles.link, styles.hoverUnderlineAnimation)
-                            }
-                            style={{
-                                textDecoration: isActiveHome
-                                    ? "underline 2px"
-                                    : "",
-                                textUnderlineOffset: isActiveHome ? "1vh" : "",
-                            }}
-                            key="/"
-                            href="/"
-                        >
-                            Hjem
-                        </Link>
-                        <Link
-                            className={
-                                (styles.link, styles.hoverUnderlineAnimation)
-                            }
-                            style={{
-                                textDecoration: isActiveAbout
-                                    ? "underline 2px"
-                                    : "",
-                                textUnderlineOffset: isActiveAbout ? "1vh" : "",
-                            }}
-                            key="/about"
-                            href="/about"
-                        >
-                            Om oss
-                        </Link>
-                        <Link
-                            className={
-                                (styles.link, styles.hoverUnderlineAnimation)
-                            }
-                            style={{
-                                textDecoration: isActiveProjects
-                                    ? "underline 2px"
-                                    : "",
-                                textUnderlineOffset: isActiveProjects
-                                    ? "1vh"
-                                    : "",
-                            }}
-                            key="/projects"
-                            href="/projects"
-                        >
-                            Prosjekter
-                        </Link>
-                        <Link
-                            className={
-                                (styles.link, styles.hoverUnderlineAnimation)
-                            }
-                            style={{
-                                textDecoration: isActiveTeam
-                                    ? "underline 2px"
-                                    : "",
-                                textUnderlineOffset: isActiveTeam ? "1vh" : "",
-                            }}
-                            key="/team"
-                            href="/team"
-                        >
-                            Medlemmer
-                        </Link>
+                        <div className={styles.textLinks}>
+                            <Link
+                                className={
+                                    (styles.link,
+                                    styles.hoverUnderlineAnimation)
+                                }
+                                style={{
+                                    textDecoration: isActiveHome
+                                        ? "underline 2px"
+                                        : "",
+                                    textUnderlineOffset: isActiveHome
+                                        ? "1vh"
+                                        : "",
+                                }}
+                                key="/"
+                                href="/"
+                            >
+                                Hjem
+                            </Link>
+                            <Link
+                                className={
+                                    (styles.link,
+                                    styles.hoverUnderlineAnimation)
+                                }
+                                style={{
+                                    textDecoration: isActiveAbout
+                                        ? "underline 2px"
+                                        : "",
+                                    textUnderlineOffset: isActiveAbout
+                                        ? "1vh"
+                                        : "",
+                                }}
+                                key="/about"
+                                href="/about"
+                            >
+                                Om oss
+                            </Link>
+                            <Link
+                                className={
+                                    (styles.link,
+                                    styles.hoverUnderlineAnimation)
+                                }
+                                style={{
+                                    textDecoration: isActiveProjects
+                                        ? "underline 2px"
+                                        : "",
+                                    textUnderlineOffset: isActiveProjects
+                                        ? "1vh"
+                                        : "",
+                                }}
+                                key="/projects"
+                                href="/projects"
+                            >
+                                Prosjekter
+                            </Link>
+                            <Link
+                                className={
+                                    (styles.link,
+                                    styles.hoverUnderlineAnimation)
+                                }
+                                style={{
+                                    textDecoration: isActiveTeam
+                                        ? "underline 2px"
+                                        : "",
+                                    textUnderlineOffset: isActiveTeam
+                                        ? "1vh"
+                                        : "",
+                                }}
+                                key="/team"
+                                href="/team"
+                            >
+                                Medlemmer
+                            </Link>
+                        </div>
+
                         <div className={styles.buttonPos}>
                             <Link href="/apply">
                                 <motion.button

@@ -17,7 +17,7 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
     };
 
     const imageLoader = ({ src, width, quality }) => {
-        return `http://127.0.0.1:8000${src}?w=${width}&q=${quality || 75}`;
+        return `http://16.171.144.138:8000${src}?w=${width}&q=${quality || 75}`;
     };
 
     return (
@@ -32,10 +32,10 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                     className={styles.image}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    whileInView={{ scale: 1 }}
+                    initial={{ scale: 0 }}
+                    transition={{ ease: "easeInOut" }}
                 >
-                    <div className={styles.projectText}>
-                        <p>{title}</p>
-                    </div>
                     <div className={styles.popup}>
                         <aside className={styles.hoverpopup}>
                             <h2>{title}</h2>
@@ -44,6 +44,7 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                     </div>
 
                     <Image
+                        priority
                         loader={imageLoader}
                         style={{
                             borderStyle: clicked ? "solid" : "none",
@@ -57,6 +58,9 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                         src={image}
                         alt="temporary"
                     />
+                    <div className={styles.projectText}>
+                        <p>{title}</p>
+                    </div>
                 </motion.div>
             </div>
         </>

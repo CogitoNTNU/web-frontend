@@ -1,6 +1,6 @@
 {
   "private": true,
-  "proxy": "http://127.0.0.1:8000",
+  "proxy": "http://16.171.144.138:8000",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

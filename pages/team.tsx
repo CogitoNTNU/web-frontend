@@ -71,7 +71,7 @@ const Team = () => {
             rest_url = "/members/hr_members/";
         }
         const membersResponse = await fetch(
-            "http://127.0.0.1:8000/" + rest_url
+            "http://16.171.144.138:8000/" + rest_url
         );
         const membersData = await membersResponse.json();
         setMembers(membersData);
@@ -204,10 +204,7 @@ const Team = () => {
                     </div>
                 </div>
             </motion.div>
-            <div className={styles.footer}>
-                <Footer />
-            </div>
-            <div className={styles.footer}></div>
+            <Footer />
         </>
     );
 };

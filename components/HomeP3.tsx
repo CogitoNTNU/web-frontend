@@ -5,7 +5,6 @@ import styles from "../styles/Home.module.css";
 import bgbacks from "../public/HomePage/back.webp";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
 import GoogleMapReact from "google-map-react";
 import Footer from "./Footer";
 
@@ -57,10 +56,7 @@ const HomeP3 = () => {
                                 Epost
                             </a>
                             <br />
-                            <motion.div
-                                whileHover={{ scale: 1.05, x: 10 }}
-                                whileTap={{ scale: 0.97 }}
-                            >
+                            <div className={styles.emailAddress}>
                                 <a
                                     style={{
                                         textDecorationLine: "underline",
@@ -70,7 +66,8 @@ const HomeP3 = () => {
                                 >
                                     styret@cogito-ntnu.no
                                 </a>
-                            </motion.div>
+                            </div>
+
                             <br />
                             <a style={{ fontWeight: 700, fontSize: "24px" }}>
                                 Adresse
@@ -88,6 +85,7 @@ const HomeP3 = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className={styles.map}>
                     <GoogleMapReact
                         bootstrapURLKeys={{

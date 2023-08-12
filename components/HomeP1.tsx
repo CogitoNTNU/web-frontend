@@ -62,9 +62,9 @@ const HomeP1 = () => {
                         />
                     </motion.div>
                 </div>
-                <div className={styles.text_div}>
-                    <motion.a
-                        className={styles.text}
+                <div className={styles.titlePosition}>
+                    <motion.p
+                        className={styles.title1}
                         style={{
                             transform: `translateX(calc(-2.5% + ${
                                 -mousePos.x * 0.03
@@ -81,9 +81,9 @@ const HomeP1 = () => {
                         }}
                     >
                         ØNSKER DU
-                    </motion.a>
+                    </motion.p>
                     <motion.p
-                        className={styles.text2}
+                        className={styles.title2}
                         style={{
                             transform: `translateX(calc(-2.5% + ${
                                 -mousePos.x * 0.03
@@ -158,12 +158,11 @@ const HomeP1 = () => {
                     </motion.div>
                 </div>
                 <motion.div
-                    className={styles.textdiv}
+                    className={styles.creatorText}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{
                         duration: 0.6,
-
                         ease: [0, 0.71, 0.2, 1.0],
                     }}
                     whileHover={{ scale: 1.05 }}
@@ -172,7 +171,7 @@ const HomeP1 = () => {
                     <AiOutlineInfoCircle
                         style={{
                             color: "white",
-                            fontSize: "14px",
+                            fontSize: "18px",
                             paddingTop: "4px",
                         }}
                     />

@@ -6,6 +6,7 @@
 .main {
     height: 100vh;
     width: 100vw;
+    padding-top: 85vh;
     overflow: hidden;
     animation: backgroundColor-change 1s forwards ease-in-out;
 }
@@ -250,12 +251,6 @@
 
 .selector {
     border-radius: 20px;
-}
-
-.footer {
-    z-index: 1;
-    position:relative;
-    bottom: 16vh;
 }
 
 @keyframes background-change {

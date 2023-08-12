@@ -7,7 +7,7 @@ import { AiFillLinkedin, AiFillMail } from "react-icons/ai";
 
 const Member = ({ name, title, imageURL, linkedinURL, mailURL }) => {
     const imageLoader = ({ src, width, quality }) => {
-        return `http://127.0.0.1:8000${src}?w=${width}&q=${quality || 75}`;
+        return `http://16.171.144.138:8000${src}?w=${width}&q=${quality || 75}`;
     };
     return (
         <>
@@ -57,6 +57,7 @@ const Member = ({ name, title, imageURL, linkedinURL, mailURL }) => {
                 </div>
                 <div className={styles.image}>
                     <Image
+                        priority
                         loader={imageLoader}
                         className={styles.imageImg}
                         src={imageURL != "null" ? imageURL : tempImage}

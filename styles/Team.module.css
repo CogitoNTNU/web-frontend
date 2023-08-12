@@ -2,12 +2,13 @@
     position: relative;
     min-height: 120vh;
     max-height: 280vh;
+    padding-bottom: 15vh;
     width: 100vw;
+    z-index: 20;
 }
 
 .bg {
     position: relative;
-    opacity: 90%;
     width: 85vw;
     left: 13vh;
     top: 15vh;
@@ -75,7 +76,7 @@
 
 .button {
     display: inline-flex;
-    word-break:break-all;
+    word-break: break-all;
     width: 25vh;
     height: 5vh;
     justify-content: center;
@@ -91,7 +92,6 @@
     transition: 0.2s;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
 }
-
   
 .buttonText {
     font-family: Lexend Deca;
@@ -119,10 +119,6 @@
 
 .member {
     display:inline-block;
-}
-
-.footer {
-    padding-top: 16vh;
 }
 
 .line {
