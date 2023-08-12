@@ -28,12 +28,12 @@ const Projects = () => {
     );
 
     useEffect(() => {
-        window.location.href = window.location.href.replace("https:", "http:");
         getData();
     }, []);
 
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
+        window.location.href = window.location.href.replace("https:", "http:");
         const projectsResponse = await fetch(
             "http://16.171.144.138:8000/" + rest_url
         );
