@@ -54,15 +54,6 @@ const Team = () => {
         setSwitchMembers(switchMembers + 1);
     };
 
-    const fetch_retry = async (url, n) => {
-        try {
-            return await fetch(url);
-        } catch (err) {
-            if (n === 1) throw err;
-            return await fetch_retry(url, n - 1);
-        }
-    };
-
     useEffect(() => {
         getData();
         scrollToMembers();
@@ -80,11 +71,12 @@ const Team = () => {
             rest_url = "/members/hr_members/";
         }
 
-        const membersResponse = await fetch_retry(
-            "https://cogito-backend.net" + rest_url,
-            2
+        const membersResponse = await fetch(
+            "https://cogito-backend.net" + rest_url
         );
+
         const membersData = await membersResponse.json();
+        console.log(membersData);
         setMembers(membersData);
     };
 
