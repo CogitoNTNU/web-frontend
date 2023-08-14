@@ -43,7 +43,7 @@ const Projects = () => {
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
         const projectsResponse = await fetch_retry(
-            "https://cogito-backend.net" + rest_url,
+            "http://16.171.88.123:8000/" + rest_url,
             2
         );
         const projectsData = await projectsResponse.json();
@@ -54,7 +54,12 @@ const Projects = () => {
         <>
             <Head>
                 <title>Prosjekter - Cogito NTNU</title>
+                <meta
+                    http-equiv="Content-Security-Policy"
+                    content="upgrade-insecure-requests"
+                ></meta>
             </Head>
+
             <motion.div
                 className={styles.main}
                 initial={{ opacity: 0, y: 100 }}
