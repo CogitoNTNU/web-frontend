@@ -72,7 +72,7 @@ const Team = () => {
         }
 
         const membersResponse = await fetch(
-            "http://16.171.144.138:8000/" + rest_url
+            "https://cogito-backend.net" + rest_url
         );
         const membersData = await membersResponse.json();
         setMembers(membersData);
@@ -81,10 +81,6 @@ const Team = () => {
     return (
         <>
             <Head>
-                <meta
-                    http-equiv="Content-Security-Policy"
-                    content="upgrade-insecure-requests"
-                />
                 <title>Medlemmer - Cogito NTNU</title>
             </Head>
             <motion.div

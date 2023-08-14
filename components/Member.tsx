@@ -7,7 +7,7 @@ import { AiFillLinkedin, AiFillMail } from "react-icons/ai";
 
 const Member = ({ name, title, imageURL, linkedinURL, mailURL }) => {
     const imageLoader = ({ src, width, quality }) => {
-        return `http://16.171.144.138:8000${src}?w=${width}&q=${quality || 75}`;
+        return `https://cogito-backend.net${src}?w=${width}&q=${quality || 75}`;
     };
     return (
         <>
