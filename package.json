@@ -1,6 +1,6 @@
 {
   "private": true,
-  "proxy": "http://16.171.144.138:8000",
+  "proxy": "cogito-backend.net",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -50,7 +50,7 @@ const Apply = () => {
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
         const projectsResponse = await fetch(
-            "https://cogito-backend.net" + rest_url
+            "http://16.171.88.123:8000" + rest_url
         );
         const projectsData = await projectsResponse.json();
         setProjets(projectsData);

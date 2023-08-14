@@ -72,7 +72,7 @@ const Team = () => {
         }
 
         const membersResponse = await fetch(
-            "https://cogito-backend.net" + rest_url
+            "http://16.171.88.123:8000" + rest_url
         );
         const membersData = await membersResponse.json();
         setMembers(membersData);
