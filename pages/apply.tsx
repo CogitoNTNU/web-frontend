@@ -47,20 +47,10 @@ const Apply = () => {
         );
     };
 
-    const fetch_retry = async (url, n) => {
-        try {
-            return await fetch(url);
-        } catch (err) {
-            if (n === 1) throw err;
-            return await fetch_retry(url, n - 1);
-        }
-    };
-
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
-        const projectsResponse = await fetch_retry(
-            "https://cogito-backend.net" + rest_url,
-            2
+        const projectsResponse = await fetch(
+            "https://cogito-backend.net" + rest_url
         );
         const projectsData = await projectsResponse.json();
         setProjets(projectsData);
