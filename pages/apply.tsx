@@ -141,6 +141,7 @@ const Apply = () => {
                 <title>Cogito NTNU - Meld deg på</title>
             </Head>
             <div className={styles.main}>
+                <div className={styles.backgroundColor}></div>
                 <motion.button
                     className={styles.projectButton}
                     initial={{ opacity: 0, y: 100 }}
@@ -404,7 +405,7 @@ const Apply = () => {
                         </div>
                     </div>
                 </motion.div>
-                <div className={styles.backgroundColor}></div>
+
                 <motion.div
                     className={styles.footer}
                     initial={{ opacity: 0, y: 100 }}

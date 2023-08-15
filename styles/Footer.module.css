@@ -269,3 +269,85 @@
         padding-top: 0.5vh;
     }
 }
+
+/* --- css for 1920 x 1080 widescreen --- */
+@media only screen and (width: 1920px) and (max-height: 1080px) { 
+    .main {
+        position: relative;
+        margin: auto;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        gap: 40vh;
+        padding-top: 6vh;
+        padding-bottom: 4vh;
+    }
+    
+    
+    .OrgCopy {
+        color: #FFF;
+        font-family: Lexend Deca;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;  
+    }
+    
+    .OrgNr {
+        color: #FFF;
+        font-family: Lexend Deca;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;  
+    }
+    
+    .ficons {
+        color: white;
+        font-size: 3.5rem;
+        transition: .5s;
+    }
+    
+    .ficons:hover {
+        transition: .5s;
+        transform: scale(1.1);
+        filter: drop-shadow(2px 2px 2px black);
+    }
+    
+    .iicons {
+        color: white;
+        font-size: 3.5rem;
+        transition: .5s;
+    }
+    
+    .iicons:hover {
+        transition: .5s;
+        transform: scale(1.1);
+        filter: drop-shadow(2px 2px 2px black);
+    }
+    
+    .licons {
+        color: white;
+        font-size: 3.5rem;
+        transition: .5s;
+    }
+    
+    .licons:hover {
+        transition: .5s;
+        transform: scale(1.1);
+        filter: drop-shadow(2px 2px 2px black);
+    }
+    
+    .gicons {
+        color: white;
+        font-size: 3.5rem;
+        transition: .5s;
+    }
+    
+    .gicons:hover {
+        transition: .5s;
+        transform: scale(1.1);
+        filter: drop-shadow(2px 2px 2px black);
+    }
+}

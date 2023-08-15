@@ -8,6 +8,7 @@
     width: 100vw;
     padding-top: 85vh;
     overflow: hidden;
+    object-fit: fill;
     animation: backgroundColor-change 1s forwards ease-in-out;
 }
 
@@ -20,6 +21,8 @@
     background-color: #ff4757;
     border-radius: 20px;
     opacity: 95%;
+    max-height: 100vh;
+    max-width: 100vw;
     animation: background-change 0.5s forwards ease-in-out;
 }
 
@@ -52,7 +55,6 @@
     cursor: pointer;
     z-index: 2;
     filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.8));
-
 }
 
 .vervButton {
@@ -255,18 +257,86 @@
 
 @keyframes background-change {
     from {
-        transform: scale(0);
+
     }
     to {
-       transform: scale(46);
-       
+
     }
 }
 
 @keyframes backgroundColor-change {
-
     to {
        background-color: #ff4757;
        
     }
+}
+
+/* --- css for 1920 x 1080 widescreen --- */
+@media only screen and (width: 1920px) and (max-height: 1080px) { 
+    .projectButton {
+        position: absolute;
+        top: 15vh;
+        left: 13vh;
+        display: inline-flex;
+        padding: 10px 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px 20px 0px 0px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+        z-index: 2;
+        filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.8));
+    }
+
+    .vervButton {
+        position: absolute;
+        top: 15vh;
+        left: 25vh;
+        display: inline-flex;
+        padding: 10px 70px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px 20px 0px 0px;
+        border: none;
+        background-color: #DFE4EA;
+        cursor: pointer;
+        z-index: 1;
+        filter: drop-shadow(-1px 0px 0px rgba(0, 0, 0, 0.8));
+    }
+
+    .projectsText {
+        position: absolute;
+        cursor: default; 
+        font-size: 30px;
+        color: #2f3542;
+        filter: drop-shadow(2px 2px 1px #a4b0be);
+        font-weight: 700;
+        top: 10vh;
+        left: 65vh;
+    }
+    
+    .applyButton {
+        position: absolute;
+        bottom: 6vh;
+        left: 5vh;
+    }
+
+    .projects {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: center;
+        column-count: 4;
+        row-gap: 4.2vh;
+        column-gap: 3vh;
+        height: 45vh;
+        width: 850px;
+        border-radius: 20px;
+        left: 65vh;
+        bottom: 6vh;
+        background-color: #F1F2F6;
+    }
+
 }

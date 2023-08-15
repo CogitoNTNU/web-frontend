@@ -5,6 +5,7 @@ import CogitoBrain from "../public/HomePage/CogitoBrain1.webp";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HomeP2 = () => {
     return (
@@ -39,13 +40,15 @@ const HomeP2 = () => {
                 <p>Se og test tidligere prosjekter her:</p>
 
                 <div className={styles.buttonDiv}>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className={styles.button}
-                    >
-                        <p className={styles.buttonText}>PROSJEKTER</p>
-                    </motion.button>
+                    <Link href="/projects">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={styles.button}
+                        >
+                            <p className={styles.buttonText}>PROSJEKTER</p>
+                        </motion.button>
+                    </Link>
                 </div>
             </motion.div>
 
@@ -63,6 +66,7 @@ const HomeP2 = () => {
                     priority={true}
                     draggable={false}
                     alt="Brain"
+                    className={styles.brainimg}
                     src={CogitoBrain}
                 />
             </motion.div>
@@ -71,9 +75,8 @@ const HomeP2 = () => {
                 <Image
                     priority={true}
                     src={Bg}
+                    className={styles.page2bg}
                     alt="Background"
-                    width={1600}
-                    height={1400}
                 />
             </div>
         </div>

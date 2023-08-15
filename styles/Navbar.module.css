@@ -238,5 +238,123 @@
     .textLinks {
         display: none;
     }
+}
+
+/* --- css for 1920 x 1080 widescreen --- */
+@media only screen and (width: 1920px) and (height: 1080px) { 
+    .navigation {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        position: fixed;
+        top: 0px;
+        z-index: 100;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.8));
+        background-color: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(4px);
+    }
     
+    .setup {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .textUnderline {
+        position: absolute;
+        bottom: 4.73vh;
+        height: 2px;
+        background-color: white;
+    }
+    
+    .links {
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        font-size: large;
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .textLinks {
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        font-size: large;
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .link {
+        padding-top: 1rem;
+    }
+    
+    .button {
+        display: inline-flex;
+        padding: 15px 44px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 24px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .buttonPos {
+        position: relative;
+    }
+    
+    .buttonText {
+        color: #FFF;
+        font-family: Lexend Deca;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .hoverUnderlineAnimation {
+        display: inline-block;
+        position: relative;
+        top: 2vh;
+        color: white;
+      }
+      
+    .hoverUnderlineAnimation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        top: 2.7vh;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+      
+    .hoverUnderlineAnimation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    
+    .hoverUnderline {
+        text-decoration: underline 2px;
+        text-underline-offset: 1vh;
+    }
 }

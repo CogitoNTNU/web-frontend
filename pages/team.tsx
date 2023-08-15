@@ -103,7 +103,6 @@ const Team = () => {
                         src={bg}
                         alt="bg"
                     />
-                    <div className={styles.bgGradient}></div>
                     <Image
                         className={styles.brainImg}
                         draggable={false}

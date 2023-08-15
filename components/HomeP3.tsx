@@ -37,6 +37,7 @@ const HomeP3 = () => {
                     priority={true}
                     src={bgbacks}
                     alt="bg"
+                    className={styles.page3bg}
                     height={1000}
                     width={1650}
                 />

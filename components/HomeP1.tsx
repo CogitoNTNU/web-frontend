@@ -49,6 +49,7 @@ const HomeP1 = () => {
                             priority={true}
                             draggable={false}
                             src={Sun_Img}
+                            className={styles.img}
                             style={{
                                 transform: `translateX(calc(-2.5% + ${
                                     -mousePos.x * 0.04
@@ -56,8 +57,6 @@ const HomeP1 = () => {
                                     -mousePos.y * 0.05
                                 }px))`,
                             }}
-                            height="1700"
-                            width="1600"
                             alt="Sun"
                         />
                     </motion.div>
@@ -118,6 +117,7 @@ const HomeP1 = () => {
                             loading="eager"
                             src={Theatre_Img}
                             alt="Theatre"
+                            className={styles.img}
                             style={{
                                 transform: `translateX(calc(-2.5% + ${
                                     -mousePos.x * 0.025
@@ -125,8 +125,6 @@ const HomeP1 = () => {
                                     -mousePos.y * 0.05
                                 }px))`,
                             }}
-                            height="1700"
-                            width="1600"
                         />
                     </motion.div>
                 </div>
@@ -146,14 +144,13 @@ const HomeP1 = () => {
                             loading="eager"
                             src={Stage_Img}
                             alt="Stage"
+                            className={styles.img}
                             style={{
                                 transform: `translateX(calc(${
                                     -mousePos.x * 0.02
                                 }px)) translateY(calc( 
                                 ${-mousePos.y * 0.01}px))`,
                             }}
-                            height="1700"
-                            width="1600"
                         />
                     </motion.div>
                 </div>
