@@ -127,7 +127,34 @@
     font-weight: 500;
     padding-left: 3vh;
     padding-top: 2vh;
+    padding-bottom: 1vh;
     gap: 18vh;
+}
+
+.projectStudyAndYear {
+    position: relative;
+    cursor: default; 
+    display: flex;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    gap: 37vh;
+}
+
+.projectNumbers {
+    position: relative;
+    cursor: default; 
+    display: flex;
+    font-size: 18px;
+    color: #2f3542;
+    font-weight: 500;
+    padding-left: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+    gap: 6vh;
 }
 
 .projectEmail {
@@ -138,9 +165,10 @@
     font-weight: 500;
     padding-left: 3vh;
     padding-top: 2vh;
+    padding-bottom: 1vh;
 }
 
-.projectWhy {
+.projectPhone {
     position: relative;
     cursor: default; 
     font-size: 18px;
@@ -148,6 +176,7 @@
     font-weight: 500;
     padding-left: 3vh;
     padding-top: 2vh;
+    padding-bottom: 1vh;
 }
 
 .projectChosen {
@@ -180,7 +209,7 @@
     width: 45vw;
     border-radius: 20px;
     right: 5vh;
-    bottom: 3vh;
+    bottom: 4vh;
     background-color: #F1F2F6;
 }
 
@@ -192,7 +221,7 @@
     color: #2f3542;
     filter: drop-shadow(2px 2px 1px #a4b0be);
     font-weight: 700;
-    top: 12vh;
+    top: 11vh;
     left: 65vh;
 }
 
@@ -204,7 +233,8 @@
 
 .button {
     display: inline-flex;
-    padding: 15px 50px;
+    margin-left: 8vh;
+    padding: 15px 30px;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
@@ -214,9 +244,52 @@
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
     color: #FFF;
     transition: 0.2s;
+    z-index: 50;
+}
+
+.backButton {
+    position: absolute;
+    display: inline-flex;
+    padding: 15px 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    background-color: #ff4757;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    color: #FFF;
+    transition: 0.2s;
+    z-index: 20;
+}
+
+.nextButton {
+    display: inline-flex;
+    left: -3vh;
+    padding: 15px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    background-color: #ff4757;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    color: #FFF;
+    transition: 0.2s;
+    z-index: 20;
 }
 
 .button:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.backButton:hover  {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+
+.nextButton:hover {
     transition: 0.2s;
     transform: scale(1.05);
 }
@@ -253,6 +326,11 @@
 
 .selector {
     border-radius: 20px;
+}
+
+.toggle {
+    position: relative;
+    left: 3.5vh;
 }
 
 @keyframes background-change {
@@ -315,7 +393,9 @@
         top: 10vh;
         left: 65vh;
     }
-    
+
+
+
     .applyButton {
         position: absolute;
         bottom: 6vh;

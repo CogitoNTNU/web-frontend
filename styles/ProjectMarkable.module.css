@@ -32,16 +32,16 @@
 .hoverpopup {
     position: absolute;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
-    font-size: 18px;
+    font-size: 8px;
     color: white;
     font-weight: 500;
     flex-direction: column;
     justify-content: space-between;
-    width: 40vh;
+    width: 80vh;
     min-width: 40vh;
-    max-width: 40vh;
+    max-width: 60vh;
     bottom: 17vh;
-    left: -13vh;
+    left: -22vh;
     font-size: 18px;
     background-color: #ff6b81;
     border-radius: 10px;

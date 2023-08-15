@@ -5,7 +5,8 @@ import ProjectMarkable from "../components/ProjectMarkable";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import CreatableSelect from "react-select/creatable";
-("usp=pp_url&entry.368733506=Simon&entry.1709808134=Lee&entry.1625194928=Simon&entry.911437074=Spill+AI&entry.911437074=Sikker+AI&entry.911437074=Cogitron&entry.911437074=Emojify&entry.911437074=Sjakk+AI&emailAddress=test@yahoo.com");
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import Toggle from "react-toggle";
 
 const Apply = () => {
     const [page, setPage] = useState(false);
@@ -19,9 +20,22 @@ const Apply = () => {
     const [falseLastname, setFalseLastname] = useState(false);
     const [email, setEmail] = useState("");
     const [falseEmail, setFalseEmail] = useState(false);
-    const [about, setAbout] = useState("");
-    const [falseAbout, setFalseAbout] = useState(false);
+    const [phone, setPhone] = useState("");
+    const [falsePhone, setFalsePhone] = useState(false);
     const [error, setError] = useState(false);
+    const [nextPage, setNextPage] = useState(false);
+    const [photoOK, setPhotoOK] = useState(false);
+    const [study, setStudy] = useState("");
+    const [studyYear, setStudyYear] = useState("");
+    const [falseStudy, setFalseStudy] = useState(false);
+    const [studentID, setStudentID] = useState("");
+    const [falseStudentID, setFalseStudentID] = useState(false);
+    const [studentEM, setStudentEM] = useState("");
+    const [falseStudentEM, setFalseStudentEM] = useState(false);
+    const [about1, setAbout1] = useState("");
+    const [about2, setAbout2] = useState("");
+    const [about3, setAbout3] = useState("");
+    const [falseAbout, setFalseAbout] = useState(false);
 
     useEffect(() => {
         getData();
@@ -47,6 +61,10 @@ const Apply = () => {
         );
     };
 
+    const togglePhotoOK = () => {
+        setPhotoOK(!photoOK);
+    };
+
     const getData = async () => {
         let rest_url = "/projects/all_new_projects/";
         const projectsResponse = await fetch(
@@ -64,16 +82,44 @@ const Apply = () => {
             );
     };
 
+    const validatePhone = (phone) => {
+        var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{3})$/;
+        return regex.test(phone);
+    };
+
+    const validateStudyYear = (studyYear) => {
+        var regex = /^[1-7åa-z\.]{4}$$/;
+        return regex.test(studyYear);
+    };
+
+    const validateStudentID = (studentID) => {
+        var regex = /[0-9]{6}$/;
+        return regex.test(studentID);
+    };
+
+    const validateStudentEM = (studentEM) => {
+        var regex = /[0-9]{10}$/;
+        return regex.test(studentEM);
+    };
+
     const resetForm = () => {
         setFalseSurname(false);
         setFalseLastname(false);
         setFalseEmail(false);
-        setFalseAbout(false);
         setFalseValue(false);
+        setFalsePhone(false);
         setError(false);
     };
 
-    const checkFormFields = (surname, lastname, email, about, projects) => {
+    const resetSecondForm = () => {
+        setFalseStudy(false);
+        setFalseStudentID(false);
+        setFalseStudentEM(false);
+        setFalseAbout(false);
+    };
+
+    const checkFormFields = (surname, lastname, email, phone, projects) => {
+        resetForm();
         const errors = [];
 
         if (surname == "") {
@@ -91,37 +137,105 @@ const Apply = () => {
             errors.push("");
         }
 
-        if (about == "") {
-            setFalseAbout(true);
-            errors.push("");
-        }
-
         if (projects.length !== 3) {
             setFalseValue(true);
             errors.push("");
         }
 
-        if (errors.length == 0) {
-            return false;
+        if (!validatePhone(phone)) {
+            setFalsePhone(true);
+            errors.push("");
         }
-        return true;
+
+        if (errors.length == 0) {
+            setNextPage(true);
+        }
     };
 
-    const sendForm = async (surname, lastname, email, about, projects) => {
-        resetForm();
-        if (checkFormFields(surname, lastname, email, about, projects)) {
+    const checkSecondFormFields = (
+        study,
+        studyYear,
+        studentID,
+        studentEM,
+        about1,
+        about2,
+        about3
+    ) => {
+        resetSecondForm();
+        const errors = [];
+
+        if (study == "" || !validateStudyYear(studyYear)) {
+            setFalseStudy(true);
+            errors.push("");
+        }
+
+        if (!validateStudentID(studentID)) {
+            setFalseStudentID(true);
+            errors.push("");
+        }
+
+        if (!validateStudentEM(studentEM)) {
+            setFalseStudentEM(true);
+            errors.push("");
+        }
+
+        if (about1 == "" || about2 == "" || about3 == "") {
+            setFalseAbout(true);
+            errors.push("");
+        }
+
+        if (errors.length == 0) {
+            return true;
+        }
+
+        return false;
+    };
+
+    const sendForm = async (
+        surname,
+        lastname,
+        email,
+        phone,
+        projects,
+        study,
+        studyYear,
+        studentID,
+        studentEM,
+        about1,
+        about2,
+        about3,
+        photo
+    ) => {
+        if (
+            !checkSecondFormFields(
+                study,
+                studyYear,
+                studentID,
+                studentEM,
+                about1,
+                about2,
+                about3
+            )
+        ) {
             return;
         }
+        setNextPage(false);
         try {
             await fetch(
-                "https://docs.google.com/forms/d/e/1FAIpQLSfaNpwXHh55RweAfSW-_1QWXAfNj83vHLChu-pCNI0WvGhbjA/formResponse?" +
+                "https://docs.google.com/forms/d/e/1FAIpQLSduLNlEqKEDF25Nyjf2WtyPKp5SniyT3SvN1rvMZMDMZyUKGQ/formResponse?" +
                     new URLSearchParams({
-                        "entry.368733506": surname,
-                        "entry.1709808134": lastname,
-                        "entry.1625194928": about,
-                        "entry.911437074": projects[0].value,
-                        "entry.1994023221": projects[1].value,
-                        "entry.981557565": projects[2].value,
+                        "entry.1488574276": surname,
+                        "entry.1925221388": lastname,
+                        "entry.877101926": phone,
+                        "entry.1747975445": study,
+                        "entry.17385882": studyYear,
+                        "entry.1569032832": about1,
+                        "entry.1096059890": about2,
+                        "entry.609878434": about3,
+                        "entry.1184993896": projects[0].value,
+                        "entry.307282896": projects[1].value,
+                        "entry.1565910335": projects[2].value,
+                        "entry.875921033": photo,
                         emailAddress: email,
                     }),
                 {
@@ -196,7 +310,274 @@ const Apply = () => {
                             Du hører fra oss om ikke så lenge.
                         </p>
                     </div>
-                    <div style={{ display: sent ? "none" : "block" }}>
+                    <div style={{ display: nextPage ? "" : "none" }}>
+                        <div className={styles.projectTitle}>
+                            <p>Prosjektsøknad - Høst 2023</p>
+                        </div>
+                        <div className={styles.projectInputCard}>
+                            <div className={styles.projectStudyAndYear}>
+                                <p style={{ color: falseStudy ? "red" : "" }}>
+                                    Studie og Årstrinn{" "}
+                                    <a
+                                        style={{
+                                            display: falseStudy ? "" : "none",
+                                        }}
+                                    >
+                                        *
+                                    </a>
+                                </p>
+                                <p style={{ color: falseAbout ? "red" : "" }}>
+                                    Litt om deg selv{" "}
+                                    <a
+                                        style={{
+                                            display: falseAbout ? "" : "none",
+                                        }}
+                                    >
+                                        *
+                                    </a>
+                                </p>
+                            </div>
+                            <input
+                                className={styles.input}
+                                style={{ width: "38vh", left: "3vh" }}
+                                type="text"
+                                placeholder="Datateknologi, Fysmat, Kybe..."
+                                onChange={(event) =>
+                                    setStudy(event.target.value)
+                                }
+                            />
+                            <input
+                                className={styles.input}
+                                style={{ width: "10vh", left: "5vh" }}
+                                type="text"
+                                placeholder="X.år"
+                                onChange={(event) =>
+                                    setStudyYear(event.target.value)
+                                }
+                            />
+                            <textarea
+                                className={styles.input}
+                                style={{
+                                    width: "80vh",
+                                    top: "15vh",
+                                    left: "60vh",
+                                    height: "10vh",
+                                    resize: "none",
+                                    paddingTop: "1vh",
+                                    position: "absolute",
+                                }}
+                                placeholder="Hva slags erfaring har du med AI og programmering fra før?"
+                                onChange={(event) =>
+                                    setAbout1(event.target.value)
+                                }
+                            />
+                            <textarea
+                                className={styles.input}
+                                style={{
+                                    width: "80vh",
+                                    top: "29vh",
+                                    left: "60vh",
+                                    height: "10vh",
+                                    resize: "none",
+                                    paddingTop: "1vh",
+                                    position: "absolute",
+                                }}
+                                placeholder="Hvordan hørte du om Cogito NTNU?"
+                                onChange={(event) =>
+                                    setAbout2(event.target.value)
+                                }
+                            />
+                            <textarea
+                                className={styles.input}
+                                style={{
+                                    width: "80vh",
+                                    top: "43vh",
+                                    left: "60vh",
+                                    height: "10vh",
+                                    resize: "none",
+                                    paddingTop: "1vh",
+                                    position: "absolute",
+                                }}
+                                placeholder="Hvorfor ønsker du å søke hos oss i Cogito NTNU?"
+                                onChange={(event) =>
+                                    setAbout3(event.target.value)
+                                }
+                            />
+                            <div className={styles.projectNumbers}>
+                                <p
+                                    style={{
+                                        color: falseStudentID ? "red" : "",
+                                    }}
+                                >
+                                    Studentkortnummer{" "}
+                                    <a
+                                        style={{
+                                            display: falseStudentID
+                                                ? ""
+                                                : "none",
+                                        }}
+                                    >
+                                        *
+                                    </a>
+                                </p>
+                                <p
+                                    style={{
+                                        color: falseStudentEM ? "red" : "",
+                                    }}
+                                >
+                                    EM-nummer{" "}
+                                    <a
+                                        style={{
+                                            display: falseStudentEM
+                                                ? ""
+                                                : "none",
+                                        }}
+                                    >
+                                        *
+                                    </a>
+                                </p>
+                            </div>
+                            <input
+                                className={styles.input}
+                                style={{
+                                    width: "24vh",
+                                    left: "3vh",
+                                }}
+                                type="text"
+                                placeholder="XXXXXX"
+                                onChange={(event) =>
+                                    setStudentID(event.target.value)
+                                }
+                            />
+                            <input
+                                className={styles.input}
+                                style={{
+                                    width: "23vh",
+                                    left: "6vh",
+                                }}
+                                type="text"
+                                placeholder="XXXXXXXXXX"
+                                onChange={(event) =>
+                                    setStudentEM(event.target.value)
+                                }
+                            />
+
+                            <div className={styles.projectChosen}>
+                                <p style={{ color: falseValue ? "red" : "" }}>
+                                    Valgte Prosjekter{" "}
+                                    <a
+                                        style={{
+                                            display: falseValue ? "" : "none",
+                                        }}
+                                    >
+                                        *
+                                    </a>
+                                </p>
+                            </div>
+                            <div className={styles.selectorPosition}>
+                                <CreatableSelect
+                                    styles={{
+                                        control: (baseStyles, state) => ({
+                                            ...baseStyles,
+                                            borderStyle: state.isFocused
+                                                ? "none"
+                                                : "none",
+                                            height: "8vh",
+                                            backgroundColor: "#F1F2F6",
+                                            borderRadius: "10px",
+                                            filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))",
+                                        }),
+                                        multiValueRemove: (baseStyles) => ({
+                                            ...baseStyles,
+                                            display: "none",
+                                        }),
+                                        multiValueLabel: (baseStyles) => ({
+                                            ...baseStyles,
+                                            paddingRight: "1vh",
+                                            fontSize: "16px",
+                                            fontWeight: "700",
+                                            color: "white",
+                                            backgroundColor: "#ff6b81",
+                                            filter: "drop-shadow(2px 2px 0px black)",
+                                        }),
+                                    }}
+                                    components={components}
+                                    isClearable={false}
+                                    isMulti
+                                    isDisabled={true}
+                                    onChange={(newValue) => setValue(newValue)}
+                                    menuIsOpen={false}
+                                    placeholder="Trykk på et av prosjektene..."
+                                    value={value}
+                                />
+                            </div>
+                            <div className={styles.projectPhone}>
+                                <p style={{ color: falsePhone ? "red" : "" }}>
+                                    Fototillatelse{" "}
+                                    <a
+                                        style={{
+                                            display: falsePhone ? "" : "none",
+                                        }}
+                                    >
+                                        *
+                                    </a>
+                                </p>
+                            </div>
+                            <div className={styles.toggle}>
+                                <Toggle
+                                    className={styles}
+                                    defaultChecked={photoOK}
+                                    onChange={() => togglePhotoOK()}
+                                />
+                            </div>
+                        </div>
+                        <div className={styles.applyButton}>
+                            <button
+                                className={styles.backButton}
+                                type="button"
+                                disabled={false}
+                                style={{ display: nextPage ? "" : "none" }}
+                                onClick={() => setNextPage(false)}
+                            >
+                                <p className={styles.buttonText}>
+                                    <AiOutlineArrowLeft
+                                        style={{ fontSize: "1rem" }}
+                                    />
+                                </p>
+                            </button>
+                            <button
+                                className={styles.button}
+                                type="button"
+                                disabled={false}
+                                style={{ display: nextPage ? "" : "none" }}
+                                onClick={() =>
+                                    sendForm(
+                                        surname,
+                                        lastname,
+                                        email,
+                                        phone,
+                                        value,
+                                        study,
+                                        studyYear,
+                                        studentID,
+                                        studentEM,
+                                        about1,
+                                        about2,
+                                        about3,
+                                        photoOK
+                                    )
+                                }
+                            >
+                                <p className={styles.buttonText}>Søk opptak</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div
+                        style={{
+                            display: nextPage || sent ? "none" : "",
+                        }}
+                    >
                         <div className={styles.projectTitle}>
                             <p>Prosjektsøknad - Høst 2023</p>
                         </div>
@@ -250,7 +631,7 @@ const Apply = () => {
                             />
                             <div className={styles.projectEmail}>
                                 <p style={{ color: falseEmail ? "red" : "" }}>
-                                    Epost Addresse{" "}
+                                    Student Epostaddresse{" "}
                                     <a
                                         style={{
                                             display: falseEmail ? "" : "none",
@@ -267,34 +648,33 @@ const Apply = () => {
                                     left: "3vh",
                                 }}
                                 type="text"
-                                placeholder="cogitron@cogito-ntnu.no"
+                                placeholder="cogitron@stud.ntnu.no"
                                 onChange={(event) =>
                                     setEmail(event.target.value)
                                 }
                             />
-                            <div className={styles.projectWhy}>
-                                <p style={{ color: falseAbout ? "red" : "" }}>
-                                    Fortell oss litt om deg selv{" "}
+                            <div className={styles.projectPhone}>
+                                <p style={{ color: falsePhone ? "red" : "" }}>
+                                    Telefonnummer{" "}
                                     <a
                                         style={{
-                                            display: falseAbout ? "" : "none",
+                                            display: falsePhone ? "" : "none",
                                         }}
                                     >
                                         *
                                     </a>
                                 </p>
                             </div>
-                            <textarea
+                            <input
                                 className={styles.input}
                                 style={{
                                     width: "50vh",
                                     left: "3vh",
-                                    height: "8vh",
                                     resize: "none",
-                                    paddingTop: "1vh",
                                 }}
+                                placeholder="XXX XX XXX"
                                 onChange={(event) =>
-                                    setAbout(event.target.value)
+                                    setPhone(event.target.value)
                                 }
                             />
                             <div className={styles.projectChosen}>
@@ -337,24 +717,24 @@ const Apply = () => {
                                     />
                                 ))}
                             </div>
+
                             <div className={styles.applyButton}>
                                 <button
-                                    className={styles.button}
+                                    className={styles.nextButton}
                                     type="button"
                                     disabled={false}
-                                    onClick={() =>
-                                        sendForm(
+                                    style={{ display: nextPage ? "none" : "" }}
+                                    onClick={() => {
+                                        checkFormFields(
                                             surname,
                                             lastname,
                                             email,
-                                            about,
+                                            phone,
                                             value
-                                        )
-                                    }
+                                        );
+                                    }}
                                 >
-                                    <p className={styles.buttonText}>
-                                        Søk opptak
-                                    </p>
+                                    <p className={styles.buttonText}>Neste</p>
                                 </button>
                             </div>
                             <div
