@@ -87,21 +87,6 @@ const Apply = () => {
         return regex.test(phone);
     };
 
-    const validateStudyYear = (studyYear) => {
-        var regex = /^[1-7åa-z\.]{4}$$/;
-        return regex.test(studyYear);
-    };
-
-    const validateStudentID = (studentID) => {
-        var regex = /[0-9]{6}$/;
-        return regex.test(studentID);
-    };
-
-    const validateStudentEM = (studentEM) => {
-        var regex = /[0-9]{7,10}$/;
-        return regex.test(studentEM);
-    };
-
     const resetForm = () => {
         setFalseSurname(false);
         setFalseLastname(false);
@@ -164,18 +149,8 @@ const Apply = () => {
         resetSecondForm();
         const errors = [];
 
-        if (study == "" || !validateStudyYear(studyYear)) {
+        if (study == "" || studyYear == "") {
             setFalseStudy(true);
-            errors.push("");
-        }
-
-        if (!validateStudentID(studentID)) {
-            setFalseStudentID(true);
-            errors.push("");
-        }
-
-        if (!validateStudentEM(studentEM)) {
-            setFalseStudentEM(true);
             errors.push("");
         }
 
