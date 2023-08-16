@@ -116,6 +116,178 @@
     z-index: 10;
     background-color: #F1F2F6;
     border-style: none;
+    width: 50vh;
+    left: 3vh;
+}
+
+.inputStudy {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 38vh;
+    left: 3vh;
+}
+
+.inputStudyYear {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 10vh;
+    left: 5vh;
+}
+
+.inputStudentID {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 24vh;
+    left: 3vh;
+}
+
+.inputStudentEM {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 23vh;
+    left: 6vh;
+}
+
+.textArea {
+    position: absolute;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 10vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 80vh;
+    left: 60vh;
+    padding-top: 1vh;
+    resize: none;
+}
+
+.textArea1 {
+    position: absolute;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 10vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 80vh;
+    left: 60vh;
+    padding-top: 1vh;
+    top: 29vh;
+    resize: none;
+}
+
+.textArea2 {
+    position: absolute;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 10vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 80vh;
+    left: 60vh;
+    padding-top: 1vh;
+    top: 43vh;
+    resize: none;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid #ff4757;
+    box-shadow: 0 0 2px #ff4757;
+}
+
+.inputFirstName {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 24vh;
+    left: 3vh;
+}
+
+.inputFirstName:focus {
+    outline: none;
+    border: 1px solid #ff4757;
+    box-shadow: 0 0 2px #ff4757;
+}
+
+.inputLastName {
+    position: relative;
+    padding-left: 1vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    font-size: 16px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    z-index: 10;
+    background-color: #F1F2F6;
+    border-style: none;
+    width: 24vh;
+    left: 5vh;
+}
+
+.inputLastName:focus {
+    outline: none;
+    border: 1px solid #ff4757;
+    box-shadow: 0 0 2px #ff4757;
 }
 
 .projectFirstName {
@@ -190,12 +362,6 @@
     z-index: 2;
 }
 
-.input:focus {
-    outline: none;
-    border: 1px solid #ff4757;
-    box-shadow: 0 0 2px #ff4757;
-}
-
 .projects {
     position: absolute;
     display: flex;
@@ -210,6 +376,7 @@
     border-radius: 20px;
     right: 5vh;
     bottom: 4vh;
+
     background-color: #F1F2F6;
 }
 
@@ -394,8 +561,6 @@
         left: 65vh;
     }
 
-
-
     .applyButton {
         position: absolute;
         bottom: 6vh;
@@ -418,4 +583,518 @@
         bottom: 6vh;
         background-color: #F1F2F6;
     }
+}
+
+/* --- css for IPhone 11 Pro Max --- */
+@media only screen and (max-width: 414px) and (max-height: 896px) {
+    .main {
+        height: 165vh;
+        width: 100vw;
+        padding-top: 85vh;
+        overflow: hidden;
+        object-fit: fill;
+        animation: backgroundColor-change 1s forwards ease-in-out;
+    }
+    
+    .backgroundColor {
+        position: absolute;
+        top: 5vh;
+        right: 14vh;
+        width: 20vh;
+        height: 4vh;
+        background-color: #ff4757;
+        border-radius: 20px;
+        opacity: 95%;
+        max-height: 100vh;
+        max-width: 100vw;
+        animation: background-change 0.5s forwards ease-in-out;
+    }
+    
+    .sentText {
+        margin: auto;
+        width: 50vh;
+        padding-top: 30vh;
+        text-align: center;
+        font-size: large;
+    }
+    
+    .errorText {
+        position: absolute;
+        color: red;
+        bottom: 5vh;
+        left: 30vh;
+    }
+    
+    .projectButton {
+        position: absolute;
+        top: 20vh;
+        left: 4vh;
+        display: inline-flex;
+        padding: 10px 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px 20px 0px 0px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+        z-index: 2;
+        filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.8));
+    }
+    
+    .vervButton {
+        position: absolute;
+        top: 20vh;
+        left: 22vh;
+        display: inline-flex;
+        padding: 10px 70px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px 20px 0px 0px;
+        border: none;
+        background-color: #DFE4EA;
+        cursor: pointer;
+        z-index: 1;
+        filter: drop-shadow(-1px 0px 0px rgba(0, 0, 0, 0.8));
+    }
+    
+    .projectCard {
+        position: absolute;
+        height: 125vh;
+        width: 85vw;
+        left: 4vh;
+        top: 25vh;
+        border-radius: 0px 20px 20px 20px;
+        background-color: white;
+        z-index: 3;
+        filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.8));
+    }
+    
+    .projectTitle {
+        font-size: 20px;
+        color: #2f3542;
+        filter: drop-shadow(2px 2px 1px #f1f2f6);
+        font-weight: 900;
+        padding-left: 2vh;
+        padding-top: 3vh;
+        padding-bottom: 1vh;  
+        cursor: default; 
+    }
+    
+    .projectInputCard {
+        margin: auto;
+        height: 60vh;
+        padding-top: 62vh;
+        width: 83vw;
+        background-color: #DFE4EA;
+        border-radius: 20px;
+    }
+    
+    .input {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 39vh;
+        left: 2vh;
+    }
+    
+    .inputStudy {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 26vh;
+        left: 2vh;
+    }
+    
+    .inputStudyYear {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 10vh;
+        left: 5vh;
+    }
+    
+    .inputStudentID {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 18vh;
+        left: 2vh;
+    }
+    
+    .inputStudentEM {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 18vh;
+        left: 5vh;
+    }
+
+    
+    
+    .textArea {
+        position: absolute;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 15vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 40vh;
+        left: 2vh;
+        padding-top: 1vh;
+        top: 12vh;
+        resize: none;
+    }
+
+    .textArea1 {
+        position: absolute;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 15vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 40vh;
+        left: 2vh;
+        padding-top: 1vh;
+        top: 30vh;
+        resize: none;
+    }
+
+    .textArea2 {
+        position: absolute;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 15vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 40vh;
+        left: 2vh;
+        padding-top: 1vh;
+        top: 50vh;
+        resize: none;
+    }
+    
+    .input:focus {
+        outline: none;
+        border: 1px solid #ff4757;
+        box-shadow: 0 0 2px #ff4757;
+    }
+    
+    .inputFirstName {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 18vh;
+        left: 2vh;
+    }
+    
+    .inputFirstName:focus {
+        outline: none;
+        border: 1px solid #ff4757;
+        box-shadow: 0 0 2px #ff4757;
+    }
+    
+    .inputLastName {
+        position: relative;
+        padding-left: 1vh;
+        border-radius: 10px;
+        height: 4.5vh;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        font-size: 16px;
+        font-family: "Lexend Deca";
+        font-weight: 400;
+        z-index: 10;
+        background-color: #F1F2F6;
+        border-style: none;
+        width: 18vh;
+        left: 5vh;
+    }
+    
+    .inputLastName:focus {
+        outline: none;
+        border: 1px solid #ff4757;
+        box-shadow: 0 0 2px #ff4757;
+    }
+    
+    .projectFirstName {
+        position: relative;
+        cursor: default; 
+        display: flex;
+        font-size: 14px;
+        color: #2f3542;
+        font-weight: 500;
+        padding-left: 2vh;
+        padding-top: 2vh;
+        padding-bottom: 0.5vh;
+        gap: 14vh;
+    }
+    
+    .projectStudyAndYear {
+        position: relative;
+        cursor: default; 
+        display: flex;
+        font-size: 14px;
+        color: #2f3542;
+        font-weight: 500;
+        padding-left: 2vh;
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+        gap: 20vh;
+    }
+
+    .showOldAboutText {
+        display: none;
+    }
+    
+    .projectNumbers {
+        position: relative;
+        cursor: default; 
+        display: flex;
+        font-size: 12px;
+        color: #2f3542;
+        font-weight: 500;
+        padding-left: 2vh;
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+        gap: 6vh;
+    }
+    
+    .projectEmail {
+        position: relative;
+        cursor: default; 
+        font-size: 14px;
+        color: #2f3542;
+        font-weight: 500;
+        padding-left: 2vh;
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+    }
+    
+    .projectPhone {
+        position: relative;
+        cursor: default; 
+        font-size: 14px;
+        color: #2f3542;
+        font-weight: 500;
+        padding-left: 2vh;
+        padding-top: 2vh;
+        padding-bottom: 1vh;
+    }
+    
+    .projectChosen {
+        position: relative;
+        cursor: default; 
+        font-size: 14px;
+        color: #2f3542;
+        font-weight: 500;
+        padding-left: 2vh;
+        padding-top: 2vh;
+        z-index: 2;
+    }
+    
+    .projects {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: center;
+        column-count: 3;
+        row-gap: 4vh;
+        column-gap: 2vh;
+        left: 1.2vh;
+        height: 50vh;
+        width: 80vw;
+        top: 17vh;
+        padding-left: 2vh;
+        border-radius: 20px;
+        background-color: #F1F2F6;
+    }
+    
+    
+    .projectsText {
+        position: absolute;
+        cursor: default; 
+        font-size: 14px;
+        color: #2f3542;
+        filter: drop-shadow(2px 2px 1px #a4b0be);
+        font-weight: 700;
+        top: 11vh;
+        left: 2vh;
+    }
+    
+    .applyButton {
+        position: absolute;
+        bottom: 4vh;
+        left: 2vh;
+    }
+    
+    .button {
+        display: inline-flex;
+        margin-left: 8vh;
+        padding: 15px 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border: none;
+        background-color: #ff4757;
+        cursor: pointer;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        color: #FFF;
+        transition: 0.2s;
+        z-index: 50;
+    }
+    
+    .backButton {
+        position: absolute;
+        display: inline-flex;
+        padding: 15px 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border: none;
+        background-color: #ff4757;
+        cursor: pointer;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        color: #FFF;
+        transition: 0.2s;
+        z-index: 20;
+    }
+    
+    .nextButton {
+        display: inline-flex;
+        left: -3vh;
+        padding: 15px 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border: none;
+        background-color: #ff4757;
+        cursor: pointer;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        color: #FFF;
+        transition: 0.2s;
+        z-index: 20;
+    }
+    
+    .button:hover {
+        transition: 0.2s;
+        transform: scale(1.05);
+    }
+    
+    .backButton:hover  {
+        transition: 0.2s;
+        transform: scale(1.05);
+    }
+    
+    .nextButton:hover {
+        transition: 0.2s;
+        transform: scale(1.05);
+    }
+    
+    .button:disabled {
+        background-color: #ff4756c0;
+        color: rgba(255, 255, 255, 0.384);
+        transform: scale(1);
+        cursor:default;
+    }
+    
+    .buttonText {
+        font-family: Lexend Deca;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .buttonTabText {
+        font-family: Lexend Deca;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+    }
+    
+    .selectorPosition {
+        position: relative;
+        max-width: 39vh;
+        left: 2vh;
+        top: 0.5vh;
+        border-radius: 20px;
+    }
+    
+    .selector {
+        border-radius: 20px;
+    }
+    
+    .toggle {
+        position: relative;
+        left: 3.5vh;
+    }
+
+    .footer {
+        position: relative;
+        padding-top: 65vh;
+    }
+
 }

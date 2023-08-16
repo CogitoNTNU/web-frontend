@@ -70,3 +70,69 @@
         transform: translateY(0.5vh);
     }
 }
+
+/* --- css for IPhone 11 Pro Max --- */
+@media only screen and (max-width: 414px) and (max-height: 896px) {
+    .main {
+        height: 10vh;
+        width: 10vh;
+        border-radius: 15px;
+        border-style: none;
+        margin-top: 0vh;
+        margin-left: 1vh;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: 50;
+    }
+    
+    .projectText {
+        position: relative;
+        white-space: nowrap;
+        padding-top: 0.5vh;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .image {
+        position: absolute;
+    }
+    
+    .tempImg {
+        height: 10vh;
+        width: 10vh;
+        border-radius: 15px;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+    }
+    
+    .hoverpopup {
+        position: absolute;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+        color: white;
+        font-weight: 500;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 10vh;
+        max-width: 20vh;
+        bottom: 12vh;
+        left: -5vh;
+        font-size: 10px;
+        background-color: #ff6b81;
+        border-radius: 10px;
+        padding: 1.5em;
+        transform: scale(0);
+        transition: transform 200ms ease;
+        transform-origin: 50% 100%;
+        pointer-events: none;
+    }
+    
+    .main:hover .hoverpopup{
+        transform: scale(1);
+    }
+    
+    .popup {
+        z-index: 100;
+        position: absolute;
+        bottom: 3vh;
+        animation: bouncing 3s alternate infinite ease-in-out;
+    }
+}

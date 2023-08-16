@@ -326,7 +326,10 @@ const Apply = () => {
                                         *
                                     </a>
                                 </p>
-                                <p style={{ color: falseAbout ? "red" : "" }}>
+                                <p
+                                    className={styles.showOldAboutText}
+                                    style={{ color: falseAbout ? "red" : "" }}
+                                >
                                     Litt om deg selv{" "}
                                     <a
                                         style={{
@@ -337,9 +340,9 @@ const Apply = () => {
                                     </a>
                                 </p>
                             </div>
+
                             <input
-                                className={styles.input}
-                                style={{ width: "38vh", left: "3vh" }}
+                                className={styles.inputStudy}
                                 type="text"
                                 placeholder="Datateknologi, Fysmat, Kybe..."
                                 onChange={(event) =>
@@ -347,57 +350,31 @@ const Apply = () => {
                                 }
                             />
                             <input
-                                className={styles.input}
-                                style={{ width: "10vh", left: "5vh" }}
+                                className={styles.inputStudyYear}
                                 type="text"
                                 placeholder="X.år"
                                 onChange={(event) =>
                                     setStudyYear(event.target.value)
                                 }
                             />
+
                             <textarea
-                                className={styles.input}
-                                style={{
-                                    width: "80vh",
-                                    top: "15vh",
-                                    left: "60vh",
-                                    height: "10vh",
-                                    resize: "none",
-                                    paddingTop: "1vh",
-                                    position: "absolute",
-                                }}
+                                className={styles.textArea}
                                 placeholder="Hva slags erfaring har du med AI og programmering fra før?"
                                 onChange={(event) =>
                                     setAbout1(event.target.value)
                                 }
                             />
+
                             <textarea
-                                className={styles.input}
-                                style={{
-                                    width: "80vh",
-                                    top: "29vh",
-                                    left: "60vh",
-                                    height: "10vh",
-                                    resize: "none",
-                                    paddingTop: "1vh",
-                                    position: "absolute",
-                                }}
+                                className={styles.textArea1}
                                 placeholder="Hvordan hørte du om Cogito NTNU?"
                                 onChange={(event) =>
                                     setAbout2(event.target.value)
                                 }
                             />
                             <textarea
-                                className={styles.input}
-                                style={{
-                                    width: "80vh",
-                                    top: "43vh",
-                                    left: "60vh",
-                                    height: "10vh",
-                                    resize: "none",
-                                    paddingTop: "1vh",
-                                    position: "absolute",
-                                }}
+                                className={styles.textArea2}
                                 placeholder="Hvorfor ønsker du å søke hos oss i Cogito NTNU?"
                                 onChange={(event) =>
                                     setAbout3(event.target.value)
@@ -438,11 +415,7 @@ const Apply = () => {
                                 </p>
                             </div>
                             <input
-                                className={styles.input}
-                                style={{
-                                    width: "24vh",
-                                    left: "3vh",
-                                }}
+                                className={styles.inputStudentID}
                                 type="text"
                                 placeholder="XXXXXX"
                                 onChange={(event) =>
@@ -450,11 +423,7 @@ const Apply = () => {
                                 }
                             />
                             <input
-                                className={styles.input}
-                                style={{
-                                    width: "23vh",
-                                    left: "6vh",
-                                }}
+                                className={styles.inputStudentEM}
                                 type="text"
                                 placeholder="XXXXXXXXXX"
                                 onChange={(event) =>
@@ -482,7 +451,7 @@ const Apply = () => {
                                             borderStyle: state.isFocused
                                                 ? "none"
                                                 : "none",
-                                            height: "8vh",
+                                            height: "10vh",
                                             backgroundColor: "#F1F2F6",
                                             borderRadius: "10px",
                                             filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))",
@@ -612,8 +581,7 @@ const Apply = () => {
                                 </p>
                             </div>
                             <input
-                                className={styles.input}
-                                style={{ width: "24vh", left: "3vh" }}
+                                className={styles.inputFirstName}
                                 type="text"
                                 placeholder="Cogitron"
                                 onChange={(event) =>
@@ -621,8 +589,7 @@ const Apply = () => {
                                 }
                             />
                             <input
-                                className={styles.input}
-                                style={{ width: "24vh", left: "5vh" }}
+                                className={styles.inputLastName}
                                 type="text"
                                 placeholder="Cogito"
                                 onChange={(event) =>
@@ -643,10 +610,6 @@ const Apply = () => {
                             </div>
                             <input
                                 className={styles.input}
-                                style={{
-                                    width: "50vh",
-                                    left: "3vh",
-                                }}
                                 type="text"
                                 placeholder="cogitron@stud.ntnu.no"
                                 onChange={(event) =>
@@ -667,11 +630,6 @@ const Apply = () => {
                             </div>
                             <input
                                 className={styles.input}
-                                style={{
-                                    width: "50vh",
-                                    left: "3vh",
-                                    resize: "none",
-                                }}
                                 placeholder="XXX XX XXX"
                                 onChange={(event) =>
                                     setPhone(event.target.value)
@@ -693,7 +651,7 @@ const Apply = () => {
                             <div className={styles.projectsText}>
                                 <p>
                                     Velg 3 mulige prosjekter{" "}
-                                    <a style={{ fontSize: "18px" }}>
+                                    <a style={{ fontSize: "14px" }}>
                                         (Prioritert i rekkefølge)
                                     </a>
                                 </p>
