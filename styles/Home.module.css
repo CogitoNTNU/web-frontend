@@ -340,7 +340,7 @@
 }
 
 /* --- css for IPhone 11 Pro Max --- */
-@media only screen and (width: 414px) and (width: 896px) {
+@media only screen and (width: 414px) and (max-height: 896px) {
   .sun {
     position: absolute;
     left: -60vh;
