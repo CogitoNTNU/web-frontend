@@ -236,6 +236,8 @@ const Apply = () => {
                         "entry.307282896": projects[1].value,
                         "entry.1565910335": projects[2].value,
                         "entry.875921033": photo,
+                        "entry.1371474035": studentID,
+                        "entry.84615272": studentEM,
                         emailAddress: email,
                     }),
                 {
