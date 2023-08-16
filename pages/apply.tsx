@@ -24,7 +24,7 @@ const Apply = () => {
     const [falsePhone, setFalsePhone] = useState(false);
     const [error, setError] = useState(false);
     const [nextPage, setNextPage] = useState(false);
-    const [photoOK, setPhotoOK] = useState(false);
+    const [photoOK, setPhotoOK] = useState(true);
     const [study, setStudy] = useState("");
     const [studyYear, setStudyYear] = useState("");
     const [falseStudy, setFalseStudy] = useState(false);
@@ -98,7 +98,7 @@ const Apply = () => {
     };
 
     const validateStudentEM = (studentEM) => {
-        var regex = /[0-9]{10}$/;
+        var regex = /[0-9]{7,10}$/;
         return regex.test(studentEM);
     };
 
@@ -425,7 +425,7 @@ const Apply = () => {
                                         color: falseStudentEM ? "red" : "",
                                     }}
                                 >
-                                    EM-nummer{" "}
+                                    EM-nummer (Bare siffer){" "}
                                     <a
                                         style={{
                                             display: falseStudentEM
