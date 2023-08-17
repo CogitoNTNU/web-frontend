@@ -31,7 +31,6 @@
 
 .hoverpopup {
     position: absolute;
-    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
     font-size: 8px;
     color: white;
     font-weight: 500;
@@ -40,7 +39,7 @@
     width: 80vh;
     min-width: 40vh;
     max-width: 60vh;
-    bottom: 17vh;
+    bottom: 20vh;
     left: -22vh;
     font-size: 18px;
     background-color: #ff6b81;
@@ -56,12 +55,6 @@
     transform: scale(1);
 }
 
-.popup {
-    z-index: 100;
-    position: absolute;
-    bottom: 3vh;
-    animation: bouncing 3s alternate infinite ease-in-out;
-}
 @keyframes bouncing {
     from {
         transform: translateY(-0.5vh);

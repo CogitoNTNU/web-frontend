@@ -10,7 +10,7 @@ body {
   margin: 0;
   font-family: 'Lexend Deca';
   background-color: #13395B;
-
+  max-width: 100vw;
 }
 
 a {

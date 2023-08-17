@@ -36,13 +36,6 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                     initial={{ scale: 0 }}
                     transition={{ ease: "easeInOut" }}
                 >
-                    <div className={styles.popup}>
-                        <aside className={styles.hoverpopup}>
-                            <h2>{title}</h2>
-                            <p>{desc}</p>
-                        </aside>
-                    </div>
-
                     <Image
                         priority
                         loader={imageLoader}
@@ -60,6 +53,13 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                     />
                     <div className={styles.projectText}>
                         <p>{title}</p>
+                    </div>
+
+                    <div className={styles.popup}>
+                        <div className={styles.hoverpopup}>
+                            <h2>{title}</h2>
+                            <p>{desc}</p>
+                        </div>
                     </div>
                 </motion.div>
             </div>

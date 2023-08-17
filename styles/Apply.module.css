@@ -5,10 +5,9 @@
 
 .main {
     height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
     padding-top: 85vh;
     overflow: hidden;
-    object-fit: fill;
     animation: backgroundColor-change 1s forwards ease-in-out;
 }
 
@@ -372,7 +371,7 @@
     row-gap: 4.2vh;
     column-gap: 3vh;
     height: 45vh;
-    width: 45vw;
+    width: 47vw;
     border-radius: 20px;
     right: 5vh;
     bottom: 4vh;

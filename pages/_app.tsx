@@ -102,7 +102,7 @@ const App = ({ Component, pageProps }) => {
                                     default: "bounce",
                                 },
                                 random: false,
-                                speed: 2,
+                                speed: 0.6,
                                 straight: false,
                             },
                             number: {
