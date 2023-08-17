@@ -106,9 +106,9 @@
         justify-content: space-between;
         min-width: 10vh;
         max-width: 20vh;
-        bottom: 12vh;
+        bottom: 15vh;
         left: -5vh;
-        font-size: 10px;
+        font-size: 11px;
         background-color: #ff6b81;
         border-radius: 10px;
         padding: 1.5em;
@@ -122,10 +122,4 @@
         transform: scale(1);
     }
     
-    .popup {
-        z-index: 100;
-        position: absolute;
-        bottom: 3vh;
-        animation: bouncing 3s alternate infinite ease-in-out;
-    }
 }

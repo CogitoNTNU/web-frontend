@@ -299,7 +299,7 @@
     padding-left: 3vh;
     padding-top: 2vh;
     padding-bottom: 1vh;
-    gap: 18vh;
+    gap: 16vh;
 }
 
 .projectStudyAndYear {
@@ -312,7 +312,7 @@
     padding-left: 3vh;
     padding-top: 2vh;
     padding-bottom: 1vh;
-    gap: 37vh;
+    gap: 35vh;
 }
 
 .projectNumbers {
@@ -388,7 +388,7 @@
     filter: drop-shadow(2px 2px 1px #a4b0be);
     font-weight: 700;
     top: 11vh;
-    left: 65vh;
+    left: 63vh;
 }
 
 .applyButton {

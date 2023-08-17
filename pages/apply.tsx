@@ -294,7 +294,7 @@ const Apply = () => {
                         <div className={styles.projectInputCard}>
                             <div className={styles.projectStudyAndYear}>
                                 <p style={{ color: falseStudy ? "red" : "" }}>
-                                    Studie og Årstrinn{" "}
+                                    Studie og Årstrinn *{" "}
                                     <a
                                         style={{
                                             display: falseStudy ? "" : "none",
@@ -307,7 +307,7 @@ const Apply = () => {
                                     className={styles.showOldAboutText}
                                     style={{ color: falseAbout ? "red" : "" }}
                                 >
-                                    Litt om deg selv{" "}
+                                    Litt om deg selv *{" "}
                                     <a
                                         style={{
                                             display: falseAbout ? "" : "none",
@@ -459,7 +459,7 @@ const Apply = () => {
                             </div>
                             <div className={styles.projectPhone}>
                                 <p style={{ color: falsePhone ? "red" : "" }}>
-                                    Fototillatelse{" "}
+                                    Fototillatelse *{" "}
                                     <a
                                         style={{
                                             display: falsePhone ? "" : "none",
@@ -531,7 +531,7 @@ const Apply = () => {
                         <div className={styles.projectInputCard}>
                             <div className={styles.projectFirstName}>
                                 <p style={{ color: falseSurname ? "red" : "" }}>
-                                    Fornavn{" "}
+                                    Fornavn *{" "}
                                     <a
                                         style={{
                                             display: falseSurname ? "" : "none",
@@ -545,7 +545,7 @@ const Apply = () => {
                                         color: falseLastname ? "red" : "",
                                     }}
                                 >
-                                    Etternavn{" "}
+                                    Etternavn *{" "}
                                     <a
                                         style={{
                                             display: falseLastname
@@ -575,7 +575,7 @@ const Apply = () => {
                             />
                             <div className={styles.projectEmail}>
                                 <p style={{ color: falseEmail ? "red" : "" }}>
-                                    Student Epostaddresse{" "}
+                                    Student Epostaddresse *{" "}
                                     <a
                                         style={{
                                             display: falseEmail ? "" : "none",
@@ -595,7 +595,7 @@ const Apply = () => {
                             />
                             <div className={styles.projectPhone}>
                                 <p style={{ color: falsePhone ? "red" : "" }}>
-                                    Telefonnummer{" "}
+                                    Telefonnummer *{" "}
                                     <a
                                         style={{
                                             display: falsePhone ? "" : "none",
@@ -627,7 +627,7 @@ const Apply = () => {
 
                             <div className={styles.projectsText}>
                                 <p>
-                                    Velg 3 mulige prosjekter{" "}
+                                    Velg 3 mulige prosjekter *{" "}
                                     <a style={{ fontSize: "14px" }}>
                                         (Prioritert i rekkefølge)
                                     </a>
