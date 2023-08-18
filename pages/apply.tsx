@@ -294,26 +294,12 @@ const Apply = () => {
                             <div className={styles.projectStudyAndYear}>
                                 <p style={{ color: falseStudy ? "red" : "" }}>
                                     Studie og Årstrinn *{" "}
-                                    <a
-                                        style={{
-                                            display: falseStudy ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                                 <p
                                     className={styles.showOldAboutText}
                                     style={{ color: falseAbout ? "red" : "" }}
                                 >
                                     Litt om deg selv *{" "}
-                                    <a
-                                        style={{
-                                            display: falseAbout ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
 
@@ -363,15 +349,6 @@ const Apply = () => {
                                     }}
                                 >
                                     Studentkortnummer{" "}
-                                    <a
-                                        style={{
-                                            display: falseStudentID
-                                                ? ""
-                                                : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                                 <p
                                     style={{
@@ -379,15 +356,6 @@ const Apply = () => {
                                     }}
                                 >
                                     EM-nummer (Bare siffer){" "}
-                                    <a
-                                        style={{
-                                            display: falseStudentEM
-                                                ? ""
-                                                : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
                             <input
@@ -410,13 +378,6 @@ const Apply = () => {
                             <div className={styles.projectChosen}>
                                 <p style={{ color: falseValue ? "red" : "" }}>
                                     Valgte Prosjekter{" "}
-                                    <a
-                                        style={{
-                                            display: falseValue ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
                             <div className={styles.selectorPosition}>
@@ -459,13 +420,6 @@ const Apply = () => {
                             <div className={styles.projectPhone}>
                                 <p style={{ color: falsePhone ? "red" : "" }}>
                                     Fototillatelse *{" "}
-                                    <a
-                                        style={{
-                                            display: falsePhone ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
                             <div className={styles.toggle}>
@@ -531,13 +485,6 @@ const Apply = () => {
                             <div className={styles.projectFirstName}>
                                 <p style={{ color: falseSurname ? "red" : "" }}>
                                     Fornavn *{" "}
-                                    <a
-                                        style={{
-                                            display: falseSurname ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                                 <p
                                     style={{
@@ -545,15 +492,6 @@ const Apply = () => {
                                     }}
                                 >
                                     Etternavn *{" "}
-                                    <a
-                                        style={{
-                                            display: falseLastname
-                                                ? ""
-                                                : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
                             <input
@@ -575,13 +513,6 @@ const Apply = () => {
                             <div className={styles.projectEmail}>
                                 <p style={{ color: falseEmail ? "red" : "" }}>
                                     Student Epostaddresse *{" "}
-                                    <a
-                                        style={{
-                                            display: falseEmail ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
                             <input
@@ -595,13 +526,6 @@ const Apply = () => {
                             <div className={styles.projectPhone}>
                                 <p style={{ color: falsePhone ? "red" : "" }}>
                                     Telefonnummer *{" "}
-                                    <a
-                                        style={{
-                                            display: falsePhone ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
                             <input
@@ -614,13 +538,6 @@ const Apply = () => {
                             <div className={styles.projectChosen}>
                                 <p style={{ color: falseValue ? "red" : "" }}>
                                     Valgte Prosjekter{" "}
-                                    <a
-                                        style={{
-                                            display: falseValue ? "" : "none",
-                                        }}
-                                    >
-                                        *
-                                    </a>
                                 </p>
                             </div>
 
