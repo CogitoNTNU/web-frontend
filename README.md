@@ -2,4 +2,4 @@
 Cogito website frontend
 ---
 
-Developed by [sandviklee](www.github.com/sandviklee)
+Developed by [sandviklee](https://www.github.com/sandviklee)
