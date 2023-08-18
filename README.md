@@ -1,2 +1,5 @@
 # Cogito-Website
-My take on the Cogito website design for cogito-ntnu.no
+Cogito website frontend
+---
+
+Developed by [sandviklee](www.github.com/sandviklee)
