@@ -375,7 +375,7 @@
     border-radius: 20px;
     right: 5vh;
     bottom: 4vh;
-
+    padding-left: 2vh;
     background-color: #F1F2F6;
 }
 
@@ -499,19 +499,9 @@
     left: 3.5vh;
 }
 
-@keyframes background-change {
-    from {
-
-    }
-    to {
-
-    }
-}
-
 @keyframes backgroundColor-change {
     to {
-       background-color: #ff4757;
-       
+       background-color: #062338;
     }
 }
 

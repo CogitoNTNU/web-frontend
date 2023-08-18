@@ -10,11 +10,12 @@ import { useRouter } from "next/router";
 
 const Navbar = (color) => {
     const router = useRouter();
-    const [buttonColor, setButtonColor] = useState("#FF6348");
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     const [isActiveHome, setIsActiveHome] = useState(true);
     const [isActiveAbout, setIsActiveAbout] = useState(false);
     const [isActiveProjects, setIsActiveProjects] = useState(false);
     const [isActiveTeam, setIsActiveTeam] = useState(false);
+    const [navbarColor, setNavbarColor] = useState("#13395b54");
     const functions = Array<Function>(
         setIsActiveHome,
         setIsActiveAbout,
@@ -37,20 +38,22 @@ const Navbar = (color) => {
     };
 
     useEffect(() => {
+        setButtonDisabled(false);
         if (router.pathname == "/") {
             handleClicked(setIsActiveHome);
-            setButtonColor("#ff4757");
+            setNavbarColor("#13395b54");
         } else if (router.pathname == "/about") {
             handleClicked(setIsActiveAbout);
-            setButtonColor("#ff4757");
+            setNavbarColor("#13395bf8");
         } else if (router.pathname == "/projects") {
             handleClicked(setIsActiveProjects);
-            setButtonColor("#ff4757");
+            setNavbarColor("#13395bf8");
         } else if (router.pathname == "/team") {
             handleClicked(setIsActiveTeam);
-            setButtonColor("#ff4757");
+            setNavbarColor("#13395bf8");
         } else if (router.pathname == "/apply") {
-            setButtonColor("#13395B");
+            setButtonDisabled(true);
+            setNavbarColor("#13395bf8");
             handleClicked(null);
         }
     }, [router]);
@@ -81,6 +84,7 @@ const Navbar = (color) => {
             <motion.nav
                 initial={{ opacity: 0, y: -60 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                style={{ backgroundColor: navbarColor }}
                 transition={{
                     duration: 1,
                     delay: 1.2,
@@ -94,8 +98,8 @@ const Navbar = (color) => {
                             <Image
                                 draggable={false}
                                 src={CogitoLogo}
-                                height="90"
-                                width="80"
+                                height="80"
+                                width="75"
                                 alt="CogitoLogo"
                                 onClick={() => scrollToTop()}
                             />
@@ -180,16 +184,14 @@ const Navbar = (color) => {
 
                         <div className={styles.buttonPos}>
                             <Link href="/apply">
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    style={{ backgroundColor: buttonColor }}
+                                <button
+                                    disabled={buttonDisabled}
                                     className={styles.button}
                                 >
                                     <p className={styles.buttonText}>
                                         Søk opptak
                                     </p>
-                                </motion.button>
+                                </button>
                             </Link>
                         </div>
                     </ul>

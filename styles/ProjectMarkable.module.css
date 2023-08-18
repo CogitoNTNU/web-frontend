@@ -48,6 +48,7 @@
     transform: scale(0);
     transition: transform 200ms ease;
     transform-origin: 50% 100%;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
     pointer-events: none;
 }
 
