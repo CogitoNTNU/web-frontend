@@ -580,8 +580,6 @@
         height: 165vh;
         width: 100vw;
         padding-top: 85vh;
-        overflow: hidden;
-        object-fit: fill;
         animation: backgroundColor-change 1s forwards ease-in-out;
     }
     
