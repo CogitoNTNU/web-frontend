@@ -958,6 +958,7 @@
         padding-left: 2vh;
         border-radius: 20px;
         background-color: #F1F2F6;
+        z-index: 100;
     }
     
     .projectsText {

@@ -36,7 +36,6 @@ const Home = () => {
         <>
             <Head>
                 <title>Hjem - Cogito NTNU</title>
-                <meta name="viewport" content="width=device-width" />
             </Head>
 
             <div className={styles.container}>
