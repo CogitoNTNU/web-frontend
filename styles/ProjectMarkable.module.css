@@ -47,7 +47,7 @@
     transform: scale(0);
     transition: transform 200ms ease;
     transform-origin: 50% 100%;
-    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+
     pointer-events: none;
 }
 
@@ -65,7 +65,7 @@
 }
 
 /* --- css for IPhone 11 Pro Max --- */
-@media only screen and (max-width: 414px) and (max-height: 896px) {
+@media only screen and (width: 414px) and (max-height: 896px) {
     .main {
         height: 10vh;
         width: 10vh;
@@ -104,8 +104,8 @@
         flex-direction: column;
         justify-content: space-between;
         width: 80vh;
-        min-width: 18vh;
-        max-width: 18vh;
+        min-width: 19vh;
+        max-width: 19vh;
         bottom: 14vh;
         left: -5vh;
         font-size: 9px;
