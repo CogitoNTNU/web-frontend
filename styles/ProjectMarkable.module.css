@@ -117,6 +117,7 @@
         transition: transform 200ms ease;
         transform-origin: 50% 100%;
         pointer-events: none;
+        z-index: 100;
     }
     
     .main:hover .hoverpopup{

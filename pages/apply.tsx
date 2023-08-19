@@ -140,8 +140,6 @@ const Apply = () => {
     const checkSecondFormFields = (
         study,
         studyYear,
-        studentID,
-        studentEM,
         about1,
         about2,
         about3
@@ -185,8 +183,6 @@ const Apply = () => {
             !checkSecondFormFields(
                 study,
                 studyYear,
-                studentID,
-                studentEM,
                 about1,
                 about2,
                 about3
