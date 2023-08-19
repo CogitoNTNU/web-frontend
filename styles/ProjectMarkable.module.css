@@ -31,7 +31,6 @@
 
 .hoverpopup {
     position: absolute;
-    font-size: 8px;
     color: white;
     font-weight: 500;
     flex-direction: column;
@@ -73,7 +72,7 @@
         border-radius: 15px;
         border-style: none;
         margin-top: 0vh;
-        margin-left: 1vh;
+        margin-left: 1ch;
         overflow: hidden;
         cursor: pointer;
         z-index: 50;
@@ -84,7 +83,7 @@
         white-space: nowrap;
         padding-top: 0.5vh;
         text-align: center;
-        font-size: 14px;
+        font-size: 9px;
     }
     
     .image {
@@ -100,24 +99,23 @@
     
     .hoverpopup {
         position: absolute;
-        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
         color: white;
         font-weight: 500;
         flex-direction: column;
         justify-content: space-between;
-        min-width: 10vh;
-        max-width: 20vh;
-        bottom: 15vh;
-        left: -5vh;
-        font-size: 11px;
+        min-width: 20vh;
+        max-width: 25vh;
+        bottom: 14vh;
+        left: -7vh;
+        font-size: 10px;
         background-color: #ff6b81;
         border-radius: 10px;
         padding: 1.5em;
         transform: scale(0);
         transition: transform 200ms ease;
         transform-origin: 50% 100%;
+        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
         pointer-events: none;
-        z-index: 100;
     }
     
     .main:hover .hoverpopup{

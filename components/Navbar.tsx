@@ -8,7 +8,7 @@ import CogitoLogo from "../public/cogito_white.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-const Navbar = (color) => {
+const Navbar = () => {
     const router = useRouter();
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const [isActiveHome, setIsActiveHome] = useState(true);
@@ -98,8 +98,7 @@ const Navbar = (color) => {
                             <Image
                                 draggable={false}
                                 src={CogitoLogo}
-                                height="80"
-                                width="75"
+                                className={styles.cogitoLogo}
                                 alt="CogitoLogo"
                                 onClick={() => scrollToTop()}
                             />

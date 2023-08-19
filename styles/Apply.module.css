@@ -601,7 +601,7 @@
     
     .sentText {
         margin: auto;
-        width: 50vh;
+        width: 100%;
         padding-top: 30vh;
         text-align: center;
         font-size: large;
