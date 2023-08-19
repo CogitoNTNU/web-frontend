@@ -107,12 +107,12 @@
         min-width: 19vh;
         max-width: 19vh;
         bottom: 14vh;
-        left: -5vh;
+        left: -4vh;
         font-size: 9px;
         background-color: #ff6b81;
         border-radius: 10px;
         padding: 1.5em;
-        transform: scale(0);
+        transform: scale(1);
         transition: transform 200ms ease;
         transform-origin: 50% 100%;
         pointer-events: none;

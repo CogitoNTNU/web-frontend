@@ -46,6 +46,7 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                         }}
                         className={styles.tempImg}
                         draggable="false"
+                        
                         height={16}
                         width={16}
                         src={image}

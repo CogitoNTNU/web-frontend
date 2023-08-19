@@ -52,6 +52,7 @@
     border: none;
     background-color: white;
     cursor: pointer;
+    color: black;
     z-index: 2;
     filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.8));
 }
@@ -518,6 +519,7 @@
         border-radius: 20px 20px 0px 0px;
         border: none;
         background-color: white;
+        color: black;
         cursor: pointer;
         z-index: 2;
         filter: drop-shadow(1px 0px 0px rgba(0, 0, 0, 0.8));
