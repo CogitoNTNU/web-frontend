@@ -104,8 +104,8 @@
         flex-direction: column;
         justify-content: space-between;
         width: 80vh;
-        min-width: 20vh;
-        max-width: 20vh;
+        min-width: 18vh;
+        max-width: 18vh;
         bottom: 14vh;
         left: -5vh;
         font-size: 9px;
@@ -115,7 +115,6 @@
         transform: scale(0);
         transition: transform 200ms ease;
         transform-origin: 50% 100%;
-        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
         pointer-events: none;
         -webkit-appearance: none;
         z-index: 100;

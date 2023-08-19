@@ -55,11 +55,9 @@ const ProjectMarkable = ({ setValue, removeValue, title, image, desc }) => {
                         <p>{title}</p>
                     </div>
 
-                    <div className={styles.popup}>
-                        <div className={styles.hoverpopup}>
-                            <h2>{title}</h2>
-                            <p>{desc}</p>
-                        </div>
+                    <div className={styles.hoverpopup}>
+                        <h2>{title}</h2>
+                        <p>{desc}</p>
                     </div>
                 </motion.div>
             </div>
