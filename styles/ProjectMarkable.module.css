@@ -103,11 +103,12 @@
         font-weight: 500;
         flex-direction: column;
         justify-content: space-between;
+        width: 80vh;
         min-width: 20vh;
-        max-width: 25vh;
+        max-width: 20vh;
         bottom: 14vh;
-        left: -7vh;
-        font-size: 10px;
+        left: -5vh;
+        font-size: 9px;
         background-color: #ff6b81;
         border-radius: 10px;
         padding: 1.5em;
@@ -116,7 +117,6 @@
         transform-origin: 50% 100%;
         filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
         pointer-events: none;
-        z-index: 100;
     }
     
     .main:hover .hoverpopup{
