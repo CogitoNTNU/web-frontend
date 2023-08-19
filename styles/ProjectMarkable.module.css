@@ -112,7 +112,7 @@
         background-color: #ff6b81;
         border-radius: 10px;
         padding: 1.5em;
-        transform: scale(1);
+        transform: scale(0);
         transition: transform 200ms ease;
         transform-origin: 50% 100%;
         pointer-events: none;
