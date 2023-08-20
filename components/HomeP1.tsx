@@ -98,7 +98,7 @@ const HomeP1 = () => {
                             ease: [0, 0.71, 0.2, 1.0],
                         }}
                     >
-                        Å LÆRE OM <a style={{ color: "#1E90FF" }}>AI</a>?
+                        Å LÆRE OM <a style={{ color: "#30b3ec" }}>AI</a>?
                     </motion.p>
                 </div>
                 <div className={styles.theatre}>

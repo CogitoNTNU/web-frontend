@@ -77,15 +77,13 @@
     display: flex;
     align-items: center;
     gap: 1vh;
-}
-
-.icons {
     transform: scale(1);
     -webkit-transition: 100ms ease-in-out;
     transition: 100ms ease-in-out;
 }
 
-.icon:hover {
+.icons:hover {
+    color: #30b3ec;
     transform: scale(1.1);
     transition: 250ms ease-in-out;
     -webkit-transition: 250ms ease-in-out;

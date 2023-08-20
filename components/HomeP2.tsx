@@ -20,7 +20,7 @@ const HomeP2 = () => {
                         ease: [0, 0.71, 0.2, 1.01],
                     }}
                 >
-                    FÅ ERFARING MED <a style={{ color: "#1E90FF" }}>AI</a>!
+                    FÅ ERFARING MED <a style={{ color: "#30b3ec" }}>AI</a>!
                 </motion.p>
             </div>
 
