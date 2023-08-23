@@ -179,15 +179,7 @@ const Apply = () => {
         about3,
         photo
     ) => {
-        if (
-            !checkSecondFormFields(
-                study,
-                studyYear,
-                about1,
-                about2,
-                about3
-            )
-        ) {
+        if (!checkSecondFormFields(study, studyYear, about1, about2, about3)) {
             return;
         }
         setNextPage(false);
@@ -284,7 +276,7 @@ const Apply = () => {
                     </div>
                     <div style={{ display: nextPage ? "" : "none" }}>
                         <div className={styles.projectTitle}>
-                            <p>Prosjektsøknad - Høst 2023</p>
+                            <p>Prosjektsøknad - Høst 2023 (Frist 28. Aug)</p>
                         </div>
                         <div className={styles.projectInputCard}>
                             <div className={styles.projectStudyAndYear}>
@@ -474,7 +466,7 @@ const Apply = () => {
                         }}
                     >
                         <div className={styles.projectTitle}>
-                            <p>Prosjektsøknad - Høst 2023</p>
+                            <p>Prosjektsøknad - Høst 2023 (Frist 28. Aug)</p>
                         </div>
 
                         <div className={styles.projectInputCard}>
