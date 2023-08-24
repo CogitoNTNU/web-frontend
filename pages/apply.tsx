@@ -276,7 +276,16 @@ const Apply = () => {
                     </div>
                     <div style={{ display: nextPage ? "" : "none" }}>
                         <div className={styles.projectTitle}>
-                            <p>Prosjektsøknad - Høst 2023 (Frist 28. Aug)</p>
+                            <p>
+                                Prosjektsøknad - Høst 2023 (Frist 28. Aug){" "}
+                                <a
+                                    style={{ fontSize: "11px" }}
+                                    href="https://docs.google.com/forms/d/1aCpYxJC49reGm4sDmSdWCfdS_OFIZzLy8xAqQTPxeU8/viewform?edit_requested=true&pli=1"
+                                >
+                                    {" "}
+                                    Klikk her hvis ikke søknaden funker
+                                </a>
+                            </p>
                         </div>
                         <div className={styles.projectInputCard}>
                             <div className={styles.projectStudyAndYear}>
@@ -466,7 +475,16 @@ const Apply = () => {
                         }}
                     >
                         <div className={styles.projectTitle}>
-                            <p>Prosjektsøknad - Høst 2023 (Frist 28. Aug)</p>
+                            <p>
+                                Prosjektsøknad - Høst 2023 (Frist 28. Aug){" "}
+                                <a
+                                    style={{ fontSize: "11px" }}
+                                    href="https://docs.google.com/forms/d/1aCpYxJC49reGm4sDmSdWCfdS_OFIZzLy8xAqQTPxeU8/viewform?edit_requested=true&pli=1"
+                                >
+                                    {" "}
+                                    Klikk her hvis ikke søknaden funker
+                                </a>
+                            </p>
                         </div>
 
                         <div className={styles.projectInputCard}>
