@@ -279,7 +279,7 @@ const Apply = () => {
                             <p>
                                 Prosjektsøknad - Høst 2023 (Frist 28. Aug){" "}
                                 <a
-                                    style={{ fontSize: "11px" }}
+                                    className={styles.clickHereText}
                                     href="https://docs.google.com/forms/d/1aCpYxJC49reGm4sDmSdWCfdS_OFIZzLy8xAqQTPxeU8/viewform?edit_requested=true&pli=1"
                                 >
                                     {" "}
@@ -478,7 +478,7 @@ const Apply = () => {
                             <p>
                                 Prosjektsøknad - Høst 2023 (Frist 28. Aug){" "}
                                 <a
-                                    style={{ fontSize: "11px" }}
+                                    className={styles.clickHereText}
                                     href="https://docs.google.com/forms/d/1aCpYxJC49reGm4sDmSdWCfdS_OFIZzLy8xAqQTPxeU8/viewform?edit_requested=true&pli=1"
                                 >
                                     {" "}

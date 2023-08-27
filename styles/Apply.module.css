@@ -33,6 +33,10 @@
     font-size: large;
 }
 
+.clickHereText {
+    font-size: 10px;
+}
+
 .errorText {
     position: absolute;
     color: red;
@@ -552,6 +556,10 @@
         left: 65vh;
     }
 
+    .clickHereText {
+        font-size: 2px;
+    }
+
     .applyButton {
         position: absolute;
         bottom: 6vh;
@@ -606,6 +614,11 @@
         padding-top: 30vh;
         text-align: center;
         font-size: large;
+    }
+
+
+    .clickHereText {
+        font-size: 8px;
     }
     
     .errorText {
@@ -673,7 +686,7 @@
     .projectInputCard {
         margin: auto;
         height: 60vh;
-        padding-top: 62vh;
+        padding-top: 60vh;
         width: 83vw;
         background-color: #DFE4EA;
         border-radius: 20px;
