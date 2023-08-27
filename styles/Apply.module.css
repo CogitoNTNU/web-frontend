@@ -616,7 +616,6 @@
         font-size: large;
     }
 
-
     .clickHereText {
         font-size: 8px;
     }
@@ -673,7 +672,7 @@
     }
     
     .projectTitle {
-        font-size: 20px;
+        font-size: 16px;
         color: #2f3542;
         filter: drop-shadow(2px 2px 1px #f1f2f6);
         font-weight: 900;
