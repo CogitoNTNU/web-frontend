@@ -503,6 +503,7 @@ const Apply = () => {
                             <input
                                 className={styles.inputFirstName}
                                 type="text"
+                                disabled
                                 placeholder="Cogitron"
                                 onChange={(event) =>
                                     setSurname(event.target.value)
@@ -511,6 +512,7 @@ const Apply = () => {
                             <input
                                 className={styles.inputLastName}
                                 type="text"
+                                disabled
                                 placeholder="Cogito"
                                 onChange={(event) =>
                                     setLastname(event.target.value)
@@ -524,6 +526,7 @@ const Apply = () => {
                             <input
                                 className={styles.input}
                                 type="text"
+                                disabled
                                 placeholder="cogitron@stud.ntnu.no"
                                 onChange={(event) =>
                                     setEmail(event.target.value)
@@ -536,6 +539,7 @@ const Apply = () => {
                             </div>
                             <input
                                 className={styles.input}
+                                disabled
                                 placeholder="XXX XX XXX"
                                 onChange={(event) =>
                                     setPhone(event.target.value)

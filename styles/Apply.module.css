@@ -34,8 +34,10 @@
 }
 
 .clickHereText {
+    visibility: hidden;
     font-size: 10px;
 }
+
 
 .errorText {
     position: absolute;
@@ -450,6 +452,20 @@
     z-index: 20;
 }
 
+.nextButton:disabled {
+    background-color: #ff4756c0;
+    color: rgba(255, 255, 255, 0.384);
+    transform: scale(1);
+    cursor:default;
+}
+
+.nextButton:hover:disabled {
+    background-color: #ff4756c0;
+    color: rgba(255, 255, 255, 0.384);
+    transform: scale(1);
+    cursor:default;
+}
+
 .button:hover {
     transition: 0.2s;
     transform: scale(1.05);
@@ -557,6 +573,7 @@
     }
 
     .clickHereText {
+        visibility: hidden;
         font-size: 2px;
     }
 
@@ -617,6 +634,7 @@
     }
 
     .clickHereText {
+        visibility: hidden;
         font-size: 8px;
     }
     
@@ -1038,6 +1056,13 @@
         color: #FFF;
         transition: 0.2s;
         z-index: 20;
+    }
+
+    .nextButton:disabled {
+        background-color: #ff4756c0;
+        color: rgba(255, 255, 255, 0.384);
+        transform: scale(1);
+        cursor:default;
     }
     
     .button:hover {

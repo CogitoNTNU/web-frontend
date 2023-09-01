@@ -230,6 +230,12 @@
         padding-bottom: 300px;
     }
 
+    .video {
+        transform: translateY(10vh) translateX(5vh);
+        width: 1900px;
+        height: 1000px;
+    }
+
     .image {
         animation: zoom-in 30s alternate infinite ease-in-out;
     }
