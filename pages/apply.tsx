@@ -579,7 +579,7 @@ const Apply = () => {
                                 <button
                                     className={styles.nextButton}
                                     type="button"
-                                    disabled={false}
+                                    disabled={true}
                                     style={{ display: nextPage ? "none" : "" }}
                                     onClick={() => {
                                         checkFormFields(

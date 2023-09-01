@@ -25,7 +25,7 @@
     z-index: 21;
 }
 
-.img {
+.img1 {
     margin: auto;
     border-radius: 100px;
     padding-top: 400px;
@@ -53,6 +53,12 @@
     margin: auto;
     border-radius: 100px;
     padding-bottom: 300px;
+}
+
+.video {
+    transform: translateY(10vh) translateX(5vh);
+    width: 1600px;
+    height: 800px;
 }
 
 .image {

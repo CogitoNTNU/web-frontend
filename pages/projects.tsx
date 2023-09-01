@@ -10,7 +10,8 @@ import "react-awesome-slider/dist/styles.css";
 import AwsSliderstyles from "../styles/Slider.module.css";
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
-//Images
+// Media
+
 import img1 from "../public/Projects/Img1.jpeg";
 import img2 from "../public/Projects/Img2.jpeg";
 import img3 from "../public/Projects/Img3.jpeg";
@@ -18,7 +19,7 @@ import img4 from "../public/Projects/Img4.jpeg";
 import img5 from "../public/Projects/Img5.jpeg";
 import Project from "../components/Project";
 
-//Icons
+// Icons
 import { AiFillPlayCircle, AiFillFileText, AiFillGithub } from "react-icons/ai";
 
 const Projects = () => {
@@ -26,6 +27,20 @@ const Projects = () => {
     const [text, setText] = useState(
         "Prosjektene har et eller flere av disse attributtene"
     );
+    const images = [
+        [img1, "img1"],
+        [img2, "img2"],
+        [img3, "img3"],
+        [img4, "img4"],
+        [img5, "img5"],
+    ];
+
+    const projectYears: Array<string> = [
+        "ANBEFALTE",
+        "PROSJEKTER V23",
+        "PROSJEKTER H22",
+        "PROSJEKTER V22",
+    ];
 
     useEffect(() => {
         getData();
@@ -68,6 +83,14 @@ const Projects = () => {
                     cancelOnInteraction={false}
                     interval={10000}
                 >
+                    <div>
+                        <video autoPlay muted loop className={styles.video}>
+                            <source
+                                src="/Projects/livingPainting.mp4"
+                                type="video/mp4"
+                            />
+                        </video>
+                    </div>
                     <div className={styles.image}>
                         <Image
                             className={styles.img}
@@ -115,10 +138,11 @@ const Projects = () => {
                         bullets={false}
                         activityColor="white"
                     >
-                        <p className={styles.projectTypeText}>ANBEFALTE</p>
-                        <p className={styles.projectTypeText}>PROSJEKTER V23</p>
-                        <p className={styles.projectTypeText}>PROSJEKTER H22</p>
-                        <p className={styles.projectTypeText}>PROSJEKTER V22</p>
+                        {projectYears.map((title) => (
+                            <p key={title} className={styles.projectTypeText}>
+                                {title}
+                            </p>
+                        ))}
                     </AwesomeSlider>
                 </div>
                 <div className={styles.textContainer}>
