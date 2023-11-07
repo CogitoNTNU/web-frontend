@@ -1,5 +1,5 @@
 import styles from "../styles/Apply.module.css";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import Head from "next/head";
 import ProjectMarkable from "../components/ProjectMarkable";
 import { useEffect, useState } from "react";

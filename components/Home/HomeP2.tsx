@@ -1,9 +1,9 @@
 "use client";
 
-import Bg from "../public/HomePage/SanneUlrik.webp";
-import CogitoBrain from "../public/HomePage/CogitoBrain1.webp";
+import Bg from "../../public/HomePage/SanneUlrik.webp";
+import CogitoBrain from "../../public/HomePage/CogitoBrain1.webp";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

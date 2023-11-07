@@ -3,7 +3,7 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import styles from "../styles/About.module.css";
 import main from "../public/HomePage/FolkFraCogito.webp";
 import { motion } from "framer-motion";
@@ -116,7 +116,7 @@ const About = () => {
                             alt="NTNU logo"
                         />
                     </a>
-                    
+
                     <a href="https://www.ntnu.edu/ailab">
                         <Image
                             className={styles.imgNAIL}

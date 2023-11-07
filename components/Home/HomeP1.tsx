@@ -1,10 +1,10 @@
 "use client";
 
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import Image from "next/image";
-import Sun_Img from "../public/HomePage/Bg_sun.webp";
-import Stage_Img from "../public/HomePage/Bg_stage.webp";
-import Theatre_Img from "../public/HomePage/Bg_theatre.webp";
+import Sun_Img from "../../public/HomePage/Bg_sun.webp";
+import Stage_Img from "../../public/HomePage/Bg_stage.webp";
+import Theatre_Img from "../../public/HomePage/Bg_theatre.webp";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineInfoCircle } from "react-icons/ai";

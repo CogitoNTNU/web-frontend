@@ -6,7 +6,7 @@ import bg from "../public/Team/team2023.jpg";
 import brain from "../public/Team/CogitoBrain.png";
 import styles from "../styles/Team.module.css";
 import Member from "../components/Member";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
 
 const Team = () => {

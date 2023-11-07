@@ -10,7 +10,7 @@ import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
 import React from "react";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 
 const App = ({ Component, pageProps }) => {
     const router = useRouter();

@@ -1,9 +1,9 @@
 "use client";
 
 import Head from "next/head";
-import HomeP1 from "../components/HomeP1";
-import HomeP2 from "../components/HomeP2";
-import HomeP3 from "../components/HomeP3";
+import HomeP1 from "../components/Home/HomeP1";
+import HomeP2 from "../components/Home/HomeP2";
+import HomeP3 from "../components/Home/HomeP3";
 import styles from "../styles/Home.module.css";
 const Home = () => {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

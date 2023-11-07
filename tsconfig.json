@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "components/Navbar.tsx",
-    "components/HomeP1.tsx"
+    "components/Home/HomeP1.tsx"
   ],
   "exclude": [
     "node_modules"

@@ -1,6 +1,6 @@
 .main {
     height: 40vh;
-    width: 30vh;
+    width: 28vh;
     border-radius: 20px;
     background-color: white;
     filter: drop-shadow(2px 2px 4px black);
@@ -13,7 +13,7 @@
     top: 0;
     bottom: 0;
     height: 41vh;
-    width: 30vh;
+    width: 28vh;
     border-radius: 20px;
     z-index: 100;
     background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 60%, #F8F8F8 90%);
@@ -63,16 +63,15 @@
 }
 
 .imageImg {
-    width: 30vh;
+    width: 29vh;
     height: 40vh;
     transition: 0.5s;
     border-radius: 20px;
 }
 
-
 .icons {
     color: #13395B;
-    padding-left: 8.5vh;
+    padding-left: 7.5vh;
     padding-top: 33vh;
     display: flex;
     align-items: center;

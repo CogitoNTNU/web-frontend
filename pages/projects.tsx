@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import styles from "../styles/Projects.module.css";
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";

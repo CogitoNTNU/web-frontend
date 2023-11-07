@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import styles from "../styles/Home.module.css";
-import bgbacks from "../public/HomePage/back.webp";
+import styles from "../../styles/Home.module.css";
+import bgbacks from "../../public/HomePage/back.webp";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
 import GoogleMapReact from "google-map-react";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 
 const HomeP3 = () => {
     const defaultProps = {
