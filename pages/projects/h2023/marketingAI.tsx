@@ -22,6 +22,7 @@ const MarketingAI = () => {
 
     return (
         <>
+            
             <div className="bg-black-default">
                 {imageUrl === "" ? (
                     <header className="sm:h-[450px] h-[300px] w-full bg-red-default overflow-hidden">
