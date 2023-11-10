@@ -22,8 +22,7 @@ const MarketingAI = () => {
 
     return (
         <>
-            
-            <div className="bg-black-default">
+            <div className="bg-black-default h-full">
                 {imageUrl === "" ? (
                     <header className="sm:h-[450px] h-[300px] w-full bg-red-default overflow-hidden">
                         <div className="flex justify-start w-full h-full sm:px-[6%] px-[2%] items-center relative sm:-bottom-20 -bottom-20">
@@ -81,7 +80,7 @@ const MarketingAI = () => {
                         <div className="text-center">
                             <img
                                 className="sm:w-[200px] w-[100px] rounded-sm"
-                                src="/projects/MarketingAI/stepOne.png"
+                                src="/Logos/stepOne.png"
                                 alt="step one"
                             />
                             <p className="text-white sm:text-xl text-[12px] tracking-wider">
@@ -92,7 +91,7 @@ const MarketingAI = () => {
                         <div className="text-center">
                             <img
                                 className="sm:w-[204px] w-[104px] rounded-sm"
-                                src="/projects/MarketingAI/stepTwo.png"
+                                src="/Logos/stepTwo.png"
                                 alt="step two"
                             />
                             <p className="text-white sm:text-xl text-[12px] tracking-wider ">
