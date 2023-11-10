@@ -9,6 +9,8 @@
   "dependencies": {
     "antd": "^5.7.3",
     "axios": "^1.4.0",
+    "classname": "^0.0.0",
+    "classnames": "^2.3.2",
     "eslint-config-next": "^13.4.10",
     "framer-motion": "^7.6.12",
     "google-map-react": "^2.2.1",

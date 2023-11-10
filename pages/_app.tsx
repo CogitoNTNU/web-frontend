@@ -10,13 +10,12 @@ import Particles from "react-tsparticles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim";
 import React from "react";
-import Footer from "../components/Footer/Footer";
 
 const App = ({ Component, pageProps }) => {
     const router = useRouter();
     const { pathname } = router;
 
-    if (pathname == "/") {
+    if (pathname == "/" || pathname.includes("/projects/")) {
         return (
             <>
                 <Head>

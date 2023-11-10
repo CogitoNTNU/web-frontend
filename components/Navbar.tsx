@@ -7,56 +7,47 @@ import Image from "next/image";
 import CogitoLogo from "../public/cogito_white.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import classNames from "classnames";
+
+const Dot = () => {
+    return (
+        <>
+            <div className="w-[20px]">
+                <div className="w-2 h-2 rounded-xl bg-white"></div>
+            </div>
+        </>
+    );
+};
 
 const Navbar = () => {
     const router = useRouter();
-    const [buttonDisabled, setButtonDisabled] = useState(false);
-    const [isActiveHome, setIsActiveHome] = useState(true);
-    const [isActiveAbout, setIsActiveAbout] = useState(false);
-    const [isActiveProjects, setIsActiveProjects] = useState(false);
-    const [isActiveTeam, setIsActiveTeam] = useState(false);
-    const [navbarColor, setNavbarColor] = useState("#13395b54");
-    const functions = Array<Function>(
-        setIsActiveHome,
-        setIsActiveAbout,
-        setIsActiveProjects,
-        setIsActiveTeam
-    );
+    const [onlyLogo, setOnlyLogo] = useState<boolean>(false);
+    const [page, setPage] = useState<string>("");
+
+    const navbarLinks = [
+        {
+            title: "Hjem",
+            link: "/",
+        },
+        {
+            title: "Om Oss",
+            link: "/about",
+        },
+        // {
+        //     title: "Prosjekter",
+        //     link: "/projects",
+        // },
+        {
+            title: "Medlemmer",
+            link: "/team",
+        },
+    ];
+
+    const links = { "/": "Hjem", "/about": "Om Oss", "/team": "Medlemmer" };
 
     function timeout(delay: number) {
         return new Promise((res) => setTimeout(res, delay));
     }
-
-    const handleClicked = (setFunc: Function) => {
-        functions.map((func) => {
-            func(false);
-        });
-        if (setFunc == null) {
-            return;
-        }
-        setFunc(true);
-    };
-
-    useEffect(() => {
-        setButtonDisabled(false);
-        if (router.pathname == "/") {
-            handleClicked(setIsActiveHome);
-            setNavbarColor("#13395b54");
-        } else if (router.pathname == "/about") {
-            handleClicked(setIsActiveAbout);
-            setNavbarColor("#13395bf8");
-        } else if (router.pathname == "/projects") {
-            handleClicked(setIsActiveProjects);
-            setNavbarColor("#13395bf8");
-        } else if (router.pathname == "/team") {
-            handleClicked(setIsActiveTeam);
-            setNavbarColor("#13395bf8");
-        } else if (router.pathname == "/apply") {
-            setButtonDisabled(true);
-            setNavbarColor("#13395bf8");
-            handleClicked(null);
-        }
-    }, [router]);
 
     const changeAndGo = async () => {
         router.push("/loading");
@@ -68,7 +59,18 @@ const Navbar = () => {
         if (router.pathname == "/") {
             changeAndGo();
         }
+        setPage(links[router.pathname]);
     }, []);
+
+    useEffect(() => {
+        setOnlyLogo(false);
+        if (
+            router.pathname.includes("/projects") &&
+            router.pathname.length > 10
+        ) {
+            setOnlyLogo(true);
+        }
+    });
 
     const scrollToTop = async () => {
         await timeout(100);
@@ -79,123 +81,68 @@ const Navbar = () => {
         }
     };
 
+    const buttonClass = classNames(
+        "flex",
+        "items-center",
+        "justify-center",
+        "h-full"
+    );
+
     return (
         <>
-            <motion.nav
-                initial={{ opacity: 0, y: -60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                style={{ backgroundColor: navbarColor }}
-                transition={{
-                    duration: 1,
-                    delay: 1.2,
-                    ease: [0, 0.71, 0.2, 1.01],
-                }}
-                className={styles.navigation}
-            >
-                <div className={styles.setup}>
-                    <motion.div whileHover={{ scale: 1.05 }}>
-                        <Link href="./">
-                            <Image
-                                draggable={false}
-                                src={CogitoLogo}
-                                className={styles.cogitoLogo}
-                                alt="CogitoLogo"
-                                onClick={() => scrollToTop()}
-                            />
-                        </Link>
-                    </motion.div>
-
-                    <ul className={styles.links}>
-                        <div className={styles.textLinks}>
+            <nav className="flex flex-row w-full h-[120px] px-[4%] text-lg fixed z-50 text-white">
+                <Link
+                    onClick={() => {
+                        setPage("Hjem");
+                        scrollToTop();
+                    }}
+                    href={"/"}
+                >
+                    <div className="flex items-center h-full">
+                        <img
+                            className="sm:w-[90px] w-[60px]"
+                            src="/cogito_white.svg"
+                            alt="logo"
+                        />
+                    </div>
+                </Link>
+                {!onlyLogo && (
+                    <div className="sm:visible sm:flex flex-row h-full w-full justify-end hidden gap-[60px]">
+                        {navbarLinks.map((data) => (
                             <Link
-                                className={
-                                    (styles.link,
-                                    styles.hoverUnderlineAnimation)
-                                }
-                                style={{
-                                    textDecoration: isActiveHome
-                                        ? "underline 2px"
-                                        : "",
-                                    textUnderlineOffset: isActiveHome
-                                        ? "1vh"
-                                        : "",
-                                }}
-                                key="/"
-                                href="/"
+                                onClick={() => setPage(data.title)}
+                                key={data.title}
+                                href={data.link}
                             >
-                                Hjem
+                                <div className={buttonClass}>
+                                    <div
+                                        className="h-full items-center justify-center flex"
+                                        style={{
+                                            visibility:
+                                                page == `${data.title}`
+                                                    ? "visible"
+                                                    : "hidden",
+                                        }}
+                                    >
+                                        <Dot />
+                                    </div>
+                                    <span>{data.title}</span>
+                                </div>
                             </Link>
+                        ))}
+                        <div className="flex items-center justify-center h-full">
                             <Link
-                                className={
-                                    (styles.link,
-                                    styles.hoverUnderlineAnimation)
-                                }
-                                style={{
-                                    textDecoration: isActiveAbout
-                                        ? "underline 2px"
-                                        : "",
-                                    textUnderlineOffset: isActiveAbout
-                                        ? "1vh"
-                                        : "",
-                                }}
-                                key="/about"
-                                href="/about"
+                                onClick={() => setPage("Søk Opptak")}
+                                href={"/apply"}
                             >
-                                Om oss
-                            </Link>
-                            <Link
-                                className={
-                                    (styles.link,
-                                    styles.hoverUnderlineAnimation)
-                                }
-                                style={{
-                                    textDecoration: isActiveProjects
-                                        ? "underline 2px"
-                                        : "",
-                                    textUnderlineOffset: isActiveProjects
-                                        ? "1vh"
-                                        : "",
-                                }}
-                                key="/projects"
-                                href="/projects"
-                            >
-                                Prosjekter
-                            </Link>
-                            <Link
-                                className={
-                                    (styles.link,
-                                    styles.hoverUnderlineAnimation)
-                                }
-                                style={{
-                                    textDecoration: isActiveTeam
-                                        ? "underline 2px"
-                                        : "",
-                                    textUnderlineOffset: isActiveTeam
-                                        ? "1vh"
-                                        : "",
-                                }}
-                                key="/team"
-                                href="/team"
-                            >
-                                Medlemmer
-                            </Link>
-                        </div>
-
-                        <div className={styles.buttonPos}>
-                            <Link href="/apply">
-                                <button
-                                    disabled={buttonDisabled}
-                                    className={styles.button}
-                                >
-                                    <p className={styles.buttonText}>
-                                        Søk opptak
-                                    </p>
+                                <button className="px-[40px] py-[10px] bg-pink-default rounded-3xl">
+                                    <p className="font-medium">Søk Opptak</p>
                                 </button>
                             </Link>
                         </div>
-                    </ul>
-                </div>
-            </motion.nav>
+                    </div>
+                )}
+            </nav>
         </>
     );
 };
