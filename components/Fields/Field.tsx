@@ -28,10 +28,10 @@ const Field = ({
     };
 
     return (
-        <div className="flex flex-row align-middle z-50 gap-4 sm:text-lg text-[12px] px-12 py-2 sm:w-[700px] w-[600px]">
+        <div className="flex flex-row align-middle z-50 gap-4 tablet:text-lg text-[12px] px-12 py-2 tablet:w-[700px] w-[600px]">
             {label && <label className="px-4">{label}</label>}
             <input
-                className="bg-white w-full sm:h-[60px] h-[40px] outline-none border-none border-transparent rounded-md px-4"
+                className="bg-white w-full tablet:h-[60px] h-[40px] outline-none border-none border-transparent rounded-md px-4"
                 type="text"
                 value={value}
                 onChange={handleChange}
@@ -39,7 +39,7 @@ const Field = ({
             />
             <button
                 onClick={() => onClick()}
-                className="bg-white rounded-md sm:px-6 px-4 group"
+                className="bg-white rounded-md tablet:px-6 px-4 group"
             >
                 <FiChevronRight className="group-hover:translate-x-2 transition-transform delay-75" />
             </button>
