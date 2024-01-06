@@ -19,7 +19,7 @@ const Button = ({
 }: ButtonProps) => {
     const buttonClasses = classNames(
         !disabled ? "text-white" : "text-gray",
-        !disabled ? "hover:bg-white" : null,
+        !disabled ? "hover:bg-blue-darker" : null,
         !disabled ? "hover:text-black" : null,
         "transition-all",
         `bg-${color}-default`,
