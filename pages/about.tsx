@@ -32,7 +32,7 @@ const About = () => {
             <Head>
                 <title>Om oss - Cogito NTNU</title>
             </Head>
-            <main>
+            <main className="overflow-hidden">
                 <div className="flex items-center justify-center phone:pt-[160px] pt-[130px]">
                     <div className="md:hidden visible">
                         <img
