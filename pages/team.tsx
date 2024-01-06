@@ -50,7 +50,16 @@ const Team = () => {
             <Head>
                 <title>Medlemmer - Cogito NTNU</title>
             </Head>
-            <main className="relative">
+            <motion.main
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.2,
+                    ease: [0, 0.71, 0.2, 1.0],
+                }}
+                className="relative overflow-hidden"
+            >
                 <div className="relative w-full z-30 flex-none h-[720px]">
                     <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
                     <Image
@@ -64,11 +73,20 @@ const Team = () => {
                         alt={"banner"}
                     />
                 </div>
-                <div className="absolute z-50 w-full flex items-end justify-center top-[700px]">
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.6,
+                        ease: [0, 0.71, 0.2, 1.0],
+                    }}
+                    className="absolute z-50 w-full flex items-end justify-center top-[700px]"
+                >
                     <p className="bg-gray-default px-8 rounded-2xl absolute font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wid drop-shadow-3xl">
                         COGITO 2024
                     </p>
-                </div>
+                </motion.div>
                 <div className="relative left-0 right-0 bottom-0 flex items-center justify-center z-40">
                     <div className="bg-gray-lighter pt-[20px] px-[8%] rounded-b-3xl h-fit pb-[80px] w-[90%]">
                         <div className="pt-4 pb-8 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
@@ -96,7 +114,7 @@ const Team = () => {
                         </div>
                     </div>
                 </div>
-            </main>
+            </motion.main>
             <Footer />
         </>
     );
