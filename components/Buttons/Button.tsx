@@ -1,9 +1,13 @@
 import classNames from "classnames";
+import Icon from "../Icons/Icon";
 
 interface ButtonProps {
     text: string;
+    textSize?: string;
     px: string;
     py: string;
+    icon?: "ArrowRight" | "ArrowLeft" | "Info";
+    iconPos?: "left" | "right";
     color: "pink" | "blue";
     disabled?: boolean;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -11,26 +15,45 @@ interface ButtonProps {
 
 const Button = ({
     text,
+    textSize,
     px,
     py,
+    icon,
+    iconPos = "right",
     color,
     disabled = false,
     onClick,
 }: ButtonProps) => {
     const buttonClasses = classNames(
-        !disabled ? "text-white" : "text-gray",
+        !disabled ? "text-white" : "text-gray-lighter",
         !disabled ? "hover:bg-blue-darker" : null,
         !disabled ? "hover:text-black" : null,
+        !disabled ? `bg-${color}-default` : "bg-gray-default",
+        !disabled ? "group" : null,
         "transition-all",
-        `bg-${color}-default`,
+
         `px-${px}`,
         `py-${py}`,
         "rounded-3xl"
     );
     return (
         <>
-            <button onClick={onClick} className={buttonClasses}>
-                <p className="font-medium">{text}</p>
+            <button
+                onClick={onClick}
+                disabled={disabled}
+                className={buttonClasses}
+            >
+                <div className="flex justify-center gap-2 items-center ">
+                    {icon && iconPos == "left" && (
+                        <Icon size="24px" icon={icon} />
+                    )}
+                    <p className="font-medium" style={{ fontSize: textSize }}>
+                        {text}
+                    </p>
+                    {icon && iconPos == "right" && (
+                        <Icon size="24px" icon={icon} />
+                    )}
+                </div>
             </button>
         </>
     );
