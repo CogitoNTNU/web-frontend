@@ -2,210 +2,119 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import bg from "../public/Team/team2023.jpg";
-import brain from "../public/Team/CogitoBrain.png";
-import styles from "../styles/Team.module.css";
-import Member from "../components/Member";
+import RadioButton from "../components/Buttons/RadioButton";
+import Member from "../components/Member/Member";
+import { MemberType } from "../types/types";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
+import axios from "axios";
+
+// Images
+import banner from "../public/Team/MarketingAI.jpg";
+import bannerSmall from "../public/Team/Sveinung.jpg";
 
 const Team = () => {
+    const radioButtons = [
+        "Alle Medlemmer",
+        "Styret",
+        "Prosjektledere",
+        "Loqoire",
+        "Web",
+        "SoMe",
+    ];
+
+    const [currentClicked, setCurrentClicked] =
+        useState<string>("Alle Medlemmer");
     const [members, setMembers] = useState([]);
-    const [switchMembers, setSwitchMembers] = useState(0);
-    const [showAll, setShowAll] = useState(true);
-    const [showLeaders, setShowLeaders] = useState(false);
-    const [showWeb, setShowWeb] = useState(false);
-    const [showHR, setShowHR] = useState(false);
-    const functions = Array<Function>(
-        setShowAll,
-        setShowLeaders,
-        setShowWeb,
-        setShowHR
-    );
-    const setShow = (setFunc: Function) => {
-        functions.map((func) => {
-            func(false);
-        });
-        setFunc(true);
-    };
+    const formData = new FormData();
 
-    const scrollToMembers = () => {
-        if (switchMembers != 0) {
-            if (showAll) {
-                window.scrollTo({
-                    top: 720,
-                    behavior: "smooth",
-                });
-            } else if (showLeaders) {
-                window.scrollTo({
-                    top: 715,
-                    behavior: "smooth",
-                });
-            } else {
-                window.scrollTo({
-                    top: 550,
-                    behavior: "smooth",
-                });
-            }
-        }
-    };
-
-    const memberSwitch = () => {
-        setSwitchMembers(switchMembers + 1);
+    const fetchData = async () => {
+        formData.append("member_type", currentClicked);
+        await axios
+            .post(`${process.env.endpoint}/api/members_by_type/`, formData)
+            .then((res) => {
+                setMembers(res.data);
+                console.log(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     useEffect(() => {
-        getData();
-        scrollToMembers();
-    }, [switchMembers]);
-
-    const getData = async () => {
-        let rest_url = "";
-        if (showAll) {
-            rest_url = "/members/all_members/";
-        } else if (showLeaders) {
-            rest_url = "/members/lead_members/";
-        } else if (showWeb) {
-            rest_url = "/members/web_members/";
-        } else if (showHR) {
-            rest_url = "/members/hr_members/";
-        }
-
-        const membersResponse = await fetch(
-            "https://cogito-backend.net" + rest_url
-        );
-
-        const membersData = await membersResponse.json();
-        console.log(membersData);
-        setMembers(membersData);
-    };
+        fetchData();
+    }, [currentClicked]);
 
     return (
         <>
             <Head>
                 <title>Medlemmer - Cogito NTNU</title>
             </Head>
-            <motion.div
-                className={styles.main}
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
+            <motion.main
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
                     duration: 0.6,
-                    delay: 0.4,
+                    delay: 0.2,
                     ease: [0, 0.71, 0.2, 1.0],
                 }}
+                className="relative overflow-hidden"
             >
-                <div className={styles.bg}>
+                <div className="relative w-full z-30 flex-none h-[720px]">
+                    <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
                     <Image
-                        className={styles.bgImg}
-                        draggable={false}
-                        priority={true}
-                        src={bg}
-                        alt="bg"
+                        className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:block hidden"
+                        src={banner}
+                        alt={"banner"}
                     />
                     <Image
-                        className={styles.brainImg}
-                        draggable={false}
-                        priority={true}
-                        src={brain}
-                        alt="brain"
+                        className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:hidden block"
+                        src={bannerSmall}
+                        alt={"banner"}
                     />
-
-                    <div className={styles.brainText}>
-                        <a>COGITO 2023</a>
-                    </div>
-                    <div className={styles.buttons}>
-                        <div className={styles.buttonsP1}>
-                            <button
-                                className={styles.button}
-                                style={{
-                                    background: showAll ? "#747D8C" : "#D9D9D9",
-                                    color: showAll ? "#FFF" : "#000",
-                                    filter: showAll
-                                        ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
-                                        : "",
-                                }}
-                                onClick={() => {
-                                    setShow(setShowAll);
-                                    memberSwitch();
-                                }}
-                            >
-                                <a className={styles.buttonText}>
-                                    Alle Medlemmer
-                                </a>
-                            </button>
-                            <button
-                                className={styles.button}
-                                style={{
-                                    background: showLeaders
-                                        ? "#747D8C"
-                                        : "#D9D9D9",
-                                    color: showLeaders ? "#FFF" : "#000",
-                                    filter: showLeaders
-                                        ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
-                                        : "",
-                                }}
-                                onClick={() => {
-                                    setShow(setShowLeaders);
-                                    memberSwitch();
-                                }}
-                            >
-                                <a className={styles.buttonText}>Styret</a>
-                            </button>
+                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: 0.6,
+                        ease: [0, 0.71, 0.2, 1.0],
+                    }}
+                    className="absolute z-50 w-full flex items-end justify-center top-[700px]"
+                >
+                    <p className="bg-gray-default px-8 rounded-2xl absolute font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wid drop-shadow-3xl">
+                        COGITO 2024
+                    </p>
+                </motion.div>
+                <div className="relative left-0 right-0 bottom-0 flex items-center justify-center z-40">
+                    <div className="bg-gray-lighter pt-[20px] px-[8%] rounded-b-3xl h-fit pb-[80px] w-[90%]">
+                        <div className="pt-4 pb-8 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
+                            {radioButtons.map((name) => (
+                                <RadioButton
+                                    key={name}
+                                    text={name}
+                                    currentClicked={currentClicked}
+                                    onClick={() => setCurrentClicked(name)}
+                                />
+                            ))}
                         </div>
-                        <div className={styles.buttonsP2}>
-                            <button
-                                className={styles.button}
-                                style={{
-                                    background: showWeb ? "#747D8C" : "#D9D9D9",
-                                    color: showWeb ? "#FFF" : "#000",
-                                    filter: showWeb
-                                        ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
-                                        : "",
-                                }}
-                                onClick={() => {
-                                    setShow(setShowWeb);
-                                    memberSwitch();
-                                }}
-                            >
-                                <a className={styles.buttonText}>WebDev</a>
-                            </button>
-                            <button
-                                className={styles.button}
-                                style={{
-                                    background: showHR ? "#747D8C" : "#D9D9D9",
-                                    color: showHR ? "#FFF" : "#000",
-                                    filter: showHR
-                                        ? "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))"
-                                        : "",
-                                }}
-                                onClick={() => {
-                                    setShow(setShowHR);
-                                    memberSwitch();
-                                }}
-                            >
-                                <a className={styles.buttonText}>
-                                    Tillitsvalgte
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                    <hr className={styles.line} />
-                    <div className={styles.members} id="members">
-                        {members.map((member) => (
-                            <div className={styles.member} key={member.name}>
+                        <div className="flex gap-12 justify-center flex-wrap">
+                            {members.map((member: MemberType) => (
                                 <Member
+                                    key={member.name}
                                     name={member.name}
                                     title={member.title}
                                     imageURL={member.image}
-                                    mailURL={member.email}
                                     linkedinURL={member.linkedIn}
+                                    mailURL={member.email}
+                                    githubURL={member.github}
                                 />
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </motion.div>
+            </motion.main>
             <Footer />
         </>
     );

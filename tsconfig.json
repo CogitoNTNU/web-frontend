@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/Navbar.tsx",
+    "components/Navbar/Navbar.tsx",
     "components/Home/HomeP1.tsx"
   ],
   "exclude": [
