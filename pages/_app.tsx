@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
