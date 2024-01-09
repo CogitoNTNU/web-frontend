@@ -9,10 +9,6 @@ import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
 import axios from "axios";
 
-// Images
-import banner from "../public/Team/MarketingAI.jpg";
-import bannerSmall from "../public/Team/Sveinung.jpg";
-
 const Team = () => {
     const radioButtons = [
         "Alle Medlemmer",
@@ -62,14 +58,18 @@ const Team = () => {
             >
                 <div className="relative w-full z-30 flex-none h-[720px]">
                     <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
-                    <Image
+                    <img
                         className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:block hidden"
-                        src={banner}
+                        src="/Team/MarketingAI.jpg"
+                        width={1920}
+                        height={1080}
                         alt={"banner"}
                     />
                     <Image
                         className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:hidden block"
-                        src={bannerSmall}
+                        src="/Team/Sveinung.jpg"
+                        width={1920}
+                        height={1080}
                         alt={"banner"}
                     />
                 </div>
