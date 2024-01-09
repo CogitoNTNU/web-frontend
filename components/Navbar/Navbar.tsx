@@ -12,11 +12,7 @@ import {
     AnimatePresence,
 } from "framer-motion";
 import Button from "../Buttons/Button";
-import {
-    disableBodyScroll,
-    enableBodyScroll,
-    clearAllBodyScrollLocks,
-} from "body-scroll-lock";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 const Dot = () => {
     return (
@@ -37,8 +33,7 @@ const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        const previous = scrollY.getPrevious();
-        if (latest > previous && latest > 100) {
+        if (latest > 0) {
             setHidden(true);
         } else {
             setHidden(false);
@@ -109,6 +104,11 @@ const Navbar = () => {
                 .getElementById("part-0")
                 .scrollIntoView({ behavior: "smooth" });
         }
+    };
+
+    const burgerChangePage = (title: string) => {
+        setPage(title);
+        setOpen(false);
     };
 
     const buttonClass = classNames(
@@ -203,22 +203,22 @@ const Navbar = () => {
                             <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
                                 {navbarLinks.map((data) => (
                                     <Link
-                                        onClick={() => setPage(data.title)}
+                                        onClick={() =>
+                                            burgerChangePage(data.title)
+                                        }
                                         key={data.title}
                                         href={data.link}
                                     >
                                         <div className="text-white font-medium text-[20px]">
-                                            <span
-                                                onClick={() => setOpen(false)}
-                                            >
-                                                {data.title}
-                                            </span>
+                                            <span>{data.title}</span>
                                         </div>
                                     </Link>
                                 ))}
                                 <div className="pt-[10px]">
                                     <Link
-                                        onClick={() => setPage("Søk Opptak")}
+                                        onClick={() =>
+                                            burgerChangePage("Søk Opptak")
+                                        }
                                         href={"/apply"}
                                     >
                                         <Button
