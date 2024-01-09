@@ -31,7 +31,7 @@ const Team = () => {
     const fetchData = async () => {
         formData.append("member_type", currentClicked);
         await axios
-            .post(`${process.env.endpoint}/team/members_by_type/`, formData)
+            .post(`${process.env.endpoint}/api/members_by_type/`, formData)
             .then((res) => {
                 setMembers(res.data);
                 console.log(res.data);
