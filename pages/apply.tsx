@@ -6,7 +6,6 @@ import Footer from "../components/Footer/Footer";
 import Head from "next/head";
 import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
-import ProjectPreview from "../components/Projects/ProjectPreview";
 import axios from "axios";
 
 const Apply = () => {
@@ -262,9 +261,7 @@ const Apply = () => {
                                                 </p>
                                             </div>
                                             <div className="flex justify-end w-full h-[280px]">
-                                                <div className="overflow-auto">
-                                                    <ProjectPreview />
-                                                </div>
+                                                <div className="overflow-auto"></div>
                                             </div>
                                         </div>
                                     </div>
