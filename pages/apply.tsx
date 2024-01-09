@@ -1,665 +1,209 @@
-import styles from "../styles/Apply.module.css";
+"use client";
+
+import { useState } from "react";
+import Field from "../components/Fields/Field";
 import Footer from "../components/Footer/Footer";
 import Head from "next/head";
-import ProjectMarkable from "../components/ProjectMarkable";
-import { useEffect, useState } from "react";
+import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
-import CreatableSelect from "react-select/creatable";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import Toggle from "react-toggle";
+import ProjectPreview from "../components/Projects/ProjectPreview";
 
 const Apply = () => {
-    const [page, setPage] = useState(false);
-    const [sent, setSent] = useState(false);
-    const [value, setValue] = useState<readonly Option[]>([]);
-    const [falseValue, setFalseValue] = useState(false);
-    const [projects, setProjets] = useState([]);
-    const [surname, setSurname] = useState("");
-    const [falseSurname, setFalseSurname] = useState(false);
-    const [lastname, setLastname] = useState("");
-    const [falseLastname, setFalseLastname] = useState(false);
-    const [email, setEmail] = useState("");
-    const [falseEmail, setFalseEmail] = useState(false);
-    const [phone, setPhone] = useState("");
-    const [falsePhone, setFalsePhone] = useState(false);
-    const [error, setError] = useState(false);
-    const [nextPage, setNextPage] = useState(false);
-    const [photoOK, setPhotoOK] = useState(true);
-    const [study, setStudy] = useState("");
-    const [studyYear, setStudyYear] = useState("");
-    const [falseStudy, setFalseStudy] = useState(false);
-    const [studentID, setStudentID] = useState("");
-    const [falseStudentID, setFalseStudentID] = useState(false);
-    const [studentEM, setStudentEM] = useState("");
-    const [falseStudentEM, setFalseStudentEM] = useState(false);
-    const [about1, setAbout1] = useState("");
-    const [about2, setAbout2] = useState("");
-    const [about3, setAbout3] = useState("");
-    const [falseAbout, setFalseAbout] = useState(false);
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+    const [about, setAbout] = useState<string>("");
+    const [applyPage, setApplyPage] = useState<boolean>(true);
 
-    useEffect(() => {
-        getData();
-    }, []);
-
-    const components = {
-        DropdownIndicator: null,
-    };
-
-    interface Option {
-        label: string;
-        value: string;
-    }
-
-    const createOption = (label: string) => ({
-        label,
-        value: label,
-    });
-
-    const removeOption = (value) => {
-        setValue((current) =>
-            current.filter((option) => option.value != value)
-        );
-    };
-
-    const togglePhotoOK = () => {
-        setPhotoOK(!photoOK);
-    };
-
-    const getData = async () => {
-        let rest_url = "/projects/all_new_projects/";
-        const projectsResponse = await fetch(
-            "https://cogito-backend.net" + rest_url
-        );
-        const projectsData = await projectsResponse.json();
-        setProjets(projectsData);
-    };
-
-    const validateEmail = (email) => {
-        return String(email)
-            .toLowerCase()
-            .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-    };
-
-    const validatePhone = (phone) => {
-        var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{2})[-. ]?([0-9]{3})$/;
-        return regex.test(phone);
-    };
-
-    const resetForm = () => {
-        setFalseSurname(false);
-        setFalseLastname(false);
-        setFalseEmail(false);
-        setFalseValue(false);
-        setFalsePhone(false);
-        setError(false);
-    };
-
-    const resetSecondForm = () => {
-        setFalseStudy(false);
-        setFalseStudentID(false);
-        setFalseStudentEM(false);
-        setFalseAbout(false);
-    };
-
-    const checkFormFields = (surname, lastname, email, phone, projects) => {
-        resetForm();
-        const errors = [];
-
-        if (surname == "") {
-            setFalseSurname(true);
-            errors.push("");
-        }
-
-        if (lastname == "") {
-            setFalseLastname(true);
-            errors.push("");
-        }
-
-        if (!validateEmail(email)) {
-            setFalseEmail(true);
-            errors.push("");
-        }
-
-        if (projects.length !== 3) {
-            setFalseValue(true);
-            errors.push("");
-        }
-
-        if (!validatePhone(phone)) {
-            setFalsePhone(true);
-            errors.push("");
-        }
-
-        if (errors.length == 0) {
-            setNextPage(true);
-        }
-    };
-
-    const checkSecondFormFields = (
-        study,
-        studyYear,
-        about1,
-        about2,
-        about3
-    ) => {
-        resetSecondForm();
-        const errors = [];
-
-        if (study == "" || studyYear == "") {
-            setFalseStudy(true);
-            errors.push("");
-        }
-
-        if (about1 == "" || about2 == "" || about3 == "") {
-            setFalseAbout(true);
-            errors.push("");
-        }
-
-        if (errors.length == 0) {
-            return true;
-        }
-
-        return false;
-    };
-
-    const sendForm = async (
-        surname,
-        lastname,
-        email,
-        phone,
-        projects,
-        study,
-        studyYear,
-        studentID,
-        studentEM,
-        about1,
-        about2,
-        about3,
-        photo
-    ) => {
-        if (!checkSecondFormFields(study, studyYear, about1, about2, about3)) {
-            return;
-        }
-        setNextPage(false);
-        try {
-            await fetch(
-                "https://docs.google.com/forms/d/e/1FAIpQLSduLNlEqKEDF25Nyjf2WtyPKp5SniyT3SvN1rvMZMDMZyUKGQ/formResponse?" +
-                    new URLSearchParams({
-                        "entry.1488574276": surname,
-                        "entry.1925221388": lastname,
-                        "entry.877101926": phone,
-                        "entry.1747975445": study,
-                        "entry.17385882": studyYear,
-                        "entry.1569032832": about1,
-                        "entry.1096059890": about2,
-                        "entry.609878434": about3,
-                        "entry.1184993896": projects[0].value,
-                        "entry.307282896": projects[1].value,
-                        "entry.1565910335": projects[2].value,
-                        "entry.875921033": photo,
-                        "entry.1371474035": studentID,
-                        "entry.84615272": studentEM,
-                        emailAddress: email,
-                    }),
-                {
-                    mode: "no-cors",
-                }
-            );
-            setSent(true);
-        } catch (e) {
-            setError(true);
-            console.log(e);
+    const changePage = () => {
+        if (applyPage) {
+            setApplyPage(false);
+        } else {
+            setApplyPage(true);
         }
     };
 
     return (
         <>
             <Head>
-                <title>Cogito NTNU - Meld deg på</title>
+                <title>Meld deg på - Cogito NTNU</title>
             </Head>
-            <div className={styles.main}>
-                <motion.button
-                    className={styles.projectButton}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    style={{
-                        zIndex: page ? "1" : "2",
-                        backgroundColor: page ? "#DFE4EA" : "white",
-                    }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.4,
-                        ease: [0, 0.71, 0.2, 1.0],
-                    }}
-                    onClick={() => setPage(false)}
-                >
-                    <p className={styles.buttonTabText}>Prosjekter</p>
-                </motion.button>
-                <motion.button
-                    className={styles.vervButton}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    style={{
-                        zIndex: page ? "2" : "1",
-                        backgroundColor: page ? "white" : "#DFE4EA",
-                    }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.4,
-                        ease: [0, 0.71, 0.2, 1.0],
-                    }}
-                    disabled
-                    onClick={() => setPage(true)}
-                >
-                    <p className={styles.buttonTabText}>Verv</p>
-                </motion.button>
-                <motion.div
-                    className={styles.projectCard}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.4,
-                        ease: [0, 0.71, 0.2, 1.0],
-                    }}
-                >
-                    <div
-                        className={styles.sentText}
-                        style={{ display: sent ? "block" : "none" }}
-                    >
-                        <p>
-                            Søknaden har blitt sendt! <br />
-                            Du hører fra oss om ikke så lenge.
-                        </p>
+            <main className="w-full h-full pt-[200px]">
+                <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
+                    <div className="relative ">
+                        <div className="absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[50] rounded-t-3xl text-center tablet:py-4 py-2 drop-shadow-md">
+                            <p className="font-medium">Deltaker</p>
+                        </div>
+                        <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
+                            <p className="font-medium">Verv</p>
+                        </div>
                     </div>
-                    <div style={{ display: nextPage ? "" : "none" }}>
-                        <div className={styles.projectTitle}>
-                            <p>
-                                Prosjektsøknad - Høst 2023 (Frist 28. Aug){" "}
-                                <a
-                                    className={styles.clickHereText}
-                                    href="https://docs.google.com/forms/d/1aCpYxJC49reGm4sDmSdWCfdS_OFIZzLy8xAqQTPxeU8/viewform?edit_requested=true&pli=1"
-                                >
-                                    {" "}
-                                    Klikk her hvis ikke søknaden funker
-                                </a>
+                    {applyPage && (
+                        <div className="w-[80%] h-fit pb-6 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
+                            <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[16px] text-blue-dark px-6 pt-8 pb-4">
+                                Søknad - Vårsemesteret 2024
                             </p>
-                        </div>
-                        <div className={styles.projectInputCard}>
-                            <div className={styles.projectStudyAndYear}>
-                                <p style={{ color: falseStudy ? "red" : "" }}>
-                                    Studie og Årstrinn *{" "}
-                                </p>
-                                <p
-                                    className={styles.showOldAboutText}
-                                    style={{ color: falseAbout ? "red" : "" }}
-                                >
-                                    Litt om deg selv *{" "}
-                                </p>
-                            </div>
+                            <div className="w-full h-fit flex justify-center">
+                                <div className="w-[95%] h-fit bg-gray-lighter rounded-3xl">
+                                    <div className="px-6 py-4">
+                                        <p className="text-[20px]">
+                                            Personlig Informasjon
+                                        </p>
+                                    </div>
+                                    <div className="flex laptop:flex-row flex-col">
+                                        <div>
+                                            <div className="px-6 flex gap-[10px]">
+                                                <div className="w-[200px] min-w-[100px]">
+                                                    <Field
+                                                        label="Fornavn"
+                                                        placeholder="Cogitron"
+                                                        value={firstName}
+                                                        setValue={setFirstName}
+                                                        type={"text"}
+                                                    />
+                                                </div>
 
-                            <input
-                                className={styles.inputStudy}
-                                type="text"
-                                placeholder="Datateknologi, Fysmat, Kybe..."
-                                onChange={(event) =>
-                                    setStudy(event.target.value)
-                                }
-                            />
-                            <input
-                                className={styles.inputStudyYear}
-                                type="text"
-                                placeholder="X.år"
-                                onChange={(event) =>
-                                    setStudyYear(event.target.value)
-                                }
-                            />
-
-                            <textarea
-                                className={styles.textArea}
-                                placeholder="Hva slags erfaring har du med AI og programmering fra før?"
-                                onChange={(event) =>
-                                    setAbout1(event.target.value)
-                                }
-                            />
-
-                            <textarea
-                                className={styles.textArea1}
-                                placeholder="Hvordan hørte du om Cogito NTNU?"
-                                onChange={(event) =>
-                                    setAbout2(event.target.value)
-                                }
-                            />
-                            <textarea
-                                className={styles.textArea2}
-                                placeholder="Hvorfor ønsker du å søke hos oss i Cogito NTNU?"
-                                onChange={(event) =>
-                                    setAbout3(event.target.value)
-                                }
-                            />
-                            <div className={styles.projectNumbers}>
-                                <p
-                                    style={{
-                                        color: falseStudentID ? "red" : "",
-                                    }}
-                                >
-                                    Studentkortnummer{" "}
-                                </p>
-                                <p
-                                    style={{
-                                        color: falseStudentEM ? "red" : "",
-                                    }}
-                                >
-                                    EM-nummer (Bare siffer){" "}
-                                </p>
-                            </div>
-                            <input
-                                className={styles.inputStudentID}
-                                type="text"
-                                placeholder="XXXXXX"
-                                onChange={(event) =>
-                                    setStudentID(event.target.value)
-                                }
-                            />
-                            <input
-                                className={styles.inputStudentEM}
-                                type="text"
-                                placeholder="XXXXXXXXXX"
-                                onChange={(event) =>
-                                    setStudentEM(event.target.value)
-                                }
-                            />
-
-                            <div className={styles.projectChosen}>
-                                <p style={{ color: falseValue ? "red" : "" }}>
-                                    Valgte Prosjekter{" "}
-                                </p>
-                            </div>
-                            <div className={styles.selectorPosition}>
-                                <CreatableSelect
-                                    styles={{
-                                        control: (baseStyles, state) => ({
-                                            ...baseStyles,
-                                            borderStyle: state.isFocused
-                                                ? "none"
-                                                : "none",
-                                            height: "10vh",
-                                            backgroundColor: "#F1F2F6",
-                                            borderRadius: "10px",
-                                            filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))",
-                                        }),
-                                        multiValueRemove: (baseStyles) => ({
-                                            ...baseStyles,
-                                            display: "none",
-                                        }),
-                                        multiValueLabel: (baseStyles) => ({
-                                            ...baseStyles,
-                                            paddingRight: "1vh",
-                                            fontSize: "16px",
-                                            fontWeight: "700",
-                                            color: "white",
-                                            backgroundColor: "#ff6b81",
-                                            filter: "drop-shadow(2px 2px 0px black)",
-                                        }),
-                                    }}
-                                    components={components}
-                                    isClearable={false}
-                                    isMulti
-                                    isDisabled={true}
-                                    onChange={(newValue) => setValue(newValue)}
-                                    menuIsOpen={false}
-                                    placeholder="Trykk på et av prosjektene..."
-                                    value={value}
-                                />
-                            </div>
-                            <div className={styles.projectPhone}>
-                                <p style={{ color: falsePhone ? "red" : "" }}>
-                                    Fototillatelse *{" "}
-                                </p>
-                            </div>
-                            <div className={styles.toggle}>
-                                <Toggle
-                                    className={styles}
-                                    defaultChecked={photoOK}
-                                    onChange={() => togglePhotoOK()}
-                                />
+                                                <div className="w-[200px] min-w-[100px]">
+                                                    <Field
+                                                        label="Etternavn"
+                                                        placeholder="Cogito"
+                                                        value={lastName}
+                                                        setValue={setLastName}
+                                                        type={"text"}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="px-6 gap-[10px]">
+                                                <div className="w-[460px] min-w-[100px]">
+                                                    <Field
+                                                        label="Epost"
+                                                        placeholder="Cogitron@cogito-ntnu.no"
+                                                        value={email}
+                                                        setValue={setEmail}
+                                                        type={"text"}
+                                                    />
+                                                </div>
+                                                <div className="w-[460px] min-w-[100px]">
+                                                    <Field
+                                                        label="Telefon"
+                                                        placeholder="000 00 000"
+                                                        value={phone}
+                                                        setValue={setPhone}
+                                                        type={"numbers"}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="laptop:w-[800px] laptop:min-w-[200px] w-[460px] min-w-[100px] px-6">
+                                            <Field
+                                                label="Om deg selv"
+                                                value={about}
+                                                setValue={setAbout}
+                                                type={"area"}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex w-full px-6 py-6 laptop:text-[20px] text-[12px]">
+                                        <div className="flex justify-start w-full ">
+                                            <Button
+                                                text={"Send inn søknad"}
+                                                px={"8"}
+                                                py={"4"}
+                                                icon={"ArrowRight"}
+                                                color={"pink"}
+                                            />
+                                        </div>
+                                        <div className="flex justify-end w-full">
+                                            <Button
+                                                text={"Semesterinfo"}
+                                                px={"8"}
+                                                py={"4"}
+                                                icon="Info"
+                                                color={"blue"}
+                                                onClick={() => changePage()}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className={styles.applyButton}>
-                            <button
-                                className={styles.backButton}
-                                type="button"
-                                disabled={false}
-                                style={{ display: nextPage ? "" : "none" }}
-                                onClick={() => setNextPage(false)}
-                            >
-                                <p className={styles.buttonText}>
-                                    <AiOutlineArrowLeft
-                                        style={{ fontSize: "1rem" }}
-                                    />
-                                </p>
-                            </button>
-                            <button
-                                className={styles.button}
-                                type="button"
-                                disabled={false}
-                                style={{ display: nextPage ? "" : "none" }}
-                                onClick={() =>
-                                    sendForm(
-                                        surname,
-                                        lastname,
-                                        email,
-                                        phone,
-                                        value,
-                                        study,
-                                        studyYear,
-                                        studentID,
-                                        studentEM,
-                                        about1,
-                                        about2,
-                                        about3,
-                                        photoOK
-                                    )
-                                }
-                            >
-                                <p className={styles.buttonText}>Søk opptak</p>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div
-                        style={{
-                            display: nextPage || sent ? "none" : "",
-                        }}
-                    >
-                        <div className={styles.projectTitle}>
-                            <p>
-                                Prosjektsøknad - Høst 2023 (Frist 28. Aug){" "}
-                                <a
-                                    className={styles.clickHereText}
-                                    href="https://docs.google.com/forms/d/1aCpYxJC49reGm4sDmSdWCfdS_OFIZzLy8xAqQTPxeU8/viewform?edit_requested=true&pli=1"
-                                >
-                                    {" "}
-                                    Klikk her hvis ikke søknaden funker
-                                </a>
+                    )}
+                    {!applyPage && (
+                        <div className="w-[80%] h-[550px] bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
+                            <p className="font-bold text-[30px] text-blue-dark px-6 pt-8 pb-4">
+                                Søknad - Vårsemesteret 2024
                             </p>
-                        </div>
-
-                        <div className={styles.projectInputCard}>
-                            <div className={styles.projectFirstName}>
-                                <p style={{ color: falseSurname ? "red" : "" }}>
-                                    Fornavn *{" "}
-                                </p>
-                                <p
-                                    style={{
-                                        color: falseLastname ? "red" : "",
+                            <div className="w-full h-full flex justify-center">
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    transition={{
+                                        duration: 0.5,
+                                        delay: 0,
+                                        ease: [0, 0.71, 0.2, 1.0],
                                     }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="w-[95%] h-[420px] bg-gray-lighter rounded-3xl"
                                 >
-                                    Etternavn *{" "}
-                                </p>
-                            </div>
-                            <input
-                                className={styles.inputFirstName}
-                                type="text"
-                                disabled
-                                placeholder="Cogitron"
-                                onChange={(event) =>
-                                    setSurname(event.target.value)
-                                }
-                            />
-                            <input
-                                className={styles.inputLastName}
-                                type="text"
-                                disabled
-                                placeholder="Cogito"
-                                onChange={(event) =>
-                                    setLastname(event.target.value)
-                                }
-                            />
-                            <div className={styles.projectEmail}>
-                                <p style={{ color: falseEmail ? "red" : "" }}>
-                                    Student Epostaddresse *{" "}
-                                </p>
-                            </div>
-                            <input
-                                className={styles.input}
-                                type="text"
-                                disabled
-                                placeholder="cogitron@stud.ntnu.no"
-                                onChange={(event) =>
-                                    setEmail(event.target.value)
-                                }
-                            />
-                            <div className={styles.projectPhone}>
-                                <p style={{ color: falsePhone ? "red" : "" }}>
-                                    Telefonnummer *{" "}
-                                </p>
-                            </div>
-                            <input
-                                className={styles.input}
-                                disabled
-                                placeholder="XXX XX XXX"
-                                onChange={(event) =>
-                                    setPhone(event.target.value)
-                                }
-                            />
-                            <div className={styles.projectChosen}>
-                                <p style={{ color: falseValue ? "red" : "" }}>
-                                    Valgte Prosjekter{" "}
-                                </p>
-                            </div>
+                                    <div className="px-6 py-4">
+                                        <p className="text-[20px]">
+                                            Semesterinfo - Vår 2024
+                                        </p>
+                                        <div className="flex">
+                                            <div className="tracking-wider text-[16px] h-[280px]">
+                                                <p>
+                                                    Vårsemesteret 2024 prøver vi
+                                                    i Cogito noe helt nytt!
+                                                    Ingen direkte søknad til
+                                                    prosjekt!
+                                                </p>
+                                                <br />
+                                                <p>
+                                                    Har du noen gang hatt lyst å
+                                                    lære hvordan man kan lage en
+                                                    Sjakk AI eller noe annet?
+                                                    Dette og mer lærer vi ilag
+                                                    av de dyktige kurslederene
+                                                    våre!
+                                                </p>
+                                                <br />
+                                                <p>
+                                                    Vi starter av med en hel
+                                                    måned med progging, sosialt
+                                                    og såklart AI! Dette gjennom
+                                                    kursing, sosialkvelder og
+                                                    god mat. Senere i semesteret
+                                                    starter prosjektene.
+                                                </p>
+                                            </div>
+                                            <div className="flex justify-end w-full h-[280px]">
+                                                <div className="overflow-auto">
+                                                    <ProjectPreview />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div className={styles.projectsText}>
-                                <p>
-                                    Velg 3 mulige prosjekter *{" "}
-                                    <a style={{ fontSize: "14px" }}>
-                                        (Prioritert i rekkefølge)
-                                    </a>
-                                </p>
-                            </div>
-                            <div className={styles.projects}>
-                                {projects.map((project) => (
-                                    <ProjectMarkable
-                                        title={project.title}
-                                        desc={project.desc}
-                                        image={project.image}
-                                        key={project.title}
-                                        setValue={() =>
-                                            setValue((prev) => [
-                                                ...prev,
-                                                createOption(project.title),
-                                            ])
-                                        }
-                                        removeValue={() =>
-                                            removeOption(project.title)
-                                        }
-                                    />
-                                ))}
-                            </div>
-
-                            <div className={styles.applyButton}>
-                                <button
-                                    className={styles.nextButton}
-                                    type="button"
-                                    disabled={true}
-                                    style={{ display: nextPage ? "none" : "" }}
-                                    onClick={() => {
-                                        checkFormFields(
-                                            surname,
-                                            lastname,
-                                            email,
-                                            phone,
-                                            value
-                                        );
-                                    }}
-                                >
-                                    <p className={styles.buttonText}>Neste</p>
-                                </button>
-                            </div>
-                            <div
-                                className={styles.errorText}
-                                style={{ display: error ? "" : "none" }}
-                            >
-                                <p>
-                                    Google Forms Error... <br /> Try again later
-                                </p>
-                            </div>
-                            <div className={styles.selectorPosition}>
-                                <CreatableSelect
-                                    styles={{
-                                        control: (baseStyles, state) => ({
-                                            ...baseStyles,
-                                            borderStyle: state.isFocused
-                                                ? "none"
-                                                : "none",
-                                            height: "8vh",
-                                            backgroundColor: "#F1F2F6",
-                                            borderRadius: "10px",
-                                            filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8))",
-                                        }),
-                                        multiValueRemove: (baseStyles) => ({
-                                            ...baseStyles,
-                                            display: "none",
-                                        }),
-                                        multiValueLabel: (baseStyles) => ({
-                                            ...baseStyles,
-                                            paddingRight: "1vh",
-                                            fontSize: "16px",
-                                            fontWeight: "700",
-                                            color: "white",
-                                            backgroundColor: "#ff6b81",
-                                            filter: "drop-shadow(2px 2px 0px black)",
-                                        }),
-                                    }}
-                                    components={components}
-                                    isClearable={false}
-                                    isMulti
-                                    isDisabled={true}
-                                    onChange={(newValue) => setValue(newValue)}
-                                    menuIsOpen={false}
-                                    placeholder="Trykk på et av prosjektene..."
-                                    value={value}
-                                />
+                                    <div className="px-6">
+                                        <Button
+                                            text={"Gå tilbake"}
+                                            px={"8"}
+                                            py={"4"}
+                                            color={"pink"}
+                                            icon="ArrowLeft"
+                                            iconPos="left"
+                                            onClick={() => changePage()}
+                                        />
+                                    </div>
+                                </motion.div>
                             </div>
                         </div>
-                    </div>
-                </motion.div>
+                    )}
+                </div>
+            </main>
 
-                <motion.div
-                    className={styles.footer}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        duration: 0.6,
-                        delay: 0.4,
-                        ease: [0, 0.71, 0.2, 1.0],
-                    }}
-                >
-                    <Footer />
-                </motion.div>
-            </div>
+            <Footer />
         </>
     );
 };
