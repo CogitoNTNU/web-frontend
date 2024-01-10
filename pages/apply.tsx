@@ -17,6 +17,7 @@ const Apply = () => {
     const [applyPage, setApplyPage] = useState<boolean>(true);
     const [sent, setSent] = useState<boolean>(false);
     const [errorArray, setErrorArray] = useState<Array<string>>(new Array());
+    const [errorMessage, setErrorMessage] = useState<string>("");
     const formData = new FormData();
 
     const changePage = () => {
@@ -65,9 +66,9 @@ const Apply = () => {
                         <div className="absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[50] rounded-t-3xl text-center tablet:py-4 py-2 drop-shadow-md">
                             <p className="font-medium">Deltaker</p>
                         </div>
-                        <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
+                        {/* <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
                             <p className="font-medium">Verv</p>
-                        </div>
+                        </div> */}
                     </div>
                     {applyPage && (
                         <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
