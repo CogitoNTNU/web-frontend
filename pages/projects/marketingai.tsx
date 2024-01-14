@@ -1,5 +1,5 @@
-import Field from "../../../components/Fields/Field";
-import Footer from "../../../components/Footer/MarketingAIFooter";
+import Field from "../../components/Fields/Field";
+import Footer from "../../components/Footer/MarketingAIFooter";
 import { useState } from "react";
 import ReactLoading from "react-loading";
 import axios from "axios";
