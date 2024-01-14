@@ -21,7 +21,7 @@ const MarketingAI = () => {
                 `${process.env.endpoint}/api/projects/marketing-ai/`,
                 formData
             )
-            .then((res) => setImageUrl(res.data))
+            .then((res) => setImageUrl(res.data.image_url))
             .catch((err) => {
                 console.log(err);
             });
