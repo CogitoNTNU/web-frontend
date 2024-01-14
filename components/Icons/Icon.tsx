@@ -6,7 +6,14 @@ import {
     AiFillMail,
 } from "react-icons/ai";
 
-import { FiArrowRight, FiArrowLeft, FiInfo } from "react-icons/fi";
+import {
+    FiArrowRight,
+    FiArrowLeft,
+    FiInfo,
+    FiPlay,
+    FiGithub,
+    FiUsers,
+} from "react-icons/fi";
 
 interface IconProps {
     icon: string;
@@ -26,6 +33,13 @@ const Icon = ({ icon, size = "40px", color }: IconProps) => {
                 {icon == "Linkedin" && <AiFillLinkedin />}
                 {icon == "Github" && <AiFillGithub />}
                 {icon == "Mail" && <AiFillMail />}
+
+                {icon == "Play" && <FiPlay />}
+
+                {icon == "Users" && <FiUsers />}
+
+                {icon == "GithubFeather" && <FiGithub />}
+
                 <div className="group-hover:translate-x-2 transition-transform ease-linear tablet:block hidden">
                     {icon == "ArrowRight" && <FiArrowRight />}
                 </div>

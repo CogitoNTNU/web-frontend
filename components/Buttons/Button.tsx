@@ -6,9 +6,9 @@ interface ButtonProps {
     textSize?: string;
     px: string;
     py: string;
-    icon?: "ArrowRight" | "ArrowLeft" | "Info";
+    icon?: "ArrowRight" | "ArrowLeft" | "Info" | "GithubFeather" | "Play";
     iconPos?: "left" | "right";
-    color: "pink" | "blue";
+    color: "pink" | "blue" | "gray";
     disabled?: boolean;
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
@@ -47,9 +47,31 @@ const Button = ({
                     {icon && iconPos == "left" && (
                         <Icon size="24px" icon={icon} />
                     )}
-                    <p className="font-medium" style={{ fontSize: textSize }}>
-                        {text}
-                    </p>
+                    {icon == "GithubFeather" && (
+                        <p
+                            className="tablet:block hidden font-medium"
+                            style={{ fontSize: textSize }}
+                        >
+                            {text}
+                        </p>
+                    )}
+                    {icon == "Play" && (
+                        <p
+                            className="tablet:block hidden font-medium"
+                            style={{ fontSize: textSize }}
+                        >
+                            {text}
+                        </p>
+                    )}
+                    {icon !== "GithubFeather" && icon !== "Play" && (
+                        <p
+                            className="font-medium"
+                            style={{ fontSize: textSize }}
+                        >
+                            {text}
+                        </p>
+                    )}
+
                     {icon && iconPos == "right" && (
                         <Icon size="24px" icon={icon} />
                     )}
