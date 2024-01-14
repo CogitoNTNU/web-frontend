@@ -18,8 +18,7 @@ const Projects = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{
-                    duration: 0.6,
-                    delay: 0.2,
+                    duration: 0.4,
                     ease: [0, 0.71, 0.2, 1.0],
                 }}
                 className="relative overflow-hidden"
@@ -37,7 +36,7 @@ const Projects = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                         duration: 0.6,
-                        delay: 0.6,
+                        delay: 0.4,
                         ease: [0, 0.71, 0.2, 1.0],
                     }}
                     className="absolute z-50 w-full flex items-end justify-center top-[700px]"

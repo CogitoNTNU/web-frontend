@@ -1,5 +1,6 @@
 import Image from "next/image";
 import New from "../Notification/New";
+import { motion } from "framer-motion";
 
 // Images
 import MarketingAILogo from "../../public/Projects/MarketingAILogo.png";
@@ -16,7 +17,16 @@ interface Project {
 const Project = ({ title, image, desc }: Project) => {
     return (
         <>
-            <main className="relative flex tablet:w-[600px] w-[350px] tablet:h-[120px] h-[110px] bg-white rounded-2xl z-50 drop-shadow-md group hover:h-[210px] transition-all">
+            <motion.main
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.6,
+                    ease: [0, 0.71, 0.2, 1.0],
+                }}
+                className="relative flex tablet:w-[600px] w-[350px] tablet:h-[120px] h-[110px] bg-white rounded-2xl z-50 drop-shadow-md group hover:h-[210px] transition-all"
+            >
                 <div className="absolute -top-4 -right-4">
                     <New />
                 </div>
@@ -85,7 +95,7 @@ const Project = ({ title, image, desc }: Project) => {
                         </div>
                     </div>
                 </div>
-            </main>
+            </motion.main>
         </>
     );
 };
