@@ -4,7 +4,7 @@ import Head from "next/head";
 import HomeP1 from "../components/Home/HomeP1";
 import HomeP2 from "../components/Home/HomeP2";
 import HomeP3 from "../components/Home/HomeP3";
-import styles from "../styles/Home.module.css";
+
 const Home = () => {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -41,8 +41,7 @@ const Home = () => {
                     content="width=device-width, initial-scale=1.0"
                 ></meta>
             </Head>
-
-            <div className={styles.container}>
+            <div className="snap-y snap-mandatory h-[100vh] overflow-y-scroll bg-gray-darker">
                 <section id="part-0">
                     <HomeP1 />
                 </section>

@@ -1,13 +1,20 @@
-import styles from "../styles/Loading.module.css";
-import CogitoLogo from "../public/cogito_white.svg";
-import Image from "next/image";
 import ReactLoading from "react-loading";
+import { motion } from "framer-motion";
 
 const Loading = () => {
     return (
         <>
-            <div className={styles.main}>
-                <div className={styles.imagePos}>
+            <motion.div
+                initial={{ backgroundColor: "#202124" }}
+                animate={{ backgroundColor: "#13395B" }}
+                transition={{
+                    duration: 1.2,
+                    delay: 0.4,
+                    ease: [0, 0.71, 0.2, 1.0],
+                }}
+                className="absolute flex justify-center w-full h-full items-center"
+            >
+                <div className="fill-white">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="91"
@@ -36,16 +43,16 @@ const Loading = () => {
                             </clipPath>
                         </defs>
                     </svg>
+                    <div className="flex justify-center py-2">
+                        <ReactLoading
+                            type={"cylon"}
+                            color={"white"}
+                            height={"50%"}
+                            width={"50%"}
+                        />
+                    </div>
                 </div>
-                <div className={styles.loadingPos}>
-                    <ReactLoading
-                        type={"cylon"}
-                        color={"white"}
-                        height={"5%"}
-                        width={"5%"}
-                    />
-                </div>
-            </div>
+            </motion.div>
         </>
     );
 };
