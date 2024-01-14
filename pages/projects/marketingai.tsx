@@ -11,7 +11,7 @@ const MarketingAI = () => {
 
     
     const handleKeyPress = (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && value !== "") {
             getGeneratedImage();
         }
     };
