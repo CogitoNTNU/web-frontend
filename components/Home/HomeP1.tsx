@@ -36,7 +36,7 @@ const HomeP1 = () => {
                 className="relative h-[100vh] w-full overflow-hidden bg-gray-darker"
                 id="section-0"
             >
-                <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
+                <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-40"></div>
 
                 <motion.div
                     className="absolute w-[120vw] h-[110vh]"

@@ -81,7 +81,7 @@ const HomeP2 = () => {
                             </p>
                             <br />
 
-                            <div className="z-[50] absolute">
+                            <div className="z-[80] absolute">
                                 <Link href="/projects">
                                     <Button
                                         text={"Prosjekter"}
