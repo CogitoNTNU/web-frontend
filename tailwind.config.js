@@ -26,11 +26,13 @@ module.exports = {
           default: "#1E1E1E"
         },
         blue:{
+          light: "#30b3ec",
           default: "#1E90FF",
           dark: "#13395B",
           darker: "#0E304F"
         },
         gray: {
+          darker: "#202124",
           default: "#2F3542",
           light: "#F1F2F6",
           lighter: "#CED6E0"
