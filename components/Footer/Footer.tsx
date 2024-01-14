@@ -4,10 +4,10 @@ const Footer = () => {
     return (
         <div className="flex h-full sm:py-[100px] py-[50px] justify-center items-center laptop:gap-[400px] tablet:gap-[250px] gap-[40px] laptop:px-[40px] px-[10px]">
             <div className="text-white">
-                <div className="laptop:text-[20px] tablet:text-[18px] phone:text-[14px] text-[13px] font-bold">
+                <div className="laptop:text-[20px] tablet:text-[18px] phone:text-[14px] text-[12px] font-bold">
                     <p>Cogito NTNU © 2023</p>
                 </div>
-                <div className="laptop:text-[18px] tablet:text-[16px] text-[12px]">
+                <div className="laptop:text-[18px] tablet:text-[16px] text-[10px]">
                     <p>Org.Nr. 920 628 788</p>
                 </div>
             </div>
