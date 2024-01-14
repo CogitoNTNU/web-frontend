@@ -18,14 +18,13 @@ const Project = ({ title, image, desc }: Project) => {
     return (
         <>
             <motion.main
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
-                    duration: 0.6,
-                    delay: 0.6,
-                    ease: [0, 0.71, 0.2, 1.0],
+                    duration: 0.4,
+                    delay: 0.4,
                 }}
-                className="relative flex tablet:w-[600px] w-[350px] tablet:h-[120px] h-[110px] bg-white rounded-2xl z-50 drop-shadow-md group hover:h-[210px] transition-all"
+                className="relative flex tablet:w-[600px] w-[350px] tablet:h-[120px] h-[110px] bg-white rounded-2xl z-50 group hover:h-[210px] transition-all"
             >
                 <div className="absolute -top-4 -right-4">
                     <New />
