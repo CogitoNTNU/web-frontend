@@ -187,52 +187,48 @@ const Navbar = () => {
                 )}
             </motion.nav>
             <div className="w-full h-full overflow-hidden">
-                <AnimatePresence>
-                    {isOpen && (
-                        <motion.div
-                            initial={{ x: -100 }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0,
-                                ease: [0, 0.71, 0.2, 1.0],
-                            }}
-                            animate={{ x: 0 }}
-                            exit={{ opacity: 0 }}
-                            className="absolute right-0 top-0 bg-blue-darker w-full h-full px-8 z-[90]"
-                        >
-                            <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
-                                {navbarLinks.map((data) => (
-                                    <Link
-                                        onClick={() =>
-                                            burgerChangePage(data.title)
-                                        }
-                                        key={data.title}
-                                        href={data.link}
-                                    >
-                                        <div className="text-white font-medium text-[20px]">
-                                            <span>{data.title}</span>
-                                        </div>
-                                    </Link>
-                                ))}
-                                <div className="pt-[10px]">
-                                    <Link
-                                        onClick={() =>
-                                            burgerChangePage("Søk Opptak")
-                                        }
-                                        href={"/apply"}
-                                    >
-                                        <Button
-                                            text={"Søk Opptak"}
-                                            px={"8"}
-                                            py={"4"}
-                                            color={"pink"}
-                                        />
-                                    </Link>
-                                </div>
+                {isOpen && (
+                    <motion.div
+                        initial={{ x: -100 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0,
+                            ease: [0, 0.71, 0.2, 1.0],
+                        }}
+                        animate={{ x: 0 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed right-0 top-0 bg-blue-darker w-full h-full px-8 z-[90]"
+                    >
+                        <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
+                            {navbarLinks.map((data) => (
+                                <Link
+                                    onClick={() => burgerChangePage(data.title)}
+                                    key={data.title}
+                                    href={data.link}
+                                >
+                                    <div className="text-white font-medium text-[20px]">
+                                        <span>{data.title}</span>
+                                    </div>
+                                </Link>
+                            ))}
+                            <div className="pt-[10px]">
+                                <Link
+                                    onClick={() =>
+                                        burgerChangePage("Søk Opptak")
+                                    }
+                                    href={"/apply"}
+                                >
+                                    <Button
+                                        text={"Søk Opptak"}
+                                        px={"8"}
+                                        py={"4"}
+                                        color={"pink"}
+                                    />
+                                </Link>
                             </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                        </div>
+                    </motion.div>
+                )}
             </div>
         </>
     );
