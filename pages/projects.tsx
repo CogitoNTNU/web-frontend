@@ -39,7 +39,7 @@ const Projects = () => {
                         delay: 0.4,
                         ease: [0, 0.71, 0.2, 1.0],
                     }}
-                    className="absolute z-50 w-full flex items-end justify-center top-[700px]"
+                    className="absolute z-50 w-full flex items-end justify-center phone:top-[700px] top-[650px]"
                 >
                     <p className="bg-gray-default px-8 rounded-2xl absolute font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wid drop-shadow-3xl">
                         PROSJEKTER

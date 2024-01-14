@@ -39,7 +39,7 @@ const Project = ({ title, image, desc }: Project) => {
                     <div className="tablet:w-[300px] w-[240px] bg-red-default h-full transition-transform rounded-l-2xl text-white">
                         <div className="flex pt-[120px] pl-4 justify-start gap-2 group-hover:opacity-100 opacity-0 transition-all ease-in-out">
                             <div className="flex gap-2 items-center h-full">
-                                <p className="text-[20px font-bold">
+                                <p className="text-[20px] font-bold">
                                     Prosjektledere
                                 </p>
                                 <Icon icon={"Users"} size="20px" />
