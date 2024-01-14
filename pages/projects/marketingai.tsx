@@ -13,8 +13,11 @@ const MarketingAI = () => {
         setImageUrl("loading");
         const formData = new FormData();
         formData.append("prompt", value);
+        formData.append("width", "1024");
+        formData.append("height", "1024");
+
         await axios
-            .post(`${process.env.endpoint}/projects/generate_image/`, formData)
+            .post(`${process.env.endpoint}/projects/marketing-ai/`, formData)
             .then((res) => setImageUrl(res.data))
             .catch((err) => {
                 console.log(err);
