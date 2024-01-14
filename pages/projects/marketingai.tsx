@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/MarketingAIFooter";
 import { useState } from "react";
 import ReactLoading from "react-loading";
 import axios from "axios";
+import Head from "next/head";
 
 const MarketingAI = () => {
     const [value, setValue] = useState("");
@@ -22,6 +23,9 @@ const MarketingAI = () => {
 
     return (
         <>
+            <Head>
+                <title>Marketing AI - Cogito NTNU</title>
+            </Head>
             <div className="bg-black-default h-full">
                 {imageUrl === "" ? (
                     <header className="tablet:h-[450px] h-[300px] w-full bg-red-default overflow-hidden">
