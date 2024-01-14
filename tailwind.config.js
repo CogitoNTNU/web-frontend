@@ -9,7 +9,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    
     extend: {
       colors: {
         red: {
@@ -55,6 +54,7 @@ module.exports = {
   safelist: [
     'bg-pink-default',
     'bg-blue-default',
+    'bg-gray-default',
     'px-8',
     'px-12',
     'text-3xl',
