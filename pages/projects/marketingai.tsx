@@ -17,7 +17,10 @@ const MarketingAI = () => {
         formData.append("height", "1024");
 
         await axios
-            .post(`${process.env.endpoint}/projects/marketing-ai/`, formData)
+            .post(
+                `${process.env.endpoint}/api/projects/marketing-ai/`,
+                formData
+            )
             .then((res) => setImageUrl(res.data))
             .catch((err) => {
                 console.log(err);
