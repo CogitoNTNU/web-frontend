@@ -51,7 +51,7 @@ const HomeP2 = () => {
                     <div className="absolute flex w-fit text-center laptop:pb-[200px] pb-[150px] laptop:text-[40px] text-[24px] font-black">
                         <motion.p
                             initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            animate={{ opacity: 1, scale: 1 }}
                             transition={{
                                 duration: 0.5,
                                 delay: 0.6,
