@@ -9,6 +9,13 @@ const MarketingAI = () => {
     const [value, setValue] = useState("");
     const [imageUrl, setImageUrl] = useState<string>("");
 
+    
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter' && value !== "") {
+            getGeneratedImage();
+        }
+    };
+
     const getGeneratedImage = async () => {
         setImageUrl("loading");
         const formData = new FormData();
@@ -32,7 +39,7 @@ const MarketingAI = () => {
             <Head>
                 <title>Marketing AI - Cogito NTNU</title>
             </Head>
-            <div className="bg-black-default h-full">
+            <div className="bg-black-default h-full" onKeyDown={handleKeyPress}>
                 {imageUrl === "" ? (
                     <header className="tablet:h-[450px] h-[300px] w-full bg-red-default overflow-hidden">
                         <div className="flex justify-start w-full h-full tablet:px-[6%] px-[2%] items-center relative tablet:-bottom-20 -bottom-20">
