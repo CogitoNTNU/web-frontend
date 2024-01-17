@@ -42,12 +42,12 @@ const Footer = () => {
                                 Source Code
                             </a>
                         </div>
-                        <span className="tablet:text-xs text-[6px] leading-3">
+                        <p className="tablet:text-xs text-[6px]">
                             Marketing AI uses chatbot-like AI models to generate
                             marketing images, making it a powerful tool for
                             creating visual content that aligns with marketing
                             goals.
-                        </span>
+                        </p>
                     </div>
                 </div>
             </footer>
