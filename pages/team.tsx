@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 
 //Images
-import marketingAI from "../public/Team/MarketingAI.jpg";
+import team from "../public/Team/Alle.webp";
 import sveinung from "../public/Team/Sveinung.jpg";
 
 const Team = () => {
@@ -20,7 +20,6 @@ const Team = () => {
         "Prosjektledere",
         "Loqoire",
         "Web",
-        "SoMe",
     ];
 
     const [currentClicked, setCurrentClicked] =
@@ -64,7 +63,7 @@ const Team = () => {
                     <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
                     <Image
                         className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:block hidden"
-                        src={marketingAI}
+                        src={team}
                         alt={"banner"}
                     />
                     <Image
