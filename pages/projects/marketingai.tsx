@@ -32,7 +32,7 @@ const MarketingAI = () => {
       .catch((err) => {
         console.log(err);
         console.log(err.response.status);
-        if (err.response.status === 500) {
+        if (err.response.status === 500 || err.response.status === 400) {
           handleError();
         }
       });
@@ -289,12 +289,14 @@ const MarketingAI = () => {
               </div>
             ) : (
               <>
+                {/* Shows the image if everything is ok */}
                 {imageUrl !== "error" ? (
                   <img
                     className="object-cover tablet:w-[500px] w-[400px]"
                     src={imageUrl}
                   ></img>
                 ) : (
+                  /* Shows the image if everything is ok */
                   <div className="w-full h-full flex flex-col items-center justify-center">
                     <p className="text-white">Error generating image</p>
                     <p className="text-white">
