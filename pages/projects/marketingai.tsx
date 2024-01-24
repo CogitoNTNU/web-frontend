@@ -11,10 +11,17 @@ import { motion } from "framer-motion";
 import poster1 from "../../public/Projects/MarketingAI/poster.png";
 import poster2 from "../../public/Projects/MarketingAI/soda.jpg";
 import poster3 from "../../public/Projects/MarketingAI/bicycle.png";
+import ErrorHandlingMarketingAI from "../../components/Errors/ErrorHandlingMarketingAI";
+
+type ErrorObject = {
+  error: string;
+  statusCode: number;
+};
 
 const MarketingAI = () => {
   const [value, setValue] = useState("");
   const [imageUrl, setImageUrl] = useState<string>("");
+  const [status, setStatus] = useState<ErrorObject>(null);
 
   const getGeneratedImage = async () => {
     setImageUrl("loading");
@@ -26,20 +33,19 @@ const MarketingAI = () => {
     await axios
       .post(`${process.env.endpoint}/api/projects/marketing-ai/`, formData)
       .then((res) => {
-        console.log(res.status);
         setImageUrl(res.data.image_url);
       })
       .catch((err) => {
-        console.log(err);
-        console.log(err.response.status);
-        if (err.response.status === 500 || err.response.status === 400) {
-          handleError();
-        }
-      });
-  };
+        let errorObject: ErrorObject = {
+          error: err.message,
+          statusCode: err.response.status,
+        };
+        console.log(errorObject);
 
-  const handleError = () => {
-    setImageUrl("error");
+        setStatus(errorObject);
+        setImageUrl(null);
+        console.error(err);
+      });
   };
 
   return (
@@ -48,6 +54,15 @@ const MarketingAI = () => {
         <title>Marketing AI - Cogito NTNU</title>
       </Head>
       <div className="bg-black-default h-full overflow-hidden">
+        {status && (
+          <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden flex justify-center items-center">
+            <ErrorHandlingMarketingAI
+              errorCode={status.statusCode}
+              errorMessage={status.error}
+              refetchClick={getGeneratedImage}
+            />
+          </header>
+        )}
         {imageUrl === "" ? (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden">
             <div className="flex justify-start w-full h-full tablet:px-[6%] px-[2%] items-center relative tablet:-bottom-20 -bottom-20 ">
@@ -290,24 +305,10 @@ const MarketingAI = () => {
             ) : (
               <>
                 {/* Shows the image if everything is ok */}
-                {imageUrl !== "error" ? (
-                  <img
-                    className="object-cover tablet:w-[500px] w-[400px]"
-                    src={imageUrl}
-                  ></img>
-                ) : (
-                  /* Shows the image if everything is ok */
-                  <div className="w-full h-full flex flex-col items-center justify-center">
-                    <p className="text-white">Error generating image</p>
-                    <p className="text-white">
-                      The given text prompt is in violation of the terms and
-                      services{" "}
-                    </p>
-                    <p className="text-white">
-                      of the API provider, please retry or change the prompt{" "}
-                    </p>
-                  </div>
-                )}
+                <img
+                  className="object-cover tablet:w-[500px] w-[400px]"
+                  src={imageUrl}
+                ></img>
               </>
             )}
           </header>
