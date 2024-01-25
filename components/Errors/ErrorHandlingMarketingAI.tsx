@@ -25,15 +25,22 @@ const ErrorHandlingMarketingAI = ({
       );
     case 500:
       return (
-        <div className="w-full h-full flex flex-col items-center justify-center text-slate-50">
+        <div className="w-full h-full flex flex-col items-center justify-center text-slate-50 gap-2">
           <h1 className="flex items-center text-lg">Error: 500</h1>
-          <h3 title={errorMessage}>Internal Server Error</h3>
+          <h3
+            title={errorMessage}
+            className="flex items-center text-base hover:underline cursor-pointer"
+          >
+            Internal Server Error
+          </h3>
           <button
             onClick={refetchClick}
-            className="bg-slate-500 hover:bg-slate-400 text-slate-50 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className=" gap-4 bg-gray-default hover:bg-gray-darker py-2 px-4 rounded-md tablet:text-l text-[16px] text-white"
             type="button"
             title="Refetch"
-          />
+          >
+            {"Try Again"}
+          </button>
         </div>
       );
 
