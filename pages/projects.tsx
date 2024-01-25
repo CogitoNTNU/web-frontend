@@ -1,8 +1,10 @@
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
+import { ProjectType } from "../types/types";
+import { CogitoProjects } from "../data/projects";
 
 // Images
 import Banner from "../public/Projects/MarketingAIShowcase.jpg";
@@ -57,7 +59,11 @@ const Projects = () => {
                 </div>
 
                 <div className="pt-8 flex justify-center">
-                    <Project />
+                    <div className="grid gap-8">
+                        {CogitoProjects.map((project: ProjectType) => (
+                            <Project {...project} />
+                        ))}
+                    </div>
                 </div>
             </motion.main>
             <Footer />
