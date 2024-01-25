@@ -25,6 +25,7 @@ const MarketingAI = () => {
 
   const getGeneratedImage = async () => {
     setImageUrl("loading");
+    setStatus(null);
     const formData = new FormData();
     formData.append("prompt", value);
     formData.append("width", "1024");
