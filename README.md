@@ -89,6 +89,12 @@ This project leverages the following technologies:
             <sub><b>Simon Sandvik Lee</b></sub>
         </a>
     </td>
+      <td align="center">
+        <a href="https://github.com/Spiderpig02">
+            <img src="https://github.com/Spiderpig02.png?size=1920" width="100px;"/><br />
+            <sub><b>Daniel N Hansen</b></sub>
+        </a>
+    </td>
   </tr>
 </table>
 
