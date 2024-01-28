@@ -12,7 +12,7 @@
 }
 
 .contact {
-  position:absolute;
+  position: absolute;
   border-radius: 20px;
   width: 75vw;
   height: 55vh;
@@ -40,7 +40,7 @@
 }
 
 .contactDesc {
-  color: #2F3542;
+  color: #2f3542;
   font-family: Lexend Deca;
   font-size: 18px;
   font-style: normal;
@@ -52,7 +52,7 @@
 
 .map {
   position: absolute;
-  overflow: 'hidden';
+  overflow: "hidden";
   border-radius: 20px;
   border-radius: 20px;
   top: 50vh;
@@ -63,7 +63,7 @@
 }
 
 .hrline {
-  background-color: #2F3542;
+  background-color: #2f3542;
 }
 
 .container {
@@ -74,7 +74,7 @@
 
 .erfaringTitle {
   position: absolute;
-  color: #FFF;
+  color: #fff;
   font-family: Lexend Deca;
   font-size: 50px;
   font-style: normal;
@@ -89,7 +89,7 @@
 
 .erfaring {
   position: absolute;
-  color: #FFF;
+  color: #fff;
   font-family: Lexend Deca;
   font-size: 24px;
   font-style: normal;
@@ -154,19 +154,19 @@
 }
 
 .titlePosition {
-  color: #FFF;
+  color: #fff;
   font-family: Lexend Deca;
   margin: auto;
   width: 101%;
   top: 38vh;
   text-align: center;
   line-height: normal;
-  position:absolute;
+  position: absolute;
   z-index: 50;
 }
 
 .title1 {
-  color: #FFF;
+  color: #fff;
   font-family: Lexend Deca;
   font-size: 80px;
   font-style: normal;
@@ -179,7 +179,7 @@
 }
 
 .title2 {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: Lexend Deca;
   font-size: 60px;
@@ -217,7 +217,7 @@
 }
 
 .buttonText {
-  color: #FFF;
+  color: #fff;
   font-family: Lexend Deca;
   font-size: 18px;
   font-style: normal;
@@ -245,14 +245,14 @@
     position: absolute;
     left: -65vh;
   }
-  
+
   .theatre {
     position: absolute;
     z-index: 3;
     transition: 0.45s;
     left: -65vh;
   }
-  
+
   .stage {
     position: absolute;
     padding-bottom: 12vh;
@@ -262,18 +262,18 @@
   }
 
   .titlePosition {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     margin: auto;
     width: 105%;
     top: 42vh;
     text-align: center;
-    position:absolute;
+    position: absolute;
     z-index: 50;
   }
-  
+
   .title1 {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 50px;
     font-style: normal;
@@ -284,9 +284,9 @@
     cursor: default;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .title2 {
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Lexend Deca;
     font-size: 38px;
@@ -298,7 +298,7 @@
     cursor: default;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .creatorText {
     position: absolute;
     color: white;
@@ -328,7 +328,7 @@
     transition: 0.45s;
     left: -53vh;
   }
-  
+
   .stage {
     position: absolute;
     z-index: 5;
@@ -337,18 +337,18 @@
   }
 
   .titlePosition {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     margin: auto;
     width: 105%;
     top: 42vh;
     text-align: center;
-    position:absolute;
+    position: absolute;
     z-index: 50;
   }
-  
+
   .title1 {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 50px;
     font-style: normal;
@@ -359,9 +359,9 @@
     cursor: default;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .title2 {
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Lexend Deca;
     font-size: 38px;
@@ -373,7 +373,7 @@
     cursor: default;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .creatorText {
     position: absolute;
     color: white;
@@ -393,7 +393,7 @@
 
   .erfaringTitle {
     position: absolute;
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 30px;
     font-style: normal;
@@ -408,7 +408,7 @@
 
   .erfaring {
     position: absolute;
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 16px;
     font-style: normal;
@@ -419,7 +419,7 @@
     left: 10%;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .cogitoBrain {
     position: absolute;
     top: 28vh;
@@ -427,7 +427,7 @@
     z-index: 2;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .brainimg {
     height: 400px;
     width: 500px;
@@ -439,20 +439,20 @@
     justify-content: center;
     align-items: center;
     border-radius: 24px;
-    background: #1E90FF;
+    background: #1e90ff;
     border: none;
     cursor: pointer;
   }
-  
+
   .buttonText {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
-  
+
   .buttonDiv {
     padding-top: 2vh;
   }
@@ -463,7 +463,7 @@
   }
 
   .contact {
-    position:absolute;
+    position: absolute;
     border-radius: 20px;
     width: 75vw;
     height: 60vh;
@@ -475,7 +475,7 @@
   }
 
   .contactDesc {
-    color: #2F3542;
+    color: #2f3542;
     font-family: Lexend Deca;
     font-size: 12px;
     font-style: normal;
@@ -498,7 +498,7 @@
 
   .map {
     position: absolute;
-    overflow: 'hidden';
+    overflow: "hidden";
     border-radius: 20px;
     top: 81vh;
     left: 14vw;
@@ -510,9 +510,6 @@
   .bgbacks {
     transform: translateY(calc(-20%));
   }
-  
-  
-  
 }
 
 /* --- css for Defualt Widescreen 1920 x 1080 --- */
@@ -526,14 +523,14 @@
     height: 1550px;
     width: 2100px;
   }
-  
+
   .theatre {
     position: absolute;
     z-index: 3;
     transition: 0.45s;
     left: 0vh;
   }
-  
+
   .stage {
     position: absolute;
     padding-bottom: 12vh;
@@ -543,18 +540,18 @@
   }
 
   .titlePosition {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     margin: auto;
     width: 105%;
     top: 42vh;
     text-align: center;
-    position:absolute;
+    position: absolute;
     z-index: 50;
   }
-  
+
   .title1 {
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 90px;
     font-style: normal;
@@ -565,9 +562,9 @@
     cursor: default;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .title2 {
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Lexend Deca;
     font-size: 68px;
@@ -579,7 +576,7 @@
     cursor: default;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .creatorText {
     position: absolute;
     color: white;
@@ -597,7 +594,7 @@
 
   .erfaringTitle {
     position: absolute;
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 50px;
     font-style: normal;
@@ -612,7 +609,7 @@
 
   .erfaring {
     position: absolute;
-    color: #FFF;
+    color: #fff;
     font-family: Lexend Deca;
     font-size: 24px;
     font-style: normal;
@@ -623,7 +620,7 @@
     left: 58%;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .cogitoBrain {
     position: absolute;
     top: 28vh;
@@ -631,19 +628,19 @@
     z-index: 2;
     filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.25));
   }
-  
+
   .brainimg {
     height: 600px;
     width: 775px;
   }
-  
+
   .page3bg {
     height: 1100px;
     width: 2050px;
   }
 
   .contactDesc {
-    color: #2F3542;
+    color: #2f3542;
     font-family: Lexend Deca;
     font-size: 26px;
     font-style: normal;

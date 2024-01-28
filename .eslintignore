@@ -1,0 +1,11 @@
+.next
+.vscode
+node_modules
+.eslintrc.cjs
+package-lock.json
+package.json
+README.md
+next-env.d.ts
+next.config.js
+tsconfig.json
+postcss.config.js

@@ -23,30 +23,31 @@ const MarketingAI = () => {
   const [imageUrl, setImageUrl] = useState<string>("");
   const [status, setStatus] = useState<ErrorObject>(null);
 
-  const getGeneratedImage = async () => {
-    setImageUrl("loading");
-    setStatus(null);
-    const formData = new FormData();
-    formData.append("prompt", value);
-    formData.append("width", "1024");
-    formData.append("height", "1024");
+  const getGeneratedImage = async (): Promise<void> => {
+    try {
+      setImageUrl("loading");
+      setStatus(null);
+      const formData = new FormData();
+      formData.append("prompt", value);
+      formData.append("width", "1024");
+      formData.append("height", "1024");
 
-    await axios
-      .post(`${process.env.endpoint}/api/projects/marketing-ai/`, formData)
-      .then((res) => {
-        setImageUrl(res.data.image_url);
-      })
-      .catch((err) => {
-        let errorObject: ErrorObject = {
-          error: err.message,
-          statusCode: err.response.status,
-        };
-        console.log(errorObject);
+      const res = await axios.post(
+        `${process.env.endpoint}/api/projects/marketing-ai/`,
+        formData
+      );
+      setImageUrl(res.data.image_url);
+    } catch (err) {
+      const errorObject: ErrorObject = {
+        error: err.message,
+        statusCode: err.response.status,
+      };
+      console.log(errorObject);
 
-        setStatus(errorObject);
-        setImageUrl(null);
-        console.error(err);
-      });
+      setStatus(errorObject);
+      setImageUrl(null);
+      console.error(err);
+    }
   };
 
   return (
