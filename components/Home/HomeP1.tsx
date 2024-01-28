@@ -9,12 +9,13 @@ import SunImg from "../../public/HomePage/Bg_sun.webp";
 import StageImg from "../../public/HomePage/Bg_stage.webp";
 import TheatreImg from "../../public/HomePage/Bg_theatre.webp";
 import Icon from "../Icons/Icon";
+import { MousePosition } from "antd/es/modal/interface";
 
 const HomeP1 = () => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [mousePos, setMousePos] = useState<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: MouseEvent) => {
       setMousePos({
         x: event.clientX - window.innerWidth / 2,
         y: event.clientY - window.innerHeight / 2,
@@ -167,7 +168,7 @@ const HomeP1 = () => {
               className="phone:text-[14px] text-[12px] text-white "
               href="https://en.wikipedia.org/wiki/Th%C3%A9%C3%A2tre_d%27Op%C3%A9ra_Spatial"
             >
-              "Théâtre D’opéra Spatial" © 2022 Jason M. Allen
+              &ldquo;Théâtre D’opéra Spatial&rdquo; © 2022 Jason M. Allen
             </motion.a>
           </motion.div>
         </div>

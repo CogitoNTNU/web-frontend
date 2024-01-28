@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 
 interface FieldProps {
@@ -7,8 +7,8 @@ interface FieldProps {
   type: string;
   placeholder?: string;
   value: string;
-  onClick?: Function;
-  setValue: Function;
+  onClick?: () => void;
+  setValue: (value: string) => void;
   activeButton?: boolean;
   errorArray?: Array<string>;
   onChange?: (value: string) => void;
@@ -23,7 +23,7 @@ const Field = ({
   onClick,
   setValue,
   activeButton = false,
-  errorArray = new Array(),
+  errorArray = [],
   onChange,
 }: FieldProps) => {
   /**
@@ -37,6 +37,9 @@ const Field = ({
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     const newValue = event.target.value;
+    if (newValue.match(/[^0-9+]/g) && type == "numbers") {
+      return;
+    }
     setValue(newValue);
     if (onChange) {
       onChange(newValue);
@@ -51,18 +54,18 @@ const Field = ({
 
   const [textRed, setTextRed] = useState<boolean>(false);
 
-  const setError = () => {
+  const setError = useCallback(() => {
     if (errorArray !== null) {
       if (errorArray.includes(id)) {
         setTextRed(true);
       }
     }
-  };
+  }, [errorArray, id]);
 
   useEffect(() => {
     setTextRed(false);
     setError();
-  }, [errorArray]);
+  }, [errorArray, setError]);
 
   return (
     <>

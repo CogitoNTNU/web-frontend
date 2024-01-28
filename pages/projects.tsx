@@ -1,5 +1,4 @@
 import Head from "next/head";
-import React from "react";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
@@ -61,7 +60,7 @@ const Projects = () => {
         <div className="pt-8 flex justify-center">
           <div className="grid gap-8">
             {CogitoProjects.map((project: ProjectType) => (
-              <Project {...project} />
+              <Project key={project.github} {...project} />
             ))}
           </div>
         </div>

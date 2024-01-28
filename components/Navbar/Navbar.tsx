@@ -5,12 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 import Hamburger from "hamburger-react";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Button from "../Buttons/Button";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
@@ -66,16 +61,20 @@ const Navbar = () => {
   }
 
   const changeAndGo = async () => {
-    router.push("/loading");
+    await router.push("/loading");
     await timeout(500);
-    router.push("/");
+    await router.push("/");
   };
 
   useEffect(() => {
-    if (router.pathname == "/") {
-      changeAndGo();
+    if (router.pathname === "/") {
+      changeAndGo().catch((err) => console.error(err));
     }
-    setPage(links[router.pathname]);
+    const page: string = links[router.pathname] as string;
+    if (page !== undefined) {
+      setPage(page);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -83,13 +82,15 @@ const Navbar = () => {
     if (router.pathname.includes("/projects") && router.pathname.length > 10) {
       setOnlyLogo(true);
     }
-  });
+  }, [router.pathname]);
 
   useEffect(() => {
     const targetElement = document.querySelector("body");
     if (isOpen) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       disableBodyScroll(targetElement);
     } else {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       enableBodyScroll(targetElement);
     }
   }, [isOpen]);
@@ -122,9 +123,9 @@ const Navbar = () => {
         className="flex flex-row w-full h-[120px] px-[4%] text-lg fixed text-white z-[100]"
       >
         <Link
-          onClick={() => {
+          onClick={async () => {
             setPage("Hjem");
-            scrollToTop();
+            await scrollToTop();
           }}
           href={"/"}
         >

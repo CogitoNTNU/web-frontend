@@ -1,6 +1,6 @@
 "use client";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import RadioButton from "../components/Buttons/RadioButton";
 import Member from "../components/Member/Member";
@@ -24,13 +24,16 @@ const Team = () => {
 
   const [currentClicked, setCurrentClicked] =
     useState<string>("Alle Medlemmer");
-  const [members, setMembers] = useState([]);
-  const formData = new FormData();
+  const [members, setMembers] = useState<MemberType[]>([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
+    const formData = new FormData();
     formData.append("member_type", currentClicked);
     await axios
-      .post(`${process.env.endpoint}/api/members-by-type/`, formData)
+      .post<MemberType[]>(
+        `${process.env.endpoint}/api/members-by-type/`,
+        formData
+      )
       .then((res) => {
         setMembers(res.data);
         console.log(res.data);
@@ -38,11 +41,13 @@ const Team = () => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, [currentClicked]);
 
   useEffect(() => {
-    fetchData();
-  }, [currentClicked]);
+    fetchData().catch((err) => {
+      console.log(err);
+    });
+  }, [currentClicked, fetchData]);
 
   return (
     <>

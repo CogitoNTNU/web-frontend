@@ -1,14 +1,5 @@
 import Link from "next/link";
-import classNames from "classnames";
 import { AiFillGithub } from "react-icons/ai";
-
-const buttonClass = classNames(
-  "flex",
-  "items-center",
-  "justify-center",
-  "h-[100%]",
-  "w-[90px]"
-);
 
 const Footer = () => {
   const year = new Date().getFullYear();

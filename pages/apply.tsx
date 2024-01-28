@@ -8,6 +8,12 @@ import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
 import axios from "axios";
 
+type AxiosError = {
+  response: {
+    data: string;
+  };
+};
+
 const Apply = () => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
@@ -16,8 +22,7 @@ const Apply = () => {
   const [about, setAbout] = useState<string>("");
   const [applyPage, setApplyPage] = useState<boolean>(true);
   const [sent, setSent] = useState<boolean>(false);
-  const [errorArray, setErrorArray] = useState<Array<string>>(new Array());
-  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [errorArray, setErrorArray] = useState<Array<string>>([]);
   const formData = new FormData();
 
   const changePage = () => {
@@ -41,8 +46,9 @@ const Apply = () => {
         setSent(true);
         console.log(res.data);
       })
-      .catch((err) => {
+      .catch((err: AxiosError) => {
         setErrorArray(Object.keys(err.response.data));
+        console.error(err.response.data);
       });
   };
 

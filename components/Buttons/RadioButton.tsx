@@ -37,7 +37,7 @@ const RadioButton = ({
     } else {
       setClicked(false);
     }
-  }, [currentClicked]);
+  }, [currentClicked, text]);
 
   return (
     <>

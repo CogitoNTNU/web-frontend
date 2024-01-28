@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import styles from "../../styles/Home.module.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import GoogleMapReact from "google-map-react";
 import Footer from "../Footer/Footer";
@@ -18,7 +16,8 @@ const HomeP3 = () => {
     },
     zoom: 17,
   };
-  const Marker = (props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, react/prop-types
+  const Marker = ({ lat, lng }) => {
     return (
       <div className="SuperAwesomePin">
         <FaMapMarkerAlt

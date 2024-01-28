@@ -2,7 +2,7 @@ import Field from "../../components/Fields/Field";
 import Footer from "../../components/Footer/MarketingAIFooter";
 import { useState } from "react";
 import ReactLoading from "react-loading";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -18,10 +18,14 @@ type ErrorObject = {
   statusCode: number;
 };
 
+type ApiResponse = {
+  image_url: string;
+};
+
 const MarketingAI = () => {
   const [value, setValue] = useState("");
-  const [imageUrl, setImageUrl] = useState<string>("");
-  const [status, setStatus] = useState<ErrorObject>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>("");
+  const [status, setStatus] = useState<ErrorObject | null>(null);
 
   const getGeneratedImage = async (): Promise<void> => {
     try {
@@ -32,15 +36,15 @@ const MarketingAI = () => {
       formData.append("width", "1024");
       formData.append("height", "1024");
 
-      const res = await axios.post(
+      const res = await axios.post<ApiResponse>(
         `${process.env.endpoint}/api/projects/marketing-ai/`,
         formData
       );
       setImageUrl(res.data.image_url);
     } catch (err) {
       const errorObject: ErrorObject = {
-        error: err.message,
-        statusCode: err.response.status,
+        error: (err as AxiosError).message,
+        statusCode: (err as AxiosError).response?.status || 500,
       };
       console.log(errorObject);
 

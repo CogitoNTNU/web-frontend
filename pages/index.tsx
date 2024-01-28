@@ -6,7 +6,7 @@ import HomeP2 from "../components/Home/HomeP2";
 import HomeP3 from "../components/Home/HomeP3";
 
 const Home = () => {
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   // useEffect(() => {
   //     async function fetchData() {

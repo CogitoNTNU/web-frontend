@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Head from "next/head";
 import Footer from "../components/Footer/Footer";
 import { useRouter } from "next/router";
@@ -20,7 +19,7 @@ const About = () => {
   const router = useRouter();
 
   const homeAndScrollToBottom = async () => {
-    router.push("/");
+    await router.push("/");
     await timeout(1000);
     document.getElementById("part-2").scrollIntoView({ behavior: "smooth" });
   };

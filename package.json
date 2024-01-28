@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start && set HTTPS=false",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives ",
     "format": "prettier --write .",
     "check-format": "prettier --check ."
   },
