@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import RadioButton from "../components/Buttons/RadioButton";
 import Member from "../components/Member/Member";
-import { MemberType } from "../types/types";
+import { MemberType } from "../lib/types";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
 import axios from "axios";
