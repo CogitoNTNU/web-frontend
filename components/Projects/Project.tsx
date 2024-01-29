@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import New from "../Notification/New";
 import { motion } from "framer-motion";
 
@@ -51,7 +51,7 @@ const Project = ({
             </div>
             <div className="text-[14px] text-medium pl-4 ">
               {leaders.map((leader) => (
-                <p>{leader}</p>
+                <p key={leader}>{leader}</p>
               ))}
             </div>
           </div>

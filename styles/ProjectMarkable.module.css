@@ -1,6 +1,74 @@
 .main {
-    height: 16vh;
-    width: 16vh;
+  height: 16vh;
+  width: 16vh;
+  border-radius: 15px;
+  border-style: none;
+  margin-top: 0vh;
+  margin-left: 1ch;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.projectText {
+  position: relative;
+  white-space: nowrap;
+  padding-top: 0.5vh;
+  text-align: center;
+  font-size: 14px;
+}
+
+.image {
+  position: absolute;
+}
+
+.tempImg {
+  height: 16vh;
+  width: 16vh;
+  border-radius: 15px;
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
+}
+
+.hoverpopup {
+  position: absolute;
+  color: white;
+  font-weight: 500;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80vh;
+  min-width: 40vh;
+  max-width: 60vh;
+  bottom: 20vh;
+  left: -22vh;
+  font-size: 18px;
+  background-color: #ff6b81;
+  border-radius: 10px;
+  padding: 1.5em;
+  transform: scale(0);
+  transition: transform 200ms ease;
+  transform-origin: 50% 100%;
+
+  pointer-events: none;
+}
+
+.main:hover .hoverpopup {
+  transform: scale(1);
+}
+
+@keyframes bouncing {
+  from {
+    transform: translateY(-0.5vh);
+  }
+  to {
+    transform: translateY(0.5vh);
+  }
+}
+
+/* --- css for IPhones --- */
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+  .main {
+    height: 10vh;
+    width: 10vh;
     border-radius: 15px;
     border-style: none;
     margin-top: 0vh;
@@ -8,120 +76,51 @@
     overflow: hidden;
     cursor: pointer;
     z-index: 50;
-}
+  }
 
-.projectText {
+  .projectText {
     position: relative;
     white-space: nowrap;
     padding-top: 0.5vh;
     text-align: center;
-    font-size: 14px;
-}
+    font-size: 9px;
+  }
 
-.image {
+  .image {
     position: absolute;
-}
+  }
 
-.tempImg {
-    height: 16vh;
-    width: 16vh;
+  .tempImg {
+    height: 10vh;
+    width: 10vh;
     border-radius: 15px;
     filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
-}
+  }
 
-.hoverpopup {
+  .hoverpopup {
     position: absolute;
     color: white;
     font-weight: 500;
     flex-direction: column;
     justify-content: space-between;
     width: 80vh;
-    min-width: 40vh;
-    max-width: 60vh;
-    bottom: 20vh;
-    left: -22vh;
-    font-size: 18px;
+    min-width: 19vh;
+    max-width: 19vh;
+    bottom: 14vh;
+    left: -4vh;
+    font-size: 9px;
     background-color: #ff6b81;
     border-radius: 10px;
     padding: 1.5em;
     transform: scale(0);
     transition: transform 200ms ease;
     transform-origin: 50% 100%;
-
     pointer-events: none;
-}
+    -webkit-appearance: none;
+    z-index: 100;
+  }
 
-.main:hover .hoverpopup{
+  .main:hover .hoverpopup {
     transform: scale(1);
-}
-
-@keyframes bouncing {
-    from {
-        transform: translateY(-0.5vh);
-    }
-    to {
-        transform: translateY(0.5vh);
-    }
-}
-
-/* --- css for IPhones --- */
-@media only screen and (max-width: 430px) and (max-height: 932px) {
-    .main {
-        height: 10vh;
-        width: 10vh;
-        border-radius: 15px;
-        border-style: none;
-        margin-top: 0vh;
-        margin-left: 1ch;
-        overflow: hidden;
-        cursor: pointer;
-        z-index: 50;
-    }
-    
-    .projectText {
-        position: relative;
-        white-space: nowrap;
-        padding-top: 0.5vh;
-        text-align: center;
-        font-size: 9px;
-    }
-    
-    .image {
-        position: absolute;
-    }
-    
-    .tempImg {
-        height: 10vh;
-        width: 10vh;
-        border-radius: 15px;
-        filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.8));
-    }
-    
-    .hoverpopup {
-        position: absolute;
-        color: white;
-        font-weight: 500;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 80vh;
-        min-width: 19vh;
-        max-width: 19vh;
-        bottom: 14vh;
-        left: -4vh;
-        font-size: 9px;
-        background-color: #ff6b81;
-        border-radius: 10px;
-        padding: 1.5em;
-        transform: scale(0);
-        transition: transform 200ms ease;
-        transform-origin: 50% 100%;
-        pointer-events: none;
-        -webkit-appearance: none;
-        z-index: 100;
-    }
-    
-    .main:hover .hoverpopup{
-        transform: scale(1);
-    }
-    
+  }
 }

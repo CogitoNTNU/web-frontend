@@ -2,7 +2,7 @@ import Field from "../../components/Fields/Field";
 import Footer from "../../components/Footer/MarketingAIFooter";
 import { useState } from "react";
 import ReactLoading from "react-loading";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -18,35 +18,40 @@ type ErrorObject = {
   statusCode: number;
 };
 
+type ApiResponse = {
+  image_url: string;
+};
+
 const MarketingAI = () => {
   const [value, setValue] = useState("");
-  const [imageUrl, setImageUrl] = useState<string>("");
-  const [status, setStatus] = useState<ErrorObject>(null);
+  const [imageUrl, setImageUrl] = useState<string | null>("");
+  const [status, setStatus] = useState<ErrorObject | null>(null);
 
-  const getGeneratedImage = async () => {
-    setImageUrl("loading");
-    setStatus(null);
-    const formData = new FormData();
-    formData.append("prompt", value);
-    formData.append("width", "1024");
-    formData.append("height", "1024");
+  const getGeneratedImage = async (): Promise<void> => {
+    try {
+      setImageUrl("loading");
+      setStatus(null);
+      const formData = new FormData();
+      formData.append("prompt", value);
+      formData.append("width", "1024");
+      formData.append("height", "1024");
 
-    await axios
-      .post(`${process.env.endpoint}/api/projects/marketing-ai/`, formData)
-      .then((res) => {
-        setImageUrl(res.data.image_url);
-      })
-      .catch((err) => {
-        let errorObject: ErrorObject = {
-          error: err.message,
-          statusCode: err.response.status,
-        };
-        console.log(errorObject);
+      const res = await axios.post<ApiResponse>(
+        `${process.env.endpoint}/api/projects/marketing-ai/`,
+        formData
+      );
+      setImageUrl(res.data.image_url);
+    } catch (err) {
+      const errorObject: ErrorObject = {
+        error: (err as AxiosError).message,
+        statusCode: (err as AxiosError).response?.status || 500,
+      };
+      console.log(errorObject);
 
-        setStatus(errorObject);
-        setImageUrl(null);
-        console.error(err);
-      });
+      setStatus(errorObject);
+      setImageUrl(null);
+      console.error(err);
+    }
   };
 
   return (

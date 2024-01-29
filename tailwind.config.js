@@ -4,7 +4,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
+
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -15,49 +15,49 @@ module.exports = {
           default: "#981E14",
         },
         pink: {
-          default: "#ff4757"
+          default: "#ff4757",
         },
         yellow: {
           default: "#F5C343",
           darker: "#9B9B9B",
         },
         black: {
-          default: "#1E1E1E"
+          default: "#1E1E1E",
         },
-        blue:{
+        blue: {
           light: "#30b3ec",
           default: "#1E90FF",
           dark: "#13395B",
-          darker: "#0E304F"
+          darker: "#0E304F",
         },
         gray: {
           darker: "#202124",
           default: "#2F3542",
           light: "#F1F2F6",
-          lighter: "#CED6E0"
-        }
+          lighter: "#CED6E0",
+        },
       },
       screens: {
-        'phone': "480px",
-        'tablet': '640px',
+        phone: "480px",
+        tablet: "640px",
         // => @media (min-width: 640px) { ... }
-    
-        'laptop': '1024px',
+
+        laptop: "1024px",
         // => @media (min-width: 1024px) { ... }
-    
-        'desktop': '1200px',
+
+        desktop: "1200px",
         // => @media (min-width: 1280px) { ... }
       },
     },
   },
-  
+
   safelist: [
-    'bg-pink-default',
-    'bg-blue-default',
-    'bg-gray-default',
-    'px-8',
-    'px-12',
-    'text-3xl',
+    "bg-pink-default",
+    "bg-blue-default",
+    "bg-gray-default",
+    "px-8",
+    "px-12",
+    "text-3xl",
   ],
   plugins: [],
-}
+};

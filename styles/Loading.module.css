@@ -1,31 +1,28 @@
 .main {
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 .imagePos {
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    padding-top: 25%;
-    animation: colorChange 0.5s forwards ease-out;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding-top: 25%;
+  animation: colorChange 0.5s forwards ease-out;
 }
 
-
 .loadingPos {
-    margin: auto;
-    align-items: center;
-    padding-left: 49vw;
-    padding-top: 1vh;
-
+  margin: auto;
+  align-items: center;
+  padding-left: 49vw;
+  padding-top: 1vh;
 }
 
 @keyframes colorChange {
-    from {
-        fill: #13395B;
-    }
-    to {
-        fill: white;
-    }
+  from {
+    fill: #13395b;
+  }
+  to {
+    fill: white;
+  }
 }
-
