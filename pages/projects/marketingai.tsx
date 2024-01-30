@@ -35,10 +35,15 @@ const MarketingAI = () => {
       formData.append("prompt", value);
       formData.append("width", "1024");
       formData.append("height", "1024");
+      const params = {
+        prompt: value,
+        width: "1024",
+        height: "1024",
+      };
 
-      const res = await axios.post<ApiResponse>(
+      const res = await axios.get<ApiResponse>(
         `${process.env.endpoint}/api/projects/marketing-ai/`,
-        formData
+        { params }
       );
       setImageUrl(res.data.image_url);
     } catch (err) {

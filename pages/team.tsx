@@ -30,10 +30,9 @@ const Team = () => {
     const formData = new FormData();
     formData.append("member_type", currentClicked);
     await axios
-      .post<MemberType[]>(
-        `${process.env.endpoint}/api/members-by-type/`,
-        formData
-      )
+      .get<MemberType[]>(`${process.env.endpoint}/api/members-by-type/`, {
+        params: { member_type: currentClicked },
+      })
       .then((res) => {
         setMembers(res.data);
         console.log(res.data);
