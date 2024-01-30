@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>Medlemmer - Cogito NTNU</title>
+        <title>Prosjekter - Cogito NTNU</title>
       </Head>
       <motion.main
         initial={{ opacity: 0 }}

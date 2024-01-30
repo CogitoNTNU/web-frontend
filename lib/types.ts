@@ -20,3 +20,17 @@ export type ProjectType = {
   leaders: Array<string>;
   new?: boolean;
 };
+
+export type GenerateImageParams = {
+  prompt: string;
+  width: number;
+  height: number;
+};
+
+export type MarketingAIResponse = {
+  image_url: string;
+};
+
+export type GetMembersType = {
+  member_type: string;
+};

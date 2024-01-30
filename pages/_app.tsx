@@ -31,8 +31,8 @@ const App = ({
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 4 * 1000,
-            refetchInterval: 4 * 1000,
+            staleTime: 10 * 1000,
+            refetchInterval: 10 * 1000,
           },
         },
       })

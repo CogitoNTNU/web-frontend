@@ -6,13 +6,7 @@ import Footer from "../components/Footer/Footer";
 import Head from "next/head";
 import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
-import axios from "axios";
-
-type AxiosError = {
-  response: {
-    data: string;
-  };
-};
+import { useSendApplication } from "../hooks/useSendApplication";
 
 const Apply = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -21,9 +15,10 @@ const Apply = () => {
   const [phone, setPhone] = useState<string>("");
   const [about, setAbout] = useState<string>("");
   const [applyPage, setApplyPage] = useState<boolean>(true);
-  const [sent, setSent] = useState<boolean>(false);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
   const formData = new FormData();
+
+  const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
   const changePage = () => {
     if (applyPage) {
@@ -33,23 +28,14 @@ const Apply = () => {
     }
   };
 
-  const fetchData = async () => {
+  const sendApplication = () => {
     formData.append("first_name", firstName);
     formData.append("last_name", lastName);
     formData.append("email", email);
     formData.append("phone_number", phone.replaceAll(" ", ""));
     formData.append("about", about);
 
-    await axios
-      .post(`${process.env.endpoint}/api/apply/`, formData)
-      .then((res) => {
-        setSent(true);
-        console.log(res.data);
-      })
-      .catch((err: AxiosError) => {
-        setErrorArray(Object.keys(err.response.data));
-        console.error(err.response.data);
-      });
+    mutate(formData);
   };
 
   return (
@@ -156,7 +142,7 @@ const Apply = () => {
                         <div className="flex justify-start w-full ">
                           <Button
                             text={"Send inn søknad"}
-                            onClick={() => fetchData()}
+                            onClick={() => sendApplication()}
                             px={"6"}
                             py={"4"}
                             icon={"ArrowRight"}
