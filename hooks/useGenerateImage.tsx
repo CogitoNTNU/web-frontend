@@ -6,13 +6,10 @@ import { GenerateImageParams, MarketingAIResponse } from "../lib/types";
 const generateImage = async (
   params: GenerateImageParams
 ): Promise<MarketingAIResponse> => {
-  console.log("params", params);
-
   const { data } = await axios.get<MarketingAIResponse>(
     `${process.env.endpoint}/api/projects/marketing-ai/`,
     { params }
   );
-  console.log("data", data);
 
   return data;
 };
