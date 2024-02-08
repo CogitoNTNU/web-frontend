@@ -1,17 +1,17 @@
 "use client";
 import Head from "next/head";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import RadioButton from "../components/Buttons/RadioButton";
 import Member from "../components/Member/Member";
-import { MemberType } from "../types/types";
+import { MemberType } from "../lib/types";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
-import axios from "axios";
 
 //Images
 import team from "../public/Team/Alle.webp";
 import sveinung from "../public/Team/Sveinung.jpg";
+import { useGetMembers } from "../hooks/useGetMembers";
 
 const Team = () => {
   const radioButtons = [
@@ -24,30 +24,8 @@ const Team = () => {
 
   const [currentClicked, setCurrentClicked] =
     useState<string>("Alle Medlemmer");
-  const [members, setMembers] = useState<MemberType[]>([]);
 
-  const fetchData = useCallback(async () => {
-    const formData = new FormData();
-    formData.append("member_type", currentClicked);
-    await axios
-      .post<MemberType[]>(
-        `${process.env.endpoint}/api/members-by-type/`,
-        formData
-      )
-      .then((res) => {
-        setMembers(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [currentClicked]);
-
-  useEffect(() => {
-    fetchData().catch((err) => {
-      console.log(err);
-    });
-  }, [currentClicked, fetchData]);
+  const { data: members } = useGetMembers({ member_type: currentClicked });
 
   return (
     <>
@@ -104,7 +82,7 @@ const Team = () => {
               ))}
             </div>
             <div className="flex gap-12 justify-center flex-wrap">
-              {members.map((member: MemberType) => (
+              {members?.map((member: MemberType) => (
                 <Member
                   key={member.name}
                   name={member.name}

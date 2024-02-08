@@ -1,4 +1,4 @@
-import { ProjectType } from "../types/types";
+import { ProjectType } from "../lib/types";
 import MarketingAILogo from "../public/Projects/MarketingAILogo.png";
 import CatMatch from "../public/Projects/CatMatch/CatMatch.png";
 

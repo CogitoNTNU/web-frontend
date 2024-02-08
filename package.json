@@ -10,6 +10,8 @@
     "check-format": "prettier --check ."
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.17.19",
+    "@tanstack/react-query-devtools": "^5.17.21",
     "antd": "^5.7.3",
     "axios": "^1.4.0",
     "body-scroll-lock": "^4.0.0-beta.0",
@@ -37,6 +39,7 @@
     "tsparticles-slim": "^2.11.0"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.17.22",
     "@types/node": "20.4.2",
     "@types/react": "18.2.14",
     "@typescript-eslint/eslint-plugin": "^6.19.1",

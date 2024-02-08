@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Button from "../Buttons/Button";
 import Icon from "../Icons/Icon";
 import Link from "next/link";
-import { ProjectType } from "../../types/types";
+import { ProjectType } from "../../lib/types";
 
 const Project = ({
   image,

@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
-import { ProjectType } from "../types/types";
+import { ProjectType } from "../lib/types";
 import { CogitoProjects } from "../data/projects";
 
 // Images
@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <>
       <Head>
-        <title>Medlemmer - Cogito NTNU</title>
+        <title>Prosjekter - Cogito NTNU</title>
       </Head>
       <motion.main
         initial={{ opacity: 0 }}
