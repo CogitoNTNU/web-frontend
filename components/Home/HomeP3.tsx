@@ -5,10 +5,11 @@ import GoogleMapReact from "google-map-react";
 import Footer from "../Footer/Footer";
 
 // Images
-
 import SverreBack from "../../public/HomePage/SverreBack.jpg";
 
 const HomeP3 = () => {
+  const apiKey = process.env.GOOGLE_API_KEY;
+
   const defaultProps = {
     center: {
       lat: 63.41729,
@@ -80,10 +81,11 @@ const HomeP3 = () => {
                   </div>
                 </div>
               </div>
-              <div className="laptop:w-[100%] w-full h-full rounded-3xl">
+              <div className="laptop:w-[100%] w-full h-full rounded-3xl z-[90]">
                 <GoogleMapReact
+                  className="z-[90]"
                   bootstrapURLKeys={{
-                    key: "AIzaSyCiECvwg5wcGgqX5ylm2Qh06nJSNYikr40",
+                    key: apiKey,
                   }}
                   defaultCenter={defaultProps.center}
                   defaultZoom={defaultProps.zoom}
