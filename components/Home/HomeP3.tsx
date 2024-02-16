@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import SverreBack from "../../public/HomePage/SverreBack.jpg";
 
 const HomeP3 = () => {
-  const apiKey = process.env.GOOGLE_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
   const defaultProps = {
     center: {
