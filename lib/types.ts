@@ -25,6 +25,7 @@ export type GenerateImageParams = {
   prompt: string;
   width: number;
   height: number;
+  timestamp: string;
 };
 
 export type MarketingAIResponse = {

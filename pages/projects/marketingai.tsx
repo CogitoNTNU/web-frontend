@@ -24,6 +24,7 @@ const MarketingAI = () => {
       prompt: value,
       width: 1024,
       height: 1024,
+      timestamp: Date.now().toString(),
     };
 
     setParams(params);
