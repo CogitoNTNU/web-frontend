@@ -8,5 +8,5 @@ export const memberQueryKey = (member: GetMembersType) =>
 // This section is for the query keys used in marketingAI project requests
 export const marketingAIQueryKey = "marketingAI";
 export const marketingAIQueryKeys = (prompt: GenerateImageParams) => {
-  return "marketingAI: " + prompt?.prompt;
+  return "marketingAI: " + prompt?.prompt + ". Timestamp: " + prompt?.timestamp;
 };
