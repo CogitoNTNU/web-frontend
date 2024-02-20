@@ -67,10 +67,6 @@ const App = ({
         </Head>
 
         <Navbar />
-        <div>
-          <Component {...pageProps} />
-          <div id="bottom"></div>
-        </div>
         <Particles
           id="tsparticles"
           init={particlesInit}
@@ -135,6 +131,10 @@ const App = ({
             detectRetina: true,
           }}
         />
+        <div>
+          <Component {...pageProps} />
+          <div id="bottom"></div>
+        </div>
       </HydrationBoundary>
       <ReactQueryDevtools />
     </QueryClientProvider>
