@@ -9,16 +9,6 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Button from "../Buttons/Button";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
-const Dot = () => {
-  return (
-    <>
-      <div className="w-[20px]">
-        <div className="w-2 h-2 rounded-xl bg-white"></div>
-      </div>
-    </>
-  );
-};
-
 const Navbar = () => {
   const router = useRouter();
   const [onlyLogo, setOnlyLogo] = useState<boolean>(false);
@@ -70,10 +60,6 @@ const Navbar = () => {
     if (router.pathname === "/") {
       changeAndGo().catch((err) => console.error(err));
     }
-    const page: string = links[router.pathname] as string;
-    if (page !== undefined) {
-      setPage(page);
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -82,6 +68,12 @@ const Navbar = () => {
     if (router.pathname.includes("/projects") && router.pathname.length > 10) {
       setOnlyLogo(true);
     }
+
+    const page: string = links[router.pathname] as string;
+    if (page !== undefined) {
+      setPage(page);
+    }
+    console.log(page);
   }, [router.pathname]);
 
   useEffect(() => {
@@ -108,10 +100,19 @@ const Navbar = () => {
   };
 
   const buttonClass = classNames(
-    "flex",
-    "items-center",
-    "justify-center",
-    "h-full"
+    "border-b-2",
+    "border-white",
+    "border-spacing-2",
+    "py-[2px]",
+    "rounded-sm"
+  );
+
+  const hoverClass = classNames(
+    "group-hover:border-b-2",
+    "transition-all",
+    "border-white",
+    "border-spacing-1",
+    "rounded-sm"
   );
 
   return (
@@ -146,17 +147,12 @@ const Navbar = () => {
                   key={data.title}
                   href={data.link}
                 >
-                  <div className={buttonClass}>
-                    <div
-                      className="h-full items-center justify-center flex"
-                      style={{
-                        visibility:
-                          page == `${data.title}` ? "visible" : "hidden",
-                      }}
-                    >
-                      <Dot />
+                  <div className="h-full flex justify-center items-center group">
+                    <div className={page !== data.title && hoverClass}>
+                      <span className={page == data.title && buttonClass}>
+                        {data.title}
+                      </span>
                     </div>
-                    <span>{data.title}</span>
                   </div>
                 </Link>
               ))}
@@ -198,7 +194,9 @@ const Navbar = () => {
                   href={data.link}
                 >
                   <div className="text-white font-medium text-[20px]">
-                    <span>{data.title}</span>
+                    <span className={page == data.title && buttonClass}>
+                      {data.title}
+                    </span>
                   </div>
                 </Link>
               ))}
