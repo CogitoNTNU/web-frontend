@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 //Images
 import team from "../public/Team/Alle.webp";
-import sveinung from "../public/Team/Sveinung.jpg";
+import sverreogolav from "../public/Team/SverreOgOlav.jpg";
 import { useGetMembers } from "../hooks/useGetMembers";
 
 const Team = () => {
@@ -45,13 +45,13 @@ const Team = () => {
         <div className="relative w-full z-30 flex-none h-[720px]">
           <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
           <Image
-            className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:block hidden"
+            className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl tablet:block hidden"
             src={team}
             alt={"banner"}
           />
           <Image
-            className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl phone:hidden block"
-            src={sveinung}
+            className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl tablet:hidden block"
+            src={sverreogolav}
             alt={"banner"}
           />
         </div>
