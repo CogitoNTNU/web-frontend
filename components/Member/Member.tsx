@@ -6,7 +6,6 @@ import Image from "next/image";
 import { isSafari } from "react-device-detect";
 // Images
 import tempImage from "../../public/Team/Default.png";
-import { useEffect } from "react";
 
 interface Member {
   name: string;
@@ -28,10 +27,6 @@ const Member = ({
   const imageLoader = ({ src, width, quality }) => {
     return `${process.env.endpoint}${src}?w=${width}&q=${quality || 75}`;
   };
-
-  useEffect(() => {
-    console.log(imageURL);
-  }, [imageURL]);
 
   return (
     <>

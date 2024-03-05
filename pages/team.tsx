@@ -119,7 +119,7 @@ const Team = () => {
             {currentClicked == "Alle Medlemmer" ? (
               <div>
                 {innerPages.map((page) => (
-                  <div className="py-4">
+                  <div key={page.name} className="py-4">
                     <div className=" text-blue-dark w-full text-center py-2">
                       <p className="font-semibold text-[40px]">
                         {page.name.toUpperCase()}

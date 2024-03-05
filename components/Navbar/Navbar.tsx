@@ -73,7 +73,6 @@ const Navbar = () => {
     if (page !== undefined) {
       setPage(page);
     }
-    console.log(page);
   }, [router.pathname]);
 
   useEffect(() => {
