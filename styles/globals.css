@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
 @font-face {
   font-family: "Lexend Deca";
   src: url("../public/font/Lexend/Lexend-VariableFont_wght.ttf");

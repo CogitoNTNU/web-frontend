@@ -5,7 +5,7 @@ export type MemberType = {
   name: string;
   title: string;
   image: string;
-  category: string;
+  category: string[];
   github: string;
   email: string;
   linkedIn: string;
