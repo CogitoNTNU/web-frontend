@@ -77,7 +77,7 @@ const Team = () => {
         }}
         className="relative overflow-hidden"
       >
-        <div className="relative w-full z-30 flex-none h-[720px]">
+        <div className="relative w-full z-30 flex-none phone:h-[720px] h-[660px]">
           <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
           <Image
             className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl tablet:block hidden"
@@ -105,8 +105,8 @@ const Team = () => {
           </p>
         </motion.div>
         <div className="relative left-0 right-0 bottom-0 flex items-center justify-center z-40">
-          <div className="bg-gray-lighter pt-[20px] px-[8%] rounded-b-3xl h-fit min-h-[700px] pb-[80px] w-[90%]">
-            <div className="pt-4 pb-8 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
+          <div className="bg-gray-lighter pt-[20px] tablet:px-[8%] px-[4%] rounded-b-3xl h-fit min-h-[700px] pb-[80px] w-[90%]">
+            <div className="tablet:pt-4 tablet:pb-8 pb-4 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
               {radioButtons.map((name) => (
                 <RadioButton
                   key={name}
@@ -120,11 +120,13 @@ const Team = () => {
               <div>
                 {innerPages.map((page) => (
                   <div key={page.name} className="py-4">
-                    <div className=" text-blue-dark w-full text-center py-2">
-                      <p className="font-semibold text-[40px]">
+                    <div className="text-blue-dark w-full text-center phone:py-2 py-1">
+                      <p className="font-semibold tablet:text-[40px] text-[30px]">
                         {page.name.toUpperCase()}
                       </p>
-                      <p className="pb-4">{page.description}</p>
+                      <p className="pb-4 tablet:text-[16px] text-[13px]">
+                        {page.description}
+                      </p>
                     </div>
                     <div className="flex justify-center gap-10 py-2 flex-wrap">
                       {members
