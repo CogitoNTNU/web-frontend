@@ -5,7 +5,7 @@ import Icon from "../Icons/Icon";
 import Image from "next/image";
 import { isSafari } from "react-device-detect";
 // Images
-import tempImage from "../../public/Team/Default.png";
+import tempImage from "../../public/Team/NoImage.svg";
 
 interface Member {
   name: string;
@@ -45,7 +45,7 @@ const Member = ({
             <div className="z-40 absolute w-full h-full bg-gradient-to-b from-transparent to-white from-60% to-90% group-hover:from-40% group-hover:to-80% transition-all flex flex-col justify-end">
               <div className="px-4 py-3 group-hover:-translate-y-2 transition-transform">
                 <p className="tracking-wide">{name}</p>
-                <p className="tracking-wider font-bold">{title}</p>
+                <p className="tracking-wider font-bold text-[14px]">{title}</p>
               </div>
               <div className="px-4 pb-4 hidden group-hover:flex gap-2 z-50">
                 {linkedinURL && (
@@ -66,7 +66,7 @@ const Member = ({
               </div>
             </div>
             <Image
-              loader={imageLoader}
+              loader={imageURL ? imageLoader : null}
               className="object-cover w-full h-full rounded-3xl transition-transform transform group-hover:scale-105 ease-in"
               src={imageURL ? imageURL : tempImage}
               alt="image"
@@ -79,7 +79,7 @@ const Member = ({
             <div className="bg-gray-lighter w-[250px] h-[250px] rounded-t-3xl overflow-hidden">
               <div className="z-40 absolute w-full h-full justify-end"></div>
               <Image
-                loader={imageLoader}
+                loader={imageURL ? imageLoader : null}
                 className="object-cover w-full h-[265px]"
                 src={imageURL ? imageURL : tempImage}
                 alt="image"
@@ -87,11 +87,9 @@ const Member = ({
                 height={40}
               />
             </div>
-            <div className="px-3 py-3 flex text-white h-full items-center">
-              <p className="tracking-wide w-full text-[15px]">{name}</p>
-              <p className="tracking-wider font-semibold flex justify-end text-[20px]">
-                {title}
-              </p>
+            <div className="px-3 py-3 text-white h-full items-center">
+              <p className="tracking-wide w-full text-[17px]">{name}</p>
+              <p className="tracking-wider font-medium  text-[12px]">{title}</p>
             </div>
 
             <div className="px-4 pb-4 gap-4 justify-center flex">
