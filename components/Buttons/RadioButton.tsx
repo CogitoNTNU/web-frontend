@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 interface ButtonProps {
   text: string;
   disabled?: boolean;
+  small?: boolean;
   currentClicked: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
@@ -11,6 +12,7 @@ interface ButtonProps {
 const RadioButton = ({
   text,
   disabled = false,
+  small = false,
   currentClicked,
   onClick,
 }: ButtonProps) => {
@@ -21,12 +23,9 @@ const RadioButton = ({
     !disabled ? "hover:text-black" : null,
     clicked ? "bg-blue-dark" : "bg-gray-default",
     "transition-all",
-    "text-[14px]",
-    "tablet:text-[18px]",
-    `tablet:px-8`,
-    `tablet:py-3`,
-    "px-6",
-    "py-2",
+    small ? "tablet:text-[14px] text-[10px]" : "tablet:text-[18px] text-[14px]",
+    small ? "tablet:px-10 px-4" : "tablet:px-8 px-6",
+    small ? "py-2" : "tablet:py-3 py-2",
     "rounded-3xl",
     "transition-all"
   );

@@ -14,53 +14,94 @@ import sverreogolav from "../public/Team/SverreOgOlav.jpg";
 import { useGetMembers } from "../hooks/useGetMembers";
 
 const Team = () => {
-  const radioButtons = [
-    "Alle Medlemmer",
-    "Styret",
-    "Prosjektledere",
-    "Web",
-    "Loquire",
-  ];
   const [title, setTitle] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
-
-  const innerPages = [
+  const radioButtons = ["Alle Medlemmer", "Styret", "Prosjektmedlemmer", "Web"];
+  const projectButtons = [
+    "Bedriftsammarbeid",
+    "Cogitron",
+    "Deeptactics",
+    "Diffusion Models",
+    "Infor",
+    "SudokuAI",
+    "TetrisAI",
+    "Transformers",
+    "TutorAI",
+    "Training Planner",
+  ];
+  const projectMetaData = [
+    { title: projectButtons[0], leaderCount: 2 },
+    { title: projectButtons[1], leaderCount: 2 },
+    { title: projectButtons[2], leaderCount: 2 },
+    { title: projectButtons[3], leaderCount: 1 },
+    { title: projectButtons[4], leaderCount: 2 },
+    { title: projectButtons[5], leaderCount: 1 },
+    { title: projectButtons[6], leaderCount: 1 },
+    { title: projectButtons[7], leaderCount: 2 },
+    { title: projectButtons[8], leaderCount: 3 },
+    { title: projectButtons[9], leaderCount: 1 },
+  ];
+  const pagesMetaData = [
     {
       name: "Styret",
       description:
         "Styret har ansvar for organisasjonens daglige drift og styrer både prosjektkvelder og kurskvelder",
     },
     {
-      name: "Prosjektledere",
+      name: "Prosjektmedlemmer",
       description:
-        "Prosjektledere har ansvar å passe på og styre deres prosjekteam.",
+        "Prosjektmedlemenne er kjernen i alt Cogito gjør. De står bak alle prosjekter produsert av Cogito.",
     },
     {
       name: "Web",
       description:
         "Web gruppen står bak det tekniske i Cogito. Mesteparten av arbeidet går til utivikling av nettsiden.",
     },
-    {
-      name: "Loquire",
-      description:
-        "Loquire er Cogito's mest engasjerte. Disse skal holde sluttpresentasjonen vår Cogito AI-Loquire",
-    },
   ];
 
   const [currentClicked, setCurrentClicked] =
     useState<string>("Alle Medlemmer");
 
-  const { data: members } = useGetMembers({ member_type: currentClicked });
+  const [currentProject, setCurrentProject] = useState<string>(
+    projectButtons[0]
+  );
+  const [rawMembers, setRawMembers] = useState<MemberType[]>([]);
+  const [members, setMembers] = useState<MemberType[]>([]);
+  const { data: membersData } = useGetMembers({ member_type: currentClicked });
 
   useEffect(() => {
+    if (membersData == undefined) {
+      return;
+    }
+    setRawMembers(membersData);
+  }, [membersData]);
+
+  useEffect(() => {
+    if (currentClicked == "Prosjektmedlemmer") {
+      const filteredMembers = rawMembers?.filter((x) =>
+        x.category.includes(currentProject)
+      );
+      const project = projectMetaData.filter(
+        (x) => x.title == currentProject
+      )[0];
+      filteredMembers?.forEach((member, index) => {
+        if (index < project.leaderCount) {
+          member.title = "Prosjektleder";
+        }
+      });
+      setMembers(filteredMembers);
+    } else {
+      setMembers(rawMembers);
+    }
+
     if (currentClicked == "Alle Medlemmer") {
       return;
     }
 
-    const pageObject = innerPages.filter((x) => x.name == currentClicked)[0];
+    const pageObject = pagesMetaData.filter((x) => x.name == currentClicked)[0];
     setTitle(pageObject.name);
     setDesc(pageObject.description);
-  }, [members]);
+  }, [rawMembers, currentProject]);
 
   return (
     <>
@@ -77,7 +118,7 @@ const Team = () => {
         }}
         className="relative overflow-hidden"
       >
-        <div className="relative w-full z-30 flex-none h-[720px]">
+        <div className="relative w-full z-30 flex-none phone:h-[720px] h-[660px]">
           <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
           <Image
             className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl tablet:block hidden"
@@ -105,8 +146,8 @@ const Team = () => {
           </p>
         </motion.div>
         <div className="relative left-0 right-0 bottom-0 flex items-center justify-center z-40">
-          <div className="bg-gray-lighter pt-[20px] px-[8%] rounded-b-3xl h-fit min-h-[700px] pb-[80px] w-[90%]">
-            <div className="pt-4 pb-8 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
+          <div className="bg-gray-lighter pt-[20px] tablet:px-[8%] px-[4%] rounded-b-3xl h-fit min-h-[700px] pb-[80px] w-[90%]">
+            <div className="tablet:pt-4 tablet:pb-8 pb-4 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
               {radioButtons.map((name) => (
                 <RadioButton
                   key={name}
@@ -118,42 +159,90 @@ const Team = () => {
             </div>
             {currentClicked == "Alle Medlemmer" ? (
               <div>
-                {innerPages.map((page) => (
+                {pagesMetaData.map((page) => (
                   <div key={page.name} className="py-4">
-                    <div className=" text-blue-dark w-full text-center py-2">
-                      <p className="font-semibold text-[40px]">
+                    <div className="text-blue-dark w-full text-center phone:py-2 py-1">
+                      <p className="font-semibold tablet:text-[40px] text-[25px]">
                         {page.name.toUpperCase()}
                       </p>
-                      <p className="pb-4">{page.description}</p>
+                      <p className="pb-4 tablet:text-[16px] text-[13px]">
+                        {page.description}
+                      </p>
                     </div>
-                    <div className="flex justify-center gap-10 py-2 flex-wrap">
-                      {members
-                        ?.filter((member) =>
-                          member.category.includes(page.name)
-                        )
-                        .map((member: MemberType) => (
-                          <Member
-                            key={member.name}
-                            name={member.name}
-                            title={member.title}
-                            imageURL={member.image}
-                            linkedinURL={member.linkedIn}
-                            mailURL={member.email}
-                            githubURL={member.github}
-                          />
+                    {page.name != "Prosjektmedlemmer" ? (
+                      <div className="flex justify-center gap-10 py-2 flex-wrap">
+                        {members
+                          ?.filter((member) =>
+                            member.category.includes(page.name)
+                          )
+                          .map((member: MemberType) => (
+                            <Member
+                              key={member.name}
+                              name={member.name}
+                              title={member.title}
+                              imageURL={member.image}
+                              linkedinURL={member.linkedIn}
+                              mailURL={member.email}
+                              githubURL={member.github}
+                            />
+                          ))}
+                      </div>
+                    ) : (
+                      <div>
+                        {projectButtons.map((project) => (
+                          <div key={project} className="pb-8">
+                            <div className="text-blue-dark w-full text-center phone:py-2 py-1">
+                              <p className="font-medium tablet:text-[34px] text-[20px]">
+                                {project.toUpperCase()}
+                              </p>
+                            </div>
+                            <div className="flex justify-center gap-10 py-4 flex-wrap">
+                              {members
+                                ?.filter(
+                                  (member) =>
+                                    member.category.includes(page.name) &&
+                                    member.category.includes(project)
+                                )
+                                .map((member: MemberType) => (
+                                  <Member
+                                    key={member.name}
+                                    name={member.name}
+                                    title={member.title}
+                                    imageURL={member.image}
+                                    linkedinURL={member.linkedIn}
+                                    mailURL={member.email}
+                                    githubURL={member.github}
+                                  />
+                                ))}
+                            </div>
+                          </div>
                         ))}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="py-4">
-                <div className=" text-blue-dark w-full text-center py-2">
-                  <p className="font-semibold text-[40px]">
+              <div>
+                <div className="text-blue-dark w-full text-center py-2">
+                  <p className="font-semibold tablet:text-[40px] text-[25px]">
                     {title.toUpperCase()}
                   </p>
-                  <p className="pb-4">{desc}</p>
+                  <p className="pb-4 tablet:text-[16px] text-[13px]">{desc}</p>
                 </div>
+                {currentClicked == "Prosjektmedlemmer" && (
+                  <div className="pt-1 tablet:pb-8 pb-4 tablet:px-[2%] flex justify-center tablet:gap-4 gap-2 flex-wrap w-full">
+                    {projectButtons.map((name) => (
+                      <RadioButton
+                        key={name}
+                        text={name}
+                        small={true}
+                        currentClicked={currentProject}
+                        onClick={() => setCurrentProject(name)}
+                      />
+                    ))}
+                  </div>
+                )}
                 <div className="flex justify-center gap-10 py-2 flex-wrap">
                   {members?.map((member: MemberType) => (
                     <Member
