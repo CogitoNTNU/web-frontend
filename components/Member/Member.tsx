@@ -75,7 +75,7 @@ const Member = ({
             />
           </div>
         ) : (
-          <div className="w-fit h-fit bg-gray-default rounded-3xl">
+          <div className="w-[250px] h-fit min-h-[370px] bg-gray-default rounded-3xl">
             <div className="bg-gray-lighter w-[250px] h-[250px] rounded-t-3xl overflow-hidden">
               <div className="z-40 absolute w-full h-full justify-end"></div>
               <Image
@@ -88,7 +88,9 @@ const Member = ({
               />
             </div>
             <div className="px-3 py-3 text-white h-full items-center">
-              <p className="tracking-wide w-full text-[17px]">{name}</p>
+              <p className="tracking-wide w-full text-[14px] break-before-all">
+                {name}
+              </p>
               <p className="tracking-wider font-medium  text-[12px]">{title}</p>
             </div>
 
