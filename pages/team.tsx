@@ -169,23 +169,56 @@ const Team = () => {
                         {page.description}
                       </p>
                     </div>
-                    <div className="flex justify-center gap-10 py-2 flex-wrap">
-                      {members
-                        ?.filter((member) =>
-                          member.category.includes(page.name)
-                        )
-                        .map((member: MemberType) => (
-                          <Member
-                            key={member.name}
-                            name={member.name}
-                            title={member.title}
-                            imageURL={member.image}
-                            linkedinURL={member.linkedIn}
-                            mailURL={member.email}
-                            githubURL={member.github}
-                          />
+                    {page.name != "Prosjektmedlemmer" ? (
+                      <div className="flex justify-center gap-10 py-2 flex-wrap">
+                        {members
+                          ?.filter((member) =>
+                            member.category.includes(page.name)
+                          )
+                          .map((member: MemberType) => (
+                            <Member
+                              key={member.name}
+                              name={member.name}
+                              title={member.title}
+                              imageURL={member.image}
+                              linkedinURL={member.linkedIn}
+                              mailURL={member.email}
+                              githubURL={member.github}
+                            />
+                          ))}
+                      </div>
+                    ) : (
+                      <div>
+                        {projectButtons.map((project) => (
+                          <div className="pb-8">
+                            <div className="text-blue-dark w-full text-center phone:py-2 py-1">
+                              <p className="font-medium tablet:text-[34px] text-[20px]">
+                                {project.toUpperCase()}
+                              </p>
+                            </div>
+                            <div className="flex justify-center gap-10 py-4 flex-wrap">
+                              {members
+                                ?.filter(
+                                  (member) =>
+                                    member.category.includes(page.name) &&
+                                    member.category.includes(project)
+                                )
+                                .map((member: MemberType) => (
+                                  <Member
+                                    key={member.name}
+                                    name={member.name}
+                                    title={member.title}
+                                    imageURL={member.image}
+                                    linkedinURL={member.linkedIn}
+                                    mailURL={member.email}
+                                    githubURL={member.github}
+                                  />
+                                ))}
+                            </div>
+                          </div>
                         ))}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
