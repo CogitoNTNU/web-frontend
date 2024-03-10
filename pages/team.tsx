@@ -190,7 +190,7 @@ const Team = () => {
                     ) : (
                       <div>
                         {projectButtons.map((project) => (
-                          <div className="pb-8">
+                          <div key={project} className="pb-8">
                             <div className="text-blue-dark w-full text-center phone:py-2 py-1">
                               <p className="font-medium tablet:text-[34px] text-[20px]">
                                 {project.toUpperCase()}

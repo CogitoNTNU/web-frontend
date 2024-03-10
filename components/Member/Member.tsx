@@ -4,9 +4,6 @@ import { motion } from "framer-motion";
 import Icon from "../Icons/Icon";
 import Image from "next/image";
 import { isSafari } from "react-device-detect";
-// Images
-import tempImage from "../../public/Team/NoImage.svg";
-
 interface Member {
   name: string;
   title: string;
@@ -68,7 +65,7 @@ const Member = ({
             <Image
               loader={imageURL ? imageLoader : null}
               className="object-cover w-full h-full rounded-3xl transition-transform transform group-hover:scale-105 ease-in"
-              src={imageURL ? imageURL : tempImage}
+              src={imageURL ? imageURL : "/Team/NoImage.svg"}
               alt="image"
               width={30}
               height={40}
@@ -81,7 +78,7 @@ const Member = ({
               <Image
                 loader={imageURL ? imageLoader : null}
                 className="object-cover w-full h-[265px]"
-                src={imageURL ? imageURL : tempImage}
+                src={imageURL ? imageURL : "/Team/NoImage.svg"}
                 alt="image"
                 width={30}
                 height={40}
