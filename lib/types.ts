@@ -35,5 +35,3 @@ export type MarketingAIResponse = {
 export type GetMembersType = {
   member_type: string;
 };
-
-export type Topics = "Generelt" | "Organisasjonen" | "For Bedrifter";
