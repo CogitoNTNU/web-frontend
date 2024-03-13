@@ -2,7 +2,7 @@
 
 import Head from "next/head";
 import Footer from "../components/Footer/Footer";
-import { useRouter } from "next/router";
+
 import Button from "../components/Buttons/Button";
 import Image from "next/image";
 import { useState } from "react";
@@ -23,18 +23,6 @@ const generalButtons = ["Info om Cogito", "Personvern", "Sponsor Portal"];
 const About = () => {
   const [topic, setTopic] = useState<Topics>("Generelt");
   const [subTopic, setSubTopic] = useState<string>("Info om Cogito");
-
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
-
-  const router = useRouter();
-
-  const homeAndScrollToBottom = async () => {
-    await router.push("/");
-    await timeout(1000);
-    document.getElementById("part-2").scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <>
@@ -100,7 +88,11 @@ const About = () => {
               </div>
             )}
           </div>
-          {topic === "Generelt" && subTopic === generalButtons[0] && <Cogito />}
+          {topic === "Generelt" && subTopic === generalButtons[0] && (
+            <div className="flex flex-col items-center justify-center w-full">
+              <Cogito />
+            </div>
+          )}
           {topic === "Generelt" && subTopic === generalButtons[1] && (
             <Privacy />
           )}

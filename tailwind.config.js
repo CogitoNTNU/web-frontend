@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         red: {
           default: "#981E14",
+          light: "#FF4757",
         },
         pink: {
           default: "#ff4757",
