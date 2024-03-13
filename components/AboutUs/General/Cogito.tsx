@@ -14,6 +14,7 @@ export const Cogito = () => {
     await timeout(1000);
     document.getElementById("part-2").scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <>
       <div
@@ -58,7 +59,12 @@ export const Cogito = () => {
             data-name="buttons"
             className="flex flex-row gap-6 pt-4 text-lg pb-3"
           >
-            <button className="text-white bg-red-light px-5 py-3 tablet:px-8 tablet:py-4 rounded-3xl">
+            <button
+              className="text-white bg-red-light px-5 py-3 tablet:px-8 tablet:py-4 rounded-3xl"
+              onClick={async () => {
+                await router.push("/apply");
+              }}
+            >
               Søk opptak
             </button>
             <p className=" text-black-default flex items-center">eller</p>
