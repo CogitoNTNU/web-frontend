@@ -69,6 +69,10 @@ const Navbar = () => {
       setOnlyLogo(true);
     }
 
+    if (router.pathname.includes("/project-presentations")) {
+      setOnlyLogo(true);
+    }
+
     const page: string = links[router.pathname] as string;
     if (page !== undefined) {
       setPage(page);

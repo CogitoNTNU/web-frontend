@@ -42,7 +42,11 @@ const App = ({
     await loadSlim(engine);
   }, []);
 
-  if (pathname == "/" || pathname.includes("/projects/")) {
+  if (
+    pathname == "/" ||
+    pathname.includes("/projects/") ||
+    pathname.includes("/project-presentations")
+  ) {
     return (
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={pageProps.dehydratedState}>
