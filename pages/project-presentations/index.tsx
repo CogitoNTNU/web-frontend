@@ -70,7 +70,7 @@ const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
 };
 
 const Home = () => {
-  const [showSchedule, setShowSchedule] = useState<boolean>(true);
+  const [showSchedule, setShowSchedule] = useState<boolean>(false);
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);

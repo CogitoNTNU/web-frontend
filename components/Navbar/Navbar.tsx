@@ -51,9 +51,10 @@ const Navbar = () => {
   }
 
   const changeAndGo = async () => {
-    await router.push("/loading");
+    router.push("/project-presentations");
+    // await router.push("/loading");
     await timeout(500);
-    await router.push("/");
+    // await router.push("/");
   };
 
   useEffect(() => {
