@@ -8,7 +8,11 @@ import { Glow, GlowCapture } from "@codaworks/react-glow";
 import TextButton from "../../components/Buttons/TextButton";
 import Link from "next/link";
 
-const HomeMenu = ({ toggleSchedule }) => {
+interface HomeMenuProps {
+  toggleSchedule: () => void;
+}
+
+const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
   return (
     <>
       <div className="w-full flex justify-end py-2 gap-2 group/t">
@@ -36,7 +40,7 @@ const HomeMenu = ({ toggleSchedule }) => {
   );
 };
 
-const Schedule = ({ toggleSchedule }) => {
+const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
   return (
     <>
       <TextButton onClick={() => toggleSchedule()} text={"GO BACK"} />
