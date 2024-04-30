@@ -25,7 +25,6 @@ const Team = () => {
     "Infor",
     "SudokuAI",
     "TetrisAI",
-    "Transformers",
     "TutorAI",
     "Training Planner",
   ];
