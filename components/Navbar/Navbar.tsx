@@ -51,9 +51,9 @@ const Navbar = () => {
   }
 
   const changeAndGo = async () => {
-    router.push("/project-presentations");
+    await router.push("/project-presentations");
     // await router.push("/loading");
-    await timeout(500);
+    // await timeout(500).thenU;
     // await router.push("/");
   };
 
