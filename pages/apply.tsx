@@ -147,6 +147,7 @@ const Apply = () => {
                             py={"4"}
                             icon={"ArrowRight"}
                             color={"pink"}
+                            disabled
                           />
                         </div>
                         <div className="flex justify-end w-full">

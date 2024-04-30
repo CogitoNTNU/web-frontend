@@ -23,6 +23,7 @@ module.exports = {
         },
         black: {
           default: "#1E1E1E",
+          dark:"#000000"
         },
         blue: {
           light: "#30b3ec",
@@ -59,5 +60,7 @@ module.exports = {
     "px-12",
     "text-3xl",
   ],
-  plugins: [],
+  plugins: [
+    require('@codaworks/react-glow/tailwind')
+  ],
 };

@@ -51,9 +51,10 @@ const Navbar = () => {
   }
 
   const changeAndGo = async () => {
-    await router.push("/loading");
-    await timeout(500);
-    await router.push("/");
+    await router.push("/project-presentations");
+    // await router.push("/loading");
+    // await timeout(500).thenU;
+    // await router.push("/");
   };
 
   useEffect(() => {
@@ -66,6 +67,10 @@ const Navbar = () => {
   useEffect(() => {
     setOnlyLogo(false);
     if (router.pathname.includes("/projects") && router.pathname.length > 10) {
+      setOnlyLogo(true);
+    }
+
+    if (router.pathname.includes("/project-presentations")) {
       setOnlyLogo(true);
     }
 
