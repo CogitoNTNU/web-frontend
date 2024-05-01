@@ -44,7 +44,7 @@ const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
 
       <div className="md:hidden block">
         <div className="absolute z-0 scale-[100%] pointer-events-none">
-          <video className="videoTag" autoPlay loop muted webkit-playsinline>
+          <video className="videoTag" autoPlay loop muted playsInline>
             <source src="/ProjectPresentation/Motion2.mp4" type="video/mp4" />
           </video>
         </div>
