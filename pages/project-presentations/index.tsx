@@ -7,34 +7,70 @@ import Particles from "react-tsparticles";
 import { Glow, GlowCapture } from "@codaworks/react-glow";
 import TextButton from "../../components/Buttons/TextButton";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface HomeMenuProps {
   toggleSchedule: () => void;
 }
 
 const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
+  const vodLink = "https://www.youtube.com/channel/UCqhmgLLW6pPo9r9nFwlzXPA";
+
   return (
     <>
-      <div className="w-full flex justify-end py-2 gap-2 group/t">
-        <TextButton onClick={() => toggleSchedule()} text={"SCHEDULE"} />
-        <Link href={"https://www.twitch.tv/cogitontnu"}>
-          <TextButton text={"WATCH STREAM"} />
-        </Link>
+      <div className="md:block hidden h-full">
+        <div className="w-full flex justify-end py-2 gap-2 group/t">
+          <TextButton onClick={() => toggleSchedule()} text={"SCHEDULE"} />
+          <Link href={vodLink}>
+            <TextButton text={"WATCH VOD"} />
+          </Link>
+        </div>
+        <div className="w-full h-full">
+          <p className="text-white md:text-[54px] text-[20px] glow:text-blue-default font-extralight tracking-wider">
+            <span className="font-medium">YOU</span> ARE{" "}
+            <span className="font-medium">INVITED</span>
+          </p>
+          <div className="w-full h-[2px] glow:bg-white" />
+          <p className="pt-2 text-gray tracking-wider text-[19px] glow:text-white">
+            READY TO SEE NTNU’S TOP AI TALENT IN ACTION?
+          </p>
+        </div>
+        <div className="relative h-full flex items-end justify-end w-full ">
+          <p className="animate-gradientshift bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[22px] text-[10px] tracking-wide inline-block text-transparent">
+            PROJECT PRESENTATION <span className="font-light">EVENT</span>
+          </p>
+        </div>
       </div>
-      <div className="w-full h-full">
-        <p className="text-white md:text-[54px] text-[20px] glow:text-blue-default font-extralight tracking-wider">
-          <span className="font-medium">YOU</span> ARE{" "}
-          <span className="font-medium">INVITED</span>
-        </p>
-        <div className="w-full h-[2px] glow:bg-white" />
-        <p className="pt-2 text-gray tracking-wider text-[19px] glow:text-white">
-          READY TO SEE NTNU’S TOP AI TALENT IN ACTION?
-        </p>
-      </div>
-      <div className="relative h-full flex items-end justify-end w-full ">
-        <p className=" bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[22px] text-[10px] tracking-wide inline-block text-transparent">
-          PROJECT PRESENTATION <span className="font-light">EVENT</span>
-        </p>
+
+      <div className="md:hidden block">
+        <div className="absolute z-0 scale-[100%] pointer-events-none">
+          <video className="videoTag" autoPlay loop muted webkit-playsinline>
+            <source src="/ProjectPresentation/Motion2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="flex justify-center items-center h-[100vh] w-full pb-[200px]">
+          <div className="w-fit text-center">
+            <p className="text-white md:text-[54px] text-[30px] font-extralight tracking-wider">
+              <span className="font-medium">YOU</span> ARE{" "}
+              <span className="font-medium">INVITED</span>
+            </p>
+            <div className="w-full h-[2px] bg-white" />
+            <p className="pt-2 text-gray tracking-wider text-[11px] text-white">
+              READY TO SEE NTNU’S TOP AI TALENT IN ACTION?
+            </p>
+            <div className="w-full flex justify-center py-2 gap-2 ">
+              <TextButton onClick={() => toggleSchedule()} text={"SCHEDULE"} />
+              <Link href={vodLink}>
+                <TextButton text={"WATCH VOD"} />
+              </Link>
+            </div>
+            <div className="relative h-full flex items-end justify-center w-full top-[350px]">
+              <p className="animate-gradientshift bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium text-[14px] tracking-wide inline-block text-transparent">
+                PROJECT PRESENTATION <span className="font-light">EVENT</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
@@ -44,26 +80,50 @@ const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
   return (
     <>
       <TextButton onClick={() => toggleSchedule()} text={"GO BACK"} />
-      <div className="text-center">
+      <motion.div
+        initial={{ x: 200 }}
+        transition={{
+          duration: 0.8,
+          delay: 0,
+          ease: [0, 0.71, 0.2, 1.0],
+        }}
+        animate={{ x: 0 }}
+        exit={{ x: 200 }}
+        className="text-center"
+      >
         <p className="bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[60px] text-[30px] tracking-wide inline-block text-transparent">
           THE <span className="font-regular">SCHEDULE</span>
         </p>
-      </div>
+      </motion.div>
       <div className="w-full h-[2px] bg-white mb-4" />
-      <div>
-        <div className="w-full h-full flex justify-center md:text-[22px] text-[10px]">
-          <p className="text-white ">
-            17:00 - 17:15 Welcome <br /> 17:20 - 17:30 Diffusion <br /> 17:35 -
-            17:45 Infor <br /> 17:50 - 18:00 TutorAI <br /> 18:00 - 18:15 PAUSE{" "}
-            <br /> 18:15 - 18:25 TrainingAI <br /> 18:30 - 18:40 TetrisAI
-          </p>
-          <div className="h-[200px] w-[2px] mx-8 bg-white" />
-          <p className="text-white">
-            17:00 - 17:15 Welcome <br /> 17:20 - 17:30 Diffusion <br /> 17:35 -
-            17:45 Infor <br /> 17:50 - 18:00 TutorAI <br /> 18:00 - 18:15 PAUSE{" "}
-            <br /> 18:15 - 18:25 TrainingAI <br /> 18:30 - 18:40 TetrisAI
-          </p>
-        </div>
+      <div className="md:pb-0 pb-[200px]">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0, 0.71, 0.2, 1.0],
+          }}
+          animate={{ x: 0, opacity: 100 }}
+          exit={{ opacity: 0 }}
+        >
+          <GlowCapture>
+            <Glow className="w-full h-full flex justify-center md:text-[22px] text-[10px]">
+              <p className="text-white leading-[35px] glow:text-blue-light/50">
+                17:00 - 17:15 Welcome <br /> 17:20 - 17:30 Diffusion <br />{" "}
+                17:35 - 17:45 Infor <br /> 17:50 - 18:00 TutorAI <br /> 18:00 -
+                18:15 Pause <br /> 18:15 - 18:25 TrainingAI <br /> 18:30 - 18:40
+                TetrisAI
+              </p>
+              <div className="md:h-[240px] h-[100px] w-[2px] mx-8 bg-white glow:text-blue-light" />
+              <p className="text-white leading-[35px] glow:text-blue-light/50">
+                18:45 - 18:55 DeepTactics <br /> 18:55 - 19:40 Food <br /> 19:40
+                - 19:50 WePost <br /> 19:55 - 20:05 Cogitron <br /> 20:10 -
+                20:20 SudokuAI <br /> 20:20 - 21:00 Chatting
+              </p>
+            </Glow>
+          </GlowCapture>
+        </motion.div>
       </div>
     </>
   );
@@ -170,8 +230,17 @@ const Home = () => {
                 detectRetina: true,
               }}
             />
-            <div className="flex justify-end w-full">
-              <div className="absolute bg-black-dark bg-opacity-90 md:w-[650px] w-[200px] h-full glow:bg-red-100">
+            <motion.div
+              initial={{ opacity: 0 }}
+              transition={{
+                duration: 0.4,
+                delay: 0,
+                ease: [0, 0.71, 0.2, 1.0],
+              }}
+              animate={{ opacity: 100 }}
+              className="flex justify-end w-full"
+            >
+              <div className="absolute bg-black-dark bg-opacity-90 md:w-[650px] w-[200px] h-full">
                 <GlowCapture className="h-full w-full justify-center items-center flex cursor-default pb-[90px]">
                   <Glow color="#1E90FF" className="w-full">
                     {!showSchedule ? (
@@ -182,48 +251,12 @@ const Home = () => {
                   </Glow>
                 </GlowCapture>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="md:hidden block overflow-hidden">
           {!showSchedule ? (
-            <div>
-              <div className="absolute z-0 scale-[100%]">
-                <video className="videoTag" autoPlay loop muted>
-                  <source
-                    src="/ProjectPresentation/Motion2.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-              <div className="flex justify-center items-center h-[100vh] w-full pb-[200px]">
-                <div className="w-fit text-center">
-                  <p className="text-white md:text-[54px] text-[25px] font-extralight tracking-wider">
-                    <span className="font-medium">YOU</span> ARE{" "}
-                    <span className="font-medium">INVITED</span>
-                  </p>
-                  <div className="w-full h-[2px] bg-white" />
-                  <p className="pt-2 text-gray tracking-wider text-[9px] text-white">
-                    READY TO SEE NTNU’S TOP AI TALENT IN ACTION?
-                  </p>
-                  <div className="w-full flex justify-center py-2 gap-2 ">
-                    <TextButton
-                      onClick={() => toggleSchedule()}
-                      text={"SCHEDULE"}
-                    />
-                    <Link href={"https://www.twitch.tv/cogitontnu"}>
-                      <TextButton text={"WATCH STREAM"} />
-                    </Link>
-                  </div>
-                  <div className="relative h-full flex items-end justify-center w-full top-[350px]">
-                    <p className="bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium text-[14px] tracking-wide inline-block text-transparent">
-                      PROJECT PRESENTATION{" "}
-                      <span className="font-light">EVENT</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HomeMenu toggleSchedule={toggleSchedule} />
           ) : (
             <div className="flex h-[100vh] w-full items-center justify-center">
               <div>
