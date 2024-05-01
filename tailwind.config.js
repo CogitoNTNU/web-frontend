@@ -49,6 +49,15 @@ module.exports = {
         desktop: "1200px",
         // => @media (min-width: 1280px) { ... }
       },
+      keyframes: {
+        gradientshift: {
+          '0%, 100%': { size: '100%' },
+          '50%': { size: '120%' },
+        }
+      },
+      animation: {
+        gradientshift: 'gradientshift 3s ease-in-out infinite',
+      },
     },
   },
 

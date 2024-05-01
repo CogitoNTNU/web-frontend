@@ -26,7 +26,7 @@ const TextButton = ({
 
           <GlowCapture>
             <p
-              className="font-medium text-white md:text-[16px] text-[12px]"
+              className="font-medium text-white text-[16px]"
               style={{ fontSize: textSize }}
             >
               {text}
