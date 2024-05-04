@@ -1,5 +1,5 @@
 import { ProjectType } from "../lib/types";
-import SudokuLogo from "../public/Projects/SudokuSolver/SudokuLogoLong.png"
+import SudokuLogo from "../public/Projects/SudokuSolver/SudokoSolverLogo.png";
 import MarketingAILogo from "../public/Projects/MarketingAILogo.png";
 import CatMatch from "../public/Projects/CatMatch/CatMatch.png";
 
@@ -12,7 +12,7 @@ export const CogitoProjects: Array<ProjectType> = [
     link: "https://sudoku-solver-sudokusolver.vercel.app",
     github: "https://github.com/CogitoNTNU/SudokuSolver",
     leaders: Array<string>("Andreas Jonsterhaug", "Afras Mansoor"),
-    new: true
+    new: true,
   },
   {
     image: MarketingAILogo,
@@ -22,6 +22,7 @@ export const CogitoProjects: Array<ProjectType> = [
     link: "/projects/marketingai",
     github: "https://github.com/CogitoNTNU/MarketingAI",
     leaders: Array<string>("Kristoffer Olaisen", "Sverre Nystad"),
+    new: false,
   },
   {
     image: CatMatch,
@@ -31,5 +32,6 @@ export const CogitoProjects: Array<ProjectType> = [
     link: "https://catmatch.rosby.no",
     github: "https://github.com/CogitoNTNU/CatMatch",
     leaders: Array<string>("Ulrik Røsby"),
+    new: false,
   },
 ];
