@@ -54,7 +54,7 @@ const App = ({
             <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
           </Head>
           <Navbar />
-          <div>
+          <div className=" h-screen">
             <Component {...pageProps} />
           </div>
         </HydrationBoundary>
