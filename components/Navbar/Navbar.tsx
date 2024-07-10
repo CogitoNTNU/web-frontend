@@ -50,20 +50,6 @@ const Navbar = () => {
     return new Promise((res) => setTimeout(res, delay));
   }
 
-  const changeAndGo = async () => {
-    await router.push("/project-presentations");
-    // await router.push("/loading");
-    // await timeout(500).thenU;
-    // await router.push("/");
-  };
-
-  useEffect(() => {
-    if (router.pathname === "/") {
-      changeAndGo().catch((err) => console.error(err));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   useEffect(() => {
     setOnlyLogo(false);
     if (router.pathname.includes("/projects") && router.pathname.length > 10) {
