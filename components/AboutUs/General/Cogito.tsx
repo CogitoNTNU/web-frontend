@@ -1,10 +1,19 @@
+"use strict";
+"use client";
+
 import Image from "next/image";
 import logo from "../../../public/Logos/whiteCogitoLogoLightRedBG.svg";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 export const Cogito = () => {
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const router = useRouter();
 
@@ -18,28 +27,36 @@ export const Cogito = () => {
     <>
       <div
         data-name="Cogito"
-        className="flex flex-col items-center justify-center tablet:w-3/4 rounded-xl pt-20"
+        className="flex flex-col items-center justify-center w-full tablet:w-3/4 rounded-t-xl pt-10 tablet:pt-20"
       >
-        <div data-name="upper box" className="flex flex-row items-start ">
-          <div data-name="logo" className="w-[35%] h-full left-0 bg-blue-900">
-            <Image src={logo} alt="Cogito Logo" />
+        <div
+          data-name="upper box"
+          className="flex flex-col tablet:flex-row items-start w-full"
+        >
+          <div
+            data-name="logo"
+            className="flex-shrink-0 w-full tablet:w-[35%] bg-blue-900 flex justify-center items-center"
+          >
+            {isClient && window.innerWidth > 638 && (
+              <Image src={logo} alt="Cogito Logo" />
+            )}
           </div>
           <div
             data-name="text"
-            className="flex flex-col justify-center w-[65%] left-0"
+            className="w-full tablet:w-[65%] flex flex-col justify-center pt-4"
           >
-            <h1 className="flex text-white text-xl tablet:text-4xl font-bold text-center items-center">
+            <h1 className="text-white text-2xl tablet:text-4xl font-bold text-center">
               BYGG FREMTIDEN DIN
             </h1>
-            <div className="flex flex-row">
-              <h1 className="flex text-white text-2xl tablet:text-5xl font-bold text-center items-center">
+            <div className="flex flex-col tablet:flex-row justify-center items-center">
+              <h1 className="text-white text-2xl tablet:text-5xl font-bold text-center">
                 INNENFOR
               </h1>
-              <h1 className="flex text-white bg-blue-light rounded-md text-2xl tablet:text-5xl font-bold text-center items-end ml-10">
+              <h1 className="text-white bg-blue-light rounded-md p-2 text-2xl tablet:text-5xl font-bold text-center tablet:ml-4 mt-2 tablet:mt-0">
                 AI!
               </h1>
             </div>
-            <p className="text-white text-lg tablet:text-xl bg-blue-default mb-0">
+            <p className="text-white text-lg tablet:text-xl bg-blue-default p-4 mt-4 rounded-md">
               Cogito NTNU er en studentorganisasjon ved NTNU Trondheim som
               fokuserer på kunstig intelligens. Gjennom kursing og
               prosjektkvelder får deltakere praktisk erfaring ved siden av
@@ -49,14 +66,14 @@ export const Cogito = () => {
         </div>
         <div
           data-name="white box"
-          className="flex flex-col items-center justify-center bg-slate-50 w-full h-[135px] rounded-xl rounded-t-none"
+          className="flex flex-col items-center justify-center bg-slate-50 w-full h-auto p-6 rounded-xl rounded-t-none"
         >
-          <h1 className=" text-lg tablet:text-2xl font-bold text-center text-black-default pt-2">
+          <h1 className="text-lg tablet:text-2xl font-bold text-center text-black-default">
             Ønsker du å få praktisk erfaring innen AI?
           </h1>
           <div
             data-name="buttons"
-            className="flex flex-row gap-6 pt-4 text-lg pb-3"
+            className="flex flex-col tablet:flex-row gap-4 pt-4 text-lg"
           >
             <button
               className="text-white bg-red-light px-5 py-3 tablet:px-8 tablet:py-4 rounded-3xl"
@@ -66,7 +83,7 @@ export const Cogito = () => {
             >
               Søk opptak
             </button>
-            <p className=" text-black-default flex items-center">eller</p>
+            <p className="text-black-default text-center tablet:pt-3">eller</p>
             <button
               className="text-white bg-blue-default px-5 py-3 tablet:px-8 tablet:py-4 rounded-3xl"
               onClick={homeAndScrollToBottom}
@@ -80,15 +97,15 @@ export const Cogito = () => {
         data-name="Rask info"
         className="flex flex-col gap-6 pt-20 tablet:w-3/4"
       >
-        <h1 className="text-white text-center flex-grow w-full text-4xl tablet:text-6xl font-semibold">
+        <h1 className="text-white text-center text-4xl tablet:text-6xl font-semibold">
           RASK INFORMASJON
         </h1>
         <div
           data-name="Facts"
-          className="flex flex-row items-center justify-center gap-x-12 tablet:gap-x-24"
+          className="flex flex-row items-center justify-center gap-6 tablet:gap-24"
         >
           <div data-name="Members">
-            <h1 className="text-center text-5xl font-bold text-blue-default font-semibold">
+            <h1 className="text-center text-5xl font-bold text-blue-default">
               70+
             </h1>
             <p className="text-white text-center text-xl font-medium">
@@ -96,7 +113,7 @@ export const Cogito = () => {
             </p>
           </div>
           <div data-name="Made">
-            <h1 className="text-center text-5xl font-bold text-blue-light font-semibold">
+            <h1 className="text-center text-5xl font-bold text-blue-light">
               2018
             </h1>
             <p className="text-white text-center text-xl font-medium">
@@ -104,7 +121,7 @@ export const Cogito = () => {
             </p>
           </div>
           <div data-name="Projects">
-            <h1 className="text-center text-5xl font-bold text-red-light font-semibold">
+            <h1 className="text-center text-5xl font-bold text-red-light">
               100+
             </h1>
             <p className="text-white text-center text-xl font-medium">
