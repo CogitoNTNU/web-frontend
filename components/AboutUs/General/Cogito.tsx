@@ -1,6 +1,5 @@
 import Image from "next/image";
 import logo from "../../../public/Logos/whiteCogitoLogoLightRedBG.svg";
-import Button from "../../Buttons/Button";
 import { useRouter } from "next/router";
 export const Cogito = () => {
   function timeout(delay: number) {
@@ -21,8 +20,8 @@ export const Cogito = () => {
         data-name="Cogito"
         className="flex flex-col items-center justify-center tablet:w-3/4 rounded-xl pt-20"
       >
-        <div data-name="upper box" className="flex flex-row items-start">
-          <div data-name="logo" className="w-[35%] left-0">
+        <div data-name="upper box" className="flex flex-row items-start ">
+          <div data-name="logo" className="w-[35%] h-full left-0 bg-blue-900">
             <Image src={logo} alt="Cogito Logo" />
           </div>
           <div
@@ -50,7 +49,7 @@ export const Cogito = () => {
         </div>
         <div
           data-name="white box"
-          className="flex flex-col items-center justify-center bg-slate-50 w-full h-[135px] rounded-xl"
+          className="flex flex-col items-center justify-center bg-slate-50 w-full h-[135px] rounded-xl rounded-t-none"
         >
           <h1 className=" text-lg tablet:text-2xl font-bold text-center text-black-default pt-2">
             Ønsker du å få praktisk erfaring innen AI?
