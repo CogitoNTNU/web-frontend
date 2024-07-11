@@ -3,6 +3,7 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
 import EventCard from "../components/Cards/EventCard";
+import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
 
 const Calendar = () => {
     const hardcodedEvents = [
@@ -59,6 +60,7 @@ const Calendar = () => {
             >
                 <div className='w-[100vw] flex justify-center'>
                     <div className='flex-col justify-center items-center'>
+                        <ApplicationProcessCard />
                         {eventData.map((event, index) => (
                             <EventCard
                                 key={index}
