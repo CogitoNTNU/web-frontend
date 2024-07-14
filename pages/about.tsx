@@ -2,134 +2,111 @@
 
 import Head from "next/head";
 import Footer from "../components/Footer/Footer";
-import { useRouter } from "next/router";
-import Button from "../components/Buttons/Button";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
-//Images
-import NTNU from "../public/Logos/NTNU.png";
-import NAIL from "../public/Logos/norwegian_open_ai_lab.png";
+import Image from "next/image";
+import { useState } from "react";
+
+import AboutUsBG from "../public/Team/AboutUsBG.png";
+import RadioButton from "../components/Buttons/RadioButton";
+import { Cogito } from "../components/AboutUs/General/Cogito";
+import { Privacy } from "../components/AboutUs/General/Privacy";
+import { SponsorPortal } from "../components/AboutUs/General/SponsorProtal";
+import { OrganizationMain } from "../components/AboutUs/Organization/OrganizationMain";
+import { ForCompaniesMain } from "../components/AboutUs/ForCompanies/ForCompaniesMain";
+
+type Topics = "Generelt" | "Organisasjonen" | "For Bedrifter";
+const mainButtons: Topics[] = ["Generelt", "Organisasjonen", "For Bedrifter"];
+const generalButtons = ["Info om Cogito", "Personvern", "Sponsor Portal"];
 
 const About = () => {
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
-
-  const router = useRouter();
-
-  const homeAndScrollToBottom = async () => {
-    await router.push("/");
-    await timeout(1000);
-    document.getElementById("part-2").scrollIntoView({ behavior: "smooth" });
-  };
+  const [topic, setTopic] = useState<Topics>("Generelt");
+  const [subTopic, setSubTopic] = useState<string>("Info om Cogito");
 
   return (
     <>
       <Head>
         <title>Om oss - Cogito NTNU</title>
       </Head>
-      <main className="overflow-hidden">
-        <div className="flex items-center justify-center phone:pt-[160px] pt-[130px]">
-          <div className="md:hidden visible">
-            <img
-              className="absolute inset-0 w-full h-full object-cover md:rounded-r-3xl"
-              draggable="false"
-              alt="Cogito"
-              src="./HomePage/FolkFraCogito.webp"
-            />
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.4,
-              ease: [0, 0.71, 0.2, 1.0],
-            }}
-            className="bg-gray-default text-white w-[85%] z-40 h-max-[600px] md:h-[600px] h-[550px] rounded-3xl"
+      <main className="relative overflow-hidden">
+        <div className="flex items-center justify-center pt-[0px] flex-col">
+          <div
+            data-name="Header"
+            className="relative w-full z-30 flex-none h-80 phone:h-[400px] tablet:h-[500px] laptop:h-[600px] desktop:h-[660px]"
           >
-            <div className="w-full flex">
-              <div className="flex-1 py-[30px] px-[4%] desktop:text-[17px] md:text-[15px] phone:text-[16px] text-[16px]">
-                <p className="font-black laptop:text-[40px] text-[30px] text-shadow-lg tracking-wide leading-normal md:text-left text-center">
-                  Hva er Cogito?
-                </p>
-                <div className="w-full mt-4 h-[2px] bg-white"></div>
-                <p className="pt-[12px] tracking-wide prose mb-4">
-                  Cogito NTNU er en teknisk studentorganisasjon for kunstig
-                  intelligens. Hvert semester har vi prosjekter som hvem som
-                  helst kan være med på for å få praktisk erfaring ved siden av
-                  studiene.
-                </p>
-                <p className="prose mb-4">
-                  Vi ønsker å bygge et miljø hvor både nybegynnere og erfarne
-                  kan lære AI sammen! Vi består av studenter på tvers av flere
-                  av de tekniske linjene ved NTNU Trondheim.
-                </p>
-                <p className="prose mb-4 phone:block hidden">
-                  Vårt mål er å være en åpen studentorganisasjon der alle som er
-                  nysgjerrige kan delta.
-                </p>
-                <div className="w-full items-center flex justify-center text-center pt-[6%]">
-                  <div>
-                    <p className="font-medium py-[10px]">
-                      Lurer du på noe mer?
-                    </p>
-                    <Button
-                      text={"Kontakt Oss"}
-                      px={"12"}
-                      py={"4"}
-                      color={"blue"}
-                      onClick={() => homeAndScrollToBottom()}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex-none relative w-[50%] h-[600px] hidden md:block">
-                <img
-                  className="absolute inset-0 w-full h-full object-cover rounded-r-3xl"
-                  draggable="false"
-                  alt="Cogito"
-                  src="./HomePage/FolkFraCogito.webp"
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.8,
-            ease: [0, 0.71, 0.2, 1.0],
-          }}
-          className="flex items-center justify-center pt-[100px]"
-        >
-          <div className="bg-gray-lighter text-gray-default w-[80%] z-40 h-max-[600px] desktop:h-[600px] md:h-[500px] h-[400px] rounded-3xl flex justify-center text-center">
-            <div className="py-[30px] px-[8%] w-full">
-              <p className="md:text-[40px] phone:text-[28px] text-[22px] font-black tracking-wide">
-                Våre Hovedpartnere
-              </p>
-              <div className="w-full my-[20px] h-[3px] bg-gray-default"></div>
-              <div className="items-center flex justify-center py-[40px]">
-                <Image
-                  className="phone:w-[40%] w-[60%]"
-                  src={NTNU}
-                  alt={"NTNU LOGO"}
-                />
-              </div>
-              <div className="items-center flex justify-center py-[40px]">
-                <Image
-                  className="phone:w-[30%] w-[50%]"
-                  src={NAIL}
-                  alt={"NAIL LOGO"}
-                />
-              </div>
+            <div
+              data-name="Gives that blur effect on the image"
+              className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"
+            ></div>
+            <div className="flex justify-center">
+              <Image
+                src={AboutUsBG}
+                alt="Bilde av teamet"
+                placeholder="blur"
+                quality={100}
+                priority
+                className="absolute inset-0 w-full h-full object-cover shadow-2xl"
+              />
+              <h1
+                data-name="Title"
+                className="absolute z-50 flex bg-gray-default bottom-[20%] text-white p-3 text-4xl font-bold rounded-xl 
+                shadow-2xl tablet:bottom-[16%] tablet:text-5xl tablet:p-4 laptop:bottom-[12%] laptop:text-6xl laptop:p-5 
+                desktop:bottom-[10%] desktop:text-7xl desktop:p-6"
+              >
+                {topic}
+              </h1>
             </div>
           </div>
-        </motion.div>
+          <div
+            data-name="white-box"
+            className={`relative w-4/5 tablet:w-2/3 desktop:w-1/2 z-30 h-[180px] tablet:h-[260px] laptop:h-[160px] ${
+              topic === "Generelt"
+                ? "desktop:h-[200px]"
+                : "desktop:h-[160px] h-[100px] tablet:h-[150px]"
+            } bg-slate-50 col-auto flex flex-col rounded-2xl shadow-2xl`}
+          >
+            <div
+              data-name="Main Buttons"
+              className="tablet:pt-4 tablet:pb-2 pb-1 pt-1 flex justify-center tablet:gap-4 gap-2 flex-wrap w-full"
+            >
+              {mainButtons.map((name) => (
+                <RadioButton
+                  key={name}
+                  text={name}
+                  currentClicked={topic}
+                  onClick={() => setTopic(name)}
+                />
+              ))}
+            </div>
+            {topic === "Generelt" && (
+              <div
+                data-name="SubTopic Buttons"
+                className="tablet:pt-1 tablet:pb-4 pb-1 pt-1 flex justify-center tablet:gap-2 gap-1 flex-wrap w-full"
+              >
+                {generalButtons.map((name) => (
+                  <RadioButton
+                    key={name}
+                    text={name}
+                    currentClicked={subTopic}
+                    onClick={() => setSubTopic(name)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+          {topic === "Organisasjonen" && <OrganizationMain />}
+          {topic === "For Bedrifter" && <ForCompaniesMain />}
+          {topic === "Generelt" && subTopic === generalButtons[0] && (
+            <div className="flex flex-col items-center justify-center w-full">
+              <Cogito />
+            </div>
+          )}
+          {topic === "Generelt" && subTopic === generalButtons[1] && (
+            <Privacy />
+          )}
+          {topic === "Generelt" && subTopic === generalButtons[2] && (
+            <SponsorPortal />
+          )}
+        </div>
       </main>
       <Footer />
     </>
