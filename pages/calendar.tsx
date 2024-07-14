@@ -8,36 +8,28 @@ import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
 const Calendar = () => {
     const hardcodedEvents = [
         {
+            eventName: 'Planlegging av prosjekter',
+            eventDate: '30.07',
+            eventLocation: 'Foregår digitalt',
+            eventDescription: 'Planlegging av prosjekter for høstsemesteret 2024. Vi velger hvilke prosjekter som skal gjennomføres, og hvem som blir prosjektledere.',
+            eventImage: '',
+            eventLink: '',
+        },
+        {
+            eventName: 'Arrangementnavn',
+            eventDate: 'DD.MM',
+            eventLocation: '',
+            eventDescription: '',
+            eventImage: '',
+            eventLink: '/events/<event>',
+        },
+        {
             eventName: 'Cogito Prosjekt Presentasjoner',
-            eventDate: '22.11.2024',
-            eventLocation: 'Event Location',
-            eventDescription: 'Semesterly project presentations for the Cogito NTNU student organization.',
-            eventImage: 'Event Image',
-            eventLink: '/events/event',
-        },
-        {
-            eventName: 'Event Name',
-            eventDate: 'Event Date',
-            eventLocation: 'Event Location',
-            eventDescription: 'Event Description',
-            eventImage: 'Event Image',
-            eventLink: '/events/event',
-        },
-        {
-            eventName: 'Event Name',
-            eventDate: 'Event Date',
-            eventLocation: 'Event Location',
-            eventDescription: 'Event Description',
-            eventImage: 'Event Image',
-            eventLink: '/events/event',
-        },
-        {
-            eventName: 'Event Name',
-            eventDate: 'Event Date',
-            eventLocation: 'Event Location',
-            eventDescription: 'Event Description',
-            eventImage: 'Event Image',
-            eventLink: '/events/event',
+            eventDate: '22.11',
+            eventLocation: '',
+            eventDescription: 'Presentasjoner av prosjektene Cogito-medlemmer har jobbet på dette semesteret. Dette er en flott mulighet til å se hva Cogito har jobbet med, og for å bli inspirert til å delta i prosjekter selv!',
+            eventImage: '',
+            eventLink: '',
         },
     ];
 

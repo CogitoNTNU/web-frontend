@@ -19,7 +19,8 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
             },
             {
                 name: 'Møt oss på stand!',
-                dates: '19.08 - 23.08'
+                dates: '19.08 - 23.08',
+                lenke: 'https://use.mazemap.com/#v=1&config=ntnu&campusid=1&zlevel=-1&center=10.406636,63.415702&zoom=20.4&sharepoitype=poi&sharepoi=51997'
             },
             {
                 name: 'Søknadsfrist',
@@ -45,9 +46,10 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
     }
 
     return (
-        <Card className=''>
-            <div className='w-full mb-[20px] flex-col justify-between items-end'>
-                <h2 className='text-2xl text-white font-bold'>Opptaksprosess Høst 2024</h2>
+        <Card>
+            <img className='w-[24px] h-auto mb-[12px]' src='https://cdn-icons-png.freepik.com/256/75/75011.png?semt=ais_hybrid' />
+            <div className='w-full mb-[20px] flex justify-between items-start'>
+                <h2 className='w-[50%] text-2xl text-white font-bold'>Opptaksprosess Høst 2024</h2>
                 <p className='text-xl text-white'>
                     01.08 - 27.08
                 </p>
@@ -55,7 +57,10 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
             <ol className='text-white mb-[24px]'>
                 {applicationProcessData.steps.map((step, index) => (
                     <li key={index} className='w-full flex justify-between mb-[12px]'>
-                        <h3 className={step.name === 'Søknadsfrist' ? 'text-pink-default' : ''}>{step.name}</h3>
+                        <div className='flex gap-[12px]'>
+                            <h3 className={step.name === 'Søknadsfrist' ? 'text-pink-default' : ''}>{step.name}</h3>
+                            {step.lenke && <a className='text-blue-light underline hover:underline hover:font-bold' href={step.lenke}>(MazeMap)</a>}
+                        </div>
                         <p className={step.name === 'Søknadsfrist' ? 'text-pink-default' : ''}>{step.dates}</p>
                     </li>
                 ))}
