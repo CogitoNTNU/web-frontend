@@ -11,6 +11,8 @@ import RadioButton from "../components/Buttons/RadioButton";
 import { Cogito } from "../components/AboutUs/General/Cogito";
 import { Privacy } from "../components/AboutUs/General/Privacy";
 import { SponsorPortal } from "../components/AboutUs/General/SponsorProtal";
+import { OrganizationMain } from "../components/AboutUs/Organization/OrganizationMain";
+import { ForCompaniesMain } from "../components/AboutUs/ForCompanies/ForCompaniesMain";
 
 type Topics = "Generelt" | "Organisasjonen" | "For Bedrifter";
 const mainButtons: Topics[] = ["Generelt", "Organisasjonen", "For Bedrifter"];
@@ -91,6 +93,8 @@ const About = () => {
               </div>
             )}
           </div>
+          {topic === "Organisasjonen" && <OrganizationMain />}
+          {topic === "For Bedrifter" && <ForCompaniesMain />}
           {topic === "Generelt" && subTopic === generalButtons[0] && (
             <div className="flex flex-col items-center justify-center w-full">
               <Cogito />

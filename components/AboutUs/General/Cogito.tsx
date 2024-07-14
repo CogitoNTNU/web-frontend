@@ -1,19 +1,11 @@
 "use strict";
 "use client";
 
-import Image from "next/image";
-import logo from "../../../public/Logos/whiteCogitoLogoLightRedBG.svg";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 export const Cogito = () => {
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   const router = useRouter();
 
@@ -27,36 +19,28 @@ export const Cogito = () => {
     <>
       <div
         data-name="Cogito"
-        className="flex flex-col items-center justify-center w-full tablet:w-3/4 rounded-t-xl pt-10 tablet:pt-20"
+        className="flex flex-col items-center justify-center w-full tablet:w-3/4 laptop:w-1/2 rounded-t-xl pt-10 tablet:pt-20"
       >
         <div
           data-name="upper box"
           className="flex flex-col tablet:flex-row items-start w-full"
         >
           <div
-            data-name="logo"
-            className="flex-shrink-0 w-full tablet:w-[35%] bg-blue-900 flex justify-center items-center"
-          >
-            {isClient && window.innerWidth > 638 && (
-              <Image src={logo} alt="Cogito Logo" />
-            )}
-          </div>
-          <div
             data-name="text"
-            className="w-full tablet:w-[65%] flex flex-col justify-center pt-4"
+            className="w-full flex flex-col justify-center pt-4"
           >
-            <h1 className="text-white text-2xl tablet:text-4xl font-bold text-center">
+            <h1 className="text-white text-3xl tablet:text-4xl font-bold text-center">
               BYGG FREMTIDEN DIN
             </h1>
             <div className="flex flex-col tablet:flex-row justify-center items-center">
-              <h1 className="text-white text-2xl tablet:text-5xl font-bold text-center">
+              <h1 className="text-white text-3xl tablet:text-5xl font-bold text-center">
                 INNENFOR
               </h1>
-              <h1 className="text-white bg-blue-light rounded-md p-2 text-2xl tablet:text-5xl font-bold text-center tablet:ml-4 mt-2 tablet:mt-0">
+              <h1 className="text-white bg-blue-light rounded-md p-2 text-3xl tablet:text-5xl font-bold text-center tablet:ml-4 mt-2 tablet:mt-0">
                 AI!
               </h1>
             </div>
-            <p className="text-white text-lg tablet:text-xl bg-blue-default p-4 mt-4 rounded-md">
+            <p className="text-white text-lg tablet:text-xl bg-blue-default p-4 mt-4 rounded-md rounded-b-none">
               Cogito NTNU er en studentorganisasjon ved NTNU Trondheim som
               fokuserer på kunstig intelligens. Gjennom kursing og
               prosjektkvelder får deltakere praktisk erfaring ved siden av
