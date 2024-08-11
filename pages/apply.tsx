@@ -14,6 +14,7 @@ const Apply = () => {
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [about, setAbout] = useState<string>("");
+  const [projects, setProjects] = useState<Array<string>>([]);
   const [applyPage, setApplyPage] = useState<boolean>(true);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
   const formData = new FormData();
@@ -34,6 +35,7 @@ const Apply = () => {
     formData.append("email", email);
     formData.append("phone_number", phone.replaceAll(" ", ""));
     formData.append("about", about);
+    formData.append("projects_to_join", JSON.stringify(projects));
 
     mutate(formData);
   };
