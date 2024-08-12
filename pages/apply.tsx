@@ -7,6 +7,10 @@ import Head from "next/head";
 import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
 import { useSendApplication } from "../hooks/useSendApplication";
+import ProjectModal from "../components/Projects/ProjectModal";
+import ProjectCard from "../components/Projects/ProjectCard";
+import { ProjectApply } from "../lib/types";
+import { projectsApply } from "../data/projects";
 
 const Apply = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -14,8 +18,15 @@ const Apply = () => {
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [about, setAbout] = useState<string>("");
+  const [chosenProjects, setProjects] = useState<Array<string>>([]);
   const [applyPage, setApplyPage] = useState<boolean>(true);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
+    null
+  );
+
   const formData = new FormData();
 
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
@@ -34,8 +45,22 @@ const Apply = () => {
     formData.append("email", email);
     formData.append("phone_number", phone.replaceAll(" ", ""));
     formData.append("about", about);
+    formData.append("projects_to_join", JSON.stringify(chosenProjects));
 
     mutate(formData);
+  };
+
+  const toggleProjectSelection = (projectName: string) => {
+    setProjects((prev) =>
+      prev.includes(projectName)
+        ? prev.filter((item) => item !== projectName)
+        : [...prev, projectName]
+    );
+  };
+
+  const handleProjectInfoClick = (project: ProjectApply) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
   };
 
   return (
@@ -59,8 +84,8 @@ const Apply = () => {
               <p className="font-medium">Deltaker</p>
             </div>
             {/* <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
-                            <p className="font-medium">Verv</p>
-                        </div> */}
+              <p className="font-medium">Verv</p>
+            </div> */}
           </div>
           {applyPage && (
             <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
@@ -138,6 +163,33 @@ const Apply = () => {
                           />
                         </div>
                       </div>
+                      <div className="px-6 py-2">
+                        <div className="w-full flex">
+                          <p className="laptop:text-[20px] text-[16px] w-full">
+                            Velg Prosjekt
+                          </p>
+                          <p className="laptop:text-[20px] text-[16px] justify-end flex w-full text-blue-dark">
+                            Velg minst 3 prosjekter
+                          </p>
+                        </div>
+
+                        <div className="py-2 tablet:flex w-full tablet:flex-wrap tablet:gap-x-4">
+                          {projectsApply.map((project) => (
+                            <ProjectCard
+                              key={project.name}
+                              project={project}
+                              isSelected={chosenProjects.includes(project.name)}
+                              priority={
+                                chosenProjects.includes(project.name)
+                                  ? chosenProjects.indexOf(project.name) + 1
+                                  : null
+                              }
+                              toggleSelection={toggleProjectSelection}
+                              onInfoClick={handleProjectInfoClick}
+                            />
+                          ))}
+                        </div>
+                      </div>
                       <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
                         <div className="flex justify-start w-full ">
                           <Button
@@ -180,6 +232,7 @@ const Apply = () => {
               </div>
             </div>
           )}
+
           {!applyPage && (
             <div className="w-[80%] h-[550px] bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
               <p className="font-bold text-[30px] text-blue-dark px-6 pt-8 pb-4">
@@ -242,6 +295,11 @@ const Apply = () => {
         </div>
       </motion.main>
 
+      <ProjectModal
+        isOpen={isModalOpen}
+        setOpen={setIsModalOpen}
+        project={selectedProject}
+      />
       <Footer />
     </>
   );
