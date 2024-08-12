@@ -219,7 +219,7 @@ const Apply = () => {
                       </div>
                       <div className="px-6 py-2">
                         <p className="laptop:text-[20px] text-[16px]">
-                          Valg av Projekt
+                          Valg av projekt i prioritert rekkefølge
                         </p>
                         {projects.map((project, index) => (
                           <ProjectCard
