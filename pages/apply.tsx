@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { useSendApplication } from "../hooks/useSendApplication";
 import { Project } from "../lib/types";
 import ProjectModal from "../components/Projects/ProjectModal";
+import ProjectCard from "../components/Projects/ProjectCard";
 // TODO: GET PROJECTS FROM API
 const projects: Project[] = [
   {
@@ -17,7 +18,7 @@ const projects: Project[] = [
       "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
     image: "sjakkai.webp",
     leaders: ["Thomas Sørensen"],
-    workload: "4",
+    // workload: "4",
   },
   {
     name: "TV2 x Cogito",
@@ -100,6 +101,14 @@ const Apply = () => {
     formData.append("projects_to_join", JSON.stringify(chosenProjects));
 
     mutate(formData);
+  };
+
+  const toggleProjectSelection = (projectName: string) => {
+    setProjects((prev) =>
+      prev.includes(projectName)
+        ? prev.filter((item) => item !== projectName)
+        : [...prev, projectName]
+    );
   };
 
   const handleProjectInfoClick = (project: Project) => {
@@ -212,60 +221,18 @@ const Apply = () => {
                           Valg av Projekt
                         </p>
                         {projects.map((project, index) => (
-                          <button
-                            onClick={() => {
-                              setProjects((prev) =>
-                                prev.includes(project.name)
-                                  ? prev.filter((item) => item !== project.name)
-                                  : [...prev, project.name]
-                              );
-                              console.log(chosenProjects);
-                            }}
-                          >
-                            <div
-                              key={index}
-                              className="flex gap-2 bg-gray-light rounded-3xl px-4 py-2 my-2 hover:bg-gray-default cursor-pointer"
-                            >
-                              <p>{project.name}</p>
-                              {
-                                // Add the priority of the project by the index of chosenProjects
-                                chosenProjects.includes(project.name) && (
-                                  <p>
-                                    {chosenProjects.indexOf(project.name) + 1}
-                                  </p>
-                                )
-                              }
-                              <div>
-                                {project.workload && (
-                                  <div className="flex gap-2">
-                                    <p>{project.workload}</p>
-                                    <p>timer</p>
-                                  </div>
-                                )}
-                                {/* Info */}
-                                <div
-                                  onClick={() => {
-                                    handleProjectInfoClick(project);
-                                  }}
-                                >
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="size-6"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-                                    />
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                          </button>
+                          <ProjectCard
+                            key={index}
+                            project={project}
+                            isSelected={chosenProjects.includes(project.name)}
+                            priority={
+                              chosenProjects.includes(project.name)
+                                ? chosenProjects.indexOf(project.name) + 1
+                                : null
+                            }
+                            toggleSelection={toggleProjectSelection}
+                            onInfoClick={handleProjectInfoClick}
+                          />
                         ))}
                       </div>
                       <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
