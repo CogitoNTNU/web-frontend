@@ -214,9 +214,9 @@ const Apply = () => {
                         <p className="laptop:text-[20px] text-[16px]">
                           Valg av projekt i prioritert rekkefølge
                         </p>
-                        {projects.map((project, index) => (
+                        {projects.map((project) => (
                           <ProjectCard
-                            key={index}
+                            key={project.name}
                             project={project}
                             isSelected={chosenProjects.includes(project.name)}
                             priority={

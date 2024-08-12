@@ -23,9 +23,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       className="w-full max-w-md mx-auto"
     >
       <div
-        className={`relative flex items-center gap-4 bg-gray-light rounded-3xl px-4 py-2 my-2 hover:bg-gray-default cursor-pointer ${
-          isSelected ? "bg-blue-300" : ""
-        }`}
+        className={`relative flex items-center gap-4 ${
+          isSelected ? "bg-blue-300" : "bg-gray-light"
+        } rounded-3xl px-4 py-2 my-2 hover:bg-gray-default cursor-pointer`}
       >
         <div className="relative w-16 h-16">
           <Image
