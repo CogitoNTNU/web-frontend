@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Project } from "../../lib/types";
-
 interface ProjectModalProps {
   isOpen: boolean;
   setOpen: (boolean: boolean) => void;
@@ -23,6 +23,29 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         exit={{ opacity: 0, scale: 0.9 }}
         className="bg-white rounded-lg shadow-lg p-8 max-w-2xl w-full relative border-gray-darker border-2"
       >
+        <div className="relative self-center w-16 h-16">
+          <Image
+            src={`/Projects/${project.image}`}
+            alt={project.name}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-full"
+          />
+        </div>
+        <h2 className="text-2xl font-bold mb-4">{project.name}</h2>
+        <p className="mb-4">{project.description}</p>
+        <p>
+          <strong>Leaders:</strong>{" "}
+          {project.leaders.length > 1
+            ? project.leaders.slice(0, -1).join(", ") +
+              " og " +
+              project.leaders.slice(-1)
+            : project.leaders[0]}
+        </p>
+        <p>
+          {project.workload && <strong>Workload:</strong>} {project.workload}
+        </p>
+
         <button
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
           onClick={() => setOpen(false)}
@@ -42,19 +65,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             />
           </svg>
         </button>
-        <h2 className="text-2xl font-bold mb-4">{project.name}</h2>
-        <p className="mb-4">{project.description}</p>
-        <p>
-          <strong>Leaders:</strong>{" "}
-          {project.leaders.length > 1
-            ? project.leaders.slice(0, -1).join(", ") +
-              " og " +
-              project.leaders.slice(-1)
-            : project.leaders[0]}
-        </p>
-        <p>
-          {project.workload && <strong>Workload:</strong>} {project.workload}
-        </p>
       </motion.div>
     </div>
   );

@@ -16,14 +16,14 @@ const projects: Project[] = [
     name: "Infor x Cogito",
     description:
       "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
-    image: "sjakkai.webp",
+    image: "infor.svg",
     leaders: ["Thomas Sørensen"],
     // workload: "4",
   },
   {
     name: "TV2 x Cogito",
     description: "Lær å lage et Tic Tac Toe spill",
-    image: "tictactoe.webp",
+    image: "tv2.webp",
     leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
     workload: "4",
   },
@@ -31,22 +31,23 @@ const projects: Project[] = [
     name: "A* Cogitron",
     description:
       "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
-    image: "snake.webp",
+    image: "cogitron.webp",
     leaders: ["Florian Creutzig"],
     workload: "4",
   },
   {
     name: "DeepTactics",
-    description: "Lær å lage et Pong spill",
-    image: "pong.webp",
+    description: "Mer informasjon kommer",
+    image: "deeptactics.webp",
     leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
     workload: "4",
   },
   {
     name: "J.A.R.V.I.S",
-    description: "Lær å lage et Flappy Bird spill",
-    image: "flappybird.webp",
-    leaders: ["Ola Nordmann", "Kari Nordmann"],
+    description:
+      "Just A Rather Very Intelligent System.\nWe’re building an AI assistant inspired by Iron Man's Jarvis, capable of managing and solving complex tasks autonomously. Users should be able to converse with Jarvis naturally. Similar to Jarvis in the movies, or the ChatGPT4o demo.",
+    image: "jarvis.webp",
+    leaders: ["William Schmidt"],
     workload: "4",
   },
   {
@@ -60,7 +61,7 @@ const projects: Project[] = [
   {
     name: "Rubiks Cube Solver",
     description:
-      "Lær å lage en AI som løser Rubiks kube. Vi skal bruke en fysisk kube og en robotarm som løser kuben. Vi skal også lage en AI som løser kuben i en simulator.",
+      "Lær å lage en AI som løser Rubiks kube. Her blir det bruk av GOFAI hvor KI-en løser kuben i en simulator. Senere vil vi prøve å få den ved bruk av datasyn gjenkjenne kubens instillinger for å så løse den.",
     image: "rubikscube.webp",
     leaders: ["Einride Osland"],
     workload: "4",
