@@ -22,16 +22,16 @@ const projects: Project[] = [
   },
   {
     name: "TV2 x Cogito",
-    description: "Lær å lage et Tic Tac Toe spill",
+    description: "Mer informasjon kommer",
     image: "tv2.webp",
     leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
     workload: "4",
   },
   {
-    name: "A* Cogitron",
+    name: "A* x Cogitron",
     description:
       "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
-    image: "cogitron.webp",
+    image: "astar.png",
     leaders: ["Florian Creutzig"],
     workload: "4",
   },
