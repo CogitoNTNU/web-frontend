@@ -74,16 +74,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
         <div className="text-left">
           <p className="mb-2">
-            <strong>Leaders:</strong>{" "}
+            <strong>Prosjektledere:</strong>{" "}
             {project.leaders.length > 1
               ? project.leaders.slice(0, -1).join(", ") +
-                " and " +
+                " og " +
                 String(project.leaders.slice(-1))
               : project.leaders[0]}
           </p>
           {project.workload && (
             <p className="mb-2">
-              <strong>Workload:</strong> {project.workload} hours
+              <strong>Arbeidsmengde:</strong> {project.workload} timer
             </p>
           )}
         </div>
