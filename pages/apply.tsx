@@ -7,6 +7,64 @@ import Head from "next/head";
 import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
 import { useSendApplication } from "../hooks/useSendApplication";
+import { Project } from "../lib/types";
+
+// TODO: GET PROJECTS FROM API
+const projects: Project[] = [
+  {
+    name: "Infor x Cogito",
+    description:
+      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
+    image: "sjakkai.webp",
+    leaders: ["Thomas Sørensen"],
+    workload: "4",
+  },
+  {
+    name: "TV2 x Cogito",
+    description: "Lær å lage et Tic Tac Toe spill",
+    image: "tictactoe.webp",
+    leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
+    workload: "4",
+  },
+  {
+    name: "A* Cogitron",
+    description:
+      "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
+    image: "snake.webp",
+    leaders: ["Florian Creutzig"],
+    workload: "4",
+  },
+  {
+    name: "DeepTactics",
+    description: "Lær å lage et Pong spill",
+    image: "pong.webp",
+    leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
+    workload: "4",
+  },
+  {
+    name: "J.A.R.V.I.S",
+    description: "Lær å lage et Flappy Bird spill",
+    image: "flappybird.webp",
+    leaders: ["Ola Nordmann", "Kari Nordmann"],
+    workload: "4",
+  },
+  {
+    name: "HypeAI",
+    description:
+      "Stadig større andel av medier på nettet er generert fullt eller delvis av KI. Mulighetene er mange. Alt fra bilder og videoer generert av KI, til KI-influensere på instagram, til opplesning av reddit poster med bruk av elevenlabs. Hvordan kan vi få flest mulig likes? Kan vi klare å ha en SoMe konto 100% drevet av KI? Dette er spørsmål som vi ønsker å utforske med dette prosjektet.",
+    image: "hypeai.webp",
+    leaders: ["Henrik Kvamme", "Andreas Jonsterhaug"],
+    workload: "4",
+  },
+  {
+    name: "Rubiks Cube Solver",
+    description:
+      "Lær å lage en AI som løser Rubiks kube. Vi skal bruke en fysisk kube og en robotarm som løser kuben. Vi skal også lage en AI som løser kuben i en simulator.",
+    image: "rubikscube.webp",
+    leaders: ["Einride Osland"],
+    workload: "4",
+  },
+];
 
 const Apply = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -14,7 +72,7 @@ const Apply = () => {
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [about, setAbout] = useState<string>("");
-  const [projects, setProjects] = useState<Array<string>>([]);
+  const [chosenProjects, setProjects] = useState<Array<string>>([]);
   const [applyPage, setApplyPage] = useState<boolean>(true);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
   const formData = new FormData();
@@ -35,7 +93,7 @@ const Apply = () => {
     formData.append("email", email);
     formData.append("phone_number", phone.replaceAll(" ", ""));
     formData.append("about", about);
-    formData.append("projects_to_join", JSON.stringify(projects));
+    formData.append("projects_to_join", JSON.stringify(chosenProjects));
 
     mutate(formData);
   };
@@ -61,8 +119,8 @@ const Apply = () => {
               <p className="font-medium">Deltaker</p>
             </div>
             {/* <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
-                            <p className="font-medium">Verv</p>
-                        </div> */}
+              <p className="font-medium">Verv</p>
+            </div> */}
           </div>
           {applyPage && (
             <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
@@ -140,6 +198,63 @@ const Apply = () => {
                           />
                         </div>
                       </div>
+                      <div className="px-6 py-2">
+                        <p className="laptop:text-[20px] text-[16px]">
+                          Valg av Projekt
+                        </p>
+                        {projects.map((project, index) => (
+                          <button
+                            onClick={() => {
+                              setProjects((prev) =>
+                                prev.includes(project.name)
+                                  ? prev.filter((item) => item !== project.name)
+                                  : [...prev, project.name]
+                              );
+                              console.log(chosenProjects);
+                            }}
+                          >
+                            <div
+                              key={index}
+                              className="flex gap-2 bg-gray-light rounded-3xl px-4 py-2 my-2 hover:bg-gray-default cursor-pointer"
+                            >
+                              <p>{project.name}</p>
+                              {
+                                // Add the priority of the project by the index of chosenProjects
+                                chosenProjects.includes(project.name) && (
+                                  <p>
+                                    {chosenProjects.indexOf(project.name) + 1}
+                                  </p>
+                                )
+                              }
+                              <div>
+                                {project.workload && (
+                                  <div className="flex gap-2">
+                                    <p>{project.workload}</p>
+                                    <p>timer</p>
+                                  </div>
+                                )}
+                                {/* Info */}
+                                <div onClick={() => {}}>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="size-6"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
                       <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
                         <div className="flex justify-start w-full ">
                           <Button
@@ -182,6 +297,7 @@ const Apply = () => {
               </div>
             </div>
           )}
+
           {!applyPage && (
             <div className="w-[80%] h-[550px] bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
               <p className="font-bold text-[30px] text-blue-dark px-6 pt-8 pb-4">
