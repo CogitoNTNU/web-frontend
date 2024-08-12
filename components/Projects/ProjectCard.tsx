@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         <div className="relative w-16 h-16">
           <Image
-            src={`/Projects/${project.image}`}
+            src={`/Projects/ProjectLogos/${project.image}`}
             alt={project.name}
             layout="fill"
             objectFit="cover"

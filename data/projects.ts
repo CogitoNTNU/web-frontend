@@ -41,7 +41,7 @@ export const projectsApply: ProjectApply[] = [
     name: "Infor x Cogito",
     description:
       "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
-    image: "infor.svg",
+    image: "infor.png",
     leaders: ["Thomas Sørensen"],
   },
   {
