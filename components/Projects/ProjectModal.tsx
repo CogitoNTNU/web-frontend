@@ -72,7 +72,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             {project.description}
           </p>
         </div>
-         <div className="text-left">
+        <div className="text-left">
           <p className="mb-2">
             <strong>Prosjektleder(e):</strong>{" "}
             {project.leaders.length > 1
