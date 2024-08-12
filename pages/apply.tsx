@@ -18,14 +18,12 @@ const projects: Project[] = [
       "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
     image: "infor.svg",
     leaders: ["Thomas Sørensen"],
-    // workload: "4",
   },
   {
     name: "TV2 x Cogito",
     description: "Mer informasjon kommer",
     image: "tv2.webp",
     leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
-    workload: "4",
   },
   {
     name: "A* x Cogitron",
@@ -33,14 +31,12 @@ const projects: Project[] = [
       "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
     image: "astar.png",
     leaders: ["Florian Creutzig"],
-    workload: "4",
   },
   {
     name: "DeepTactics",
     description: "Mer informasjon kommer",
     image: "deeptactics.webp",
     leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
-    workload: "4",
   },
   {
     name: "J.A.R.V.I.S",
@@ -48,7 +44,6 @@ const projects: Project[] = [
       "Just A Rather Very Intelligent System.\nWe’re building an AI assistant inspired by Iron Man's Jarvis, capable of managing and solving complex tasks autonomously. Users should be able to converse with Jarvis naturally. Similar to Jarvis in the movies, or the ChatGPT4o demo. \n\n Technologies and Tools - Programming Languages & Tools: Python, Docker, Puppeteer, REST APIs. - Speech Processing: Elevenlabs, Whisper, Mycroft 3. - LLMs: ChatGPT, Groq, Llama-3.1. - Data Retrieval: RAG and vector databases. - UI/UX Design - Software systems architecture.",
     image: "jarvis.webp",
     leaders: ["William Schmidt"],
-    workload: "4",
   },
   {
     name: "HypeAI",
@@ -56,7 +51,6 @@ const projects: Project[] = [
       "Stadig større andel av medier på nettet er generert fullt eller delvis av KI. Mulighetene er mange. Alt fra bilder og videoer generert av KI, til KI-influensere på instagram, til opplesning av reddit poster med bruk av elevenlabs. Hvordan kan vi få flest mulig likes? Kan vi klare å ha en SoMe konto 100% drevet av KI? Dette er spørsmål som vi ønsker å utforske med dette prosjektet.",
     image: "hypeai.webp",
     leaders: ["Henrik Kvamme", "Andreas Jonsterhaug"],
-    workload: "4",
   },
   {
     name: "Rubiks Cube Solver",
@@ -64,7 +58,6 @@ const projects: Project[] = [
       "Lær å lage en AI som løser Rubiks kube. Her blir det bruk av GOFAI hvor KI-en løser kuben i en simulator. Senere vil vi prøve å få den ved bruk av datasyn gjenkjenne kubens instillinger for å så løse den.",
     image: "rubikscube.webp",
     leaders: ["Einride Osland"],
-    workload: "4",
   },
 ];
 
