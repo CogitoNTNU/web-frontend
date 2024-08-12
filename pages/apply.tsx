@@ -7,59 +7,10 @@ import Head from "next/head";
 import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
 import { useSendApplication } from "../hooks/useSendApplication";
-import { Project } from "../lib/types";
 import ProjectModal from "../components/Projects/ProjectModal";
 import ProjectCard from "../components/Projects/ProjectCard";
-// TODO: GET PROJECTS FROM API
-const projects: Project[] = [
-  {
-    name: "Infor x Cogito",
-    description:
-      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
-    image: "infor.svg",
-    leaders: ["Thomas Sørensen"],
-  },
-  {
-    name: "TV2 x Cogito",
-    description: "Mer informasjon kommer",
-    image: "tv2.webp",
-    leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
-  },
-  {
-    name: "A* x Cogitron",
-    description:
-      "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
-    image: "astar.png",
-    leaders: ["Florian Creutzig"],
-  },
-  {
-    name: "DeepTactics",
-    description: "Mer informasjon kommer",
-    image: "deeptactics.webp",
-    leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
-  },
-  {
-    name: "J.A.R.V.I.S",
-    description:
-      "Just A Rather Very Intelligent System.\nWe’re building an AI assistant inspired by Iron Man's Jarvis, capable of managing and solving complex tasks autonomously. Users should be able to converse with Jarvis naturally. Similar to Jarvis in the movies, or the ChatGPT4o demo. \n\n Technologies and Tools - Programming Languages & Tools: Python, Docker, Puppeteer, REST APIs. - Speech Processing: Elevenlabs, Whisper, Mycroft 3. - LLMs: ChatGPT, Groq, Llama-3.1. - Data Retrieval: RAG and vector databases. - UI/UX Design - Software systems architecture.",
-    image: "jarvis.webp",
-    leaders: ["William Schmidt"],
-  },
-  {
-    name: "HypeAI",
-    description:
-      "Stadig større andel av medier på nettet er generert fullt eller delvis av KI. Mulighetene er mange. Alt fra bilder og videoer generert av KI, til KI-influensere på instagram, til opplesning av reddit poster med bruk av elevenlabs. Hvordan kan vi få flest mulig likes? Kan vi klare å ha en SoMe konto 100% drevet av KI? Dette er spørsmål som vi ønsker å utforske med dette prosjektet.",
-    image: "hypeai.webp",
-    leaders: ["Henrik Kvamme", "Andreas Jonsterhaug"],
-  },
-  {
-    name: "Rubiks Cube Solver",
-    description:
-      "Lær å lage en AI som løser Rubiks kube. Her blir det bruk av GOFAI hvor KI-en løser kuben i en simulator. Senere vil vi prøve å få den ved bruk av datasyn gjenkjenne kubens instillinger for å så løse den.",
-    image: "rubikscube.webp",
-    leaders: ["Einride Osland"],
-  },
-];
+import { ProjectApply } from "../lib/types";
+import { projectsApply } from "../data/projects";
 
 const Apply = () => {
   const [firstName, setFirstName] = useState<string>("");
@@ -72,7 +23,9 @@ const Apply = () => {
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
+    null
+  );
 
   const formData = new FormData();
 
@@ -105,7 +58,7 @@ const Apply = () => {
     );
   };
 
-  const handleProjectInfoClick = (project: Project) => {
+  const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -211,23 +164,31 @@ const Apply = () => {
                         </div>
                       </div>
                       <div className="px-6 py-2">
-                        <p className="laptop:text-[20px] text-[16px]">
-                          Valg av projekt i prioritert rekkefølge
-                        </p>
-                        {projects.map((project) => (
-                          <ProjectCard
-                            key={project.name}
-                            project={project}
-                            isSelected={chosenProjects.includes(project.name)}
-                            priority={
-                              chosenProjects.includes(project.name)
-                                ? chosenProjects.indexOf(project.name) + 1
-                                : null
-                            }
-                            toggleSelection={toggleProjectSelection}
-                            onInfoClick={handleProjectInfoClick}
-                          />
-                        ))}
+                        <div className="w-full flex">
+                          <p className="laptop:text-[20px] text-[16px] w-full">
+                            Velg Prosjekt
+                          </p>
+                          <p className="laptop:text-[20px] text-[16px] justify-end flex w-full text-blue-dark">
+                            Velg minst 3 prosjekter
+                          </p>
+                        </div>
+
+                        <div className="py-2 tablet:flex w-full tablet:flex-wrap tablet:gap-x-4">
+                          {projectsApply.map((project) => (
+                            <ProjectCard
+                              key={project.name}
+                              project={project}
+                              isSelected={chosenProjects.includes(project.name)}
+                              priority={
+                                chosenProjects.includes(project.name)
+                                  ? chosenProjects.indexOf(project.name) + 1
+                                  : null
+                              }
+                              toggleSelection={toggleProjectSelection}
+                              onInfoClick={handleProjectInfoClick}
+                            />
+                          ))}
+                        </div>
                       </div>
                       <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
                         <div className="flex justify-start w-full ">

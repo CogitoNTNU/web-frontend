@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Project } from "../../lib/types";
+import { ProjectApply } from "../../lib/types";
 
 interface ProjectModalProps {
   isOpen: boolean;
   setOpen: (boolean: boolean) => void;
-  project: Project | null;
+  project: ProjectApply | null;
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({
@@ -18,18 +18,18 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-black-transparent bg-black-default/40 flex items-center justify-center z-50 cursor-default"
       aria-labelledby="project-modal-title"
       aria-modal="true"
       role="dialog"
       onClick={() => setOpen(false)}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.95, y: 50 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9 }}
-        transition={{ duration: 0.3 }}
-        className="bg-white rounded-lg shadow-lg p-8 max-w-2xl w-full relative border-gray-darker border-2"
+        transition={{ duration: 0.25 }}
+        className="bg-white rounded-lg shadow-md p-8 max-w-2xl w-full relative "
         onClick={(e) => e.stopPropagation()} // Prevent click events on the modal content from closing the modal
       >
         <button
