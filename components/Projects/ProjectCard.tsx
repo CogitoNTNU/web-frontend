@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       <div
         className={`relative flex items-center gap-4 bg-gray-light rounded-3xl px-4 py-2 my-2 hover:bg-gray-default cursor-pointer ${
-          isSelected ? "bg-blue-400" : ""
+          isSelected ? "bg-blue-300" : ""
         }`}
       >
         <div className="relative w-16 h-16">
@@ -40,8 +40,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex items-center justify-between w-full">
             <p className="font-semibold text-lg">{project.name}</p>
             {priority !== null && (
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-sm">
-                {priority}
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center text-lg">
+                <b>{priority}</b>
               </div>
             )}
           </div>
