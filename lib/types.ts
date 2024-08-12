@@ -11,7 +11,7 @@ export type MemberType = {
   linkedIn: string;
 };
 
-export type Project = {
+export type ProjectApply = {
   name: string;
   description: string;
   image: string;
