@@ -8,7 +8,7 @@ import Button from "../components/Buttons/Button";
 import { motion } from "framer-motion";
 import { useSendApplication } from "../hooks/useSendApplication";
 import { Project } from "../lib/types";
-
+import ProjectModal from "../components/Projects/ProjectModal";
 // TODO: GET PROJECTS FROM API
 const projects: Project[] = [
   {
@@ -75,6 +75,10 @@ const Apply = () => {
   const [chosenProjects, setProjects] = useState<Array<string>>([]);
   const [applyPage, setApplyPage] = useState<boolean>(true);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   const formData = new FormData();
 
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
@@ -96,6 +100,11 @@ const Apply = () => {
     formData.append("projects_to_join", JSON.stringify(chosenProjects));
 
     mutate(formData);
+  };
+
+  const handleProjectInfoClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
   };
 
   return (
@@ -234,7 +243,11 @@ const Apply = () => {
                                   </div>
                                 )}
                                 {/* Info */}
-                                <div onClick={() => {}}>
+                                <div
+                                  onClick={() => {
+                                    handleProjectInfoClick(project);
+                                  }}
+                                >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
@@ -360,6 +373,11 @@ const Apply = () => {
         </div>
       </motion.main>
 
+      <ProjectModal
+        isOpen={isModalOpen}
+        setOpen={setIsModalOpen}
+        project={selectedProject}
+      />
       <Footer />
     </>
   );
