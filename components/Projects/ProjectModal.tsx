@@ -55,7 +55,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         <div className="flex flex-col items-center mb-4">
           <div className="relative w-32 h-32 mb-4">
             <Image
-              src={`/Projects/${project.image}`}
+              src={`/Projects/ProjectLogos/${project.image}`}
               alt={project.name}
               layout="fill"
               objectFit="cover"
@@ -64,7 +64,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
           <h2
             id="project-modal-title"
-            className="text-2xl font-bold text-center mb-2"
+            className="text-2xl font-medium text-center mb-4"
           >
             {project.name}
           </h2>
@@ -74,16 +74,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
         <div className="text-left">
           <p className="mb-2">
-            <strong>Leaders:</strong>{" "}
+            <strong>Prosjektleder(e):</strong>{" "}
             {project.leaders.length > 1
               ? project.leaders.slice(0, -1).join(", ") +
-                " and " +
+                " og " +
                 String(project.leaders.slice(-1))
               : project.leaders[0]}
           </p>
           {project.workload && (
             <p className="mb-2">
-              <strong>Workload:</strong> {project.workload} hours
+              <strong>Arbeidsmengde:</strong> {project.workload} timer
             </p>
           )}
         </div>
