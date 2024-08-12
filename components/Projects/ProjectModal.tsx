@@ -39,7 +39,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           {project.leaders.length > 1
             ? project.leaders.slice(0, -1).join(", ") +
               " og " +
-              project.leaders.slice(-1)
+              String(project.leaders.slice(-1))
             : project.leaders[0]}
         </p>
         <p>
