@@ -46,7 +46,7 @@ export const projectsApply: ProjectApply[] = [
   },
   {
     name: "TV2 x Cogito",
-    description: "Prosjektet utforsker hvordan kunstig intelligens kan hjelpe TV2.no med å ta bedre redaksjonelle valg ved å utnytte store mengder data om leseratferd og artikkelprestasjon. Målet er å bruke maskinlæring for å forutsi hvilke saker som vil engasjere leserne, optimalisere utformingen av artikler, og generere relevante sakstips basert på historiske trender. I tillegg vil prosjektet undersøke hvordan AI kan bidra til å sikre bedre mangfold i innholdet, både når det gjelder temaer og valg av kilder, for å oppnå en mer balansert og representativ dekning. Dette prosjektet gir deg muligheten til å være med på å forme fremtidens journalistikk og få industri relevant erfaring med KI.",
+    description: "Prosjektet utforsker hvordan kunstig intelligens kan hjelpe TV2.no med å ta bedre redaksjonelle valg ved å utnytte store mengder data om leseratferd og artikkelprestasjon. Målet er å bruke maskinlæring for å hjelpe TV2 med å analysere artikkel data for å gi nyttig insikter. Dette prosjektet gir deg muligheten til å være med på å forme fremtidens journalistikk og få industri relevant erfaring med KI.",
     image: "cogitoxtv2.png",
     leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
   },
