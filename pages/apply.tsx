@@ -31,14 +31,6 @@ const Apply = () => {
 
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
-  const changePage = () => {
-    if (applyPage) {
-      setApplyPage(false);
-    } else {
-      setApplyPage(true);
-    }
-  };
-
   const sendApplication = () => {
     formData.append("first_name", firstName);
     formData.append("last_name", lastName);
