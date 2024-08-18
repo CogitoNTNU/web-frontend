@@ -59,7 +59,7 @@ export const projectsApply: ProjectApply[] = [
   },
   {
     name: "DeepTactics",
-    description: "Mer informasjon kommer",
+    description: "NEAT (NeuroEvolution of Augmenting Topologies) er en metode som brukes for å utvikle AI ved å kombinere nevralnettverk og evolusjon. Den starter med et enkelt nevralnettverk og forbedrer det gjennom mange generasjoner. Hver generasjon får små endringer (mutasjoner) som gjør nettverket bedre til å spille et spill. De beste nettverkene overlever og 'avler' nye nettverk, som blir smartere og mer komplekse over tid. Målet er å skape en AI som blir flinkere til å spille forskjellige spill ved å lære og utvikle seg på en evolusjonær måte.",
     image: "deeptactics.webp",
     leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
   },
@@ -76,6 +76,13 @@ export const projectsApply: ProjectApply[] = [
       "Stadig større andel av medier på nettet er generert fullt eller delvis av KI. Mulighetene er mange. Alt fra bilder og videoer generert av KI, til KI-influensere på instagram, til opplesning av reddit poster med bruk av elevenlabs. Hvordan kan vi få flest mulig likes? Kan vi klare å ha en SoMe konto 100% drevet av KI? Dette er spørsmål som vi ønsker å utforske med dette prosjektet.",
     image: "hypeai.webp",
     leaders: ["Henrik Kvamme", "Andreas Jonsterhaug"],
+  },
+  {
+    name: "CrawlAI",
+    description:
+      "CrawlAI er et prosjekt som bruker evolusjonære algoritmer for å lære virtuelle skapninger å bevege seg i et 2D-plan. Gjennom kontinuerlig tilpasning lærer algoritmene å navigere ulike kroppskonfigurasjoner og optimalisere bevegelsesmønstre. Prosjektet kombinerer maskinlæring og kunstig intelligens for å simulere hvordan maskiner kan utvikle seg og mestre komplekse bevegelser over tid.",
+    image: "crawlai.webp",
+    leaders: ["Tobias Fremming"],
   },
   {
     name: "Rubiks Cube Solver",

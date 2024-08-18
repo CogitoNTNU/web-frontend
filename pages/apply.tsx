@@ -97,7 +97,7 @@ const Apply = () => {
                   {!sent ? (
                     <div>
                       <div className="px-6 py-2">
-                        <p className="laptop:text-[20px] text-[16px]">
+                        <p className="laptop:text-[20px] text-[16px] pt-4">
                           Personlig Informasjon
                         </p>
                       </div>
@@ -165,15 +165,15 @@ const Apply = () => {
                       </div>
                       <div className="px-6 py-2">
                         <div className="w-full flex">
-                          <p className="laptop:text-[20px] text-[16px] w-full">
+                          <p className="laptop:text-[20px] text-[16px] font-semibold w-full">
                             Velg Prosjekt
                           </p>
-                          <p className="laptop:text-[20px] text-[16px] justify-end flex w-full text-blue-dark">
+                          <p className="laptop:text-[20px] phone:text-[16px] text-[12px] justify-end flex w-full text-blue-dark">
                             Velg minst 3 prosjekter
                           </p>
                         </div>
 
-                        <div className="py-2 tablet:flex w-full tablet:flex-wrap tablet:gap-x-4">
+                        <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex">
                           {projectsApply.map((project) => (
                             <ProjectCard
                               key={project.name}
@@ -201,17 +201,6 @@ const Apply = () => {
                             color={"pink"}
                           />
                         </div>
-                        <div className="flex justify-end w-full">
-                          <Button
-                            text={"Semesterinfo"}
-                            px={"8"}
-                            py={"4"}
-                            icon="Info"
-                            color={"blue"}
-                            onClick={() => changePage()}
-                            disabled
-                          />
-                        </div>
                       </div>
                     </div>
                   ) : (
@@ -229,66 +218,6 @@ const Apply = () => {
                     </div>
                   )}
                 </div>
-              </div>
-            </div>
-          )}
-
-          {!applyPage && (
-            <div className="w-[80%] h-[550px] bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
-              <p className="font-bold text-[30px] text-blue-dark px-6 pt-8 pb-4">
-                Søknad - Vårsemesteret 2024
-              </p>
-              <div className="w-full h-full flex justify-center">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0,
-                    ease: [0, 0.71, 0.2, 1.0],
-                  }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="w-[95%] h-[420px] bg-gray-lighter rounded-3xl"
-                >
-                  <div className="px-6 py-4">
-                    <p className="text-[20px]">Semesterinfo - Vår 2024</p>
-                    <div className="flex">
-                      <div className="tracking-wider text-[16px] h-[280px]">
-                        <p>
-                          Vårsemesteret 2024 prøver vi i Cogito noe helt nytt!
-                          Ingen direkte søknad til prosjekt!
-                        </p>
-                        <br />
-                        <p>
-                          Har du noen gang hatt lyst å lære hvordan man kan lage
-                          en Sjakk AI eller noe annet? Dette og mer lærer vi
-                          ilag av de dyktige kurslederene våre!
-                        </p>
-                        <br />
-                        <p>
-                          Vi starter av med en hel måned med progging, sosialt
-                          og såklart AI! Dette gjennom kursing, sosialkvelder og
-                          god mat. Senere i semesteret starter prosjektene.
-                        </p>
-                      </div>
-                      <div className="flex justify-end w-full h-[280px]">
-                        <div className="overflow-auto"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="px-6">
-                    <Button
-                      text={"Gå tilbake"}
-                      px={"8"}
-                      py={"4"}
-                      color={"pink"}
-                      icon="ArrowLeft"
-                      iconPos="left"
-                      onClick={() => changePage()}
-                    />
-                  </div>
-                </motion.div>
               </div>
             </div>
           )}
