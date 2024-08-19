@@ -48,7 +48,12 @@ const Navbar = () => {
     },
   ];
 
-  const links = { "/": "Hjem", "/about": "Om Oss", "/team": "Medlemmer", "/calendar": "Kalender" };
+  const links = {
+    "/": "Hjem",
+    "/about": "Om Oss",
+    "/team": "Medlemmer",
+    "/calendar": "Kalender",
+  };
 
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
