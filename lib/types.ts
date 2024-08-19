@@ -12,13 +12,14 @@ export type MemberType = {
 };
 
 export type EventType = {
-  eventName: string;
-  eventDate: string;
-  eventSubDate?: string;
-  eventLocation?: string;
-  eventDescription: string;
-  eventImage?: string;
-  eventLink?: string;
+  name: string;
+  date: string;
+  subDate?: string;
+  location: string;
+  description: string;
+  image?: StaticImageData;
+  link?: string;
+  pinned?: boolean;
 };
 
 export type ProjectApply = {
