@@ -13,7 +13,7 @@ import Button from "../Buttons/Button";
 const HomeP2 = () => {
   return (
     <div className="relative h-full w-full overflow-hidden">
-      <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
+      <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50 pointer-events-none"></div>
       <div className="absolute w-full h-full laptop:block hidden">
         <Image
           priority={true}

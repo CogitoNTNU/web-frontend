@@ -21,6 +21,14 @@ export type EventType = {
   eventLink?: string;
 };
 
+export type ProjectApply = {
+  name: string;
+  description: string;
+  image: string;
+  leaders: Array<string>;
+  workload?: string;
+};
+
 export type ProjectType = {
   image: StaticImageData;
   laptopDesc: string;

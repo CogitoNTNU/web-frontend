@@ -69,17 +69,19 @@ const Field = ({
 
   return (
     <>
-      {label && (
-        <label
-          style={{ color: textRed ? "red" : "black" }}
-          className="font-medium"
-        >
-          {label}
-        </label>
-      )}
+      <div className="my-[5px]">
+        {label && (
+          <label
+            className={`${textRed ? "text-pink-default" : "text-black-dark"} font-medium`}
+          >
+            {label}
+          </label>
+        )}
+      </div>
+
       {type == "text" && (
         <input
-          className="bg-white w-full tablet:h-[50px] h-[30px] outline-none border-none border-transparent rounded-md px-4"
+          className="bg-white w-full tablet:h-[50px] h-[30px] outline-none border-none border-transparent rounded-md px-4 "
           type="text"
           value={value}
           onChange={handleChange}
