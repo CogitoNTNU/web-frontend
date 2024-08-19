@@ -47,21 +47,21 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
 
     return (
         <Card>
-            <img className='w-[24px] h-auto mb-[12px]' src='/Calendar/white-pin.png' alt='Pinned event' />
-            <div className='w-full mb-[20px] flex justify-between phone:flex-row flex-col text-white'>
+            <img className='w-6 h-auto mb-3' src='/Calendar/white-pin.png' alt='Pinned event' />
+            <div className='w-full mb-5 flex justify-between phone:flex-row flex-col text-white'>
                 <h2 className='phone:w-[50%] w-full phone:text-2xl text-lg font-bold'>Opptaksprosess Høst 2024</h2>
                 <p className='phone:w-[50%] w-full phone:text-xl text-md phone:text-end text-start'>
                     01.08 - 27.08
                 </p>
             </div>
-            <ol className='text-white mb-[24px]'>
+            <ol className='text-white mb-6'>
                 {applicationProcessData.steps.map((step, index) => (
-                    <li key={index} className='w-full flex justify-between mb-[12px]'>
-                        <div className='flex gap-[12px]'>
+                    <li key={index} className='w-full flex justify-between mb-3'>
+                        <div className='flex justify-start gap-1'>
                             <h3 className={step.name === 'Søknadsfrist' ? 'text-pink-default' : ''}>{step.name}</h3>
                             {step.lenke && <a className='text-blue-light underline hover:underline hover:font-bold' href={step.lenke}>(MazeMap)</a>}
                         </div>
-                        <p className={step.name === 'Søknadsfrist' ? 'text-pink-default' : ''}>{step.dates}</p>
+                        <p className={step.name === 'Søknadsfrist' ? 'text-pink-default min-w-fit ml-3' : 'min-w-fit ml-3'}>{step.dates}</p>
                     </li>
                 ))}
             </ol>
