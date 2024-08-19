@@ -1,15 +1,18 @@
 import { EventType } from "../lib/types";
 import CogitoNight from "../public/Calendar/Cogito-night.jpg";
 import Bowling from "../public/Calendar/Bowling.jpg";
+import PresentationWork from "../public/Calendar/PresentationWork.jpg"
+import Presentation from "../public/Calendar/ProjectPresentations.jpg"
 
 export const hardcodedEvents: Array<EventType> = [
   {
-    name: "Planlegging av prosjekter",
+    name: "Planlegging av prosjekter 📝",
     date: "30.07",
     location: "Digitalt møte",
     description:
       "Planlegging av prosjekter for høstsemesteret 2024. Vi velger hvilke prosjekter som skal gjennomføres, og hvem som blir prosjektledere.",
     link: "",
+    image: PresentationWork
   },
   {
     name: "Cogito-kveld ✨",
@@ -35,5 +38,6 @@ export const hardcodedEvents: Array<EventType> = [
     description:
       "Presentasjoner av prosjektene Cogito-medlemmer har jobbet på dette semesteret. Dette er en flott mulighet til å se hva Cogito har jobbet med, og for å bli inspirert til å delta i prosjekter selv!",
     link: "",
+    image: Presentation
   },
 ];
