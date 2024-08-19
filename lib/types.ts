@@ -11,6 +11,24 @@ export type MemberType = {
   linkedIn: string;
 };
 
+export type EventType = {
+  eventName: string;
+  eventDate: string;
+  eventSubDate?: string;
+  eventLocation?: string;
+  eventDescription: string;
+  eventImage?: string;
+  eventLink?: string;
+};
+
+export type ProjectApply = {
+  name: string;
+  description: string;
+  image: string;
+  leaders: Array<string>;
+  workload?: string;
+};
+
 export type ProjectType = {
   image: StaticImageData;
   laptopDesc: string;

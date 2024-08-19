@@ -7,7 +7,7 @@ const generateImage = async (
   params: GenerateImageParams
 ): Promise<MarketingAIResponse> => {
   const { data } = await axios.get<MarketingAIResponse>(
-    `${process.env.endpoint}/api/projects/marketing-ai/`,
+    `${process.env.endpointMarketingAI}/api/projects/marketing-ai/`,
     { params }
   );
 

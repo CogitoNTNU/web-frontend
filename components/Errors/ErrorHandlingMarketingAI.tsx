@@ -49,7 +49,7 @@ const ErrorHandlingMarketingAI = ({
         <div className="w-full h-full flex flex-col items-center justify-center text-slate-50">
           <h1 className="flex items-center text-lg">Error appeared </h1>
           <h3 className=" text-base">Something went wrong,</h3>
-          <p>Error massage: {errorMessage}</p>
+          <p>Error message: {errorMessage}</p>
         </div>
       );
   }
