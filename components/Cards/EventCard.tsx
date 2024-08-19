@@ -18,9 +18,9 @@ const EventCard: React.FC<EventCardProps> = (props) => {
     return (
         <Card>
             {pinned && <img className='w-[24px] h-auto mb-[12px]' src='/Calendar/white-pin.png' alt='Pinned event' />}
-            <div className='w-full mb-[12px] flex justify-between text-white'>
-                <h2 className='w-[50%] text-2xl font-bold'>{eventName}</h2>
-                <div className='text-end'>
+            <div className='w-full mb-[12px] flex justify-between phone:flex-row flex-col text-white'>
+                <h2 className='phone:w-[50%] w-full phone:text-2xl text-lg font-bold'>{eventName}</h2>
+                <div className='phone:w-[50%] w-full phone:text-end text-start'>
                     <p className='text-xl'>{eventDate}</p>
                     {eventSubDate && <p className='text-md'>{eventSubDate}</p>}
                 </div>

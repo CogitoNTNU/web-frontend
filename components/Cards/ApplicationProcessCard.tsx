@@ -48,9 +48,9 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
     return (
         <Card>
             <img className='w-[24px] h-auto mb-[12px]' src='/Calendar/white-pin.png' alt='Pinned event' />
-            <div className='w-full mb-[20px] flex justify-between items-start'>
-                <h2 className='w-[50%] text-2xl text-white font-bold'>Opptaksprosess Høst 2024</h2>
-                <p className='text-xl text-white'>
+            <div className='w-full mb-[20px] flex justify-between phone:flex-row flex-col text-white'>
+                <h2 className='phone:w-[50%] w-full phone:text-2xl text-lg font-bold'>Opptaksprosess Høst 2024</h2>
+                <p className='phone:w-[50%] w-full phone:text-xl text-md phone:text-end text-start'>
                     01.08 - 27.08
                 </p>
             </div>
