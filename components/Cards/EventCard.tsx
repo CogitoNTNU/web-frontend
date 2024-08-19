@@ -4,26 +4,30 @@ import Card from './Card';
 interface EventCardProps {
     eventName: string;
     eventDate: string;
+    eventSubDate?: string;
     eventLocation: string;
     eventDescription: string;
-    eventImage: string;
-    eventLink: string;
+    eventImage?: string;
+    eventLink?: string;
+    pinned?: boolean;
 }
 
 const EventCard: React.FC<EventCardProps> = (props) => {
-    const { eventName, eventDate, eventLocation, eventDescription, eventImage, eventLink } = props;
-
-    // Implement your component logic here
+    const { eventName, eventDate, eventSubDate, eventLocation, eventDescription, eventImage, eventLink, pinned } = props;
 
     return (
         <Card>
+            {pinned && <img className='w-[24px] h-auto mb-[12px]' src='/Calendar/white-pin.png' alt='Pinned event' />}
             <div className='w-full mb-[12px] flex justify-between text-white'>
                 <h2 className='w-[50%] text-2xl font-bold'>{eventName}</h2>
-                <p className='text-xl'>{eventDate}</p>
+                <div className='text-end'>
+                    <p className='text-xl'>{eventDate}</p>
+                    {eventSubDate && <p className='text-md'>{eventSubDate}</p>}
+                </div>
             </div>
             <div className='flex flex-col gap-[12px] text-base text-white'>
-                <p className=''>{!eventLocation ? 'Lokasjon: TBA' : eventLocation}</p>
-                {eventImage && <img src={eventImage} alt={eventName} />}
+                <p className=''>{!eventLocation ? '📍TBA' : '📍' + eventLocation}</p>
+                {eventImage && <img className='rounded-lg' src={eventImage} alt={eventName} />}
                 {eventDescription && <p>{eventDescription}</p>}
                 {eventLink && <a className='max-w-fit text-blue-light underline hover:underline hover:font-bold' href={eventLink}>Mer info</a>}
             </div>

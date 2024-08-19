@@ -47,7 +47,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
 
     return (
         <Card>
-            <img className='w-[24px] h-auto mb-[12px]' src='https://cdn-icons-png.freepik.com/256/75/75011.png?semt=ais_hybrid' />
+            <img className='w-[24px] h-auto mb-[12px]' src='/Calendar/white-pin.png' alt='Pinned event' />
             <div className='w-full mb-[20px] flex justify-between items-start'>
                 <h2 className='w-[50%] text-2xl text-white font-bold'>Opptaksprosess Høst 2024</h2>
                 <p className='text-xl text-white'>
