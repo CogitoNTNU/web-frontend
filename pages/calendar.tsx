@@ -26,7 +26,7 @@ const Calendar = () => {
         className="w-full h-full laptop:pt-[100px] pt-[100px]"
       >
         <div className="w-[100vw] flex justify-center">
-          <div className="flex-col justify-center items-center">
+          <div className="justify-center items-center flex flex-wrap">
             <ApplicationProcessCard />
             {eventData.map((event, index) => (
               <EventCard
