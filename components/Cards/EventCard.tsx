@@ -31,7 +31,7 @@ const EventCard: React.FC<EventType> = (props) => {
         <div className="phone:w-[50%] w-full phone:text-end text-start phone:h-[3rem] py-1">
           <p className="phone:text-xl text-[16px]">{eventDate}</p>
           {eventSubDate && (
-            <p className="phone:text-md text-[13px]">{eventSubDate}</p>
+            <p className="phone:text-[16px] text-[13px]">{eventSubDate}</p>
           )}
         </div>
       </div>

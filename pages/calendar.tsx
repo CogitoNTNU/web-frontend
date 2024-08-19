@@ -23,7 +23,7 @@ const Calendar = () => {
           delay: 0.2,
           ease: [0, 0.71, 0.2, 1.0],
         }}
-        className="w-full h-full laptop:pt-[100px] pt-[100px]"
+        className="w-full h-full laptop:pt-[150px] pt-[125px]"
       >
         <div className="w-[100vw] flex justify-center">
           <div className="justify-center items-center flex flex-wrap">
