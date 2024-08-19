@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card";
 import Button from "../Buttons/Button";
 import Link from "next/link";
@@ -6,9 +6,6 @@ import Link from "next/link";
 interface ApplicationProcessCardProps {}
 
 const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
-  const [page, setPage] = useState<string>("");
-  const [isOpen, setOpen] = useState(false);
-
   const applicationProcessData = {
     steps: [
       {
@@ -92,7 +89,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
         ))}
       </ol>
       <div className="w-full flex justify-center">
-        <Link onClick={() => setPage("Søk Opptak")} href={"/apply"}>
+        <Link href={"/apply"}>
           <Button text="Søk Opptak" px={"8"} py={"4"} color={"pink"} />
         </Link>
       </div>
