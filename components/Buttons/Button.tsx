@@ -31,7 +31,7 @@ const Button = ({
     !disabled ? `bg-${color}-default` : "bg-gray-default",
     !disabled ? "group" : null,
     "transition-all",
-
+    "shadow-md",
     `px-${px}`,
     `py-${py}`,
     "rounded-3xl"
