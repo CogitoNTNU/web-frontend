@@ -36,10 +36,12 @@ const EventCard: React.FC<EventType> = (props) => {
         </div>
       </div>
       <div className="flex flex-col text-base text-white tracking-wider pt-1">
-        <p className="">{!eventLocation ? "📍TBA" : "📍" + eventLocation}</p>
+        <p className="pb-2">
+          {!eventLocation ? "📍TBA" : "📍" + eventLocation}
+        </p>
         {eventImage && (
           <Image
-            className="rounded-[12px] h-[220px] object-cover pt-2"
+            className="rounded-[10px] h-[220px] object-cover"
             src={eventImage}
             alt={eventName}
           />
