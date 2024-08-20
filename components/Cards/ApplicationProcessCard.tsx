@@ -21,6 +21,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
       {
         name: "Søknadsfrist",
         dates: "23.08",
+        important: true,
       },
       {
         name: "Innkalling til intervju sendes ut",
@@ -60,11 +61,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
         {applicationProcessData.steps.map((step, index) => (
           <li key={index} className="w-full flex justify-between mb-3">
             <div className="flex justify-start gap-1">
-              <h3
-                className={
-                  step.name === "Søknadsfrist" ? "text-pink-default" : ""
-                }
-              >
+              <h3 className={`${step.important && "text-pink-default"}`}>
                 {step.name}
               </h3>
               {step.lenke && (
