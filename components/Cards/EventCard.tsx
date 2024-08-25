@@ -25,10 +25,10 @@ const EventCard: React.FC<EventType> = (props) => {
         />
       )}
       <div className="w-full mb-[12px] flex justify-between phone:flex-row flex-col text-white">
-        <h2 className="phone:w-[50%] w-full phone:text-2xl text-[17px] font-bold tracking-wide">
+        <h2 className="phone:w-auto w-full phone:text-2xl text-[17px] font-bold tracking-wide">
           {eventName}
         </h2>
-        <div className="phone:w-[50%] w-full phone:text-end text-start phone:h-[3rem] py-1">
+        <div className="phone:w-fit w-full phone:text-end text-start phone:h-[3rem] py-1">
           <p className="phone:text-xl text-[16px]">{eventDate}</p>
           {eventSubDate && (
             <p className="phone:text-[16px] text-[13px]">{eventSubDate}</p>
