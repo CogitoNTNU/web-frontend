@@ -3,10 +3,12 @@ import CogitoNight from "../public/Calendar/Cogito-night.jpg";
 import Bowling from "../public/Calendar/Bowling.jpg";
 import PresentationWork from "../public/Calendar/PresentationWork.jpg"
 import Presentation from "../public/Calendar/ProjectPresentations.jpg"
+import MLWorkshop from "../public/Calendar/MLWorkshop.webp"
+import AstarLogo from "../public/Calendar/Astar - Logo.png"
 
 export const hardcodedEvents: Array<EventType> = [
   {
-    name: "Planlegging av prosjekter 📝",
+    name: "Prosjektplanlegging 📝",
     date: "30.07",
     location: "Digitalt møte",
     description:
@@ -24,6 +26,22 @@ export const hardcodedEvents: Array<EventType> = [
     image: CogitoNight,
   },
   {
+    name: "Maskinlæring Workshop 🤖",
+    date: "29.08",
+    location: "Gruva NTNU",
+    description:
+      "Vi arrangerer en workshop i maskinlæring for alle i Cogito. Vi går gjennom grunnleggende konsepter og tester de ut på Titanic-datasettet.",
+    image: MLWorkshop,
+  },
+  {
+    name: "LangGraph Workshop 📊",
+    date: "05.09",
+    location: "Gruva NTNU",
+    description:
+      "Astar Consulting holder en workshop om hvordan man kan bygge automatiserte AI-agenter med LangGraph. Workshopen er tilgjengelig for alle medlemmer i Cogito.",
+    image: AstarLogo,
+  },
+  {
     name: "Bowling 🎳",
     date: "Dato: TBD",
     location: "",
@@ -32,7 +50,7 @@ export const hardcodedEvents: Array<EventType> = [
     image: Bowling,
   },
   {
-    name: "Cogito Prosjekt-presentasjoner 🎙️",
+    name: "Prosjektpresentasjoner 🎙️",
     date: "22.11",
     location: "",
     description:
