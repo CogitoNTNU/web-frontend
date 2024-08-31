@@ -43,8 +43,8 @@ export const hardcodedEvents: Array<EventType> = [
   },
   {
     name: "Bowling 🎳",
-    date: "Dato: TBD",
-    location: "",
+    date: "17.09",
+    location: "Centrum Bowling",
     description:
       "Vi gjentar suksessen fra forrige semester og arrangerer en bowlingkveld for alle i Cogito. Dette er en flott mulighet til å bli kjent på tvers av prosjektene, og for å ha det gøy sammen!",
     image: Bowling,
