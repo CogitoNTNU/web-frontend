@@ -13,12 +13,10 @@ import { ProjectApply } from "../lib/types";
 import { projectsApply } from "../data/projects";
 
 interface FormProps {
-  isModalOpen: boolean;
-  selectedProject: ProjectApply | null;
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
   handleProjectInfoClick: (project: ProjectApply) => void;
+  isDue: boolean;
 }
-const Form = ({ handleProjectInfoClick }: FormProps) => {
+const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -151,7 +149,7 @@ const Form = ({ handleProjectInfoClick }: FormProps) => {
                 py={"4"}
                 icon={"ArrowRight"}
                 color={"pink"}
-                disabled
+                disabled={isDue}
               />
             </div>
           </div>
@@ -207,7 +205,7 @@ const Apply = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
     null
   );
-  const dueDate = new Date("2025-08-23");
+  const dueDate = new Date("2024-08-23");
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -253,9 +251,7 @@ const Apply = () => {
                 ) : (
                   <Form
                     handleProjectInfoClick={handleProjectInfoClick}
-                    isModalOpen={isModalOpen}
-                    setIsModalOpen={setIsModalOpen}
-                    selectedProject={selectedProject}
+                    isDue={isDueDate(dueDate)}
                   />
                 )}
               </div>
