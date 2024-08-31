@@ -66,7 +66,7 @@ npm run dev
 
 To "prettify" the environment, run:
 
-```
+```bash
 npx prettier . --write
 ```
 
