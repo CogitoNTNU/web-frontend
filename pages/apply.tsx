@@ -174,24 +174,32 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
 const Due = () => {
   return (
     <>
-      <div className="h-80 flex gap-8 items-center justify-center w-full">
-        <div>
+      <div className="tablet:h-80 h-[500px] laptop:flex tablet:gap-8 items-center justify-center w-full">
+        <div className="laptop:flex justify-center laptop:w-fit hidden">
           <img
             className="tablet:w-[130px] w-[100px] stroke-blue-darker"
             src="/cogito_blue.svg"
             alt="logo"
           />
         </div>
-        <div className="w-[500px] tracking-wide">
-          <p className=" font-bold text-blue-darker leading-[30px]">
-            <span className="text-[16px] font-normal text-blue-darkest">
-              Søknadsperioden for å bli med som prosjektmedlem i Cogito{" "}
+        <div className="laptop:w-[600px] w-fit tracking-wide tablet:px-2 px-3 h-full laptop:flex items-center">
+          <p className="font-bold text-blue-darker tablet:leading-[30px]">
+            <span className="tablet:text-[17px] text-[20px] font-normal text-blue-darkest">
+              Søknadsperioden for å bli prosjektmedlem i Cogito{" "}
               <span className="text-pink-default font-semibold">
                 er nå avsluttet
+              </span>{" "}
+              <span className="laptop:block hidden">
+                <span className="font-semibold">Men fortvil ikke! </span> Vi vil
+                søke etter nye prosjektmedlemmer neste semester og vær på utkikk
+                etter verv i nær framtid.
               </span>
-              . Men fortvil ikke! Vi vil søke etter nye prosjektmedlemmer neste
-              semester og vær på utkikk etter verv i nær framtid.
             </span>
+          </p>
+          <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
+            <span className="font-semibold">Men fortvil ikke! </span>Vi vil søke
+            etter nye prosjektmedlemmer neste semester og vær på utkikk etter
+            verv i nær framtid.
           </p>
         </div>
       </div>
