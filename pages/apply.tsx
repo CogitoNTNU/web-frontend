@@ -1,6 +1,6 @@
 "use client";
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import Field from "../components/Fields/Field";
 import Footer from "../components/Footer/Footer";
 import Head from "next/head";
