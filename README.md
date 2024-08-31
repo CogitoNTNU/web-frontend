@@ -64,6 +64,12 @@ To start the development server, run:
 npm run dev
 ```
 
+To "prettify" the environment, run:
+
+```
+npx prettier . --write
+```
+
 ## Technologies Used
 
 This project leverages the following technologies:
