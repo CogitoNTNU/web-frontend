@@ -1,3 +1,4 @@
+// Needed for client-side rendering by Next.js
 "use client";
 
 import { useState } from "react";
