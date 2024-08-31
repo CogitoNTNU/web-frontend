@@ -13,6 +13,112 @@ import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectApply } from "../lib/types";
 import { projectsApply } from "../data/projects";
 
+const Apply = () => {
+  // TODO: Refactor with Formik
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
+    null
+  );
+  const dueDate = new Date("2024-08-23");
+  const handleProjectInfoClick = (project: ProjectApply) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const isDueDate = (dueDate: Date): boolean => {
+    const currDate = new Date();
+    return currDate > dueDate;
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Meld deg på - Cogito NTNU</title>
+      </Head>
+      <motion.main
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.6,
+          delay: 0.2,
+          ease: [0, 0.71, 0.2, 1.0],
+        }}
+        className="w-full h-full laptop:pt-[200px] pt-[150px]"
+      >
+        <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
+          <div className="relative ">
+            <div className="absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[50] rounded-t-3xl text-center tablet:py-4 py-2 drop-shadow-md">
+              <p className="font-medium">Medlem</p>
+            </div>
+            {/* <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
+              <p className="font-medium">Verv</p>
+            </div> */}
+          </div>
+          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
+            <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
+              Søknad - Høstsemesteret 2024
+            </p>
+            <div className="w-full h-fit flex justify-center">
+              <div className="w-[95%] h-fit rounded-3xl">
+                {isDueDate(dueDate) ? (
+                  <Due />
+                ) : (
+                  <Form
+                    handleProjectInfoClick={handleProjectInfoClick}
+                    isDue={isDueDate(dueDate)}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.main>
+      <ProjectModal
+        isOpen={isModalOpen}
+        setOpen={setIsModalOpen}
+        project={selectedProject}
+      />
+      <Footer />
+    </>
+  );
+};
+
+const Due = () => {
+  return (
+    <>
+      <div className="tablet:h-80 h-[500px] laptop:flex tablet:gap-8 items-center justify-center w-full">
+        <div className="laptop:flex justify-center laptop:w-fit hidden">
+          <img
+            className="tablet:w-[130px] w-[100px] stroke-blue-darker"
+            src="/cogito_blue.svg"
+            alt="logo"
+          />
+        </div>
+        <div className="laptop:w-[600px] w-fit tracking-wide tablet:px-2 px-3 h-full laptop:flex items-center">
+          <p className="font-bold text-blue-darker tablet:leading-[30px]">
+            <span className="tablet:text-[17px] text-[20px] font-normal text-blue-darkest">
+              Søknadsperioden for å bli prosjektmedlem i Cogito{" "}
+              <span className="text-pink-default font-semibold">
+                er nå avsluttet
+              </span>{" "}
+              <span className="laptop:block hidden">
+                <span className="font-semibold">Men fortvil ikke! </span> Vi vil
+                søke etter nye prosjektmedlemmer neste semester og vær på utkikk
+                etter verv i nær framtid.
+              </span>
+            </span>
+          </p>
+          <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
+            <span className="font-semibold">Men fortvil ikke! </span>Vi vil søke
+            etter nye prosjektmedlemmer neste semester og vær på utkikk etter
+            verv i nær framtid.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
+
 interface FormProps {
   handleProjectInfoClick: (project: ProjectApply) => void;
   isDue: boolean;
@@ -168,112 +274,6 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
           </div>
         </div>
       )}
-    </>
-  );
-};
-
-const Due = () => {
-  return (
-    <>
-      <div className="tablet:h-80 h-[500px] laptop:flex tablet:gap-8 items-center justify-center w-full">
-        <div className="laptop:flex justify-center laptop:w-fit hidden">
-          <img
-            className="tablet:w-[130px] w-[100px] stroke-blue-darker"
-            src="/cogito_blue.svg"
-            alt="logo"
-          />
-        </div>
-        <div className="laptop:w-[600px] w-fit tracking-wide tablet:px-2 px-3 h-full laptop:flex items-center">
-          <p className="font-bold text-blue-darker tablet:leading-[30px]">
-            <span className="tablet:text-[17px] text-[20px] font-normal text-blue-darkest">
-              Søknadsperioden for å bli prosjektmedlem i Cogito{" "}
-              <span className="text-pink-default font-semibold">
-                er nå avsluttet
-              </span>{" "}
-              <span className="laptop:block hidden">
-                <span className="font-semibold">Men fortvil ikke! </span> Vi vil
-                søke etter nye prosjektmedlemmer neste semester og vær på utkikk
-                etter verv i nær framtid.
-              </span>
-            </span>
-          </p>
-          <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
-            <span className="font-semibold">Men fortvil ikke! </span>Vi vil søke
-            etter nye prosjektmedlemmer neste semester og vær på utkikk etter
-            verv i nær framtid.
-          </p>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const Apply = () => {
-  // TODO: Refactor with Formik
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
-    null
-  );
-  const dueDate = new Date("2024-08-23");
-  const handleProjectInfoClick = (project: ProjectApply) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const isDueDate = (dueDate: Date): boolean => {
-    const currDate = new Date();
-    return currDate > dueDate;
-  };
-
-  return (
-    <>
-      <Head>
-        <title>Meld deg på - Cogito NTNU</title>
-      </Head>
-      <motion.main
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 0.2,
-          ease: [0, 0.71, 0.2, 1.0],
-        }}
-        className="w-full h-full laptop:pt-[200px] pt-[150px]"
-      >
-        <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
-          <div className="relative ">
-            <div className="absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[50] rounded-t-3xl text-center tablet:py-4 py-2 drop-shadow-md">
-              <p className="font-medium">Medlem</p>
-            </div>
-            {/* <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
-              <p className="font-medium">Verv</p>
-            </div> */}
-          </div>
-          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
-            <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
-              Søknad - Høstsemesteret 2024
-            </p>
-            <div className="w-full h-fit flex justify-center">
-              <div className="w-[95%] h-fit rounded-3xl">
-                {isDueDate(dueDate) ? (
-                  <Due />
-                ) : (
-                  <Form
-                    handleProjectInfoClick={handleProjectInfoClick}
-                    isDue={isDueDate(dueDate)}
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.main>
-      <ProjectModal
-        isOpen={isModalOpen}
-        setOpen={setIsModalOpen}
-        project={selectedProject}
-      />
-      <Footer />
     </>
   );
 };
