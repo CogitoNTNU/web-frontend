@@ -9,15 +9,15 @@ If you wish upon any changes, either make a branch or contact Simon Sandvik Lee 
 
 ## Table of Contents
 
--   [Introduction](#introduction)
--   [Getting Started](#getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Installation](#installation)
--   [Usage](#usage)
--   [Technologies Used](#technologies-used)
--   [Contributors](#contributors)
--   [License](#license)
--   [Acknowledgments](#acknowledgments)
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Contributors](#contributors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
@@ -31,8 +31,8 @@ The frontend is hosted on [Vercel](https://vercel.com/).
 
 Before you begin, ensure you have the following installed on your machine:
 
--   [Node.js](https://nodejs.org/)
--   [npm](https://www.npmjs.com/)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
 ### Installation
 
@@ -64,14 +64,20 @@ To start the development server, run:
 npm run dev
 ```
 
+To "prettify" the environment, run:
+
+```bash
+npx prettier . --write
+```
+
 ## Technologies Used
 
 This project leverages the following technologies:
 
--   [Next.js](https://nextjs.org/): A React framework for building server-side rendered and statically generated web applications.
--   [React](https://reactjs.org/): A JavaScript library for building user interfaces.
--   [TypeScript](https://www.typescriptlang.org/): A superset of JavaScript that adds static typing to the language.
--   [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
+- [Next.js](https://nextjs.org/): A React framework for building server-side rendered and statically generated web applications.
+- [React](https://reactjs.org/): A JavaScript library for building user interfaces.
+- [TypeScript](https://www.typescriptlang.org/): A superset of JavaScript that adds static typing to the language.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
 
 ## Contributors
 

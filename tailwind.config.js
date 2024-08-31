@@ -23,14 +23,14 @@ module.exports = {
         },
         black: {
           default: "#1E1E1E",
-          dark:"#000000"
+          dark: "#000000",
         },
         blue: {
           light: "#30b3ec",
           default: "#1E90FF",
           dark: "#13395B",
           darker: "#0E304F",
-          darkest: "#092D4D"
+          darkest: "#092D4D",
         },
         gray: {
           darker: "#202124",
@@ -52,12 +52,12 @@ module.exports = {
       },
       keyframes: {
         gradientshift: {
-          '0%, 100%': { size: '100%' },
-          '50%': { size: '120%' },
-        }
+          "0%, 100%": { size: "100%" },
+          "50%": { size: "120%" },
+        },
       },
       animation: {
-        gradientshift: 'gradientshift 3s ease-in-out infinite',
+        gradientshift: "gradientshift 3s ease-in-out infinite",
       },
     },
   },
@@ -70,7 +70,5 @@ module.exports = {
     "px-12",
     "text-3xl",
   ],
-  plugins: [
-    require('@codaworks/react-glow/tailwind')
-  ],
+  plugins: [require("@codaworks/react-glow/tailwind")],
 };
