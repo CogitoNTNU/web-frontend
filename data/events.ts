@@ -1,10 +1,10 @@
 import { EventType } from "../lib/types";
 import CogitoNight from "../public/Calendar/Cogito-night.jpg";
 import Bowling from "../public/Calendar/Bowling.jpg";
-import PresentationWork from "../public/Calendar/PresentationWork.jpg"
-import Presentation from "../public/Calendar/ProjectPresentations.jpg"
-import MLWorkshop from "../public/Calendar/MLWorkshop.webp"
-import AstarLogo from "../public/Calendar/Astar - Logo.png"
+import PresentationWork from "../public/Calendar/PresentationWork.jpg";
+import Presentation from "../public/Calendar/ProjectPresentations.jpg";
+import MLWorkshop from "../public/Calendar/MLWorkshop.webp";
+import AstarLogo from "../public/Calendar/Astar - Logo.png";
 
 export const hardcodedEvents: Array<EventType> = [
   {
@@ -14,7 +14,7 @@ export const hardcodedEvents: Array<EventType> = [
     description:
       "Planlegging av prosjekter for høstsemesteret 2024. Vi velger hvilke prosjekter som skal gjennomføres, og hvem som blir prosjektledere.",
     link: "",
-    image: PresentationWork
+    image: PresentationWork,
   },
   {
     name: "Cogito-kveld ✨",
@@ -51,11 +51,11 @@ export const hardcodedEvents: Array<EventType> = [
   },
   {
     name: "Prosjektpresentasjoner 🎙️",
-    date: "22.11",
+    date: "13.11",
     location: "",
     description:
       "Presentasjoner av prosjektene Cogito-medlemmer har jobbet på dette semesteret. Dette er en flott mulighet til å se hva Cogito har jobbet med, og for å bli inspirert til å delta i prosjekter selv!",
     link: "",
-    image: Presentation
+    image: Presentation,
   },
 ];
