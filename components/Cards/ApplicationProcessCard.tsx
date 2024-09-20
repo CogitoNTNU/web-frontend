@@ -9,7 +9,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
   const applicationProcessData = {
     steps: [
       {
-        name: "Søknadsskjema tilgjengliggjøres",
+        name: "Søknadsskjema tilgjengeliggjøres",
         dates: "01.08",
       },
       {

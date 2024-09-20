@@ -18,7 +18,7 @@ const Team = () => {
   const [desc, setDesc] = useState<string>("");
   const radioButtons = ["Alle Medlemmer", "Styret", "Prosjektmedlemmer", "Web"];
   const projectButtons = [
-    "Bedriftsammarbeid",
+    "Bedriftssamarbeid",
     "Cogitron",
     "Deeptactics",
     "Diffusion Models",
@@ -44,17 +44,17 @@ const Team = () => {
     {
       name: "Styret",
       description:
-        "Styret har ansvar for organisasjonens daglige drift og styrer både prosjektkvelder og kurskvelder",
+        "Styret har ansvar for organisasjonens daglige drift og styrer både prosjekt- og kurskvelder",
     },
     {
       name: "Prosjektmedlemmer",
       description:
-        "Prosjektmedlemenne er kjernen i alt Cogito gjør. De står bak alle prosjekter produsert av Cogito.",
+        "Prosjektmedlemmene er kjernen i alt Cogito gjør. De står bak alle prosjekter produsert av Cogito.",
     },
     {
       name: "Web",
       description:
-        "Web gruppen står bak det tekniske i Cogito. Mesteparten av arbeidet går til utivikling av nettsiden.",
+        "Webgruppen står bak det tekniske i Cogito. Mesteparten av arbeidet går til utvikling av nettsiden.",
     },
   ];
 
