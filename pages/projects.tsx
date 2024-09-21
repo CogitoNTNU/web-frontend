@@ -49,8 +49,7 @@ const Projects = () => {
 
         <div className="flex py-6 w-full">
           <p className="text-center w-full phone:text-[20px] text-[16px] text-white">
-            Her er noen av prosjektene som har blitt laget <br /> av tidligere
-            deltakere av Cogito NTNU
+            Her er noen av prosjektene som har blitt laget <br /> av Cogitos medlemmer
           </p>
         </div>
         <div className="flex items-center justify-center">
