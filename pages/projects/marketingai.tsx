@@ -1,5 +1,5 @@
 import Field from "../../components/Fields/Field";
-import Footer from "../../components/Footer/MarketingAIFooter";
+import ProjectFooter from "../../components/Footer/ProjectFooter";
 import { useState } from "react";
 import ReactLoading from "react-loading";
 import Head from "next/head";
@@ -346,7 +346,14 @@ const MarketingAI = () => {
           </div>
         </main>
         <div className="h-full relative bottom-0">
-          <Footer />
+          <ProjectFooter
+            name="Marketing AI"
+            description="Marketing AI uses chatbot-like AI models to generate marketing
+              images, making it a powerful tool for creating visual content that
+              aligns with marketing goals."
+            LogoName="MarketingAILogo.png"
+            githubUrl="https://github.com/CogitoNTNU/MarketingAI"
+          />
         </div>
       </div>
     </>

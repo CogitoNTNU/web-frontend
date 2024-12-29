@@ -1,9 +1,20 @@
 import { ProjectApply, ProjectType } from "../lib/types";
 import SudokuLogo from "../public/Projects/SudokuSolver/SudokoSolverLogo.png";
 import MarketingAILogo from "../public/Projects/MarketingAILogo.png";
+import NEATtactics from "../public/Projects/MarketingAILogo.png";
 import CatMatch from "../public/Projects/CatMatch/CatMatch.png";
 
 export const CogitoProjects: Array<ProjectType> = [
+  {
+    image: NEATtactics,
+    laptopDesc:
+      "NEATTactics, using genetic algorithms with neural networks to master any game!",
+    phoneDesc: "Master any game!",
+    link: "/projects/neattactics",
+    github: "https://github.com/CogitoNTNU/NEATactics",
+    leaders: Array<string>("Brage Kvamme", "Christian Fredrik Johnsen"),
+    new: true,
+  },
   {
     image: SudokuLogo,
     laptopDesc:
