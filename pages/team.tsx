@@ -141,7 +141,7 @@ const Team = () => {
           className="absolute z-50 w-full flex items-end justify-center phone:top-[700px] top-[650px]"
         >
           <p className="bg-gray-default px-8 rounded-2xl absolute font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wid drop-shadow-3xl">
-            COGITO 2024
+            COGITO {new Date().getFullYear()}
           </p>
         </motion.div>
         <div className="relative left-0 right-0 bottom-0 flex items-center justify-center z-40">
