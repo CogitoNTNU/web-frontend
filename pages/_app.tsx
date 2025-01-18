@@ -54,9 +54,7 @@ const App = ({
             <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
           </Head>
           <Navbar />
-          <div className=" h-screen">
-            <Component {...pageProps} />
-          </div>
+          <Component {...pageProps} />
         </HydrationBoundary>
         <ReactQueryDevtools />
       </QueryClientProvider>
@@ -69,7 +67,6 @@ const App = ({
         <Head>
           <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
         </Head>
-
         <Navbar />
         <Particles
           id="tsparticles"
@@ -137,7 +134,7 @@ const App = ({
         />
         <div>
           <Component {...pageProps} />
-          <div id="bottom"></div>
+          <div id="bottom" />
         </div>
       </HydrationBoundary>
       <ReactQueryDevtools />

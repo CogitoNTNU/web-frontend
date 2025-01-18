@@ -1,6 +1,6 @@
 import Field from "../../components/Fields/Field";
 import Footer from "../../components/Footer/MarketingAIFooter";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactLoading from "react-loading";
 import Head from "next/head";
 import Image from "next/image";
@@ -19,7 +19,6 @@ const MarketingAI = () => {
   const [params, setParams] = useState<GenerateImageParams | null>(null);
   const { data, error, isFetching } = useMarketingAIGenerateImage(params);
 
-
   const getGeneratedImage = (): void => {
     const params: GenerateImageParams = {
       prompt: value,
@@ -30,7 +29,6 @@ const MarketingAI = () => {
 
     setParams(params);
   };
-
 
   return (
     <>
