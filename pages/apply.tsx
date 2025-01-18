@@ -98,13 +98,15 @@ const Due = () => {
           <p className="font-bold text-blue-darker tablet:leading-[30px]">
             <span className="tablet:text-[17px] text-[20px] font-normal text-blue-darkest">
               Søknadsperioden for å bli prosjektmedlem i Cogito{" "}
-              <span className="text-pink-default font-semibold">
-                er nå avsluttet
+              <span className="text-blue-default font-semibold">
+                åpner snart!
               </span>{" "}
               <span className="laptop:block hidden">
-                <span className="font-semibold">Men fortvil ikke! </span> Vi vil
-                søke etter nye prosjektmedlemmer neste semester og vær på utkikk
-                etter verv i nær framtid.
+                <span className="font-semibold">
+                  Ventetiden er snart over.{" "}
+                </span>{" "}
+                I mellomtiden kan du lese mer om de tidligere prosjektene våre
+                på prosjektsiden.
               </span>
             </span>
           </p>
