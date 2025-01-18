@@ -40,7 +40,7 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "Infor x Cogito",
     description:
-      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
+      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi utvikle ulike AI agenter som kan hjelpe Infor med å forbedre deres tjenester og produkter. Dette er en unik mulighet til å jobbe med en stor internasjonal bedrift og få erfaring med å utvikle AI løsninger for industrielle problemstillinger.",
     image: "infor.png",
     leaders: ["Thomas Sørensen"],
   },
@@ -54,7 +54,7 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "A* x Cogitron",
     description:
-      "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
+      "Cogitron er et ambisiøst langtidsprosjekt som har som mål å utvikle en robot i stand til å navigere og forstå omgivelsene sine. Prosjektet kombinerer et bredt spekter av AI-teknologier – blant annet maskinsyn, sensorfusion, beslutningstaking og læring i sanntid. Dette er en fantastisk mulighet til å bruke all teorien man har lært i studiet ved å gi et KI-system en fysisk kropp, slik at det kan operere autonomt i den virkelige verden. Cogitron skal kunne tilpasse seg ukjente miljøer og utføre komplekse oppgaver med høy grad av presisjon og effektivitet.",
     image: "astar.png",
     leaders: ["Vetle Dahl"],
   },
