@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <>
-      <footer className="flex flex-row w-full h-[120px] bg-purple items-center px-[4%] py-[4%] text-white">
+      <footer className="flex flex-row w-full h-[140px] bg-purple items-center px-[4%] py-[4%] text-white">
         <Link href={`/`}>
           <div className="flex flex-row items-center justify-center">
             <img
