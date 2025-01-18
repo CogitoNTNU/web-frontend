@@ -1,6 +1,6 @@
 import Field from "../../components/Fields/Field";
 import Footer from "../../components/Footer/MarketingAIFooter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import Head from "next/head";
 import Image from "next/image";
@@ -19,6 +19,7 @@ const MarketingAI = () => {
   const [params, setParams] = useState<GenerateImageParams | null>(null);
   const { data, error, isFetching } = useMarketingAIGenerateImage(params);
 
+
   const getGeneratedImage = (): void => {
     const params: GenerateImageParams = {
       prompt: value,
@@ -30,12 +31,13 @@ const MarketingAI = () => {
     setParams(params);
   };
 
+
   return (
     <>
       <Head>
         <title>Marketing AI - Cogito NTNU</title>
       </Head>
-      <div className="bg-black-default h-full overflow-hidden">
+      <div className="bg-black-default">
         {error && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden flex justify-center items-center">
             <ErrorHandlingMarketingAI
@@ -45,7 +47,6 @@ const MarketingAI = () => {
             />
           </header>
         )}
-
         {!data && !isFetching && !error && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden">
             <div className="flex justify-start w-full h-full tablet:px-[6%] px-[2%] items-center relative tablet:-bottom-20 -bottom-20 ">
@@ -54,7 +55,6 @@ const MarketingAI = () => {
                 src="/Logos/MarketingAILogo.png"
                 alt="companylogo"
               />
-
               <div className="text-white drop-shadow-2xl z-[100]">
                 <motion.p
                   initial={{
@@ -277,8 +277,7 @@ const MarketingAI = () => {
           </header>
         )}
         {data && (
-          <header className="h-[480px] w-full bg-red-default overflow-hidden flex justify-center items-center">
-            {/* Shows the image if everything is ok */}
+          <header className="h-[480px] w-full bg-black-default overflow-hidden flex justify-center items-center">
             <img
               className="object-cover tablet:w-[500px] w-[400px]"
               src={data?.image_url}
@@ -296,7 +295,6 @@ const MarketingAI = () => {
             </div>
           </header>
         )}
-
         <main className="h-fit">
           <div className="flex justify-center pt-[2%]">
             <div className="flex flex-row align-middle z-50 gap-4 tablet:text-lg text-[12px] px-12 py-2 tablet:w-[700px] w-[600px]">
@@ -310,13 +308,11 @@ const MarketingAI = () => {
               />
             </div>
           </div>
-
           <div className="text-center py-[2%]">
             <p className="tablet:text-2xl text-[20px] text-white">
               Step by Step:
             </p>
           </div>
-
           <div className="flex justify-center gap-4">
             <div className="text-center">
               <img
@@ -328,7 +324,6 @@ const MarketingAI = () => {
                 1. Prompt
               </p>
             </div>
-
             <div className="text-center">
               <img
                 className="tablet:w-[204px] w-[104px] rounded-sm"
@@ -340,14 +335,11 @@ const MarketingAI = () => {
               </p>
             </div>
           </div>
-
           <div className="flex justify-center py-[4%]">
-            <div className="w-[500px] h-[2px] bg-white"></div>
+            <div className="w-[500px] h-[2px] bg-white" />
           </div>
         </main>
-        <div className="h-full relative bottom-0">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </>
   );
