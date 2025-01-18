@@ -11,7 +11,7 @@ import Project from "../components/Projects/Project";
 
 const Projects = () => {
   return (
-    <>
+    <div className="h-full overscroll-contain">
       <Head>
         <title>Prosjekter - Cogito NTNU</title>
       </Head>
@@ -25,7 +25,7 @@ const Projects = () => {
         className="relative overflow-hidden"
       >
         <div className="relative w-full z-30 flex-none h-[720px]">
-          <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
+          <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50" />
           <Image
             className="absolute inset-0 w-full h-full object-cover shadow-2xl"
             src={Banner}
@@ -66,7 +66,7 @@ const Projects = () => {
         </div>
       </motion.main>
       <Footer />
-    </>
+    </div>
   );
 };
 

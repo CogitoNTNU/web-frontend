@@ -36,10 +36,7 @@ const Home = () => {
     <>
       <Head>
         <title>Hjem - Cogito NTNU</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        ></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className="snap-y snap-mandatory h-[100vh] overflow-y-scroll bg-gray-darker">
         <section id="part-0">
