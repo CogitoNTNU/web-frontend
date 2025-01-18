@@ -40,7 +40,7 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "Infor x Cogito",
     description:
-      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi utvikle ulike AI agenter som kan hjelpe Infor med å forbedre deres tjenester og produkter. Dette er en unik mulighet til å jobbe med en stor internasjonal bedrift og få erfaring med å utvikle AI løsninger for industrielle problemstillinger.",
+      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi utvikle ulike AI agenter som kan hjelpe Infor med å forbedre deres tjenester og produkter. Dette er en unik mulighet til å jobbe med en stor internasjonal bedrift og få erfaring med å utvikle AI løsninger for industrielle problemstillinger. ",
     image: "infor.png",
     leaders: ["Thomas Sørensen"],
   },
@@ -83,14 +83,14 @@ export const projectsApply: ProjectApply[] = [
     name: "Motion",
     description:
       "Motion er et prosjekt som bruker evolusjonære algoritmer for å lære virtuelle skapninger å bevege seg i et 3D verdener. Gjennom kontinuerlig tilpasning lærer algoritmene å navigere ulike kroppskonfigurasjoner og optimalisere bevegelsesmønstre. Prosjektet kombinerer maskinlæring og kunstig intelligens for å simulere hvordan maskiner kan utvikle seg og mestre komplekse bevegelser over tid. Agentene får da kropper og må lære å bruke dem",
-    image: "crawlai.webp",
+    image: "motion.webp",
     leaders: ["Tobias Fremming"],
   },
   {
     name: "ChessAR",
     description:
       "ChessAR er et prosjekt som bruker augmented reality (AR) for å spille sjakk enklere. Ved å bruke AR briller skal man kunne se de beste trekkene på sjakkbrettet. Prosjektet kombinerer maskinlæring, embedded, datasyn og ulike sjakk AI'er.",
-    image: "chessar.png",
+    image: "chessar.webp",
     leaders: ["Simon Sandvik Lee"],
   },
   {
