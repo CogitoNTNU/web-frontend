@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on:
-      group: OpenStack
+      group: Droplet
       labels: self-hosted
     steps:
       - uses: actions/checkout@v4
