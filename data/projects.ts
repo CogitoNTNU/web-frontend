@@ -56,7 +56,7 @@ export const projectsApply: ProjectApply[] = [
     description:
       "Cogitron er et ambisiøst langtidsprosjekt som har som mål å utvikle en robot i stand til å navigere og forstå omgivelsene sine. Prosjektet kombinerer et bredt spekter av AI-teknologier – blant annet maskinsyn, sensorfusion, beslutningstaking og læring i sanntid. Dette er en fantastisk mulighet til å bruke all teorien man har lært i studiet ved å gi et KI-system en fysisk kropp, slik at det kan operere autonomt i den virkelige verden. Cogitron skal kunne tilpasse seg ukjente miljøer og utføre komplekse oppgaver med høy grad av presisjon og effektivitet.",
     image: "astar.png",
-    leaders: ["Vetle Dahl"],
+    leaders: ["Vetle Dahl", "Christian Gynnild"],
   },
   {
     name: "MuZero",
