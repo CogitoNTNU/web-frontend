@@ -9,41 +9,41 @@ import AstarLogo from "../public/Calendar/Astar - Logo.png";
 export const hardcodedEvents: Array<EventType> = [
   {
     name: "Prosjektplanlegging 📝",
-    date: "30.07",
-    location: "Digitalt møte",
+    date: "16.01",
+    location: "R4",
     description:
-      "Planlegging av prosjekter for høstsemesteret 2024. Vi velger hvilke prosjekter som skal gjennomføres, og hvem som blir prosjektledere.",
+      "Planlegging av prosjekter for vårsemesteret 2025. Vi velger hvilke prosjekter som skal gjennomføres, og hvem som blir prosjektledere.",
     link: "",
     image: PresentationWork,
   },
   {
+    name: "Åpen Workshop: Nevrale nettverk 🧠",
+    date: "23.01",
+    location: "Gruva NTNU",
+    description:
+      "Vi arrangerer en workshop om nevrale nettverk. Workshopen er åpen for alle, og en perfekt mulighet for å få en smakebit av Cogito!",
+    image: MLWorkshop,
+  },
+  {
+    name: "Åpen Workshop: Genetiske algoritmer 🧬",
+    date: "28.01",
+    location: "Gruva NTNU",
+    description:
+      "Vi arrangerer en workshop om genetiske algoritmer. Workshopen er åpen for alle, og en perfekt mulighet for å få en smakebit av Cogito!",
+    image: MLWorkshop,
+  },
+  {
     name: "Cogito-kveld ✨",
     date: "Tirsdager kl. 17-20",
-    subDate: "Fra og med 27.08",
+    subDate: "Fra og med 11.02",
     location: "Gruva NTNU",
     description:
       'Hver tirsdag fra kl. 17:00 til 20:00 møtes alle i Cogito i "Gruva" for å jobbe med prosjektene våre i fellesskap. Det hender også at vi serverer pizza 🍕',
     image: CogitoNight,
   },
   {
-    name: "Maskinlæring Workshop 🤖",
-    date: "29.08",
-    location: "Gruva NTNU",
-    description:
-      "Vi arrangerer en workshop i maskinlæring for alle i Cogito. Vi går gjennom grunnleggende konsepter og tester de ut på Titanic-datasettet.",
-    image: MLWorkshop,
-  },
-  {
-    name: "LangGraph Workshop 📊",
-    date: "05.09",
-    location: "Gruva NTNU",
-    description:
-      "Astar Consulting holder en workshop om hvordan man kan bygge automatiserte AI-agenter med LangGraph. Workshopen er tilgjengelig for alle medlemmer i Cogito.",
-    image: AstarLogo,
-  },
-  {
     name: "Bowling 🎳",
-    date: "17.09",
+    date: "TBA",
     location: "Centrum Bowling",
     description:
       "Vi gjentar suksessen fra forrige semester og arrangerer en bowlingkveld for alle i Cogito. Dette er en flott mulighet til å bli kjent på tvers av prosjektene, og for å ha det gøy sammen!",
@@ -51,7 +51,7 @@ export const hardcodedEvents: Array<EventType> = [
   },
   {
     name: "Prosjektpresentasjoner 🎙️",
-    date: "13.11",
+    date: "Forventet 30.04",
     location: "",
     description:
       "Presentasjoner av prosjektene Cogito-medlemmer har jobbet på dette semesteret. Dette er en flott mulighet til å se hva Cogito har jobbet med, og for å bli inspirert til å delta i prosjekter selv!",
