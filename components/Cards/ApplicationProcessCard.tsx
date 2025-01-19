@@ -10,34 +10,34 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
     steps: [
       {
         name: "Søknadsskjema tilgjengeliggjøres",
-        dates: "01.08",
+        dates: "20.01",
       },
       {
         name: "Møt oss på stand!",
-        dates: "19.08 - 23.08",
-        lenke:
-          "https://use.mazemap.com/#v=1&config=ntnu&campusid=1&zlevel=-1&center=10.406636,63.415702&zoom=20.4&sharepoitype=poi&sharepoi=51997",
+        dates: "20.01 - 31.01",
+        // lenke:
+        //   "https://use.mazemap.com/#v=1&config=ntnu&campusid=1&zlevel=-1&center=10.406636,63.415702&zoom=20.4&sharepoitype=poi&sharepoi=51997",
       },
       {
         name: "Søknadsfrist",
-        dates: "23.08",
+        dates: "31.01",
         important: true,
       },
       {
         name: "Innkalling til intervju sendes ut",
-        dates: "24.08",
+        dates: "01.02 - 03.02",
       },
       {
         name: "Intervjuer gjennomføres",
-        dates: "25.08 - 26.08",
+        dates: "02.02 - 09.02",
       },
       {
         name: "Tilbud om medlemskap sendes ut",
-        dates: "26.08",
+        dates: "03.02 - 09.02",
       },
       {
         name: "Oppstartskveld",
-        dates: "27.08",
+        dates: "11.02",
       },
     ],
   };
@@ -51,10 +51,10 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = () => {
       />
       <div className="w-full mb-5 flex justify-between phone:flex-row flex-col text-white">
         <h2 className="phone:w-[50%] w-full phone:text-2xl text-lg font-bold">
-          Opptaksprosess Høst 2024
+          Opptaksprosess Vår 2025
         </h2>
         <p className="phone:w-[50%] w-full phone:text-xl text-md phone:text-end text-start">
-          01.08 - 27.08
+          20.01 - 11.02
         </p>
       </div>
       <ol className="text-white mb-6">
