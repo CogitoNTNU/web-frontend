@@ -43,7 +43,7 @@ const Apply = () => {
           delay: 0.2,
           ease: [0, 0.71, 0.2, 1.0],
         }}
-        className="w-full h-full laptop:pt-[200px] pt-[150px]"
+        className="w-full h-[80svh] laptop:pt-[200px] pt-[150px]"
       >
         <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
           <div className="relative ">
