@@ -6,7 +6,7 @@ import EventCard from "../components/Cards/EventCard";
 import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
 import Footer from "../components/Footer/Footer";
 import { hardcodedEvents } from "../data/events";
-import { applicationEvent2024, applicationEvent2025 } from "../data/events";
+import { applicationEvent2025 } from "../data/events";
 
 const Calendar = () => {
   const eventData = hardcodedEvents;
