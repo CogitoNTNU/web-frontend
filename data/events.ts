@@ -74,10 +74,11 @@ export const hardcodedEvents: Array<EventType> = [
     timeString: "23.01",
     subTimeString: "kl. 18-21",
     location: "R2, Realfagsbygget, Gløshaugen",
-    description: "Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
+    description:
+      "Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
     link: "",
     image: NNWorkshop,
-    openForAll: true
+    openForAll: true,
   },
   {
     name: "Workshop - Genetiske algoritmer 🧬",
@@ -88,7 +89,7 @@ export const hardcodedEvents: Array<EventType> = [
     description: "Tobias Fremming holder et kurs om genetiske algoritmer.",
     link: "",
     image: GAWorkshop,
-    openForAll: true
+    openForAll: true,
   },
   {
     name: "Workshop - Reinforcement learning 🤖",
@@ -96,11 +97,12 @@ export const hardcodedEvents: Array<EventType> = [
     timeString: "30.01",
     subTimeString: "kl. 18-21",
     location: "R2, Realfagsbygget, Gløshaugen",
-    description: "Even Klemsdal, Ph.D.-kandidat ved IDI, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
+    description:
+      "Even Klemsdal, Ph.D.-kandidat ved IDI, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
     link: "",
     image: RLWorkshop,
     openForAll: true,
-  }
+  },
 ];
 
 export const applicationEvent2024: EventApply = {
