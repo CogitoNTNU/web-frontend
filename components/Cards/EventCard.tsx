@@ -13,6 +13,7 @@ const EventCard: React.FC<EventType> = (props) => {
     image: eventImage,
     link: eventLink,
     pinned,
+    openForAll,
   } = props;
 
   return (
@@ -37,6 +38,11 @@ const EventCard: React.FC<EventType> = (props) => {
           )}
         </div>
       </div>
+      {openForAll && (
+        <div className="w-full bg-pink-default text-white font-bold text-center py-1 rounded-[10px] mb-4">
+          ÅPENT FOR ALLE! Bare å dukke opp 👋
+        </div>
+      )}
       <div className="flex flex-col text-base text-white tracking-wider pt-1">
         <p className="pb-2">
           {!eventLocation ? "📍TBA" : "📍" + eventLocation}

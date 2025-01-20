@@ -21,6 +21,7 @@ export type EventType = {
   image?: StaticImageData;
   link?: string;
   pinned?: boolean;
+  openForAll?: boolean;
 };
 
 export type EventApply = {

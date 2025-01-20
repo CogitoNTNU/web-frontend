@@ -48,6 +48,7 @@ const Calendar = () => {
                   image={event.image}
                   link={event.link}
                   pinned={event.pinned}
+                  openForAll={event.openForAll}
                 />
               ))}
           </div>

@@ -23,11 +23,11 @@ export const hardcodedEvents: Array<EventType> = [
   {
     name: "Cogito-kveld ✨",
     date: new Date("2030-01-01"),
-    timeString: "Tirsdager kl. 17-20",
-    subTimeString: "Fra og med 11.02",
+    timeString: "Tirsdager fom. 11.02",
+    subTimeString: "kl. 17:15-20",
     location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
     description:
-      'Hver tirsdag fra kl. 17:00 til 20:00 møtes alle i Cogito i "Gruva" for å jobbe med prosjektene våre i fellesskap. Det hender også at vi serverer pizza 🍕',
+      'Hver tirsdag fra kl. 17:15 til 20:00 møtes alle i Cogito i "Gruva" for å jobbe med prosjektene våre i fellesskap. Det hender også at vi serverer pizza 🍕',
     image: CogitoNight,
     pinned: true,
   },
@@ -77,6 +77,7 @@ export const hardcodedEvents: Array<EventType> = [
     description: "Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
     link: "",
     image: NNWorkshop,
+    openForAll: true
   },
   {
     name: "Workshop - Genetiske algoritmer 🧬",
@@ -84,9 +85,10 @@ export const hardcodedEvents: Array<EventType> = [
     timeString: "28.01",
     subTimeString: "kl. 17-20",
     location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
-    description: "Tobias Fremming holder et lynkurs om genetiske algoritmer.",
+    description: "Tobias Fremming holder et kurs om genetiske algoritmer.",
     link: "",
-    image: GAWorkshop
+    image: GAWorkshop,
+    openForAll: true
   },
   {
     name: "Workshop - Reinforcement learning 🤖",
@@ -96,7 +98,8 @@ export const hardcodedEvents: Array<EventType> = [
     location: "R2, Realfagsbygget, Gløshaugen",
     description: "Even Klemsdal, Ph.D.-kandidat ved IDI, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
     link: "",
-    image: RLWorkshop
+    image: RLWorkshop,
+    openForAll: true,
   }
 ];
 
