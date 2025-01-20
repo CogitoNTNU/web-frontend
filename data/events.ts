@@ -116,7 +116,7 @@ export const applicationEvent2024: EventApply = {
 };
 
 export const applicationEvent2025: EventApply = {
-  title: "Opptaksprosess Høst 2025",
+  title: "Opptaksprosess Vår 2025",
   dates: "20.01 - 11.02",
   steps: [
     {
