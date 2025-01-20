@@ -6,8 +6,8 @@ import { EventType } from "../../lib/types";
 const EventCard: React.FC<EventType> = (props) => {
   const {
     name: eventName,
-    date: eventDate,
-    subDate: eventSubDate,
+    timeString: eventTimeString,
+    subTimeString: eventSubTimeString,
     location: eventLocation,
     description: eventDescription,
     image: eventImage,
@@ -28,10 +28,12 @@ const EventCard: React.FC<EventType> = (props) => {
         <h2 className="phone:w-auto w-full phone:text-2xl text-[17px] font-bold tracking-wide">
           {eventName}
         </h2>
-        <div className="phone:w-fit w-full phone:text-end text-start phone:h-[3rem] py-1">
-          <p className="phone:text-xl text-[16px]">{eventDate}</p>
-          {eventSubDate && (
-            <p className="phone:text-[16px] text-[13px]">{eventSubDate}</p>
+        <div className="phone:w-fit w-full min-w-fit phone:text-end text-start phone:h-[3rem] py-1">
+          <p className="phone:text-xl text-[16px]">{eventTimeString}</p>
+          {eventSubTimeString && (
+            <p className="phone:text-[16px] text-[13px] min-w-fit">
+              {eventSubTimeString}
+            </p>
           )}
         </div>
       </div>
