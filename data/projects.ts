@@ -63,7 +63,7 @@ export const projectsApply: ProjectApply[] = [
     description:
       "Vi skal utvikle et system inspirert av MuZero, utviklet av Google DeepMind. MuZero kombinerer avanserte teknikker innenfor dype reinforcement learning og planlegging, noe som gjør det i stand til å lære komplekse oppgaver fra grunnen av. Ved kun å bruke bilder av spillet miljøet, lærer systemet seg selv å mestre spillet gjennom å spille mot seg selv. Prosjektet vårt vil undersøke hvordan denne teknologien kan anvendes på ulike problemområder og utvide forståelsen av autonom læring.",
     image: "deeptactics.webp",
-    leaders: ["Brage Kvamme"],
+    leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
   },
   {
     name: "J.A.R.V.I.S",
