@@ -252,13 +252,26 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
             </div>
           </div>
           <div className="space-y-4 px-6  py-4">
-            <p className="text-lg phone:text-xl">Kunne du sett for deg å være <span className="text-pink-default">prosjektleder </span>for ett av disse prosjektene? <span className="font-bold text-[12px]">(eksludert Cogitron & Infor)</span></p>
+            <p className="text-lg phone:text-xl">
+              Kunne du sett for deg å være{" "}
+              <span className="text-pink-default">prosjektleder </span>for ett
+              av disse prosjektene?{" "}
+              <span className="font-bold text-[12px]">
+                (eksludert Cogitron & Infor)
+              </span>
+            </p>
             <div className="flex items-center gap-4">
-              <input className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer" type="checkbox" onChange={() => setLead(!lead)} />
+              <input
+                className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer"
+                type="checkbox"
+                onChange={() => setLead(!lead)}
+              />
               <div className="absolute w-10 h-10 justify-center items-center flex peer-checked:scale-100 scale-0 pointer-events-none transition-transform">
                 <div className="w-6 h-6 rounded-sm bg-pink-default" />
               </div>
-              <label className="phone:text-lg text-md">Ja, jeg kan være prosjektleder</label>
+              <label className="phone:text-lg text-md">
+                Ja, jeg kan være prosjektleder
+              </label>
             </div>
           </div>
           <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
