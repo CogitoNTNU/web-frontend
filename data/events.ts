@@ -5,7 +5,9 @@ import PresentationWork from "../public/Calendar/PresentationWork.jpg";
 import Presentation from "../public/Calendar/ProjectPresentations.jpg";
 import MLWorkshop from "../public/Calendar/MLWorkshop.webp";
 import AstarLogo from "../public/Calendar/Astar - Logo.png";
-import RLWorkshop from "../public/Calendar/RLWorkshop.png";
+import NNWorkshop from "../public/Calendar/NNWorkshop.png";
+import GAWorkshop from "../public/Calendar/GAWorkshop.webp";
+import RLWorkshop from "../public/Calendar/RLWorkshop.jpg";
 
 export const hardcodedEvents: Array<EventType> = [
   {
@@ -23,16 +25,17 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2030-01-01"),
     timeString: "Tirsdager kl. 17-20",
     subTimeString: "Fra og med 11.02",
-    location: "Gruva NTNU",
+    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
     description:
       'Hver tirsdag fra kl. 17:00 til 20:00 møtes alle i Cogito i "Gruva" for å jobbe med prosjektene våre i fellesskap. Det hender også at vi serverer pizza 🍕',
     image: CogitoNight,
+    pinned: true,
   },
   {
     name: "Workshop - Maskinlæring 🤖",
     date: new Date("2024-08-29"),
     timeString: "29.08",
-    location: "Gruva NTNU",
+    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
     description:
       "Vi arrangerer en workshop i maskinlæring for alle i Cogito. Vi går gjennom grunnleggende konsepter og tester de ut på Titanic-datasettet.",
     image: MLWorkshop,
@@ -41,7 +44,7 @@ export const hardcodedEvents: Array<EventType> = [
     name: "Workshop - LangGraph 📊",
     date: new Date("2024-09-05"),
     timeString: "05.09",
-    location: "Gruva NTNU",
+    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
     description:
       "Astar Consulting holder en workshop om hvordan man kan bygge automatiserte AI-agenter med LangGraph. Workshopen er tilgjengelig for alle medlemmer i Cogito.",
     image: AstarLogo,
@@ -65,16 +68,36 @@ export const hardcodedEvents: Array<EventType> = [
     link: "",
     image: Presentation,
   },
-  // {
-  //   name: "Workshop - Reinforcement learning 🤖",
-  //   date: new Date("2025-01-23"),
-  //   timeString: "23.01",
-  //   subTimeString: "kl. 18-21",
-  //   location: "TBA",
-  //   description: "Even Klemsdal, Ph.D.-kandidat ved IDI, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
-  //   link: "",
-  //   image: RLWorkshop
-  // }
+  {
+    name: "Workshop - Nevrale nettverk 🧠",
+    date: new Date("2025-01-23"),
+    timeString: "23.01",
+    subTimeString: "kl. 18-21",
+    location: "R2, Realfagsbygget, Gløshaugen",
+    description: "Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
+    link: "",
+    image: NNWorkshop,
+  },
+  {
+    name: "Workshop - Genetiske algoritmer 🧬",
+    date: new Date("2025-01-28"),
+    timeString: "28.01",
+    subTimeString: "kl. 17-20",
+    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
+    description: "Tobias Fremming holder et lynkurs om genetiske algoritmer.",
+    link: "",
+    image: GAWorkshop
+  },
+  {
+    name: "Workshop - Reinforcement learning 🤖",
+    date: new Date("2025-01-30"),
+    timeString: "30.01",
+    subTimeString: "kl. 18-21",
+    location: "R2, Realfagsbygget, Gløshaugen",
+    description: "Even Klemsdal, Ph.D.-kandidat ved IDI, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
+    link: "",
+    image: RLWorkshop
+  }
 ];
 
 export const applicationEvent2024: EventApply = {
@@ -125,7 +148,7 @@ export const applicationEvent2025: EventApply = {
     },
     {
       name: "Møt oss på stand!",
-      dates: "20.01 - 24.01",
+      dates: "20.01 - 31.01",
     },
     {
       name: "Søknadsfrist for prosjektledere",
