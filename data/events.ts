@@ -5,7 +5,7 @@ import PresentationWork from "../public/Calendar/PresentationWork.jpg";
 import Presentation from "../public/Calendar/ProjectPresentations.jpg";
 import MLWorkshop from "../public/Calendar/MLWorkshop.webp";
 import AstarLogo from "../public/Calendar/Astar - Logo.png";
-import NNWorkshop from "../public/Calendar/NNWorkshop.png";
+import NNWorkshop from "../public/Calendar/NNWorkshop.jpg";
 import GAWorkshop from "../public/Calendar/GAWorkshop.webp";
 import RLWorkshop from "../public/Calendar/RLWorkshop.jpg";
 
@@ -75,7 +75,7 @@ export const hardcodedEvents: Array<EventType> = [
     subTimeString: "kl. 18-21",
     location: "R2, Realfagsbygget, Gløshaugen",
     description:
-      "Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
+      "CTO Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
     link: "",
     image: NNWorkshop,
     openForAll: true,
@@ -98,7 +98,7 @@ export const hardcodedEvents: Array<EventType> = [
     subTimeString: "kl. 18-21",
     location: "R2, Realfagsbygget, Gløshaugen",
     description:
-      "Even Klemsdal, Ph.D.-kandidat ved IDI, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
+      "Even Klemsdal, Ph.D.-kandidat ved IDI og grunnlegger av Cogito, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
     link: "",
     image: RLWorkshop,
     openForAll: true,

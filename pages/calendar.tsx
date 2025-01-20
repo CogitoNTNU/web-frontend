@@ -73,9 +73,6 @@ const Calendar = () => {
                   pinned={event.pinned}
                 />
               ))}
-            <ApplicationProcessCard
-              applicationProcessData={applicationEvent2024}
-            />
           </div>
         </div>
       </motion.main>
