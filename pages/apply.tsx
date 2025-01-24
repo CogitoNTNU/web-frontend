@@ -253,10 +253,12 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
           </div>
           <div className="space-y-4 px-6  py-4">
             <p className="text-md phone:text-lg">
-              Kunne du sett for deg å være {" "}
+              Kunne du sett for deg å være{" "}
               <span className="text-pink-default">prosjektleder </span>for ett
-              av disse prosjektene?{" "} Eller har du et annet prosjekt du ønsker å pitche?
-              <span className="font-bold text-[12px]"> {" "}
+              av disse prosjektene? Eller har du et annet prosjekt du ønsker å
+              pitche?
+              <span className="font-bold text-[12px]">
+                {" "}
                 (eksludert Cogitron & Infor)
               </span>
             </p>
@@ -270,7 +272,8 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                 <div className="w-6 h-6 rounded-sm bg-pink-default" />
               </div>
               <label className="phone:text-lg text-md">
-                Ja, jeg kan tenke meg å være prosjektleder eller pitche et prosjekt
+                Ja, jeg kan tenke meg å være prosjektleder eller pitche et
+                prosjekt
               </label>
             </div>
           </div>

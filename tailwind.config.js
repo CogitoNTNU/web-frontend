@@ -60,9 +60,9 @@ module.exports = {
         gradientshift: "gradientshift 3s ease-in-out infinite",
       },
       hyphens: {
-        auto: 'auto',
-        manual: 'manual',
-        none: 'none',
+        auto: "auto",
+        manual: "manual",
+        none: "none",
       },
     },
   },
