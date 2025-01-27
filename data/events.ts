@@ -8,6 +8,7 @@ import AstarLogo from "../public/Calendar/Astar - Logo.png";
 import NNWorkshop from "../public/Calendar/NNWorkshop.jpg";
 import GAWorkshop from "../public/Calendar/GAWorkshop.webp";
 import RLWorkshop from "../public/Calendar/RLWorkshop.jpg";
+import ProjectPitching from "../public/Calendar/ProjectPitching.jpg";
 
 export const hardcodedEvents: Array<EventType> = [
   {
@@ -96,13 +97,24 @@ export const hardcodedEvents: Array<EventType> = [
     name: "Workshop - Genetiske algoritmer 🧬",
     date: new Date("2025-01-30"),
     timeString: "30.01",
-    subTimeString: "kl. 18-21",
+    subTimeString: "kl. 18-19:30",
     location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
     description: "Tobias Fremming holder et kurs om genetiske algoritmer.",
     link: "",
     image: GAWorkshop,
     openForAll: true,
   },
+  {
+    name: "Project Pitching 🚀", 
+    date: new Date("2025-01-30"),
+    timeString: "30.01",
+    subTimeString: "kl. 19:30-21",
+    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
+    description: "Prosjektlederne pitcher sine prosjekter for medlemmene i Cogito.",
+    link: "",
+    image: ProjectPitching,
+    openForAll: true,
+  }
 ];
 
 export const applicationEvent2024: EventApply = {
