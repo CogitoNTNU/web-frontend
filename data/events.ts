@@ -109,7 +109,7 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2025-01-30"),
     timeString: "30.01",
     subTimeString: "kl. 19:30-21",
-    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
+    location: "R2, Realfagsbygget, Gløshaugen",
     description:
       "Prosjektlederne pitcher sine prosjekter for medlemmene i Cogito.",
     link: "",
