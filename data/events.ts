@@ -98,7 +98,7 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2025-01-30"),
     timeString: "30.01",
     subTimeString: "kl. 18-19:30",
-    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
+    location: "R2, Realfagsbygget, Gløshaugen",
     description: "Tobias Fremming holder et kurs om genetiske algoritmer.",
     link: "",
     image: GAWorkshop,
