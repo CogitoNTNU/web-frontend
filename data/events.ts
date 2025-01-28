@@ -86,7 +86,7 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2025-01-28"),
     timeString: "28.01",
     subTimeString: "kl. 17-20",
-    location: "R2, Realfagsbygget, Gløshaugen",
+    location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
     description:
       "Even Klemsdal, Ph.D.-kandidat ved IDI og grunnlegger av Cogito, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
     link: "",
