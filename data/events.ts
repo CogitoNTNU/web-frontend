@@ -105,16 +105,17 @@ export const hardcodedEvents: Array<EventType> = [
     openForAll: true,
   },
   {
-    name: "Project Pitching 🚀", 
+    name: "Project Pitching 🚀",
     date: new Date("2025-01-30"),
     timeString: "30.01",
     subTimeString: "kl. 19:30-21",
     location: "Gruva, Oppredning/gruvedrift, Gløshaugen",
-    description: "Prosjektlederne pitcher sine prosjekter for medlemmene i Cogito.",
+    description:
+      "Prosjektlederne pitcher sine prosjekter for medlemmene i Cogito.",
     link: "",
     image: ProjectPitching,
     openForAll: true,
-  }
+  },
 ];
 
 export const applicationEvent2024: EventApply = {
