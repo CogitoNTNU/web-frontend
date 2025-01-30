@@ -94,7 +94,7 @@ export const hardcodedEvents: Array<EventType> = [
   },
   {
     name: "Workshop - Genetiske algoritmer 🧬",
-    date: new Date("2025-01-30"),
+    date: new Date("2025-01-31"),
     timeString: "30.01",
     subTimeString: "kl. 18-21",
     location: "R2, Realfagsbygget, Gløshaugen",
