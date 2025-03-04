@@ -12,7 +12,6 @@ import ProjectModal from "../components/Projects/ProjectModal";
 import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectApply } from "../lib/types";
 import { projectsApply } from "../data/projects";
-import Hamster from "../public/Test/Hamster.png";
 
 const Apply = () => {
   // TODO: Refactor with Formik
@@ -106,9 +105,9 @@ const Due = () => {
             </span>
           </p>
           <img
-            className="tablet:w-[130px] w-[100px] str"
+            className="tablet:w-[130px] w-[100px]"
             src= "/Test/Hamster.png"
-            alt="logo"
+            alt="hamster meme"
           />
           <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
             <span className="font-semibold">Men fortvil ikke! </span>Vi vil søke
