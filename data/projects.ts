@@ -72,13 +72,13 @@ export const projectsApply: ProjectApply[] = [
     image: "jarvis.webp",
     leaders: ["William Schmidt"],
   },
-  {
-    name: "Teknologiporten x Cogito",
-    description:
-      "Ved hjelp av maskinlæring skal Cogito i samarbeid med Teknologiporten predikere hva som kjennetegner de beste Bedriftspresentasjonene. Dette skal gjøres ved å analysere data fra tidligere presentasjoner, og dermed grave oss frem til de avgjørende faktorene som gjør en presentasjon god. Dette prosjektet er i skjæringspunktet mellom industri og studentfrivilligheten, og gir deg muligheten til å jobbe med reelle data og få erfaring med å bruke AI til å løse praktiske problemer.",
-    image: "teknologiporten.png",
-    leaders: [" "],
-  },
+  // {
+  //   name: "Teknologiporten x Cogito",
+  //   description:
+  //     "Ved hjelp av maskinlæring skal Cogito i samarbeid med Teknologiporten predikere hva som kjennetegner de beste Bedriftspresentasjonene. Dette skal gjøres ved å analysere data fra tidligere presentasjoner, og dermed grave oss frem til de avgjørende faktorene som gjør en presentasjon god. Dette prosjektet er i skjæringspunktet mellom industri og studentfrivilligheten, og gir deg muligheten til å jobbe med reelle data og få erfaring med å bruke AI til å løse praktiske problemer.",
+  //   image: "teknologiporten.png",
+  //   leaders: [" "],
+  // },
   {
     name: "Motion",
     description:
