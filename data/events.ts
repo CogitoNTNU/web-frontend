@@ -9,29 +9,10 @@ import NNWorkshop from "../public/Calendar/NNWorkshop.jpg";
 import GAWorkshop from "../public/Calendar/GAWorkshop.webp";
 import RLWorkshop from "../public/Calendar/RLWorkshop.jpg";
 import ProjectPitching from "../public/Calendar/ProjectPitching.jpg";
-import hackathon from "../public/Calendar/hackathon.png";
+import Hackathon from "../public/Calendar/hackathon.png";
+import ProjectPitching_H24 from "../public/Calendar/prosjektpresentasjonerh24.jpg";
 
 export const hardcodedEvents: Array<EventType> = [
-  {
-    name: "Hackathon med Astar Consulting og Norgesgruppen Data",
-    date: new Date("2025-04-04"),
-    timeString: "4.-5. april",
-    location: "R2, Realfagsbygget, Gløshaugen",
-    description:
-      " For første gang arranerer Cogito, i samarbeid med Astar Consulting og NorgesGruppen Data AI-lab, et hackathon!",
-    link: "https://pameldinger.no/e/qfuryd",
-    image: hackathon,
-  },
-  {
-    name: "Prosjektplanlegging 📝",
-    date: new Date("2024-07-30"),
-    timeString: "30.07",
-    location: "Digitalt møte",
-    description:
-      "Planlegging av prosjekter for høstsemesteret 2024. Vi velger hvilke prosjekter som skal gjennomføres, og hvem som blir prosjektledere.",
-    link: "",
-    image: PresentationWork,
-  },
   {
     name: "Cogito-kveld ✨",
     date: new Date("2030-01-01"),
@@ -42,6 +23,26 @@ export const hardcodedEvents: Array<EventType> = [
       'Hver tirsdag fra kl. 17:15 til 20:00 møtes alle i Cogito i "Gruva" for å jobbe med prosjektene våre i fellesskap. Det hender også at vi serverer pizza 🍕',
     image: CogitoNight,
     pinned: true,
+  },
+  {
+    name: "Hackathon med Astar Consulting og Norgesgruppen Data",
+    date: new Date("2025-04-04"),
+    timeString: "4.-5. april",
+    location: "R2, Realfagsbygget, Gløshaugen",
+    description:
+      " For første gang arranerer Cogito, i samarbeid med Astar Consulting og NorgesGruppen Data AI-lab, et hackathon!",
+    link: "https://pameldinger.no/e/qfuryd",
+    image: Hackathon,
+  },
+  {
+    name: "Prosjektpresentasjoner🎉",
+    date: new Date("2025-04-30"),
+    timeString: "30.04",
+    location: "Lager11",
+    description:
+      "Presentasjoner av prosjektene Cogito-medlemmer har jobbet på dette semesteret. Dette er en flott mulighet til å se hva Cogito har jobbet med, og for å bli inspirert til å delta i prosjekter selv! Påmelding kommer snart.",
+    link: "",
+    image: ProjectPitching_H24,
   },
   {
     name: "Workshop - Maskinlæring 🤖",
