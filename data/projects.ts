@@ -1,7 +1,14 @@
 import { ProjectApply, ProjectType } from "../lib/types";
 import SudokuLogo from "../public/Projects/SudokuSolver/SudokoSolverLogo.png";
 import MarketingAILogo from "../public/Projects/MarketingAILogo.png";
-import CatMatch from "../public/Projects/CatMatch/CatMatch.png";
+import CogitoXInforAgentsLogo from "../public/Projects/InforXCogito/infor.png";
+import TV2xCogitoLogo from "../public/Projects/TV2xCogito/TV2xCogito.png";
+import CatMatchLogo from "../public/Projects/CatMatch/CatMatch.png";
+import CogitronLogo from "../public/Projects/Cogitron/cogitron.png";
+import JarvisLogo from "../public/Projects/Jarvis/jarvis.webp";
+import MotionLogo from "../public/Projects/Motion/motion.webp";
+import ChessARLogo from "../public/Projects/ChessAR/chessar.webp";
+import CogitoWebLogo from "../public/Projects/CogitoWeb/CogitoWeb.svg";
 
 export const CogitoProjects: Array<ProjectType> = [
   {
@@ -25,7 +32,7 @@ export const CogitoProjects: Array<ProjectType> = [
     new: false,
   },
   {
-    image: CatMatch,
+    image: CatMatchLogo,
     laptopDesc:
       "CatMatch, the purrfect website for finding the right cats for you!",
     phoneDesc: "The purrfect cats!",
@@ -33,6 +40,67 @@ export const CogitoProjects: Array<ProjectType> = [
     github: "https://github.com/CogitoNTNU/CatMatch",
     leaders: Array<string>("Ulrik Røsby"),
     new: false,
+  },
+];
+
+export const currentProjects: ProjectType[] = [
+  {
+    image: CogitoXInforAgentsLogo,
+    laptopDesc: "Infor x Cogito, making LLMs work in the browser",
+    phoneDesc: "Infor x Cogito",
+    link: "/projects/infor-x-cogito-agents",
+    github: "https://github.com/CogitoNTNU/cogitoxinfor-agents",
+    leaders: Array<string>("Thomas Sørensen"),
+    new: true,
+  },
+  {
+    image: TV2xCogitoLogo,
+    laptopDesc: "TV2 x Cogito, making the news better",
+    phoneDesc: "TV2 x Cogito",
+    link: "/projects/tv2-x-cogito",
+    github: "",
+    leaders: Array<string>("Eva Stamatovska", "Maren Landro"),
+    new: true,
+  },
+  {
+    image: CogitronLogo,
+    laptopDesc: "A* x Cogitron, making real machines learn",
+    phoneDesc: "A* x Cogitron",
+    link: "/projects/cogitron",
+    github: "https://github.com/CogitoNTNU/cogitron",
+    leaders: Array<string>("Vetle Dahl", "Christian Gynnild"),
+  },
+  {
+    image: JarvisLogo,
+    laptopDesc: "J.A.R.V.I.S, the AI assistant you've always wanted",
+    phoneDesc: "J.A.R.V.I.S",
+    link: "/projects/jarvis",
+    github: "https://github.com/CogitoNTNU/jarvis",
+    leaders: Array<string>("William Schmidt"),
+  },
+  {
+    image: MotionLogo,
+    laptopDesc: "Motion, making AI learn to move",
+    phoneDesc: "Motion",
+    link: "/projects/motion",
+    github: "https://github.com/CogitoNTNU/motion",
+    leaders: Array<string>("Tobias Fremming"),
+  },
+  {
+    image: ChessARLogo,
+    laptopDesc: "ChessAR, making chess easier",
+    phoneDesc: "ChessAR",
+    link: "/projects/chessar",
+    github: "https://github.com/CogitoNTNU/chessar",
+    leaders: Array<string>("Simon Sandvik Lee"),
+  },
+  {
+    image: CogitoWebLogo,
+    laptopDesc: "Cogito Web, making the web better",
+    phoneDesc: "Cogito Web",
+    link: "/projects/cogito-web",
+    github: "https://github.com/CogitoNTNU/web-frontend",
+    leaders: Array<string>("Simon Sandvik Lee"),
   },
 ];
 
@@ -72,13 +140,6 @@ export const projectsApply: ProjectApply[] = [
     image: "jarvis.webp",
     leaders: ["William Schmidt"],
   },
-  // {
-  //   name: "Teknologiporten x Cogito",
-  //   description:
-  //     "Ved hjelp av maskinlæring skal Cogito i samarbeid med Teknologiporten predikere hva som kjennetegner de beste Bedriftspresentasjonene. Dette skal gjøres ved å analysere data fra tidligere presentasjoner, og dermed grave oss frem til de avgjørende faktorene som gjør en presentasjon god. Dette prosjektet er i skjæringspunktet mellom industri og studentfrivilligheten, og gir deg muligheten til å jobbe med reelle data og få erfaring med å bruke AI til å løse praktiske problemer.",
-  //   image: "teknologiporten.png",
-  //   leaders: [" "],
-  // },
   {
     name: "Motion",
     description:
