@@ -78,15 +78,17 @@ const Project = ({
             </div>
 
             <div className="pt-1">
-              <Link href={github}>
-                <Button
-                  text={"Github"}
-                  icon="GithubFeather"
-                  px={"4"}
-                  py={"2"}
-                  color={"gray"}
-                />
-              </Link>
+              {github && (
+                <Link href={github}>
+                  <Button
+                    text={"Github"}
+                    icon="GithubFeather"
+                    px={"4"}
+                    py={"2"}
+                    color={"gray"}
+                  />
+                </Link>
+              )}
             </div>
           </div>
         </div>
