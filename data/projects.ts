@@ -69,6 +69,7 @@ export const currentProjects: ProjectType[] = [
     link: "/projects/cogitron",
     github: "https://github.com/CogitoNTNU/cogitron",
     leaders: Array<string>("Vetle Dahl", "Christian Gynnild"),
+    new: true,
   },
   {
     image: JarvisLogo,
@@ -77,6 +78,7 @@ export const currentProjects: ProjectType[] = [
     link: "/projects/jarvis",
     github: "https://github.com/CogitoNTNU/jarvis",
     leaders: Array<string>("William Schmidt"),
+    new: true,
   },
   {
     image: MotionLogo,
@@ -85,6 +87,7 @@ export const currentProjects: ProjectType[] = [
     link: "/projects/motion",
     github: "https://github.com/CogitoNTNU/motion",
     leaders: Array<string>("Tobias Fremming"),
+    new: true,
   },
   {
     image: ChessARLogo,
@@ -93,6 +96,7 @@ export const currentProjects: ProjectType[] = [
     link: "/projects/chessar",
     github: "https://github.com/CogitoNTNU/chessar",
     leaders: Array<string>("Simon Sandvik Lee"),
+    new: true,
   },
   {
     image: CogitoWebLogo,
@@ -101,6 +105,7 @@ export const currentProjects: ProjectType[] = [
     link: "/projects/cogito-web",
     github: "https://github.com/CogitoNTNU/web-frontend",
     leaders: Array<string>("Simon Sandvik Lee"),
+    new: true,
   },
 ];
 
