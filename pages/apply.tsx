@@ -102,9 +102,6 @@ const Due = () => {
                 åpner snart!
               </span>{" "}
               <span className="laptop:block hidden">
-                <span className="font-semibold">
-                  Ventetiden er snart over.{" "}
-                </span>{" "}
                 I mellomtiden kan du lese mer om de tidligere prosjektene våre
                 på prosjektsiden.
               </span>
