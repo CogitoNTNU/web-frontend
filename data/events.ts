@@ -9,8 +9,19 @@ import NNWorkshop from "../public/Calendar/NNWorkshop.jpg";
 import GAWorkshop from "../public/Calendar/GAWorkshop.webp";
 import RLWorkshop from "../public/Calendar/RLWorkshop.jpg";
 import ProjectPitching from "../public/Calendar/ProjectPitching.jpg";
+import hackathon from "../public/Calendar/hackathon.png";
 
 export const hardcodedEvents: Array<EventType> = [
+  {
+    name: "Hackathon med Astar Consulting og Norgesgruppen Data",
+    date: new Date("2025-04-04"),
+    timeString: "4.-5. april",
+    location: "R2, Realfagsbygget, Gløshaugen",
+    description:
+      " For første gang arranerer Cogito, i samarbeid med Astar Consulting og NorgesGruppen Data AI-lab, et hackathon!",
+    link: "https://pameldinger.no/e/qfuryd",
+    image: hackathon,
+  },
   {
     name: "Prosjektplanlegging 📝",
     date: new Date("2024-07-30"),
