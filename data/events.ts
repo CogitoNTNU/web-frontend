@@ -30,7 +30,7 @@ export const hardcodedEvents: Array<EventType> = [
     timeString: "4.-5. april",
     location: "R2, Realfagsbygget, Gløshaugen",
     description:
-      " For første gang arranerer Cogito, i samarbeid med Astar Consulting og NorgesGruppen Data AI-lab, et hackathon!",
+      " For første gang arrangerer Cogito og Astar, i samarbeid med NorgesGruppen Data, et hackathon! Det blir selvfølgelig servering begge dagene, og en samlet premiepott på 20 000 kr til de beste lagene.",
     link: "https://pameldinger.no/e/qfuryd",
     image: Hackathon,
   },
