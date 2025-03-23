@@ -1,8 +1,6 @@
 import Image from "next/image";
 import New from "../Notification/New";
 import { motion } from "framer-motion";
-
-// Images
 import Button from "../Buttons/Button";
 import Icon from "../Icons/Icon";
 import Link from "next/link";
@@ -39,22 +37,22 @@ const Project = ({
               draggable={false}
               src={image}
               alt={"Image Logo"}
-              className="tablet:w-[320px] w-[280px] items-center flex absolute object-cover"
+              className="tablet:w-[320px] w-[280px] items-center flex absolute max-h-28 object-cover"
             />
-          </Link>
-          <div className="tablet:w-[300px] w-[240px] bg-red-default h-full transition-transform rounded-l-2xl text-white">
-            <div className="flex pt-[120px] pl-4 justify-start gap-2 group-hover:opacity-100 opacity-0 transition-all ease-in-out">
-              <div className="flex gap-2 items-center h-full">
-                <p className="text-[20px] font-bold">Prosjektleder(e)</p>
-                <Icon icon={"Users"} size="20px" />
+            <div className="tablet:w-[300px] w-[240px] bg-red-default h-full transition-transform rounded-l-2xl text-white">
+              <div className="flex pt-[120px] pl-4 justify-start gap-2 group-hover:opacity-100 opacity-0 transition-all ease-in-out">
+                <div className="flex gap-2 items-center h-full">
+                  <p className="text-[20px] font-bold">Prosjektleder(e)</p>
+                  <Icon icon={"Users"} size="20px" />
+                </div>
+              </div>
+              <div className="text-[14px] text-medium pl-4 ">
+                {leaders.map((leader) => (
+                  <p key={leader}>{leader}</p>
+                ))}
               </div>
             </div>
-            <div className="text-[14px] text-medium pl-4 ">
-              {leaders.map((leader) => (
-                <p key={leader}>{leader}</p>
-              ))}
-            </div>
-          </div>
+          </Link>
         </div>
 
         <div className="tablet:py-8 py-10 px-4">

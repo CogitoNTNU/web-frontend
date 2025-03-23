@@ -57,7 +57,7 @@ export const currentProjects: ProjectType[] = [
     image: TV2xCogitoLogo,
     laptopDesc: "TV2 x Cogito, making the news better",
     phoneDesc: "TV2 x Cogito",
-    link: "/projects/tv2-x-cogito",
+    link: "/projects/tv2xcogito",
     github: "",
     leaders: Array<string>("Eva Stamatovska", "Maren Landro"),
     new: true,

@@ -3,9 +3,8 @@ import Image from "next/image";
 import Footer from "../components/Footer/Footer";
 import { motion } from "framer-motion";
 import { ProjectType } from "../lib/types";
-import { CogitoProjects } from "../data/projects";
+import { CogitoProjects, currentProjects } from "../data/projects";
 
-// Images
 import Banner from "../public/Projects/MarketingAIShowcase.jpg";
 import Project from "../components/Projects/Project";
 
@@ -57,7 +56,22 @@ const Projects = () => {
           <div className="my-2 w-[70%] h-[2px] bg-gray-lighter"></div>
         </div>
 
-        <div className="pt-8 flex justify-center">
+        {/* Current PROJECTS */}
+        <div className="pt-8 flex flex-col gap-8 justify-center items-center">
+          <h2 className="text-white text-xl font-bold">Current Projects</h2>
+          {/* 
+            Responsive grid: 3 columns on large screens, 2 on tablets, 1 on phones 
+          */}
+          <div className="grid gap-8 laptop:grid-cols-3 tablet:grid-cols-2 phone:grid-cols-1">
+            {currentProjects.map((project: ProjectType) => (
+              <Project key={project.github} {...project} />
+            ))}
+          </div>
+        </div>
+
+        {/* Completed Projects */}
+        <div className="pt-8 flex flex-col gap-8 justify-center items-center">
+          <h2 className="text-white text-xl font-bold">Old Projects</h2>
           <div className="grid gap-8">
             {CogitoProjects.map((project: ProjectType) => (
               <Project key={project.github} {...project} />
@@ -65,6 +79,7 @@ const Projects = () => {
           </div>
         </div>
       </motion.main>
+
       <Footer />
     </div>
   );
