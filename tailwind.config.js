@@ -59,6 +59,11 @@ module.exports = {
       animation: {
         gradientshift: "gradientshift 3s ease-in-out infinite",
       },
+      hyphens: {
+        auto: "auto",
+        manual: "manual",
+        none: "none",
+      },
     },
   },
 
