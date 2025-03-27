@@ -123,14 +123,14 @@ const About = () => {
                   <Image
                     src={NTNU}
                     alt="NTNU LOGO"
-                    className="object-contain w-[250px] md:w-[300px]"
+                    className="object-contain w-[250px] md:w-[500px]"
                   />
                 </Link>
                 <Link href="https://www.ntnu.edu/ailab">
                   <Image
                     src={NAIL}
                     alt="NAIL LOGO"
-                    className="object-contain w-[250px] md:w-[300px]"
+                    className="object-contain w-[250px] md:w-[400px]"
                   />
                 </Link>
               </div>
