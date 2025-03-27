@@ -10,6 +10,10 @@ import { motion } from "framer-motion";
 //Images
 import NTNU from "../public/Logos/NTNU.png";
 import NAIL from "../public/Logos/norwegian_open_ai_lab.png";
+import ASTAR from "../public/Logos/astar.png";
+import TV2 from "../public/Logos/TV2.svg";
+import INFOR from "../public/Logos/Infor_logo.svg";
+import Link from "next/link";
 
 const About = () => {
   function timeout(delay: number) {
@@ -107,25 +111,44 @@ const About = () => {
           }}
           className="flex items-center justify-center pt-[100px]"
         >
-          <div className="bg-gray-lighter text-gray-default w-[80%] z-40 h-max-[600px] desktop:h-[600px] md:h-[500px] h-[400px] rounded-3xl flex justify-center text-center">
+          <div className="bg-gray-lighter text-gray-default w-[80%] z-40 rounded-3xl flex justify-center text-center">
             <div className="py-[30px] px-[8%] w-full">
               <p className="md:text-[40px] phone:text-[28px] text-[22px] font-black tracking-wide">
                 Våre Hovedpartnere
               </p>
               <div className="w-full my-[20px] h-[3px] bg-gray-default"></div>
-              <div className="items-center flex justify-center py-[40px]">
-                <Image
-                  className="phone:w-[40%] w-[60%]"
-                  src={NTNU}
-                  alt={"NTNU LOGO"}
-                />
+
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+                <Link href="https://www.ntnu.no/">
+                  <Image
+                    src={NTNU}
+                    alt="NTNU LOGO"
+                    className="object-contain w-[250px] md:w-[500px]"
+                  />
+                </Link>
+                <Link href="https://www.ntnu.edu/ailab">
+                  <Image
+                    src={NAIL}
+                    alt="NAIL LOGO"
+                    className="object-contain w-[250px] md:w-[400px]"
+                  />
+                </Link>
               </div>
-              <div className="items-center flex justify-center py-[40px]">
-                <Image
-                  className="phone:w-[30%] w-[50%]"
-                  src={NAIL}
-                  alt={"NAIL LOGO"}
-                />
+
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full mt-10">
+                <Link href={"https://www.astartechnologies.no/"}>
+                  <Image
+                    className="h-48 w-full"
+                    src={ASTAR}
+                    alt="A* Consulting"
+                  />
+                </Link>
+                <Link href={"https://www.tv2.no"}>
+                  <Image className="h-48 w-full" src={TV2} alt="TV2" />
+                </Link>
+                <Link href={"https://www.infor.com"}>
+                  <Image className="h-48 w-full" src={INFOR} alt="Infor" />
+                </Link>
               </div>
             </div>
           </div>
