@@ -111,31 +111,31 @@ const About = () => {
           }}
           className="flex items-center justify-center pt-[100px]"
         >
-          <div className="bg-gray-lighter text-gray-default w-[80%] z-40 h-max-[800px] desktop:h-[900px] md:h-[700px] h-[600px] rounded-3xl flex justify-center text-center">
+          <div className="bg-gray-lighter text-gray-default w-[80%] z-40 rounded-3xl flex justify-center text-center">
             <div className="py-[30px] px-[8%] w-full">
               <p className="md:text-[40px] phone:text-[28px] text-[22px] font-black tracking-wide">
                 Våre Hovedpartnere
               </p>
               <div className="w-full my-[20px] h-[3px] bg-gray-default"></div>
-              <Link href={"https://www.ntnu.no/"}>
-                <div className="items-center flex justify-center py-[40px]">
+
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
+                <Link href="https://www.ntnu.no/">
                   <Image
-                    className="phone:w-[40%] w-[60%]"
                     src={NTNU}
-                    alt={"NTNU LOGO"}
+                    alt="NTNU LOGO"
+                    className="object-contain w-[250px] md:w-[300px]"
                   />
-                </div>
-              </Link>
-              <Link href={"https://www.ntnu.edu/ailab"}>
-                <div className="items-center flex justify-center py-[40px]">
+                </Link>
+                <Link href="https://www.ntnu.edu/ailab">
                   <Image
-                    className="phone:w-[30%] w-[50%]"
                     src={NAIL}
-                    alt={"NAIL LOGO"}
+                    alt="NAIL LOGO"
+                    className="object-contain w-[250px] md:w-[300px]"
                   />
-                </div>
-              </Link>
-              <div className="flex justify-between w-full mt-[40px]">
+                </Link>
+              </div>
+
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full mt-10">
                 <Link href={"https://www.astartechnologies.no/"}>
                   <Image
                     className="h-48 w-full"
