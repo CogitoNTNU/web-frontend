@@ -53,7 +53,6 @@ const App = ({
           <Head>
             <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
           </Head>
-          <Navbar />
           <Component {...pageProps} />
         </HydrationBoundary>
         <ReactQueryDevtools />
@@ -67,7 +66,6 @@ const App = ({
         <Head>
           <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
         </Head>
-        <Navbar />
         <Particles
           id="tsparticles"
           init={particlesInit}

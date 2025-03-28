@@ -6,6 +6,7 @@ import EventCard from "../components/Cards/EventCard";
 import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
 import Footer from "../components/Footer/Footer";
 import { hardcodedEvents } from "../data/events";
+import Navbar from "../components/Navbar/Navbar";
 
 const Calendar = () => {
   const eventData = hardcodedEvents;
@@ -15,6 +16,7 @@ const Calendar = () => {
       <Head>
         <title>Kalender - Cogito NTNU</title>
       </Head>
+      <Navbar page="calendar"/>
       <motion.main
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}

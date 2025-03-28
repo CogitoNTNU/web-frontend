@@ -12,6 +12,7 @@ import ProjectModal from "../components/Projects/ProjectModal";
 import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectApply } from "../lib/types";
 import { projectsApply } from "../data/projects";
+import Navbar from "../components/Navbar/Navbar";
 
 const Apply = () => {
   // TODO: Refactor with Formik
@@ -35,6 +36,7 @@ const Apply = () => {
       <Head>
         <title>Meld deg på - Cogito NTNU</title>
       </Head>
+      <Navbar/>
       <motion.main
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}

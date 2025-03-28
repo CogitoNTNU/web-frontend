@@ -6,13 +6,13 @@ import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Images
 import poster1 from "../../public/Projects/MarketingAI/poster.png";
 import poster2 from "../../public/Projects/MarketingAI/soda.jpg";
 import poster3 from "../../public/Projects/MarketingAI/bicycle.png";
 import ErrorHandlingMarketingAI from "../../components/Errors/ErrorHandlingMarketingAI";
 import { GenerateImageParams } from "../../lib/types";
 import { useMarketingAIGenerateImage } from "../../hooks/useGenerateImage";
+import Navbar from "../../components/Navbar/Navbar";
 
 const MarketingAI = () => {
   const [value, setValue] = useState("");
@@ -35,6 +35,7 @@ const MarketingAI = () => {
       <Head>
         <title>Marketing AI - Cogito NTNU</title>
       </Head>
+      <Navbar page="/" onlyLogo/>
       <div className="bg-black-default">
         {error && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden flex justify-center items-center">
