@@ -9,10 +9,45 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Button from "../Buttons/Button";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
-const Navbar = () => {
+const containerVariants = {
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0, 0.71, 0.2, 1.0],
+      staggerChildren: 0.1
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: [0, 0.71, 0.2, 1.0]
+    }
+  },
+  exit: { opacity: 0 }
+};
+
+interface NavbarProps {
+  onlyLogo?: boolean;
+  page: string;
+}
+
+const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
   const router = useRouter();
-  const [onlyLogo, setOnlyLogo] = useState<boolean>(false);
-  const [page, setPage] = useState<string>("");
   const [hidden, setHidden] = useState<boolean>(false);
   const { scrollY } = useScroll();
   const [isOpen, setOpen] = useState(false);
@@ -28,22 +63,27 @@ const Navbar = () => {
   const navbarLinks = [
     {
       title: "Hjem",
+      actual: "home",
       link: "/",
     },
     {
       title: "Om Oss",
+      actual: "about",
       link: "/about",
     },
     {
       title: "Prosjekter",
+      actual: "projects",
       link: "/projects",
     },
     {
       title: "Medlemmer",
+      actual: "team",
       link: "/team",
     },
     {
       title: "Kalender",
+      actual: "calendar",
       link: "/calendar",
     },
   ];
@@ -58,22 +98,6 @@ const Navbar = () => {
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
-
-  useEffect(() => {
-    setOnlyLogo(false);
-    if (router.pathname.includes("/projects") && router.pathname.length > 10) {
-      setOnlyLogo(true);
-    }
-
-    if (router.pathname.includes("/project-presentations")) {
-      setOnlyLogo(true);
-    }
-
-    const page: string = links[router.pathname] as string;
-    if (page !== undefined) {
-      setPage(page);
-    }
-  }, [router.pathname]);
 
   useEffect(() => {
     const targetElement = document.querySelector("body");
@@ -94,7 +118,6 @@ const Navbar = () => {
   };
 
   const burgerChangePage = (title: string) => {
-    setPage(title);
     setOpen(false);
   };
 
@@ -120,11 +143,10 @@ const Navbar = () => {
         variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="flex flex-row w-full h-[120px] px-[4%] text-lg fixed text-white z-[100]"
+        className="flex flex-row w-full h-[120px] px-20 text-lg fixed text-white z-[100]"
       >
         <Link
           onClick={async () => {
-            setPage("Hjem");
             await scrollToTop();
           }}
           href={"/"}
@@ -142,13 +164,12 @@ const Navbar = () => {
             <div className="laptop:flex flex-row h-full w-full justify-end hidden gap-[40px]">
               {navbarLinks.map((data) => (
                 <Link
-                  onClick={() => setPage(data.title)}
                   key={data.title}
                   href={data.link}
                 >
                   <div className="h-full flex justify-center items-center group">
-                    <div className={page !== data.title && hoverClass}>
-                      <span className={page == data.title && buttonClass}>
+                    <div className={page !== data.actual && hoverClass}>
+                      <span className={page == data.actual && buttonClass}>
                         {data.title}
                       </span>
                     </div>
@@ -156,7 +177,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="flex items-center justify-center h-full">
-                <Link onClick={() => setPage("Søk Opptak")} href={"/apply"}>
+                <Link href={"/apply"}>
                   <Button
                     text={"Søk Opptak"}
                     px={"8"}
@@ -175,31 +196,28 @@ const Navbar = () => {
       <div className="w-full h-full overflow-hidden">
         {isOpen && (
           <motion.div
-            initial={{ x: -100 }}
-            transition={{
-              duration: 0.5,
-              delay: 0,
-              ease: [0, 0.71, 0.2, 1.0],
-            }}
-            animate={{ x: 0 }}
-            exit={{ opacity: 0 }}
-            className="fixed right-0 top-0 bg-blue-darker w-full h-full px-8 z-[90]"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed right-0 top-0 bg-blue-darker w-full h-full px-24 z-[90]"
           >
             <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
               {navbarLinks.map((data) => (
-                <Link
-                  onClick={() => burgerChangePage(data.title)}
-                  key={data.title}
-                  href={data.link}
-                >
-                  <div className="text-white font-medium text-[20px]">
-                    <span className={page == data.title && buttonClass}>
-                      {data.title}
-                    </span>
-                  </div>
-                </Link>
+                <motion.div key={data.title} variants={itemVariants}>
+                  <Link
+                    onClick={() => burgerChangePage(data.title)}
+                    href={data.link}
+                  >
+                    <div className="text-white font-medium text-[20px]">
+                      <span className={page == data.actual && buttonClass}>
+                        {data.title}
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
               ))}
-              <div className="pt-[10px]">
+              <motion.div className="pt-[10px]" variants={itemVariants}>
                 <Link
                   onClick={() => burgerChangePage("Søk Opptak")}
                   href={"/apply"}
@@ -211,7 +229,7 @@ const Navbar = () => {
                     color={"pink"}
                   />
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         )}
