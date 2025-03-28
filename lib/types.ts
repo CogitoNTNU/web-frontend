@@ -31,13 +31,42 @@ export type ProjectApply = {
 };
 
 export type ProjectType = {
-  image: StaticImageData;
-  laptopDesc: string;
-  phoneDesc: string;
-  link: string;
+  name: string;
+  playable?: boolean;
   github: string;
-  leaders: Array<string>;
-  new?: boolean;
+};
+
+export type ArticleType = {
+  articleId: string;
+  landingPage: ArticleLandingPage;
+  descriptionPage: ArticleDescriptionPage;
+  teamPage: ArticleTeamPage;
+  semester: "Høst" | "Vår";
+  year: number;
+  github?: string;
+};
+
+export type ArticleLandingPage = {
+  title: string;
+  description: string;
+};
+
+export type ArticleDescriptionPage = {
+  projectDescription: string;
+  funFacts: string[];
+  links: string[];
+  technologies: string[];
+};
+
+export type ArticleTeamPage = {
+  team: TeamMember[];
+};
+
+export type TeamMember = {
+  name: string;
+  role: "Leder" | "Medlem";
+  github: string;
+  linkedIn: string;
 };
 
 export type GenerateImageParams = {
