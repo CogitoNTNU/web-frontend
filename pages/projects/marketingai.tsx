@@ -35,7 +35,7 @@ const MarketingAI = () => {
       <Head>
         <title>Marketing AI - Cogito NTNU</title>
       </Head>
-      <Navbar page="/" onlyLogo/>
+      <Navbar page="/" onlyLogo />
       <div className="bg-black-default">
         {error && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden flex justify-center items-center">
