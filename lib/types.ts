@@ -32,8 +32,11 @@ export type ProjectApply = {
 
 export type ProjectType = {
   name: string;
+  img: string;
   playable?: boolean;
+  released: boolean;
   github: string;
+  url: string;
 };
 
 export type ArticleType = {
@@ -52,7 +55,7 @@ export type ArticleLandingPage = {
 };
 
 export type ArticleDescriptionPage = {
-  projectDescription: string;
+  description: string;
   funFacts: string[];
   links: string[];
   technologies: string[];
