@@ -108,7 +108,7 @@ const Team = () => {
       <Head>
         <title>Medlemmer - Cogito NTNU</title>
       </Head>
-      <Navbar page="team"/>
+      <Navbar page="team" />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -13,7 +13,7 @@ const Home = () => {
         <title>Hjem - Cogito NTNU</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Navbar page="home"/>
+      <Navbar page="home" />
       <div className="snap-y snap-mandatory h-screen overflow-y-scroll bg-gray-darker">
         <section id="part-0">
           <HomeP1 />

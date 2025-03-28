@@ -1,50 +1,127 @@
 import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
-import { motion } from "framer-motion";
 import { ProjectType } from "../lib/types";
 import { CogitoProjects } from "../data/projects";
 import { Carousel } from "@material-tailwind/react";
-// Images
-import Banner from "../public/Projects/MarketingAIShowcase.jpg";
 import Project from "../components/Projects/Project";
 import Navbar from "../components/Navbar/Navbar";
+import Link from "next/link";
 
-const ProjectCarousel = () => {
-  return (
-    <>
-      <Carousel className="rounded-xl h-fit"
-        navigation={({ setActiveIndex, activeIndex, length }) => (
-          <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-            {new Array(length).fill("").map((_, i) => (
-              <span
-                key={i}
-                className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-                  }`}
-                onClick={() => setActiveIndex(i)}
-              />
-            ))}
-          </div>
-        )} autoplay loop>
-        <img
-          src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-          alt="image 1"
-          className="h-[30rem] w-full object-cover"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-          alt="image 2"
-          className="h-[30rem] w-full object-cover"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-          alt="image 3"
-          className="h-[30rem] w-full object-cover"
-        />
-      </Carousel>
-    </>
-  );
+interface ButtonProps {
+  text: string;
+  type: "play" | "read" | "github";
+  link: string;
 }
+
+const Button = ({ text, type, link }: ButtonProps) => {
+  function getColor() {
+    if (type === "play") return "bg-blue-500";
+    if (type === "read") return "bg-green-500";
+    else return "bg-black-default";
+  }
+  return (
+    <Link href={link} className="flex justify-center w-fit h-fit items-center">
+      <p
+        className={`text-white tracking-wide px-12 py-3 rounded-2xl  ${getColor()}`}
+      >
+        {text}
+      </p>
+    </Link>
+  );
+};
+
+interface ProjectBannerProps {
+  bannerImg: string;
+  description: string;
+  bgImg: string;
+  link: string;
+  github: string;
+  playable: boolean;
+}
+
+const ProjectBanner = ({
+  bannerImg,
+  description,
+  bgImg,
+  link,
+  playable,
+  github,
+}: ProjectBannerProps) => (
+  <div className="h-[30rem] w-full flex justify-start px-12 py-8">
+    <div className="z-50 h-full flex flex-col justify-center">
+      <Image
+        src={bannerImg}
+        alt="banner"
+        width={500}
+        height={400}
+        draggable={false}
+      />
+      <p className="text-lg text-white w-3/6 pl-8 pt-4">{description}</p>
+      <div className="flex gap-x-6 px-8 pt-4">
+        {playable ? (
+          <Button text="Prøv ut her" type="play" link={link} />
+        ) : (
+          <Button text="Les mer her" type="read" link={link} />
+        )}
+        <Button text="GitHub" type="github" link={github} />
+      </div>
+    </div>
+    <Image
+      src={bgImg}
+      alt="background"
+      layout="fill"
+      className="object-cover"
+      draggable={false}
+    />
+  </div>
+);
+
+const Banners: ProjectBannerProps[] = [
+  {
+    bannerImg: "/Projects/ProjectBanners/MarketingAI/banner.png",
+    description:
+      "Marketing AI is a powerful marketing tool made to conquer all social platforms, seamlessly optimizing campaigns and maximizing outreach with its advanced capabilities.",
+    bgImg: "/Projects/ProjectBanners/MarketingAI/bg.png",
+    github: "https://github.com/CogitoNTNU/MarketingAI",
+    link: "/projects/marketingai",
+    playable: true,
+  },
+];
+
+const ProjectCarousel = () => (
+  <Carousel
+    className="rounded-xl h-fit"
+    navigation={({ setActiveIndex, activeIndex, length }) => (
+      <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
+        {new Array(length).fill("").map((_, i) => (
+          <span
+            key={i}
+            className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
+              activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
+            }`}
+            onClick={() => setActiveIndex(i)}
+          />
+        ))}
+      </div>
+    )}
+    loop
+  >
+    {Banners.map((banner: ProjectBannerProps) => {
+      return (
+        <ProjectBanner
+          key={banner.bannerImg}
+          bannerImg={banner.bannerImg}
+          description={banner.description}
+          bgImg={banner.bgImg}
+          playable={banner.playable}
+          link={banner.link}
+          github={banner.github}
+        />
+      );
+    })}
+  </Carousel>
+);
 
 const Projects = () => {
   return (
@@ -52,14 +129,27 @@ const Projects = () => {
       <Head>
         <title>Prosjekter - Cogito NTNU</title>
       </Head>
-      <Navbar page="projects"/>
+      <Navbar page="projects" />
       <main className="h-fit w-full pt-44 justify-center items-center flex-col px-20">
         <ProjectCarousel />
         <div className="pt-16 pb-12">
-          <p className="text-white font-semibold text-3xl tracking-wide">Prosjekt Galleri</p>
+          <p className="text-white font-semibold text-3xl tracking-wide">
+            Prosjekt Galleri
+          </p>
           <div className="flex pt-8 gap-x-12 gap-y-4 flex-wrap">
-            <Project name="Marketing AI" github="www.github.com" img="/Projects/Cards/MarketingAI.png" playable url={"/projects/marketingai"}/>
-            <Project name="NEATactics" github="www.github.com" img="/Projects/Cards/NEATactics.png" released={false}  url={"/projects/articles/neatactics"}/>
+            {CogitoProjects.map((project: ProjectType) => {
+              return (
+                <Project
+                  key={project.name}
+                  name={project.name}
+                  released={project.released}
+                  github={project.github}
+                  img={project.img}
+                  url={project.url}
+                  playable={project.playable}
+                />
+              );
+            })}
           </div>
         </div>
       </main>
