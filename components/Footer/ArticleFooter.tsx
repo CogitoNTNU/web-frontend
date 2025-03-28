@@ -5,6 +5,6 @@ const ProjectFooter = () => {
       <p className="text-xl text-white font-semibold">COGITO NTNU {year}</p>
     </footer>
   );
-}
+};
 
 export default ProjectFooter;
