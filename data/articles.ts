@@ -9,7 +9,7 @@ export const articles: ArticleType[] = [
         "Hvordan kan en datamaskin lære seg å spille Mario helt selv?",
     },
     descriptionPage: {
-      projectDescription:
+      description:
         "NEATactics er et prosjekt som bygger på KI-metoden NEAT (Neuroevolution of Augmenting Topologies), en genetisk algoritme for å utvikle nevrale nettverk. Dette er noe av det nærmeste vi har til menneskelig evolusjon, men i form av en maskinlæringsmodell. Modellen har ingen forhåndskunnskap om miljøet den opererer i, men har lært en intern representasjon av verdenen som den bruker til å bestemme policyen for sin adferd.",
       funFacts: [
         "NEATactics trente modellen sin på IDUN, en supercomputer på NTNU!",
@@ -37,12 +37,6 @@ export const articles: ArticleType[] = [
           role: "Medlem",
           github: "https://github.com/Nilsthehacker",
           linkedIn: "",
-        },
-        {
-          name: "Haagen Mæland Moe",
-          role: "Medlem",
-          github: "https://github.com/Thesmund",
-          linkedIn: "https://www.linkedin.com/in/haagen-m%C3%A6land-moe/",
         },
         {
           name: "Kristian Carlenius",
