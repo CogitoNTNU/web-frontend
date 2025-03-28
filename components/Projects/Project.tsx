@@ -1,96 +1,58 @@
 import Image from "next/image";
-import New from "../Notification/New";
 import { motion } from "framer-motion";
-
-// Images
 import Button from "../Buttons/Button";
 import Icon from "../Icons/Icon";
 import Link from "next/link";
-import { ProjectType } from "../../lib/types";
+import { FiPlay } from "react-icons/fi";
+import { FaBookOpen, FaBookReader, FaPlay } from "react-icons/fa";
 
-const Project = ({
-  image,
-  laptopDesc,
-  phoneDesc,
-  link,
-  github,
-  leaders,
-  new: isNew = false,
-}: ProjectType) => {
+interface ProjectProps {
+  name: string;
+  url: string;
+  github: string;
+  playable?: boolean;
+  img: string;
+  released?: boolean;
+}
+
+const Project = ({ name, url, img, github, playable = false, released = true
+}: ProjectProps) => {
   return (
-    <div className="flex justify-center items-center flex-col gap-3">
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.4,
-          delay: 0.4,
-        }}
-        className="relative flex tablet:w-[600px] w-[350px] tablet:h-[120px] h-[110px] bg-white rounded-2xl z-50 group hover:h-[210px] transition-all"
-      >
-        {isNew && (
-          <div className="absolute -top-4 -right-4">
-            <New />
-          </div>
-        )}
-        <div className="cursor-default">
-          <Link href={link}>
-            <Image
-              draggable={false}
-              src={image}
-              alt={"Image Logo"}
-              className="tablet:w-[320px] w-[280px] items-center flex absolute object-cover"
-            />
-          </Link>
-          <div className="tablet:w-[300px] w-[240px] bg-red-default h-full transition-transform rounded-l-2xl text-white">
-            <div className="flex pt-[120px] pl-4 justify-start gap-2 group-hover:opacity-100 opacity-0 transition-all ease-in-out">
-              <div className="flex gap-2 items-center h-full">
-                <p className="text-[20px] font-bold">Prosjektleder(e)</p>
-                <Icon icon={"Users"} size="20px" />
+    <div className={`${released && "group"}`}>
+      <div className="h-[20rem] w-[14rem] relative">
+        <div className={`${released ? "group-hover:bg-black-dark opacity-90 transition-all" : "bg-black-dark opacity-90"} h-full w-full  z-50 relative rounded-3xl`}>
+          {released ? (
+            <>
+              <div className="absolute top-4 left-4 group-hover:opacity-100 opacity-0 transition-opacity">
+                <Link href={github}>
+                  <Icon icon="Github" size={"40px"} />
+                </Link>
               </div>
+              <div className="w-full h-full z-50 flex items-center justify-center">
+                {
+                  playable ? (
+                    <Link className="flex-col items-center justify-center group-hover:opacity-100 opacity-0 transition-opacity text-white space-y-2" href={url}>
+                      <FaPlay className="w-full text-6xl cursor-pointer" />
+                      <p className="text-lg">Prøv ut selv</p>
+                    </Link>
+                  ) : (
+                    <Link href={url} className="flex-col items-center justify-center group-hover:opacity-100 opacity-0 transition-opacity text-white space-y-2">
+                      <FaBookOpen className="w-full text-6xl cursor-pointer text-white" />
+                      <p className="text-lg">Les om her</p>
+                    </Link>
+                  )
+                }
+              </div>
+            </>
+          ) : (
+            <div className="w-full h-full z-50 flex items-center justify-center">
+                <p className="text-white cursor-default text-lg">Kommer snart</p>
             </div>
-            <div className="text-[14px] text-medium pl-4 ">
-              {leaders.map((leader) => (
-                <p key={leader}>{leader}</p>
-              ))}
-            </div>
-          </div>
+          )}
         </div>
-
-        <div className="tablet:py-8 py-10 px-4">
-          <p className="tablet:block hidden text-[14px] cursor-default">
-            {laptopDesc}
-          </p>
-          <p className="tablet:hidden block text-[13px] cursor-default">
-            {phoneDesc}
-          </p>
-          <div className="absolute bottom-6 tablet:flex justify-center tablet:gap-2 group-hover:opacity-100 opacity-0 transition-all ease-in-out pl-2">
-            <div className="pt-1">
-              <Link href={link}>
-                <Button
-                  text={"Prøv Ut"}
-                  icon="Play"
-                  px={"4"}
-                  py={"2"}
-                  color={"blue"}
-                />
-              </Link>
-            </div>
-
-            <div className="pt-1">
-              <Link href={github}>
-                <Button
-                  text={"Github"}
-                  icon="GithubFeather"
-                  px={"4"}
-                  py={"2"}
-                  color={"gray"}
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </motion.main>
+        <Image src={img} alt={name} draggable={false} fill className="object-cover object-center rounded-3xl z-40" />
+      </div>
+      <p className="pt-3 text-lg tracking-wider text-white cursor-default">{name}</p>
     </div>
   );
 };
