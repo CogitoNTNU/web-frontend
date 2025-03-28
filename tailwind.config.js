@@ -62,10 +62,26 @@ module.exports = withMT({
           from: { backgroundColor: "#13395b" },
           to: { backgroundColor: "#151515" },
         },
+        gradient: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        grow: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
       },
       animation: {
         gradientshift: "gradientshift 3s ease-in-out infinite",
+        grow: "grow 100s infinite",
         toblack: "toblack 1s ease-in-out forwards",
+        gradient: "gradient 3s ease infinite",
       },
     },
   },
@@ -78,5 +94,8 @@ module.exports = withMT({
     "px-12",
     "text-3xl",
   ],
-  plugins: [require("@codaworks/react-glow/tailwind")],
+  plugins: [
+    require("@codaworks/react-glow/tailwind"),
+    require("@designbycode/tailwindcss-text-stroke"),
+  ],
 });
