@@ -17,15 +17,15 @@ const containerVariants = {
     transition: {
       duration: 0.5,
       ease: [0, 0.71, 0.2, 1.0],
-      staggerChildren: 0.1
-    }
+      staggerChildren: 0.1,
+    },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.3
-    }
-  }
+      duration: 0.3,
+    },
+  },
 };
 
 const itemVariants = {
@@ -35,10 +35,10 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.4,
-      ease: [0, 0.71, 0.2, 1.0]
-    }
+      ease: [0, 0.71, 0.2, 1.0],
+    },
   },
-  exit: { opacity: 0 }
+  exit: { opacity: 0 },
 };
 
 interface NavbarProps {
@@ -46,7 +46,7 @@ interface NavbarProps {
   page: string;
 }
 
-const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
+const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
   const router = useRouter();
   const [hidden, setHidden] = useState<boolean>(false);
   const { scrollY } = useScroll();
@@ -88,13 +88,6 @@ const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
     },
   ];
 
-  const links = {
-    "/": "Hjem",
-    "/about": "Om Oss",
-    "/team": "Medlemmer",
-    "/calendar": "Kalender",
-  };
-
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
@@ -117,7 +110,7 @@ const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
     }
   };
 
-  const burgerChangePage = (title: string) => {
+  const burgerChangePage = () => {
     setOpen(false);
   };
 
@@ -163,10 +156,7 @@ const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
           <div className="flex-row h-full w-full ">
             <div className="laptop:flex flex-row h-full w-full justify-end hidden gap-[40px]">
               {navbarLinks.map((data) => (
-                <Link
-                  key={data.title}
-                  href={data.link}
-                >
+                <Link key={data.title} href={data.link}>
                   <div className="h-full flex justify-center items-center group">
                     <div className={page !== data.actual && hoverClass}>
                       <span className={page == data.actual && buttonClass}>
@@ -205,10 +195,7 @@ const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
             <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
               {navbarLinks.map((data) => (
                 <motion.div key={data.title} variants={itemVariants}>
-                  <Link
-                    onClick={() => burgerChangePage(data.title)}
-                    href={data.link}
-                  >
+                  <Link onClick={() => burgerChangePage()} href={data.link}>
                     <div className="text-white font-medium text-[20px]">
                       <span className={page == data.actual && buttonClass}>
                         {data.title}
@@ -218,10 +205,7 @@ const Navbar = ({page, onlyLogo = false}: NavbarProps) => {
                 </motion.div>
               ))}
               <motion.div className="pt-[10px]" variants={itemVariants}>
-                <Link
-                  onClick={() => burgerChangePage("Søk Opptak")}
-                  href={"/apply"}
-                >
+                <Link onClick={() => burgerChangePage()} href={"/apply"}>
                   <Button
                     text={"Søk Opptak"}
                     px={"8"}

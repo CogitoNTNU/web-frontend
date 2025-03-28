@@ -101,8 +101,7 @@ const HomeP3 = () => {
         </main>
       </div>
       <div>
-
-      <Footer />
+        <Footer />
       </div>
     </div>
   );
