@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/router";
-import ProjectNavbar from "../../../components/Navbar/ProjectNavbar";
+import ProjectNavbar from "../../../components/Navbar/ArticleNavbar";
 import {
   motion,
   MotionValue,
@@ -14,7 +14,7 @@ import { children } from "@material-tailwind/react/types/components/accordion";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
-import ProjectFooter from "../../../components/Footer/ProjectFooter";
+import ProjectFooter from "../../../components/Footer/ArticleFooter";
 import {
   ArticleDescriptionPage,
   ArticleLandingPage,
@@ -98,11 +98,11 @@ const Landing = ({ title, description, github }: LandingProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.2 }}
             transition={{ duration: 1, delay: 2.2 }}
-            className="text-stroke text-stroke-white text-stroke-fill-transparent text-8xl absolute top-3 left-3 z-40"
+            className="text-stroke text-stroke-white text-stroke-fill-transparent text-8xl absolute top-3 left-3 z-40 w-full text-center"
           >
             {title}
           </motion.p>
-          <motion.div className="text-stroke text-stroke-fill-white text-stroke-white text-8xl z-50 flex">
+          <motion.div className="text-stroke text-stroke-fill-white text-stroke-white text-8xl z-50 flex justify-center">
             {Array.from(title).map((letter, index) => (
               <motion.span
                 key={index}
