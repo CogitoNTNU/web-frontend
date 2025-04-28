@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import EventCard from "../components/Cards/EventCard";
 import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
 import Footer from "../components/Footer/Footer";
-import { hardcodedEvents } from "../data/events";
+import { applicationEvent2025, hardcodedEvents } from "../data/events";
 import Navbar from "../components/Navbar/Navbar";
 
 const Calendar = () => {
