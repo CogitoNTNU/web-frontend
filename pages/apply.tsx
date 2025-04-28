@@ -36,7 +36,7 @@ const Apply = () => {
       <Head>
         <title>Meld deg på - Cogito NTNU</title>
       </Head>
-      <Navbar />
+      <Navbar page={""} />
       <motion.main
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
