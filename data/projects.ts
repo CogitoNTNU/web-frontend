@@ -1,38 +1,37 @@
 import { ProjectApply, ProjectType } from "../lib/types";
-import SudokuLogo from "../public/Projects/SudokuSolver/SudokoSolverLogo.png";
-import MarketingAILogo from "../public/Projects/MarketingAILogo.png";
-import CatMatch from "../public/Projects/CatMatch/CatMatch.png";
 
-export const CogitoProjects: Array<ProjectType> = [
+export const CogitoProjects: ProjectType[] = [
   {
-    image: SudokuLogo,
-    laptopDesc:
-      "SudokuSolver, the perfect program to effortlessly solve sudokus!",
-    phoneDesc: "Sudoku made easy",
-    link: "https://sudoku-solver-sudokusolver.vercel.app",
-    github: "https://github.com/CogitoNTNU/SudokuSolver",
-    leaders: Array<string>("Andreas Jonsterhaug", "Afras Mansoor"),
-    new: true,
-  },
-  {
-    image: MarketingAILogo,
-    laptopDesc:
-      "Marketing AI is a powerful marketing tool made to conquer all social platforms!",
-    phoneDesc: "Marketing done right!",
-    link: "/projects/marketingai",
+    name: "Marketing AI",
     github: "https://github.com/CogitoNTNU/MarketingAI",
-    leaders: Array<string>("Kristoffer Olaisen", "Sverre Nystad"),
-    new: false,
+    img: "/Projects/Cards/MarketingAI.png",
+    playable: true,
+    released: true,
+    url: "/projects/marketingai",
   },
   {
-    image: CatMatch,
-    laptopDesc:
-      "CatMatch, the purrfect website for finding the right cats for you!",
-    phoneDesc: "The purrfect cats!",
-    link: "https://catmatch.rosby.no",
-    github: "https://github.com/CogitoNTNU/CatMatch",
-    leaders: Array<string>("Ulrik Røsby"),
-    new: false,
+    name: "Tutor AI",
+    github: "https://github.com/CogitoNTNU/TutorAI",
+    img: "/Projects/Cards/TutorAI.png",
+    playable: true,
+    released: true,
+    url: "https://tutorai.no/",
+  },
+  {
+    name: "NEATactics",
+    github: "https://github.com/CogitoNTNU/NEATactics",
+    img: "/Projects/Cards/NEATactics.png",
+    playable: false,
+    released: true,
+    url: "/projects/articles/neatactics",
+  },
+  {
+    name: "Crawl AI",
+    github: "https://github.com/CogitoNTNU/CrawlAI",
+    img: "/Projects/Cards/CrawlAI.png",
+    playable: false,
+    released: false,
+    url: "",
   },
 ];
 
