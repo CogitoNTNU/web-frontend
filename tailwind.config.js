@@ -83,6 +83,11 @@ module.exports = withMT({
         toblack: "toblack 1s ease-in-out forwards",
         gradient: "gradient 3s ease infinite",
       },
+      hyphens: {
+        auto: "auto",
+        manual: "manual",
+        none: "none",
+      },
     },
   },
 

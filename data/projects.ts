@@ -39,28 +39,28 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "Infor x Cogito",
     description:
-      "Infor er en stor internasjonal bedrift som tilbyr tjesester og produkter til bedrifter innenfor enterprise resource planning, de er også store på bruk av cloud (AWS sin nest største forbruker). Med rådgivning og resurser fra Infor skall vi lage en AI modell som prøver å predikere hva prisene på treverk hos Byggern bør være ettersom de varierer med sesong. ",
+      "Infor er en stor internasjonal bedrift som tilbyr tjenester og produkter til bedrifter innenfor Enterprise Resource Planning (ERP). De er storforbuker av skytjenester, og er faktisk AWS sin nest største forbuker/kunde. Med rådgivning og ressurser fra Infor skal vi utvikle ulike AI agenter som kan hjelpe Infor med å forbedre deres tjenester og produkter. Dette er en unik mulighet til å jobbe sammen med en stor internasjonal bedrift og få erfaring med å utvikle AI-løsninger for real-world problemstillinger i industrien. ",
     image: "infor.png",
     leaders: ["Thomas Sørensen"],
   },
   {
     name: "TV2 x Cogito",
     description:
-      "Prosjektet utforsker hvordan kunstig intelligens kan hjelpe TV2.no med å ta bedre redaksjonelle valg ved å utnytte store mengder data om leseratferd og artikkelprestasjon. Målet er å bruke maskinlæring for å hjelpe TV2 med å analysere artikkel data for å gi nyttig insikter. Dette prosjektet gir deg muligheten til å være med på å forme fremtidens journalistikk og få industri relevant erfaring med KI.",
+      "Prosjektet utforsker hvordan kunstig intelligens kan hjelpe TV2.no med å ta bedre redaksjonelle valg ved å utnytte store mengder data om leseratferd og artikkelprestasjon. Målet er å bruke maskinlæring for å hjelpe TV2 med å analysere artikkeldata for å gi nyttige innsikter. Dette prosjektet gir deg muligheten til å være med på å forme fremtidens journalistikk og få industrirelevant erfaring med AI.",
     image: "cogitoxtv2.png",
-    leaders: ["Afras Mansoor", "Kristoffer Nohr Olaisen"],
+    leaders: ["Mina Al-Dolaimi"],
   },
   {
     name: "A* x Cogitron",
     description:
-      "Cogitron er et langtidsprosjekt som omhandler å lage en robot som kan navigere og sanse omgivelsene sine. Prosjektet er delt inn i Hardware og Software.",
+      "Cogitron er et ambisiøst langtidsprosjekt som har som mål å utvikle en robot i stand til å navigere og forstå omgivelsene sine helt på egenhånd. Prosjektet kombinerer et bredt spekter av AI-teknologier som Datasyn, Sensor Fusion, beslutningstaking og læring i sanntid. Dette er en fantastisk mulighet til å bruke all teorien man har lært på studiet til å gi et AI-system en fysisk kropp, slik at det kan operere autonomt i den virkelige verden. Cogitron skal kunne tilpasse seg ukjente miljøer og utføre komplekse oppgaver med høy grad av presisjon og effektivitet.",
     image: "astar.png",
-    leaders: ["Florian Creutzig"],
+    leaders: ["Vetle Dahl", "Christian Gynnild"],
   },
   {
-    name: "DeepTactics",
+    name: "MuZero",
     description:
-      "NEAT (NeuroEvolution of Augmenting Topologies) er en metode som brukes for å utvikle AI ved å kombinere nevralnettverk og evolusjon. Den starter med et enkelt nevralnettverk og forbedrer det gjennom mange generasjoner. Hver generasjon får små endringer (mutasjoner) som gjør nettverket bedre til å spille et spill. De beste nettverkene overlever og 'avler' nye nettverk, som blir smartere og mer komplekse over tid. Målet er å skape en AI som blir flinkere til å spille forskjellige spill ved å lære og utvikle seg på en evolusjonær måte.",
+      "Vi skal utvikle et system inspirert av MuZero, utviklet av Google DeepMind. MuZero kombinerer avanserte teknikker innenfor dyp Reinforcement Learning og planlegging, noe som gjør det i stand til å lære komplekse oppgaver fra bunnen av. Ved utelukkende å prosessere bilder fra et spillmiljø lærer systemet seg å mestre spillet gjennom kontinuerlig å spille mot seg selv. Prosjektet vårt vil undersøke hvordan denne teknologien kan anvendes på ulike områder og samtidig utvide vår egen forståelse av autonom læring.",
     image: "deeptactics.webp",
     leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
   },
@@ -71,25 +71,32 @@ export const projectsApply: ProjectApply[] = [
     image: "jarvis.webp",
     leaders: ["William Schmidt"],
   },
+  // {
+  //   name: "Teknologiporten x Cogito",
+  //   description:
+  //     "Ved hjelp av maskinlæring skal Cogito i samarbeid med Teknologiporten predikere hva som kjennetegner de beste Bedriftspresentasjonene. Dette skal gjøres ved å analysere data fra tidligere presentasjoner, og dermed grave oss frem til de avgjørende faktorene som gjør en presentasjon god. Dette prosjektet er i skjæringspunktet mellom industri og studentfrivilligheten, og gir deg muligheten til å jobbe med reelle data og få erfaring med å bruke AI til å løse praktiske problemer.",
+  //   image: "teknologiporten.png",
+  //   leaders: [" "],
+  // },
   {
-    name: "HypeAI",
+    name: "Motion",
     description:
-      "Stadig større andel av medier på nettet er generert fullt eller delvis av KI. Mulighetene er mange. Alt fra bilder og videoer generert av KI, til KI-influensere på instagram, til opplesning av reddit poster med bruk av elevenlabs. Hvordan kan vi få flest mulig likes? Kan vi klare å ha en SoMe konto 100% drevet av KI? Dette er spørsmål som vi ønsker å utforske med dette prosjektet.",
-    image: "hypeai.webp",
-    leaders: ["Henrik Kvamme", "Andreas Jonsterhaug"],
-  },
-  {
-    name: "CrawlAI",
-    description:
-      "CrawlAI er et prosjekt som bruker evolusjonære algoritmer for å lære virtuelle skapninger å bevege seg i et 2D-plan. Gjennom kontinuerlig tilpasning lærer algoritmene å navigere ulike kroppskonfigurasjoner og optimalisere bevegelsesmønstre. Prosjektet kombinerer maskinlæring og kunstig intelligens for å simulere hvordan maskiner kan utvikle seg og mestre komplekse bevegelser over tid.",
-    image: "crawlai.webp",
+      "Motion er et prosjekt som bruker evolusjonære algoritmer for å lære virtuelle skapninger å bevege seg i en 3D-verden. Gjennom kontinuerlig tilpasning lærer algoritmene seg å navigere med ulike kroppskonfigurasjoner og optimalisere bevegelsesmønstre. Prosjektet kombinerer maskinlæring og kunstig intelligens for å simulere hvordan maskiner kan utvikle seg og mestre komplekse bevegelser over tid. Oppsummert: AI-agentene får kropper og må lære seg å bruke dem på best mulig måte.",
+    image: "motion.webp",
     leaders: ["Tobias Fremming"],
   },
   {
-    name: "Rubiks Cube Solver",
+    name: "ChessAR",
     description:
-      "Lær å lage en AI som løser Rubiks kube. Her blir det bruk av GOFAI hvor KI-en løser kuben i en simulator. Senere vil vi prøve å få den ved bruk av datasyn gjenkjenne kubens instillinger for å så løse den.",
-    image: "rubikscube.webp",
-    leaders: ["Einride Osland"],
+      "ChessAR er et prosjekt som bruker augmented reality (AR) for å gjøre det enklere å spille sjakk. Ved å bruke AR-briller skal man kunne se de beste trekkene, projisert på sjakkbrettet. Prosjektet kombinerer maskinlæring, embedded, datasyn og ulike AI-algoritmer tilpasset sjakk.",
+    image: "chessar.webp",
+    leaders: ["Simon Sandvik Lee"],
+  },
+  {
+    name: "Cogito Web",
+    description:
+      "Har du lyst til å lære deg moderne webutvikling og hvordan man deployer AI-prosjekter til produksjon? Da er dette prosjektet for deg. Vi skal bygge ut Cogito-nettsiden i en voldsom skala. Dette prosjektet har tre underprosjekter: Cogito Login, Cogito Community og Cogito Prosjekter",
+    image: "cogito.png",
+    leaders: ["Simon Sandvik Lee"],
   },
 ];

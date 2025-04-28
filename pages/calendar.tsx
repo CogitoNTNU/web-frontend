@@ -27,21 +27,53 @@ const Calendar = () => {
         }}
         className="w-full h-full laptop:pt-[150px] pt-[125px]"
       >
-        <div className="w-[100vw] flex justify-center">
-          <div className="justify-center items-center flex flex-wrap">
-            <ApplicationProcessCard />
-            {eventData.map((event, index) => (
-              <EventCard
-                key={index}
-                name={event.name}
-                date={event.date}
-                subDate={event.subDate}
-                location={event.location}
-                description={event.description}
-                image={event.image}
-                link={event.link}
-              />
-            ))}
+        <div className="w-full px-4 sm:px-12 md:px-32 flex flex-col justify-start items-start gap-12">
+          <p className="bg-gray-default px-8 rounded-2xl font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wide drop-shadow-3xl">
+            Kommende hendelser
+          </p>
+          <div className="flex flex-wrap justify-center xl:justify-start gap-12">
+            <ApplicationProcessCard
+              applicationProcessData={applicationEvent2025}
+            />
+            {eventData
+              .filter((event) => event.date > new Date())
+              .map((event, index) => (
+                <EventCard
+                  key={index}
+                  name={event.name}
+                  date={event.date}
+                  timeString={event.timeString}
+                  subTimeString={event.subTimeString}
+                  location={event.location}
+                  description={event.description}
+                  image={event.image}
+                  link={event.link}
+                  pinned={event.pinned}
+                  openForAll={event.openForAll}
+                />
+              ))}
+          </div>
+          <p className="bg-gray-default px-8 rounded-2xl font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wide drop-shadow-3xl">
+            Tidligere hendelser
+          </p>
+          <div className="flex flex-wrap justify-center xl:justify-start gap-12">
+            {eventData
+              .filter((event) => event.date < new Date())
+              .reverse()
+              .map((event, index) => (
+                <EventCard
+                  key={index}
+                  name={event.name}
+                  date={event.date}
+                  timeString={event.timeString}
+                  subTimeString={event.subTimeString}
+                  location={event.location}
+                  description={event.description}
+                  image={event.image}
+                  link={event.link}
+                  pinned={event.pinned}
+                />
+              ))}
           </div>
         </div>
       </motion.main>

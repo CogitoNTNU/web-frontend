@@ -6,35 +6,43 @@ import { EventType } from "../../lib/types";
 const EventCard: React.FC<EventType> = (props) => {
   const {
     name: eventName,
-    date: eventDate,
-    subDate: eventSubDate,
+    timeString: eventTimeString,
+    subTimeString: eventSubTimeString,
     location: eventLocation,
     description: eventDescription,
     image: eventImage,
     link: eventLink,
     pinned,
+    openForAll,
   } = props;
 
   return (
     <Card>
-      {pinned && (
-        <img
-          className="w-[24px] h-auto mb-[12px]"
-          src="/Calendar/white-pin.png"
-          alt="Pinned event"
-        />
-      )}
       <div className="w-full mb-[12px] flex justify-between phone:flex-row flex-col text-white">
-        <h2 className="phone:w-auto w-full phone:text-2xl text-[17px] font-bold tracking-wide">
+        <h2 className="phone:w-auto w-full phone:text-2xl text-[17px] font-bold tracking-wide flex items-center gap-4">
+          {pinned && (
+            <img
+              className="w-6 h-6"
+              src="/Calendar/white-pin.png"
+              alt="Pinned event"
+            />
+          )}
           {eventName}
         </h2>
-        <div className="phone:w-fit w-full phone:text-end text-start phone:h-[3rem] py-1">
-          <p className="phone:text-xl text-[16px]">{eventDate}</p>
-          {eventSubDate && (
-            <p className="phone:text-[16px] text-[13px]">{eventSubDate}</p>
+        <div className="phone:w-fit w-full min-w-fit phone:text-end text-start phone:h-[3rem] py-1">
+          <p className="phone:text-xl text-[16px]">{eventTimeString}</p>
+          {eventSubTimeString && (
+            <p className="phone:text-[16px] text-[13px] min-w-fit">
+              {eventSubTimeString}
+            </p>
           )}
         </div>
       </div>
+      {openForAll && (
+        <div className="w-full bg-pink-default text-white font-bold text-center py-1 rounded-[10px] mb-4">
+          ÅPENT FOR ALLE! Bare å dukke opp 👋
+        </div>
+      )}
       <div className="flex flex-col text-base text-white tracking-wider pt-1">
         <p className="pb-2">
           {!eventLocation ? "📍TBA" : "📍" + eventLocation}

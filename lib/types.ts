@@ -13,15 +13,28 @@ export type MemberType = {
 
 export type EventType = {
   name: string;
-  date: string;
-  subDate?: string;
+  date: Date;
+  timeString: string;
+  subTimeString?: string;
   location: string;
   description: string;
   image?: StaticImageData;
   link?: string;
   pinned?: boolean;
+  openForAll?: boolean;
 };
 
+export type EventApply = {
+  title: string;
+  dates: string;
+  steps: Array<{
+    name: string;
+    dates: string;
+    lenke?: string;
+    important?: boolean;
+  }>;
+  pinned?: boolean;
+};
 export type ProjectApply = {
   name: string;
   description: string;

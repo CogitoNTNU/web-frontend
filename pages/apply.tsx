@@ -20,7 +20,7 @@ const Apply = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
     null
   );
-  const dueDate = new Date("2024-08-23");
+  const dueDate = new Date("2025-02-01");
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -58,7 +58,7 @@ const Apply = () => {
           </div>
           <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
             <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
-              Søknad - Høstsemesteret 2024
+              Søknad - Vårsemesteret {new Date().getFullYear()}
             </p>
             <div className="w-full h-fit flex justify-center">
               <div className="w-[95%] h-fit rounded-3xl">
@@ -104,9 +104,6 @@ const Due = () => {
                 åpner snart!
               </span>{" "}
               <span className="laptop:block hidden">
-                <span className="font-semibold">
-                  Ventetiden er snart over.{" "}
-                </span>{" "}
                 I mellomtiden kan du lese mer om de tidligere prosjektene våre
                 på prosjektsiden.
               </span>
@@ -134,6 +131,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [phone, setPhone] = useState<string>("");
   const [about, setAbout] = useState<string>("");
   const [chosenProjects, setProjects] = useState<Array<string>>([]);
+  const [lead, setLead] = useState<boolean>(false);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
   const formData = new FormData();
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
@@ -144,6 +142,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
     formData.append("phone_number", phone.replaceAll(" ", ""));
     formData.append("about", about);
     formData.append("projects_to_join", JSON.stringify(chosenProjects));
+    formData.append("lead", lead.toString());
     mutate(formData);
   };
 
@@ -249,6 +248,32 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                   onInfoClick={handleProjectInfoClick}
                 />
               ))}
+            </div>
+          </div>
+          <div className="space-y-4 px-6  py-4">
+            <p className="text-md phone:text-lg">
+              Kunne du sett for deg å være{" "}
+              <span className="text-pink-default">prosjektleder </span>for ett
+              av disse prosjektene? Eller har du et annet prosjekt du ønsker å
+              pitche?
+              <span className="font-bold text-[12px]">
+                {" "}
+                (eksludert Cogitron & Infor)
+              </span>
+            </p>
+            <div className="flex items-center gap-4">
+              <input
+                className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer"
+                type="checkbox"
+                onChange={() => setLead(!lead)}
+              />
+              <div className="absolute w-10 h-10 justify-center items-center flex peer-checked:scale-100 scale-0 pointer-events-none transition-transform">
+                <div className="w-6 h-6 rounded-sm bg-pink-default" />
+              </div>
+              <label className="phone:text-lg text-md">
+                Ja, jeg kan tenke meg å være prosjektleder eller pitche et
+                prosjekt
+              </label>
             </div>
           </div>
           <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
