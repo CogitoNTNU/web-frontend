@@ -99,7 +99,7 @@ const Due = () => {
         <div className="laptop:w-[600px] w-fit tracking-wide tablet:px-2 px-3 h-full laptop:flex items-center">
           <p className="font-bold text-blue-darker tablet:leading-[30px]">
             <span className="tablet:text-[17px] text-[20px] font-normal text-blue-darkest">
-              Søknadsperioden for å bli prosjektmedlem vår 2025 i Cogito {" "}
+              Søknadsperioden for å bli prosjektmedlem vår 2025 i Cogito{" "}
               <span className="text-blue-default font-semibold">
                 er nå slutt!
               </span>{" "}
@@ -108,7 +108,7 @@ const Due = () => {
           </p>
           <img
             className="tablet:w-[130px] w-[100px]"
-            src= "/Test/Hamster-blank.png"
+            src="/Test/Hamster-blank.png"
             alt="hamster meme"
           />
           <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
