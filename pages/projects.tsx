@@ -1,70 +1,126 @@
 import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer/Footer";
-import { motion } from "framer-motion";
 import { ProjectType } from "../lib/types";
 import { CogitoProjects } from "../data/projects";
-
-// Images
-import Banner from "../public/Projects/MarketingAIShowcase.jpg";
 import Project from "../components/Projects/Project";
+import Navbar from "../components/Navbar/Navbar";
+import Link from "next/link";
+
+interface ButtonProps {
+  text: string;
+  type: "play" | "read" | "github";
+  link: string;
+}
+
+const Button = ({ text, type, link }: ButtonProps) => {
+  function getColor() {
+    if (type === "play") return "bg-blue-500";
+    if (type === "read") return "bg-green-500";
+    else return "bg-black-default";
+  }
+  return (
+    <Link href={link} className="flex justify-center w-fit h-fit items-center">
+      <p
+        className={`text-white tracking-wide px-12 py-3 rounded-2xl  ${getColor()}`}
+      >
+        {text}
+      </p>
+    </Link>
+  );
+};
+
+interface ProjectBannerProps {
+  bannerImg: string;
+  description: string;
+  bgImg: string;
+  link: string;
+  github: string;
+  playable: boolean;
+}
+
+const ProjectBanner = ({
+  bannerImg,
+  description,
+  bgImg,
+  link,
+  playable,
+  github,
+}: ProjectBannerProps) => (
+  <div className="relative h-[30rem] w-full flex justify-start px-12 py-8">
+    <div className="z-50 h-full flex flex-col justify-center">
+      <Image
+        src={bannerImg}
+        alt="banner"
+        width={500}
+        height={400}
+        draggable={false}
+      />
+      <p className="text-lg text-white w-3/6 pl-8 pt-4">{description}</p>
+      <div className="flex gap-x-6 px-8 pt-4">
+        {playable ? (
+          <Button text="Prøv ut her" type="play" link={link} />
+        ) : (
+          <Button text="Les mer her" type="read" link={link} />
+        )}
+        <Button text="GitHub" type="github" link={github} />
+      </div>
+    </div>
+    <Image
+      src={bgImg}
+      alt="background"
+      fill
+      className="object-cover rounded-3xl"
+      draggable={false}
+    />
+  </div>
+);
+
+const ProjectCarousel = () => (
+  <div className="rounded-xl h-6/4 w-6/4 ">
+    <ProjectBanner
+      bannerImg={"/Projects/ProjectBanners/MarketingAI/banner.png"}
+      description={
+        "Marketing AI is a powerful marketing tool made to conquer all social platforms, seamlessly optimizing campaigns and maximizing outreach with its advanced capabilities."
+      }
+      bgImg={"/Projects/ProjectBanners/MarketingAI/bg.png"}
+      playable={true}
+      link={"/projects/marketingai"}
+      github={"https://github.com/CogitoNTNU/MarketingAI"}
+    />
+  </div>
+);
 
 const Projects = () => {
   return (
-    <div className="h-full overscroll-contain">
+    <div className="h-fit overscroll-contain animate-toblack">
       <Head>
         <title>Prosjekter - Cogito NTNU</title>
       </Head>
-      <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.4,
-          ease: [0, 0.71, 0.2, 1.0],
-        }}
-        className="relative overflow-hidden"
-      >
-        <div className="relative w-full z-30 flex-none h-[720px]">
-          <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50" />
-          <Image
-            className="absolute inset-0 w-full h-full object-cover shadow-2xl"
-            src={Banner}
-            alt={"banner"}
-          />
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            delay: 0.4,
-            ease: [0, 0.71, 0.2, 1.0],
-          }}
-          className="absolute z-50 w-full flex items-end justify-center phone:top-[700px] top-[650px]"
-        >
-          <p className="bg-gray-default px-8 rounded-2xl absolute font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wid drop-shadow-3xl">
-            PROSJEKTER
+      <Navbar page="projects" />
+      <main className="h-fit w-full pt-44 justify-center items-center flex-col px-20">
+        <ProjectCarousel />
+        <div className="pt-16 pb-12">
+          <p className="text-white font-semibold text-3xl tracking-wide">
+            Prosjekt Galleri
           </p>
-        </motion.div>
-
-        <div className="flex py-6 w-full">
-          <p className="text-center w-full phone:text-[20px] text-[16px] text-white">
-            Her er noen av prosjektene som har blitt laget <br /> av Cogitos
-            medlemmer
-          </p>
-        </div>
-        <div className="flex items-center justify-center">
-          <div className="my-2 w-[70%] h-[2px] bg-gray-lighter"></div>
-        </div>
-
-        <div className="pt-8 flex justify-center">
-          <div className="grid gap-8">
-            {CogitoProjects.map((project: ProjectType) => (
-              <Project key={project.github} {...project} />
-            ))}
+          <div className="flex pt-8 gap-x-12 gap-y-4 flex-wrap">
+            {CogitoProjects.map((project: ProjectType) => {
+              return (
+                <Project
+                  key={project.name}
+                  name={project.name}
+                  released={project.released}
+                  github={project.github}
+                  img={project.img}
+                  url={project.url}
+                  playable={project.playable}
+                />
+              );
+            })}
           </div>
         </div>
-      </motion.main>
+      </main>
       <Footer />
     </div>
   );

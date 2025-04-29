@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -24,6 +26,7 @@ module.exports = {
         black: {
           default: "#1E1E1E",
           dark: "#000000",
+          light: "#151515",
         },
         blue: {
           light: "#30b3ec",
@@ -55,9 +58,30 @@ module.exports = {
           "0%, 100%": { size: "100%" },
           "50%": { size: "120%" },
         },
+        toblack: {
+          from: { backgroundColor: "#13395b" },
+          to: { backgroundColor: "#151515" },
+        },
+        gradient: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+        grow: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
       },
       animation: {
         gradientshift: "gradientshift 3s ease-in-out infinite",
+        grow: "grow 100s infinite",
+        toblack: "toblack 1s ease-in-out forwards",
+        gradient: "gradient 3s ease infinite",
       },
       hyphens: {
         auto: "auto",
@@ -75,5 +99,8 @@ module.exports = {
     "px-12",
     "text-3xl",
   ],
-  plugins: [require("@codaworks/react-glow/tailwind")],
-};
+  plugins: [
+    require("@codaworks/react-glow/tailwind"),
+    require("@designbycode/tailwindcss-text-stroke"),
+  ],
+});

@@ -33,17 +33,16 @@ const HomeP3 = () => {
   };
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
-
-      <div className="absolute w-full h-full">
+      <div className="relative w-full h-[85%]">
         <Image
           priority
           draggable={false}
           loading="eager"
           src={SverreBack}
           alt="Theatre"
-          className="absolute w-full h-[85%] object-cover"
+          className="absolute w-full h-full object-cover"
         />
         <main className="flex absolute justify-center items-center w-full h-full z-[50]">
           <div className="phone:w-[80%] w-[90%] h-[500px] bg-gray-light opacity-95 rounded-3xl">
@@ -100,12 +99,9 @@ const HomeP3 = () => {
             </div>
           </div>
         </main>
-
-        <div className="absolute z-[60] flex items-end justify-center h-full w-full tablet:top-[60px] top-[10px]">
-          <div>
-            <Footer />
-          </div>
-        </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
