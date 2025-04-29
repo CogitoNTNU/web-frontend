@@ -3,7 +3,6 @@ import Image from "next/image";
 import Footer from "../components/Footer/Footer";
 import { ProjectType } from "../lib/types";
 import { CogitoProjects } from "../data/projects";
-import { Carousel } from "@material-tailwind/react";
 import Project from "../components/Projects/Project";
 import Navbar from "../components/Navbar/Navbar";
 import Link from "next/link";
@@ -48,7 +47,7 @@ const ProjectBanner = ({
   playable,
   github,
 }: ProjectBannerProps) => (
-  <div className="h-[30rem] w-full flex justify-start px-12 py-8">
+  <div className="relative h-[30rem] w-full flex justify-start px-12 py-8">
     <div className="z-50 h-full flex flex-col justify-center">
       <Image
         src={bannerImg}
@@ -70,57 +69,26 @@ const ProjectBanner = ({
     <Image
       src={bgImg}
       alt="background"
-      layout="fill"
-      className="object-cover"
+      fill
+      className="object-cover rounded-3xl"
       draggable={false}
     />
   </div>
 );
 
-const Banners: ProjectBannerProps[] = [
-  {
-    bannerImg: "/Projects/ProjectBanners/MarketingAI/banner.png",
-    description:
-      "Marketing AI is a powerful marketing tool made to conquer all social platforms, seamlessly optimizing campaigns and maximizing outreach with its advanced capabilities.",
-    bgImg: "/Projects/ProjectBanners/MarketingAI/bg.png",
-    github: "https://github.com/CogitoNTNU/MarketingAI",
-    link: "/projects/marketingai",
-    playable: true,
-  },
-];
-
 const ProjectCarousel = () => (
-  <Carousel
-    className="rounded-xl h-fit"
-    navigation={({ setActiveIndex, activeIndex, length }) => (
-      <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
-        {new Array(length).fill("").map((_, i) => (
-          <span
-            key={i}
-            className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] ${
-              activeIndex === i ? "w-8 bg-white" : "w-4 bg-white/50"
-            }`}
-            onClick={() => setActiveIndex(i)}
-          />
-        ))}
-      </div>
-    )}
-    loop
-  >
-    {Banners.map((banner: ProjectBannerProps) => {
-      return (
-        <ProjectBanner
-          key={banner.bannerImg}
-          bannerImg={banner.bannerImg}
-          description={banner.description}
-          bgImg={banner.bgImg}
-          playable={banner.playable}
-          link={banner.link}
-          github={banner.github}
-        />
-      );
-    })}
-  </Carousel>
+  <div className="rounded-xl h-6/4 w-6/4 ">
+    <ProjectBanner
+      bannerImg={"/Projects/ProjectBanners/MarketingAI/banner.png"}
+      description={
+        "Marketing AI is a powerful marketing tool made to conquer all social platforms, seamlessly optimizing campaigns and maximizing outreach with its advanced capabilities."
+      }
+      bgImg={"/Projects/ProjectBanners/MarketingAI/bg.png"}
+      playable={true}
+      link={"/projects/marketingai"}
+      github={"https://github.com/CogitoNTNU/MarketingAI"}
+    />
+  </div>
 );
 
 const Projects = () => {
