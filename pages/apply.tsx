@@ -108,7 +108,7 @@ const Due = () => {
           </p>
           <img
             className="tablet:w-[130px] w-[100px]"
-            src= "/Test/Hamster.png"
+            src= "/Test/Hamster-blank.png"
             alt="hamster meme"
           />
           <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
