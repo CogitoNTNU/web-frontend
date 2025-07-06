@@ -10,13 +10,13 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host(`cogito-ntnu.no`,`www.cogito-ntnu.no`)"
-      - "traefik.http.routers.frontend.service=web"
       - "traefik.http.routers.frontend.entrypoints=http"
-      - "traefik.http.middlewares.frontend-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.frontend.rule=Host(`cogito-ntnu.no`) || Host(`www.cogito-ntnu.no`)"
       - "traefik.http.routers.frontend.middlewares=frontend-https-redirect"
+      - "traefik.http.routers.frontend.service=web"
+      - "traefik.http.middlewares.frontend-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.frontend-secure.entrypoints=https"
-      - "traefik.http.routers.frontend-secure.rule=Host(`cogito-ntnu.no`,`www.cogito-ntnu.no`)"
+      - "traefik.http.routers.frontend-secure.rule=Host(`cogito-ntnu.no`) || Host(`www.cogito-ntnu.no`)"
       - "traefik.http.routers.frontend-secure.tls=true"
       - "traefik.http.routers.frontend-secure.tls.certresolver=cloudflare"
       - "traefik.http.routers.frontend-secure.service=web"
