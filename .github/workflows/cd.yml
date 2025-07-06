@@ -19,4 +19,4 @@ jobs:
         env:
           NEXT_PUBLIC_GOOGLE_API_KEY: "${{ secrets.NEXT_PUBLIC_GOOGLE_API_KEY }}"
         run: |
-          sudo docker compose up -d --build
+          docker compose -f prod.compose.yml up -d --build
