@@ -1,0 +1,34 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build Next.js App
+        run: npm run build
+
+      - name: Build Docker image
+        run: |
+          docker compose build
