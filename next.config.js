@@ -1,6 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   swcMinify: true,
+  output: "standalone",
   env: {
     endpoint: "https://backend.cogito-ntnu.no",
     endpointMarketingAI: "https://marketingai.cogito-ntnu.no",
