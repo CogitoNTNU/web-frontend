@@ -13,15 +13,28 @@ export type MemberType = {
 
 export type EventType = {
   name: string;
-  date: string;
-  subDate?: string;
+  date: Date;
+  timeString: string;
+  subTimeString?: string;
   location: string;
   description: string;
   image?: StaticImageData;
   link?: string;
   pinned?: boolean;
+  openForAll?: boolean;
 };
 
+export type EventApply = {
+  title: string;
+  dates: string;
+  steps: Array<{
+    name: string;
+    dates: string;
+    lenke?: string;
+    important?: boolean;
+  }>;
+  pinned?: boolean;
+};
 export type ProjectApply = {
   name: string;
   description: string;
@@ -31,13 +44,45 @@ export type ProjectApply = {
 };
 
 export type ProjectType = {
-  image: StaticImageData;
-  laptopDesc: string;
-  phoneDesc: string;
-  link: string;
+  name: string;
+  img: string;
+  playable?: boolean;
+  released: boolean;
   github: string;
-  leaders: Array<string>;
-  new?: boolean;
+  url: string;
+};
+
+export type ArticleType = {
+  articleId: string;
+  landingPage: ArticleLandingPage;
+  descriptionPage: ArticleDescriptionPage;
+  teamPage: ArticleTeamPage;
+  semester: "Høst" | "Vår";
+  year: number;
+  github?: string;
+};
+
+export type ArticleLandingPage = {
+  title: string;
+  description: string;
+};
+
+export type ArticleDescriptionPage = {
+  description: string;
+  funFacts: string[];
+  links: string[];
+  technologies: string[];
+};
+
+export type ArticleTeamPage = {
+  team: TeamMember[];
+};
+
+export type TeamMember = {
+  name: string;
+  role: "Leder" | "Medlem";
+  github: string;
+  linkedIn: string;
 };
 
 export type GenerateImageParams = {

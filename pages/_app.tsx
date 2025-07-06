@@ -1,7 +1,5 @@
 "use client";
-import Navbar from "../components/Navbar/Navbar";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import "../styles/globals.css";
 import { useState } from "react";
 import {
@@ -23,9 +21,6 @@ const App = ({
   Component,
   pageProps,
 }: AppProps<{ dehydratedState: DehydratedState }>) => {
-  const router = useRouter();
-  const { pathname } = router;
-
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -42,32 +37,12 @@ const App = ({
     await loadSlim(engine);
   }, []);
 
-  if (
-    pathname == "/" ||
-    pathname.includes("/projects/") ||
-    pathname.includes("/project-presentations")
-  ) {
-    return (
-      <QueryClientProvider client={queryClient}>
-        <HydrationBoundary state={pageProps.dehydratedState}>
-          <Head>
-            <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
-          </Head>
-          <Navbar />
-          <Component {...pageProps} />
-        </HydrationBoundary>
-        <ReactQueryDevtools />
-      </QueryClientProvider>
-    );
-  }
-
   return (
     <QueryClientProvider client={queryClient}>
       <HydrationBoundary state={pageProps.dehydratedState}>
         <Head>
           <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
         </Head>
-        <Navbar />
         <Particles
           id="tsparticles"
           init={particlesInit}

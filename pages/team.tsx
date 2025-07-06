@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import team from "../public/Team/Alle.jpg";
 import sverreogolav from "../public/Team/SverreOgOlav.jpg";
 import { useGetMembers } from "../hooks/useGetMembers";
+import Navbar from "../components/Navbar/Navbar";
 
 const Team = () => {
   const [title, setTitle] = useState<string>("");
@@ -107,6 +108,7 @@ const Team = () => {
       <Head>
         <title>Medlemmer - Cogito NTNU</title>
       </Head>
+      <Navbar page="team" />
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
