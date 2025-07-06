@@ -12,6 +12,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.entrypoints=http"
       - "traefik.http.routers.frontend.rule=Host(`cogito-ntnu.no`)"
+      - "traefik.http.routers.frontend.service=web" # ← added
       - "traefik.http.middlewares.frontend-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.frontend.middlewares=frontend-https-redirect"
       - "traefik.http.routers.frontend-secure.entrypoints=https"
@@ -19,7 +20,7 @@ services:
       - "traefik.http.routers.frontend-secure.tls=true"
       - "traefik.http.routers.frontend-secure.tls.certresolver=cloudflare"
       - "traefik.http.routers.frontend-secure.service=web"
-      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.http.services.web.loadbalancer.server.port=3000"
 
 networks:
   proxy:
