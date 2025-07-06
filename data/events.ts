@@ -1,7 +1,6 @@
 import { EventApply, EventType } from "../lib/types";
 import CogitoNight from "../public/Calendar/Cogito-night.jpg";
 import Bowling from "../public/Calendar/Bowling.jpg";
-import PresentationWork from "../public/Calendar/PresentationWork.jpg";
 import Presentation from "../public/Calendar/ProjectPresentations.jpg";
 import MLWorkshop from "../public/Calendar/MLWorkshop.webp";
 import AstarLogo from "../public/Calendar/Astar - Logo.png";
