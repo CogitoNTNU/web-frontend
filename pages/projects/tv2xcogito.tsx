@@ -1,11 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
-import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+interface TeamMember {
+  name: string;
+  role: string;
+  github?: string;
+  linkedin?: string;
+}
 
 const TV2xCogito = () => {
   const [selectedSemester, setSelectedSemester] = useState<"h24" | "v25">(
@@ -28,7 +33,7 @@ const TV2xCogito = () => {
     setTimeout(scrollToContent, 100);
   };
 
-  const h24TeamLeaders = [
+  const h24TeamLeaders: TeamMember[] = [
     {
       name: "Afras Mansoor",
       role: "Prosjektleder",
@@ -43,7 +48,7 @@ const TV2xCogito = () => {
     },
   ];
 
-  const h24TeamMembers = [
+  const h24TeamMembers: TeamMember[] = [
     {
       name: "Alice Zheng",
       role: "Medlem",
@@ -88,7 +93,7 @@ const TV2xCogito = () => {
     },
   ];
 
-  const v25TeamLeaders = [
+  const v25TeamLeaders: TeamMember[] = [
     { 
       name: "Eva Stamatovska", 
       role: "Prosjektleder",
@@ -103,7 +108,7 @@ const TV2xCogito = () => {
     },
   ];
 
-  const v25TeamMentors = [
+  const v25TeamMentors: TeamMember[] = [
     { 
       name: "Sverre Nystad", 
       role: "Mentor",
@@ -118,7 +123,7 @@ const TV2xCogito = () => {
     },
   ];
 
-  const v25TeamMembers = [
+  const v25TeamMembers: TeamMember[] = [
     { 
       name: "Adrian Jacobsen Lund", 
       role: "Medlem",
