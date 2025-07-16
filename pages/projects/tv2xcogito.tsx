@@ -171,7 +171,6 @@ const TV2xCogito = () => {
       <div className="bg-[#100118] min-h-screen">
         {/* Hero Section */}
         <header className="relative tablet:h-[480px] h-[350px] w-full bg-gradient-to-br from-[#702eff] to-[#100118] overflow-hidden">
-
           <div className="relative flex justify-start w-full h-full tablet:px-[6%] px-[4%] items-center">
             <div className="flex items-center gap-8 z-10">
               {/* TV2 Logo */}
