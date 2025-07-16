@@ -94,71 +94,71 @@ const TV2xCogito = () => {
   ];
 
   const v25TeamLeaders: TeamMember[] = [
-    { 
-      name: "Eva Stamatovska", 
+    {
+      name: "Eva Stamatovska",
       role: "Prosjektleder",
       github: "https://github.com/stamatovskaeva",
-      linkedin: "https://www.linkedin.com/in/evastamatovska/"
+      linkedin: "https://www.linkedin.com/in/evastamatovska/",
     },
-    { 
-      name: "Maren Landno", 
+    {
+      name: "Maren Landno",
       role: "Prosjektleder",
       github: "https://github.com/marenlan",
-      linkedin: "https://www.linkedin.com/in/maren-landro-420535249/"
+      linkedin: "https://www.linkedin.com/in/maren-landro-420535249/",
     },
   ];
 
   const v25TeamMentors: TeamMember[] = [
-    { 
-      name: "Sverre Nystad", 
+    {
+      name: "Sverre Nystad",
       role: "Mentor",
       github: "https://github.com/SverreNystad",
-      linkedin: "https://www.linkedin.com/in/sverre-nystad/"
+      linkedin: "https://www.linkedin.com/in/sverre-nystad/",
     },
-    { 
-      name: "Afras Mansoor", 
+    {
+      name: "Afras Mansoor",
       role: "Mentor",
       github: "https://github.com/Afrasum",
-      linkedin: "https://www.linkedin.com/in/afrasmansoor"
+      linkedin: "https://www.linkedin.com/in/afrasmansoor",
     },
   ];
 
   const v25TeamMembers: TeamMember[] = [
-    { 
-      name: "Adrian Jacobsen Lund", 
+    {
+      name: "Adrian Jacobsen Lund",
       role: "Medlem",
       github: "https://github.com/adrianjlundd",
-      linkedin: "https://www.linkedin.com/in/adrian-jacobsen-lund-818a41232/"
+      linkedin: "https://www.linkedin.com/in/adrian-jacobsen-lund-818a41232/",
     },
-    { 
-      name: "Arta Osmani", 
+    {
+      name: "Arta Osmani",
       role: "Medlem",
       github: "https://github.com/Artaosmani",
-      linkedin: "https://www.linkedin.com/in/arta-osmani-569292265/"
+      linkedin: "https://www.linkedin.com/in/arta-osmani-569292265/",
     },
-    { 
-      name: "Håvard Daleng", 
+    {
+      name: "Håvard Daleng",
       role: "Medlem",
       github: "https://github.com/MrMarHVD",
-      linkedin: "https://www.linkedin.com/in/håvard-johannes-daleng-2266b7248/"
+      linkedin: "https://www.linkedin.com/in/håvard-johannes-daleng-2266b7248/",
     },
-    { 
-      name: "Mari Hove Gusdal", 
+    {
+      name: "Mari Hove Gusdal",
       role: "Medlem",
       github: "https://github.com/MariHGU",
-      linkedin: "https://www.linkedin.com/in/mari-hove-gusdal-980395313/"
+      linkedin: "https://www.linkedin.com/in/mari-hove-gusdal-980395313/",
     },
-    { 
-      name: "Sebastian Riibe Berthelsen", 
+    {
+      name: "Sebastian Riibe Berthelsen",
       role: "Medlem",
       github: "https://github.com/sebastianrb05",
-      linkedin: "https://www.linkedin.com/in/sebastianriibeberthelsen/"
+      linkedin: "https://www.linkedin.com/in/sebastianriibeberthelsen/",
     },
-    { 
-      name: "Yatavi Suresh", 
+    {
+      name: "Yatavi Suresh",
       role: "Medlem",
       github: "https://github.com/yada0403",
-      linkedin: "https://www.linkedin.com/in/yatavi-suresh-62149534a/"
+      linkedin: "https://www.linkedin.com/in/yatavi-suresh-62149534a/",
     },
   ];
 
@@ -171,7 +171,6 @@ const TV2xCogito = () => {
       <div className="bg-[#100118] min-h-screen">
         {/* Hero Section */}
         <header className="relative tablet:h-[480px] h-[350px] w-full bg-gradient-to-br from-[#702eff] to-[#100118] overflow-hidden">
-          <div className="absolute inset-0 bg-[#100118] opacity-20"></div>
 
           <div className="relative flex justify-start w-full h-full tablet:px-[6%] px-[4%] items-center">
             <div className="flex items-center gap-8 z-10">
@@ -311,10 +310,7 @@ const TV2xCogito = () => {
                       historiske data fra TV2.no. I løpet av ett semester
                       leverte gruppen en dockerisert tjeneste som lot TV2 laste
                       opp en artikkel og motta prediksjoner om forventet ytelse,
-                      samt forklaringer på hvorfor. 
-                    </p>
-                    <p className="text-white opacity-90 mb-6">
-                      På grunn av
+                      samt forklaringer på hvorfor. På grunn av
                       konfidensialitetsavtale (NDA) kan vi dessverre ikke dele
                       ytterligere detaljer om resultatene.
                     </p>
