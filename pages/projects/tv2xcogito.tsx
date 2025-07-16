@@ -443,7 +443,7 @@ const TV2xCogito = () => {
                 {/* V25 Content */}
                 <section className="mb-16">
                   <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                    Vår 2025 - Pågående
+                    Vår 2025
                   </h3>
                   <div className="bg-[#702eff] bg-opacity-50 border border-[#702eff] rounded-lg p-8 mb-8">
                     <p className="text-white opacity-90 mb-6">
@@ -484,11 +484,6 @@ const TV2xCogito = () => {
                           Hugging Face
                         </span>
                       </div>
-                    </div>
-
-                    <div className="flex justify-center items-center gap-2 text-[#ffbf94]">
-                      <div className="w-2 h-2 bg-[#ffbf94] rounded-full animate-pulse"></div>
-                      <span>Prosjektet pågår</span>
                     </div>
                   </div>
 
