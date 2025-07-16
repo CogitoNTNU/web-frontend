@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaChevronLeft } from "react-icons/fa";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface TeamMember {
   name: string;
@@ -13,9 +15,14 @@ interface TeamMember {
 }
 
 const TV2xCogito = () => {
+  const router = useRouter();
   const [selectedSemester, setSelectedSemester] = useState<"h24" | "v25">(
     "h24"
   );
+
+  const handleBackClick = () => {
+    router.push("/projects");
+  };
 
   const scrollToContent = () => {
     const element = document.getElementById("semester-content");
@@ -168,6 +175,7 @@ const TV2xCogito = () => {
         <title>TV2 x Cogito - Cogito NTNU</title>
       </Head>
       <Navbar page="/" onlyLogo />
+
       <div className="bg-[#100118] min-h-screen">
         {/* Hero Section */}
         <header className="relative tablet:h-[480px] h-[350px] w-full bg-gradient-to-br from-[#702eff] to-[#100118] overflow-hidden">

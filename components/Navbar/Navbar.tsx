@@ -8,6 +8,7 @@ import Hamburger from "hamburger-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Button from "../Buttons/Button";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { FaChevronLeft } from "react-icons/fa";
 
 const containerVariants = {
   hidden: { x: -100, opacity: 0 },
@@ -142,14 +143,21 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
           onClick={async () => {
             await scrollToTop();
           }}
-          href={"/"}
+          href={router.pathname.startsWith("/projects/") ? "/projects" : "/"}
         >
           <div className="flex items-center h-full">
-            <img
-              className="tablet:w-[90px] w-[80px]"
-              src="/cogito_white.svg"
-              alt="logo"
-            />
+            {router.pathname.startsWith("/projects/") ? (
+              <div className="flex items-center gap-2 px-4 py-2 bg-[#702eff] bg-opacity-20 backdrop-blur-sm border border-[#702eff] rounded-lg text-white hover:bg-opacity-30 transition-all">
+                <FaChevronLeft size={16} />
+                <span className="text-sm font-medium">Tilbake til prosjekter</span>
+              </div>
+            ) : (
+              <img
+                className="tablet:w-[90px] w-[80px]"
+                src="/cogito_white.svg"
+                alt="logo"
+              />
+            )}
           </div>
         </Link>
         {!onlyLogo && (
