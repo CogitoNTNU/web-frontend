@@ -12,18 +12,20 @@ const TV2xCogito = () => {
     "h24"
   );
 
+  const scrollToContent = () => {
+    const element = document.getElementById("semester-content");
+    if (element) {
+      const yOffset = -80; // Negative value to stop 80px before the element
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const handleSemesterChange = (semester: "h24" | "v25") => {
     setSelectedSemester(semester);
     // Scroll to content after state update
-    setTimeout(() => {
-      const element = document.getElementById("semester-content");
-      if (element) {
-        const yOffset = -80; // Negative value to stop 80px before the element
-        const y =
-          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    }, 100);
+    setTimeout(scrollToContent, 100);
   };
 
   const h24TeamLeaders = [
@@ -87,22 +89,72 @@ const TV2xCogito = () => {
   ];
 
   const v25TeamLeaders = [
-    { name: "Eva Stamatovska", role: "Prosjektleder" },
-    { name: "Maren Landno", role: "Prosjektleder" },
+    { 
+      name: "Eva Stamatovska", 
+      role: "Prosjektleder",
+      github: "https://github.com/stamatovskaeva",
+      linkedin: "https://www.linkedin.com/in/evastamatovska/"
+    },
+    { 
+      name: "Maren Landno", 
+      role: "Prosjektleder",
+      github: "https://github.com/marenlan",
+      linkedin: "https://www.linkedin.com/in/maren-landro-420535249/"
+    },
   ];
 
   const v25TeamMentors = [
-    { name: "Sverre Nystad", role: "Mentor" },
-    { name: "Afras Mansoor", role: "Mentor" },
+    { 
+      name: "Sverre Nystad", 
+      role: "Mentor",
+      github: "https://github.com/SverreNystad",
+      linkedin: "https://www.linkedin.com/in/sverre-nystad/"
+    },
+    { 
+      name: "Afras Mansoor", 
+      role: "Mentor",
+      github: "https://github.com/Afrasum",
+      linkedin: "https://www.linkedin.com/in/afrasmansoor"
+    },
   ];
 
   const v25TeamMembers = [
-    { name: "Adrian Jacobsen Lund", role: "Medlem" },
-    { name: "Arta Osmani", role: "Medlem" },
-    { name: "Håvard Daleng", role: "Medlem" },
-    { name: "Mari Hove Gusdal", role: "Medlem" },
-    { name: "Sebastian Riibe Berthelsen", role: "Medlem" },
-    { name: "Yatavi Suresh", role: "Medlem" },
+    { 
+      name: "Adrian Jacobsen Lund", 
+      role: "Medlem",
+      github: "https://github.com/adrianjlundd",
+      linkedin: "https://www.linkedin.com/in/adrian-jacobsen-lund-818a41232/"
+    },
+    { 
+      name: "Arta Osmani", 
+      role: "Medlem",
+      github: "https://github.com/Artaosmani",
+      linkedin: "https://www.linkedin.com/in/arta-osmani-569292265/"
+    },
+    { 
+      name: "Håvard Daleng", 
+      role: "Medlem",
+      github: "https://github.com/MrMarHVD",
+      linkedin: "https://www.linkedin.com/in/håvard-johannes-daleng-2266b7248/"
+    },
+    { 
+      name: "Mari Hove Gusdal", 
+      role: "Medlem",
+      github: "https://github.com/MariHGU",
+      linkedin: "https://www.linkedin.com/in/mari-hove-gusdal-980395313/"
+    },
+    { 
+      name: "Sebastian Riibe Berthelsen", 
+      role: "Medlem",
+      github: "https://github.com/sebastianrb05",
+      linkedin: "https://www.linkedin.com/in/sebastianriibeberthelsen/"
+    },
+    { 
+      name: "Yatavi Suresh", 
+      role: "Medlem",
+      github: "https://github.com/yada0403",
+      linkedin: "https://www.linkedin.com/in/yatavi-suresh-62149534a/"
+    },
   ];
 
   return (
@@ -237,26 +289,29 @@ const TV2xCogito = () => {
             </div>
           </motion.section>
 
-          {/* Semester Content */}
-          <div id="semester-content">
+          {/* Semester Content - Integrated into main */}
+          <section id="semester-content" className="mt-8">
             {selectedSemester === "h24" ? (
-              <motion.div
-                key="h24"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
+              <div>
                 {/* H24 Content */}
                 <section className="mb-16">
-                  <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center">
                     TV2 Article Predictor
                   </h3>
                   <div className="bg-[#702eff] bg-opacity-50 border border-[#702eff] rounded-lg p-8 mb-8">
                     <p className="text-white opacity-90 mb-6">
-                      I høstsemesteret 2024 utviklet teamet TV2 Article
-                      Predictor - et system for å analysere og predikere hvor
-                      godt nye artikler kommer til å prestere basert på
-                      historisk data fra TV2.no.
+                      I løpet av høstsemesteret 2024 utviklet teamet TV2 Article
+                      Predictor – et system som analyserer og predikerer hvordan
+                      nye artikler sannsynligvis vil prestere, basert på
+                      historiske data fra TV2.no. I løpet av ett semester
+                      leverte gruppen en dockerisert tjeneste som lot TV2 laste
+                      opp en artikkel og motta prediksjoner om forventet ytelse,
+                      samt forklaringer på hvorfor. 
+                    </p>
+                    <p className="text-white opacity-90 mb-6">
+                      På grunn av
+                      konfidensialitetsavtale (NDA) kan vi dessverre ikke dele
+                      ytterligere detaljer om resultatene.
                     </p>
 
                     <div className="mb-6">
@@ -301,7 +356,7 @@ const TV2xCogito = () => {
                         {h24TeamLeaders.map((member) => (
                           <div
                             key={member.name}
-                            className="bg-[#702eff] bg-opacity-50 border border-[#702eff] p-4 rounded-lg text-center"
+                            className="bg-[#702eff] bg-opacity-50 border border-[#702eff] p-10 rounded-lg text-center"
                           >
                             <p className="text-white font-medium mb-3">
                               {member.name}
@@ -343,7 +398,7 @@ const TV2xCogito = () => {
                           {h24TeamMembers.map((member, index) => (
                             <div
                               key={member.name}
-                              className={`bg-[#702eff] bg-opacity-40 border border-[#702eff] border-opacity-30 p-4 rounded-lg text-center ${
+                              className={`bg-[#702eff] bg-opacity-40 border border-[#702eff] border-opacity-30 p-8 rounded-lg text-center ${
                                 index === h24TeamMembers.length - 1 &&
                                 h24TeamMembers.length % 3 === 1
                                   ? "tablet:col-start-2"
@@ -382,18 +437,12 @@ const TV2xCogito = () => {
                     </div>
                   </div>
                 </section>
-                <div className="h-20"></div>
-              </motion.div>
+              </div>
             ) : (
-              <motion.div
-                key="v25"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
+              <div>
                 {/* V25 Content */}
                 <section className="mb-16">
-                  <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center">
                     Vår 2025 - Pågående
                   </h3>
                   <div className="bg-[#702eff] bg-opacity-50 border border-[#702eff] rounded-lg p-8 mb-8">
@@ -407,8 +456,8 @@ const TV2xCogito = () => {
                     <p className="text-white opacity-90 mb-6">
                       Dette semesteret har teamet et ekstra fokus på å utforske
                       embedding-modeller for bedre tekstforståelse, utvikle
-                      modeller som håndterer sesongvariasjoner mer effektivt,
-                      og undersøke hvordan bilder påvirker artiklers ytelse.
+                      modeller som håndterer sesongvariasjoner mer effektivt, og
+                      undersøke hvordan bilder påvirker artiklers ytelse.
                     </p>
 
                     <div className="mb-6">
@@ -458,11 +507,33 @@ const TV2xCogito = () => {
                         {v25TeamLeaders.map((member) => (
                           <div
                             key={member.name}
-                            className="bg-[#702eff] bg-opacity-50 border border-[#702eff] p-4 rounded-lg text-center"
+                            className="bg-[#702eff] bg-opacity-50 border border-[#702eff] p-10 rounded-lg text-center"
                           >
-                            <p className="text-white font-medium">
+                            <p className="text-white font-medium mb-3">
                               {member.name}
                             </p>
+                            <div className="flex justify-center gap-3">
+                              {member.github && (
+                                <a
+                                  href={member.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-white hover:text-[#ffbf94] transition-colors"
+                                >
+                                  <FaGithub size={20} />
+                                </a>
+                              )}
+                              {member.linkedin && (
+                                <a
+                                  href={member.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-white hover:text-[#ffbf94] transition-colors"
+                                >
+                                  <FaLinkedin size={20} />
+                                </a>
+                              )}
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -477,11 +548,33 @@ const TV2xCogito = () => {
                         {v25TeamMentors.map((member) => (
                           <div
                             key={member.name}
-                            className="bg-[#702eff] bg-opacity-40 border border-[#702eff] border-opacity-30 p-4 rounded-lg text-center"
+                            className="bg-[#702eff] bg-opacity-40 border border-[#702eff] border-opacity-30 p-8 rounded-lg text-center"
                           >
-                            <p className="text-white font-medium">
+                            <p className="text-white font-medium mb-3">
                               {member.name}
                             </p>
+                            <div className="flex justify-center gap-3">
+                              {member.github && (
+                                <a
+                                  href={member.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-white hover:text-[#ffbf94] transition-colors"
+                                >
+                                  <FaGithub size={18} />
+                                </a>
+                              )}
+                              {member.linkedin && (
+                                <a
+                                  href={member.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-white hover:text-[#ffbf94] transition-colors"
+                                >
+                                  <FaLinkedin size={18} />
+                                </a>
+                              )}
+                            </div>
                           </div>
                         ))}
                       </div>
@@ -496,21 +589,42 @@ const TV2xCogito = () => {
                         {v25TeamMembers.map((member) => (
                           <div
                             key={member.name}
-                            className="bg-[#702eff] bg-opacity-10 border border-[#702eff] border-opacity-30 p-4 rounded-lg text-center"
+                            className="bg-[#702eff] bg-opacity-40 border border-[#702eff] border-opacity-30 p-8 rounded-lg text-center"
                           >
-                            <p className="text-white font-medium">
+                            <p className="text-white font-medium mb-3">
                               {member.name}
                             </p>
+                            <div className="flex justify-center gap-3">
+                              {member.github && (
+                                <a
+                                  href={member.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-white hover:text-[#ffbf94] transition-colors"
+                                >
+                                  <FaGithub size={18} />
+                                </a>
+                              )}
+                              {member.linkedin && (
+                                <a
+                                  href={member.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-white hover:text-[#ffbf94] transition-colors"
+                                >
+                                  <FaLinkedin size={18} />
+                                </a>
+                              )}
+                            </div>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
                 </section>
-                <div className="h-20"></div>
-              </motion.div>
+              </div>
             )}
-          </div>
+          </section>
         </main>
 
         <Footer />
@@ -520,4 +634,3 @@ const TV2xCogito = () => {
 };
 
 export default TV2xCogito;
-
