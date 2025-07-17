@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaChevronLeft } from "react-icons/fa";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 interface TeamMember {
   name: string;
@@ -15,14 +13,9 @@ interface TeamMember {
 }
 
 const TV2xCogito = () => {
-  const router = useRouter();
   const [selectedSemester, setSelectedSemester] = useState<"h24" | "v25">(
     "h24"
   );
-
-  const handleBackClick = () => {
-    router.push("/projects");
-  };
 
   const scrollToContent = () => {
     const element = document.getElementById("semester-content");
@@ -37,7 +30,7 @@ const TV2xCogito = () => {
   const handleSemesterChange = (semester: "h24" | "v25") => {
     setSelectedSemester(semester);
     // Scroll to content after state update
-    setTimeout(scrollToContent, 100);
+    void setTimeout(scrollToContent, 100);
   };
 
   const h24TeamLeaders: TeamMember[] = [

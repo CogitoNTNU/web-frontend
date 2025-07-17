@@ -149,7 +149,9 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
             {router.pathname.startsWith("/projects/") ? (
               <div className="flex items-center gap-2 px-4 py-2 bg-[#702eff] bg-opacity-20 backdrop-blur-sm border border-[#702eff] rounded-lg text-white hover:bg-opacity-30 transition-all">
                 <FaChevronLeft size={16} />
-                <span className="text-sm font-medium">Tilbake til prosjekter</span>
+                <span className="text-sm font-medium">
+                  Tilbake til prosjekter
+                </span>
               </div>
             ) : (
               <img
