@@ -33,6 +33,14 @@ export const CogitoProjects: ProjectType[] = [
     released: false,
     url: "",
   },
+  {
+    name: "TV2 x Cogito",
+    github: "https://github.com/CogitoNTNU/TV2xCogito",
+    img: "/Projects/ProjectLogos/cogitoxtv2.png",
+    playable: false,
+    released: true,
+    url: "/projects/tv2xcogito",
+  },
 ];
 
 export const projectsApply: ProjectApply[] = [
