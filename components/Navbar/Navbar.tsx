@@ -136,7 +136,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
         variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="flex flex-row w-full h-[120px] px-20 text-lg fixed text-white z-[100]"
+        className="flex flex-row w-full h-[120px] px-6 tablet:px-20 text-lg fixed text-white z-[100]"
       >
         <Link
           onClick={async () => {
