@@ -37,7 +37,7 @@ const YearSemesterSelector: React.FC<YearSemesterSelectorProps> = ({
   onNext,
   nextDisabled,
   prevDisabled,
-  bannerSrc = "/Team/Alle.jpg",
+  bannerSrc,
   titleLabel = "MEMBERS",
 }: YearSemesterSelectorProps) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -54,13 +54,33 @@ const YearSemesterSelector: React.FC<YearSemesterSelectorProps> = ({
 
   return (
     <div className="relative h-[720px] xs:h-[580px] sm:h-[620px] w-full select-none">
-      <Image
-        src={bannerSrc}
-        alt="Cogito banner"
-        fill
-        priority
-        className="object-cover"
-      />
+      {bannerSrc ? (
+        <Image
+          src={bannerSrc}
+          alt="Cogito banner"
+          fill
+          priority
+          className="object-cover"
+        />
+      ) : (
+        <>
+          <Image
+            src="/Team/Alle.jpg"
+            alt="banner desktop"
+            fill
+            priority
+            className="object-cover hidden sm:block"
+          />
+          <Image
+            src="/Team/SverreOgOlav.jpg"
+            alt="banner mobile"
+            fill
+            priority
+            className="object-cover sm:hidden"
+          />
+        </>
+      )}
+
       <div className="absolute inset-0 bg-gradient-to-b from-blue-dark/30 to-transparent" />
 
       <div className="absolute inset-x-0 bottom-4 sm:bottom-6 flex items-start justify-center px-3">
