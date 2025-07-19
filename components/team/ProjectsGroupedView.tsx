@@ -7,16 +7,19 @@ interface MemberRole {
   member: any;
   role: string;
 }
+
 interface Group {
   project: Project;
   members: MemberRole[];
 }
+
 interface Props {
   grouped: Group[];
   expandedSections: Record<number, boolean>;
   onToggleExpand: (id: number) => void;
   limit?: number;
 }
+
 const ProjectsGroupedView: React.FC<Props> = ({
   grouped,
   expandedSections,

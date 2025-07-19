@@ -44,6 +44,7 @@ const TeamPage: React.FC = () => {
         <title>Medlemmer - Cogito NTNU</title>
       </Head>
       <Navbar page="team" />
+
       {/* Banner & Year/Semester */}
       <YearSemesterSelector
         year={year}

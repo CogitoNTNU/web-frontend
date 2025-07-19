@@ -9,28 +9,85 @@ const DEFAULT_SECTION_LIMIT = 40;
 const getCurrentSemester = (): "Spring" | "Fall" =>
   new Date().getMonth() + 1 <= 6 ? "Spring" : "Fall";
 
+type SemesterTuple = { year: number; semester: "Spring" | "Fall" };
+
+function compareSemesters(a: SemesterTuple, b: SemesterTuple) {
+  // Positive if a > b (later), negative if a < b
+  if (a.year !== b.year) return a.year - b.year;
+  if (a.semester === b.semester) return 0;
+  return a.semester === "Spring" ? -1 : 1; // Spring before Fall
+}
+
+function getLastOccupiedSemester(members?: Member[]): SemesterTuple | null {
+  if (!members || members.length === 0) return null;
+  let latest: SemesterTuple | null = null;
+
+  for (const m of members) {
+    for (const pm of m.project_memberships) {
+      // Ignore any memberships possibly tagged with a future year
+      if (pm.year > CURRENT_YEAR) continue;
+      const candidate: SemesterTuple = { year: pm.year, semester: pm.semester };
+      if (!latest || compareSemesters(candidate, latest) > 0) {
+        latest = candidate;
+      }
+    }
+  }
+  return latest;
+}
+
+/* ------------------------------------------------------------------- */
+
 export function useTeamData() {
+  const { data: members, isLoading: membersLoading } = useAllMembers();
+  const { data: projects } = useAllProjects();
+
+  // Start with *current* date; an effect below will shift to last occupied if needed.
   const [semester, setSemester] = useState<"Spring" | "Fall">(
     getCurrentSemester()
   );
   const [year, setYear] = useState<number>(CURRENT_YEAR);
+
   const [projectFilter, setProjectFilter] = useState<string | null>(null);
   const [selectorOpen, setSelectorOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState<
     Record<number, boolean>
   >({});
-  const { data: members, isLoading: membersLoading } = useAllMembers();
-  const { data: projects } = useAllProjects();
+
+  // EFFECT: After members load, snap to the latest semester/year that actually has members
+  useEffect(() => {
+    if (!members) return;
+
+    const last = getLastOccupiedSemester(members);
+    // No data at all; leave defaults.
+    if (!last) return;
+
+    const currentHasMembers = members.some((m) =>
+      m.project_memberships.some(
+        (pm) => pm.year === year && pm.semester === semester
+      )
+    );
+
+    const currentIsAfterLast = compareSemesters({ year, semester }, last) > 0;
+
+    // If user is on an empty or future semester, move to last occupied.
+    if (
+      (!currentHasMembers || currentIsAfterLast) &&
+      (year !== last.year || semester !== last.semester)
+    ) {
+      setYear(last.year);
+      setSemester(last.semester);
+    }
+  }, [members, year, semester]);
 
   const yearsAvailable = useMemo(() => {
     if (!members) return [] as number[];
     const years = new Set<number>();
     members.forEach((m) =>
-      m.project_memberships.forEach((pm) => years.add(pm.year))
+      m.project_memberships.forEach((pm) => {
+        if (pm.year <= CURRENT_YEAR) years.add(pm.year);
+      })
     );
-    return Array.from(years)
-      .filter((y) => y <= CURRENT_YEAR)
-      .sort((a, b) => a - b);
+    return Array.from(years).sort((a, b) => a - b);
   }, [members]);
 
   const nextDisabled = semester === "Fall" && year >= CURRENT_YEAR;
@@ -80,9 +137,14 @@ export function useTeamData() {
     if (!projects) return [];
     return projects.filter((p) => activeProjectIds.has(p.id));
   }, [projects, activeProjectIds]);
+
   useEffect(() => {
-    if (projectFilter && !activeProjects.some((p) => p.name === projectFilter))
+    if (
+      projectFilter &&
+      !activeProjects.some((p) => p.name === projectFilter)
+    ) {
       setProjectFilter(null);
+    }
   }, [projectFilter, activeProjects]);
 
   const groupedByProject = useMemo(() => {
@@ -91,10 +153,12 @@ export function useTeamData() {
         project: Project;
         members: { member: Member; role: string }[];
       }[];
+
     const map = new Map<
       number,
       { project: Project; members: { member: Member; role: string }[] }
     >();
+
     semesterMembers.forEach((member) => {
       member.project_memberships.forEach((pm) => {
         if (
@@ -106,6 +170,7 @@ export function useTeamData() {
             activeProjects.find((p) => p.id === pm.project.id) ||
             projects?.find((p) => p.id === pm.project.id);
           if (!fullProject) return;
+
           const entry = { member, role: pm.role || member.title };
           const bucket = map.get(fullProject.id);
           if (bucket) {
@@ -117,6 +182,7 @@ export function useTeamData() {
         }
       });
     });
+
     return activeProjects
       .filter((p) => map.has(p.id))
       .map((p) => ({
