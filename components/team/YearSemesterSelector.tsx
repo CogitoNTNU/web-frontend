@@ -148,14 +148,6 @@ const YearSemesterSelector: React.FC<YearSemesterSelectorProps> = ({
                     }
                   >
                     {y}
-                    <span
-                      className={
-                        "relative pb-1 px-1 transition " +
-                        (active
-                          ? "text-white"
-                          : "text-white/70 hover:text-white")
-                      }
-                    />
                   </button>
                 );
               })}
