@@ -2,14 +2,12 @@
 
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
-import MemberCard from "../components/Member/Member";
 import { useTeamData } from "../hooks/useTeamData";
 import YearSemesterSelector from "../components/team/YearSemesterSelector";
 import ProjectFilterChips from "../components/team/ProjectFilterChips";
-import ProjectsGroupedView from "../components/team/ProjectsGroupedView";
-import { motion } from "framer-motion";
-import { Member } from "../lib/types";
+import { Project } from "../lib/types";
 import Footer from "../components/Footer/Footer";
+import ProjectSection from "../components/team/ProjectSection";
 
 const TeamPage: React.FC = () => {
   const {
@@ -18,7 +16,6 @@ const TeamPage: React.FC = () => {
     semester,
     projectFilter,
     selectorOpen,
-    expandedSections,
     // data
     loading,
     yearsAvailable,
@@ -35,7 +32,6 @@ const TeamPage: React.FC = () => {
     prevSemester,
     nextDisabled,
     prevDisabled,
-    toggleExpand,
   } = useTeamData();
 
   return (
@@ -78,14 +74,26 @@ const TeamPage: React.FC = () => {
         ) : (
           <div className="space-y-16 sm:space-y-20">
             {projectFilter == null ? (
-              <ProjectsGroupedView
-                grouped={groupedByProject}
-                expandedSections={expandedSections}
-                onToggleExpand={toggleExpand}
-              />
+              groupedByProject.length === 0 ? (
+                <p className="text-center text-gray-500 text-sm sm:text-base">
+                  No project members found for this semester.
+                </p>
+              ) : (
+                groupedByProject.map((g) => (
+                  <ProjectSection
+                    key={g.project.id}
+                    project={g.project}
+                    members={g.members}
+                  />
+                ))
+              )
             ) : (
-              <SingleProjectView
-                projectName={projectFilter}
+              <ProjectSection
+                project={{
+                  ...(activeProjects.find(
+                    (p) => p.name === projectFilter
+                  ) as Project),
+                }}
                 members={filteredFlatMembers}
               />
             )}
@@ -97,43 +105,4 @@ const TeamPage: React.FC = () => {
   );
 };
 
-interface FlatMember {
-  member: Member;
-  role: string;
-}
-
-const SingleProjectView = ({
-  projectName,
-  members,
-}: {
-  projectName: string;
-  members: FlatMember[];
-}) => {
-  if (members.length === 0) {
-    return (
-      <p className="text-center text-gray-500 text-sm sm:text-base">
-        No members in this project for the selected semester.
-      </p>
-    );
-  }
-  return (
-    <section className="mx-auto w-full max-w-[1750px]">
-      <header className="mb-4 text-blue-dark text-center px-2">
-        <p className="font-semibold text-[22px] xs:text-[24px] tablet:text-[40px] tracking-wide">
-          {projectName.toUpperCase()}
-        </p>
-      </header>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
-        className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10 px-1"
-      >
-        {members.map(({ member }) => (
-          <MemberCard key={member.order} member={member} />
-        ))}
-      </motion.div>
-    </section>
-  );
-};
 export default TeamPage;
