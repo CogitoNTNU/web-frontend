@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Cogitron",
+    "logo": "/logos/cogitron.png",
+    "description": "Cogitron is a robotics project focused on developing advanced AI‑driven robots capable of performing complex tasks autonomously by integrating machine learning, computer vision and robust mechatronics.",
+    "github_link": "https://github.com/cogito-ntnu/cogitron"
+  },
+  {
+    "id": 2,
+    "name": "TutorAI",
+    "logo": "/logos/tutorai.png",
+    "description": "TutorAI is an educational platform that leverages large language models to deliver adaptive, personalized learning paths, dynamic feedback and study analytics to students.",
+    "github_link": "https://github.com/cogito-ntnu/tutorai"
+  },
+  {
+    "id": 3,
+    "name": "Deeptactics",
+    "logo": "/logos/deeptactics.png",
+    "description": "Deeptactics explores deep reinforcement learning and game theory to build agents that plan, adapt and strategize optimally in complex multi‑step decision environments.",
+    "github_link": "https://github.com/cogito-ntnu/deeptactics"
+  },
+  {
+    "id": 4,
+    "name": "Styret",
+    "logo": "/logos/org.png",
+    "description": "Styret is the board of Cogito, overseeing strategic direction, governance, finance and cross‑project alignment to ensure sustainable impact.",
+    "github_link": ""
+  },
+  {
+    "id": 5,
+    "name": "Web Platform",
+    "logo": "/logos/webplatform.png",
+    "description": "Full‑stack internal platform providing member portal, event management, content publishing, authentication and role‑based access.",
+    "github_link": "https://github.com/cogito-ntnu/web-platform"
+  },
+  {
+    "id": 6,
+    "name": "EdgeVision",
+    "logo": "/logos/edgevision.png",
+    "description": "Low‑power embedded vision hardware and firmware enabling on‑device object detection, tracking and sensor fusion at the edge.",
+    "github_link": "https://github.com/cogito-ntnu/edgevision"
+  },
+  {
+    "id": 7,
+    "name": "VisionDetect",
+    "logo": "/logos/visiondetect.png",
+    "description": "Cross‑platform computer vision library and benchmarking suite for training, evaluating and optimizing detection models.",
+    "github_link": "https://github.com/cogito-ntnu/vision-detect"
+  },
+  {
+    "id": 8,
+    "name": "DataLake",
+    "logo": "/logos/datalake.png",
+    "description": "Centralized data infrastructure handling ingestion, ETL, quality checks and analytics datasets for all active projects.",
+    "github_link": "https://github.com/cogito-ntnu/datalake"
+  },
+  {
+    "id": 9,
+    "name": "InfraOps",
+    "logo": "/logos/infraops.png",
+    "description": "Shared infrastructure, IaC modules, observability stack and CI/CD pipelines standardizing deployment across projects.",
+    "github_link": "https://github.com/cogito-ntnu/infraops"
+  },
+  {
+    "id": 10,
+    "name": "Outreach",
+    "logo": "/logos/outreach.png",
+    "description": "Partnerships, events and public engagement initiatives expanding Cogito's network, recruitment and visibility.",
+    "github_link": ""
+  },
+  {
+    "id": 11,
+    "name": "LegacyBot",
+    "logo": "/logos/legacybot.png",
+    "description": "Early differential‑drive exploration robot used to prototype navigation, SLAM and embedded control frameworks.",
+    "github_link": "https://github.com/cogito-ntnu/legacybot"
+  },
+  {
+    "id": 12,
+    "name": "Portal v1",
+    "logo": "/logos/portalv1.png",
+    "description": "First generation member portal focusing on authentication, announcements feed and basic project directory.",
+    "github_link": "https://github.com/cogito-ntnu/portal-v1"
+  },
+  {
+    "id": 13,
+    "name": "Economy Tools",
+    "logo": "/logos/economy.png",
+    "description": "Automation suite for budgeting, reimbursements, expense tracking, ledger exports and financial reporting.",
+    "github_link": "https://github.com/cogito-ntnu/economy-tools"
+  },
+  {
+    "id": 14,
+    "name": "DataPipeline v1",
+    "logo": "/logos/datapipeline.png",
+    "description": "First generation ETL pipeline consolidating sensor logs, experiment metrics and annotated datasets.",
+    "github_link": "https://github.com/cogito-ntnu/data-pipeline-v1"
+  },
+  {
+    "id": 15,
+    "name": "EarlyCV",
+    "logo": "/logos/earlycv.png",
+    "description": "Prototype computer vision stack for foundational experiments in line following, color segmentation and basic detection.",
+    "github_link": "https://github.com/cogito-ntnu/early-cv"
+  },
+  {
+    "id": 16,
+    "name": "Foundations",
+    "logo": "/logos/foundations.png",
+    "description": "Initial organizational setup project establishing documentation, coding standards, onboarding and knowledge base.",
+    "github_link": "https://github.com/cogito-ntnu/foundations"
+  }
+]

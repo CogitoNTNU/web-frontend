@@ -1,0 +1,1178 @@
+[
+  {
+    "order": 1,
+    "name": "John Doe",
+    "title": "Project Leader",
+    "image": "/Team/JohnDoe.jpg",
+    "email": "john.doe@cogito-ntnu.no",
+    "github": "https://github.com/johndoe",
+    "linkedIn": "https://www.linkedin.com/in/johndoe",
+    "category": ["Prosjektmedlemmer", "Cogitron"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 1,
+          "name": "Cogitron",
+          "logo": "/logos/cogitron.png",
+          "description": "Autonomous cognitive robotics platform focused on indoor navigation and manipulation.",
+          "github_link": "https://github.com/cogito-ntnu/cogitron"
+        },
+        "role": "Project Leader",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 1,
+          "name": "Cogitron",
+          "logo": "/logos/cogitron.png",
+          "description": "Autonomous cognitive robotics platform focused on indoor navigation and manipulation.",
+          "github_link": "https://github.com/cogito-ntnu/cogitron"
+        },
+        "role": "System Architect",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 1,
+          "name": "Cogitron",
+          "logo": "/logos/cogitron.png",
+          "description": "Autonomous cognitive robotics platform focused on indoor navigation and manipulation.",
+          "github_link": "https://github.com/cogito-ntnu/cogitron"
+        },
+        "role": "Perception Engineer",
+        "year": 2024,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 6,
+          "name": "EdgeVision",
+          "logo": "/logos/edgevision.png",
+          "description": "Low-power embedded vision module for real-time object detection.",
+          "github_link": "https://github.com/cogito-ntnu/edgevision"
+        },
+        "role": "Embedded Vision Engineer",
+        "year": 2023,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 6,
+          "name": "EdgeVision",
+          "logo": "/logos/edgevision.png",
+          "description": "Low-power embedded vision module for real-time object detection.",
+          "github_link": "https://github.com/cogito-ntnu/edgevision"
+        },
+        "role": "Firmware Developer",
+        "year": 2023,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 11,
+          "name": "LegacyBot",
+          "logo": "/logos/legacybot.png",
+          "description": "Early differential-drive exploration robot with SLAM experiments.",
+          "github_link": "https://github.com/cogito-ntnu/legacybot"
+        },
+        "role": "Navigation Developer",
+        "year": 2022,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 11,
+          "name": "LegacyBot",
+          "logo": "/logos/legacybot.png",
+          "description": "Early differential-drive exploration robot with SLAM experiments.",
+          "github_link": "https://github.com/cogito-ntnu/legacybot"
+        },
+        "role": "Localization Intern",
+        "year": 2022,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 2,
+    "name": "Jane Smith",
+    "title": "Data Scientist",
+    "image": "/Team/JaneSmith.jpg",
+    "email": "jane.smith@cogito-ntnu.no",
+    "github": "https://github.com/janesmith",
+    "linkedIn": "https://www.linkedin.com/in/janesmith",
+    "category": ["Prosjektmedlemmer", "TutorAI", "AI/ML"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 2,
+          "name": "TutorAI",
+          "logo": "/logos/tutorai.png",
+          "description": "Adaptive learning assistant leveraging LLMs for personalized study plans.",
+          "github_link": "https://github.com/cogito-ntnu/tutorai"
+        },
+        "role": "ML Engineer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 2,
+          "name": "TutorAI",
+          "logo": "/logos/tutorai.png",
+          "description": "Adaptive learning assistant leveraging LLMs for personalized study plans.",
+          "github_link": "https://github.com/cogito-ntnu/tutorai"
+        },
+        "role": "ML Engineer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 8,
+          "name": "DataLake",
+          "logo": "/logos/datalake.png",
+          "description": "Centralized data storage and ETL pipeline for project analytics.",
+          "github_link": "https://github.com/cogito-ntnu/datalake"
+        },
+        "role": "Data Scientist",
+        "year": 2024,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 7,
+          "name": "VisionDetect",
+          "logo": "/logos/visiondetect.png",
+          "description": "Cross-platform computer vision library for object detection benchmarks.",
+          "github_link": "https://github.com/cogito-ntnu/vision-detect"
+        },
+        "role": "Research Assistant",
+        "year": 2023,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 7,
+          "name": "VisionDetect",
+          "logo": "/logos/visiondetect.png",
+          "description": "Cross-platform computer vision library for object detection benchmarks.",
+          "github_link": "https://github.com/cogito-ntnu/vision-detect"
+        },
+        "role": "Data Annotator",
+        "year": 2023,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 3,
+    "name": "Arne Olsen",
+    "title": "Web Lead",
+    "image": "/Team/ArneOlsen.jpg",
+    "email": "arne.olsen@cogito-ntnu.no",
+    "github": "https://github.com/arneolsen",
+    "linkedIn": "https://www.linkedin.com/in/arneolsen",
+    "category": ["Web", "Styret"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Web Lead",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "Full-Stack Developer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "Frontend Developer",
+        "year": 2024,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "Contributor",
+        "year": 2023,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "Contributor",
+        "year": 2023,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 4,
+    "name": "Sara Berg",
+    "title": "President",
+    "image": "/Team/SaraBerg.jpg",
+    "email": "sara.berg@cogito-ntnu.no",
+    "github": "",
+    "linkedIn": "https://www.linkedin.com/in/saraberg",
+    "category": ["Styret"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "President",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Vice President",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Secretary",
+        "year": 2024,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 10,
+          "name": "Outreach",
+          "logo": "/logos/outreach.png",
+          "description": "Initiatives for partnerships, events, and public engagement.",
+          "github_link": ""
+        },
+        "role": "Outreach Coordinator",
+        "year": 2023,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 10,
+          "name": "Outreach",
+          "logo": "/logos/outreach.png",
+          "description": "Initiatives for partnerships, events, and public engagement.",
+          "github_link": ""
+        },
+        "role": "Event Planner",
+        "year": 2023,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 5,
+    "name": "Lars Hansen",
+    "title": "Backend Developer",
+    "image": "/Team/LarsHansen.jpg",
+    "email": "lars.hansen@cogito-ntnu.no",
+    "github": "https://github.com/larshansen",
+    "linkedIn": "https://www.linkedin.com/in/larshansen",
+    "category": ["Web", "Prosjektmedlemmer"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "Backend Developer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "Backend Developer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "API Developer",
+        "year": 2024,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "Database Designer",
+        "year": 2023,
+        "semester": "Fall"
+      }
+    ]
+  },
+  {
+    "order": 6,
+    "name": "Ingrid Nilsen",
+    "title": "UX Designer",
+    "image": "/Team/IngridNilsen.jpg",
+    "email": "ingrid.nilsen@cogito-ntnu.no",
+    "github": "https://github.com/ingridnilsen",
+    "linkedIn": "https://www.linkedin.com/in/ingridnilsen",
+    "category": ["Design", "Prosjektmedlemmer"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "UX Lead",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 2,
+          "name": "TutorAI",
+          "logo": "/logos/tutorai.png",
+          "description": "Adaptive learning assistant leveraging LLMs for personalized study plans.",
+          "github_link": "https://github.com/cogito-ntnu/tutorai"
+        },
+        "role": "Product Designer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "UX Researcher",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 7,
+    "name": "Ole Kristiansen",
+    "title": "Hardware Engineer",
+    "image": "/Team/OleKristiansen.jpg",
+    "email": "ole.kristiansen@cogito-ntnu.no",
+    "github": "https://github.com/olekristiansen",
+    "linkedIn": "",
+    "category": ["Hardware", "Prosjektmedlemmer", "Cogitron"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 1,
+          "name": "Cogitron",
+          "logo": "/logos/cogitron.png",
+          "description": "Autonomous cognitive robotics platform focused on indoor navigation and manipulation.",
+          "github_link": "https://github.com/cogito-ntnu/cogitron"
+        },
+        "role": "Electronics Lead",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 6,
+          "name": "EdgeVision",
+          "logo": "/logos/edgevision.png",
+          "description": "Low-power embedded vision module for real-time object detection.",
+          "github_link": "https://github.com/cogito-ntnu/edgevision"
+        },
+        "role": "PCB Designer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 6,
+          "name": "EdgeVision",
+          "logo": "/logos/edgevision.png",
+          "description": "Low-power embedded vision module for real-time object detection.",
+          "github_link": "https://github.com/cogito-ntnu/edgevision"
+        },
+        "role": "Firmware Engineer",
+        "year": 2024,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 11,
+          "name": "LegacyBot",
+          "logo": "/logos/legacybot.png",
+          "description": "Early differential-drive exploration robot with SLAM experiments.",
+          "github_link": "https://github.com/cogito-ntnu/legacybot"
+        },
+        "role": "Hardware Intern",
+        "year": 2023,
+        "semester": "Fall"
+      }
+    ]
+  },
+  {
+    "order": 8,
+    "name": "Maria Solberg",
+    "title": "Machine Learning Engineer",
+    "image": "/Team/MariaSolberg.jpg",
+    "email": "maria.solberg@cogito-ntnu.no",
+    "github": "https://github.com/mariasolberg",
+    "linkedIn": "https://www.linkedin.com/in/mariasolberg",
+    "category": ["AI/ML", "Prosjektmedlemmer", "TutorAI"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 2,
+          "name": "TutorAI",
+          "logo": "/logos/tutorai.png",
+          "description": "Adaptive learning assistant leveraging LLMs for personalized study plans.",
+          "github_link": "https://github.com/cogito-ntnu/tutorai"
+        },
+        "role": "NLP Engineer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 7,
+          "name": "VisionDetect",
+          "logo": "/logos/visiondetect.png",
+          "description": "Cross-platform computer vision library for object detection benchmarks.",
+          "github_link": "https://github.com/cogito-ntnu/vision-detect"
+        },
+        "role": "Data Engineer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 8,
+          "name": "DataLake",
+          "logo": "/logos/datalake.png",
+          "description": "Centralized data storage and ETL pipeline for project analytics.",
+          "github_link": "https://github.com/cogito-ntnu/datalake"
+        },
+        "role": "ETL Developer",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 9,
+    "name": "Thomas Eriksen",
+    "title": "Finance Manager",
+    "image": "/Team/ThomasEriksen.jpg",
+    "email": "thomas.eriksen@cogito-ntnu.no",
+    "github": "",
+    "linkedIn": "https://www.linkedin.com/in/thomaseriksen",
+    "category": ["Styret", "Economy"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Finance Manager",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Assistant Treasurer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 13,
+          "name": "Economy Tools",
+          "logo": "/logos/economy.png",
+          "description": "Automation of reimbursements, budgeting dashboards, and expense tracking.",
+          "github_link": "https://github.com/cogito-ntnu/economy-tools"
+        },
+        "role": "Analyst",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 10,
+    "name": "Eva Lunde",
+    "title": "Marketing Lead",
+    "image": "/Team/EvaLunde.jpg",
+    "email": "eva.lunde@cogito-ntnu.no",
+    "github": "",
+    "linkedIn": "https://www.linkedin.com/in/evalunde",
+    "category": ["Styret", "Marketing"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Marketing Lead",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 10,
+          "name": "Outreach",
+          "logo": "/logos/outreach.png",
+          "description": "Initiatives for partnerships, events, and public engagement.",
+          "github_link": ""
+        },
+        "role": "Marketing Coordinator",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 10,
+          "name": "Outreach",
+          "logo": "/logos/outreach.png",
+          "description": "Initiatives for partnerships, events, and public engagement.",
+          "github_link": ""
+        },
+        "role": "Content Writer",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 11,
+    "name": "Henrik Dahl",
+    "title": "Full-Stack Developer",
+    "image": "/Team/HenrikDahl.jpg",
+    "email": "henrik.dahl@cogito-ntnu.no",
+    "github": "https://github.com/henrikdahl",
+    "linkedIn": "https://www.linkedin.com/in/henrikdahl",
+    "category": ["Web", "Prosjektmedlemmer"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "API Developer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "Frontend Developer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "Full-Stack Intern",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 12,
+    "name": "Sofie Aas",
+    "title": "Data Engineer",
+    "image": "/Team/SofieAas.jpg",
+    "email": "sofie.aas@cogito-ntnu.no",
+    "github": "https://github.com/sofieaas",
+    "linkedIn": "https://www.linkedin.com/in/sofieaas",
+    "category": ["AI/ML", "Prosjektmedlemmer"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 8,
+          "name": "DataLake",
+          "logo": "/logos/datalake.png",
+          "description": "Centralized data storage and ETL pipeline for project analytics.",
+          "github_link": "https://github.com/cogito-ntnu/datalake"
+        },
+        "role": "Data Engineer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 2,
+          "name": "TutorAI",
+          "logo": "/logos/tutorai.png",
+          "description": "Adaptive learning assistant leveraging LLMs for personalized study plans.",
+          "github_link": "https://github.com/cogito-ntnu/tutorai"
+        },
+        "role": "Data Annotator",
+        "year": 2024,
+        "semester": "Fall"
+      }
+    ]
+  },
+  {
+    "order": 13,
+    "name": "Eirik Moe",
+    "title": "Robotics Engineer",
+    "image": "/Team/EirikMoe.jpg",
+    "email": "eirik.moe@cogito-ntnu.no",
+    "github": "https://github.com/eirikmoe",
+    "linkedIn": "https://www.linkedin.com/in/eirikmoe",
+    "category": ["Hardware", "Cogitron", "Prosjektmedlemmer"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 1,
+          "name": "Cogitron",
+          "logo": "/logos/cogitron.png",
+          "description": "Autonomous cognitive robotics platform focused on indoor navigation and manipulation.",
+          "github_link": "https://github.com/cogito-ntnu/cogitron"
+        },
+        "role": "Localization Engineer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 6,
+          "name": "EdgeVision",
+          "logo": "/logos/edgevision.png",
+          "description": "Low-power embedded vision module for real-time object detection.",
+          "github_link": "https://github.com/cogito-ntnu/edgevision"
+        },
+        "role": "Embedded Developer",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 11,
+          "name": "LegacyBot",
+          "logo": "/logos/legacybot.png",
+          "description": "Early differential-drive exploration robot with SLAM experiments.",
+          "github_link": "https://github.com/cogito-ntnu/legacybot"
+        },
+        "role": "Firmware Contributor",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 14,
+    "name": "Camilla Østby",
+    "title": "Product Manager",
+    "image": "/Team/CamillaOstby.jpg",
+    "email": "camilla.ostby@cogito-ntnu.no",
+    "github": "",
+    "linkedIn": "https://www.linkedin.com/in/camillaostby",
+    "category": ["Prosjektmedlemmer", "TutorAI"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 2,
+          "name": "TutorAI",
+          "logo": "/logos/tutorai.png",
+          "description": "Adaptive learning assistant leveraging LLMs for personalized study plans.",
+          "github_link": "https://github.com/cogito-ntnu/tutorai"
+        },
+        "role": "Product Manager",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 8,
+          "name": "DataLake",
+          "logo": "/logos/datalake.png",
+          "description": "Centralized data storage and ETL pipeline for project analytics.",
+          "github_link": "https://github.com/cogito-ntnu/datalake"
+        },
+        "role": "Stakeholder Rep",
+        "year": 2024,
+        "semester": "Fall"
+      }
+    ]
+  },
+  {
+    "order": 15,
+    "name": "Fredrik Johansen",
+    "title": "DevOps Engineer",
+    "image": "/Team/FredrikJohansen.jpg",
+    "email": "fredrik.johansen@cogito-ntnu.no",
+    "github": "https://github.com/fredrikj",
+    "linkedIn": "https://www.linkedin.com/in/fredrikjohansen",
+    "category": ["Web", "Prosjektmedlemmer"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 9,
+          "name": "InfraOps",
+          "logo": "/logos/infraops.png",
+          "description": "Infrastructure as code and CI/CD pipelines for all active projects.",
+          "github_link": "https://github.com/cogito-ntnu/infraops"
+        },
+        "role": "DevOps Engineer",
+        "year": 2025,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 5,
+          "name": "Web Platform",
+          "logo": "/logos/webplatform.png",
+          "description": "Internal platform for member portal, event management, and content publishing.",
+          "github_link": "https://github.com/cogito-ntnu/web-platform"
+        },
+        "role": "Infrastructure Support",
+        "year": 2024,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 12,
+          "name": "Portal v1",
+          "logo": "/logos/portalv1.png",
+          "description": "Initial member portal prototype with authentication and news feed.",
+          "github_link": "https://github.com/cogito-ntnu/portal-v1"
+        },
+        "role": "CI Maintainer",
+        "year": 2024,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 31,
+    "name": "Anders Bergström",
+    "title": "Alumni - Robotics",
+    "image": "/Team/AndersBergstrom.jpg",
+    "email": "anders.bergstrom@cogito-ntnu.no",
+    "github": "https://github.com/abergstrom",
+    "linkedIn": "https://www.linkedin.com/in/abergstrom",
+    "category": ["Alumni", "Hardware"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 11,
+          "name": "LegacyBot",
+          "logo": "/logos/legacybot.png",
+          "description": "Early differential-drive exploration robot with SLAM experiments.",
+          "github_link": "https://github.com/cogito-ntnu/legacybot"
+        },
+        "role": "Project Lead",
+        "year": 2022,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 11,
+          "name": "LegacyBot",
+          "logo": "/logos/legacybot.png",
+          "description": "Early differential-drive exploration robot with SLAM experiments.",
+          "github_link": "https://github.com/cogito-ntnu/legacybot"
+        },
+        "role": "Project Lead",
+        "year": 2022,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 14,
+          "name": "DataPipeline v1",
+          "logo": "/logos/datapipeline.png",
+          "description": "First generation ETL pipeline for sensor and log ingestion.",
+          "github_link": "https://github.com/cogito-ntnu/data-pipeline-v1"
+        },
+        "role": "Data Engineer",
+        "year": 2021,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 14,
+          "name": "DataPipeline v1",
+          "logo": "/logos/datapipeline.png",
+          "description": "First generation ETL pipeline for sensor and log ingestion.",
+          "github_link": "https://github.com/cogito-ntnu/data-pipeline-v1"
+        },
+        "role": "Data Engineer",
+        "year": 2021,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 15,
+          "name": "EarlyCV",
+          "logo": "/logos/earlycv.png",
+          "description": "Prototype computer vision stack for line following and color detection.",
+          "github_link": "https://github.com/cogito-ntnu/early-cv"
+        },
+        "role": "CV Developer",
+        "year": 2020,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 15,
+          "name": "EarlyCV",
+          "logo": "/logos/earlycv.png",
+          "description": "Prototype computer vision stack for line following and color detection.",
+          "github_link": "https://github.com/cogito-ntnu/early-cv"
+        },
+        "role": "CV Developer",
+        "year": 2020,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Founding Member",
+        "year": 2019,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Founding Member",
+        "year": 2019,
+        "semester": "Spring"
+      }
+    ]
+  },
+  {
+    "order": 32,
+    "name": "Elise Wangen",
+    "title": "Alumni - Operations",
+    "image": "/Team/EliseWangen.jpg",
+    "email": "elise.wangen@cogito-ntnu.no",
+    "github": "",
+    "linkedIn": "https://www.linkedin.com/in/elise-wangen",
+    "category": ["Alumni", "Styret"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "President",
+        "year": 2023,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "President",
+        "year": 2023,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Vice President",
+        "year": 2022,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 4,
+          "name": "Styret",
+          "logo": "/logos/org.png",
+          "description": "Executive board overseeing operations, finance, and strategic direction.",
+          "github_link": ""
+        },
+        "role": "Vice President",
+        "year": 2022,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 10,
+          "name": "Outreach",
+          "logo": "/logos/outreach.png",
+          "description": "Initiatives for partnerships, events, and public engagement.",
+          "github_link": ""
+        },
+        "role": "Event Lead",
+        "year": 2021,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 10,
+          "name": "Outreach",
+          "logo": "/logos/outreach.png",
+          "description": "Initiatives for partnerships, events, and public engagement.",
+          "github_link": ""
+        },
+        "role": "Event Lead",
+        "year": 2021,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Founding Member",
+        "year": 2020,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Founding Member",
+        "year": 2020,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Initiator",
+        "year": 2019,
+        "semester": "Fall"
+      }
+    ]
+  },
+  {
+    "order": 33,
+    "name": "Kristoffer Aune",
+    "title": "Alumni - Data",
+    "image": "/Team/KristofferAune.jpg",
+    "email": "kristoffer.aune@cogito-ntnu.no",
+    "github": "https://github.com/kristaune",
+    "linkedIn": "",
+    "category": ["Alumni", "AI/ML"],
+    "project_memberships": [
+      {
+        "project": {
+          "id": 14,
+          "name": "DataPipeline v1",
+          "logo": "/logos/datapipeline.png",
+          "description": "First generation ETL pipeline for sensor and log ingestion.",
+          "github_link": "https://github.com/cogito-ntnu/data-pipeline-v1"
+        },
+        "role": "Lead Developer",
+        "year": 2022,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 14,
+          "name": "DataPipeline v1",
+          "logo": "/logos/datapipeline.png",
+          "description": "First generation ETL pipeline for sensor and log ingestion.",
+          "github_link": "https://github.com/cogito-ntnu/data-pipeline-v1"
+        },
+        "role": "Lead Developer",
+        "year": 2022,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 15,
+          "name": "EarlyCV",
+          "logo": "/logos/earlycv.png",
+          "description": "Prototype computer vision stack for line following and color detection.",
+          "github_link": "https://github.com/cogito-ntnu/early-cv"
+        },
+        "role": "CV Engineer",
+        "year": 2021,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 15,
+          "name": "EarlyCV",
+          "logo": "/logos/earlycv.png",
+          "description": "Prototype computer vision stack for line following and color detection.",
+          "github_link": "https://github.com/cogito-ntnu/early-cv"
+        },
+        "role": "CV Engineer",
+        "year": 2021,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Documentation Lead",
+        "year": 2020,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Documentation Lead",
+        "year": 2020,
+        "semester": "Spring"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Founding Member",
+        "year": 2019,
+        "semester": "Fall"
+      },
+      {
+        "project": {
+          "id": 16,
+          "name": "Foundations",
+          "logo": "/logos/foundations.png",
+          "description": "Initial organizational setup, documentation, and knowledge base.",
+          "github_link": "https://github.com/cogito-ntnu/foundations"
+        },
+        "role": "Founding Member",
+        "year": 2019,
+        "semester": "Spring"
+      }
+    ]
+  }
+]
