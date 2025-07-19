@@ -7,15 +7,11 @@ import { useTeamData } from "../hooks/useTeamData";
 import YearSemesterSelector from "../components/team/YearSemesterSelector";
 import ProjectFilterChips from "../components/team/ProjectFilterChips";
 import ProjectsGroupedView from "../components/team/ProjectsGroupedView";
-import ProjectSection from "../components/team/ProjectSection";
 import { motion } from "framer-motion";
 import { Member } from "../lib/types";
 import Footer from "../components/Footer/Footer";
 
-/* --------------------------------------------------
- * Page Container
- * -------------------------------------------------- */
-export default function TeamPage() {
+const TeamPage: React.FC = () => {
   const {
     // state
     year,
@@ -98,7 +94,7 @@ export default function TeamPage() {
       <Footer />
     </>
   );
-}
+};
 
 interface FlatMember {
   member: Member;
@@ -139,3 +135,4 @@ const SingleProjectView = ({
     </section>
   );
 };
+export default TeamPage;

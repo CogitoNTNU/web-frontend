@@ -17,12 +17,12 @@ interface Props {
   onToggleExpand: (id: number) => void;
   limit?: number;
 }
-export default function ProjectsGroupedView({
+const ProjectsGroupedView: React.FC<Props> = ({
   grouped,
   expandedSections,
   onToggleExpand,
   limit = 40,
-}: Props) {
+}) => {
   if (grouped.length === 0)
     return (
       <p className="text-center text-gray-500 text-sm sm:text-base">
@@ -43,4 +43,6 @@ export default function ProjectsGroupedView({
       ))}
     </>
   );
-}
+};
+
+export default ProjectsGroupedView;

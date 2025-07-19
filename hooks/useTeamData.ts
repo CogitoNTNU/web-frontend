@@ -5,6 +5,7 @@ import { Member, Project } from "../lib/types";
 const CURRENT_YEAR = new Date().getFullYear();
 const FOUNDING_YEAR = 2019;
 const DEFAULT_SECTION_LIMIT = 40;
+
 const getCurrentSemester = (): "Spring" | "Fall" =>
   new Date().getMonth() + 1 <= 6 ? "Spring" : "Fall";
 
@@ -20,16 +21,21 @@ export function useTeamData() {
   >({});
   const { data: members, isLoading: membersLoading } = useAllMembers();
   const { data: projects } = useAllProjects();
+
   const yearsAvailable = useMemo(() => {
     if (!members) return [] as number[];
     const years = new Set<number>();
     members.forEach((m) =>
       m.project_memberships.forEach((pm) => years.add(pm.year))
     );
-    return [...years].filter((y) => y <= CURRENT_YEAR).sort((a, b) => a - b);
+    return Array.from(years)
+      .filter((y) => y <= CURRENT_YEAR)
+      .sort((a, b) => a - b);
   }, [members]);
+
   const nextDisabled = semester === "Fall" && year >= CURRENT_YEAR;
   const prevDisabled = semester === "Spring" && year <= FOUNDING_YEAR;
+
   const prevSemester = () => {
     if (prevDisabled) return;
     if (semester === "Spring") {
@@ -39,6 +45,7 @@ export function useTeamData() {
       setSemester("Spring");
     }
   };
+
   const nextSemester = () => {
     if (nextDisabled) return;
     if (semester === "Fall") {
@@ -48,6 +55,7 @@ export function useTeamData() {
       setSemester("Fall");
     }
   };
+
   const semesterMembers = useMemo(() => {
     if (!members) return [] as Member[];
     return members.filter((m) =>
@@ -56,6 +64,7 @@ export function useTeamData() {
       )
     );
   }, [members, year, semester]);
+
   const activeProjectIds = useMemo(() => {
     const ids = new Set<number>();
     semesterMembers.forEach((m) =>
@@ -66,6 +75,7 @@ export function useTeamData() {
     );
     return ids;
   }, [semesterMembers, year, semester]);
+
   const activeProjects: Project[] = useMemo(() => {
     if (!projects) return [];
     return projects.filter((p) => activeProjectIds.has(p.id));
@@ -74,6 +84,7 @@ export function useTeamData() {
     if (projectFilter && !activeProjects.some((p) => p.name === projectFilter))
       setProjectFilter(null);
   }, [projectFilter, activeProjects]);
+
   const groupedByProject = useMemo(() => {
     if (!semesterMembers || !activeProjects)
       return [] as {
@@ -122,6 +133,7 @@ export function useTeamData() {
     semester,
     projects,
   ]);
+
   const filteredFlatMembers = useMemo(() => {
     if (!semesterMembers || !projectFilter)
       return [] as { member: Member; role: string }[];

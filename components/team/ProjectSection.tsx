@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import MemberCard from "../../components/Member/Member";
 import { Member, Project } from "../../lib/types";
+
 interface MemberRole {
   member: Member;
   role: string;
@@ -13,15 +14,16 @@ interface Props {
   onToggle: () => void;
   limit: number;
 }
-export default function ProjectSection({
+const ProjectSection = ({
   project,
   members,
   expanded,
   onToggle,
   limit,
-}: Props) {
+}: Props) => {
   const limited = !expanded && members.length > limit;
   const visible = limited ? members.slice(0, limit) : members;
+
   return (
     <section className="mx-auto w-full max-w-[1750px]">
       <header className="mb-4 text-blue-dark text-center px-2">
@@ -34,6 +36,7 @@ export default function ProjectSection({
           </p>
         )}
       </header>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -45,6 +48,7 @@ export default function ProjectSection({
           <MemberCard key={member.order + "-p-" + project.id} member={member} />
         ))}
       </motion.div>
+
       {members.length > limit && (
         <div className="flex justify-center">
           <button
@@ -57,4 +61,6 @@ export default function ProjectSection({
       )}
     </section>
   );
-}
+};
+
+export default ProjectSection;

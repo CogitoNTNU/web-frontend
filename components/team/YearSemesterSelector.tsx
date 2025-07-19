@@ -2,54 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-
-const ArrowLeft = () => (
-  <svg
-    stroke="currentColor"
-    fill="none"
-    viewBox="0 0 24 24"
-    className="h-5 w-5 sm:h-6 sm:w-6"
-  >
-    <path
-      d="M15 19l-7-7 7-7"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-const ArrowRight = () => (
-  <svg
-    stroke="currentColor"
-    fill="none"
-    viewBox="0 0 24 24"
-    className="h-5 w-5 sm:h-6 sm:w-6"
-  >
-    <path
-      d="M9 5l7 7-7 7"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-const ChevronDown = ({ open }: { open: boolean }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={
-      "h-5 w-5 transition-transform " + (open ? "rotate-180" : "rotate-0")
-    }
-    stroke="currentColor"
-    fill="none"
-  >
-    <path
-      d="M6 9l6 6 6-6"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+import { FiArrowLeft, FiArrowRight, FiChevronDown } from "react-icons/fi";
 
 export interface YearSemesterSelectorProps {
   year: number;
@@ -70,14 +23,9 @@ export interface YearSemesterSelectorProps {
   titleLabel?: string;
 }
 
-/* --------------------------------------------------
- * Utility – current real semester (for disabling future semesters)
- * -------------------------------------------------- */
-const getCurrentSemester = (): "Spring" | "Fall" =>
-  new Date().getMonth() + 1 <= 6 ? "Spring" : "Fall";
 const CURRENT_YEAR = new Date().getFullYear();
 
-export default function YearSemesterSelector({
+const YearSemesterSelector: React.FC<YearSemesterSelectorProps> = ({
   year,
   semester,
   yearsAvailable,
@@ -91,10 +39,9 @@ export default function YearSemesterSelector({
   prevDisabled,
   bannerSrc = "/Team/Alle.jpg",
   titleLabel = "MEMBERS",
-}: YearSemesterSelectorProps) {
+}: YearSemesterSelectorProps) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
-  // Ensure year buttons scroll into view if many (mobile horizontal wrap scenario)
   useEffect(() => {
     if (!wrapperRef.current) return;
     const activeBtn = wrapperRef.current.querySelector(
@@ -104,8 +51,6 @@ export default function YearSemesterSelector({
       activeBtn.scrollIntoView({ block: "nearest", inline: "center" });
     }
   }, [year, selectorOpen]);
-
-  const realSemester = getCurrentSemester();
 
   return (
     <div className="relative h-[720px] xs:h-[580px] sm:h-[620px] w-full select-none">
@@ -137,7 +82,7 @@ export default function YearSemesterSelector({
               }
               disabled={prevDisabled}
             >
-              <ArrowLeft />
+              <FiArrowLeft className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
 
             {/* Title acts as toggle on mobile */}
@@ -151,7 +96,12 @@ export default function YearSemesterSelector({
                   {titleLabel} <span className="text-blue-400">{year}</span>
                 </span>
                 <span className="sm:hidden inline-flex text-white">
-                  <ChevronDown open={selectorOpen} />
+                  <FiChevronDown
+                    className={
+                      "h-5 w-5 transition-transform " +
+                      (selectorOpen ? "rotate-180" : "rotate-0")
+                    }
+                  />
                 </span>
               </h1>
             </button>
@@ -167,7 +117,7 @@ export default function YearSemesterSelector({
                   : "bg-white/10 hover:bg-white/20")
               }
             >
-              <ArrowRight />
+              <FiArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
           </div>
 
@@ -218,7 +168,7 @@ export default function YearSemesterSelector({
                 const disabledFuture =
                   (year === CURRENT_YEAR &&
                     s === "Fall" &&
-                    realSemester === "Spring") ||
+                    semester === "Spring") ||
                   year > CURRENT_YEAR;
                 const active = s === semester;
                 return (
@@ -244,4 +194,6 @@ export default function YearSemesterSelector({
       </div>
     </div>
   );
-}
+};
+
+export default YearSemesterSelector;
