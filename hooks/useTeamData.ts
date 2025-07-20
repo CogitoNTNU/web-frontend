@@ -3,7 +3,7 @@ import { useAllMembers, useAllProjects } from "./useGetMembers";
 import { Member, Project } from "../lib/types";
 
 const CURRENT_YEAR = new Date().getFullYear();
-const FOUNDING_YEAR = 2019;
+const FOUNDING_YEAR = 2018;
 const HALF_YEAR = 6; // June
 
 const getCurrentSemester = (): "Spring" | "Fall" =>
