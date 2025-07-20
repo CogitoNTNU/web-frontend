@@ -192,7 +192,7 @@ export function useTeamData() {
 
   /**
    * FILTERED FLAT MEMBERS
-   * Returns plain Member[] for a chosen project (was returning wrapper objects).
+   * Returns a sorted array of Member objects for the selected project and current semester.
    */
   const filteredFlatMembers = useMemo(() => {
     if (!semesterMembers || !projectFilter) return [] as Member[];
