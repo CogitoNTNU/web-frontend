@@ -113,19 +113,20 @@ export const articles: ArticleType[] = [
         {
           name: "Thomas Sørensen",
           role: "Leder",
-          github: "https://github.com/sverrenystad",
-          linkedIn: "https://www.linkedin.com/in/sverrenystad/",
+          github: "https://github.com/thomsoren",
+          linkedIn:
+            "https://www.linkedin.com/in/thomas-nordby-s%C3%B8rensen-80253b1ab/",
         },
         {
           name: "Ingunn Tonetta Erdal",
           role: "Medlem",
-          github: "",
+          github: "https://github.com/ingunntonetta",
           linkedIn: "https://www.linkedin.com/in/ingunn-tonetta-erdal/",
         },
         {
           name: "Guillermo Llinares",
           role: "Medlem",
-          github: "",
+          github: "https://github.com/willer-mo",
           linkedIn:
             "https://www.linkedin.com/in/guillermo-llinares-palma-27311a10b/",
         },
@@ -139,7 +140,7 @@ export const articles: ArticleType[] = [
         {
           name: "Teodor Rustad Kvisberg",
           role: "Medlem",
-          github: "",
+          github: "https://github.com/TeodorRusKvi",
           linkedIn: "https://www.linkedin.com/in/teodor-rustad-kvisberg/",
         },
       ],
