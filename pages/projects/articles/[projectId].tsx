@@ -114,7 +114,8 @@ const Landing = ({ title, description, github }: LandingProps) => {
                   ease: "easeOut",
                 }}
               >
-                {letter}
+                {/** Replace space with non-breaking space */}
+                {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}
           </motion.div>
