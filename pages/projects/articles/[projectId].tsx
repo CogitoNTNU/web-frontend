@@ -253,9 +253,9 @@ const Description = ({
       initial="hidden"
       whileInView="visible"
       variants={containerVariants}
-      className="flex flex-col items-center w-screen h-screen text-white top-0 left-0"
+      className="w-screen min-h-screen flex flex-col justify-center items-center text-white"
     >
-      <div className="flex flex-col justify-center items-center h-full w-full">
+      <div className="flex flex-col items-center w-full py-12">
         <motion.p
           variants={itemVariants}
           className="text-lg bg-black-dark bg-opacity-50 px-12 py-3 mb-4 tracking-wide"
@@ -278,9 +278,10 @@ const Description = ({
               ))}
             </ul>
           </motion.div>
+
           <motion.div
             variants={itemVariants}
-            className="w-2/5 h-full bg-black-dark bg-opacity-50 rounded-lg px-8 py-10 space-y-4"
+            className="md:w-2/5 bg-black-dark/50 rounded-lg px-8 py-10 space-y-4"
           >
             <p className="text-xl font-semibold pt-2">Teknologivalg 💻</p>
             <ul className="px-4 space-y-3">
@@ -290,13 +291,14 @@ const Description = ({
                 </li>
               ))}
             </ul>
+
             <p className="text-xl font-semibold pt-2">Links & Stuff 🔗</p>
-            <ul className="space-y-3 w-full overflow-hidden">
-              {links.map((link, index) => (
-                <li key={index} className="list-disc ml-3">
+            <ul className="pl-4 space-y-3 break-all">
+              {links.map((link, i) => (
+                <li key={i} className="list-disc">
                   <a
                     href={link}
-                    className="hover:underline break-all"
+                    className="hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
