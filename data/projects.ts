@@ -26,6 +26,14 @@ export const CogitoProjects: ProjectType[] = [
     url: "/projects/articles/neatactics",
   },
   {
+    name: "Cogito x Infor",
+    github: "https://github.com/CogitoNTNU/",
+    img: "/Projects/ProjectLogos/infor.png",
+    playable: false,
+    released: true,
+    url: "/projects/articles/cogito-infor-agents",
+  },
+  {
     name: "DeepTactics - MuZero",
     github: "https://github.com/CogitoNTNU/MuZero",
     img: "/Projects/ProjectLogos/deeptactics.webp",
