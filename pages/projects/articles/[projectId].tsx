@@ -114,7 +114,8 @@ const Landing = ({ title, description, github }: LandingProps) => {
                   ease: "easeOut",
                 }}
               >
-                {letter}
+                {/** Replace space with non-breaking space */}
+                {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}
           </motion.div>
@@ -292,9 +293,16 @@ const Description = ({
             <p className="text-xl font-semibold pt-2">Links & Stuff 🔗</p>
             <ul className="space-y-3 w-full overflow-hidden">
               {links.map((link, index) => (
-                <a key={index} href={link} className="list-disc">
-                  {link}
-                </a>
+                <li key={index} className="list-disc ml-3">
+                  <a
+                    href={link}
+                    className="hover:underline break-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link}
+                  </a>
+                </li>
               ))}
             </ul>
           </motion.div>
