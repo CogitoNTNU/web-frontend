@@ -65,6 +65,7 @@ export type ArticleType = {
 export type ArticleLandingPage = {
   title: string;
   description: string;
+  isVideo: boolean;
 };
 
 export type ArticleDescriptionPage = {

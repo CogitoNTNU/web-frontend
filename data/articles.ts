@@ -7,6 +7,7 @@ export const articles: ArticleType[] = [
       title: "NEATACTICS",
       description:
         "Hvordan kan en datamaskin lære seg å spille Mario helt selv?",
+      isVideo: true,
     },
     descriptionPage: {
       description:
@@ -82,6 +83,7 @@ export const articles: ArticleType[] = [
       title: "Cogito x Infor",
       description:
         "AI-drevne nettleseragenter som automatiserer testprosesser og frigjør tusenvis av timer med manuelt arbeid.",
+      isVideo: false,
     },
     descriptionPage: {
       description:
@@ -154,6 +156,7 @@ export const articles: ArticleType[] = [
       title: "MuZero",
       description:
         "Kan en KI lære spillets regler mens den spiller? Vi bygde vår egen versjon av DeepMinds MuZero – fra skjema til seier!",
+      isVideo: false,
     },
     descriptionPage: {
       description:

@@ -464,7 +464,7 @@ const Article = ({
     <div className="h-screen w-screen">
       <ParallaxContent
         id={0}
-        video
+        video={landingPage.isVideo}
         main={
           <Landing
             title={landingPage.title}
