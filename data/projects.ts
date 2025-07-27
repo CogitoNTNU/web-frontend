@@ -26,9 +26,9 @@ export const CogitoProjects: ProjectType[] = [
     url: "/projects/articles/neatactics",
   },
   {
-    name: "MuZero",
-    github: "https://github.com/CogitoNTNU/DeepTactics-Muzero",
-    img: "/Projects/Cards/NEATactics.png",
+    name: "DeepTactics - MuZero",
+    github: "https://github.com/CogitoNTNU/MuZero",
+    img: "/Projects/ProjectLogos/deeptactics.webp",
     playable: false,
     released: true,
     url: "/projects/articles/muzero",

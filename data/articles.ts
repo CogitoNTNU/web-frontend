@@ -105,16 +105,16 @@ export const articles: ArticleType[] = [
     teamPage: {
       team: [
         {
-          name: "Christian Fredrik Johnsen",
-          role: "Leder",
-          github: "https://github.com/ChristianFredrikJohnsen",
-          linkedIn: "",
-        },
-        {
           name: "Brage Kvamme",
           role: "Leder",
           github: "https://github.com/BrageHK",
           linkedIn: "https://www.linkedin.com/in/brage-kvamme-b33318212/",
+        },
+        {
+          name: "Christian Fredrik Johnsen",
+          role: "Leder",
+          github: "https://github.com/ChristianFredrikJohnsen",
+          linkedIn: "",
         },
         {
           name: "Ludvig Øvrevik",
@@ -123,7 +123,7 @@ export const articles: ArticleType[] = [
           linkedIn: "",
         },
         {
-          name: "Eirik Sol",
+          name: "Eirik Solberg",
           role: "Medlem",
           github: "https://github.com/Eiriksol",
           linkedIn: "",
@@ -141,15 +141,21 @@ export const articles: ArticleType[] = [
           linkedIn: "",
         },
         {
-          name: "Nicolai9897",
+          name: "Nicolai Olsen",
           role: "Medlem",
           github: "https://github.com/Nicolai9897",
           linkedIn: "",
         },
         {
-          name: "Vegardhgr",
+          name: "Vegard Grøder",
           role: "Medlem",
           github: "https://github.com/Vegardhgr",
+          linkedIn: "",
+        },
+        {
+          name: "Magnus Wang Wold",
+          role: "Medlem",
+          github: "https://github.com/Magnuww",
           linkedIn: "",
         },
       ],
