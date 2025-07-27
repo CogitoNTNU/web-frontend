@@ -155,21 +155,24 @@ export const articles: ArticleType[] = [
     landingPage: {
       title: "MuZero",
       description:
-        "Kan en KI lære spillets regler mens den spiller? Vi bygde vår egen versjon av DeepMinds MuZero – fra skjema til seier!",
+        "Kan en og samme KI agent oppnå overmenneskelig nivå i brettspill og videospill uten å vite spillereglene?",
       isVideo: false,
     },
     descriptionPage: {
       description:
-        "MuZero (Schrittwieser et al., DeepMind, 2019) er en banebrytende algoritme som kombinerer forsterkningslæring, modellbasert planlegging og dyp læring – uten å få reglene servert på forhånd. I stedet lærer modellen en *intern* representasjon av miljøet: et kodat ‘state’-rom (representasjonsnett), en *dynamikkfunksjon* som spår hvordan verden utvikler seg når den tar handlinger, og et *prediksjonsnett* som estimerer verdi og policy. Når MuZero skal velge trekk, kjører den en søkeprosess (Monte Carlo Tree Search) inne i sin egen lært modell for å planlegge fremover. Det gjør at samme rammeverk kan spille brettspill, Atari‑spill – i prinsippet hva som helst med observerbare tilstander og belønninger – så lenge treningstiden er der.\n\nI Cogito NTNU sitt MuZero‑prosjekt (Vår 2025) implementerte vi en pedagogisk, modulær studentversjon i Python/PyTorch. Vi integrerte OpenAI Gymnasium‑miljøer for rask eksperimentering, logget treningsløp og hyperparametere i Weights & Biases (WandB), og pakket kjørbare eksperimenter i Docker for reproduserbarhet. En lett FastAPI‑backend og React‑frontend gjør det mulig å trigge treningsjobber, følge læringskurver og se modellen spille i nettleseren. Koden er åpen – ta en titt, lek med hyperparametere, og se hvor langt *din* MuZero kan lære seg å planlegge!",
+        "MuZero (Schrittwieser et al., DeepMind, 2019) er en banebrytende algoritme innen modellbasert forsterkningslæring som mestrer både planlegging og verdifunksjonsestimering, helt uten å kjenne miljøets regler på forhånd. Systemet mottar de siste 32 tilstandene i form av skjermbilder, med handlingen enkodet som en vektor, Deretter bearbeides disse inputene av tre nevrale nettverk som trenes sammen: Representasjonsnettverket omdanner råbilder til en kompakt intern tilstands­representasjon som fanger opp relevante trekk i miljøet. Dynamikk­nettverket tar denne tilstandsrepresentasjonen og en foreslått handling som input, og predikerer neste interne tilstand samt umiddelbar belønning. Prediksjons­nettverket estimerer tilstandens verdi og gir en policy‑distribusjon over mulige handlinger. Systemet bruker nettverkene sammen med et tresøksalgoritme kjent som Monte Carlo Tree Search (MCTS) til å plannlegge og veildede utforskingen av mulige fremtidige tilstander og velge den beste handlingen basert på forventet belønning av hele treet. Disse nettverkene kombineres med Monte Carlo Tree Search (MCTS), en algoritme som utforsker fremtidige tilstander ved å balansere mellom å utforske nye muligheter og å utnytte kjente strategier. Dette gjør at MuZero kan planlegge flere steg fremover og velge handlinger basert på en dypere forståelse av miljøet. Siden Muzero ikke kjenner til reglene på forhånd, er ikke systemet begrenset til menneskelig bias og kan utvikle helt nye, “alien” løsninger. Arkitekturen er fleksibel og anvendbar på alt fra brettspill og Atari-spill til komplekse virkelige miljøer uten forhåndskjente regler.",
       funFacts: [
-        "Vi skrev store deler av MuZero‑pipen selv: representasjonsnett, dynamikknett, prediksjonsnett og MCTS‑sløyfen!",
-        "Treningslogger og video‑rollouts lastes automatisk opp til WandB for analyse.",
-        "Web‑UI i React viser live tap/return og lar deg spille mot agenten og konfigurere hyperparametere og netverks arkitektur.",
+        "Systemet trengte vanvittig mye mer maskinkraft enn tidligere algoritmer som vi har utviklet i Cogito.",
+        "Web-UI i React viser live tap/return og lar deg trene og konfigurere hyperparametere og netverks arkitektur.",
       ],
-      links: ["https://arxiv.org/abs/1911.08265"],
+      links: [
+        "https://arxiv.org/abs/1911.08265",
+        "https://www.youtube.com/watch?v=WXuK6gekU1Y",
+        "https://deepmind.google/discover/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules/",
+      ],
       technologies: [
         "Python",
-        "PyTorch",
+        "PyTorch med CUDA",
         "OpenAI Gymnasium",
         "WandB",
         "React",
