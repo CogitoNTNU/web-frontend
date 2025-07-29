@@ -248,7 +248,7 @@ const Description = ({
   technologies,
   links,
 }: DescriptionProps) => {
-  let widthClass = description.length > 900 ? "w-4/5" : "w-3/5";
+  const widthClass = description.length > 900 ? "w-4/5" : "w-3/5";
 
   return (
     <motion.div
