@@ -38,9 +38,10 @@ export const CogitoProjects: ProjectType[] = [
     github: "https://github.com/CogitoNTNU/MuZero",
     img: "/Projects/ProjectLogos/deeptactics.webp",
     playable: false,
-    released: false,
+    released: true,
     url: "/projects/articles/muzero",
   },
+
   {
     name: "A* x Cogitron",
     github: "https://github.com/CogitoNTNU/cogitron",
