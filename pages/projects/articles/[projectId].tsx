@@ -248,6 +248,8 @@ const Description = ({
   technologies,
   links,
 }: DescriptionProps) => {
+  let widthClass = description.length > 900 ? "w-4/5" : "w-3/5";
+
   return (
     <motion.div
       initial="hidden"
@@ -262,7 +264,7 @@ const Description = ({
         >
           Beskrivelse av Prosjektet
         </motion.p>
-        <div className="pt-2 w-3/5 h-3/5 flex justify-between gap-4">
+        <div className={`pt-2 h-3/5 flex justify-between gap-4 ${widthClass}`}>
           <motion.div
             variants={itemVariants}
             className="w-3/5 h-full bg-black-dark bg-opacity-50 rounded-lg px-8 py-12 space-y-4"
