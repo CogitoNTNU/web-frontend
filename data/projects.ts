@@ -114,6 +114,14 @@ export const CogitoProjects: ProjectType[] = [
     released: false,
     url: "/projects/articles/hypeai",
   },
+  {
+    name: "Doctor AI",
+    github: "https://github.com/CogitoNTNU/Doctor-AI",
+    img: "/Projects/ProjectLogos/doctorai.webp",
+    playable: false,
+    released: true,
+    url: "/projects/articles/doctor-ai",
+  },
 ];
 
 export const projectsApply: ProjectApply[] = [
