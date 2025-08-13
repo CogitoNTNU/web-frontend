@@ -240,7 +240,7 @@ export const articles: ArticleType[] = [
     },
     semester: "Vår",
     year: 2025,
-    github: "https://github.com/CogitoNTNU/crawlai",
+    github: "https://github.com/CogitoNTNU/DeepTactics-Muzero",
   },
   {
     articleId: "crawlai",
