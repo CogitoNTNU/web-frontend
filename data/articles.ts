@@ -7,6 +7,7 @@ export const articles: ArticleType[] = [
       title: "NEATACTICS",
       description:
         "Hvordan kan en datamaskin lære seg å spille Mario helt selv?",
+      isVideo: true,
     },
     descriptionPage: {
       description:
@@ -82,6 +83,7 @@ export const articles: ArticleType[] = [
       title: "Cogito x Infor",
       description:
         "AI-drevne nettleseragenter som automatiserer testprosesser og frigjør tusenvis av timer med manuelt arbeid.",
+      isVideo: false,
     },
     descriptionPage: {
       description:
@@ -147,5 +149,97 @@ export const articles: ArticleType[] = [
     },
     semester: "Vår",
     year: 2025,
+  },
+  {
+    articleId: "muzero",
+    landingPage: {
+      title: "MuZero",
+      description:
+        "Kan en og samme KI agent oppnå overmenneskelig nivå i brettspill og videospill uten å vite spillereglene?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "MuZero (Schrittwieser et al., DeepMind, 2019) er en banebrytende algoritme innen modellbasert forsterkningslæring som mestrer både planlegging og verdifunksjonsestimering, helt uten å kjenne miljøets regler på forhånd. Systemet mottar de siste 32 tilstandene i form av skjermbilder, med handlingen enkodet som en vektor. Deretter bearbeides disse inputene av tre nevrale nettverk som trenes sammen: Representasjonsnettverket omdanner råbilder til en kompakt intern tilstandsrepresentasjon som fanger opp relevante trekk i miljøet. Dynamikknettverket tar denne tilstandsrepresentasjonen og en foreslått handling som input, og predikerer neste interne tilstand samt umiddelbar belønning. Prediksjonsnettverket estimerer tilstandens verdi og gir en policy distribusjon over mulige handlinger. Systemet bruker nettverkene sammen med et tresøksalgoritme kjent som Monte Carlo Tree Search (MCTS) til å plannlegge og veildede utforskingen av mulige fremtidige tilstander og velge den beste handlingen basert på forventet belønning av hele treet. Siden Muzero ikke kjenner til reglene på forhånd, er ikke systemet begrenset til menneskelig bias og kan utvikle helt nye, “alien” løsninger. Arkitekturen er fleksibel og anvendbar på alt fra brettspill og Atari-spill til komplekse virkelige miljøer uten forhåndskjente regler.",
+      funFacts: [
+        "Systemet trengte vanvittig mye mer maskinkraft enn tidligere algoritmer som vi har utviklet i Cogito.",
+        "Web-UI i React viser live tap/return og lar deg trene og konfigurere hyperparametere og netverks arkitektur.",
+      ],
+      links: [
+        "https://arxiv.org/abs/1911.08265",
+        "https://www.youtube.com/watch?v=WXuK6gekU1Y",
+        "https://deepmind.google/discover/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules/",
+      ],
+      technologies: [
+        "Python",
+        "PyTorch med CUDA",
+        "OpenAI Gymnasium",
+        "WandB",
+        "React",
+        "Docker",
+        "FastAPI",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Brage Kvamme",
+          role: "Leder",
+          github: "https://github.com/BrageHK",
+          linkedIn: "https://www.linkedin.com/in/brage-kvamme-b33318212/",
+        },
+        {
+          name: "Christian Fredrik Johnsen",
+          role: "Leder",
+          github: "https://github.com/ChristianFredrikJohnsen",
+          linkedIn: "",
+        },
+        {
+          name: "Ludvig Øvrevik",
+          role: "Medlem",
+          github: "https://github.com/ludvigovrevik",
+          linkedIn: "",
+        },
+        {
+          name: "Eirik Solberg",
+          role: "Medlem",
+          github: "https://github.com/Eiriksol",
+          linkedIn: "",
+        },
+        {
+          name: "Kristian Carlenius",
+          role: "Medlem",
+          github: "https://github.com/kristiancarlenius",
+          linkedIn: "https://www.linkedin.com/in/kristian-carlenius-aa155722b/",
+        },
+        {
+          name: "Adi Singh",
+          role: "Medlem",
+          github: "https://github.com/adisinghstudent",
+          linkedIn: "",
+        },
+        {
+          name: "Nicolai Olsen",
+          role: "Medlem",
+          github: "https://github.com/Nicolai9897",
+          linkedIn: "",
+        },
+        {
+          name: "Vegard Grøder",
+          role: "Medlem",
+          github: "https://github.com/Vegardhgr",
+          linkedIn: "",
+        },
+        {
+          name: "Magnus Wang Wold",
+          role: "Medlem",
+          github: "https://github.com/Magnuww",
+          linkedIn: "",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2025,
+    github: "https://github.com/CogitoNTNU/DeepTactics-Muzero",
   },
 ];
