@@ -242,4 +242,78 @@ export const articles: ArticleType[] = [
     year: 2025,
     github: "https://github.com/CogitoNTNU/DeepTactics-Muzero",
   },
+  {
+    articleId: "tetrisai",
+    landingPage: {
+      title: "TETRIS AI",
+      description:
+        "Hvordan spille Tetris på overmenneskelig nivå med Good Old-fashioned AI?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "TetrisAI er et prosjekt som bruker Good Old-fashioned AI (GOFAI) for å spille Tetris på overmenneskelig nivå. Som hovedmetode benyttes heuristisk søk, der algoritmen evaluerer alle mulige trekk og velger det beste basert på en heuristisk funksjon. Heurisikker som er brukt er, max-høyde, total høyde, antall hull, antall linjer fjernet og ugjenvhet. Ved å justere vektene til disse heurisikkene kan man oppnå svært gode resultater. Dette gjorde vi ved å bruke en genetisk algoritme som optimaliserer vektene for å maksimere overlevelsestid.",
+      funFacts: [
+        "TetrisAI spilte i akselerert spillmodus uten å tape for varigheten av presentasjonen av prosjektet!",
+      ],
+      links: [],
+      technologies: [
+        "Python 3",
+        "Pygame",
+        "Evolutionary Algorithms",
+        "Heuristic Search",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Eduard Prokhorikhin",
+          role: "Leder",
+          github: "https://github.com/Eduard-Prokhorikhin",
+          linkedIn:
+            "https://www.linkedin.com/in/eduard-prokhorikhin-77b0a5330/",
+        },
+        {
+          name: "Øystein Kvandal",
+          role: "Leder",
+          github: "https://github.com/oystkva",
+          linkedIn:
+            "https://www.linkedin.com/in/%C3%B8ystein-kvandal-a96ab5293/",
+        },
+        {
+          name: "Håvard Fossdal",
+          role: "Medlem",
+          github: "https://github.com/HFossdal",
+          linkedIn: "https://www.linkedin.com/in/hfossdal/",
+        },
+        {
+          name: "Henrik Haaland",
+          role: "Medlem",
+          github: "https://github.com/henrinha",
+          linkedIn: "https://www.linkedin.com/in/henrik-haaland/",
+        },
+        {
+          name: "Jon Bergland",
+          role: "Medlem",
+          github: "https://github.com/JonBergland",
+          linkedIn: "https://www.linkedin.com/in/jon-bergland-97b56b29b/",
+        },
+        {
+          name: "Maia Austigard",
+          role: "Medlem",
+          github: "https://github.com/maiahi",
+          linkedIn: "https://www.linkedin.com/in/maia-austigard-80054132a/",
+        },
+        {
+          name: "Sindre Fossdal",
+          role: "Medlem",
+          github: "https://github.com/SindreFossdal",
+          linkedIn: "https://www.linkedin.com/in/sfossdal/",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/TetrisAI",
+  },
 ];

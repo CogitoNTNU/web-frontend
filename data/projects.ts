@@ -87,7 +87,7 @@ export const CogitoProjects: ProjectType[] = [
     github: "https://github.com/CogitoNTNU/TetrisAI",
     img: "/Projects/ProjectLogos/tetrisai.webp",
     playable: false,
-    released: false,
+    released: true,
     url: "/projects/articles/tetrisai",
   },
   {
