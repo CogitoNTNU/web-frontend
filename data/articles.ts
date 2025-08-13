@@ -254,6 +254,7 @@ export const articles: ArticleType[] = [
       description:
         "TetrisAI er et prosjekt som bruker Good Old-fashioned AI (GOFAI) for å spille Tetris på overmenneskelig nivå. Som hovedmetode benyttes heuristisk søk, der algoritmen evaluerer alle mulige trekk og velger det beste basert på en heuristisk funksjon. Heurisikker som er brukt er, max-høyde, total høyde, antall hull, antall linjer fjernet og ugjenvhet. Ved å justere vektene til disse heurisikkene kan man oppnå svært gode resultater. Dette gjorde vi ved å bruke en genetisk algoritme som optimaliserer vektene for å maksimere overlevelsestid.",
       funFacts: [
+        "Originale Tetris ble laget i 1984 av den russiske programmereren Aleksej Pazjitnov",
         "TetrisAI spilte i akselerert spillmodus uten å tape for varigheten av presentasjonen av prosjektet!",
       ],
       links: [],
@@ -309,6 +310,84 @@ export const articles: ArticleType[] = [
           role: "Medlem",
           github: "https://github.com/SindreFossdal",
           linkedIn: "https://www.linkedin.com/in/sfossdal/",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/TetrisAI",
+  },
+  {
+    articleId: "rubiks",
+    landingPage: {
+      title: "RUBIKS CUBE SOLVER",
+      description: "Hvordan løse Rubiks kube med AI?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "Rubiks kube er et klassisk puslespill som har fascinert mennesker i generasjoner. I dette prosjektet har vi utviklet en AI-løsning som kan løse Rubiks kube ved hjelp av A* søk og heuristisk i flere trinn. Søkerommet er på mer enn 4.3 *10^19 forskjellige tilstander. Vi delte opp søket i følgende trinn: Scrambled til Edge Orientation, Edge Orientation til Domino Reduction, Domino Reduction til løsning. Hvert trinn hadde hver sin heuristikk som ble brukt til å ta kuben til neste tilstand.",
+      funFacts: [
+        "Det finnes flere mulige rubiks kube tilstander enn sandkorn på jorden!",
+      ],
+      links: [
+        "https://jperm.net/bld",
+        "https://threejs.org",
+        "https://github.com/taylorjg/rubiks-cube",
+      ],
+      technologies: [
+        "Python 3",
+        "three.js",
+        "A* Search",
+        "Heuristic Search",
+        "FastAPI",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Eduard Prokhorikhin",
+          role: "Leder",
+          github: "https://github.com/Eduard-Prokhorikhin",
+          linkedIn:
+            "https://www.linkedin.com/in/eduard-prokhorikhin-77b0a5330/",
+        },
+        {
+          name: "Einride Osland",
+          role: "Leder",
+          github: "https://github.com/1rideee",
+          linkedIn: "https://www.linkedin.com/in/einrideosland/",
+        },
+        {
+          name: "Even Ytterli Tokle",
+          role: "Medlem",
+          github: "https://github.com/Baykugan",
+          linkedIn: "",
+        },
+        {
+          name: "Gustav Natvig",
+          role: "Medlem",
+          github: "https://github.com/GustavNat",
+          linkedIn: "https://www.linkedin.com/in/gustav-natvig/",
+        },
+        {
+          name: "Kien Le",
+          role: "Medlem",
+          github: "https://github.com/kienple",
+          linkedIn: "https://www.linkedin.com/in/kienple/",
+        },
+        {
+          name: "Vetle Rød Dahl",
+          role: "Medlem",
+          github: "https://github.com/Vetlebrur",
+          linkedIn:
+            "https://www.linkedin.com/in/vetle-r%C3%B8d-dahl-679414226/",
+        },
+        {
+          name: "Viljen Apalset Vassbø",
+          role: "Medlem",
+          github: "https://github.com/Viljen789",
+          linkedIn: "https://www.linkedin.com/in/viljen-apalset-vassbo/",
         },
       ],
     },
