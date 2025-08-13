@@ -117,7 +117,7 @@ export const CogitoProjects: ProjectType[] = [
   {
     name: "Doctor AI",
     github: "https://github.com/CogitoNTNU/Doctor-AI",
-    img: "/Projects/ProjectLogos/doctorai.webp",
+    img: "/Projects/Articles/doctor-ai/doctor-ai.png",
     playable: false,
     released: true,
     url: "/projects/articles/doctor-ai",
