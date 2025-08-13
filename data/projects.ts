@@ -93,10 +93,10 @@ export const CogitoProjects: ProjectType[] = [
   {
     name: "SudokuSolver",
     github: "https://github.com/CogitoNTNU/SudokuSolver",
-    img: "/Projects/SudokuSolver/SudokuLogo.png",
-    playable: false,
-    released: false,
-    url: "/projects/articles/sudokusolver",
+    img: "/Projects/Articles/sudokusolver/0.png",
+    playable: true,
+    released: true,
+    url: "/projects/sudokusolver",
   },
   {
     name: "RubiksCubeSolver",
