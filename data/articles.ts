@@ -248,7 +248,7 @@ export const articles: ArticleType[] = [
       title: "TETRIS AI",
       description:
         "Hvordan spille Tetris på overmenneskelig nivå med Good Old-fashioned AI?",
-      isVideo: true,
+      isVideo: false,
     },
     descriptionPage: {
       description:
@@ -303,12 +303,6 @@ export const articles: ArticleType[] = [
           role: "Medlem",
           github: "https://github.com/maiahi",
           linkedIn: "https://www.linkedin.com/in/maia-austigard-80054132a/",
-        },
-        {
-          name: "Vetle Støren",
-          role: "Medlem",
-          github: "https://github.com/Vetlets05",
-          linkedIn: "https://www.linkedin.com/in/vetle-st%C3%B8ren-661259322/",
         },
         {
           name: "Sindre Fossdal",
