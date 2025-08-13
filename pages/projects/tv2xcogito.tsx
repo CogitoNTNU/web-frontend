@@ -397,22 +397,23 @@ const TV2xCogito = () => {
           </section>
 
           {/* Semester Content - Integrated into main */}
-          <section id="semester-content" className="px-4 py-12 max-w-7xl mx-auto">
+          <section id="semester-content" className="px-4 py-16">
             {selectedSemester === "h24" ? (
               <div>
                 {/* H24 Content */}
-                <section className="mb-16">
+                <div className="max-w-6xl mx-auto">
                   <motion.h3 
-                    className="text-2xl font-bold text-white mb-6 text-center"
+                    className="text-3xl font-bold text-white mb-12 text-center"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    TV2 Article Predictor
+                    TV2 Article Predictor - Høst 2024
                   </motion.h3>
+                  
                   <motion.div 
-                    className="bg-[#702eff] bg-opacity-20 backdrop-blur-sm border border-[#702eff] rounded-lg p-8 mb-8 relative overflow-hidden"
+                    className="bg-gradient-to-br from-[#702eff]/10 to-[#ffbf94]/10 backdrop-blur-sm border border-[#702eff]/50 rounded-2xl p-10 mb-16 relative overflow-hidden shadow-2xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -455,17 +456,23 @@ const TV2xCogito = () => {
 
 
                   {/* H24 Team */}
-                  <div>
-                    <h4 className="text-xl font-semibold text-white mb-6 text-center">
+                  <div className="mt-20">
+                    <motion.h4 
+                      className="text-2xl font-bold text-white mb-10 text-center"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: true }}
+                    >
                       Team Høst 2024
-                    </h4>
+                    </motion.h4>
 
                     {/* Project Leaders */}
-                    <div className="mb-6">
-                      <h5 className="text-lg font-medium text-[#ffbf94] mb-4 text-center">
+                    <div className="mb-12">
+                      <h5 className="text-lg font-medium text-[#ffbf94] mb-6 text-center uppercase tracking-wider">
                         Prosjektledere
                       </h5>
-                      <div className="grid tablet:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                      <div className="grid tablet:grid-cols-2 gap-6 max-w-2xl mx-auto">
                         {h24TeamLeaders.map((member) => (
                           <TeamMemberCard key={member.name} member={member} />
                         ))}
@@ -474,35 +481,34 @@ const TV2xCogito = () => {
 
                     {/* Team Members */}
                     <div>
-                      <h5 className="text-lg font-medium text-[#ffbf94] mb-4 text-center">
+                      <h5 className="text-lg font-medium text-[#ffbf94] mb-6 text-center uppercase tracking-wider">
                         Medlemmer
                       </h5>
-                      <div className="flex justify-center">
-                        <div className="grid tablet:grid-cols-3 grid-cols-2 gap-4 tablet:max-w-3xl">
-                          {h24TeamMembers.map((member) => (
-                            <TeamMemberCard key={member.name} member={member} />
-                          ))}
-                        </div>
+                      <div className="grid lg:grid-cols-4 tablet:grid-cols-3 grid-cols-2 gap-6 max-w-5xl mx-auto">
+                        {h24TeamMembers.map((member) => (
+                          <TeamMemberCard key={member.name} member={member} />
+                        ))}
                       </div>
                     </div>
                   </div>
-                </section>
+                </div>
               </div>
             ) : (
               <div>
                 {/* V25 Content */}
-                <section className="mb-16">
+                <div className="max-w-6xl mx-auto">
                   <motion.h3 
-                    className="text-2xl font-bold text-white mb-6 text-center"
+                    className="text-3xl font-bold text-white mb-12 text-center"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    Vår 2025
+                    Fortsettelsen - Vår 2025
                   </motion.h3>
+                  
                   <motion.div 
-                    className="bg-[#702eff] bg-opacity-20 backdrop-blur-sm border border-[#702eff] rounded-lg p-8 mb-8 relative overflow-hidden"
+                    className="bg-gradient-to-br from-[#702eff]/10 to-[#ffbf94]/10 backdrop-blur-sm border border-[#702eff]/50 rounded-2xl p-10 mb-16 relative overflow-hidden shadow-2xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
@@ -546,17 +552,23 @@ const TV2xCogito = () => {
                   </motion.div>
 
                   {/* V25 Team */}
-                  <div>
-                    <h4 className="text-xl font-semibold text-white mb-6 text-center">
+                  <div className="mt-20">
+                    <motion.h4 
+                      className="text-2xl font-bold text-white mb-10 text-center"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: true }}
+                    >
                       Team Vår 2025
-                    </h4>
+                    </motion.h4>
 
                     {/* Project Leaders */}
-                    <div className="mb-6">
-                      <h5 className="text-lg font-medium text-[#ffbf94] mb-4 text-center">
+                    <div className="mb-12">
+                      <h5 className="text-lg font-medium text-[#ffbf94] mb-6 text-center uppercase tracking-wider">
                         Prosjektledere
                       </h5>
-                      <div className="grid tablet:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                      <div className="grid tablet:grid-cols-2 gap-6 max-w-2xl mx-auto">
                         {v25TeamLeaders.map((member) => (
                           <TeamMemberCard key={member.name} member={member} />
                         ))}
@@ -564,11 +576,11 @@ const TV2xCogito = () => {
                     </div>
 
                     {/* Mentors */}
-                    <div className="mb-6">
-                      <h5 className="text-lg font-medium text-[#ffbf94] mb-4 text-center">
+                    <div className="mb-12">
+                      <h5 className="text-lg font-medium text-[#ffbf94] mb-6 text-center uppercase tracking-wider">
                         Mentorer
                       </h5>
-                      <div className="grid tablet:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                      <div className="grid tablet:grid-cols-2 gap-6 max-w-2xl mx-auto">
                         {v25TeamMentors.map((member) => (
                           <TeamMemberCard key={member.name} member={member} />
                         ))}
@@ -577,17 +589,17 @@ const TV2xCogito = () => {
 
                     {/* Team Members */}
                     <div>
-                      <h5 className="text-lg font-medium text-[#ffbf94] mb-4 text-center">
+                      <h5 className="text-lg font-medium text-[#ffbf94] mb-6 text-center uppercase tracking-wider">
                         Medlemmer
                       </h5>
-                      <div className="grid tablet:grid-cols-3 grid-cols-2 gap-4">
+                      <div className="grid lg:grid-cols-3 tablet:grid-cols-3 grid-cols-2 gap-6 max-w-5xl mx-auto">
                         {v25TeamMembers.map((member) => (
                           <TeamMemberCard key={member.name} member={member} />
                         ))}
                       </div>
                     </div>
                   </div>
-                </section>
+                </div>
               </div>
             )}
           </section>
