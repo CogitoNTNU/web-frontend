@@ -79,8 +79,8 @@ export const CogitoProjects: ProjectType[] = [
     github: "https://github.com/CogitoNTNU/CrawlAI",
     img: "/Projects/Cards/CrawlAI.png",
     playable: false,
-    released: false,
-    url: "",
+    released: true,
+    url: "/projects/articles/crawlai",
   },
   {
     name: "TetrisAI",
