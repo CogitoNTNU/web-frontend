@@ -313,8 +313,8 @@ export const articles: ArticleType[] = [
         },
       ],
     },
-    semester: "Vår",
-    year: 2023,
+    semester: "Høst",
+    year: 2024,
     github: "https://github.com/CogitoNTNU/crawlai",
   },
   {
