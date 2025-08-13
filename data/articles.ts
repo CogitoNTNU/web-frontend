@@ -316,4 +316,79 @@ export const articles: ArticleType[] = [
     year: 2024,
     github: "https://github.com/CogitoNTNU/TetrisAI",
   },
+  {
+    articleId: "sudokusolver",
+    landingPage: {
+      title: "SUDOKU SOLVER",
+      description:
+        "Hvordan kan vi bruke datasyn og AR for å løse sudoku i sanntid?",
+      isVideo: true,
+    },
+    descriptionPage: {
+      description:
+        "SudokuSolver er en Augmented Reality (AR) applikasjon som løser sudoku-oppgaver i sanntid ved hjelp av datasyn og maskinlæring. Systemet bruker OpenCV.js for å detektere sudoku-rutenett i bilder gjennom avansert bildebehandling med gaussian blur og adaptive threshold-filtre. Når rutenettet er identifisert, deles det opp i 81 individuelle celler hvor bakgrunn og cellelinjer fjernes. For å gjenkjenne sifrene brukes en custom-trent CNN (Convolutional Neural Network) modell trent på et datasett med 4500 sifre, hvor sifrene forbehandles med dilasjon for bedre gjenkjennelse. Selve sudoku-løsningen beregnes ved hjelp av en rekursiv backtracking-algoritme som systematisk prøver ulike kombinasjoner til den finner riktig løsning. Det mest imponerende er hvordan løsningen projiseres tilbake i live kamerafeed ved hjelp av en beregnet projeksjonsmatrise, slik at brukeren kan se løsningen direkte på det fysiske sudoku-brettet gjennom kameraet.",
+      funFacts: [
+        "CNN-modellen ble trent på et custom datasett med 4500 digitale sifre, prosessert med samme metode som brukes i selve løsningen!",
+        "Systemet kan løse selv de vanskeligste sudoku-oppgavene på under ett sekund.",
+        "AR-visualiseringen bruker avansert projeksjonsmatematikk for å plassere løsningen perfekt over det fysiske brettet.",
+      ],
+      links: [
+        "https://sudoku-solver-theta-wine.vercel.app",
+        "https://opencv.org/",
+      ],
+      technologies: [
+        "TypeScript",
+        "OpenCV.js",
+        "Python",
+        "TensorFlow/Keras",
+        "Computer Vision",
+        "Convolutional Neural Networks",
+        "Augmented Reality",
+        "Vercel",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Afras Mansoor",
+          role: "Leder",
+          github: "https://github.com/Afrasum",
+          linkedIn: "https://www.linkedin.com/in/afrasmansoor",
+        },
+        {
+          name: "Andreas V. Jonsterhaug",
+          role: "Medleder",
+          github: "https://github.com/AndreasVJ",
+          linkedIn: "https://www.linkedin.com/in/andreas-v-jonsterhaug-982232277/",
+        },
+        {
+          name: "Igor Iwanicki",
+          role: "Medlem",
+          github: "https://github.com/igiwa001",
+          linkedIn: "",
+        },
+        {
+          name: "Ulrikke Kvaal",
+          role: "Medlem",
+          github: "https://github.com/ulrikketk",
+          linkedIn: "",
+        },
+        {
+          name: "Lotta Sandström",
+          role: "Medlem",
+          github: "https://github.com/lottahelen",
+          linkedIn: "",
+        },
+        {
+          name: "Ella Octava Steinum Aakre",
+          role: "Medlem",
+          github: "https://github.com/EllaOctava",
+          linkedIn: ""
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/SudokuSolver",
+  },
 ];
