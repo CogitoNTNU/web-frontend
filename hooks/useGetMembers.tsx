@@ -1,23 +1,24 @@
 import axios from "axios";
-import { GetMembersType, MemberType } from "../lib/types";
 import { useQuery } from "@tanstack/react-query";
-import { memberQueryKey } from "../lib/queryKeys";
+import { Member, Project } from "../lib/types";
 
-const getMembers = async (params: GetMembersType) => {
-  const { data } = await axios.get<MemberType[]>(
+const fetchMembers = async (): Promise<Member[]> => {
+  const { data } = await axios.get<Member[]>(
     `${process.env.endpoint}/api/members-by-type/`,
-    {
-      params,
-    }
+    { params: { member_type: "Alle Medlemmer" } }
   );
-
   return data;
 };
 
-export const useGetMembers = (params: GetMembersType) => {
-  return useQuery<MemberType[]>({
-    queryKey: [memberQueryKey(params)],
-    queryFn: () => getMembers(params),
-    enabled: !!params,
-  });
+const fetchProjects = async (): Promise<Project[]> => {
+  const { data } = await axios.get<Project[]>(
+    `${process.env.endpoint}/api/projects/`
+  );
+  return data;
 };
+
+export const useAllMembers = () =>
+  useQuery({ queryKey: ["members"], queryFn: fetchMembers });
+
+export const useAllProjects = () =>
+  useQuery({ queryKey: ["projects"], queryFn: fetchProjects });
