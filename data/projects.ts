@@ -117,7 +117,7 @@ export const CogitoProjects: ProjectType[] = [
   {
     name: "Diffusion Model",
     github: "https://github.com/CogitoNTNU/DiffusionModel",
-    img: "/Projects/ProjectLogos/diffusionmodel.webp",
+    img: "/Projects/Articles/diffusion-model/diffusion-model.png",
     playable: false,
     released: true,
     url: "/projects/articles/diffusion-model",
