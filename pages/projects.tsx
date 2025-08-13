@@ -105,9 +105,9 @@ const Projects = () => {
             Prosjekt Galleri
           </p>
           <div className="flex pt-8 gap-x-12 gap-y-4 flex-wrap">
-            {CogitoProjects.sort((a, b) => {
-              if (a.released === b.released) return 0;
-              if (a.released) return -1;
+            {CogitoProjects.sort((firstProject, secondProject) => {
+              if (firstProject.released === secondProject.released) return 0;
+              if (firstProject.released) return -1;
               return 1;
             }).map((project: ProjectType) => {
               return (
