@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
@@ -11,39 +11,6 @@ interface TeamMember {
   github?: string;
   linkedin?: string;
 }
-
-const TeamMemberCard = ({ member }: { member: TeamMember }) => (
-  <motion.div 
-    className="bg-[#702eff] bg-opacity-20 backdrop-blur-sm border border-[#702eff] p-4 rounded-lg hover:bg-opacity-30 transition-all duration-300 group"
-    whileHover={{ scale: 1.05, y: -5 }}
-    transition={{ type: "spring", stiffness: 300 }}
-  >
-    <h5 className="text-white font-semibold mb-1 group-hover:text-[#ffbf94] transition-colors">{member.name}</h5>
-    <p className="text-[#ffbf94] text-sm mb-3">{member.role}</p>
-    <div className="flex gap-3">
-      {member.github && (
-        <a
-          href={member.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#ffbf94] transition-colors transform hover:scale-110"
-        >
-          <FaGithub size={20} />
-        </a>
-      )}
-      {member.linkedin && (
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#ffbf94] transition-colors transform hover:scale-110"
-        >
-          <FaLinkedin size={20} />
-        </a>
-      )}
-    </div>
-  </motion.div>
-);
 
 const TV2xCogito = () => {
   const [selectedSemester, setSelectedSemester] = useState<"h24" | "v25">(
@@ -331,7 +298,7 @@ const TV2xCogito = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-[#100118] via-[#100118]/70 to-[#100118]" />
             </motion.div>
-            
+
             {/* Content Overlay */}
             <div className="relative z-10 px-4 py-16 max-w-7xl mx-auto">
               <motion.div
@@ -344,15 +311,16 @@ const TV2xCogito = () => {
                   Om Prosjektet
                 </h2>
                 <p className="text-white opacity-90 text-lg max-w-4xl mx-auto leading-relaxed mb-4 drop-shadow-lg">
-                  Dette er et samarbeidsprosjekt mellom Cogito NTNU og TV2 som har
-                  pågått over to semestre.
+                  Dette er et samarbeidsprosjekt mellom Cogito NTNU og TV2 som
+                  har pågått over to semestre.
                 </p>
                 <p className="text-white opacity-90 text-lg max-w-4xl mx-auto leading-relaxed mb-16 drop-shadow-lg">
-                  Prosjektet utforsker hvordan kunstig intelligens kan hjelpe TV2.no
-                  med å ta bedre redaksjonelle valg ved å utnytte store mengder data
-                  om leseratferd og artikkelprestasjon. Målet er å bruke
-                  maskinlæring for å analysere artikkeldata og gi nyttige innsikter
-                  som hjelper TV2 med å forstå hva som engasjerer leserne mest.
+                  Prosjektet utforsker hvordan kunstig intelligens kan hjelpe
+                  TV2.no med å ta bedre redaksjonelle valg ved å utnytte store
+                  mengder data om leseratferd og artikkelprestasjon. Målet er å
+                  bruke maskinlæring for å analysere artikkeldata og gi nyttige
+                  innsikter som hjelper TV2 med å forstå hva som engasjerer
+                  leserne mest.
                 </p>
 
                 <motion.div
@@ -367,7 +335,7 @@ const TV2xCogito = () => {
                   <p className="text-xl text-white/90 drop-shadow-lg mb-8">
                     Utforsk prosjektets utvikling over tid
                   </p>
-                  
+
                   {/* Semester Selector */}
                   <div className="flex justify-center gap-4">
                     <button
@@ -413,7 +381,9 @@ const TV2xCogito = () => {
                     <h3 className="text-5xl font-bold bg-gradient-to-r from-[#702eff] to-[#ffbf94] bg-clip-text text-transparent mb-4">
                       Høst 2024
                     </h3>
-                    <p className="text-2xl text-white/80">TV2 Article Predictor</p>
+                    <p className="text-2xl text-white/80">
+                      TV2 Article Predictor
+                    </p>
                   </motion.div>
 
                   {/* Main Content Grid */}
@@ -428,14 +398,15 @@ const TV2xCogito = () => {
                     >
                       <div className="relative">
                         <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#702eff] to-[#ffbf94] rounded-full" />
-                        
+
                         <div className="pl-8 space-y-6">
                           <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">🎯</span> Målet
                             </h4>
                             <p className="text-white/90 leading-relaxed">
-                              Bygge et AI-system som predikerer artikkelytelse basert på historiske data fra TV2.no
+                              Bygge et AI-system som predikerer artikkelytelse
+                              basert på historiske data fra TV2.no
                             </p>
                           </div>
 
@@ -444,7 +415,9 @@ const TV2xCogito = () => {
                               <span className="text-2xl">💡</span> Løsningen
                             </h4>
                             <p className="text-white/90 leading-relaxed">
-                              En dockerisert tjeneste med maskinlæringsmodeller som analyserer artikler og gir prediksjoner med forklaringer
+                              En dockerisert tjeneste med maskinlæringsmodeller
+                              som analyserer artikler og gir prediksjoner med
+                              forklaringer
                             </p>
                           </div>
 
@@ -453,7 +426,8 @@ const TV2xCogito = () => {
                               <span className="text-2xl">🔒</span> Status
                             </h4>
                             <p className="text-white/90 leading-relaxed">
-                              Prosjektet er under NDA - detaljerte resultater kan ikke deles offentlig
+                              Prosjektet er under NDA - detaljerte resultater
+                              kan ikke deles offentlig
                             </p>
                           </div>
                         </div>
@@ -495,17 +469,24 @@ const TV2xCogito = () => {
                       {/* Project Stats */}
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 text-center">
-                          <div className="text-3xl font-bold text-[#702eff]">1</div>
-                          <div className="text-white/80 text-sm mt-1 font-medium">Semester</div>
+                          <div className="text-3xl font-bold text-[#702eff]">
+                            1
+                          </div>
+                          <div className="text-white/80 text-sm mt-1 font-medium">
+                            Semester
+                          </div>
                         </div>
                         <div className="bg-[#1a0826] p-6 rounded-xl border border-[#ffbf94]/30 text-center">
-                          <div className="text-3xl font-bold text-[#ffbf94]">9</div>
-                          <div className="text-white/80 text-sm mt-1 font-medium">Medlemmer</div>
+                          <div className="text-3xl font-bold text-[#ffbf94]">
+                            9
+                          </div>
+                          <div className="text-white/80 text-sm mt-1 font-medium">
+                            Medlemmer
+                          </div>
                         </div>
                       </div>
                     </motion.div>
                   </div>
-
 
                   {/* H24 Team - Creative Cards Layout */}
                   <div className="relative">
@@ -516,7 +497,9 @@ const TV2xCogito = () => {
                       viewport={{ once: true }}
                       className="text-center mb-16"
                     >
-                      <h4 className="text-3xl font-bold text-white mb-2">Teamet Bak Prosjektet</h4>
+                      <h4 className="text-3xl font-bold text-white mb-2">
+                        Teamet Bak Prosjektet
+                      </h4>
                       <p className="text-white/60">De som gjorde det mulig</p>
                     </motion.div>
 
@@ -524,7 +507,9 @@ const TV2xCogito = () => {
                     <div className="mb-16">
                       <div className="flex items-center justify-center gap-4 mb-8">
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">LEDELSE</h5>
+                        <h5 className="text-[#ffbf94] font-semibold px-4">
+                          LEDELSE
+                        </h5>
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
                       </div>
                       <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -541,19 +526,31 @@ const TV2xCogito = () => {
                             <div className="relative bg-[#100118] border border-[#702eff]/30 rounded-2xl p-6 group-hover:border-[#702eff] transition-all">
                               <div className="flex items-center justify-between mb-3">
                                 <div>
-                                  <h6 className="text-white font-bold text-lg">{member.name}</h6>
-                                  <p className="text-[#ffbf94] text-sm">{member.role}</p>
+                                  <h6 className="text-white font-bold text-lg">
+                                    {member.name}
+                                  </h6>
+                                  <p className="text-[#ffbf94] text-sm">
+                                    {member.role}
+                                  </p>
                                 </div>
                                 <div className="flex gap-3">
                                   {member.github && (
-                                    <a href={member.github} target="_blank" rel="noopener noreferrer" 
-                                       className="text-white/60 hover:text-[#702eff] transition-colors">
+                                    <a
+                                      href={member.github}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-white/60 hover:text-[#702eff] transition-colors"
+                                    >
                                       <FaGithub size={22} />
                                     </a>
                                   )}
                                   {member.linkedin && (
-                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                                       className="text-white/60 hover:text-[#702eff] transition-colors">
+                                    <a
+                                      href={member.linkedin}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-white/60 hover:text-[#702eff] transition-colors"
+                                    >
                                       <FaLinkedin size={22} />
                                     </a>
                                   )}
@@ -569,7 +566,9 @@ const TV2xCogito = () => {
                     <div>
                       <div className="flex items-center justify-center gap-4 mb-8">
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">MEDLEMMER</h5>
+                        <h5 className="text-[#ffbf94] font-semibold px-4">
+                          MEDLEMMER
+                        </h5>
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
                       </div>
                       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
@@ -583,19 +582,31 @@ const TV2xCogito = () => {
                             whileHover={{ y: -5 }}
                             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all"
                           >
-                            <h6 className="text-white font-semibold mb-1">{member.name}</h6>
+                            <h6 className="text-white font-semibold mb-1">
+                              {member.name}
+                            </h6>
                             <div className="flex items-center justify-between">
-                              <p className="text-[#ffbf94] text-sm">{member.role}</p>
+                              <p className="text-[#ffbf94] text-sm">
+                                {member.role}
+                              </p>
                               <div className="flex gap-2">
                                 {member.github && (
-                                  <a href={member.github} target="_blank" rel="noopener noreferrer"
-                                     className="text-white/40 hover:text-[#ffbf94] transition-colors">
+                                  <a
+                                    href={member.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
                                     <FaGithub size={18} />
                                   </a>
                                 )}
                                 {member.linkedin && (
-                                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                                     className="text-white/40 hover:text-[#ffbf94] transition-colors">
+                                  <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
                                     <FaLinkedin size={18} />
                                   </a>
                                 )}
@@ -642,16 +653,30 @@ const TV2xCogito = () => {
                         </h4>
                         <div className="grid gap-4">
                           <div className="bg-[#100118] p-5 rounded-lg border-l-4 border-[#ffbf94]">
-                            <h5 className="text-[#ffbf94] font-bold text-lg mb-2">Embedding-modeller</h5>
-                            <p className="text-white/85 text-sm leading-relaxed">Utforske avanserte tekstforståelsesmodeller for dypere innsikt</p>
+                            <h5 className="text-[#ffbf94] font-bold text-lg mb-2">
+                              Embedding-modeller
+                            </h5>
+                            <p className="text-white/85 text-sm leading-relaxed">
+                              Utforske avanserte tekstforståelsesmodeller for
+                              dypere innsikt
+                            </p>
                           </div>
                           <div className="bg-[#100118] p-5 rounded-lg border-l-4 border-[#702eff]">
-                            <h5 className="text-[#702eff] font-bold text-lg mb-2">Sesongvariasjoner</h5>
-                            <p className="text-white/85 text-sm leading-relaxed">Håndtere tidsmessige mønstre og sesongbaserte trender</p>
+                            <h5 className="text-[#702eff] font-bold text-lg mb-2">
+                              Sesongvariasjoner
+                            </h5>
+                            <p className="text-white/85 text-sm leading-relaxed">
+                              Håndtere tidsmessige mønstre og sesongbaserte
+                              trender
+                            </p>
                           </div>
                           <div className="bg-[#100118] p-5 rounded-lg border-l-4 border-[#ffbf94]">
-                            <h5 className="text-[#ffbf94] font-bold text-lg mb-2">Visuell Analyse</h5>
-                            <p className="text-white/85 text-sm leading-relaxed">Undersøke hvordan bilder påvirker artikkelytelse</p>
+                            <h5 className="text-[#ffbf94] font-bold text-lg mb-2">
+                              Visuell Analyse
+                            </h5>
+                            <p className="text-white/85 text-sm leading-relaxed">
+                              Undersøke hvordan bilder påvirker artikkelytelse
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -667,26 +692,42 @@ const TV2xCogito = () => {
                     >
                       {/* Quick Stats */}
                       <div className="bg-[#1a0826] p-6 rounded-2xl border border-[#702eff]/30">
-                        <h5 className="text-white font-bold text-lg mb-4">Status</h5>
+                        <h5 className="text-white font-bold text-lg mb-4">
+                          Status
+                        </h5>
                         <div className="space-y-3">
                           <div className="flex justify-between items-center">
-                            <span className="text-white/80 font-medium">Team</span>
-                            <span className="text-[#ffbf94] font-bold">8 personer</span>
+                            <span className="text-white/80 font-medium">
+                              Team
+                            </span>
+                            <span className="text-[#ffbf94] font-bold">
+                              8 personer
+                            </span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-white/80 font-medium">Varighet</span>
-                            <span className="text-[#702eff] font-bold">1 semester</span>
+                            <span className="text-white/80 font-medium">
+                              Varighet
+                            </span>
+                            <span className="text-[#702eff] font-bold">
+                              1 semester
+                            </span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-white/80 font-medium">Status</span>
-                            <span className="text-green-400 font-bold">Pågående</span>
+                            <span className="text-white/80 font-medium">
+                              Status
+                            </span>
+                            <span className="text-green-400 font-bold">
+                              Pågående
+                            </span>
                           </div>
                         </div>
                       </div>
 
                       {/* Tech Pills */}
                       <div className="bg-[#1a0826] p-6 rounded-2xl border border-[#ffbf94]/30">
-                        <h5 className="text-white font-bold text-lg mb-4">Tech Stack</h5>
+                        <h5 className="text-white font-bold text-lg mb-4">
+                          Tech Stack
+                        </h5>
                         <div className="flex flex-wrap gap-2">
                           {v25TechStack.map((tech) => (
                             <a
@@ -713,7 +754,9 @@ const TV2xCogito = () => {
                       viewport={{ once: true }}
                       className="text-center mb-16"
                     >
-                      <h4 className="text-3xl font-bold text-white mb-2">Teamet Som Tar Over</h4>
+                      <h4 className="text-3xl font-bold text-white mb-2">
+                        Teamet Som Tar Over
+                      </h4>
                       <p className="text-white/60">Vår 2025 generasjonen</p>
                     </motion.div>
 
@@ -721,14 +764,18 @@ const TV2xCogito = () => {
                     <div className="mb-16">
                       <div className="flex items-center justify-center gap-4 mb-8">
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">LEDELSE & VEILEDNING</h5>
+                        <h5 className="text-[#ffbf94] font-semibold px-4">
+                          LEDELSE & VEILEDNING
+                        </h5>
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
                       </div>
-                      
+
                       <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         {/* Leaders Column */}
                         <div>
-                          <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">Prosjektledere</h6>
+                          <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">
+                            Prosjektledere
+                          </h6>
                           <div className="space-y-4">
                             {v25TeamLeaders.map((member, index) => (
                               <motion.div
@@ -741,19 +788,31 @@ const TV2xCogito = () => {
                               >
                                 <div className="flex items-center justify-between">
                                   <div>
-                                    <h6 className="text-white font-bold">{member.name}</h6>
-                                    <p className="text-[#ffbf94] text-sm">{member.role}</p>
+                                    <h6 className="text-white font-bold">
+                                      {member.name}
+                                    </h6>
+                                    <p className="text-[#ffbf94] text-sm">
+                                      {member.role}
+                                    </p>
                                   </div>
                                   <div className="flex gap-2">
                                     {member.github && (
-                                      <a href={member.github} target="_blank" rel="noopener noreferrer"
-                                         className="text-white/50 hover:text-[#702eff] transition-colors">
+                                      <a
+                                        href={member.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/50 hover:text-[#702eff] transition-colors"
+                                      >
                                         <FaGithub size={20} />
                                       </a>
                                     )}
                                     {member.linkedin && (
-                                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                                         className="text-white/50 hover:text-[#702eff] transition-colors">
+                                      <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/50 hover:text-[#702eff] transition-colors"
+                                      >
                                         <FaLinkedin size={20} />
                                       </a>
                                     )}
@@ -766,7 +825,9 @@ const TV2xCogito = () => {
 
                         {/* Mentors Column */}
                         <div>
-                          <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">Mentorer</h6>
+                          <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">
+                            Mentorer
+                          </h6>
                           <div className="space-y-4">
                             {v25TeamMentors.map((member, index) => (
                               <motion.div
@@ -779,19 +840,31 @@ const TV2xCogito = () => {
                               >
                                 <div className="flex items-center justify-between">
                                   <div>
-                                    <h6 className="text-white font-bold">{member.name}</h6>
-                                    <p className="text-[#702eff] text-sm">{member.role}</p>
+                                    <h6 className="text-white font-bold">
+                                      {member.name}
+                                    </h6>
+                                    <p className="text-[#702eff] text-sm">
+                                      {member.role}
+                                    </p>
                                   </div>
                                   <div className="flex gap-2">
                                     {member.github && (
-                                      <a href={member.github} target="_blank" rel="noopener noreferrer"
-                                         className="text-white/50 hover:text-[#ffbf94] transition-colors">
+                                      <a
+                                        href={member.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/50 hover:text-[#ffbf94] transition-colors"
+                                      >
                                         <FaGithub size={20} />
                                       </a>
                                     )}
                                     {member.linkedin && (
-                                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                                         className="text-white/50 hover:text-[#ffbf94] transition-colors">
+                                      <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/50 hover:text-[#ffbf94] transition-colors"
+                                      >
                                         <FaLinkedin size={20} />
                                       </a>
                                     )}
@@ -808,7 +881,9 @@ const TV2xCogito = () => {
                     <div>
                       <div className="flex items-center justify-center gap-4 mb-8">
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">MEDLEMMER</h5>
+                        <h5 className="text-[#ffbf94] font-semibold px-4">
+                          MEDLEMMER
+                        </h5>
                         <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
                       </div>
                       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
@@ -822,19 +897,31 @@ const TV2xCogito = () => {
                             whileHover={{ y: -5 }}
                             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all"
                           >
-                            <h6 className="text-white font-semibold mb-1">{member.name}</h6>
+                            <h6 className="text-white font-semibold mb-1">
+                              {member.name}
+                            </h6>
                             <div className="flex items-center justify-between">
-                              <p className="text-[#ffbf94] text-sm">{member.role}</p>
+                              <p className="text-[#ffbf94] text-sm">
+                                {member.role}
+                              </p>
                               <div className="flex gap-2">
                                 {member.github && (
-                                  <a href={member.github} target="_blank" rel="noopener noreferrer"
-                                     className="text-white/40 hover:text-[#ffbf94] transition-colors">
+                                  <a
+                                    href={member.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
                                     <FaGithub size={18} />
                                   </a>
                                 )}
                                 {member.linkedin && (
-                                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                                     className="text-white/40 hover:text-[#ffbf94] transition-colors">
+                                  <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
                                     <FaLinkedin size={18} />
                                   </a>
                                 )}
@@ -849,7 +936,7 @@ const TV2xCogito = () => {
               </div>
             )}
           </section>
-          
+
           {/* Spacer before footer */}
           <div className="h-32" />
         </main>
