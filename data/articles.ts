@@ -313,9 +313,9 @@ export const articles: ArticleType[] = [
         },
       ],
     },
-    semester: "Vår",
+    semester: "Høst",
     year: 2024,
-    github: "https://github.com/CogitoNTNU/TetrisAI",
+    github: "https://github.com/CogitoNTNU/Rubiks",
   },
   {
     articleId: "rubiks",
