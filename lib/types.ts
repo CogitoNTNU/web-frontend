@@ -81,7 +81,7 @@ export type ArticleTeamPage = {
 
 export type TeamMember = {
   name: string;
-  role: "Leder" | "Medlem";
+  role: "Leder" | "Medleder" | "Medlem";
   github: string;
   linkedIn: string;
 };
