@@ -93,8 +93,10 @@ export const CogitoProjects: ProjectType[] = [
   {
     name: "SudokuSolver",
     github: "https://github.com/CogitoNTNU/SudokuSolver",
-    img: "/Projects/Articles/sudokusolver/0.png",
-    playable: true,
+    img: "/Projects/Articles/sudokusolver/sudoku_logo.png",
+    playable: false,
+    hybrid: true,
+    playableUrl: "https://sudoku-solver-theta-wine.vercel.app",
     released: true,
     url: "/projects/sudokusolver",
   },

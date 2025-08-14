@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Icon from "../Icons/Icon";
 import Link from "next/link";
-import { FaBookOpen, FaPlay } from "react-icons/fa";
+import { FaBookOpen, FaPlay, FaArrowRight } from "react-icons/fa";
+import { useState } from "react";
 
 interface ProjectProps {
   name: string;
@@ -24,8 +25,10 @@ const Project = ({
   playableUrl,
   released,
 }: ProjectProps) => {
+  const [showOptions, setShowOptions] = useState(false);
+
   return (
-    <div className={`${released && "group"} relative`}>
+    <div className={`${released && "group"}`}>
       <div className="h-[20rem] w-[14rem] relative">
         <div
           className={`${released ? "group-hover:bg-black-dark opacity-90 transition-all" : "bg-black-dark opacity-90"} h-full w-full  z-50 relative rounded-3xl`}
@@ -39,25 +42,37 @@ const Project = ({
               </div>
               <div className="w-full h-full z-50 flex items-center justify-center">
                 {hybrid ? (
-                  // Clean split view for hybrid projects
-                  <div className="group-hover:opacity-100 opacity-0 transition-opacity w-full h-full flex flex-col">
-                    {/* Top half - Read */}
-                    <Link
-                      href={url}
-                      className="flex-1 flex flex-col items-center justify-center text-white hover:bg-white/10 transition-colors border-b border-white/20"
-                    >
-                      <FaBookOpen className="text-4xl mb-2" />
-                      <p className="text-sm font-medium">Les Artikkel</p>
-                    </Link>
+                  // Hybrid version - shows both options
+                  <div className="flex-col items-center justify-center group-hover:opacity-100 opacity-0 transition-opacity text-white space-y-4">
+                    {/* Visual indicator that it's hybrid */}
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <div className="bg-gradient-to-r from-pink-500 to-purple-500 px-3 py-1 rounded-full text-xs font-semibold">
+                        HYBRID
+                      </div>
+                    </div>
                     
-                    {/* Bottom half - Play */}
-                    <Link
-                      href={playableUrl || url}
-                      className="flex-1 flex flex-col items-center justify-center text-white hover:bg-white/10 transition-colors"
-                    >
-                      <FaPlay className="text-4xl mb-2" />
-                      <p className="text-sm font-medium">Prøv Demo</p>
-                    </Link>
+                    {/* Both options side by side */}
+                    <div className="flex gap-6 items-center">
+                      <Link
+                        href={url}
+                        className="flex flex-col items-center hover:scale-110 transition-transform"
+                      >
+                        <FaBookOpen className="text-4xl mb-2" />
+                        <p className="text-sm">Les mer</p>
+                      </Link>
+                      
+                      <div className="text-2xl opacity-50">+</div>
+                      
+                      <Link
+                        href={playableUrl || url}
+                        className="flex flex-col items-center hover:scale-110 transition-transform"
+                      >
+                        <FaPlay className="text-4xl mb-2" />
+                        <p className="text-sm">Prøv ut</p>
+                      </Link>
+                    </div>
+                    
+                    <p className="text-xs opacity-75 mt-2">Utforsk & Eksperimenter</p>
                   </div>
                 ) : playable ? (
                   <Link
@@ -91,19 +106,6 @@ const Project = ({
           fill
           className="object-cover object-center rounded-3xl z-40"
         />
-        
-        {/* Corner indicator for hybrid projects */}
-        {hybrid && released && (
-          <div className="absolute top-2 right-2 z-[60]">
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg px-2 py-1 shadow-lg">
-              <p className="text-[10px] font-bold text-white flex items-center gap-1">
-                <FaBookOpen className="text-[8px]" />
-                +
-                <FaPlay className="text-[8px]" />
-              </p>
-            </div>
-          </div>
-        )}
       </div>
       <p className="pt-3 text-lg tracking-wider text-white cursor-default">
         {name}

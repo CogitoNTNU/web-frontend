@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+}
+
 @supports (-webkit-touch-callout: none) {
   .h-screen {
     height: -webkit-fill-available;

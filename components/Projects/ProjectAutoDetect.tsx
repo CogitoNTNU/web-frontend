@@ -2,14 +2,13 @@ import Image from "next/image";
 import Icon from "../Icons/Icon";
 import Link from "next/link";
 import { FaBookOpen, FaPlay } from "react-icons/fa";
+import { BiLinkExternal } from "react-icons/bi";
 
 interface ProjectProps {
   name: string;
   url: string;
   github: string;
   playable?: boolean;
-  hybrid?: boolean;
-  playableUrl?: string;
   released: boolean;
   img: string;
 }
@@ -20,10 +19,13 @@ const Project = ({
   img,
   github,
   playable = false,
-  hybrid = false,
-  playableUrl,
   released,
 }: ProjectProps) => {
+  // Auto-detect hybrid projects based on specific projects
+  // This could also come from a config or be passed as a prop
+  const hybridProjects = ["SudokuSolver", "TetrisAI", "MarketingAI"];
+  const isHybrid = hybridProjects.includes(name);
+
   return (
     <div className={`${released && "group"} relative`}>
       <div className="h-[20rem] w-[14rem] relative">
@@ -38,7 +40,7 @@ const Project = ({
                 </Link>
               </div>
               <div className="w-full h-full z-50 flex items-center justify-center">
-                {hybrid ? (
+                {isHybrid ? (
                   // Clean split view for hybrid projects
                   <div className="group-hover:opacity-100 opacity-0 transition-opacity w-full h-full flex flex-col">
                     {/* Top half - Read */}
@@ -52,12 +54,17 @@ const Project = ({
                     
                     {/* Bottom half - Play */}
                     <Link
-                      href={playableUrl || url}
+                      href={url}
                       className="flex-1 flex flex-col items-center justify-center text-white hover:bg-white/10 transition-colors"
                     >
                       <FaPlay className="text-4xl mb-2" />
                       <p className="text-sm font-medium">Prøv Demo</p>
                     </Link>
+                    
+                    {/* Center divider with text */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-600 to-pink-600 px-3 py-1 rounded-full">
+                      <p className="text-xs font-bold text-white">2-i-1</p>
+                    </div>
                   </div>
                 ) : playable ? (
                   <Link
@@ -93,7 +100,7 @@ const Project = ({
         />
         
         {/* Corner indicator for hybrid projects */}
-        {hybrid && released && (
+        {isHybrid && released && (
           <div className="absolute top-2 right-2 z-[60]">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg px-2 py-1 shadow-lg">
               <p className="text-[10px] font-bold text-white flex items-center gap-1">

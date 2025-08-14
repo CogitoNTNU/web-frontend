@@ -115,6 +115,8 @@ const Projects = () => {
                   img={project.img}
                   url={project.url}
                   playable={project.playable}
+                  hybrid={project.hybrid}
+                  playableUrl={project.playableUrl}
                 />
               );
             })}
