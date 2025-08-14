@@ -328,9 +328,7 @@ export const articles: ArticleType[] = [
         "Diffusion Model-prosjektet undersøker hvordan kunstig intelligens kan skape realistiske bilder helt fra bunnen av, bokstavelig talt fra ren støy. Målet var å generere 32×32 piksels bilder av biler. Metoden bygger på Denoising Diffusion Probabilistic Models (DDPM), en generativ modell som gradvis “renser” et tilfeldig støybilde ved å reversere prosessen som ellers hadde lagt til støy, steg for steg. Gjennom hundrevis av slike omvendte trinn lærer modellen å gjenskape detaljer, former og farger, helt til et ferdig bilde fremstår. Treningsgrunnlaget var CIFAR-10-datasettet, som består av 60 000 bilder fordelt på ti kategorier, hvorav 5 000 er biler. Resultatet er en modell som kan generere helt nye bilbilder som ligner på de i datasettet, men som aldri har eksistert før.",
       funFacts: [
         "Diffusjonsmodeller kan i teorien generere uendelig mange unike bilder, fordi startstøyen alltid er tilfeldig.",
-        "Selv om prosessen virker treg sammenlignet med GANs, produserer diffusjonsmodeller ofte skarpere og mer detaljerte bilder.",
-        "Prinsippet bak minner om å fremkalle et fotografi i et mørkerom, men her starter vi ikke med et negativ, bare med ren støy.",
-        "DDPM er i dag grunnlaget for flere populære AI-bildemodeller, som Stable Diffusion.",
+        "Selv om prosessen virker treg sammenlignet med GANs, produserer diffusjonsmodeller ofte skarpere og mer detaljerte bilder og er brukt i metoder som Stable Diffusion.",
       ],
       links: [
         "https://arxiv.org/pdf/2006.11239",
