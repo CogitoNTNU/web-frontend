@@ -243,6 +243,81 @@ export const articles: ArticleType[] = [
     github: "https://github.com/CogitoNTNU/DeepTactics-Muzero",
   },
   {
+    articleId: "crawlai",
+    landingPage: {
+      title: "Crawl AI",
+      description:
+        "Kan en agent lære seg å gå, uansett hvilken kropp den får, ved hjelp av evolusjon?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "I dette prosjektet fikk agentene et par 'øyne' til å se terrenget foran seg, en kropp designet av brukeren, og ble sluppet løs i et kupert og utfordrende landskap. Der lærte de å bevege seg ved bruk av NEAT (NeuroEvolution of Augmenting Topologies), en genetisk algoritme som utvikler både strukturen og vektene i nevrale nettverk. Generasjon etter generasjon konkurrerte agentene om å komme lengst. De beste ble 'foreldre' for neste generasjon, og ga genene sine i form av nevrale nettverk, videre til avkommet. Men evolusjon har alltid noen overraskelser på lur. Etter bare et par timers trening fant enkelte agenter en uventet 'short-cut': de lærte å hoppe ut av verden for å vinne! CrawlAI ble dermed ikke bare et prosjekt om å bruke Bio-inspirert Kunstig Intelligens til å lære agenter å gå, men også et glimt inn i hvordan kunstig liv finner kreative (og noen ganger regelbrytende) løsninger på problemer.",
+      funFacts: [
+        "Agenten lærte å exploite game enginen for å hoppe ut av verden og fly",
+        "Vi lagde all logikken selv, inkludert nevrale nettverk!",
+        "Offline Learning",
+      ],
+      links: ["https://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf"],
+      technologies: ["Python", "Pygame", "PyMunk", "Pytest"],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Tobias Fremming",
+          role: "Leder",
+          github: "https://github.com/tobiasfremming",
+          linkedIn: "https://www.linkedin.com/in/tobias-fremming-a16850307/",
+        },
+        {
+          name: "Jonas Korkosh",
+          role: "Medlem",
+          github: "https://github.com/jonkor29",
+          linkedIn: "https://www.linkedin.com/in/jonas-korkosh-6aab6b198/",
+        },
+        {
+          name: "Mina Al-Dolaimi",
+          role: "Medlem",
+          github: "https://github.com/AlMinaDO",
+          linkedIn: "https://www.linkedin.com/in/mina-al-dolaimi-521078287/",
+        },
+        {
+          name: "Nathania Muliawan",
+          role: "Medlem",
+          github: "https://github.com/Nathaniavm",
+          linkedIn: "https://www.linkedin.com/in/nathaniamuliawan036/",
+        },
+        {
+          name: "Nils Henrik Hoelfeldt Lund",
+          role: "Medlem",
+          github: "https://github.com/Nilsthehacker",
+          linkedIn: "https://www.linkedin.com/in/",
+        },
+        {
+          name: "Parleen Brar",
+          role: "Medlem",
+          github: "https://github.com/Parleenb",
+          linkedIn: "https://www.linkedin.com/in/parleen-brar-2a5057233/",
+        },
+        {
+          name: "Sindre Fossdal",
+          role: "Medlem",
+          github: "https://github.com/SindreFossdal",
+          linkedIn: "https://www.linkedin.com/in/sfossdal/",
+        },
+        {
+          name: "Skage Reistad",
+          role: "Medlem",
+          github: "https://github.com/LockedInTheSkage",
+          linkedIn: "https://www.linkedin.com/in/skage-reistad-10b968263/",
+        },
+      ],
+    },
+    semester: "Høst",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/crawlai",
+  },
+  {
     articleId: "tetrisai",
     landingPage: {
       title: "TETRIS AI",
