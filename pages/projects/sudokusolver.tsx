@@ -58,10 +58,11 @@ const GithubButton = ({ link }: { link: string }) => {
 };
 
 const Landing = () => {
-  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const articleData = articles.find((a) => a.articleId === "sudokusolver");
   const title = articleData.landingPage.title;
   const description = articleData.landingPage.description;
-  const github = articleData.github || "https://github.com/CogitoNTNU/SudokuSolver";
+  const github =
+    articleData.github || "https://github.com/CogitoNTNU/SudokuSolver";
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
@@ -167,7 +168,7 @@ const Landing = () => {
 };
 
 const Description = () => {
-  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const articleData = articles.find((a) => a.articleId === "sudokusolver");
   const description = articleData.descriptionPage.description;
   const funFacts = articleData.descriptionPage.funFacts;
   const technologies = articleData.descriptionPage.technologies;
@@ -498,7 +499,12 @@ const TeamMember = ({
       className="text-center group"
     >
       <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl overflow-hidden border-3 border-transparent group-hover:border-[#4ECDC4] transition-all duration-300 shadow-lg">
-        <Image src={image} alt={name} fill className="object-cover bg-gray-900" />
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover bg-gray-900"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <h3 className="text-white font-semibold text-lg">{name}</h3>
@@ -535,9 +541,9 @@ const TeamMember = ({
 };
 
 const Team = () => {
-  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const articleData = articles.find((a) => a.articleId === "sudokusolver");
   const teamData = articleData.teamPage.team;
-  
+
   // Map team data from articles with custom images
   const team = teamData.map((member) => {
     // Map names to images
@@ -549,7 +555,7 @@ const Team = () => {
       "Lotta Sandström": "/Projects/Articles/sudokusolver/lotta.png",
       "Ella Octava Steinum Aakre": "/Projects/Articles/sudokusolver/0.png",
     };
-    
+
     return {
       name: member.name,
       role: member.role,
@@ -617,7 +623,7 @@ const Team = () => {
 };
 
 const SudokuSolver = () => {
-  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const articleData = articles.find((a) => a.articleId === "sudokusolver");
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

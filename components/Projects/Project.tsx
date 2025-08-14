@@ -49,7 +49,7 @@ const Project = ({
                       <FaBookOpen className="text-4xl mb-2" />
                       <p className="text-sm font-medium">Les Artikkel</p>
                     </Link>
-                    
+
                     {/* Bottom half - Play */}
                     <Link
                       href={playableUrl || url}
@@ -91,7 +91,7 @@ const Project = ({
           fill
           className="object-cover object-center rounded-3xl z-40"
         />
-        
+
         {/* Corner indicator for hybrid projects */}
         {hybrid && released && (
           <div className="absolute top-2 right-2 z-[60]">
