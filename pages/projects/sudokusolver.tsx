@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 import ProjectFooter from "../../components/Footer/ArticleFooter";
+import { articles } from "../../data/articles";
 
 const ReadMoreButton = () => {
   function scrollDown() {
@@ -57,10 +58,10 @@ const GithubButton = ({ link }: { link: string }) => {
 };
 
 const Landing = () => {
-  const title = "SUDOKU SOLVER";
-  const description =
-    "Hvordan kan vi bruke datasyn og AR for å løse sudoku i sanntid?";
-  const github = "https://github.com/CogitoNTNU/SudokuSolver";
+  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const title = articleData.landingPage.title;
+  const description = articleData.landingPage.description;
+  const github = articleData.github || "https://github.com/CogitoNTNU/SudokuSolver";
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
@@ -166,25 +167,10 @@ const Landing = () => {
 };
 
 const Description = () => {
-  const description =
-    "SudokuSolver er en Augmented Reality (AR) applikasjon som løser sudoku-oppgaver i sanntid ved hjelp av datasyn og maskinlæring. Systemet bruker OpenCV.js for å detektere sudoku-rutenett i bilder gjennom avansert bildebehandling med gaussian blur og adaptive threshold-filtre. Når rutenettet er identifisert, deles det opp i 81 individuelle celler hvor bakgrunn og cellelinjer fjernes. For å gjenkjenne sifrene brukes en custom-trent CNN (Convolutional Neural Network) modell trent på et datasett med 4500 digitale sifre, hvor sifrene forbehandles med dilasjon for bedre gjenkjennelse. Selve sudoku-løsningen beregnes ved hjelp av en rekursiv backtracking-algoritme som systematisk prøver ulike kombinasjoner til den finner riktig løsning.";
-
-  const funFacts = [
-    "CNN-modellen ble trent på et custom datasett med 4500 digitale sifre, prosessert med samme metode som brukes i selve løsningen!",
-    "Systemet kan løse selv de vanskeligste sudoku-oppgavene på under ett sekund.",
-    "AR-visualiseringen bruker avansert projeksjonsmatematikk for å plassere løsningen perfekt over det fysiske brettet.",
-  ];
-
-  const technologies = [
-    "TypeScript",
-    "OpenCV.js",
-    "Python",
-    "TensorFlow/Keras",
-    "Computer Vision",
-    "Convolutional Neural Networks",
-    "Augmented Reality",
-    "Vercel",
-  ];
+  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const description = articleData.descriptionPage.description;
+  const funFacts = articleData.descriptionPage.funFacts;
+  const technologies = articleData.descriptionPage.technologies;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
@@ -298,6 +284,32 @@ const Description = () => {
                 <FiExternalLink className="text-[#FF6B6B] text-xl" />
                 <span className="text-gray-300 group-hover:text-white transition-colors">
                   Try it yourself
+                </span>
+                <FiExternalLink className="text-gray-400 text-sm ml-auto" />
+              </Link>
+
+              <Link
+                href="http://yann.lecun.com/exdb/mnist/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-[#45B7D1]/10 hover:bg-[#45B7D1]/20 border border-[#45B7D1]/40 rounded-xl px-4 py-3 transition-all group"
+              >
+                <FiExternalLink className="text-[#45B7D1] text-xl" />
+                <span className="text-gray-300 group-hover:text-white transition-colors">
+                  MNIST Dataset
+                </span>
+                <FiExternalLink className="text-gray-400 text-sm ml-auto" />
+              </Link>
+
+              <Link
+                href="https://opencv.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-[#4ECDC4]/10 hover:bg-[#4ECDC4]/20 border border-[#4ECDC4]/40 rounded-xl px-4 py-3 transition-all group"
+              >
+                <FiExternalLink className="text-[#4ECDC4] text-xl" />
+                <span className="text-gray-300 group-hover:text-white transition-colors">
+                  OpenCV Documentation
                 </span>
                 <FiExternalLink className="text-gray-400 text-sm ml-auto" />
               </Link>
@@ -486,7 +498,7 @@ const TeamMember = ({
       className="text-center group"
     >
       <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl overflow-hidden border-3 border-transparent group-hover:border-[#4ECDC4] transition-all duration-300 shadow-lg">
-        <Image src={image} alt={name} fill className="object-cover" />
+        <Image src={image} alt={name} fill className="object-cover bg-gray-900" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <h3 className="text-white font-semibold text-lg">{name}</h3>
@@ -523,50 +535,29 @@ const TeamMember = ({
 };
 
 const Team = () => {
-  const team = [
-    {
-      name: "Afras Mansoor",
-      role: "Prosjektleder",
-      github: "https://github.com/Afrasum",
-      linkedIn: "https://www.linkedin.com/in/afrasmansoor",
-      image: "/Projects/Articles/sudokusolver/afras.png",
-    },
-    {
-      name: "Andreas V. Jonsterhaug",
-      role: "Medleder",
-      github: "https://github.com/AndreasVJ",
-      linkedIn: "https://www.linkedin.com/in/andreas-v-jonsterhaug-982232277/",
-      image: "/Projects/Articles/sudokusolver/andreas.png",
-    },
-    {
-      name: "Igor Iwanicki",
-      role: "Medlem",
-      github: "https://github.com/igiwa001",
-      linkedIn: "",
-      image: "/Projects/Articles/sudokusolver/igor.png",
-    },
-    {
-      name: "Ulrikke Kvaal",
-      role: "Medlem",
-      github: "https://github.com/ulrikketk",
-      linkedIn: "",
-      image: "/Projects/Articles/sudokusolver/ulrikke.png",
-    },
-    {
-      name: "Lotta Sandström",
-      role: "Medlem",
-      github: "https://github.com/lottahelen",
-      linkedIn: "",
-      image: "/Projects/Articles/sudokusolver/lotta.png",
-    },
-    {
-      name: "Ella Octava S. Aakre",
-      role: "Medlem",
-      github: "https://github.com/EllaOctava",
-      linkedIn: "",
-      image: "/Projects/Articles/sudokusolver/0.png",
-    },
-  ];
+  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
+  const teamData = articleData.teamPage.team;
+  
+  // Map team data from articles with custom images
+  const team = teamData.map((member) => {
+    // Map names to images
+    const imageMap: { [key: string]: string } = {
+      "Afras Mansoor": "/Projects/Articles/sudokusolver/afras.png",
+      "Andreas V. Jonsterhaug": "/Projects/Articles/sudokusolver/andreas.png",
+      "Igor Iwanicki": "/Projects/Articles/sudokusolver/igor.png",
+      "Ulrikke Kvaal": "/Projects/Articles/sudokusolver/ulrikke.png",
+      "Lotta Sandström": "/Projects/Articles/sudokusolver/lotta.png",
+      "Ella Octava Steinum Aakre": "/Projects/Articles/sudokusolver/0.png",
+    };
+    
+    return {
+      name: member.name,
+      role: member.role,
+      github: member.github,
+      linkedIn: member.linkedIn,
+      image: imageMap[member.name] || "/Projects/Articles/sudokusolver/0.png",
+    };
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
@@ -626,6 +617,7 @@ const Team = () => {
 };
 
 const SudokuSolver = () => {
+  const articleData = articles.find(a => a.articleId === "sudokusolver")!;
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -642,7 +634,7 @@ const SudokuSolver = () => {
 
   return (
     <>
-      <ProjectNavbar semester="Vår 2024" />
+      <ProjectNavbar semester={`${articleData.semester} ${articleData.year}`} />
       <div className="relative">
         <section className="snap-start">
           <Landing />
