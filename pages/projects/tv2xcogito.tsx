@@ -10,6 +10,7 @@ interface TeamMember {
   role: string;
   github?: string;
   linkedin?: string;
+  image?: string;
 }
 
 const TV2xCogito = () => {
@@ -39,12 +40,14 @@ const TV2xCogito = () => {
       role: "Prosjektleder",
       github: "https://github.com/Afrasum",
       linkedin: "https://www.linkedin.com/in/afrasmansoor",
+      image: "/Projects/Articles/tv2xcogito/afras.jpg",
     },
     {
       name: "Kristoffer Nohr Olaisen",
       role: "Prosjektleder",
       github: "https://github.com/Knolaisen",
       linkedin: "https://www.linkedin.com/in/kristoffer-nohr-olaisen-aa620722b",
+      image: "/Projects/Articles/tv2xcogito/kristoffer.jpg",
     },
   ];
 
@@ -54,42 +57,49 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/A1ice-Z",
       linkedin: "https://www.linkedin.com/in/alice-z-21b351246/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Olivia Tan",
       role: "Medlem",
       github: "https://github.com/heiolivia",
       linkedin: "https://www.linkedin.com/in/oliviatan2002/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Håvard Fossdal",
       role: "Medlem",
       github: "https://github.com/HFossdal",
       linkedin: "https://www.linkedin.com/in/hfossdal/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Serina Serife Erzengin",
       role: "Medlem",
       github: "https://github.com/serinaerzengin",
       linkedin: "https://www.linkedin.com/in/serina-erzengin-7b9734260/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Folke Jernbert",
       role: "Medlem",
       github: "https://github.com/jernbert",
       linkedin: "https://www.linkedin.com/in/folke-jernbert-75b52032a/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Maja Austguard",
       role: "Medlem",
       github: "https://github.com/maiahi",
       linkedin: "https://www.linkedin.com/in/maia-austigard-80054132a/",
+      image: "/Projects/Articles/tv2xcogito/maia.jpg",
     },
     {
       name: "Sanne Jamila Olsen",
       role: "Medlem",
       github: "https://github.com/sannejamila",
       linkedin: "https://www.linkedin.com/in/sannejamila/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
   ];
 
@@ -99,12 +109,14 @@ const TV2xCogito = () => {
       role: "Prosjektleder",
       github: "https://github.com/stamatovskaeva",
       linkedin: "https://www.linkedin.com/in/evastamatovska/",
+      image: "/Projects/Articles/tv2xcogito/eva.JPG",
     },
     {
       name: "Maren Landno",
       role: "Prosjektleder",
       github: "https://github.com/marenlan",
       linkedin: "https://www.linkedin.com/in/maren-landro-420535249/",
+      image: "/Projects/Articles/tv2xcogito/maren.JPG",
     },
   ];
 
@@ -114,12 +126,14 @@ const TV2xCogito = () => {
       role: "Mentor",
       github: "https://github.com/SverreNystad",
       linkedin: "https://www.linkedin.com/in/sverre-nystad/",
+      image: "/Projects/Articles/tv2xcogito/sverre.jpg",
     },
     {
       name: "Afras Mansoor",
       role: "Mentor",
       github: "https://github.com/Afrasum",
       linkedin: "https://www.linkedin.com/in/afrasmansoor",
+      image: "/Projects/Articles/tv2xcogito/afras.jpg",
     },
   ];
 
@@ -147,36 +161,42 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/adrianjlundd",
       linkedin: "https://www.linkedin.com/in/adrian-jacobsen-lund-818a41232/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Arta Osmani",
       role: "Medlem",
       github: "https://github.com/Artaosmani",
       linkedin: "https://www.linkedin.com/in/arta-osmani-569292265/",
+      image: "/Projects/Articles/tv2xcogito/arta.JPG",
     },
     {
       name: "Håvard Daleng",
       role: "Medlem",
       github: "https://github.com/MrMarHVD",
       linkedin: "https://www.linkedin.com/in/håvard-johannes-daleng-2266b7248/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
     {
       name: "Mari Hove Gusdal",
       role: "Medlem",
       github: "https://github.com/MariHGU",
       linkedin: "https://www.linkedin.com/in/mari-hove-gusdal-980395313/",
+      image: "/Projects/Articles/tv2xcogito/mari.JPG",
     },
     {
       name: "Sebastian Riibe Berthelsen",
       role: "Medlem",
       github: "https://github.com/sebastianrb05",
       linkedin: "https://www.linkedin.com/in/sebastianriibeberthelsen/",
+      image: "/Projects/Articles/tv2xcogito/sebastian.JPG",
     },
     {
       name: "Yatavi Suresh",
       role: "Medlem",
       github: "https://github.com/yada0403",
       linkedin: "https://www.linkedin.com/in/yatavi-suresh-62149534a/",
+      image: "/Projects/Articles/tv2xcogito/default.png",
     },
   ];
 
@@ -524,36 +544,47 @@ const TV2xCogito = () => {
                           >
                             <div className="absolute inset-0 bg-gradient-to-r from-[#702eff] to-[#ffbf94] rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity" />
                             <div className="relative bg-[#100118] border border-[#702eff]/30 rounded-2xl p-6 group-hover:border-[#702eff] transition-all">
-                              <div className="flex items-center justify-between mb-3">
-                                <div>
-                                  <h6 className="text-white font-bold text-lg">
-                                    {member.name}
-                                  </h6>
-                                  <p className="text-[#ffbf94] text-sm">
-                                    {member.role}
-                                  </p>
-                                </div>
-                                <div className="flex gap-3">
-                                  {member.github && (
-                                    <a
-                                      href={member.github}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-white/60 hover:text-[#702eff] transition-colors"
-                                    >
-                                      <FaGithub size={22} />
-                                    </a>
-                                  )}
-                                  {member.linkedin && (
-                                    <a
-                                      href={member.linkedin}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="text-white/60 hover:text-[#702eff] transition-colors"
-                                    >
-                                      <FaLinkedin size={22} />
-                                    </a>
-                                  )}
+                              <div className="flex items-center gap-4">
+                                {member.image && (
+                                  <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-20 h-20 rounded-full object-cover border-2 border-[#702eff]/50"
+                                  />
+                                )}
+                                <div className="flex-1">
+                                  <div className="flex items-center justify-between">
+                                    <div>
+                                      <h6 className="text-white font-bold text-lg">
+                                        {member.name}
+                                      </h6>
+                                      <p className="text-[#ffbf94] text-sm">
+                                        {member.role}
+                                      </p>
+                                    </div>
+                                    <div className="flex gap-3">
+                                      {member.github && (
+                                        <a
+                                          href={member.github}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="text-white/60 hover:text-[#702eff] transition-colors"
+                                        >
+                                          <FaGithub size={22} />
+                                        </a>
+                                      )}
+                                      {member.linkedin && (
+                                        <a
+                                          href={member.linkedin}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="text-white/60 hover:text-[#702eff] transition-colors"
+                                        >
+                                          <FaLinkedin size={22} />
+                                        </a>
+                                      )}
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -582,34 +613,45 @@ const TV2xCogito = () => {
                             whileHover={{ y: -5 }}
                             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all"
                           >
-                            <h6 className="text-white font-semibold mb-1">
-                              {member.name}
-                            </h6>
-                            <div className="flex items-center justify-between">
-                              <p className="text-[#ffbf94] text-sm">
-                                {member.role}
-                              </p>
-                              <div className="flex gap-2">
-                                {member.github && (
-                                  <a
-                                    href={member.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
-                                  >
-                                    <FaGithub size={18} />
-                                  </a>
-                                )}
-                                {member.linkedin && (
-                                  <a
-                                    href={member.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
-                                  >
-                                    <FaLinkedin size={18} />
-                                  </a>
-                                )}
+                            <div className="flex items-center gap-3">
+                              {member.image && (
+                                <img
+                                  src={member.image}
+                                  alt={member.name}
+                                  className="w-12 h-12 rounded-full object-cover border border-white/20"
+                                />
+                              )}
+                              <div className="flex-1">
+                                <h6 className="text-white font-semibold mb-1">
+                                  {member.name}
+                                </h6>
+                                <div className="flex items-center justify-between">
+                                  <p className="text-[#ffbf94] text-sm">
+                                    {member.role}
+                                  </p>
+                                  <div className="flex gap-2">
+                                    {member.github && (
+                                      <a
+                                        href={member.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                      >
+                                        <FaGithub size={18} />
+                                      </a>
+                                    )}
+                                    {member.linkedin && (
+                                      <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                      >
+                                        <FaLinkedin size={18} />
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </motion.div>
@@ -786,36 +828,47 @@ const TV2xCogito = () => {
                                 viewport={{ once: true }}
                                 className="bg-gradient-to-r from-[#702eff]/10 to-transparent p-5 rounded-xl border border-[#702eff]/30 hover:border-[#702eff] transition-all"
                               >
-                                <div className="flex items-center justify-between">
-                                  <div>
-                                    <h6 className="text-white font-bold">
-                                      {member.name}
-                                    </h6>
-                                    <p className="text-[#ffbf94] text-sm">
-                                      {member.role}
-                                    </p>
-                                  </div>
-                                  <div className="flex gap-2">
-                                    {member.github && (
-                                      <a
-                                        href={member.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/50 hover:text-[#702eff] transition-colors"
-                                      >
-                                        <FaGithub size={20} />
-                                      </a>
-                                    )}
-                                    {member.linkedin && (
-                                      <a
-                                        href={member.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/50 hover:text-[#702eff] transition-colors"
-                                      >
-                                        <FaLinkedin size={20} />
-                                      </a>
-                                    )}
+                                <div className="flex items-center gap-3">
+                                  {member.image && (
+                                    <img
+                                      src={member.image}
+                                      alt={member.name}
+                                      className="w-14 h-14 rounded-full object-cover border border-[#702eff]/30"
+                                    />
+                                  )}
+                                  <div className="flex-1">
+                                    <div className="flex items-center justify-between">
+                                      <div>
+                                        <h6 className="text-white font-bold">
+                                          {member.name}
+                                        </h6>
+                                        <p className="text-[#ffbf94] text-sm">
+                                          {member.role}
+                                        </p>
+                                      </div>
+                                      <div className="flex gap-2">
+                                        {member.github && (
+                                          <a
+                                            href={member.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 hover:text-[#702eff] transition-colors"
+                                          >
+                                            <FaGithub size={20} />
+                                          </a>
+                                        )}
+                                        {member.linkedin && (
+                                          <a
+                                            href={member.linkedin}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 hover:text-[#702eff] transition-colors"
+                                          >
+                                            <FaLinkedin size={20} />
+                                          </a>
+                                        )}
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </motion.div>
@@ -838,36 +891,47 @@ const TV2xCogito = () => {
                                 viewport={{ once: true }}
                                 className="bg-gradient-to-l from-[#ffbf94]/10 to-transparent p-5 rounded-xl border border-[#ffbf94]/30 hover:border-[#ffbf94] transition-all"
                               >
-                                <div className="flex items-center justify-between">
-                                  <div>
-                                    <h6 className="text-white font-bold">
-                                      {member.name}
-                                    </h6>
-                                    <p className="text-[#702eff] text-sm">
-                                      {member.role}
-                                    </p>
-                                  </div>
-                                  <div className="flex gap-2">
-                                    {member.github && (
-                                      <a
-                                        href={member.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/50 hover:text-[#ffbf94] transition-colors"
-                                      >
-                                        <FaGithub size={20} />
-                                      </a>
-                                    )}
-                                    {member.linkedin && (
-                                      <a
-                                        href={member.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/50 hover:text-[#ffbf94] transition-colors"
-                                      >
-                                        <FaLinkedin size={20} />
-                                      </a>
-                                    )}
+                                <div className="flex items-center gap-3">
+                                  {member.image && (
+                                    <img
+                                      src={member.image}
+                                      alt={member.name}
+                                      className="w-14 h-14 rounded-full object-cover border border-[#ffbf94]/30"
+                                    />
+                                  )}
+                                  <div className="flex-1">
+                                    <div className="flex items-center justify-between">
+                                      <div>
+                                        <h6 className="text-white font-bold">
+                                          {member.name}
+                                        </h6>
+                                        <p className="text-[#702eff] text-sm">
+                                          {member.role}
+                                        </p>
+                                      </div>
+                                      <div className="flex gap-2">
+                                        {member.github && (
+                                          <a
+                                            href={member.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 hover:text-[#ffbf94] transition-colors"
+                                          >
+                                            <FaGithub size={20} />
+                                          </a>
+                                        )}
+                                        {member.linkedin && (
+                                          <a
+                                            href={member.linkedin}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 hover:text-[#ffbf94] transition-colors"
+                                          >
+                                            <FaLinkedin size={20} />
+                                          </a>
+                                        )}
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </motion.div>
@@ -897,34 +961,45 @@ const TV2xCogito = () => {
                             whileHover={{ y: -5 }}
                             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all"
                           >
-                            <h6 className="text-white font-semibold mb-1">
-                              {member.name}
-                            </h6>
-                            <div className="flex items-center justify-between">
-                              <p className="text-[#ffbf94] text-sm">
-                                {member.role}
-                              </p>
-                              <div className="flex gap-2">
-                                {member.github && (
-                                  <a
-                                    href={member.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
-                                  >
-                                    <FaGithub size={18} />
-                                  </a>
-                                )}
-                                {member.linkedin && (
-                                  <a
-                                    href={member.linkedin}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
-                                  >
-                                    <FaLinkedin size={18} />
-                                  </a>
-                                )}
+                            <div className="flex items-center gap-3">
+                              {member.image && (
+                                <img
+                                  src={member.image}
+                                  alt={member.name}
+                                  className="w-12 h-12 rounded-full object-cover border border-white/20"
+                                />
+                              )}
+                              <div className="flex-1">
+                                <h6 className="text-white font-semibold mb-1">
+                                  {member.name}
+                                </h6>
+                                <div className="flex items-center justify-between">
+                                  <p className="text-[#ffbf94] text-sm">
+                                    {member.role}
+                                  </p>
+                                  <div className="flex gap-2">
+                                    {member.github && (
+                                      <a
+                                        href={member.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                      >
+                                        <FaGithub size={18} />
+                                      </a>
+                                    )}
+                                    {member.linkedin && (
+                                      <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                      >
+                                        <FaLinkedin size={18} />
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </motion.div>
