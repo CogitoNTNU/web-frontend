@@ -326,7 +326,11 @@ export const articles: ArticleType[] = [
     descriptionPage: {
       description:
         "I Doctor AI-prosjektet kombinerer vi dyp læring og avansert bildebehandling for å analysere medisinske bilder med høy presisjon. Leger bruker ofte betydelig tid på å tolke komplekse røntgen- og MR-bilder, men med datasyn og U-Net-arkitekturen kan mye av dette arbeidet automatiseres. Vi oppnådde en F1-score på 0,957 og en IoU/Jaccard-score på 0,918 i lungesegmentering, og har også gjennomført klassifisering av bryst-røntgenbilder og segmentering av pneumothorax. Denne teknologien har potensial til å redusere arbeidsbelastningen for helsepersonell, gjøre diagnoser raskere og mer presise, og i siste instans redde liv.",
-      funFacts: [""],
+      funFacts: [
+        "Ved bruk av Transfer Learning kunne vi trene ResNet18 backbone på våre mindre datasett og oppnå høy nøyaktighet.",
+        "Modellene våre er mulig å trene på en vanlig laptop med og uten GPU",
+        "Modellene har rask inferens, noe som gjør dem egnet for sanntidsdiagnostisering.",
+      ],
       links: [
         "https://arxiv.org/pdf/1505.04597",
         "https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation",
