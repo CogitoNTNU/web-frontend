@@ -359,7 +359,8 @@ export const articles: ArticleType[] = [
           name: "Andreas V. Jonsterhaug",
           role: "Medleder",
           github: "https://github.com/AndreasVJ",
-          linkedIn: "https://www.linkedin.com/in/andreas-v-jonsterhaug-982232277/",
+          linkedIn:
+            "https://www.linkedin.com/in/andreas-v-jonsterhaug-982232277/",
         },
         {
           name: "Igor Iwanicki",
@@ -383,7 +384,7 @@ export const articles: ArticleType[] = [
           name: "Ella Octava Steinum Aakre",
           role: "Medlem",
           github: "https://github.com/EllaOctava",
-          linkedIn: ""
+          linkedIn: "",
         },
       ],
     },

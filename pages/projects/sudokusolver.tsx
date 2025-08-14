@@ -1,7 +1,7 @@
 "use client";
 import ProjectNavbar from "../../components/Navbar/ArticleNavbar";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
@@ -66,37 +66,43 @@ const Landing = () => {
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
       {/* Animated sudoku grid pattern background */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
             repeating-linear-gradient(0deg, transparent, transparent 35px, #4ECDC4 35px, #4ECDC4 36px),
             repeating-linear-gradient(90deg, transparent, transparent 35px, #4ECDC4 35px, #4ECDC4 36px),
             repeating-linear-gradient(0deg, transparent, transparent 105px, #FF6B6B 105px, #FF6B6B 107px),
             repeating-linear-gradient(90deg, transparent, transparent 105px, #FF6B6B 105px, #FF6B6B 107px)
-          `
-        }} />
+          `,
+          }}
+        />
       </div>
-      
+
       <div className="relative z-10 min-h-screen flex items-center justify-center px-8 pt-20">
         <div className="max-w-5xl w-full">
           {/* Floating numbers animation */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[1,2,3,4,5,6,7,8,9].map((num, i) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => (
               <motion.div
                 key={i}
                 className="absolute text-6xl font-bold text-[#4ECDC4] opacity-20"
-                initial={{ 
+                initial={{
                   x: `${Math.random() * 100}%`,
-                  y: -100 
+                  y: -100,
                 }}
-                animate={{ 
-                  y: typeof window !== 'undefined' ? window.innerHeight + 100 : 1000,
-                  rotate: 360
+                animate={{
+                  y:
+                    typeof window !== "undefined"
+                      ? window.innerHeight + 100
+                      : 1000,
+                  rotate: 360,
                 }}
                 transition={{
                   duration: 15 + Math.random() * 10,
                   repeat: Infinity,
                   delay: i * 2,
-                  ease: "linear"
+                  ease: "linear",
                 }}
               >
                 {num}
@@ -115,7 +121,7 @@ const Landing = () => {
                     duration: 0.8,
                     delay: 0.3 + index * 0.05,
                     type: "spring",
-                    stiffness: 120
+                    stiffness: 120,
                   }}
                   className="inline-block"
                 >
@@ -162,7 +168,7 @@ const Landing = () => {
 const Description = () => {
   const description =
     "SudokuSolver er en Augmented Reality (AR) applikasjon som løser sudoku-oppgaver i sanntid ved hjelp av datasyn og maskinlæring. Systemet bruker OpenCV.js for å detektere sudoku-rutenett i bilder gjennom avansert bildebehandling med gaussian blur og adaptive threshold-filtre. Når rutenettet er identifisert, deles det opp i 81 individuelle celler hvor bakgrunn og cellelinjer fjernes. For å gjenkjenne sifrene brukes en custom-trent CNN (Convolutional Neural Network) modell trent på et datasett med 4500 digitale sifre, hvor sifrene forbehandles med dilasjon for bedre gjenkjennelse. Selve sudoku-løsningen beregnes ved hjelp av en rekursiv backtracking-algoritme som systematisk prøver ulike kombinasjoner til den finner riktig løsning.";
-  
+
   const funFacts = [
     "CNN-modellen ble trent på et custom datasett med 4500 digitale sifre, prosessert med samme metode som brukes i selve løsningen!",
     "Systemet kan løse selv de vanskeligste sudoku-oppgavene på under ett sekund.",
@@ -185,13 +191,16 @@ const Description = () => {
       {/* Colorful gradient background instead of grid */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B6B]/10 via-[#4ECDC4]/10 to-[#45B7D1]/10" />
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
             radial-gradient(circle at 20% 30%, #FF6B6B20 0%, transparent 50%),
             radial-gradient(circle at 80% 70%, #4ECDC420 0%, transparent 50%),
             radial-gradient(circle at 50% 50%, #45B7D120 0%, transparent 50%)
-          `
-        }} />
+          `,
+          }}
+        />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8">
@@ -218,7 +227,7 @@ const Description = () => {
               Hva er dette egentlig? 🧩
             </h3>
             <p className="text-gray-300 leading-relaxed mb-6">{description}</p>
-            
+
             <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#4ECDC4] to-[#45B7D1] mb-4 mt-8">
               Fun Facts 🎯
             </h3>
@@ -279,7 +288,7 @@ const Description = () => {
                 </span>
                 <FiExternalLink className="text-gray-400 text-sm ml-auto" />
               </Link>
-              
+
               <Link
                 href="https://sudoku-solver-theta-wine.vercel.app"
                 target="_blank"
@@ -378,16 +387,32 @@ const Results = () => {
                 Live AR Sudoku Solving ✨
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Se hvordan vår AI-drevne løsning detekterer, løser og projiserer 
+                Se hvordan vår AI-drevne løsning detekterer, løser og projiserer
                 sudoku-løsningen direkte på det fysiske brettet i sanntid!
               </p>
-              
+
               <div className="space-y-4">
                 {[
-                  { num: "1", text: "Detekterer sudoku-rutenettet med OpenCV", color: "#FF6B6B" },
-                  { num: "2", text: "Gjenkjenner sifre med CNN-modellen", color: "#4ECDC4" },
-                  { num: "3", text: "Løser oppgaven med backtracking", color: "#45B7D1" },
-                  { num: "4", text: "Projiserer løsningen tilbake med AR", color: "#FF6B6B" },
+                  {
+                    num: "1",
+                    text: "Detekterer sudoku-rutenettet med OpenCV",
+                    color: "#FF6B6B",
+                  },
+                  {
+                    num: "2",
+                    text: "Gjenkjenner sifre med CNN-modellen",
+                    color: "#4ECDC4",
+                  },
+                  {
+                    num: "3",
+                    text: "Løser oppgaven med backtracking",
+                    color: "#45B7D1",
+                  },
+                  {
+                    num: "4",
+                    text: "Projiserer løsningen tilbake med AR",
+                    color: "#FF6B6B",
+                  },
                 ].map((step, index) => (
                   <motion.div
                     key={index}
@@ -396,7 +421,7 @@ const Results = () => {
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     className="flex items-start"
                   >
-                    <span 
+                    <span
                       className="mr-3 mt-1 font-bold text-2xl"
                       style={{ color: step.color }}
                     >
@@ -423,7 +448,9 @@ const Results = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-sm font-semibold">Bildeprosessering & Deteksjon</p>
+                <p className="text-sm font-semibold">
+                  Bildeprosessering & Deteksjon
+                </p>
               </div>
             </motion.div>
           </motion.div>
@@ -451,7 +478,7 @@ const TeamMember = ({
   image: string;
 }) => {
   const hasLinks = github || linkedIn;
-  
+
   return (
     <motion.div
       whileHover={{ scale: 1.05, y: -10 }}
@@ -463,8 +490,10 @@ const TeamMember = ({
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <h3 className="text-white font-semibold text-lg">{name}</h3>
-      <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] mb-2">{role}</p>
-      
+      <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] mb-2">
+        {role}
+      </p>
+
       {hasLinks && (
         <div className="flex justify-center gap-3 mt-2">
           {github && (
@@ -543,15 +572,18 @@ const Team = () => {
     <div className="min-h-screen bg-gradient-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
             radial-gradient(circle at 20% 50%, #FF6B6B 0%, transparent 50%),
             radial-gradient(circle at 80% 50%, #4ECDC4 0%, transparent 50%),
             radial-gradient(circle at 50% 100%, #45B7D1 0%, transparent 50%)
-          `
-        }} />
+          `,
+          }}
+        />
       </div>
-      
+
       <div className="relative z-10 max-w-6xl mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -575,11 +607,11 @@ const Team = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: index * 0.1,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
             >
               <TeamMember {...member} />
@@ -587,7 +619,7 @@ const Team = () => {
           ))}
         </motion.div>
       </div>
-      
+
       <ProjectFooter />
     </div>
   );
