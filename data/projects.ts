@@ -55,7 +55,7 @@ export const CogitoProjects: ProjectType[] = [
     github: "https://github.com/CogitoNTNU/chessar",
     img: "/Projects/ProjectLogos/chessar.webp",
     playable: false,
-    released: false,
+    released: true,
     url: "/projects/articles/chessar",
   },
   {

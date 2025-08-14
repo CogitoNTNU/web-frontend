@@ -470,4 +470,72 @@ export const articles: ArticleType[] = [
     year: 2024,
     github: "https://github.com/CogitoNTNU/TetrisAI",
   },
+  {
+    articleId: "chessar",
+    landingPage: {
+      title: "ChessAR",
+      description:
+        "Why struggle with chess strategy when you can have grandmaster moves beamed directly to your eyeballs?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "Vi skulle lage noen briller som tar inn bilder av sjakkbrett, og som skulle strømme anbefalingene fra en AI-modell som analyserer brettet. Dermed trengte vi å lage en datasynmodell som kunne gjenkjenne sjakkbrikker og brett i bilder tatt av et kamera og gjøre det til FEN notasjon, for å så sende det til Stockfish for analyse og så strømme anbefalingene til brillene. Vi fant ut at det ikke fantes sterke nok datasynmodeller for å gjøre det vi ville, så vi lagde vår egen! Vi trente en pretrained YOLO-modell fra COCO datasettet og trente den videre på titallstusen bilder av sjakkbrett generert i Unity.",
+      funFacts: [
+        "Det ble generert i Unity titallstusen bilder av sjakkbrett for å trene modellen.",
+      ],
+      links: [
+        "https://www.figma.com/deck/NCsHLnrie9BkfOhUIqJ1PC/Minimal-Design-Critique-Presentation?node-id=1-952&t=asmgJP5vGX0sfBkX-1",
+      ],
+      technologies: [
+        "Unity",
+        "C#",
+        "Python 3",
+        "OpenCV",
+        "Pytorch",
+        "YOLOv8",
+        "Ultralytics",
+        "FastAPI",
+        "Whishbone",
+        "Stockfish",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Simon Sandvik Lee",
+          role: "Leder",
+          github: "https://github.com/sandviklee",
+          linkedIn: "",
+        },
+        {
+          name: "Alice Zheng",
+          role: "Medlem",
+          github: "https://github.com/A1ice-Z",
+          linkedIn: "",
+        },
+        {
+          name: "Håkon Støren",
+          role: "Medlem",
+          github: "https://github.com/Hako2807",
+          linkedIn: "",
+        },
+        {
+          name: "Jessica Liu",
+          role: "Medlem",
+          github: "https://github.com/JessicaLiu03",
+          linkedIn: "",
+        },
+        {
+          name: "Vetle Støren",
+          role: "Medlem",
+          github: "https://github.com/Vetlets05",
+          linkedIn: "",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2025,
+    github: "https://github.com/CogitoNTNU/chessar",
+  },
 ];
