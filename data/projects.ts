@@ -103,7 +103,7 @@ export const CogitoProjects: ProjectType[] = [
     github: "https://github.com/CogitoNTNU/Rubiks",
     img: "/Projects/ProjectLogos/rubikscube.webp",
     playable: false,
-    released: false,
+    released: true,
     url: "/projects/articles/rubiks",
   },
   {
