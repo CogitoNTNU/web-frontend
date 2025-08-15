@@ -475,14 +475,15 @@ export const articles: ArticleType[] = [
     landingPage: {
       title: "ChessAR",
       description:
-        "Why struggle with chess strategy when you can have grandmaster moves beamed directly to your eyeballs?",
+        "Hvorfor slite med sjakkstrategi når du kan få synet til en sjakk stormester?",
       isVideo: false,
     },
     descriptionPage: {
       description:
-        "Vi skulle lage noen briller som tar inn bilder av sjakkbrett, og som skulle strømme anbefalingene fra en AI-modell som analyserer brettet. Dermed trengte vi å lage en datasynmodell som kunne gjenkjenne sjakkbrikker og brett i bilder tatt av et kamera og gjøre det til FEN notasjon, for å så sende det til Stockfish for analyse og så strømme anbefalingene til brillene. Vi fant ut at det ikke fantes sterke nok datasynmodeller for å gjøre det vi ville, så vi lagde vår egen! Vi trente en pretrained YOLO-modell fra COCO datasettet og trente den videre på titallstusen bilder av sjakkbrett generert i Unity.",
+        "Vi skulle lage noen briller som tar inn bilder av sjakkbrett, og som skulle strømme anbefalingene fra en AI-modell som analyserer brettet. Dermed trengte vi å lage en datasynmodell som kunne gjenkjenne sjakkbrikker og brett i bilder tatt av et kamera og gjøre det til FEN notasjon, for å så sende det til Stockfish for analyse og så strømme anbefalingene til brillene. Vi fant ut at det ikke fantes sterke nok datasynmodeller for å gjøre det vi ville, så vi lagde vår egen! Vi trente en pretrained YOLO-modell fra COCO datasettet og trente den videre på titallstusen bilder av sjakkbrett generert i Unity. På dette datasettet trente vi YOLOv12 og så gjorde matrise operasjoner for å gjøre bilde til FEN notasjon. Vi fikk en datasynmodell som gjenkjenner sjakkbrikker med 95% Precision og 93% mAP@50! på test. Vi lagde også en API i FastAPI som tar imot bilder, kjører datasynmodellen og sender FEN notasjonen til Stockfish for analyse",
       funFacts: [
         "Det ble generert i Unity titallstusen bilder av sjakkbrett for å trene modellen.",
+        "Med Data augmentation og transfer learning klarte vi å trene en datasynmodell som gjenkjenner sjakkbrikker med 95% Precision og 93% mAP@50! på test",
       ],
       links: [
         "https://www.figma.com/deck/NCsHLnrie9BkfOhUIqJ1PC/Minimal-Design-Critique-Presentation?node-id=1-952&t=asmgJP5vGX0sfBkX-1",
@@ -495,7 +496,6 @@ export const articles: ArticleType[] = [
         "Pytorch",
         "YOLOv8",
         "Ultralytics",
-        "FastAPI",
         "Whishbone",
         "Stockfish",
       ],
