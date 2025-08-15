@@ -144,6 +144,10 @@ const TV2xCogito = () => {
     { name: "NLTK", url: "https://www.nltk.org" },
     { name: "spaCy", url: "https://spacy.io" },
     { name: "Hugging Face", url: "https://huggingface.co" },
+    { name: "WandB", url: "https://wandb.ai" },
+    { name: "Optuna", url: "https://optuna.org" },
+    { name: "XGBoost", url: "https://xgboost.readthedocs.io" },
+    { name: "FastAPI", url: "https://fastapi.tiangolo.com" },
   ];
 
   const v25TechStack = [
@@ -153,6 +157,10 @@ const TV2xCogito = () => {
     { name: "NLTK", url: "https://www.nltk.org" },
     { name: "spaCy", url: "https://spacy.io" },
     { name: "Hugging Face", url: "https://huggingface.co" },
+    { name: "WandB", url: "https://wandb.ai" },
+    { name: "Optuna", url: "https://optuna.org" },
+    { name: "XGBoost", url: "https://xgboost.readthedocs.io" },
+    { name: "FastAPI", url: "https://fastapi.tiangolo.com" },
   ];
 
   const v25TeamMembers: TeamMember[] = [
