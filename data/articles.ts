@@ -546,4 +546,63 @@ export const articles: ArticleType[] = [
     year: 2024,
     github: "https://github.com/CogitoNTNU/SudokuSolver",
   },
+  {
+    articleId: "diffusion-model",
+    landingPage: {
+      title: "Diffusion Model",
+      description: "Fra støy til kunst: Hvordan lage bilder med AI?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "Diffusion Model-prosjektet utforsker hvordan AI kan skape realistiske bilder fra ren støy. Målet var å generere 32×32 piksels bilbilder ved hjelp av Denoising Diffusion Probabilistic Models (DDPM), som gradvis “renser” støy til et ferdig bilde. Modellen ble trent på CIFAR-10-datasettet, som inneholder 5 000 bilbilder, og kan nå lage nye, unike bilbilder som ligner på, men ikke er identiske med, treningsdataene.",
+      funFacts: [
+        "Diffusjonsmodeller kan i teorien generere uendelig mange unike bilder, fordi startstøyen alltid er tilfeldig.",
+        "Selv om prosessen virker treg sammenlignet med GANs, produserer diffusjonsmodeller ofte skarpere og mer detaljerte bilder og er brukt i metoder som Stable Diffusion.",
+      ],
+      links: [
+        "https://arxiv.org/pdf/2006.11239",
+        "https://www.cs.toronto.edu/~kriz/cifar.html",
+      ],
+      technologies: ["Python", "PyTorch", "Diffusion Models", "Generative AI"],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Marijan Soric",
+          role: "Leder",
+          github: "https://github.com/soricm",
+          linkedIn: "https://www.linkedin.com/in/marijan-soric/",
+        },
+        {
+          name: "Amanda Truyen",
+          role: "Medlem",
+          github: "https://github.com/amandathunes",
+          linkedIn: "https://www.linkedin.com/in/amanda-johanne-thunes-truyen/",
+        },
+        {
+          name: "Baris Batur",
+          role: "Medlem",
+          github: "https://github.com/BarisBatur",
+          linkedIn: "https://www.linkedin.com/in/baris-batur-6b155b289/",
+        },
+        {
+          name: "Thomas Haslund Wik",
+          role: "Medlem",
+          github: "https://github.com/ThomasHWik",
+          linkedIn: "https://www.linkedin.com/in/thomas-haslund-wik-365b2024b/",
+        },
+        {
+          name: "Mauritz Skogøy",
+          role: "Medlem",
+          github: "https://github.com/Mauritzskog",
+          linkedIn:
+            "https://www.linkedin.com/in/mauritz-hardersen-skog%C3%B8y/",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/DiffusionModel",
+  },
 ];
