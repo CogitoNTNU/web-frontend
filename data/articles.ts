@@ -471,6 +471,141 @@ export const articles: ArticleType[] = [
     github: "https://github.com/CogitoNTNU/TetrisAI",
   },
   {
+    articleId: "sudokusolver",
+    landingPage: {
+      title: "SUDOKU SOLVER",
+      description:
+        "Hvordan kan vi bruke datasyn og AR for å løse sudoku i sanntid?",
+      isVideo: true,
+    },
+    descriptionPage: {
+      description:
+        "SudokuSolver er en Augmented Reality (AR) applikasjon som løser sudoku-oppgaver i sanntid ved hjelp av datasyn og maskinlæring. Systemet bruker OpenCV.js for å detektere sudoku-rutenett i bilder gjennom avansert bildebehandling med gaussian blur og adaptive threshold-filtre. Når rutenettet er identifisert, deles det opp i 81 individuelle celler hvor bakgrunn og cellelinjer fjernes. For å gjenkjenne sifrene brukes en custom-trent CNN (Convolutional Neural Network) modell trent på et datasett som kombinerer 4500 egenproduserte digitale sifre med det kjente MNIST-datasettet. Ved å mikse vårt eget datasett med MNIST oppnådde vi bedre generalisering og nøyaktighet for gjenkjennelse av håndskrevne sifre i sudoku-ruter. Sifrene forbehandles med dilasjon for optimal gjenkjennelse. Selve sudoku-løsningen beregnes ved hjelp av en rekursiv backtracking-algoritme som systematisk prøver ulike kombinasjoner til den finner riktig løsning. Det mest imponerende er hvordan løsningen projiseres tilbake i live kamerafeed ved hjelp av en beregnet projeksjonsmatrise, slik at brukeren kan se løsningen direkte på det fysiske sudoku-brettet gjennom kameraet.",
+      funFacts: [
+        "CNN-modellen ble trent på et kombinert datasett med 4500 egenproduserte sifre og MNIST-datasettet for optimal gjenkjennelse!",
+        "Systemet kan løse selv de vanskeligste sudoku-oppgavene på under ett sekund.",
+        "AR-visualiseringen bruker avansert projeksjonsmatematikk for å plassere løsningen perfekt over det fysiske brettet.",
+      ],
+      links: [
+        "https://sudoku-solver-theta-wine.vercel.app",
+        "https://opencv.org/",
+      ],
+      technologies: [
+        "TypeScript",
+        "OpenCV.js",
+        "Python",
+        "TensorFlow/Keras",
+        "Computer Vision",
+        "Convolutional Neural Networks",
+        "Augmented Reality",
+        "Vercel",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Afras Mansoor",
+          role: "Leder",
+          github: "https://github.com/Afrasum",
+          linkedIn: "https://www.linkedin.com/in/afrasmansoor",
+        },
+        {
+          name: "Andreas V. Jonsterhaug",
+          role: "Medleder",
+          github: "https://github.com/AndreasVJ",
+          linkedIn:
+            "https://www.linkedin.com/in/andreas-v-jonsterhaug-982232277/",
+        },
+        {
+          name: "Igor Iwanicki",
+          role: "Medlem",
+          github: "https://github.com/igiwa001",
+          linkedIn: "",
+        },
+        {
+          name: "Ulrikke Kvaal",
+          role: "Medlem",
+          github: "https://github.com/ulrikketk",
+          linkedIn: "",
+        },
+        {
+          name: "Lotta Sandström",
+          role: "Medlem",
+          github: "https://github.com/lottahelen",
+          linkedIn: "",
+        },
+        {
+          name: "Ella Octava Steinum Aakre",
+          role: "Medlem",
+          github: "https://github.com/EllaOctava",
+          linkedIn: "",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/SudokuSolver",
+  },
+  {
+    articleId: "diffusion-model",
+    landingPage: {
+      title: "Diffusion Model",
+      description: "Fra støy til kunst: Hvordan lage bilder med AI?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "Diffusion Model-prosjektet utforsker hvordan AI kan skape realistiske bilder fra ren støy. Målet var å generere 32×32 piksels bilbilder ved hjelp av Denoising Diffusion Probabilistic Models (DDPM), som gradvis “renser” støy til et ferdig bilde. Modellen ble trent på CIFAR-10-datasettet, som inneholder 5 000 bilbilder, og kan nå lage nye, unike bilbilder som ligner på, men ikke er identiske med, treningsdataene.",
+      funFacts: [
+        "Diffusjonsmodeller kan i teorien generere uendelig mange unike bilder, fordi startstøyen alltid er tilfeldig.",
+        "Selv om prosessen virker treg sammenlignet med GANs, produserer diffusjonsmodeller ofte skarpere og mer detaljerte bilder og er brukt i metoder som Stable Diffusion.",
+      ],
+      links: [
+        "https://arxiv.org/pdf/2006.11239",
+        "https://www.cs.toronto.edu/~kriz/cifar.html",
+      ],
+      technologies: ["Python", "PyTorch", "Diffusion Models", "Generative AI"],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Marijan Soric",
+          role: "Leder",
+          github: "https://github.com/soricm",
+          linkedIn: "https://www.linkedin.com/in/marijan-soric/",
+        },
+        {
+          name: "Amanda Truyen",
+          role: "Medlem",
+          github: "https://github.com/amandathunes",
+          linkedIn: "https://www.linkedin.com/in/amanda-johanne-thunes-truyen/",
+        },
+        {
+          name: "Baris Batur",
+          role: "Medlem",
+          github: "https://github.com/BarisBatur",
+          linkedIn: "https://www.linkedin.com/in/baris-batur-6b155b289/",
+        },
+        {
+          name: "Thomas Haslund Wik",
+          role: "Medlem",
+          github: "https://github.com/ThomasHWik",
+          linkedIn: "https://www.linkedin.com/in/thomas-haslund-wik-365b2024b/",
+        },
+        {
+          name: "Mauritz Skogøy",
+          role: "Medlem",
+          github: "https://github.com/Mauritzskog",
+          linkedIn:
+            "https://www.linkedin.com/in/mauritz-hardersen-skog%C3%B8y/",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2024,
+    github: "https://github.com/CogitoNTNU/DiffusionModel",
+  },
+  {
     articleId: "chessar",
     landingPage: {
       title: "ChessAR",
@@ -480,7 +615,7 @@ export const articles: ArticleType[] = [
     },
     descriptionPage: {
       description:
-        "Vi skulle lage noen briller som tar inn bilder av sjakkbrett, og som skulle strømme anbefalingene fra en AI-modell som analyserer brettet. Dermed trengte vi å lage en datasynmodell som kunne gjenkjenne sjakkbrikker og brett i bilder tatt av et kamera og gjøre det til FEN notasjon, for å så sende det til Stockfish for analyse og så strømme anbefalingene til brillene. Vi fant ut at det ikke fantes sterke nok datasynmodeller for å gjøre det vi ville, så vi lagde vår egen! Vi trente en pretrained YOLO-modell fra COCO datasettet og trente den videre på titallstusen bilder av sjakkbrett generert i Unity. På dette datasettet trente vi YOLOv12 og så gjorde matrise operasjoner for å gjøre bilde til FEN notasjon. Vi fikk en datasynmodell som gjenkjenner sjakkbrikker med 95% Precision og 93% mAP@50! på test. Vi lagde også en API i FastAPI som tar imot bilder, kjører datasynmodellen og sender FEN notasjonen til Stockfish for analyse",
+        "ChessAR-prosjektet hadde som mål å utvikle AR-briller som kan ta bilder av et sjakkbrett og umiddelbart vise anbefalinger fra en AI-modell som analyserer stillingen. For å få dette til, trengte vi en datasynmodell som kunne gjenkjenne sjakkbrikker og brettet i et kamerabilde, konvertere dette til FEN-notasjon, sende det til sjakkmotoren Stockfish for analyse, og deretter strømme anbefalingene tilbake til brillene. Da vi oppdaget at det ikke fantes eksisterende datasynmodeller som var sterke nok til å møte kravene våre, bygde vi vår egen. Vi tok utgangspunkt i en forhåndstrent YOLO-modell fra COCO-datasettet og finjusterte den på titusenvis av syntetisk genererte bilder av sjakkbrett laget i Unity. Ved å kombinere data-augmentering og transfer learning, trente vi en YOLOv12-modell som deretter ble kombinert med matriseoperasjoner for å oversette gjenkjente brikker til korrekt FEN-notasjon. Resultatet ble en datasynmodell som gjenkjenner sjakkbrikker med 95 % precision og 93 % mAP@50 på testsettet. I tillegg bygde vi en egen server fra bunnen av for å motta bildeinput, kjøre analysen og levere resultatene i sanntid.",
       funFacts: [
         "Det ble generert i Unity titallstusen bilder av sjakkbrett for å trene modellen.",
         "Med Data augmentation og transfer learning klarte vi å trene en datasynmodell som gjenkjenner sjakkbrikker med 95% Precision og 93% mAP@50! på test",
