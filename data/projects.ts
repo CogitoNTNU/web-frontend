@@ -41,6 +41,14 @@ export const CogitoProjects: ProjectType[] = [
     released: true,
     url: "/projects/articles/muzero",
   },
+  {
+    name: "TV2 x Cogito",
+    github: "https://github.com/CogitoNTNU/TV2xCogito",
+    img: "/Projects/ProjectLogos/cogitoxtv2.png",
+    playable: false,
+    released: true,
+    url: "/projects/tv2xcogito",
+  },
 
   {
     name: "A* x Cogitron",
