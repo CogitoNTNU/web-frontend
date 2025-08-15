@@ -57,7 +57,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/A1ice-Z",
       linkedin: "https://www.linkedin.com/in/alice-z-21b351246/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/alice.JPG",
     },
     {
       name: "Olivia Tan",
@@ -71,7 +71,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/HFossdal",
       linkedin: "https://www.linkedin.com/in/hfossdal/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/håvard_fossdal.jpg",
     },
     {
       name: "Serina Serife Erzengin",
@@ -161,7 +161,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/adrianjlundd",
       linkedin: "https://www.linkedin.com/in/adrian-jacobsen-lund-818a41232/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/adrian.JPG",
     },
     {
       name: "Arta Osmani",
@@ -175,7 +175,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/MrMarHVD",
       linkedin: "https://www.linkedin.com/in/håvard-johannes-daleng-2266b7248/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/håvard_daleng.jpeg",
     },
     {
       name: "Mari Hove Gusdal",
@@ -196,7 +196,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/yada0403",
       linkedin: "https://www.linkedin.com/in/yatavi-suresh-62149534a/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/yatavi.jpeg",
     },
   ];
 
@@ -507,158 +507,6 @@ const TV2xCogito = () => {
                       </div>
                     </motion.div>
                   </div>
-
-                  {/* H24 Team - Creative Cards Layout */}
-                  <div className="relative">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                      className="text-center mb-16"
-                    >
-                      <h4 className="text-3xl font-bold text-white mb-2">
-                        Teamet Bak Prosjektet
-                      </h4>
-                      <p className="text-white/60">De som gjorde det mulig</p>
-                    </motion.div>
-
-                    {/* Leaders Section with Special Styling */}
-                    <div className="mb-16">
-                      <div className="flex items-center justify-center gap-4 mb-8">
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">
-                          LEDELSE
-                        </h5>
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                      </div>
-                      <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                        {h24TeamLeaders.map((member, index) => (
-                          <motion.div
-                            key={member.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="relative group"
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#702eff] to-[#ffbf94] rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity" />
-                            <div className="relative bg-[#100118] border border-[#702eff]/30 rounded-2xl p-6 group-hover:border-[#702eff] transition-all">
-                              <div className="flex items-center gap-4">
-                                {member.image && (
-                                  <img
-                                    src={member.image}
-                                    alt={member.name}
-                                    className="w-20 h-20 rounded-full object-cover border-2 border-[#702eff]/50"
-                                  />
-                                )}
-                                <div className="flex-1">
-                                  <div className="flex items-center justify-between">
-                                    <div>
-                                      <h6 className="text-white font-bold text-lg">
-                                        {member.name}
-                                      </h6>
-                                      <p className="text-[#ffbf94] text-sm">
-                                        {member.role}
-                                      </p>
-                                    </div>
-                                    <div className="flex gap-3">
-                                      {member.github && (
-                                        <a
-                                          href={member.github}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="text-white/60 hover:text-[#702eff] transition-colors"
-                                        >
-                                          <FaGithub size={22} />
-                                        </a>
-                                      )}
-                                      {member.linkedin && (
-                                        <a
-                                          href={member.linkedin}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                          className="text-white/60 hover:text-[#702eff] transition-colors"
-                                        >
-                                          <FaLinkedin size={22} />
-                                        </a>
-                                      )}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Members Grid with Compact Cards */}
-                    <div>
-                      <div className="flex items-center justify-center gap-4 mb-8">
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">
-                          MEDLEMMER
-                        </h5>
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                      </div>
-                      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-                        {h24TeamMembers.map((member, index) => (
-                          <motion.div
-                            key={member.name}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.05 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -5 }}
-                            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all"
-                          >
-                            <div className="flex items-center gap-3">
-                              {member.image && (
-                                <img
-                                  src={member.image}
-                                  alt={member.name}
-                                  className="w-12 h-12 rounded-full object-cover border border-white/20"
-                                />
-                              )}
-                              <div className="flex-1">
-                                <h6 className="text-white font-semibold mb-1">
-                                  {member.name}
-                                </h6>
-                                <div className="flex items-center justify-between">
-                                  <p className="text-[#ffbf94] text-sm">
-                                    {member.role}
-                                  </p>
-                                  <div className="flex gap-2">
-                                    {member.github && (
-                                      <a
-                                        href={member.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
-                                      >
-                                        <FaGithub size={18} />
-                                      </a>
-                                    )}
-                                    {member.linkedin && (
-                                      <a
-                                        href={member.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
-                                      >
-                                        <FaLinkedin size={18} />
-                                      </a>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             ) : (
@@ -680,43 +528,42 @@ const TV2xCogito = () => {
                   </motion.div>
 
                   {/* Main Content - Card Based */}
-                  <div className="grid lg:grid-cols-3 gap-8 mb-20">
+                  <div className="grid lg:grid-cols-2 gap-10 mb-20">
                     {/* Focus Areas */}
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
                       viewport={{ once: true }}
-                      className="lg:col-span-2"
                     >
                       <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#702eff]/30 h-full">
                         <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                           <span className="text-3xl">🚀</span> Fokusområder
                         </h4>
                         <div className="grid gap-4">
-                          <div className="bg-[#100118] p-5 rounded-lg border-l-4 border-[#ffbf94]">
+                          <div className="bg-[#2a1536] p-6 rounded-lg border-l-4 border-[#ffbf94]">
                             <h5 className="text-[#ffbf94] font-bold text-lg mb-2">
                               Embedding-modeller
                             </h5>
-                            <p className="text-white/85 text-sm leading-relaxed">
+                            <p className="text-white/90 text-base leading-relaxed">
                               Utforske avanserte tekstforståelsesmodeller for
                               dypere innsikt
                             </p>
                           </div>
-                          <div className="bg-[#100118] p-5 rounded-lg border-l-4 border-[#702eff]">
+                          <div className="bg-[#2a1536] p-6 rounded-lg border-l-4 border-[#702eff]">
                             <h5 className="text-[#702eff] font-bold text-lg mb-2">
                               Sesongvariasjoner
                             </h5>
-                            <p className="text-white/85 text-sm leading-relaxed">
+                            <p className="text-white/90 text-base leading-relaxed">
                               Håndtere tidsmessige mønstre og sesongbaserte
                               trender
                             </p>
                           </div>
-                          <div className="bg-[#100118] p-5 rounded-lg border-l-4 border-[#ffbf94]">
+                          <div className="bg-[#2a1536] p-6 rounded-lg border-l-4 border-[#ffbf94]">
                             <h5 className="text-[#ffbf94] font-bold text-lg mb-2">
                               Visuell Analyse
                             </h5>
-                            <p className="text-white/85 text-sm leading-relaxed">
+                            <p className="text-white/90 text-base leading-relaxed">
                               Undersøke hvordan bilder påvirker artikkelytelse
                             </p>
                           </div>
@@ -730,54 +577,54 @@ const TV2xCogito = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 }}
                       viewport={{ once: true }}
-                      className="space-y-6"
+                      className="space-y-8"
                     >
                       {/* Quick Stats */}
-                      <div className="bg-[#1a0826] p-6 rounded-2xl border border-[#702eff]/30">
-                        <h5 className="text-white font-bold text-lg mb-4">
-                          Status
+                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#702eff]/30">
+                        <h5 className="text-white font-bold text-xl mb-6">
+                          📊 Prosjekt Status
                         </h5>
-                        <div className="space-y-3">
-                          <div className="flex justify-between items-center">
-                            <span className="text-white/80 font-medium">
-                              Team
+                        <div className="space-y-4">
+                          <div className="flex justify-between items-center p-3 bg-[#2a1536] rounded-lg">
+                            <span className="text-white/80 font-medium text-base">
+                              Startet
                             </span>
-                            <span className="text-[#ffbf94] font-bold">
-                              8 personer
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-white/80 font-medium">
-                              Varighet
-                            </span>
-                            <span className="text-[#702eff] font-bold">
-                              1 semester
+                            <span className="text-[#ffbf94] font-bold text-lg">
+                              Januar 2025
                             </span>
                           </div>
-                          <div className="flex justify-between items-center">
-                            <span className="text-white/80 font-medium">
-                              Status
+                          <div className="flex justify-between items-center p-3 bg-[#2a1536] rounded-lg">
+                            <span className="text-white/80 font-medium text-base">
+                              Team størrelse
                             </span>
-                            <span className="text-green-400 font-bold">
-                              Pågående
+                            <span className="text-[#702eff] font-bold text-lg">
+                              10 personer
+                            </span>
+                          </div>
+                          <div className="flex justify-between items-center p-3 bg-[#2a1536] rounded-lg">
+                            <span className="text-white/80 font-medium text-base">
+                              Fokusområde
+                            </span>
+                            <span className="text-white font-bold text-lg">
+                              AI & ML
                             </span>
                           </div>
                         </div>
                       </div>
 
-                      {/* Tech Pills */}
-                      <div className="bg-[#1a0826] p-6 rounded-2xl border border-[#ffbf94]/30">
-                        <h5 className="text-white font-bold text-lg mb-4">
-                          Tech Stack
+                      {/* Tech Stack */}
+                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#ffbf94]/30">
+                        <h5 className="text-white font-bold text-xl mb-6">
+                          ⚡ Teknologi Stack
                         </h5>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="grid grid-cols-2 gap-3">
                           {v25TechStack.map((tech) => (
                             <a
                               key={tech.name}
                               href={tech.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="bg-[#100118] px-3 py-1.5 rounded-full text-xs text-[#ffbf94] font-medium border border-[#ffbf94]/40 hover:border-[#ffbf94] hover:bg-[#702eff]/10 transition-all cursor-pointer inline-block"
+                              className="px-4 py-3 bg-[#2a1536] rounded-lg text-[#ffbf94] text-base font-medium border border-[#ffbf94]/40 hover:border-[#ffbf94] hover:bg-[#702eff]/20 transition-all text-center"
                             >
                               {tech.name}
                             </a>
@@ -786,206 +633,233 @@ const TV2xCogito = () => {
                       </div>
                     </motion.div>
                   </div>
+                </div>
+              </div>
+            )}
+          </section>
 
-                  {/* V25 Team - Creative Layout */}
-                  <div className="relative">
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                      className="text-center mb-16"
-                    >
-                      <h4 className="text-3xl font-bold text-white mb-2">
-                        Teamet Som Tar Over
-                      </h4>
-                      <p className="text-white/60">Vår 2025 generasjonen</p>
-                    </motion.div>
+          {/* Team Section - Separated with visual break */}
+          <section className="relative py-20 bg-gradient-to-b from-[#100118] via-[#1a0826] to-[#100118]">
+            {/* Visual separator */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#702eff] to-transparent" />
 
-                    {/* Leaders & Mentors Row */}
-                    <div className="mb-16">
-                      <div className="flex items-center justify-center gap-4 mb-8">
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">
-                          LEDELSE & VEILEDNING
-                        </h5>
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                      </div>
+            <div className="max-w-7xl mx-auto px-4">
+              {selectedSemester === "h24" ? (
+                <div className="relative">
+                  {/* H24 Team - Enhanced Cards Layout */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                  >
+                    <h4 className="text-4xl font-bold text-white mb-3">
+                      Teamet Bak Prosjektet
+                    </h4>
+                    <p className="text-white/60 text-lg">
+                      Høst 2024 - De som gjorde det mulig
+                    </p>
+                  </motion.div>
 
-                      <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {/* Leaders Column */}
-                        <div>
-                          <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">
-                            Prosjektledere
-                          </h6>
-                          <div className="space-y-4">
-                            {v25TeamLeaders.map((member, index) => (
-                              <motion.div
-                                key={member.name}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-r from-[#702eff]/10 to-transparent p-5 rounded-xl border border-[#702eff]/30 hover:border-[#702eff] transition-all"
-                              >
-                                <div className="flex items-center gap-3">
-                                  {member.image && (
-                                    <img
-                                      src={member.image}
-                                      alt={member.name}
-                                      className="w-14 h-14 rounded-full object-cover border border-[#702eff]/30"
-                                    />
-                                  )}
-                                  <div className="flex-1">
-                                    <div className="flex items-center justify-between">
-                                      <div>
-                                        <h6 className="text-white font-bold">
-                                          {member.name}
-                                        </h6>
-                                        <p className="text-[#ffbf94] text-sm">
-                                          {member.role}
-                                        </p>
-                                      </div>
-                                      <div className="flex gap-2">
-                                        {member.github && (
-                                          <a
-                                            href={member.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white/50 hover:text-[#702eff] transition-colors"
-                                          >
-                                            <FaGithub size={20} />
-                                          </a>
-                                        )}
-                                        {member.linkedin && (
-                                          <a
-                                            href={member.linkedin}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white/50 hover:text-[#702eff] transition-colors"
-                                          >
-                                            <FaLinkedin size={20} />
-                                          </a>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Mentors Column */}
-                        <div>
-                          <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">
-                            Mentorer
-                          </h6>
-                          <div className="space-y-4">
-                            {v25TeamMentors.map((member, index) => (
-                              <motion.div
-                                key={member.name}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                className="bg-gradient-to-l from-[#ffbf94]/10 to-transparent p-5 rounded-xl border border-[#ffbf94]/30 hover:border-[#ffbf94] transition-all"
-                              >
-                                <div className="flex items-center gap-3">
-                                  {member.image && (
-                                    <img
-                                      src={member.image}
-                                      alt={member.name}
-                                      className="w-14 h-14 rounded-full object-cover border border-[#ffbf94]/30"
-                                    />
-                                  )}
-                                  <div className="flex-1">
-                                    <div className="flex items-center justify-between">
-                                      <div>
-                                        <h6 className="text-white font-bold">
-                                          {member.name}
-                                        </h6>
-                                        <p className="text-[#702eff] text-sm">
-                                          {member.role}
-                                        </p>
-                                      </div>
-                                      <div className="flex gap-2">
-                                        {member.github && (
-                                          <a
-                                            href={member.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white/50 hover:text-[#ffbf94] transition-colors"
-                                          >
-                                            <FaGithub size={20} />
-                                          </a>
-                                        )}
-                                        {member.linkedin && (
-                                          <a
-                                            href={member.linkedin}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white/50 hover:text-[#ffbf94] transition-colors"
-                                          >
-                                            <FaLinkedin size={20} />
-                                          </a>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </motion.div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                  {/* Leaders Section with Larger Profile Pictures */}
+                  <div className="mb-20">
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                      <h5 className="text-[#ffbf94] font-semibold px-4 text-lg">
+                        LEDELSE
+                      </h5>
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
                     </div>
-
-                    {/* Team Members */}
-                    <div>
-                      <div className="flex items-center justify-center gap-4 mb-8">
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                        <h5 className="text-[#ffbf94] font-semibold px-4">
-                          MEDLEMMER
-                        </h5>
-                        <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
-                      </div>
-                      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-                        {v25TeamMembers.map((member, index) => (
-                          <motion.div
-                            key={member.name}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.05 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -5 }}
-                            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all"
-                          >
-                            <div className="flex items-center gap-3">
+                    <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                      {h24TeamLeaders.map((member, index) => (
+                        <motion.div
+                          key={member.name}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          viewport={{ once: true }}
+                          className="relative group"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-[#702eff] to-[#ffbf94] rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity" />
+                          <div className="relative bg-[#100118] border border-[#702eff]/30 rounded-2xl p-8 group-hover:border-[#702eff] transition-all">
+                            <div className="flex items-center gap-6">
                               {member.image && (
                                 <img
                                   src={member.image}
                                   alt={member.name}
-                                  className="w-12 h-12 rounded-full object-cover border border-white/20"
+                                  className="w-32 h-32 rounded-2xl object-cover border-3 border-[#702eff]/50 shadow-lg"
                                 />
                               )}
                               <div className="flex-1">
-                                <h6 className="text-white font-semibold mb-1">
+                                <h6 className="text-white font-bold text-xl mb-1">
                                   {member.name}
                                 </h6>
-                                <div className="flex items-center justify-between">
-                                  <p className="text-[#ffbf94] text-sm">
+                                <p className="text-[#ffbf94] text-base mb-4">
+                                  {member.role}
+                                </p>
+                                <div className="flex gap-3">
+                                  {member.github && (
+                                    <a
+                                      href={member.github}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-white/60 hover:text-[#702eff] transition-colors"
+                                    >
+                                      <FaGithub size={24} />
+                                    </a>
+                                  )}
+                                  {member.linkedin && (
+                                    <a
+                                      href={member.linkedin}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="text-white/60 hover:text-[#702eff] transition-colors"
+                                    >
+                                      <FaLinkedin size={24} />
+                                    </a>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Members Grid with Larger Cards */}
+                  <div>
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                      <h5 className="text-[#ffbf94] font-semibold px-4 text-lg">
+                        MEDLEMMER
+                      </h5>
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                    </div>
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                      {h24TeamMembers.map((member, index) => (
+                        <motion.div
+                          key={member.name}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.05 }}
+                          viewport={{ once: true }}
+                          whileHover={{ y: -5 }}
+                          className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all"
+                        >
+                          <div className="flex items-center gap-4">
+                            {member.image && (
+                              <img
+                                src={member.image}
+                                alt={member.name}
+                                className="w-20 h-20 rounded-xl object-cover border-2 border-white/20 shadow-md"
+                              />
+                            )}
+                            <div className="flex-1">
+                              <h6 className="text-white font-semibold text-base mb-1">
+                                {member.name}
+                              </h6>
+                              <p className="text-[#ffbf94] text-sm mb-3">
+                                {member.role}
+                              </p>
+                              <div className="flex gap-3">
+                                {member.github && (
+                                  <a
+                                    href={member.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
+                                    <FaGithub size={20} />
+                                  </a>
+                                )}
+                                {member.linkedin && (
+                                  <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
+                                    <FaLinkedin size={20} />
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="relative">
+                  {/* V25 Team - Enhanced Layout */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                  >
+                    <h4 className="text-4xl font-bold text-white mb-3">
+                      Teamet Som Tar Over
+                    </h4>
+                    <p className="text-white/60 text-lg">
+                      Vår 2025 - Neste generasjon
+                    </p>
+                  </motion.div>
+
+                  {/* Leaders & Mentors Row */}
+                  <div className="mb-16">
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                      <h5 className="text-[#ffbf94] font-semibold px-4 text-lg">
+                        LEDELSE & VEILEDNING
+                      </h5>
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                      {/* Leaders Column */}
+                      <div>
+                        <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">
+                          Prosjektledere
+                        </h6>
+                        <div className="space-y-4">
+                          {v25TeamLeaders.map((member, index) => (
+                            <motion.div
+                              key={member.name}
+                              initial={{ opacity: 0, x: -20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              viewport={{ once: true }}
+                              className="bg-gradient-to-r from-[#702eff]/10 to-transparent p-6 rounded-xl border border-[#702eff]/30 hover:border-[#702eff] transition-all"
+                            >
+                              <div className="flex items-center gap-5">
+                                {member.image && (
+                                  <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-24 h-24 rounded-xl object-cover border-2 border-[#702eff]/30 shadow-lg"
+                                  />
+                                )}
+                                <div className="flex-1">
+                                  <h6 className="text-white font-bold text-lg mb-1">
+                                    {member.name}
+                                  </h6>
+                                  <p className="text-[#ffbf94] text-base mb-3">
                                     {member.role}
                                   </p>
-                                  <div className="flex gap-2">
+                                  <div className="flex gap-3">
                                     {member.github && (
                                       <a
                                         href={member.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                        className="text-white/50 hover:text-[#702eff] transition-colors"
                                       >
-                                        <FaGithub size={18} />
+                                        <FaGithub size={20} />
                                       </a>
                                     )}
                                     {member.linkedin && (
@@ -993,23 +867,146 @@ const TV2xCogito = () => {
                                         href={member.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                        className="text-white/50 hover:text-[#702eff] transition-colors"
                                       >
-                                        <FaLinkedin size={18} />
+                                        <FaLinkedin size={20} />
                                       </a>
                                     )}
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </motion.div>
-                        ))}
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Mentors Column */}
+                      <div>
+                        <h6 className="text-center text-white/60 text-sm mb-4 uppercase tracking-wider">
+                          Mentorer
+                        </h6>
+                        <div className="space-y-4">
+                          {v25TeamMentors.map((member, index) => (
+                            <motion.div
+                              key={member.name}
+                              initial={{ opacity: 0, x: 20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ delay: index * 0.1 }}
+                              viewport={{ once: true }}
+                              className="bg-gradient-to-l from-[#ffbf94]/10 to-transparent p-6 rounded-xl border border-[#ffbf94]/30 hover:border-[#ffbf94] transition-all"
+                            >
+                              <div className="flex items-center gap-5">
+                                {member.image && (
+                                  <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-24 h-24 rounded-xl object-cover border-2 border-[#ffbf94]/30 shadow-lg"
+                                  />
+                                )}
+                                <div className="flex-1">
+                                  <h6 className="text-white font-bold text-lg mb-1">
+                                    {member.name}
+                                  </h6>
+                                  <p className="text-[#702eff] text-base mb-3">
+                                    {member.role}
+                                  </p>
+                                  <div className="flex gap-3">
+                                    {member.github && (
+                                      <a
+                                        href={member.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/50 hover:text-[#ffbf94] transition-colors"
+                                      >
+                                        <FaGithub size={20} />
+                                      </a>
+                                    )}
+                                    {member.linkedin && (
+                                      <a
+                                        href={member.linkedin}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white/50 hover:text-[#ffbf94] transition-colors"
+                                      >
+                                        <FaLinkedin size={20} />
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Team Members */}
+                  <div className="mt-20">
+                    <div className="flex items-center justify-center gap-4 mb-12">
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                      <h5 className="text-[#ffbf94] font-semibold px-4 text-lg">
+                        MEDLEMMER
+                      </h5>
+                      <div className="h-px bg-gradient-to-r from-transparent via-[#ffbf94] to-transparent flex-1 max-w-[200px]" />
+                    </div>
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                      {v25TeamMembers.map((member, index) => (
+                        <motion.div
+                          key={member.name}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.05 }}
+                          viewport={{ once: true }}
+                          whileHover={{ y: -5 }}
+                          className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all"
+                        >
+                          <div className="flex items-center gap-4">
+                            {member.image && (
+                              <img
+                                src={member.image}
+                                alt={member.name}
+                                className="w-20 h-20 rounded-xl object-cover border-2 border-white/20 shadow-md"
+                              />
+                            )}
+                            <div className="flex-1">
+                              <h6 className="text-white font-semibold text-base mb-1">
+                                {member.name}
+                              </h6>
+                              <p className="text-[#ffbf94] text-sm mb-3">
+                                {member.role}
+                              </p>
+                              <div className="flex gap-3">
+                                {member.github && (
+                                  <a
+                                    href={member.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
+                                    <FaGithub size={20} />
+                                  </a>
+                                )}
+                                {member.linkedin && (
+                                  <a
+                                    href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white/40 hover:text-[#ffbf94] transition-colors"
+                                  >
+                                    <FaLinkedin size={20} />
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </section>
 
           {/* Spacer before footer */}
