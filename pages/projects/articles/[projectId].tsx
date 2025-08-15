@@ -393,7 +393,7 @@ const Team = ({ articleId, team }: TeamProps) => {
 interface TeamMemberProps {
   articleId: string;
   name: string;
-  role: "Leder" | "Medlem";
+  role: "Leder" | "Medleder" | "Medlem";
   github?: string;
   linkedIn?: string;
 }
