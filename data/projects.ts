@@ -177,8 +177,9 @@ export const projectsApply: ProjectApply[] = [
     leaders: ["Vetle R. D", "Christian Gynnild"],
   },
   {
-    name: "Sebastion Prosjekt",
-    description: "",
+    name: "First Steps",
+    description:
+      "Har du lyst til å lære en humanoid robot å gå? I dette prosjektet skal vi bruke NVIDIA Isaac Sim og reinforcement learning (RL) for å trene Zeroth-01 fra K-Scale Labs til å ta sine første steg og oppnå grunnleggende balanse. I tillegg åpner prosjektet for å utforske Natural Language Processing (NLP) og Computer Vision (CV) slik at roboten kan tolke omgivelsene sine og kommunisere med mennesker gjennom tale og syn. Målet er å kombinere bevegelse, språk og persepsjon med denne open-sourced roboten!",
     image: "sebastion.png",
     leaders: ["Sebastian Riibe Berthelsen"],
   },
