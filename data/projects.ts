@@ -144,7 +144,7 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "MatchNet",
     description:
-      "MatchNet har som mål å utvikle et nevralt nettverk fra bunnen av som kombinerer styrkene til konvolusjonsbaserte modeller og tradisjonelle nettverksarkitekturer for å generere en presis output-score. Prosjektet fokuserer på avanserte metoder for å håndtere flere inputkilder på en integrert og fleksibel måte, langt utover enkel modellkobling eller embedding. Dette gir en unik mulighet til å utforske nye arkitektoniske løsninger og oppnå mer robust ytelse.",
+      "Bygge en nevralnett struktur som tar en dating profil (bilder og tekst) og gjennom supervised trening, generere text output i form av "opening lines". Målet er å klare å konstruere ett sammenhengende nettverk med egenskapen til å evaluere over flere modaliteter, i dette prosjektet to, tekst og bilder.  Hoved fokuset vil ikke være på datahenting eller resultater, men for medlemmene til å skaffe en større forståelse av nettverksarkitekturer. Dette vil være et krevende prosjekt som sikter på oppmøte tirsdager og torsdager. Anbefaler å ha noe erfaring med AI",
     image: "matchnet.png",
     leaders: ["Kristian Carlenius"],
   },
@@ -193,5 +193,12 @@ export const projectsApply: ProjectApply[] = [
     description: "",
     image: "aicrash.png",
     leaders: ["Maia Austigard", "Mina Aldolaimi"],
+  },
+  {
+    name: "Cogito Web",
+    description:
+      "Har du lyst til å lære deg moderne webutvikling og hvordan man deployer AI-prosjekter til produksjon? Da er dette prosjektet for deg. Vi skal bygge ut Cogito-nettsiden i en voldsom skala. Dette prosjektet har tre underprosjekter: Cogito Login, Cogito Community og Cogito Prosjekter",
+    image: "cogito.png",
+    leaders: ["Simon Sandvik Lee"],
   },
 ];
