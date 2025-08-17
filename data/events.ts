@@ -83,7 +83,7 @@ export const hardcodedEvents: Array<EventType> = [
     location: "TBA",
     description: "Dykk ned i datasynens fascinerende verden! Lær om YOLO object detection og få hands-on erfaring med å trene modeller som kan se og forstå bilder.",
     image: KursH25,
-    openForAll: true,
+    bannerType: "open-walk-in",
   },
   {
     name: "Vors og Fest 🎉",
@@ -110,8 +110,7 @@ export const hardcodedEvents: Array<EventType> = [
     location: "TBA",
     description: "Cogito er tilbake med nytt hackathon! Denne gangen med Recover, Norges største på skadeservice og håndverkstjenester. Mer info om påmelding kommer senere.",
     image: Recover,
-    openForAll: true,
-    requiresRegistration: true,
+    bannerType: "open-registration",
   },
   {
     name: "Brettspillkveld 🎲",
@@ -198,7 +197,7 @@ export const hardcodedEvents: Array<EventType> = [
       "CTO Sverre Nystad og Kristoffer Olaisen holder et interaktivt kurs om nevrale nettverk.",
     link: "",
     image: NNWorkshop,
-    openForAll: true,
+    bannerType: "open-walk-in",
   },
   {
     name: "Workshop - Reinforcement learning 🤖",
@@ -210,7 +209,7 @@ export const hardcodedEvents: Array<EventType> = [
       "Even Klemsdal, Ph.D.-kandidat ved IDI og grunnlegger av Cogito, tar deg gjennom grunnleggende konsepter innen Reinforcement Learning!",
     link: "",
     image: RLWorkshop,
-    openForAll: true,
+    bannerType: "open-walk-in",
   },
   {
     name: "Workshop - Genetiske algoritmer 🧬",
@@ -221,7 +220,7 @@ export const hardcodedEvents: Array<EventType> = [
     description: "Tobias Fremming holder et kurs om genetiske algoritmer.",
     link: "",
     image: GAWorkshop,
-    openForAll: true,
+    bannerType: "open-walk-in",
   },
   {
     name: "Project Pitching 🚀",
@@ -233,7 +232,7 @@ export const hardcodedEvents: Array<EventType> = [
       "Prosjektlederne pitcher sine prosjekter for medlemmene i Cogito.",
     link: "",
     image: ProjectPitching,
-    openForAll: true,
+    bannerType: "open-walk-in",
   },
 ];
 

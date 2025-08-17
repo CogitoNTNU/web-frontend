@@ -49,7 +49,7 @@ const Calendar = () => {
                   image={event.image}
                   link={event.link}
                   pinned={event.pinned}
-                  openForAll={event.openForAll}
+                  bannerType={event.bannerType}
                 />
               ))}
           </div>
@@ -72,6 +72,7 @@ const Calendar = () => {
                   image={event.image}
                   link={event.link}
                   pinned={event.pinned}
+                  bannerType={event.bannerType}
                 />
               ))}
           </div>
