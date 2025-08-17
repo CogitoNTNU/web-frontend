@@ -116,6 +116,14 @@ export const CogitoProjects: ProjectType[] = [
     released: false,
     url: "/projects/articles/hypeai",
   },
+  {
+    name: "Diffusion Model",
+    github: "https://github.com/CogitoNTNU/DiffusionModel",
+    img: "/Projects/Articles/diffusion-model/diffusion-model.png",
+    playable: false,
+    released: true,
+    url: "/projects/articles/diffusion-model",
+  },
 ];
 
 export const projectsApply: ProjectApply[] = [
