@@ -42,7 +42,21 @@ const EventCard: React.FC<EventType> = (props) => {
       {bannerType && <EventBanner type={bannerType} />}
       <div className="flex flex-col text-base text-white tracking-wider pt-1">
         <p className="pb-2">
-          {!eventLocation ? "📍TBA" : "📍" + eventLocation}
+          {!eventLocation ? (
+            "📍TBA"
+          ) : eventLocation.includes("\n") ? (
+            <>
+              📍
+              {eventLocation.split("\n").map((line, index) => (
+                <span key={index}>
+                  {index > 0 && <br />}
+                  {index > 0 ? line : line}
+                </span>
+              ))}
+            </>
+          ) : (
+            "📍" + eventLocation
+          )}
         </p>
         {eventImage && (
           <Image
