@@ -46,7 +46,7 @@ const YearSemesterSelector: React.FC<YearSemesterSelectorProps> = ({
     if (!wrapperRef.current) return;
     const activeBtn = wrapperRef.current.querySelector(
       "button[data-active='true']"
-    ) as HTMLButtonElement | null;
+    );
     if (activeBtn && selectorOpen) {
       activeBtn.scrollIntoView({ block: "nearest", inline: "center" });
     }

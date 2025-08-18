@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar/Navbar";
 import { useTeamData } from "../hooks/useTeamData";
 import YearSemesterSelector from "../components/team/YearSemesterSelector";
 import ProjectFilterChips from "../components/team/ProjectFilterChips";
-import { Project } from "../lib/types";
 import Footer from "../components/Footer/Footer";
 import ProjectSection from "../components/team/ProjectSection";
 
@@ -90,9 +89,7 @@ const TeamPage: React.FC = () => {
             ) : (
               <ProjectSection
                 project={{
-                  ...(activeProjects.find(
-                    (p) => p.name === projectFilter
-                  ) as Project),
+                  ...activeProjects.find((p) => p.name === projectFilter),
                 }}
                 members={filteredFlatMembers}
               />

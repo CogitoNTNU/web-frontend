@@ -179,7 +179,7 @@ export function useTeamData() {
       .filter((p) => map.has(p.id))
       .map((p) => ({
         project: p,
-        members: map.get(p.id)!.members.sort((a, b) => a.order - b.order),
+        members: map.get(p.id).members.sort((a, b) => a.order - b.order),
       }));
   }, [
     semesterMembers,
