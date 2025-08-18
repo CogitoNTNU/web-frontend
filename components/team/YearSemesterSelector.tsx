@@ -38,7 +38,7 @@ const YearSemesterSelector: React.FC<YearSemesterSelectorProps> = ({
   nextDisabled,
   prevDisabled,
   bannerSrc,
-  titleLabel = "MEMBERS",
+  titleLabel = "COGITO",
 }: YearSemesterSelectorProps) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
