@@ -33,7 +33,7 @@ const Button = ({
     py-4
     shadow-md
     rounded-3xl
-  `
+  `;
   return (
     <>
       <button onClick={onClick} disabled={disabled} className={buttonClasses}>

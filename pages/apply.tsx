@@ -272,8 +272,8 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
             </div>
           </div>
 
-          {
-            teamLead && <div className="space-y-4 px-6 py-4">
+          {teamLead && (
+            <div className="space-y-4 px-6 py-4">
               <p className="text-md phone:text-lg">
                 Kunne du sett for deg å være{" "}
                 <span className="text-pink-default">prosjektleder </span>for ett
@@ -298,10 +298,8 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                   prosjekt
                 </label>
               </div>
-
             </div>
-
-          }
+          )}
           <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px] pb-20">
             <div className="flex justify-start w-full">
               <Button
@@ -310,7 +308,15 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                 icon={"ArrowRight"}
                 color={"pink"}
                 textSize="16px"
-                disabled={isDue || chosenProjects.length < 3 || firstName === "" || lastName === "" || email === "" || phone === "" || about === ""}
+                disabled={
+                  isDue ||
+                  chosenProjects.length < 3 ||
+                  firstName === "" ||
+                  lastName === "" ||
+                  email === "" ||
+                  phone === "" ||
+                  about === ""
+                }
               />
             </div>
           </div>

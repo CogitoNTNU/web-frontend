@@ -168,10 +168,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
               ))}
               <div className="flex items-center justify-center h-full">
                 <Link href={"/apply"}>
-                  <Button
-                    text={"Søk Opptak"}
-                    color={"pink"}
-                  />
+                  <Button text={"Søk Opptak"} color={"pink"} />
                 </Link>
               </div>
             </div>
@@ -204,10 +201,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
               ))}
               <motion.div className="pt-[10px]" variants={itemVariants}>
                 <Link onClick={() => burgerChangePage()} href={"/apply"}>
-                  <Button
-                    text={"Søk Opptak"}
-                    color={"pink"}
-                  />
+                  <Button text={"Søk Opptak"} color={"pink"} />
                 </Link>
               </motion.div>
             </div>
