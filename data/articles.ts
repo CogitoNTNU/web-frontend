@@ -346,8 +346,7 @@ export const articles: ArticleType[] = [
           name: "Eduard Prokhorikhin",
           role: "Leder",
           github: "https://github.com/Eduard-Prokhorikhin",
-          linkedIn:
-            "https://www.linkedin.com/in/eduard-prokhorikhin-77b0a5330/",
+          linkedIn: "https://www.linkedin.com/in/eduard-prokhorikhin/",
         },
         {
           name: "Øystein Kvandal",
@@ -424,8 +423,7 @@ export const articles: ArticleType[] = [
           name: "Eduard Prokhorikhin",
           role: "Leder",
           github: "https://github.com/Eduard-Prokhorikhin",
-          linkedIn:
-            "https://www.linkedin.com/in/eduard-prokhorikhin-77b0a5330/",
+          linkedIn: "https://www.linkedin.com/in/eduard-prokhorikhin/",
         },
         {
           name: "Einride Osland",
