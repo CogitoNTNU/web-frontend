@@ -190,8 +190,9 @@ export const projectsApply: ProjectApply[] = [
     leaders: ["Nathania Vijayanti Muliawan"],
   },
   {
-    name: "Introduksjon til Cogito/maskinlæring og kunstig intelligens",
-    description: "",
+    name: "CogIntro",
+    description:
+      "AI er større enn noen gang, og dette kurset gir deg en spennende introduksjon til hva kunstig intelligens egentlig er. Gjennom semesteret skal vi utforske hvordan AI fungerer, og hvordan det kan brukes til alt fra å oppdage kreft til å oppnå toppscore i Flappy Bird. Kurset består av mindre kursøkter/prosjekter som gir deg både praktisk erfaring og et dypere innblikk i hvordan AI er bygd opp. På denne måten får du ikke bare en grunnleggende forståelse av teknologien, men også nyttig kunnskap du kan ta med deg videre , enten du er nysgjerrig på AI i forskning, spill eller hverdagsbruk.",
     image: "aicrash.png",
     leaders: ["Maia Austigard", "Mina Aldolaimi"],
   },
