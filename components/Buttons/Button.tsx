@@ -4,8 +4,6 @@ import Icon from "../Icons/Icon";
 interface ButtonProps {
   text: string;
   textSize?: string;
-  px: string;
-  py: string;
   icon?: "ArrowRight" | "ArrowLeft" | "Info" | "GithubFeather" | "Play";
   iconPos?: "left" | "right";
   color: "pink" | "blue" | "gray";
@@ -16,26 +14,26 @@ interface ButtonProps {
 const Button = ({
   text,
   textSize,
-  px,
-  py,
   icon,
   iconPos = "right",
   color,
   disabled = false,
   onClick,
 }: ButtonProps) => {
-  const buttonClasses = classNames(
-    !disabled ? "text-white" : "text-gray-lighter",
-    !disabled ? "hover:bg-blue-darker" : null,
-    !disabled ? "hover:text-black" : null,
-    !disabled ? `bg-${color}-default` : "bg-gray-default",
-    !disabled ? "group" : null,
-    "transition-all",
-    "shadow-md",
-    `px-${px}`,
-    `py-${py}`,
-    "rounded-3xl"
-  );
+  const buttonClasses = `
+    ${!disabled ? "text-white" : "text-gray-lighter"}
+    ${!disabled ? "hover:bg-blue-darker" : null}
+    ${disabled ? "hover:text-black" : null}
+    ${!disabled ? `bg-${color}-default` : "bg-gray-default"}
+    ${!disabled ? "group" : null}
+    phone:grow-0
+    grow
+    transition-all
+    px-6
+    py-4
+    shadow-md
+    rounded-3xl
+  `
   return (
     <>
       <button onClick={onClick} disabled={disabled} className={buttonClasses}>
