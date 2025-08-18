@@ -138,7 +138,7 @@ export const projectsApply: ProjectApply[] = [
     name: "Geoguessr-AI",
     description:
       "Vi skal bygge en AI-modell som kan spille Geoguessr bedre enn Rainbolt (en av verdens beste spillere)! Bli med om du ønsker å lære mer om klassiske teknikker og dyp læring innen Computer Vision, vi eksperimenterer oss sammen frem til den beste løsningsmetoden! Prosjektet har tre ledere: Jens og Daniel som går 5. klasse Datateknologi og Magnus som går 5. klasse Indøk Data. Vel møtt!",
-    image: "geoguessr.png",
+    image: "geoguessrai.png",
     leaders: ["Daniel N Hansen", "Jens Martin Norheim Berget", "Magnus Bryne"],
   },
   {
@@ -152,7 +152,7 @@ export const projectsApply: ProjectApply[] = [
     name: "Levende Maleri",
     description:
       "Husker du de magiske maleriene i Harry Potter som beveger seg og snakker til forbipasserende? Vi gjør det til virkelighet, rett i en ramme på veggen. Pust liv i Mona Lisa eller et hvilket som helst portrett. Hun kan se deg i øynene, lytte, og svare med en naturlig stemme og livaktige uttrykk. For tre år siden laget Cogito et lignende prosjekt som ble en stor suksess, og til og med vist til statsministeren. Nå, med den nyeste teknologien innen lav-latens stemmegjenkjenning, store språkmodeller og videogenerering, kan du bli med og gjøre malerier levende.",
-    image: "painting.png",
+    image: "living-painting.png",
     leaders: ["Sveinung Myhre"],
   },
   {
@@ -173,20 +173,20 @@ export const projectsApply: ProjectApply[] = [
     name: "A* x Cogitron",
     description:
       "Cogitron er et ambisiøst langtidsprosjekt som har som mål å utvikle en robot i stand til å navigere og forstå omgivelsene sine helt på egenhånd. Prosjektet kombinerer et bredt spekter av AI-teknologier som Datasyn, Sensor Fusion, beslutningstaking og læring i sanntid. Dette er en fantastisk mulighet til å bruke all teorien man har lært på studiet til å gi et AI-system en fysisk kropp, slik at det kan operere autonomt i den virkelige verden. Cogitron skal kunne tilpasse seg ukjente miljøer og utføre komplekse oppgaver med høy grad av presisjon og effektivitet.",
-    image: "cogitron.png",
+    image: "astar.png",
     leaders: ["Vetle R. D", "Christian Gynnild"],
   },
   {
     name: "First Steps",
     description:
       "Har du lyst til å lære en humanoid robot å gå? I dette prosjektet skal vi bruke NVIDIA Isaac Sim og reinforcement learning (RL) for å trene Zeroth-01 fra K-Scale Labs til å ta sine første steg og oppnå grunnleggende balanse. I tillegg åpner prosjektet for å utforske Natural Language Processing (NLP) og Computer Vision (CV) slik at roboten kan tolke omgivelsene sine og kommunisere med mennesker gjennom tale og syn. Målet er å kombinere bevegelse, språk og persepsjon med denne open-sourced roboten!",
-    image: "sebastion.png",
+    image: "first-steps.png",
     leaders: ["Sebastian Riibe Berthelsen"],
   },
   {
     name: "VocalFormer",
     description: "TBD",
-    image: "nathania.png",
+    image: "vocalformer.png",
     leaders: ["Nathania Vijayanti Muliawan"],
   },
   {
@@ -199,7 +199,7 @@ export const projectsApply: ProjectApply[] = [
     name: "Cogito Web",
     description:
       "Har du lyst til å lære deg moderne webutvikling og hvordan man deployer AI-prosjekter til produksjon? Da er dette prosjektet for deg. Vi skal bygge ut Cogito-nettsiden i en voldsom skala. Dette prosjektet har tre underprosjekter: Cogito Login, Cogito Community og Cogito Prosjekter",
-    image: "cogito.png",
+    image: "cogito_blue.svg",
     leaders: ["Simon Sandvik Lee"],
   },
 ];
