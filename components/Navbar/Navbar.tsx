@@ -136,7 +136,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
         variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="flex flex-row w-full h-[120px] px-20 text-lg fixed text-white z-[100]"
+        className="flex flex-row w-full h-[120px] tablet:px-20 px-6 text-lg fixed text-white z-[100]"
       >
         <Link
           onClick={async () => {
@@ -170,8 +170,6 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                 <Link href={"/apply"}>
                   <Button
                     text={"Søk Opptak"}
-                    px={"8"}
-                    py={"4"}
                     color={"pink"}
                   />
                 </Link>
@@ -208,8 +206,6 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                 <Link onClick={() => burgerChangePage()} href={"/apply"}>
                   <Button
                     text={"Søk Opptak"}
-                    px={"8"}
-                    py={"4"}
                     color={"pink"}
                   />
                 </Link>
