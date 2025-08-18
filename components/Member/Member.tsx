@@ -4,23 +4,13 @@ import { motion } from "framer-motion";
 import Icon from "../Icons/Icon";
 import Image from "next/image";
 import { isSafari } from "react-device-detect";
-interface Member {
-  name: string;
-  title: string;
-  githubURL?: string;
-  imageURL?: string;
-  linkedinURL?: string;
-  mailURL?: string;
-}
+import { Member } from "../../lib/types";
 
-const Member = ({
-  name,
-  title,
-  imageURL,
-  githubURL,
-  linkedinURL,
-  mailURL,
-}: Member) => {
+type MemberCardProps = {
+  member: Member;
+};
+
+const MemberCard = ({ member }: MemberCardProps) => {
   const imageLoader = ({ src, width, quality }) => {
     return `${process.env.endpoint}${src}?w=${width}&q=${quality || 75}`;
   };
@@ -41,31 +31,33 @@ const Member = ({
           <div className="bg-gray-lighter w-[250px] h-[350px] rounded-3xl group overflow-hidden drop-shadow-lg ease-in-out">
             <div className="z-40 absolute w-full h-full bg-gradient-to-b from-transparent to-white from-60% to-90% group-hover:from-40% group-hover:to-80% transition-all flex flex-col justify-end">
               <div className="px-4 py-3 group-hover:-translate-y-2 transition-transform">
-                <p className="tracking-wide">{name}</p>
-                <p className="tracking-wider font-bold text-[14px]">{title}</p>
+                <p className="tracking-wide">{member.name}</p>
+                <p className="tracking-wider font-bold text-[14px]">
+                  {member.title}
+                </p>
               </div>
               <div className="px-4 pb-4 hidden group-hover:flex gap-2 z-50">
-                {linkedinURL && (
-                  <a href={linkedinURL}>
+                {member.linkedIn && (
+                  <a href={member.linkedIn}>
                     <Icon icon={"Linkedin"} color="gray" />
                   </a>
                 )}
-                {githubURL && (
-                  <a href={githubURL}>
+                {member.github && (
+                  <a href={member.github}>
                     <Icon icon={"Github"} color="gray" />
                   </a>
                 )}
-                {mailURL && (
-                  <a href={`mailto:${mailURL}`}>
+                {member.email && (
+                  <a href={`mailto:${member.email}`}>
                     <Icon icon={"Mail"} color="gray" />
                   </a>
                 )}
               </div>
             </div>
             <Image
-              loader={imageURL ? imageLoader : null}
+              loader={member.image ? imageLoader : null}
               className="object-cover w-full h-full rounded-3xl transition-transform transform group-hover:scale-105 ease-in"
-              src={imageURL ? imageURL : "/Team/NoImage.svg"}
+              src={member.image ? member.image : "/Team/NoImage.svg"}
               alt="image"
               width={30}
               height={40}
@@ -76,9 +68,9 @@ const Member = ({
             <div className="bg-gray-lighter w-[250px] h-[250px] rounded-t-3xl overflow-hidden">
               <div className="z-40 absolute w-full h-full justify-end"></div>
               <Image
-                loader={imageURL ? imageLoader : null}
+                loader={member.image ? imageLoader : null}
                 className="object-cover w-full h-[265px]"
-                src={imageURL ? imageURL : "/Team/NoImage.svg"}
+                src={member.image ? member.image : "/Team/NoImage.svg"}
                 alt="image"
                 width={30}
                 height={40}
@@ -86,24 +78,26 @@ const Member = ({
             </div>
             <div className="px-3 py-3 text-white h-full items-center">
               <p className="tracking-wide w-full text-[14px] break-before-all">
-                {name}
+                {member.name}
               </p>
-              <p className="tracking-wider font-medium  text-[12px]">{title}</p>
+              <p className="tracking-wider font-medium  text-[12px]">
+                {member.title}
+              </p>
             </div>
 
             <div className="px-4 pb-4 gap-4 justify-center flex">
-              {linkedinURL && (
-                <a href={linkedinURL} className="z-[60]">
+              {member.linkedIn && (
+                <a href={member.linkedIn} className="z-[60]">
                   <Icon icon={"Linkedin"} color="white" />
                 </a>
               )}
-              {githubURL && (
-                <a href={githubURL} className="z-[60]">
+              {member.github && (
+                <a href={member.github} className="z-[60]">
                   <Icon icon={"Github"} color="white" />
                 </a>
               )}
-              {mailURL && (
-                <a href={`mailto:${mailURL}`} className="z-[60]">
+              {member.email && (
+                <a href={`mailto:${member.email}`} className="z-[60]">
                   <Icon icon={"Mail"} color="white" />
                 </a>
               )}
@@ -115,4 +109,4 @@ const Member = ({
   );
 };
 
-export default Member;
+export default MemberCard;

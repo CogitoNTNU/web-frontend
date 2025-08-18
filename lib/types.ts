@@ -1,14 +1,30 @@
 import { StaticImageData } from "next/image";
 
-export type MemberType = {
+export type Project = {
+  id: number;
+  name: string;
+  logo: string;
+  description: string;
+  github_link: string;
+};
+
+export type ProjectMembership = {
+  project: Project;
+  role: string;
+  year: number;
+  semester: "Spring" | "Fall";
+};
+
+export type Member = {
   order: number;
   name: string;
   title: string;
-  image: string;
+  image?: string;
   category: string[];
-  github: string;
+  github?: string;
   email: string;
-  linkedIn: string;
+  linkedIn?: string;
+  project_memberships: ProjectMembership[];
 };
 
 export type EventBannerType =
