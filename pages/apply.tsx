@@ -1,4 +1,3 @@
-// Needed for client-side rendering by Next.js
 "use client";
 
 import { useState } from "react";
@@ -17,15 +16,12 @@ import Navbar from "../components/Navbar/Navbar";
 type TabKey = "medlem" | "verv";
 
 const Apply = () => {
-  // TODO: Refactor with Formik
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
     null
   );
 
-  // NEW: tab state
   const [activeTab, setActiveTab] = useState<TabKey>("medlem");
-
   const dueDate = new Date("2025-08-29");
 
   const handleProjectInfoClick = (project: ProjectApply) => {
@@ -52,12 +48,11 @@ const Apply = () => {
       >
         <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
           <div className="relative">
-            {/* TAB HEADERS */}
             <button
               aria-label="Medlem"
               onClick={() => setActiveTab("medlem")}
-              className={`absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 drop-shadow-md transition
-                ${activeTab === "medlem" ? "bg-white z-[50]" : "bg-white/70 z-[40]"}`}
+              className={`absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
+                ${activeTab === "medlem" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
             >
               <p className="font-medium">Medlem</p>
             </button>
@@ -65,14 +60,14 @@ const Apply = () => {
             <button
               aria-label="Verv"
               onClick={() => setActiveTab("verv")}
-              className={`absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
-                ${activeTab === "verv" ? "bg-white z-[50] drop-shadow-md" : "bg-white z-[40]"}`}
+              className={`absolute top-0 tablet:left-[150px] left-[120px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
+                ${activeTab === "verv" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
             >
               <p className="font-medium">Ekstra Verv</p>
             </button>
           </div>
 
-          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
+          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl z-[60]">
             <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
               Søknad - Høstsemesteret {new Date().getFullYear()}
             </p>
@@ -142,9 +137,6 @@ const Due = () => {
   );
 };
 
-/* -------------------------
-   MEMBER (PROJECT) FORM
---------------------------*/
 interface FormProps {
   handleProjectInfoClick: (project: ProjectApply) => void;
   isDue: boolean;
@@ -159,6 +151,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [chosenProjects, setProjects] = useState<Array<string>>([]);
   const [lead, setLead] = useState<boolean>(false);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
+  const [teamLead, setTeamLead] = useState<boolean>(false);
   const formData = new FormData();
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
@@ -279,43 +272,45 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
             </div>
           </div>
 
-          <div className="space-y-4 px-6 py-4">
-            <p className="text-md phone:text-lg">
-              Kunne du sett for deg å være{" "}
-              <span className="text-pink-default">prosjektleder </span>for ett
-              av disse prosjektene? Eller har du et annet prosjekt du ønsker å
-              pitche?
-              <span className="font-bold text-[12px]">
-                {" "}
-                (eksludert Cogitron & Infor)
-              </span>
-            </p>
-            <div className="flex items-center gap-4 relative">
-              <input
-                className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer"
-                type="checkbox"
-                onChange={() => setLead(!lead)}
-              />
-              <div className="absolute w-10 h-10 justify-center items-center flex peer-checked:scale-100 scale-0 pointer-events-none transition-transform">
-                <div className="w-6 h-6 rounded-sm bg-pink-default" />
+          {
+            teamLead && <div className="space-y-4 px-6 py-4">
+              <p className="text-md phone:text-lg">
+                Kunne du sett for deg å være{" "}
+                <span className="text-pink-default">prosjektleder </span>for ett
+                av disse prosjektene? Eller har du et annet prosjekt du ønsker å
+                pitche?
+                <span className="font-bold text-[12px]">
+                  {" "}
+                  (eksludert Cogitron & Infor)
+                </span>
+              </p>
+              <div className="flex items-center gap-4 relative">
+                <input
+                  className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer"
+                  type="checkbox"
+                  onChange={() => setLead(!lead)}
+                />
+                <div className="absolute w-10 h-10 justify-center items-center flex peer-checked:scale-100 scale-0 pointer-events-none transition-transform">
+                  <div className="w-6 h-6 rounded-sm bg-pink-default" />
+                </div>
+                <label className="phone:text-lg text-md">
+                  Ja, jeg kan tenke meg å være prosjektleder eller pitche et
+                  prosjekt
+                </label>
               </div>
-              <label className="phone:text-lg text-md">
-                Ja, jeg kan tenke meg å være prosjektleder eller pitche et
-                prosjekt
-              </label>
-            </div>
-          </div>
 
-          <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
-            <div className="flex justify-start w-full ">
+            </div>
+
+          }
+          <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px] pb-20">
+            <div className="flex justify-start w-full">
               <Button
                 text={"Send inn søknad"}
                 onClick={() => sendApplication()}
-                px={"6"}
-                py={"4"}
                 icon={"ArrowRight"}
                 color={"pink"}
-                disabled={isDue}
+                textSize="16px"
+                disabled={isDue || chosenProjects.length < 3 || firstName === "" || lastName === "" || email === "" || phone === "" || about === ""}
               />
             </div>
           </div>
@@ -327,14 +322,11 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   );
 };
 
-/* -------------------------
-   VERV FORM
---------------------------*/
 interface VervFormProps {
   isDue: boolean;
 }
 
-const VERV_POSITIONS = ["Marketing", "SoMe", "Graphics Designer"] as const;
+const VERV_POSITIONS = ["Marketing", "SoMe", "Graphics Designer"];
 
 const VervForm = ({ isDue }: VervFormProps) => {
   const [firstName, setFirstName] = useState<string>("");
@@ -454,7 +446,6 @@ const VervForm = ({ isDue }: VervFormProps) => {
               </p>
             </div>
 
-            {/* Simple pill buttons for positions */}
             <div className="flex flex-wrap gap-3 py-4">
               {VERV_POSITIONS.map((name) => {
                 const selected = chosenPositions.includes(name);
@@ -463,7 +454,7 @@ const VervForm = ({ isDue }: VervFormProps) => {
                     key={name}
                     type="button"
                     onClick={() => togglePosition(name)}
-                    className={`px-4 py-2 rounded-full border transition
+                    className={`px-10 py-6 rounded-xl border transition
                       ${selected ? "bg-pink-default text-white border-pink-default" : "bg-white text-blue-dark border-blue-200 hover:border-blue-400"}`}
                     aria-pressed={selected}
                   >
@@ -479,10 +470,9 @@ const VervForm = ({ isDue }: VervFormProps) => {
               <Button
                 text={"Send inn søknad"}
                 onClick={() => sendApplication()}
-                px={"6"}
-                py={"4"}
                 icon={"ArrowRight"}
                 color={"pink"}
+                textSize="16px"
                 disabled={isDue || chosenPositions.length === 0}
               />
             </div>
@@ -495,9 +485,6 @@ const VervForm = ({ isDue }: VervFormProps) => {
   );
 };
 
-/* -------------------------
-   THANK YOU (shared)
---------------------------*/
 const ThankYou = () => (
   <div className="tablet:h-[400px] h-[500px] w-full flex justify-center text-center items-center px-2">
     <div>
