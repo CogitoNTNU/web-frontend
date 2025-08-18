@@ -309,7 +309,7 @@ export const applicationEvent2025: EventApply = {
     },
     {
       name: "Prosjektstart",
-      dates: "07.09",
+      dates: "09.09",
     },
   ],
   pinned: true,
