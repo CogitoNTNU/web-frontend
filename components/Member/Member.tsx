@@ -10,7 +10,7 @@ type MemberCardProps = {
   member: Member;
 };
 
-const MemberCard: React.FC<MemberCardProps> = ({ member }) => {
+const MemberCard = ({ member }: MemberCardProps) => {
   const imageLoader = ({ src, width, quality }) => {
     return `${process.env.endpoint}${src}?w=${width}&q=${quality || 75}`;
   };

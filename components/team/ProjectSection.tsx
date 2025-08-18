@@ -8,10 +8,7 @@ interface ProjectSectionProps {
   members: Member[];
 }
 
-const ProjectSection: React.FC<ProjectSectionProps> = ({
-  project,
-  members,
-}) => {
+const ProjectSection = ({ project, members }: ProjectSectionProps) => {
   if (!members || members.length === 0) {
     return (
       <section className="mx-auto w-full max-w-[1750px]">
