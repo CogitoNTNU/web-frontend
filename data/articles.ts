@@ -347,6 +347,7 @@ export const articles: ArticleType[] = [
         "Image Segmentation and classification",
       ],
     },
+    resultsPageIsVideo: false,
     teamPage: {
       team: [
         {
