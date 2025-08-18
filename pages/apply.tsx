@@ -58,7 +58,7 @@ const Apply = () => {
           </div>
           <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
             <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
-              Søknad - Vårsemesteret {new Date().getFullYear()}
+              Søknad - Høstsemesteret {new Date().getFullYear()}
             </p>
             <div className="w-full h-fit flex justify-center">
               <div className="w-[95%] h-fit rounded-3xl">
