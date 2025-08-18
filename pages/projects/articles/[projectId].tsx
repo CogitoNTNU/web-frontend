@@ -367,7 +367,7 @@ const Team = ({ articleId, team }: TeamProps) => {
           Teamet bak
         </p>
         <motion.div
-          className="flex justify-center gap-x-24 gap-y-4 pt-12 flex-wrap"
+          className="flex justify-center gap-x-24 gap-y-4 pt-24 flex-wrap items-center"
           variants={container}
           initial="hidden"
           whileInView="show"
