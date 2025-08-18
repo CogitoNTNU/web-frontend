@@ -20,7 +20,7 @@ const Apply = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
     null
   );
-  const dueDate = new Date("2025-02-01");
+  const dueDate = new Date("2025-08-29");
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
     setIsModalOpen(true);
