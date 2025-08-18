@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Image from "next/image";
 import { EventType } from "../../lib/types";
+import EventBanner from "../Banners/EventBanner";
 
 const EventCard: React.FC<EventType> = (props) => {
   const {
@@ -13,7 +14,7 @@ const EventCard: React.FC<EventType> = (props) => {
     image: eventImage,
     link: eventLink,
     pinned,
-    openForAll,
+    bannerType,
   } = props;
 
   return (
@@ -38,14 +39,24 @@ const EventCard: React.FC<EventType> = (props) => {
           )}
         </div>
       </div>
-      {openForAll && (
-        <div className="w-full bg-pink-default text-white font-bold text-center py-1 rounded-[10px] mb-4">
-          ÅPENT FOR ALLE! Bare å dukke opp 👋
-        </div>
-      )}
+      {bannerType && <EventBanner type={bannerType} />}
       <div className="flex flex-col text-base text-white tracking-wider pt-1">
         <p className="pb-2">
-          {!eventLocation ? "📍TBA" : "📍" + eventLocation}
+          {!eventLocation ? (
+            "📍TBA"
+          ) : eventLocation.includes("\n") ? (
+            <>
+              📍
+              {eventLocation.split("\n").map((line, index) => (
+                <span key={index}>
+                  {index > 0 && <br />}
+                  {index > 0 ? line : line}
+                </span>
+              ))}
+            </>
+          ) : (
+            "📍" + eventLocation
+          )}
         </p>
         {eventImage && (
           <Image
