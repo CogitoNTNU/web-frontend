@@ -200,7 +200,7 @@ export const projectsApply: ProjectApply[] = [
     name: "Cogito Web",
     description:
       "Har du lyst til å lære deg moderne webutvikling og hvordan man deployer AI-prosjekter til produksjon? Da er dette prosjektet for deg. Vi skal bygge ut Cogito-nettsiden i en voldsom skala. Dette prosjektet har tre underprosjekter: Cogito Login, Cogito Community og Cogito Prosjekter",
-    image: "cogito_blue.svg",
+    image: "web.png",
     leaders: ["Simon Sandvik Lee"],
   },
 ];

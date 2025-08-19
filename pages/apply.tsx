@@ -1,4 +1,3 @@
-// Needed for client-side rendering by Next.js
 "use client";
 
 import { useState } from "react";
@@ -14,13 +13,17 @@ import { ProjectApply } from "../lib/types";
 import { projectsApply } from "../data/projects";
 import Navbar from "../components/Navbar/Navbar";
 
+type TabKey = "medlem" | "verv";
+
 const Apply = () => {
-  // TODO: Refactor with Formik
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
     null
   );
+
+  const [activeTab, setActiveTab] = useState<TabKey>("medlem");
   const dueDate = new Date("2025-08-29");
+
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -40,23 +43,31 @@ const Apply = () => {
       <motion.main
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 0.2,
-          ease: [0, 0.71, 0.2, 1.0],
-        }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0, 0.71, 0.2, 1.0] }}
         className="w-full h-[80svh] laptop:pt-[200px] pt-[150px]"
       >
         <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
-          <div className="relative ">
-            <div className="absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[50] rounded-t-3xl text-center tablet:py-4 py-2 drop-shadow-md">
+          <div className="relative">
+            <button
+              aria-label="Medlem"
+              onClick={() => setActiveTab("medlem")}
+              className={`absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
+                ${activeTab === "medlem" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
+            >
               <p className="font-medium">Medlem</p>
-            </div>
-            {/* <div className="absolute top-0 tablet:left-[120px] left-[100px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] bg-white z-[40] rounded-t-3xl text-center tablet:py-4 py-2">
-              <p className="font-medium">Verv</p>
-            </div> */}
+            </button>
+
+            <button
+              aria-label="Verv"
+              onClick={() => setActiveTab("verv")}
+              className={`absolute top-0 tablet:left-[150px] left-[120px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
+                ${activeTab === "verv" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
+            >
+              <p className="font-medium">Marketing</p>
+            </button>
           </div>
-          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl drop-shadow-2xl z-[60]">
+
+          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl z-[60]">
             <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
               Søknad - Høstsemesteret {new Date().getFullYear()}
             </p>
@@ -64,17 +75,21 @@ const Apply = () => {
               <div className="w-[95%] h-fit rounded-3xl">
                 {isDueDate(dueDate) ? (
                   <Due />
-                ) : (
+                ) : activeTab === "medlem" ? (
                   <Form
+                    mode="medlem"
                     handleProjectInfoClick={handleProjectInfoClick}
                     isDue={isDueDate(dueDate)}
                   />
+                ) : (
+                  <VervForm isDue={isDueDate(dueDate)} />
                 )}
               </div>
             </div>
           </div>
         </div>
       </motion.main>
+
       <ProjectModal
         isOpen={isModalOpen}
         setOpen={setIsModalOpen}
@@ -125,6 +140,7 @@ const Due = () => {
 interface FormProps {
   handleProjectInfoClick: (project: ProjectApply) => void;
   isDue: boolean;
+  mode?: "medlem";
 }
 const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [firstName, setFirstName] = useState<string>("");
@@ -135,8 +151,10 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [chosenProjects, setProjects] = useState<Array<string>>([]);
   const [lead, setLead] = useState<boolean>(false);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
+  const teamLead = false;
   const formData = new FormData();
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
+
   const sendApplication = () => {
     formData.append("first_name", firstName);
     formData.append("last_name", lastName);
@@ -216,7 +234,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                 </div>
               </div>
             </div>
-            <div className="laptop:w-[900px] laptop:min-w-[200px] max-w-[1000px] min-w-[100px] px-6 py-2">
+            <div className="laptop:w-[900px] laptop:min-w-[200px] max-w={[1000]} min-w-[100px] px-6 py-2">
               <Field
                 id="about"
                 label="Om deg selv"
@@ -226,6 +244,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
               />
             </div>
           </div>
+
           <div className="px-6 py-2">
             <div className="w-full flex">
               <p className="laptop:text-[20px] text-[16px] font-semibold w-full">
@@ -252,60 +271,238 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
               ))}
             </div>
           </div>
-          <div className="space-y-4 px-6  py-4">
-            <p className="text-md phone:text-lg">
-              Kunne du sett for deg å være{" "}
-              <span className="text-pink-default">prosjektleder </span>for ett
-              av disse prosjektene? Eller har du et annet prosjekt du ønsker å
-              pitche?
-              <span className="font-bold text-[12px]">
-                {" "}
-                (eksludert Cogitron & Infor)
-              </span>
-            </p>
-            <div className="flex items-center gap-4">
-              <input
-                className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer"
-                type="checkbox"
-                onChange={() => setLead(!lead)}
-              />
-              <div className="absolute w-10 h-10 justify-center items-center flex peer-checked:scale-100 scale-0 pointer-events-none transition-transform">
-                <div className="w-6 h-6 rounded-sm bg-pink-default" />
+
+          {teamLead && (
+            <div className="space-y-4 px-6 py-4">
+              <p className="text-md phone:text-lg">
+                Kunne du sett for deg å være{" "}
+                <span className="text-pink-default">prosjektleder </span>for ett
+                av disse prosjektene? Eller har du et annet prosjekt du ønsker å
+                pitche?
+                <span className="font-bold text-[12px]">
+                  {" "}
+                  (eksludert Cogitron & Infor)
+                </span>
+              </p>
+              <div className="flex items-center gap-4 relative">
+                <input
+                  className="peer appearance-none border-pink-default bg-white border-2 w-10 h-10 rounded-md px-4 cursor-pointer"
+                  type="checkbox"
+                  onChange={() => setLead(!lead)}
+                />
+                <div className="absolute w-10 h-10 justify-center items-center flex peer-checked:scale-100 scale-0 pointer-events-none transition-transform">
+                  <div className="w-6 h-6 rounded-sm bg-pink-default" />
+                </div>
+                <label className="phone:text-lg text-md">
+                  Ja, jeg kan tenke meg å være prosjektleder eller pitche et
+                  prosjekt
+                </label>
               </div>
-              <label className="phone:text-lg text-md">
-                Ja, jeg kan tenke meg å være prosjektleder eller pitche et
-                prosjekt
-              </label>
             </div>
-          </div>
-          <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
-            <div className="flex justify-start w-full ">
+          )}
+          <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px] pb-20">
+            <div className="flex justify-start w-full">
               <Button
                 text={"Send inn søknad"}
                 onClick={() => sendApplication()}
-                px={"6"}
-                py={"4"}
                 icon={"ArrowRight"}
                 color={"pink"}
-                disabled={isDue}
+                textSize="16px"
+                disabled={
+                  isDue ||
+                  chosenProjects.length < 3 ||
+                  firstName === "" ||
+                  lastName === "" ||
+                  email === "" ||
+                  phone === "" ||
+                  about === ""
+                }
               />
             </div>
           </div>
         </div>
       ) : (
-        <div className="tablet:h-[400px] h-[500px] w-full flex justify-center text-center items-center px-2">
-          <div>
-            <p className="font-medium tablet:text-[20px] text-[14px] tracking-wider leading-[30px]">
-              Takk for at du sendte inn søknad!
-            </p>
-            <p className="tablet:text-[16px] text-[14px]">
-              Oppmøte og datoer vil bli sendt til deg på epost/telefon snarest
-              mulig. Vi gleder oss til å møte deg!
-            </p>
-          </div>
-        </div>
+        <ThankYou />
       )}
     </>
   );
 };
+
+interface VervFormProps {
+  isDue: boolean;
+}
+
+const VERV_POSITIONS = ["Marketing", "SoMe", "Graphics Designer"];
+
+const VervForm = ({ isDue }: VervFormProps) => {
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [about, setAbout] = useState<string>("");
+
+  const [chosenPositions, setChosenPositions] = useState<Array<string>>([]);
+  const [errorArray, setErrorArray] = useState<Array<string>>([]);
+
+  const formData = new FormData();
+  const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
+
+  const togglePosition = (name: string) => {
+    setChosenPositions((prev) =>
+      prev.includes(name) ? prev.filter((p) => p !== name) : [...prev, name]
+    );
+  };
+
+  const sendApplication = () => {
+    formData.append("first_name", firstName);
+    formData.append("last_name", lastName);
+    formData.append("email", email);
+    formData.append("phone_number", phone.replaceAll(" ", ""));
+    formData.append("about", about);
+
+    // IMPORTANT: matches the backend contract
+    // projects_to_join will now carry the selected VERV names (e.g. ["Marketing"])
+    formData.append("projects_to_join", JSON.stringify(chosenPositions));
+
+    // No "lead" for verv
+    formData.append("lead", "false");
+    mutate(formData);
+  };
+
+  return (
+    <>
+      {!sent ? (
+        <div className="bg-gray-lighter rounded-lg">
+          <div className="px-6 py-2">
+            <p className="laptop:text-[20px] text-[16px] pt-4">
+              Personlig Informasjon
+            </p>
+          </div>
+
+          <div className="flex laptop:flex-row flex-col">
+            <div>
+              <div className="px-6 flex gap-[10px]">
+                <div className="w-[200px] min-w-[100px] py-2">
+                  <Field
+                    id="first_name_verv"
+                    label="Fornavn"
+                    placeholder="Cogitron"
+                    value={firstName}
+                    setValue={setFirstName}
+                    errorArray={errorArray}
+                    type={"text"}
+                  />
+                </div>
+                <div className="w-[200px] min-w-[100px] py-2">
+                  <Field
+                    id="last_name_verv"
+                    label="Etternavn"
+                    placeholder="Cogito"
+                    value={lastName}
+                    setValue={setLastName}
+                    errorArray={errorArray}
+                    type={"text"}
+                  />
+                </div>
+              </div>
+              <div className="px-6 gap-[10px] flex-col">
+                <div className="flex-1 py-2 max-w-[410px] min-w-[100px]">
+                  <Field
+                    id="email_verv"
+                    label="Epost"
+                    placeholder="Cogitron@cogito-ntnu.no"
+                    value={email}
+                    setValue={setEmail}
+                    errorArray={errorArray}
+                    type={"text"}
+                  />
+                </div>
+                <div className="flex-1 py-2 max-w-[410px] min-w-[100px]">
+                  <Field
+                    id="phone_number_verv"
+                    label="Telefon"
+                    placeholder="000 00 000"
+                    value={phone}
+                    setValue={setPhone}
+                    errorArray={errorArray}
+                    type={"numbers"}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="laptop:w-[900px] laptop:min-w-[200px] max-w-[1000px] min-w-[100px] px-6 py-2">
+              <Field
+                id="about_verv"
+                label="Hvorfor passer du til disse vervene?"
+                value={about}
+                setValue={setAbout}
+                type={"area"}
+              />
+            </div>
+          </div>
+
+          <div className="px-6 py-2">
+            <div className="w-full flex">
+              <p className="laptop:text-[20px] text-[16px] font-semibold w-full">
+                Velg Verv
+              </p>
+              <p className="laptop:text-[20px] phone:text-[16px] text-[12px] justify-end flex w-full text-blue-dark">
+                Velg minst 1 verv
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 py-4">
+              {VERV_POSITIONS.map((name) => {
+                const selected = chosenPositions.includes(name);
+                return (
+                  <button
+                    key={name}
+                    type="button"
+                    onClick={() => togglePosition(name)}
+                    className={`px-10 py-6 rounded-xl border transition
+                      ${selected ? "bg-pink-default text-white border-pink-default" : "bg-white text-blue-dark border-blue-200 hover:border-blue-400"}`}
+                    aria-pressed={selected}
+                  >
+                    {name}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px]">
+            <div className="flex justify-start w-full ">
+              <Button
+                text={"Send inn søknad"}
+                onClick={() => sendApplication()}
+                icon={"ArrowRight"}
+                color={"pink"}
+                textSize="16px"
+                disabled={isDue || chosenPositions.length === 0}
+              />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <ThankYou />
+      )}
+    </>
+  );
+};
+
+const ThankYou = () => (
+  <div className="tablet:h-[400px] h-[500px] w-full flex justify-center text-center items-center px-2">
+    <div>
+      <p className="font-medium tablet:text-[20px] text-[14px] tracking-wider leading-[30px]">
+        Takk for at du sendte inn søknad!
+      </p>
+      <p className="tablet:text-[16px] text-[14px]">
+        Oppmøte og datoer vil bli sendt til deg på epost/telefon snarest mulig.
+        Vi gleder oss til å møte deg!
+      </p>
+    </div>
+  </div>
+);
+
 export default Apply;
