@@ -63,7 +63,7 @@ const Apply = () => {
               className={`absolute top-0 tablet:left-[150px] left-[120px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
                 ${activeTab === "verv" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
             >
-              <p className="font-medium">Ekstra Verv</p>
+              <p className="font-medium">Marketing</p>
             </button>
           </div>
 
