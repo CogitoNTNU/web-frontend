@@ -72,25 +72,25 @@ export const hardcodedEvents: Array<EventType> = [
     image: Welcome,
   },
   {
-    name: "Intern workshop + Bowling 🎳",
-    date: new Date("2025-09-11"),
-    timeString: "11.09",
-    subTimeString: "kl. 17:15",
-    location: "TBA + Bowling",
-    description:
-      "Lær essensielle utviklingsverktøy som Git, pre-commit hooks, GitHub Actions og Docker. Etter workshopen tar vi en velfortjent bowlingrunde for å feire at alle har fått sine første commits!",
-    image: Bowling,
-  },
-  {
     name: "Kurs - Datasyn",
     date: new Date("2025-09-18"),
-    timeString: "18.09",
+    timeString: "11.09",
     subTimeString: "kl. 17:15",
     location: "TBA",
     description:
       "Dykk ned i datasynens fascinerende verden! Lær om YOLO object detection og få hands-on erfaring med å trene modeller som kan se og forstå bilder.",
     image: KursH25,
     bannerType: "open-walk-in",
+  },
+  {
+    name: "Intern workshop + Bowling 🎳",
+    date: new Date("2025-09-11"),
+    timeString: "18.09",
+    subTimeString: "kl. 17:15",
+    location: "TBA + Bowling",
+    description:
+      "Lær essensielle utviklingsverktøy som Git, pre-commit hooks, GitHub Actions og Docker. Etter workshopen tar vi en velfortjent bowlingrunde for å feire at alle har fått sine første commits!",
+    image: Bowling,
   },
   {
     name: "Vors og Fest 🎉",
