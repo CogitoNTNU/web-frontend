@@ -6,6 +6,8 @@ interface ButtonProps {
   icon?: "ArrowRight" | "ArrowLeft" | "Info" | "GithubFeather" | "Play";
   iconPos?: "left" | "right";
   color: "pink" | "blue" | "gray";
+  px?: string;
+  py?: string;
   disabled?: boolean;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
@@ -16,6 +18,8 @@ const Button = ({
   icon,
   iconPos = "right",
   color,
+  px = "6",
+  py = "4",
   disabled = false,
   onClick,
 }: ButtonProps) => {
@@ -28,8 +32,8 @@ const Button = ({
     phone:grow-0
     grow
     transition-all
-    px-6
-    py-4
+    px-${px}
+    py-${py}
     shadow-md
     rounded-3xl
   `;
