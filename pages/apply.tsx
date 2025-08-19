@@ -151,7 +151,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [chosenProjects, setProjects] = useState<Array<string>>([]);
   const [lead, setLead] = useState<boolean>(false);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
-  const [teamLead, setTeamLead] = useState<boolean>(false);
+  const teamLead = false;
   const formData = new FormData();
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
