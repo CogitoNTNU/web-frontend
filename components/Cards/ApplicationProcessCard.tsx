@@ -58,7 +58,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = ({
       </ol>
       <div className="w-full flex justify-center">
         <Link href={"/apply"}>
-          <Button text="Søk Opptak" px={"8"} py={"4"} color={"pink"} />
+          <Button text="Søk Opptak" color={"pink"} />
         </Link>
       </div>
     </Card>
