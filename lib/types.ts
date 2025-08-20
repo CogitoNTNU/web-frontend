@@ -11,6 +11,11 @@ export type MemberType = {
   linkedIn: string;
 };
 
+export type EventBannerType =
+  | "open-walk-in"
+  | "open-registration"
+  | "members-only";
+
 export type EventType = {
   name: string;
   date: Date;
@@ -21,7 +26,7 @@ export type EventType = {
   image?: StaticImageData;
   link?: string;
   pinned?: boolean;
-  openForAll?: boolean;
+  bannerType?: EventBannerType;
 };
 
 export type EventApply = {
@@ -47,6 +52,8 @@ export type ProjectType = {
   name: string;
   img: string;
   playable?: boolean;
+  hybrid?: boolean; // For projects that are both playable and readable
+  playableUrl?: string; // Optional separate URL for playable version
   released: boolean;
   github: string;
   url: string;
@@ -81,7 +88,7 @@ export type ArticleTeamPage = {
 
 export type TeamMember = {
   name: string;
-  role: "Leder" | "Medlem";
+  role: "Leder" | "Medleder" | "Medlem";
   github: string;
   linkedIn: string;
 };
