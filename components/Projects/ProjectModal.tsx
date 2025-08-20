@@ -18,7 +18,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black-transparent bg-black-default/40 flex items-center justify-center z-50 cursor-default"
+      className="fixed inset-0 bg-black-transparent bg-black-default/40 flex items-center justify-center z-50 cursor-default px-4"
       aria-labelledby="project-modal-title"
       aria-modal="true"
       role="dialog"
@@ -29,7 +29,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.25 }}
-        className="bg-white rounded-lg shadow-md p-8 max-w-2xl w-full relative "
+        className="bg-white rounded-3xl shadow-md p-8 max-w-2xl w-full relative "
         onClick={(e) => e.stopPropagation()} // Prevent click events on the modal content from closing the modal
       >
         <button
@@ -74,7 +74,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
         <div className="text-left">
           <p className="mb-2">
-            <strong>Prosjektleder(e):</strong>{" "}
+            <strong>Prosjektleder{project.leaders.length > 1 ? "e" : ""}:</strong>{" "}
             {project.leaders.length > 1
               ? project.leaders.slice(0, -1).join(", ") +
                 " og " +

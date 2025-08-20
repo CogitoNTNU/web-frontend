@@ -68,11 +68,19 @@ const Apply = () => {
           </div>
 
           <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl z-[60]">
-            <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark px-6 pt-8 pb-4">
-              Søknad - Høstsemesteret {new Date().getFullYear()}
-            </p>
+            <div className="phone:flex flex-row w-full justify-between items-center phone:px-8 px-4 pt-8 pb-4">
+              <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark">
+                Søknad - Høstsemesteret {new Date().getFullYear()}
+              </p>
+              <p className="laptop:text-[20px] text-[16px] text-blue-dark">
+                Frist: {dueDate.toLocaleDateString("no-NO", {
+                  day: "2-digit",
+                  month: "2-digit",
+                })}
+              </p>
+            </div>
             <div className="w-full h-fit flex justify-center">
-              <div className="w-[95%] h-fit rounded-3xl">
+              <div className="w-[95%] h-fit rounded-4xl">
                 {isDueDate(dueDate) ? (
                   <Due />
                 ) : activeTab === "medlem" ? (
@@ -177,7 +185,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   return (
     <>
       {!sent ? (
-        <div className="bg-gray-lighter rounded-lg">
+        <div className="bg-gray-lighter rounded-2xl">
           <div className="px-6 py-2">
             <p className="laptop:text-[20px] text-[16px] pt-4">
               Personlig Informasjon
@@ -254,7 +262,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                 Velg minst 3 prosjekter
               </p>
             </div>
-            <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex">
+            <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex h-[32rem] overflow-y-scroll">
               {projectsApply.map((project) => (
                 <ProjectCard
                   key={project.name}
@@ -300,7 +308,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
               </div>
             </div>
           )}
-          <div className="flex w-full phone:px-6 px-4 phone:py-6 py-4 laptop:text-[20px] text-[12px] pb-20">
+          <div className="flex w-full phone:px-6 px-4 phone:py-6 pt-10 laptop:text-[20px] text-[12px] pb-10">
             <div className="flex justify-start w-full">
               <Button
                 text={"Send inn søknad"}
