@@ -73,7 +73,8 @@ const Apply = () => {
                 Søknad - Høstsemesteret {new Date().getFullYear()}
               </p>
               <p className="laptop:text-[20px] text-[16px] text-blue-dark">
-                Frist: {dueDate.toLocaleDateString("no-NO", {
+                Frist:{" "}
+                {dueDate.toLocaleDateString("no-NO", {
                   day: "2-digit",
                   month: "2-digit",
                 })}

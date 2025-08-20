@@ -74,7 +74,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
         <div className="text-left">
           <p className="mb-2">
-            <strong>Prosjektleder{project.leaders.length > 1 ? "e" : ""}:</strong>{" "}
+            <strong>
+              Prosjektleder{project.leaders.length > 1 ? "e" : ""}:
+            </strong>{" "}
             {project.leaders.length > 1
               ? project.leaders.slice(0, -1).join(", ") +
                 " og " +
