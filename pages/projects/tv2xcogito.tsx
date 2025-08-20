@@ -422,13 +422,13 @@ const TV2xCogito = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6 }}
                       viewport={{ once: true }}
-                      className="space-y-8"
+                      className="h-full"
                     >
-                      <div className="relative">
+                      <div className="relative h-full">
                         <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#702eff] to-[#ffbf94] rounded-full" />
 
-                        <div className="pl-8 space-y-6">
-                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30">
+                        <div className="pl-8 h-full flex flex-col space-y-8">
+                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 flex-1">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">🎯</span> Målet
                             </h4>
@@ -438,7 +438,7 @@ const TV2xCogito = () => {
                             </p>
                           </div>
 
-                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30">
+                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 flex-1">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">💡</span> Løsningen
                             </h4>
@@ -449,7 +449,7 @@ const TV2xCogito = () => {
                             </p>
                           </div>
 
-                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30">
+                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 flex-1">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">🔒</span> Status
                             </h4>
@@ -543,6 +543,7 @@ const TV2xCogito = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
                       viewport={{ once: true }}
+                      className="h-full"
                     >
                       <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#702eff]/30 h-full">
                         <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -585,54 +586,21 @@ const TV2xCogito = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 }}
                       viewport={{ once: true }}
-                      className="space-y-8"
+                      className="h-full"
                     >
-                      {/* Quick Stats */}
-                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#702eff]/30">
-                        <h5 className="text-white font-bold text-xl mb-6">
-                          📊 Prosjekt Status
-                        </h5>
-                        <div className="space-y-4">
-                          <div className="flex justify-between items-center p-3 bg-[#2a1536] rounded-lg">
-                            <span className="text-white/80 font-medium text-base">
-                              Startet
-                            </span>
-                            <span className="text-[#ffbf94] font-bold text-lg">
-                              Januar 2025
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center p-3 bg-[#2a1536] rounded-lg">
-                            <span className="text-white/80 font-medium text-base">
-                              Team størrelse
-                            </span>
-                            <span className="text-[#702eff] font-bold text-lg">
-                              10 personer
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center p-3 bg-[#2a1536] rounded-lg">
-                            <span className="text-white/80 font-medium text-base">
-                              Fokusområde
-                            </span>
-                            <span className="text-white font-bold text-lg">
-                              AI & ML
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-
                       {/* Tech Stack */}
-                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#ffbf94]/30">
+                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#ffbf94]/30 h-full flex flex-col">
                         <h5 className="text-white font-bold text-xl mb-6">
                           ⚡ Teknologi Stack
                         </h5>
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-2 gap-y-6 gap-x-3 flex-1 content-start">
                           {v25TechStack.map((tech) => (
                             <a
                               key={tech.name}
                               href={tech.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="px-4 py-3 bg-[#2a1536] rounded-lg text-[#ffbf94] text-base font-medium border border-[#ffbf94]/40 hover:border-[#ffbf94] hover:bg-[#702eff]/20 transition-all text-center"
+                              className="px-4 py-3 bg-[#2a1536] rounded-lg text-[#ffbf94] text-base font-medium border border-[#ffbf94]/40 hover:border-[#ffbf94] hover:bg-[#702eff]/20 transition-all text-center h-fit"
                             >
                               {tech.name}
                             </a>
