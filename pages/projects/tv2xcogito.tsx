@@ -532,7 +532,9 @@ const TV2xCogito = () => {
                     <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#ffbf94] to-[#702eff] bg-clip-text text-transparent mb-4">
                       Vår 2025
                     </h3>
-                    <p className="text-lg sm:text-xl lg:text-2xl text-white/80">Neste Kapittel</p>
+                    <p className="text-lg sm:text-xl lg:text-2xl text-white/80">
+                      Neste Kapittel
+                    </p>
                   </motion.div>
 
                   {/* Main Content - Card Based */}
