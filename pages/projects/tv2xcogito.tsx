@@ -406,16 +406,16 @@ const TV2xCogito = () => {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                   >
-                    <h3 className="text-5xl font-bold bg-gradient-to-r from-[#702eff] to-[#ffbf94] bg-clip-text text-transparent mb-4">
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#702eff] to-[#ffbf94] bg-clip-text text-transparent mb-4">
                       Høst 2024
                     </h3>
-                    <p className="text-2xl text-white/80">
+                    <p className="text-lg sm:text-xl lg:text-2xl text-white/80">
                       TV2 Article Predictor
                     </p>
                   </motion.div>
 
                   {/* Main Content Grid */}
-                  <div className="grid lg:grid-cols-2 gap-12 mb-20">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 mb-16 sm:mb-20">
                     {/* Left Side - Project Story */}
                     <motion.div
                       initial={{ opacity: 0, x: -50 }}
@@ -425,10 +425,10 @@ const TV2xCogito = () => {
                       className="h-full"
                     >
                       <div className="relative h-full">
-                        <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#702eff] to-[#ffbf94] rounded-full" />
+                        <div className="absolute -left-2 sm:-left-4 top-0 w-1 h-full bg-gradient-to-b from-[#702eff] to-[#ffbf94] rounded-full" />
 
-                        <div className="pl-8 h-full flex flex-col space-y-8">
-                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 flex-1">
+                        <div className="pl-4 sm:pl-8 h-full flex flex-col space-y-6 sm:space-y-8">
+                          <div className="bg-[#1a0826] p-4 sm:p-6 rounded-xl border border-[#702eff]/30 flex-1">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">🎯</span> Målet
                             </h4>
@@ -438,7 +438,7 @@ const TV2xCogito = () => {
                             </p>
                           </div>
 
-                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 flex-1">
+                          <div className="bg-[#1a0826] p-4 sm:p-6 rounded-xl border border-[#702eff]/30 flex-1">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">💡</span> Løsningen
                             </h4>
@@ -449,7 +449,7 @@ const TV2xCogito = () => {
                             </p>
                           </div>
 
-                          <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 flex-1">
+                          <div className="bg-[#1a0826] p-4 sm:p-6 rounded-xl border border-[#702eff]/30 flex-1">
                             <h4 className="text-[#ffbf94] font-bold text-lg mb-3 flex items-center gap-2">
                               <span className="text-2xl">🔒</span> Status
                             </h4>
@@ -471,11 +471,11 @@ const TV2xCogito = () => {
                       className="space-y-8"
                     >
                       {/* Tech Stack Card */}
-                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#702eff]/30">
-                        <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                      <div className="bg-[#1a0826] p-6 sm:p-8 rounded-2xl border border-[#702eff]/30">
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
                           <span className="text-2xl">⚡</span> Teknologi
                         </h4>
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-3 sm:gap-y-4 sm:gap-x-3">
                           {h24TechStack.map((tech, index) => (
                             <motion.a
                               key={tech.name}
@@ -495,7 +495,7 @@ const TV2xCogito = () => {
                       </div>
 
                       {/* Project Stats */}
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                         <div className="bg-[#1a0826] p-6 rounded-xl border border-[#702eff]/30 text-center">
                           <div className="text-3xl font-bold text-[#702eff]">
                             1
@@ -529,14 +529,14 @@ const TV2xCogito = () => {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                   >
-                    <h3 className="text-5xl font-bold bg-gradient-to-r from-[#ffbf94] to-[#702eff] bg-clip-text text-transparent mb-4">
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#ffbf94] to-[#702eff] bg-clip-text text-transparent mb-4">
                       Vår 2025
                     </h3>
-                    <p className="text-2xl text-white/80">Neste Kapittel</p>
+                    <p className="text-lg sm:text-xl lg:text-2xl text-white/80">Neste Kapittel</p>
                   </motion.div>
 
                   {/* Main Content - Card Based */}
-                  <div className="grid lg:grid-cols-2 gap-10 mb-20">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 mb-16 sm:mb-20">
                     {/* Focus Areas */}
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
@@ -545,8 +545,8 @@ const TV2xCogito = () => {
                       viewport={{ once: true }}
                       className="h-full"
                     >
-                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#702eff]/30 h-full">
-                        <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                      <div className="bg-[#1a0826] p-6 sm:p-8 rounded-2xl border border-[#702eff]/30 h-full">
+                        <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
                           <span className="text-3xl">🚀</span> Fokusområder
                         </h4>
                         <div className="grid gap-4">
@@ -589,11 +589,11 @@ const TV2xCogito = () => {
                       className="h-full"
                     >
                       {/* Tech Stack */}
-                      <div className="bg-[#1a0826] p-8 rounded-2xl border border-[#ffbf94]/30 h-full flex flex-col">
-                        <h5 className="text-white font-bold text-xl mb-6">
+                      <div className="bg-[#1a0826] p-6 sm:p-8 rounded-2xl border border-[#ffbf94]/30 h-full flex flex-col">
+                        <h5 className="text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                           ⚡ Teknologi Stack
                         </h5>
-                        <div className="grid grid-cols-2 gap-y-6 gap-x-3 flex-1 content-start">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-3 sm:gap-y-6 sm:gap-x-3 flex-1 content-start">
                           {v25TechStack.map((tech) => (
                             <a
                               key={tech.name}
