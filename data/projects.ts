@@ -184,9 +184,9 @@ export const projectsApply: ProjectApply[] = [
     leaders: ["Sebastian Riibe Berthelsen"],
   },
   {
-    name: "VocalFormer",
-    description: "TBD",
-    image: "vocalformer.png",
+    name: "Audify",
+    description: "Har du noen gang ønsket å høre på pensumet ditt i stedet for å lese det? Kanskje du vil multitaske på treningen og samtidig få gjennomgått dagens fagstoff, eller du leter etter favorittboken din som lydbok uten å finne den? Dette prosjektet skal gjøre det mulig! Vi skal utvikle en løsning som automatisk konverterer tekst til lyd, ved å trene en AudioTransformer til å utføre Text-to-Speech (TTS). Brukeren kan hente tekst fra ulike formater, som PDF, Word, Markdown, nettsider eller YouTube-videoer, og systemet vil generere lydboken. Vi har mange kule muligheter med voice cloning, ulike stemmer og lydeffekter som vi kan lage. Bli med!",
+    image: "AudifyLogo.png",
     leaders: ["Nathania Vijayanti Muliawan"],
   },
   {
