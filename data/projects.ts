@@ -145,7 +145,7 @@ export const projectsApply: ProjectApply[] = [
     name: "MatchNet",
     description:
       "Bygge en nevralnett struktur som tar en dating profil (bilder og tekst) og gjennom supervised trening, generere text output i form av 'opening lines'. Målet er å klare å konstruere ett sammenhengende nettverk med egenskapen til å evaluere over flere modaliteter, i dette prosjektet to, tekst og bilder.  Hoved fokuset vil ikke være på datahenting eller resultater, men for medlemmene til å skaffe en større forståelse av nettverksarkitekturer. Dette vil være et krevende prosjekt som sikter på oppmøte tirsdager og torsdager. Anbefaler å ha noe erfaring med AI",
-    image: "cogito_blue.svg",
+    image: "matchnet.jpg",
     leaders: ["Kristian Carlenius"],
   },
   {
@@ -185,7 +185,8 @@ export const projectsApply: ProjectApply[] = [
   },
   {
     name: "Audify",
-    description: "Har du noen gang ønsket å høre på pensumet ditt i stedet for å lese det? Kanskje du vil multitaske på treningen og samtidig få gjennomgått dagens fagstoff, eller du leter etter favorittboken din som lydbok uten å finne den? Dette prosjektet skal gjøre det mulig! Vi skal utvikle en løsning som automatisk konverterer tekst til lyd, ved å trene en AudioTransformer til å utføre Text-to-Speech (TTS). Brukeren kan hente tekst fra ulike formater, som PDF, Word, Markdown, nettsider eller YouTube-videoer, og systemet vil generere lydboken. Vi har mange kule muligheter med voice cloning, ulike stemmer og lydeffekter som vi kan lage. Bli med!",
+    description:
+      "Har du noen gang ønsket å høre på pensumet ditt i stedet for å lese det? Kanskje du vil multitaske på treningen og samtidig få gjennomgått dagens fagstoff, eller du leter etter favorittboken din som lydbok uten å finne den? Dette prosjektet skal gjøre det mulig! Vi skal utvikle en løsning som automatisk konverterer tekst til lyd, ved å trene en AudioTransformer til å utføre Text-to-Speech (TTS). Brukeren kan hente tekst fra ulike formater, som PDF, Word, Markdown, nettsider eller YouTube-videoer, og systemet vil generere lydboken. Vi har mange kule muligheter med voice cloning, ulike stemmer og lydeffekter som vi kan lage. Bli med!",
     image: "AudifyLogo.png",
     leaders: ["Nathania Vijayanti Muliawan"],
   },
