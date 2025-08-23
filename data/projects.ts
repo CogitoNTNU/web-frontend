@@ -117,6 +117,14 @@ export const CogitoProjects: ProjectType[] = [
     url: "/projects/articles/hypeai",
   },
   {
+    name: "Doctor AI",
+    github: "https://github.com/CogitoNTNU/Doctor-AI",
+    img: "/Projects/Articles/doctor-ai/doctor-ai.png",
+    playable: false,
+    released: true,
+    url: "/projects/articles/doctor-ai",
+  },
+  {
     name: "Diffusion Model",
     github: "https://github.com/CogitoNTNU/DiffusionModel",
     img: "/Projects/Articles/diffusion-model/diffusion-model.png",

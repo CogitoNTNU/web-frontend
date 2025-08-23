@@ -438,6 +438,7 @@ interface ArticleProps {
   articleId: string;
   landingPage: ArticleLandingPage;
   descriptionPage: ArticleDescriptionPage;
+  resultsPageIsVideo?: boolean;
   teamPage: ArticleTeamPage;
   github?: string;
 }
@@ -446,6 +447,7 @@ const Article = ({
   articleId,
   landingPage,
   descriptionPage,
+  resultsPageIsVideo = true,
   teamPage,
   github,
 }: ArticleProps) => {
@@ -483,7 +485,12 @@ const Article = ({
         main={<Description {...descriptionPage} />}
         articleId={articleId}
       />
-      <ParallaxContent id={2} video main={<Results />} articleId={articleId} />
+      <ParallaxContent
+        id={2}
+        video={resultsPageIsVideo}
+        main={<Results />}
+        articleId={articleId}
+      />
       <ParallaxContent
         id={3}
         main={<Team team={teamPage.team} articleId={articleId} />}

@@ -63,6 +63,7 @@ export type ArticleType = {
   articleId: string;
   landingPage: ArticleLandingPage;
   descriptionPage: ArticleDescriptionPage;
+  resultsPageIsVideo?: boolean;
   teamPage: ArticleTeamPage;
   semester: "Høst" | "Vår";
   year: number;
