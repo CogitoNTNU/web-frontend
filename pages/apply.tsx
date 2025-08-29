@@ -22,7 +22,7 @@ const Apply = () => {
   );
 
   const [activeTab, setActiveTab] = useState<TabKey>("medlem");
-  const dueDate = new Date("2025-08-29");
+  const dueDate = new Date("2025-08-30");
 
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
