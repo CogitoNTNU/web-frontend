@@ -76,7 +76,7 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2025-09-18"),
     timeString: "11.09",
     subTimeString: "kl. 17:15",
-    location: "TBA",
+    location: "VE22 SMASH",
     description:
       "Dykk ned i datasynens fascinerende verden! Lær om YOLO object detection og få hands-on erfaring med å trene modeller som kan se og forstå bilder.",
     image: KursH25,
@@ -87,7 +87,7 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2025-09-11"),
     timeString: "18.09",
     subTimeString: "kl. 17:15",
-    location: "TBA + Bowling",
+    location: "VE22 SMASH + Bowling",
     description:
       "Lær essensielle utviklingsverktøy som Git, pre-commit hooks, GitHub Actions og Docker. Etter workshopen tar vi en velfortjent bowlingrunde for å feire at alle har fått sine første commits!",
     image: Bowling,
