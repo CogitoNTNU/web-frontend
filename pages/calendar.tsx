@@ -32,9 +32,9 @@ const Calendar = () => {
             Kommende hendelser
           </p>
           <div className="flex flex-wrap justify-center xl:justify-start gap-12">
-            <ApplicationProcessCard
+            {/* <ApplicationProcessCard
               applicationProcessData={applicationEvent2025}
-            />
+            /> */}
             {eventData
               .filter((event) => event.date > new Date())
               .map((event, index) => (
