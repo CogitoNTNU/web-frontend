@@ -47,7 +47,7 @@ const ProjectBanner = ({
   playable,
   github,
 }: ProjectBannerProps) => (
-  <div className="relative h-[30rem] w-full flex justify-start px-12 py-8">
+  <div className="relative h-120 w-full flex justify-start px-12 py-8">
     <div className="z-50 h-full flex flex-col justify-center">
       <Image
         src={bannerImg}

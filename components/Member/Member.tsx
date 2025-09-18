@@ -39,7 +39,7 @@ const Member = ({
       >
         {!isSafari ? (
           <div className="bg-gray-lighter w-[250px] h-[350px] rounded-3xl group overflow-hidden drop-shadow-lg ease-in-out">
-            <div className="z-40 absolute w-full h-full bg-gradient-to-b from-transparent to-white from-60% to-90% group-hover:from-40% group-hover:to-80% transition-all flex flex-col justify-end">
+            <div className="z-40 absolute w-full h-full bg-linear-to-b from-transparent to-white from-60% to-90% group-hover:from-40% group-hover:to-80% transition-all flex flex-col justify-end">
               <div className="px-4 py-3 group-hover:-translate-y-2 transition-transform">
                 <p className="tracking-wide">{name}</p>
                 <p className="tracking-wider font-bold text-[14px]">{title}</p>
@@ -93,17 +93,17 @@ const Member = ({
 
             <div className="px-4 pb-4 gap-4 justify-center flex">
               {linkedinURL && (
-                <a href={linkedinURL} className="z-[60]">
+                <a href={linkedinURL} className="z-60">
                   <Icon icon={"Linkedin"} color="white" />
                 </a>
               )}
               {githubURL && (
-                <a href={githubURL} className="z-[60]">
+                <a href={githubURL} className="z-60">
                   <Icon icon={"Github"} color="white" />
                 </a>
               )}
               {mailURL && (
-                <a href={`mailto:${mailURL}`} className="z-[60]">
+                <a href={`mailto:${mailURL}`} className="z-60">
                   <Icon icon={"Mail"} color="white" />
                 </a>
               )}

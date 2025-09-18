@@ -26,7 +26,7 @@ const Project = ({
 }: ProjectProps) => {
   return (
     <div className={`${released && "group"} relative`}>
-      <div className="h-[20rem] w-[14rem] relative">
+      <div className="h-80 w-56 relative">
         <div
           className={`${released ? "group-hover:bg-black-dark opacity-90 transition-all" : "bg-black-dark opacity-90"} h-full w-full  z-50 relative rounded-3xl`}
         >
@@ -94,8 +94,8 @@ const Project = ({
 
         {/* Corner indicator for hybrid projects */}
         {hybrid && released && (
-          <div className="absolute top-2 right-2 z-[60]">
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg px-2 py-1 shadow-lg">
+          <div className="absolute top-2 right-2 z-60">
+            <div className="bg-linear-to-r from-purple-600 to-pink-600 rounded-lg px-2 py-1 shadow-lg">
               <p className="text-[10px] font-bold text-white flex items-center gap-1">
                 <FaBookOpen className="text-[8px]" />
                 +

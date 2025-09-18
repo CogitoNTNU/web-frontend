@@ -57,9 +57,9 @@ interface GithubButtonProps {
 
 const GithubButton = ({ link }: GithubButtonProps) => {
   return (
-    <div className="relative w-[18rem] h-[3rem] rounded-3xl group">
+    <div className="relative w-[18rem] h-12 rounded-3xl group">
       <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 overflow-hidden transition-all delay-75">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-white animate-gradient" />
+        <div className="absolute inset-0 bg-linear-to-r from-purple-500 via-pink-500 to-white animate-gradient" />
       </div>
       <Link
         href={link}
@@ -497,7 +497,7 @@ const Article = ({
         articleId={articleId}
       />
       <motion.div
-        className="fixed left-0 right-0 h-[5px] bg-white bottom-0 origin-left z-[100]"
+        className="fixed left-0 right-0 h-[5px] bg-white bottom-0 origin-left z-100"
         style={{ scaleX }}
       />
     </div>

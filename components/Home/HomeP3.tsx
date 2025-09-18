@@ -34,7 +34,7 @@ const HomeP3 = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
+      <div className="absolute w-full h-full bg-linear-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
       <div className="relative w-full h-[85%]">
         <Image
           priority
@@ -44,7 +44,7 @@ const HomeP3 = () => {
           alt="Theatre"
           className="absolute w-full h-full object-cover"
         />
-        <main className="flex absolute justify-center items-center w-full h-full z-[50]">
+        <main className="flex absolute justify-center items-center w-full h-full z-50">
           <div className="phone:w-[80%] w-[90%] h-[500px] bg-gray-light opacity-95 rounded-3xl">
             <div className="flex tablet:flex-row flex-col w-full h-full">
               <div className="w-full phone:px-10 px-6 phone:py-8 py-6 text-gray-default">
@@ -80,9 +80,9 @@ const HomeP3 = () => {
                   </div>
                 </div>
               </div>
-              <div className="laptop:w-[100%] w-full h-full rounded-3xl z-[90]">
+              <div className="laptop:w-[100%] w-full h-full rounded-3xl z-90">
                 <GoogleMapReact
-                  className="z-[90]"
+                  className="z-90"
                   bootstrapURLKeys={{
                     key: apiKey,
                   }}

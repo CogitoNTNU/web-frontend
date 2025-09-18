@@ -40,9 +40,9 @@ const ReadMoreButton = () => {
 
 const GithubButton = ({ link }: { link: string }) => {
   return (
-    <div className="relative w-[18rem] h-[3rem] rounded-3xl group">
+    <div className="relative w-[18rem] h-12 rounded-3xl group">
       <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 overflow-hidden transition-all delay-75">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] animate-gradient" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] animate-gradient" />
       </div>
       <Link
         href={link}
@@ -65,7 +65,7 @@ const Landing = () => {
     articleData.github || "https://github.com/CogitoNTNU/SudokuSolver";
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
+    <div className="min-h-screen relative overflow-hidden bg-linear-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
       {/* Animated sudoku grid pattern background */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -137,7 +137,7 @@ const Landing = () => {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1.5, delay: 0.8, ease: "easeInOut" }}
-            className="w-full h-[3px] bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] rounded-3xl origin-left mb-8"
+            className="w-full h-[3px] bg-linear-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] rounded-3xl origin-left mb-8"
           />
 
           <motion.p
@@ -174,10 +174,10 @@ const Description = () => {
   const technologies = articleData.descriptionPage.technologies;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
+    <div className="min-h-screen bg-linear-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
       {/* Colorful gradient background instead of grid */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B6B]/10 via-[#4ECDC4]/10 to-[#45B7D1]/10" />
+        <div className="absolute inset-0 bg-linear-to-br from-[#FF6B6B]/10 via-[#4ECDC4]/10 to-[#45B7D1]/10" />
         <div
           className="absolute inset-0"
           style={{
@@ -197,7 +197,7 @@ const Description = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4]">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#FF6B6B] to-[#4ECDC4]">
             Beskrivelse av Prosjektet
           </h2>
         </motion.div>
@@ -208,14 +208,14 @@ const Description = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-2 bg-gradient-to-br from-[#1a1a2e]/90 to-[#16213e]/90 backdrop-blur-xl rounded-3xl p-8 border border-[#4ECDC4]/20 shadow-2xl"
+            className="lg:col-span-2 bg-linear-to-br from-[#1a1a2e]/90 to-[#16213e]/90 backdrop-blur-xl rounded-3xl p-8 border border-[#4ECDC4]/20 shadow-2xl"
           >
-            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#45B7D1] mb-4">
+            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-[#FF6B6B] to-[#45B7D1] mb-4">
               Hva er dette egentlig? 🧩
             </h3>
             <p className="text-gray-300 leading-relaxed mb-6">{description}</p>
 
-            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#4ECDC4] to-[#45B7D1] mb-4 mt-8">
+            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-[#4ECDC4] to-[#45B7D1] mb-4 mt-8">
               Fun Facts 🎯
             </h3>
             <ul className="space-y-3">
@@ -239,9 +239,9 @@ const Description = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-gradient-to-br from-[#16213e]/90 to-[#1a1a2e]/90 backdrop-blur-xl rounded-3xl p-8 border border-[#FF6B6B]/20 shadow-2xl"
+            className="bg-linear-to-br from-[#16213e]/90 to-[#1a1a2e]/90 backdrop-blur-xl rounded-3xl p-8 border border-[#FF6B6B]/20 shadow-2xl"
           >
-            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#45B7D1] to-[#FF6B6B] mb-4">
+            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-[#45B7D1] to-[#FF6B6B] mb-4">
               Teknologivalg 💻
             </h3>
             <ul className="space-y-2 mb-8">
@@ -259,7 +259,7 @@ const Description = () => {
               ))}
             </ul>
 
-            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] mb-4">
+            <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-[#FF6B6B] to-[#4ECDC4] mb-4">
               Links 🔗
             </h3>
             <div className="space-y-3">
@@ -353,13 +353,13 @@ const Description = () => {
 
 const Results = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1a1a2e] to-[#16213e] relative overflow-hidden pt-36 pb-20">
+    <div className="min-h-screen bg-linear-to-b from-[#0a0a0a] via-[#1a1a2e] to-[#16213e] relative overflow-hidden pt-36 pb-20">
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#4ECDC4] to-[#FF6B6B] mb-12 text-center"
+          className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#4ECDC4] to-[#FF6B6B] mb-12 text-center"
         >
           Se Løsningen i Aksjon! 🎬
         </motion.h2>
@@ -372,8 +372,8 @@ const Results = () => {
             transition={{ duration: 0.8, type: "spring" }}
             className="flex justify-center"
           >
-            <div className="relative w-full max-w-lg aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] p-[2px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] animate-gradient opacity-50" />
+            <div className="relative w-full max-w-lg aspect-9/16 rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] p-[2px]">
+              <div className="absolute inset-0 bg-linear-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] animate-gradient opacity-50" />
               <div className="relative rounded-3xl overflow-hidden bg-black">
                 <video
                   src="/Projects/Articles/sudokusolver/2.MP4"
@@ -395,8 +395,8 @@ const Results = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-br from-[#1a1a2e]/90 to-[#16213e]/90 backdrop-blur-xl rounded-3xl p-8 border border-[#4ECDC4]/20 shadow-2xl">
-              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4]">
+            <div className="bg-linear-to-br from-[#1a1a2e]/90 to-[#16213e]/90 backdrop-blur-xl rounded-3xl p-8 border border-[#4ECDC4]/20 shadow-2xl">
+              <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-linear-to-r from-[#FF6B6B] to-[#4ECDC4]">
                 Live AR Sudoku Solving ✨
               </h3>
               <p className="text-gray-300 leading-relaxed mb-6">
@@ -459,7 +459,7 @@ const Results = () => {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
                 <p className="text-sm font-semibold">
                   Bildeprosessering & Deteksjon
@@ -505,10 +505,10 @@ const TeamMember = ({
           fill
           className="object-cover bg-gray-900"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
       <h3 className="text-white font-semibold text-lg">{name}</h3>
-      <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] mb-2">
+      <p className="text-transparent bg-clip-text bg-linear-to-r from-[#FF6B6B] to-[#4ECDC4] mb-2">
         {role}
       </p>
 
@@ -566,7 +566,7 @@ const Team = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
+    <div className="min-h-screen bg-linear-to-b from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] relative overflow-hidden pt-36 pb-20">
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -588,7 +588,7 @@ const Team = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1]">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1]">
             Teamet bak SudokuSolver
           </h2>
         </motion.div>
@@ -655,7 +655,7 @@ const SudokuSolver = () => {
           <Team />
         </section>
         <motion.div
-          className="fixed left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] bottom-0 origin-left z-[100]"
+          className="fixed left-0 right-0 h-[3px] bg-linear-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] bottom-0 origin-left z-100"
           style={{ scaleX }}
         />
       </div>

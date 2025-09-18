@@ -36,7 +36,7 @@ const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
           </p>
         </div>
         <div className="relative h-full flex items-end justify-end w-full ">
-          <p className="animate-gradientshift bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[22px] text-[10px] tracking-wide inline-block text-transparent">
+          <p className="animate-gradientshift bg-linear-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[22px] text-[10px] tracking-wide inline-block text-transparent">
             PROJECT PRESENTATION <span className="font-light">EVENT</span>
           </p>
         </div>
@@ -48,7 +48,7 @@ const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
             <source src="/ProjectPresentation/Motion2.mp4" type="video/mp4" />
           </video>
         </div>
-        <div className="flex justify-center items-center h-[100vh] w-full pb-[200px]">
+        <div className="flex justify-center items-center h-screen w-full pb-[200px]">
           <div className="w-fit text-center">
             <p className="text-white md:text-[54px] text-[30px] font-extralight tracking-wider">
               <span className="font-medium">YOU</span> ARE{" "}
@@ -65,7 +65,7 @@ const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
               </Link>
             </div>
             <div className="relative h-full flex items-end justify-center w-full top-[350px]">
-              <p className="animate-gradientshift bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium text-[14px] tracking-wide inline-block text-transparent">
+              <p className="animate-gradientshift bg-linear-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium text-[14px] tracking-wide inline-block text-transparent">
                 PROJECT PRESENTATION <span className="font-light">EVENT</span>
               </p>
             </div>
@@ -91,7 +91,7 @@ const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
         exit={{ x: 200 }}
         className="text-center"
       >
-        <p className="bg-gradient-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[60px] text-[30px] tracking-wide inline-block text-transparent">
+        <p className="bg-linear-to-r from-blue-default from-20% to-white relative bg-clip-text font-medium md:text-[60px] text-[30px] tracking-wide inline-block text-transparent">
           THE <span className="font-regular">SCHEDULE</span>
         </p>
       </motion.div>
@@ -152,7 +152,7 @@ const Home = () => {
       <Head>
         <title>Project Presentations Event - Cogito NTNU</title>
       </Head>
-      <main className="w-[100vw] h-[100vh] bg-black-dark overflow-hidden">
+      <main className="w-screen h-screen bg-black-dark overflow-hidden">
         <div className="md:block hidden">
           <div className="absolute">
             <Image
@@ -262,7 +262,7 @@ const Home = () => {
           {!showSchedule ? (
             <HomeMenu toggleSchedule={toggleSchedule} />
           ) : (
-            <div className="flex h-[100vh] w-full items-center justify-center">
+            <div className="flex h-screen w-full items-center justify-center">
               <div>
                 <Schedule toggleSchedule={toggleSchedule} />
               </div>

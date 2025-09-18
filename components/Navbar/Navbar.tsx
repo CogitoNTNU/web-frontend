@@ -136,7 +136,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
         variants={{ visible: { y: 0 }, hidden: { y: "-100%" } }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="flex flex-row w-full h-[120px] tablet:px-20 px-6 text-lg fixed text-white z-[100]"
+        className="flex flex-row w-full h-[120px] tablet:px-20 px-6 text-lg fixed text-white z-100"
       >
         <Link
           onClick={async () => {
@@ -185,7 +185,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed right-0 top-0 bg-blue-darker w-full h-full px-24 z-[90]"
+            className="fixed right-0 top-0 bg-blue-darker w-full h-full px-24 z-90"
           >
             <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
               {navbarLinks.map((data) => (

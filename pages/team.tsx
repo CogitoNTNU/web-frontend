@@ -120,7 +120,7 @@ const Team = () => {
         className="relative overflow-hidden"
       >
         <div className="relative w-full z-30 flex-none phone:h-[720px] h-[660px]">
-          <div className="absolute w-full h-full bg-gradient-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
+          <div className="absolute w-full h-full bg-linear-to-b to-transparent from-blue-dark from-0% to-30% z-50"></div>
           <Image
             className="absolute inset-0 w-full h-full object-cover hover:shadow-inner shadow-2xl tablet:block hidden"
             src={team}

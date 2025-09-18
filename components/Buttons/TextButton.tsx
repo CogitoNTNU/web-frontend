@@ -32,7 +32,7 @@ const TextButton = ({
               {text}
             </p>
             <Glow>
-              <div className="w-full h-[1px] mt-1 glow:bg-white/60"></div>
+              <div className="w-full h-px mt-1 glow:bg-white/60"></div>
             </Glow>
           </GlowCapture>
         </div>

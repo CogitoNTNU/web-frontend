@@ -46,13 +46,13 @@ const Apply = () => {
         transition={{ duration: 0.6, delay: 0.2, ease: [0, 0.71, 0.2, 1.0] }}
         className="w-full h-[80svh] laptop:pt-[200px] pt-[150px]"
       >
-        <div className="relative flex justify-center h-full w-full z-[50] px-[30px]">
+        <div className="relative flex justify-center h-full w-full z-50 px-[30px]">
           <div className="relative">
             <button
               aria-label="Medlem"
               onClick={() => setActiveTab("medlem")}
               className={`absolute top-0 left-0 tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
-                ${activeTab === "medlem" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
+                ${activeTab === "medlem" ? "bg-white z-50" : "bg-white/60 z-40"}`}
             >
               <p className="font-medium">Medlem</p>
             </button>
@@ -61,13 +61,13 @@ const Apply = () => {
               aria-label="Verv"
               onClick={() => setActiveTab("verv")}
               className={`absolute top-0 tablet:left-[150px] left-[120px] tablet:w-[200px] w-[150px] tablet:h-[50px] h-[40px] tablet:-mt-[50px] -mt-[40px] rounded-t-3xl text-center tablet:py-4 py-2 transition
-                ${activeTab === "verv" ? "bg-white z-[50]" : "bg-white/60 z-[40]"}`}
+                ${activeTab === "verv" ? "bg-white z-50" : "bg-white/60 z-40"}`}
             >
               <p className="font-medium">Marketing</p>
             </button>
           </div>
 
-          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl z-[60]">
+          <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl z-60">
             <div className="phone:flex flex-row w-full justify-between items-center phone:px-8 px-4 pt-8 pb-4">
               <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark">
                 Søknad - Høstsemesteret {new Date().getFullYear()}
@@ -263,7 +263,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                 Velg minst 3 prosjekter
               </p>
             </div>
-            <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex h-[32rem] overflow-y-scroll">
+            <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex h-128 overflow-y-scroll">
               {projectsApply.map((project) => (
                 <ProjectCard
                   key={project.name}

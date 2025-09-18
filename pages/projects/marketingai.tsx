@@ -50,11 +50,11 @@ const MarketingAI = () => {
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden">
             <div className="flex justify-start w-full h-full tablet:px-[6%] px-[2%] items-center relative tablet:-bottom-20 -bottom-20 ">
               <img
-                className="pt-2 tablet:w-[280px] phone:w-[180px] w-[120px] relative z-[100]"
+                className="pt-2 tablet:w-[280px] phone:w-[180px] w-[120px] relative z-100"
                 src="/Logos/MarketingAILogo.png"
                 alt="companylogo"
               />
-              <div className="text-white drop-shadow-2xl z-[100]">
+              <div className="text-white drop-shadow-2xl z-100">
                 <motion.p
                   initial={{
                     opacity: 0,
