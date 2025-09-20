@@ -107,7 +107,7 @@ export const hardcodedEvents: Array<EventType> = [
     date: new Date("2025-09-27"),
     timeString: "27.09",
     subTimeString: "lørdag",
-    location: "TBA",
+    location: "Rom 04-025, Helgasetr",
     description:
       "En hel dag med koding, kreativitet og kaffe! Vårt interne hackathon hvor hele Cogito får en kickstart på prosjektene, og blir bedre kjent på tvers av gruppene. Premier, pizza og mye moro!",
     image: InterntHackathon,
