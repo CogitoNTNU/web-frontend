@@ -96,8 +96,8 @@ This project leverages the following technologies:
         </a>
     </td>
       <td align="center">
-        <a href="https://github.com/Spiderpig02">
-            <img src="https://github.com/Spiderpig02.png?size=1920" width="100px;"/><br />
+        <a href="https://github.com/danielnhansen">
+            <img src="https://github.com/danielnhansen.png?size=1920" width="100px;"/><br />
             <sub><b>Daniel N Hansen</b></sub>
         </a>
     </td>
