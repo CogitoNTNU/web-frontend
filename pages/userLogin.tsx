@@ -56,7 +56,7 @@ const UserLogin = () => {
               id="password" 
               name="password" 
               type={showPassword ? "text" : "password"}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-400 focus:outline-none text-lg "
+              className="w-full px-4 py-3 pr-20 rounded-xl border-2 border-gray-300 focus:border-blue-400 focus:outline-none text-lg overflow-x-scroll"
             
             />
             <button
