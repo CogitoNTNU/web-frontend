@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../components/Buttons/Button";
 import { link } from 'fs';
+import Link from "next/link";
 
 const UserRegister = () => {
   
@@ -24,16 +25,17 @@ const UserRegister = () => {
       className="relative h-screen w-full"
     >
       <div className="absolute top-8 left-8">
-        <button 
-          type="button"
-          onClick={() => link()}
-          className="flex items-center gap-3 text-white text-lg hover:text-gray-300 transition-colors bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg backdrop-blur-sm"
-        >
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
-          </svg>
-          Back
-        </button>
+        <Link href={"/loginPage"}>
+          <button 
+            type="button"
+            className="flex items-center gap-3 text-white text-lg hover:text-gray-300 transition-colors bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg backdrop-blur-sm"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+            </svg>
+            Back
+          </button>
+        </Link>
       </div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6 items-center">

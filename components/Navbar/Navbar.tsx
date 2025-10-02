@@ -171,6 +171,12 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                   <Button text={"Søk Opptak"} color={"pink"} />
                 </Link>
               </div>
+              <div className="flex items-center justify-center h-full">
+                <Link href={"/loginPage"}>
+                  <Button text={"Logg inn"} color={"blue"} />
+                </Link>
+
+              </div>
             </div>
             <div className="items-center justify-end h-full flex visible laptop:hidden">
               <Hamburger toggled={isOpen} toggle={setOpen} />
