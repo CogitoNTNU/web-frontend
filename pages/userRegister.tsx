@@ -1,10 +1,15 @@
-import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Button from "../components/Buttons/Button";
+import { link } from 'fs';
 
 const UserRegister = () => {
-  const router = useRouter();
   
+  function link() {
+    const back: string = window.location.href.includes("localhost") 
+      ? "http://localhost:3000/loginPage" 
+      : "https://yourdomain.com/loginPage";
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
@@ -21,7 +26,7 @@ const UserRegister = () => {
       <div className="absolute top-8 left-8">
         <button 
           type="button"
-          onClick={() => router.back()}
+          onClick={() => link()}
           className="flex items-center gap-3 text-white text-lg hover:text-gray-300 transition-colors bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg backdrop-blur-sm"
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
