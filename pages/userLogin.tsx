@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { MdLockOutline } from "react-icons/md";
 
+
+
 const UserLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleSubmit = (e: React.FormEvent) => {
@@ -48,7 +50,7 @@ const UserLogin = () => {
             />
           </div>
       
-          <div className="w-80">
+          <div className="w-80 relative">
             <label htmlFor="password" className="block text-white text-lg mb-2 ">Password</label>
             <input 
               id="password" 
@@ -61,7 +63,7 @@ const UserLogin = () => {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               // className="absolute right-0 mt-3 text-sm text-gray-500 hover:text-gray-600 focus:outline-none"
-              className="absolute right-0 mt-3 text-sm text-gray-500 hover:text-gray-600 focus:outline-none flex items-center gap-1"
+              className="absolute right-0 top-12 text-sm text-gray-500 hover:text-gray-600 focus:outline-none flex items-center gap-1"
               >
                 {showPassword ? "Hide" : "Show"} <MdLockOutline />
             </button>
@@ -88,5 +90,6 @@ const UserLogin = () => {
     </motion.div>
   );
 };
+
 
 export default UserLogin;
