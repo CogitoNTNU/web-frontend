@@ -1,12 +1,7 @@
-
-import LoginRegister from "../components/User/loginRegister"
+import LoginRegister from "../components/User/loginRegister";
 
 const LoginPage = () => {
+  return <LoginRegister />;
+};
 
-
-    return (
-        <LoginRegister/>
-    )
-} 
-
-export default LoginPage
+export default LoginPage;

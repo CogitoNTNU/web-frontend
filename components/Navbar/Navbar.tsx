@@ -175,7 +175,6 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                 <Link href={"/loginPage"}>
                   <Button text={"Logg inn"} color={"blue"} />
                 </Link>
-
               </div>
             </div>
             <div className="items-center justify-end h-full flex visible laptop:hidden">
