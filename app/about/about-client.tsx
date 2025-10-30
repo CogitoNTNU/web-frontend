@@ -1,18 +1,17 @@
 "use client";
 
-import Head from "next/head";
-import Footer from "../components/Footer/Footer";
-import { useRouter } from "next/router";
-import Button from "../components/Buttons/Button";
+import Footer from "../../components/Footer/Footer";
+import { useRouter } from "next/navigation";
+import Button from "../../components/Buttons/Button";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 //Images
-import NTNU from "../public/Logos/NTNU.png";
-import NAIL from "../public/Logos/norwegian_open_ai_lab.png";
-import Navbar from "../components/Navbar/Navbar";
+import NTNU from "../../public/Logos/NTNU.png";
+import NAIL from "../../public/Logos/norwegian_open_ai_lab.png";
+import Navbar from "../../components/Navbar/Navbar";
 
-const About = () => {
+export default function AboutClient() {
   function timeout(delay: number) {
     return new Promise((res) => setTimeout(res, delay));
   }
@@ -20,16 +19,13 @@ const About = () => {
   const router = useRouter();
 
   const homeAndScrollToBottom = async () => {
-    await router.push("/");
+    router.push("/");
     await timeout(1000);
-    document.getElementById("part-2").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("part-2")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
-      <Head>
-        <title>Om oss - Cogito NTNU</title>
-      </Head>
       <Navbar page="about" />
       <main className="overflow-hidden">
         <div className="flex items-center justify-center phone:pt-[160px] pt-[130px]">
@@ -136,6 +132,4 @@ const About = () => {
       <Footer />
     </>
   );
-};
-
-export default About;
+}

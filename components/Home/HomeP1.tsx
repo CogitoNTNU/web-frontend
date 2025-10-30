@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Images
 import SunImg from "../../public/HomePage/Bg_sun.webp";
@@ -56,8 +56,8 @@ const HomeP1 = () => {
             className="absolute w-full h-full object-cover"
             style={{
               transform: `translateX(calc(-2.5% + ${
-                -mousePos.x * 0.04
-              }px)) translateY(calc(-5% + ${-mousePos.y * 0.05}px))`,
+                mousePos ? -(mousePos ? mousePos.x : 0) * 0.04 : 0
+              }px)) translateY(calc(-5% + ${mousePos ? -(mousePos ? mousePos.y : 0) * 0.05 : 0}px))`,
             }}
             alt="Sun"
           />
@@ -68,8 +68,8 @@ const HomeP1 = () => {
               className="text-center desktop:text-[74px] phone:text-[58px] text-[48px] tracking-wider drop-shadow-md"
               style={{
                 transform: `translateX(calc(-2.5% + ${
-                  -mousePos.x * 0.03
-                }px)) translateY(calc(-5% + ${-mousePos.y * 0.06}px))`,
+                  -(mousePos ? mousePos.x : 0) * 0.03
+                }px)) translateY(calc(-5% + ${-(mousePos ? mousePos.y : 0) * 0.06}px))`,
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -85,8 +85,8 @@ const HomeP1 = () => {
               className="text-center desktop:text-[60px] phone:text-[46px] text-[38px] tracking-normal drop-shadow-md"
               style={{
                 transform: `translateX(calc(-2.5% + ${
-                  -mousePos.x * 0.03
-                }px)) translateY(calc(-5% + ${-mousePos.y * 0.06}px))`,
+                  -(mousePos ? mousePos.x : 0) * 0.03
+                }px)) translateY(calc(-5% + ${-(mousePos ? mousePos.y : 0) * 0.06}px))`,
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -119,8 +119,8 @@ const HomeP1 = () => {
             className="absolute w-full h-full object-cover"
             style={{
               transform: `translateX(calc(-2.5% + ${
-                -mousePos.x * 0.025
-              }px)) translateY(calc(-5% + ${-mousePos.y * 0.05}px))`,
+                -(mousePos ? mousePos.x : 0) * 0.025
+              }px)) translateY(calc(-5% + ${-(mousePos ? mousePos.y : 0) * 0.05}px))`,
             }}
           />
         </motion.div>
@@ -144,9 +144,9 @@ const HomeP1 = () => {
             className="absolute w-full h-full object-cover"
             style={{
               transform: `translateX(calc(${
-                -mousePos.x * 0.02
-              }px)) translateY(calc( 
-                                ${-mousePos.y * 0.01}px))`,
+                -(mousePos ? mousePos.x : 0) * 0.02
+              }px)) translateY(calc(
+                                ${-(mousePos ? mousePos.y : 0) * 0.01}px))`,
             }}
           />
         </motion.div>

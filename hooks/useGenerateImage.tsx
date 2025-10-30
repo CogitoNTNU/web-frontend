@@ -18,8 +18,8 @@ export const useMarketingAIGenerateImage = (
   params: GenerateImageParams | null
 ) => {
   return useQuery<MarketingAIResponse, AxiosError>({
-    queryKey: [marketingAIQueryKeys(params)],
-    queryFn: () => generateImage(params),
+    queryKey: marketingAIQueryKeys(params),
+    queryFn: () => generateImage(params!),
     enabled: !!params,
     staleTime: Infinity,
     refetchInterval: Infinity,

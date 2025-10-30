@@ -7,8 +7,27 @@ import Footer from "../Footer/Footer";
 // Images
 import SverreBack from "../../public/HomePage/SverreBack.jpg";
 
+type MarkerProps = {
+  lat: number;
+  lng: number;
+};
+
+const Marker = ({ lat, lng }: MarkerProps) => {
+  return (
+    <div className="SuperAwesomePin" data-lat={lat} data-lng={lng}>
+      <FaMapMarkerAlt
+        style={{
+          color: "red",
+          fontSize: "40px",
+          bottom: "3vh",
+        }}
+      />
+    </div>
+  );
+};
+
 const HomeP3 = () => {
-  const apiKey = process.env.google_api_key;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
 
   const defaultProps = {
     center: {
@@ -17,20 +36,24 @@ const HomeP3 = () => {
     },
     zoom: 17,
   };
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, react/prop-types
-  const Marker = ({ lat, lng }) => {
-    return (
-      <div className="SuperAwesomePin">
-        <FaMapMarkerAlt
-          style={{
-            color: "red",
-            fontSize: "40px",
-            bottom: "3vh",
-          }}
-        />
-      </div>
-    );
-  };
+  const mapContent = apiKey ? (
+    <GoogleMapReact
+      className="z-90"
+      bootstrapURLKeys={{
+        key: apiKey ?? "",
+      }}
+      defaultCenter={defaultProps.center}
+      defaultZoom={defaultProps.zoom}
+      yesIWantToUseGoogleMapApiInternals
+    >
+      <Marker lat={defaultProps.center.lat} lng={defaultProps.center.lng} />
+    </GoogleMapReact>
+  ) : (
+    <div className="flex h-full items-center justify-center px-6 text-sm text-gray-default">
+      Kartet er midlertidig utilgjengelig fordi miljøvariabelen
+      `NEXT_PUBLIC_GOOGLE_API_KEY` mangler.
+    </div>
+  );
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -55,7 +78,7 @@ const HomeP3 = () => {
                   Har du et spørsmål eller er du en bedrift som ønsker å komme i
                   kontakt med NTNU’s mest engasjerte AI studenter?
                 </p>
-                <div className="h-[2px] bg-gray-default"></div>
+                <div className="h-0.5 bg-gray-default"></div>
 
                 <div className="tablet:block tablet:pt-0 py-2 flex justify-center gap-2">
                   <div>
@@ -81,20 +104,7 @@ const HomeP3 = () => {
                 </div>
               </div>
               <div className="laptop:w-[100%] w-full h-full rounded-3xl z-90">
-                <GoogleMapReact
-                  className="z-90"
-                  bootstrapURLKeys={{
-                    key: apiKey,
-                  }}
-                  defaultCenter={defaultProps.center}
-                  defaultZoom={defaultProps.zoom}
-                  yesIWantToUseGoogleMapApiInternals
-                >
-                  <Marker
-                    lat={defaultProps.center.lat}
-                    lng={defaultProps.center.lng}
-                  />
-                </GoogleMapReact>
+                {mapContent}
               </div>
             </div>
           </div>

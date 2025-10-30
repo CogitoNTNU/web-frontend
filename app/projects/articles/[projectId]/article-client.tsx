@@ -1,27 +1,24 @@
 "use client";
-import { useRouter } from "next/router";
-import ProjectNavbar from "../../../components/Navbar/ArticleNavbar";
+import ProjectNavbar from "../../../../components/Navbar/ArticleNavbar";
 import {
   motion,
   MotionValue,
   useScroll,
   useSpring,
   useTransform,
-} from "framer-motion";
-import { useEffect, useRef } from "react";
+} from "motion/react";
+import { useEffect, useRef, ReactNode } from "react";
 import Image from "next/image";
-import { children } from "@material-tailwind/react/types/components/accordion";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import { FiGithub } from "react-icons/fi";
-import ProjectFooter from "../../../components/Footer/ArticleFooter";
+import ProjectFooter from "../../../../components/Footer/ArticleFooter";
 import {
   ArticleDescriptionPage,
   ArticleLandingPage,
   ArticleTeamPage,
-  TeamMember,
-} from "../../../lib/types";
-import { articles } from "../../../data/articles";
+  type TeamMember,
+} from "../../../../lib/types";
 
 const ReadMoreButton = () => {
   function scrollDown() {
@@ -164,7 +161,7 @@ interface ParallaxContentProps {
   id: number;
   articleId: string;
   video?: boolean;
-  main: children;
+  main: ReactNode;
 }
 
 const ParallaxContent = ({
@@ -173,7 +170,7 @@ const ParallaxContent = ({
   video = false,
   main,
 }: ParallaxContentProps) => {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const parallaxValue = 300;
   const y = useParallax(scrollYProgress, id === 0 ? 0 : parallaxValue);
@@ -356,7 +353,7 @@ const Team = ({ articleId, team }: TeamProps) => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -441,6 +438,8 @@ interface ArticleProps {
   resultsPageIsVideo?: boolean;
   teamPage: ArticleTeamPage;
   github?: string;
+  semester: string;
+  year: number;
 }
 
 const Article = ({
@@ -504,23 +503,7 @@ const Article = ({
   );
 };
 
-const Page = () => {
-  const router = useRouter();
-  const { projectId } = router.query;
-
-  if (!router.isReady) {
-    return null;
-  }
-
-  const article = articles.find((article) => article.articleId === projectId);
-  if (!article)
-    return (
-      <div className="text-2xl text-white w-screen h-screen justify-center items-center flex flex-col space-y-2">
-        <p>404 - Article Not Found</p>
-        <p className="text-lg">Did you write the url corretly?</p>
-      </div>
-    );
-
+const Page = ({ article }: { article: ArticleProps }) => {
   return (
     <>
       <ProjectNavbar semester={`${article.semester} ${article.year}`} />

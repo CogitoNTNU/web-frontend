@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import Hamburger from "hamburger-react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+} from "motion/react";
 import Button from "../Buttons/Button";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
@@ -16,7 +21,7 @@ const containerVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      ease: [0, 0.71, 0.2, 1.0],
+      ease: "easeOut" as const,
       staggerChildren: 0.1,
     },
   },
@@ -26,7 +31,7 @@ const containerVariants = {
       duration: 0.3,
     },
   },
-};
+} as const;
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -35,11 +40,11 @@ const itemVariants = {
     opacity: 1,
     transition: {
       duration: 0.4,
-      ease: [0, 0.71, 0.2, 1.0],
+      ease: "easeOut" as const,
     },
   },
   exit: { opacity: 0 },
-};
+} as const;
 
 interface NavbarProps {
   onlyLogo?: boolean;
@@ -47,15 +52,16 @@ interface NavbarProps {
 }
 
 const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
-  const router = useRouter();
+  const pathname = usePathname();
   const [hidden, setHidden] = useState<boolean>(false);
   const { scrollY } = useScroll();
   const [isOpen, setOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 0) {
+    const previous = scrollY.getPrevious() || 0;
+    if (latest > previous && latest > 150) {
       setHidden(true);
-    } else {
+    } else if (latest < previous) {
       setHidden(false);
     }
   });
@@ -93,20 +99,28 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
   }
 
   useEffect(() => {
-    const targetElement = document.querySelector("body");
-    if (isOpen) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      disableBodyScroll(targetElement);
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      enableBodyScroll(targetElement);
+    const bodyElement = document.body;
+
+    if (!bodyElement) {
+      return;
     }
+
+    if (isOpen) {
+      disableBodyScroll(bodyElement);
+      return () => {
+        enableBodyScroll(bodyElement);
+      };
+    }
+
+    enableBodyScroll(bodyElement);
+
+    return undefined;
   }, [isOpen]);
 
   const scrollToTop = async () => {
     await timeout(100);
-    if (router.pathname == "/") {
-      document.getElementById("part-0").scrollIntoView({ behavior: "smooth" });
+    if (pathname == "/") {
+      document.getElementById("part-0")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -146,7 +160,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
         >
           <div className="flex items-center h-full">
             <img
-              className="tablet:w-[90px] w-[80px]"
+              className="tablet:w-[90px] w-20"
               src="/cogito_white.svg"
               alt="logo"
             />
@@ -154,12 +168,18 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
         </Link>
         {!onlyLogo && (
           <div className="flex-row h-full w-full ">
-            <div className="laptop:flex flex-row h-full w-full justify-end hidden gap-[40px]">
+            <div className="laptop:flex flex-row h-full w-full justify-end hidden gap-10">
               {navbarLinks.map((data) => (
                 <Link key={data.title} href={data.link}>
                   <div className="h-full flex justify-center items-center group">
-                    <div className={page !== data.actual && hoverClass}>
-                      <span className={page == data.actual && buttonClass}>
+                    <div
+                      className={page !== data.actual ? hoverClass : undefined}
+                    >
+                      <span
+                        className={
+                          page == data.actual ? buttonClass : undefined
+                        }
+                      >
                         {data.title}
                       </span>
                     </div>
@@ -178,9 +198,10 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
           </div>
         )}
       </motion.nav>
-      <div className="w-full h-full overflow-hidden">
+      <AnimatePresence mode="wait">
         {isOpen && (
           <motion.div
+            key="mobile-menu"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -192,14 +213,18 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                 <motion.div key={data.title} variants={itemVariants}>
                   <Link onClick={() => burgerChangePage()} href={data.link}>
                     <div className="text-white font-medium text-[20px]">
-                      <span className={page == data.actual && buttonClass}>
+                      <span
+                        className={
+                          page == data.actual ? buttonClass : undefined
+                        }
+                      >
                         {data.title}
                       </span>
                     </div>
                   </Link>
                 </motion.div>
               ))}
-              <motion.div className="pt-[10px]" variants={itemVariants}>
+              <motion.div className="pt-2.5" variants={itemVariants}>
                 <Link onClick={() => burgerChangePage()} href={"/apply"}>
                   <Button text={"Søk Opptak"} color={"pink"} />
                 </Link>
@@ -207,7 +232,7 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
             </div>
           </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </>
   );
 };

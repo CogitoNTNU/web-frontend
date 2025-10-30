@@ -1,7 +1,21 @@
-# Ignore artifacts:
-build
-coverage
+# Build output
 .next
-.vscode
+.turbo
+.vercel
+out
+dist
+build
+
+# Static assets
+public
+
+# Coverage
+coverage
+
+# Tooling & dependencies
 node_modules
-readme.md
+package.json
+package-lock.json
+
+# Documentation
+README.md

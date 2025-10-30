@@ -1,18 +1,19 @@
-import Field from "../../components/Fields/Field";
-import Footer from "../../components/Footer/MarketingAIFooter";
-import { useState } from "react";
-import ReactLoading from "react-loading";
-import Head from "next/head";
-import Image from "next/image";
-import { motion } from "framer-motion";
+"use client";
 
-import poster1 from "../../public/Projects/MarketingAI/poster.png";
-import poster2 from "../../public/Projects/MarketingAI/soda.jpg";
-import poster3 from "../../public/Projects/MarketingAI/bicycle.png";
-import ErrorHandlingMarketingAI from "../../components/Errors/ErrorHandlingMarketingAI";
-import { GenerateImageParams } from "../../lib/types";
-import { useMarketingAIGenerateImage } from "../../hooks/useGenerateImage";
-import Navbar from "../../components/Navbar/Navbar";
+import Field from "../../../components/Fields/Field";
+import Footer from "../../../components/Footer/MarketingAIFooter";
+import { useState } from "react";
+import Image from "next/image";
+import Spinner from "../../../components/Spinner";
+import { motion } from "motion/react";
+
+import poster1 from "../../../public/Projects/MarketingAI/poster.png";
+import poster2 from "../../../public/Projects/MarketingAI/soda.jpg";
+import poster3 from "../../../public/Projects/MarketingAI/bicycle.png";
+import ErrorHandlingMarketingAI from "../../../components/Errors/ErrorHandlingMarketingAI";
+import { GenerateImageParams } from "../../../lib/types";
+import { useMarketingAIGenerateImage } from "../../../hooks/useGenerateImage";
+import Navbar from "../../../components/Navbar/Navbar";
 
 const MarketingAI = () => {
   const [value, setValue] = useState("");
@@ -32,15 +33,12 @@ const MarketingAI = () => {
 
   return (
     <>
-      <Head>
-        <title>Marketing AI - Cogito NTNU</title>
-      </Head>
       <Navbar page="/" onlyLogo />
       <div className="bg-black-default">
         {error && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden flex justify-center items-center">
             <ErrorHandlingMarketingAI
-              errorCode={error?.response?.status}
+              errorCode={error?.response?.status || 500}
               errorMessage={error?.message}
               refetchClick={getGeneratedImage}
             />
@@ -110,7 +108,7 @@ const MarketingAI = () => {
                   Open Source Marketing Tool
                 </motion.p>
               </div>
-              <div className="absolute flex w-full justify-end desktop:right-[0.5%] right-[2%] tablet:top-[40px] top-[80px]">
+              <div className="absolute flex w-full justify-end desktop:right-[0.5%] right-[2%] tablet:top-[40px] top-20">
                 <div className="bg-yellow-default desktop:w-[600px] desktop:h-[600px] tablet:w-[480px] tablet:h-[480px] w-[200px] h-[200px] rounded-full border-white border-solid border-4 z-50">
                   <div className="flex justify-center w-full drop-shadow-md">
                     <motion.div
@@ -154,10 +152,10 @@ const MarketingAI = () => {
                         delay: 0.6,
                         ease: [0, 0.71, 0.2, 1.0],
                       }}
-                      className="absolute desktop:pr-[300px] tablet:pr-[180px] desktop:pt-[80px] tablet:pt-[120px] pt-[60px] pr-[40px]"
+                      className="absolute desktop:pr-[300px] tablet:pr-[180px] desktop:pt-[80px] tablet:pt-[120px] pt-[60px] pr-10"
                     >
                       <Image
-                        className="desktop:w-[280px] tablet:w-[200px] w-[80px]"
+                        className="desktop:w-[280px] tablet:w-[200px] w-20"
                         src={poster1}
                         draggable={false}
                         alt="poster1"
@@ -204,7 +202,7 @@ const MarketingAI = () => {
                     duration: 10,
                     ease: "linear",
                   }}
-                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-[80px]"
+                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-20"
                 ></motion.div>
                 <motion.div
                   animate={{
@@ -217,7 +215,7 @@ const MarketingAI = () => {
                     delay: -2,
                     ease: "linear",
                   }}
-                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-[80px] "
+                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-20"
                 ></motion.div>
                 <motion.div
                   animate={{
@@ -230,7 +228,7 @@ const MarketingAI = () => {
                     delay: -4,
                     ease: "linear",
                   }}
-                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-[80px] "
+                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-20"
                 ></motion.div>
                 <motion.div
                   animate={{
@@ -243,7 +241,7 @@ const MarketingAI = () => {
                     delay: -6,
                     ease: "linear",
                   }}
-                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-[80px] "
+                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-20"
                 ></motion.div>
                 <motion.div
                   animate={{
@@ -256,7 +254,7 @@ const MarketingAI = () => {
                     delay: -8,
                     ease: "linear",
                   }}
-                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-[80px] "
+                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-20"
                 ></motion.div>
                 <motion.div
                   animate={{
@@ -269,7 +267,7 @@ const MarketingAI = () => {
                     delay: -10,
                     ease: "linear",
                   }}
-                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-[80px]"
+                  className="z-30 absolute bg-yellow-default w-[1920px] tablet:h-[200px] h-20"
                 ></motion.div>
               </motion.div>
             </div>
@@ -286,11 +284,7 @@ const MarketingAI = () => {
         {isFetching && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
-              <ReactLoading
-                type={"spinningBubbles"}
-                height={"5%"}
-                width={"5%"}
-              />
+              <Spinner size="lg" color="white" />
             </div>
           </header>
         )}
@@ -335,7 +329,7 @@ const MarketingAI = () => {
             </div>
           </div>
           <div className="flex justify-center py-[4%]">
-            <div className="w-[500px] h-[2px] bg-white" />
+            <div className="w-[500px] h-0.5 bg-white" />
           </div>
         </main>
         <Footer />

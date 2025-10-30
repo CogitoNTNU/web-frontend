@@ -1,14 +1,17 @@
 "use client";
-import ProjectNavbar from "../../components/Navbar/ArticleNavbar";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { useEffect } from "react";
+
+"use client";
+import ProjectNavbar from "../../../components/Navbar/ArticleNavbar";
+import { motion, useScroll, useSpring } from "motion/react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaChevronDown } from "react-icons/fa";
 import Link from "next/link";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
-import ProjectFooter from "../../components/Footer/ArticleFooter";
-import { articles } from "../../data/articles";
+import ProjectFooter from "../../../components/Footer/ArticleFooter";
+import { articles } from "../../../data/articles";
+import { ArticleType } from "../../../lib/types";
 
 const ReadMoreButton = () => {
   function scrollDown() {
@@ -46,7 +49,7 @@ const GithubButton = ({ link }: { link: string }) => {
       </div>
       <Link
         href={link}
-        className="absolute inset-[2px] rounded-3xl flex gap-4 justify-center items-center bg-[#0a0a0a] z-10"
+        className="absolute inset-0.5 rounded-3xl flex gap-4 justify-center items-center bg-[#0a0a0a] z-10"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -58,11 +61,30 @@ const GithubButton = ({ link }: { link: string }) => {
 };
 
 const Landing = () => {
+  type RandomValue = { x: string; duration: number };
+  const [randomValues] = useState<RandomValue[]>(() =>
+    Array.from({ length: 9 }).map(() => ({
+      x: `${Math.random() * 100}%`,
+      duration: 15 + Math.random() * 10,
+    }))
+  );
+
   const articleData = articles.find((a) => a.articleId === "sudokusolver");
-  const title = articleData.landingPage.title;
-  const description = articleData.landingPage.description;
+
+  if (!articleData) {
+    return <div className="text-white">Article data not found</div>;
+  }
+
+  const typedArticleData = articleData as ArticleType;
+
+  const title = typedArticleData.landingPage.title;
+
+  const description = typedArticleData.landingPage.description;
+
   const github =
-    articleData.github || "https://github.com/CogitoNTNU/SudokuSolver";
+    typedArticleData.github || "https://github.com/CogitoNTNU/SudokuSolver";
+
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-linear-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e]">
@@ -72,11 +94,11 @@ const Landing = () => {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-            repeating-linear-gradient(0deg, transparent, transparent 35px, #4ECDC4 35px, #4ECDC4 36px),
-            repeating-linear-gradient(90deg, transparent, transparent 35px, #4ECDC4 35px, #4ECDC4 36px),
-            repeating-linear-gradient(0deg, transparent, transparent 105px, #FF6B6B 105px, #FF6B6B 107px),
-            repeating-linear-gradient(90deg, transparent, transparent 105px, #FF6B6B 105px, #FF6B6B 107px)
-          `,
+              repeating-linear-gradient(0deg, transparent, transparent 35px, #4ECDC4 35px, #4ECDC4 36px),
+              repeating-linear-gradient(90deg, transparent, transparent 35px, #4ECDC4 35px, #4ECDC4 36px),
+              repeating-linear-gradient(0deg, transparent, transparent 105px, #FF6B6B 105px, #FF6B6B 107px),
+              repeating-linear-gradient(90deg, transparent, transparent 105px, #FF6B6B 105px, #FF6B6B 107px)
+            `,
           }}
         />
       </div>
@@ -85,12 +107,12 @@ const Landing = () => {
         <div className="max-w-5xl w-full">
           {/* Floating numbers animation */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => (
+            {randomValues.map((value, i) => (
               <motion.div
                 key={i}
                 className="absolute text-6xl font-bold text-[#4ECDC4] opacity-20"
                 initial={{
-                  x: `${Math.random() * 100}%`,
+                  x: value.x,
                   y: -100,
                 }}
                 animate={{
@@ -101,13 +123,13 @@ const Landing = () => {
                   rotate: 360,
                 }}
                 transition={{
-                  duration: 15 + Math.random() * 10,
+                  duration: value.duration,
                   repeat: Infinity,
                   delay: i * 2,
                   ease: "linear",
                 }}
               >
-                {num}
+                {numbers[i]}
               </motion.div>
             ))}
           </div>
@@ -169,6 +191,9 @@ const Landing = () => {
 
 const Description = () => {
   const articleData = articles.find((a) => a.articleId === "sudokusolver");
+  if (!articleData) {
+    return <div className="text-white">Article data not found</div>;
+  }
   const description = articleData.descriptionPage.description;
   const funFacts = articleData.descriptionPage.funFacts;
   const technologies = articleData.descriptionPage.technologies;
@@ -372,7 +397,7 @@ const Results = () => {
             transition={{ duration: 0.8, type: "spring" }}
             className="flex justify-center"
           >
-            <div className="relative w-full max-w-lg aspect-9/16 rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] p-[2px]">
+            <div className="relative w-full max-w-lg aspect-9/16 rounded-3xl overflow-hidden shadow-2xl border-4 border-gradient-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] p-0.5">
               <div className="absolute inset-0 bg-linear-to-r from-[#FF6B6B] via-[#4ECDC4] to-[#45B7D1] animate-gradient opacity-50" />
               <div className="relative rounded-3xl overflow-hidden bg-black">
                 <video
@@ -542,6 +567,9 @@ const TeamMember = ({
 
 const Team = () => {
   const articleData = articles.find((a) => a.articleId === "sudokusolver");
+  if (!articleData) {
+    return <div className="text-white">Article data not found</div>;
+  }
   const teamData = articleData.teamPage.team;
 
   // Map team data from articles with custom images
@@ -623,7 +651,6 @@ const Team = () => {
 };
 
 const SudokuSolver = () => {
-  const articleData = articles.find((a) => a.articleId === "sudokusolver");
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -637,6 +664,11 @@ const SudokuSolver = () => {
       document.documentElement.classList.remove("snap-y", "snap-mandatory");
     };
   }, []);
+
+  const articleData = articles.find((a) => a.articleId === "sudokusolver");
+  if (!articleData) {
+    return <div className="text-white">Article data not found</div>;
+  }
 
   return (
     <>

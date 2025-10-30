@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface ProjectNavbarProps {
   semester: string;

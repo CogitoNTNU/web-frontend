@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import { FiChevronRight } from "react-icons/fi";
 
 interface FieldProps {
@@ -52,27 +52,14 @@ const Field = ({
     }
   };
 
-  const [textRed, setTextRed] = useState<boolean>(false);
-
-  const setError = useCallback(() => {
-    if (errorArray !== null) {
-      if (errorArray.includes(id)) {
-        setTextRed(true);
-      }
-    }
-  }, [errorArray, id]);
-
-  useEffect(() => {
-    setTextRed(false);
-    setError();
-  }, [errorArray, setError]);
+  const hasError = Boolean(id && errorArray?.includes(id));
 
   return (
     <>
       <div className="my-[5px]">
         {label && (
           <label
-            className={`${textRed ? "text-pink-default" : "text-black-dark"} font-medium`}
+            className={`${hasError ? "text-pink-default" : "text-black-dark"} font-medium`}
           >
             {label}
           </label>
@@ -110,7 +97,7 @@ const Field = ({
         />
       )}
 
-      {activeButton && (
+      {activeButton && onClick && (
         <button
           onClick={() => onClick()}
           className="bg-white rounded-md tablet:px-6 px-4 group"

@@ -1,13 +1,14 @@
-import Head from "next/head";
+"use client";
+
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
-import { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
-import Particles from "react-tsparticles";
+import { useEffect, useState } from "react";
+import type { Engine } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { Glow, GlowCapture } from "@codaworks/react-glow";
 import TextButton from "../../components/Buttons/TextButton";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface HomeMenuProps {
   toggleSchedule: () => void;
@@ -30,7 +31,7 @@ const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
             <span className="font-medium">YOU</span> ARE{" "}
             <span className="font-medium">INVITED</span>
           </p>
-          <div className="w-full h-[2px] glow:bg-white" />
+          <div className="w-full h-0.5 glow:bg-white" />
           <p className="pt-2 text-gray tracking-wider text-[19px] glow:text-white">
             READY TO SEE NTNU’S TOP AI TALENT IN ACTION?
           </p>
@@ -54,7 +55,7 @@ const HomeMenu = ({ toggleSchedule }: HomeMenuProps) => {
               <span className="font-medium">YOU</span> ARE{" "}
               <span className="font-medium">INVITED</span>
             </p>
-            <div className="w-full h-[2px] bg-white" />
+            <div className="w-full h-0.5 bg-white" />
             <p className="pt-2 text-gray tracking-wider text-[11px] text-white">
               READY TO SEE NTNU’S TOP AI TALENT IN ACTION?
             </p>
@@ -95,7 +96,7 @@ const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
           THE <span className="font-regular">SCHEDULE</span>
         </p>
       </motion.div>
-      <div className="w-full h-[2px] bg-white mb-4" />
+      <div className="w-full h-0.5 bg-white mb-4" />
       <div className="md:pb-0 pb-[200px]">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
@@ -115,7 +116,7 @@ const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
                 18:15 Pause <br /> 18:15 - 18:25 TrainingAI <br /> 18:30 - 18:40
                 TetrisAI
               </p>
-              <div className="md:h-[240px] h-[100px] w-[2px] mx-8 bg-white glow:text-blue-light" />
+              <div className="md:h-60 h-[100px] w-0.5 mx-8 bg-white glow:text-blue-light" />
               <p className="text-white leading-[35px] glow:text-blue-light/50">
                 18:45 - 18:55 DeepTactics <br /> 18:55 - 19:40 Food <br /> 19:40
                 - 19:50 WePost <br /> 19:55 - 20:05 Cogitron <br /> 20:10 -
@@ -131,8 +132,12 @@ const Schedule = ({ toggleSchedule }: HomeMenuProps) => {
 
 const Home = () => {
   const [showSchedule, setShowSchedule] = useState<boolean>(false);
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine: Engine) => {
+      await loadSlim(engine);
+    }).then(() => setReady(true));
   }, []);
 
   useEffect(() => {
@@ -149,14 +154,11 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title>Project Presentations Event - Cogito NTNU</title>
-      </Head>
       <main className="w-screen h-screen bg-black-dark overflow-hidden">
         <div className="md:block hidden">
           <div className="absolute">
             <Image
-              className="tablet:w-[90px] w-[80px]"
+              className="tablet:w-[90px] w-20"
               src="/.svg"
               alt="logo"
               width={80}
@@ -169,71 +171,71 @@ const Home = () => {
             </video>
           </div>
           <div className="absolute w-full h-full">
-            <Particles
-              className="absolute top-[200px]"
-              id="tsparticles"
-              init={particlesInit}
-              options={{
-                fpsLimit: 120,
-                interactivity: {
-                  events: {
-                    onHover: {
+            {ready && (
+              <Particles
+                className="absolute top-[200px]"
+                id="tsparticles"
+                options={{
+                  fpsLimit: 120,
+                  interactivity: {
+                    events: {
+                      onHover: {
+                        enable: true,
+                        mode: "repulse",
+                      },
+                      resize: { enable: true },
+                    },
+                    modes: {
+                      push: {
+                        quantity: 2,
+                      },
+                      repulse: {
+                        distance: 5,
+                        duration: 0.2,
+                      },
+                    },
+                  },
+                  particles: {
+                    color: {
+                      value: "#ffffff",
+                    },
+                    links: {
+                      color: "#ffffff",
+                      distance: 200,
                       enable: true,
-                      mode: "repulse",
+                      opacity: 0.35,
+                      width: 1.5,
                     },
-                    resize: true,
-                  },
-                  modes: {
-                    push: {
-                      quantity: 2,
-                    },
-                    repulse: {
-                      distance: 5,
-                      duration: 0.2,
-                    },
-                  },
-                },
-                particles: {
-                  color: {
-                    value: "#ffffff",
-                  },
-                  links: {
-                    color: "#ffffff",
-                    distance: 200,
-                    enable: true,
-                    opacity: 0.35,
-                    width: 1.5,
-                  },
-                  move: {
-                    direction: "top",
-                    enable: true,
-                    outModes: {
-                      default: "bounce",
-                    },
-                    random: true,
-                    speed: 1.5,
-                    straight: true,
-                  },
-                  number: {
-                    density: {
+                    move: {
+                      direction: "top",
                       enable: true,
-                      area: 200,
+                      outModes: {
+                        default: "bounce",
+                      },
+                      random: true,
+                      speed: 1.5,
+                      straight: true,
                     },
-                    value: 40,
+                    number: {
+                      density: {
+                        enable: true,
+                      },
+                      value: 40,
+                    },
+                    opacity: {
+                      value: 0.2,
+                    },
+                    shape: {
+                      type: "",
+                    },
+                    size: {
+                      value: { min: 1, max: 2 },
+                    },
                   },
-                  opacity: {
-                    value: 0.2,
-                  },
-                  shape: {
-                    type: "",
-                  },
-                  size: {
-                    value: { min: 1, max: 2 },
-                  },
-                },
-                detectRetina: true,
-              }}
-            />
+                  detectRetina: true,
+                }}
+              />
+            )}
             <motion.div
               initial={{ opacity: 0 }}
               transition={{

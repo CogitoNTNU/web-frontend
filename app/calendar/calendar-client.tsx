@@ -1,22 +1,18 @@
 "use client";
 
-import Head from "next/head";
-import { motion } from "framer-motion";
-import EventCard from "../components/Cards/EventCard";
-// import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
-import { hardcodedEvents } from "../data/events";
-import Footer from "../components/Footer/Footer";
-// import { applicationEvent2025, hardcodedEvents } from "../data/events";
-import Navbar from "../components/Navbar/Navbar";
+import { motion } from "motion/react";
+import EventCard from "../../components/Cards/EventCard";
+// import ApplicationProcessCard from "../../components/Cards/ApplicationProcessCard";
+import { hardcodedEvents } from "../../data/events";
+import Footer from "../../components/Footer/Footer";
+// import { applicationEvent2025, hardcodedEvents } from "../../data/events";
+import Navbar from "../../components/Navbar/Navbar";
 
-const Calendar = () => {
+export default function CalendarClient() {
   const eventData = hardcodedEvents;
 
   return (
     <>
-      <Head>
-        <title>Kalender - Cogito NTNU</title>
-      </Head>
       <Navbar page="calendar" />
       <motion.main
         initial={{ opacity: 0, y: 100 }}
@@ -82,6 +78,4 @@ const Calendar = () => {
       <Footer />
     </>
   );
-};
-
-export default Calendar;
+}

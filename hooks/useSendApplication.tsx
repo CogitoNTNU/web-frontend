@@ -12,7 +12,16 @@ const sendApplication = async (formData: FormData) => {
 export const useSendApplication = ({ setErrorArray }: sendApplicationProps) => {
   return useMutation({
     mutationFn: sendApplication,
-    onError: (error: AxiosError) =>
-      setErrorArray(Object.keys(error.response.data)),
+    onError: (error: AxiosError) => {
+      if (
+        error.response &&
+        typeof error.response.data === "object" &&
+        error.response.data !== null
+      ) {
+        setErrorArray(Object.keys(error.response.data));
+      } else {
+        setErrorArray(["An unexpected error occurred"]);
+      }
+    },
   });
 };

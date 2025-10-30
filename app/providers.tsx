@@ -9,9 +9,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React, { useState } from "react";
 import { ParticlesComponent } from "./components/particles";
 
-interface ProvidersProps {
-  children: React.ReactNode;
-}
+type ProvidersProps = React.PropsWithChildren;
 
 export function Providers({ children }: ProvidersProps) {
   const [queryClient] = useState(

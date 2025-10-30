@@ -1,10 +1,9 @@
-import Head from "next/head";
 import Image from "next/image";
-import Footer from "../components/Footer/Footer";
-import { ProjectType } from "../lib/types";
-import { CogitoProjects } from "../data/projects";
-import Project from "../components/Projects/Project";
-import Navbar from "../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+import { ProjectType } from "../../lib/types";
+import { CogitoProjects } from "../../data/projects";
+import Project from "../../components/Projects/Project";
+import Navbar from "../../components/Navbar/Navbar";
 import Link from "next/link";
 
 interface ButtonProps {
@@ -94,9 +93,6 @@ const ProjectCarousel = () => (
 const Projects = () => {
   return (
     <div className="h-fit overscroll-contain animate-toblack">
-      <Head>
-        <title>Prosjekter - Cogito NTNU</title>
-      </Head>
       <Navbar page="projects" />
       <main className="h-fit w-full pt-44 justify-center items-center flex-col px-20">
         <ProjectCarousel />

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Icon from "../Icons/Icon";
 import Image from "next/image";
 import { isSafari } from "react-device-detect";
@@ -63,7 +63,7 @@ const Member = ({
               </div>
             </div>
             <Image
-              loader={imageURL ? imageLoader : null}
+              loader={imageURL ? imageLoader : undefined}
               className="object-cover w-full h-full rounded-3xl transition-transform transform group-hover:scale-105 ease-in"
               src={imageURL ? imageURL : "/Team/NoImage.svg"}
               alt="image"
@@ -76,7 +76,7 @@ const Member = ({
             <div className="bg-gray-lighter w-[250px] h-[250px] rounded-t-3xl overflow-hidden">
               <div className="z-40 absolute w-full h-full justify-end"></div>
               <Image
-                loader={imageURL ? imageLoader : null}
+                loader={imageURL ? imageLoader : undefined}
                 className="object-cover w-full h-[265px]"
                 src={imageURL ? imageURL : "/Team/NoImage.svg"}
                 alt="image"

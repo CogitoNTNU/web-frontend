@@ -1,21 +1,22 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
-import Field from "../components/Fields/Field";
-import Footer from "../components/Footer/Footer";
-import Head from "next/head";
-import Button from "../components/Buttons/Button";
-import { motion } from "framer-motion";
-import { useSendApplication } from "../hooks/useSendApplication";
-import ProjectModal from "../components/Projects/ProjectModal";
-import ProjectCard from "../components/Projects/ProjectCard";
-import { ProjectApply } from "../lib/types";
-import { projectsApply } from "../data/projects";
-import Navbar from "../components/Navbar/Navbar";
+import Field from "../../components/Fields/Field";
+import Footer from "../../components/Footer/Footer";
+import Button from "../../components/Buttons/Button";
+import { motion } from "motion/react";
+import { useSendApplication } from "../../hooks/useSendApplication";
+import ProjectModal from "../../components/Projects/ProjectModal";
+import ProjectCard from "../../components/Projects/ProjectCard";
+import { ProjectApply } from "../../lib/types";
+import { projectsApply } from "../../data/projects";
+import Navbar from "../../components/Navbar/Navbar";
 
 type TabKey = "medlem" | "verv";
 
-const Apply = () => {
+export default function ApplyClient() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
     null
@@ -36,9 +37,6 @@ const Apply = () => {
 
   return (
     <>
-      <Head>
-        <title>Meld deg på - Cogito NTNU</title>
-      </Head>
       <Navbar page="" />
       <motion.main
         initial={{ opacity: 0, y: 100 }}
@@ -107,7 +105,7 @@ const Apply = () => {
       <Footer />
     </>
   );
-};
+}
 
 const Due = () => {
   return (
@@ -513,5 +511,3 @@ const ThankYou = () => (
     </div>
   </div>
 );
-
-export default Apply;
