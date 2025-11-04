@@ -78,7 +78,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/serinaerzengin",
       linkedin: "https://www.linkedin.com/in/serina-erzengin-7b9734260/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/serina.jpeg",
     },
     {
       name: "Folke Jernbert",
@@ -99,7 +99,7 @@ const TV2xCogito = () => {
       role: "Medlem",
       github: "https://github.com/sannejamila",
       linkedin: "https://www.linkedin.com/in/sannejamila/",
-      image: "/Projects/Articles/tv2xcogito/default.png",
+      image: "/Projects/Articles/tv2xcogito/sanne.jpeg",
     },
   ];
 
