@@ -81,7 +81,7 @@ const Field = ({
 
       {type == "text" && (
         <input
-          className="bg-white w-full tablet:h-[50px] h-[30px] outline-none border-none border-transparent rounded-md px-4 "
+          className="bg-white w-full h-[50px] outline-none border-none border-transparent rounded-md px-4 "
           type="text"
           value={value}
           onChange={handleChange}
@@ -92,7 +92,7 @@ const Field = ({
 
       {type == "numbers" && (
         <input
-          className="bg-white w-full tablet:h-[50px] h-[30px] outline-none border-none border-transparent rounded-md px-4"
+          className="bg-white w-full h-[50px] outline-none border-none border-transparent rounded-md px-4"
           type="text"
           inputMode="numeric"
           value={value}

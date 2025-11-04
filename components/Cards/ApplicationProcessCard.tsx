@@ -12,7 +12,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = ({
   applicationProcessData,
 }) => {
   return (
-    <Card>
+    <Card className="border border-pink-default">
       <div className="w-full mb-5 flex justify-between phone:flex-row flex-col text-white">
         <h2 className="phone:w-[50%] w-full phone:text-2xl text-lg font-bold flex items-center gap-4">
           {applicationProcessData.pinned && (
@@ -58,7 +58,7 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = ({
       </ol>
       <div className="w-full flex justify-center">
         <Link href={"/apply"}>
-          <Button text="Søk Opptak" px={"8"} py={"4"} color={"pink"} />
+          <Button text="Søk Opptak" px={"8"} color={"pink"} />
         </Link>
       </div>
     </Card>

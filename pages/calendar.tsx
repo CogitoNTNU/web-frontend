@@ -3,9 +3,10 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
 import EventCard from "../components/Cards/EventCard";
-import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
+// import ApplicationProcessCard from "../components/Cards/ApplicationProcessCard";
+import { hardcodedEvents } from "../data/events";
 import Footer from "../components/Footer/Footer";
-import { applicationEvent2025, hardcodedEvents } from "../data/events";
+// import { applicationEvent2025, hardcodedEvents } from "../data/events";
 import Navbar from "../components/Navbar/Navbar";
 
 const Calendar = () => {
@@ -32,9 +33,9 @@ const Calendar = () => {
             Kommende hendelser
           </p>
           <div className="flex flex-wrap justify-center xl:justify-start gap-12">
-            <ApplicationProcessCard
+            {/* <ApplicationProcessCard
               applicationProcessData={applicationEvent2025}
-            />
+            /> */}
             {eventData
               .filter((event) => event.date > new Date())
               .map((event, index) => (
@@ -49,7 +50,7 @@ const Calendar = () => {
                   image={event.image}
                   link={event.link}
                   pinned={event.pinned}
-                  openForAll={event.openForAll}
+                  bannerType={event.bannerType}
                 />
               ))}
           </div>
@@ -72,6 +73,7 @@ const Calendar = () => {
                   image={event.image}
                   link={event.link}
                   pinned={event.pinned}
+                  bannerType={event.bannerType}
                 />
               ))}
           </div>

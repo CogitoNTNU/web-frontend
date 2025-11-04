@@ -117,6 +117,14 @@ export const CogitoProjects: ProjectType[] = [
     url: "/projects/articles/hypeai",
   },
   {
+    name: "Doctor AI",
+    github: "https://github.com/CogitoNTNU/Doctor-AI",
+    img: "/Projects/Articles/doctor-ai/doctor-ai.png",
+    playable: false,
+    released: true,
+    url: "/projects/articles/doctor-ai",
+  },
+  {
     name: "Diffusion Model",
     github: "https://github.com/CogitoNTNU/DiffusionModel",
     img: "/Projects/Articles/diffusion-model/diffusion-model.png",
@@ -128,66 +136,80 @@ export const CogitoProjects: ProjectType[] = [
 
 export const projectsApply: ProjectApply[] = [
   {
-    name: "Infor x Cogito",
+    name: "Deeptactics - Trackmania",
     description:
-      "Infor er en stor internasjonal bedrift som tilbyr tjenester og produkter til bedrifter innenfor Enterprise Resource Planning (ERP). De er storforbuker av skytjenester, og er faktisk AWS sin nest største forbuker/kunde. Med rådgivning og ressurser fra Infor skal vi utvikle ulike AI agenter som kan hjelpe Infor med å forbedre deres tjenester og produkter. Dette er en unik mulighet til å jobbe sammen med en stor internasjonal bedrift og få erfaring med å utvikle AI-løsninger for real-world problemstillinger i industrien. ",
-    image: "infor.png",
-    leaders: ["Thomas Sørensen"],
+      "Er du dårlig i Trackmania? Det er vi også. Derfor skal vi bruke reinforcement learning (RL) til å oppnå overmenneskelig nivå i spillet! Målet med prosjektet er å utvikle en KI som lærer å mestre Trackmania ved å utforske og tilpasse seg miljøet. I løpet av prosjektet skal vi teste flere forskjellige metoder innen RL for å finne ut hva som fungerer best, blant annet PPO og varianter av DQN.",
+    image: "trackmania.png",
+    leaders: ["Brage Kvamme", "Ludvig Øvrevik"],
   },
   {
-    name: "TV2 x Cogito",
+    name: "Geoguessr-AI",
     description:
-      "Prosjektet utforsker hvordan kunstig intelligens kan hjelpe TV2.no med å ta bedre redaksjonelle valg ved å utnytte store mengder data om leseratferd og artikkelprestasjon. Målet er å bruke maskinlæring for å hjelpe TV2 med å analysere artikkeldata for å gi nyttige innsikter. Dette prosjektet gir deg muligheten til å være med på å forme fremtidens journalistikk og få industrirelevant erfaring med AI.",
-    image: "cogitoxtv2.png",
-    leaders: ["Mina Al-Dolaimi"],
+      "Vi skal bygge en AI-modell som kan spille Geoguessr bedre enn Rainbolt (en av verdens beste spillere)! Bli med om du ønsker å lære mer om klassiske teknikker og dyp læring innen Computer Vision, vi eksperimenterer oss sammen frem til den beste løsningsmetoden! Prosjektet har tre ledere: Jens og Daniel som går 5. klasse Datateknologi og Magnus som går 5. klasse Indøk Data. Vel møtt!",
+    image: "geoguessrai.png",
+    leaders: ["Daniel N Hansen", "Jens Martin Norheim Berget", "Magnus Bryne"],
+  },
+  {
+    name: "MatchNet",
+    description:
+      "Bygge en nevralnett struktur som tar en dating profil (bilder og tekst) og gjennom supervised trening, generere text output i form av 'opening lines'. Målet er å klare å konstruere ett sammenhengende nettverk med egenskapen til å evaluere over flere modaliteter, i dette prosjektet to, tekst og bilder.  Hoved fokuset vil ikke være på datahenting eller resultater, men for medlemmene til å skaffe en større forståelse av nettverksarkitekturer. Dette vil være et krevende prosjekt som sikter på oppmøte tirsdager og torsdager. Anbefaler å ha noe erfaring med AI",
+    image: "matchnet.jpg",
+    leaders: ["Kristian Carlenius"],
+  },
+  {
+    name: "Levende Maleri",
+    description:
+      "Husker du de magiske maleriene i Harry Potter som beveger seg og snakker til forbipasserende? Vi gjør det til virkelighet, rett i en ramme på veggen. Pust liv i Mona Lisa eller et hvilket som helst portrett. Hun kan se deg i øynene, lytte, og svare med en naturlig stemme og livaktige uttrykk. For tre år siden laget Cogito et lignende prosjekt som ble en stor suksess, og til og med vist til statsministeren. Nå, med den nyeste teknologien innen lav-latens stemmegjenkjenning, store språkmodeller og videogenerering, kan du bli med og gjøre malerier levende.",
+    image: "living-painting.png",
+    leaders: ["Sveinung Myhre"],
+  },
+  {
+    name: "Grip",
+    description:
+      "The Cogito Bionic Hand Project aims to design, prototype, and test a functional robotic hand controlled by a user’s muscle activity and/or neural signals. Using non-invasive sensors (such as surface EMG), the system will interpret the user’s intent and translate it into precise hand movements.",
+    image: "grip.png",
+    leaders: ["Tobias Fremming"],
+  },
+  {
+    name: "RegulAId",
+    description:
+      "Regler og lover er lange, kjedelige og vanskelige å forstå, men konsekvensene av å feile er enorme. I RegulAId bygger vi AI-agenter som gjør dette arbeidet enklere, raskere og mye morsommere. Vi kommer til å eksperimentere med moderne AI-teknologier som kan gi agenter bedre hukommelse, resonnement, bruk av verktøy og fleksibilitet. Det kan for eksempel være: MCP, ACP, RAG, LangChain, LangGrap og PocketFlow. Bli med!!",
+    image: "regulaid.png",
+    leaders: ["Serina Erzengin"],
   },
   {
     name: "A* x Cogitron",
     description:
       "Cogitron er et ambisiøst langtidsprosjekt som har som mål å utvikle en robot i stand til å navigere og forstå omgivelsene sine helt på egenhånd. Prosjektet kombinerer et bredt spekter av AI-teknologier som Datasyn, Sensor Fusion, beslutningstaking og læring i sanntid. Dette er en fantastisk mulighet til å bruke all teorien man har lært på studiet til å gi et AI-system en fysisk kropp, slik at det kan operere autonomt i den virkelige verden. Cogitron skal kunne tilpasse seg ukjente miljøer og utføre komplekse oppgaver med høy grad av presisjon og effektivitet.",
     image: "astar.png",
-    leaders: ["Vetle Dahl", "Christian Gynnild"],
+    leaders: ["Vetle R. D", "Christian Gynnild"],
   },
   {
-    name: "MuZero",
+    name: "First Steps",
     description:
-      "Vi skal utvikle et system inspirert av MuZero, utviklet av Google DeepMind. MuZero kombinerer avanserte teknikker innenfor dyp Reinforcement Learning og planlegging, noe som gjør det i stand til å lære komplekse oppgaver fra bunnen av. Ved utelukkende å prosessere bilder fra et spillmiljø lærer systemet seg å mestre spillet gjennom kontinuerlig å spille mot seg selv. Prosjektet vårt vil undersøke hvordan denne teknologien kan anvendes på ulike områder og samtidig utvide vår egen forståelse av autonom læring.",
-    image: "deeptactics.webp",
-    leaders: ["Brage Kvamme", "Christian Fredrik Johnsen"],
+      "Har du lyst til å lære en humanoid robot å gå? I dette prosjektet skal vi bruke NVIDIA Isaac Sim og reinforcement learning (RL) for å trene Zeroth-01 fra K-Scale Labs til å ta sine første steg og oppnå grunnleggende balanse. I tillegg åpner prosjektet for å utforske Natural Language Processing (NLP) og Computer Vision (CV) slik at roboten kan tolke omgivelsene sine og kommunisere med mennesker gjennom tale og syn. Målet er å kombinere bevegelse, språk og persepsjon med denne open-sourced roboten!",
+    image: "first-steps.png",
+    leaders: ["Sebastian Riibe Berthelsen"],
   },
   {
-    name: "J.A.R.V.I.S",
+    name: "Audify",
     description:
-      "Just A Rather Very Intelligent System.\nWe’re building an AI assistant inspired by Iron Man's Jarvis, capable of managing and solving complex tasks autonomously. Users should be able to converse with Jarvis naturally. Similar to Jarvis in the movies, or the ChatGPT4o demo. \n\n Technologies and Tools - Programming Languages & Tools: Python, Docker, Puppeteer, REST APIs. - Speech Processing: Elevenlabs, Whisper, Mycroft 3. - LLMs: ChatGPT, Groq, Llama-3.1. - Data Retrieval: RAG and vector databases. - UI/UX Design - Software systems architecture.",
-    image: "jarvis.webp",
-    leaders: ["William Schmidt"],
-  },
-  // {
-  //   name: "Teknologiporten x Cogito",
-  //   description:
-  //     "Ved hjelp av maskinlæring skal Cogito i samarbeid med Teknologiporten predikere hva som kjennetegner de beste Bedriftspresentasjonene. Dette skal gjøres ved å analysere data fra tidligere presentasjoner, og dermed grave oss frem til de avgjørende faktorene som gjør en presentasjon god. Dette prosjektet er i skjæringspunktet mellom industri og studentfrivilligheten, og gir deg muligheten til å jobbe med reelle data og få erfaring med å bruke AI til å løse praktiske problemer.",
-  //   image: "teknologiporten.png",
-  //   leaders: [" "],
-  // },
-  {
-    name: "Motion",
-    description:
-      "Motion er et prosjekt som bruker evolusjonære algoritmer for å lære virtuelle skapninger å bevege seg i en 3D-verden. Gjennom kontinuerlig tilpasning lærer algoritmene seg å navigere med ulike kroppskonfigurasjoner og optimalisere bevegelsesmønstre. Prosjektet kombinerer maskinlæring og kunstig intelligens for å simulere hvordan maskiner kan utvikle seg og mestre komplekse bevegelser over tid. Oppsummert: AI-agentene får kropper og må lære seg å bruke dem på best mulig måte.",
-    image: "motion.webp",
-    leaders: ["Tobias Fremming"],
+      "Har du noen gang ønsket å høre på pensumet ditt i stedet for å lese det? Kanskje du vil multitaske på treningen og samtidig få gjennomgått dagens fagstoff, eller du leter etter favorittboken din som lydbok uten å finne den? Dette prosjektet skal gjøre det mulig! Vi skal utvikle en løsning som automatisk konverterer tekst til lyd, ved å trene en AudioTransformer til å utføre Text-to-Speech (TTS). Brukeren kan hente tekst fra ulike formater, som PDF, Word, Markdown, nettsider eller YouTube-videoer, og systemet vil generere lydboken. Vi har mange kule muligheter med voice cloning, ulike stemmer og lydeffekter som vi kan lage. Bli med!",
+    image: "AudifyLogo.png",
+    leaders: ["Nathania Vijayanti Muliawan"],
   },
   {
-    name: "ChessAR",
+    name: "CogIntro",
     description:
-      "ChessAR er et prosjekt som bruker augmented reality (AR) for å gjøre det enklere å spille sjakk. Ved å bruke AR-briller skal man kunne se de beste trekkene, projisert på sjakkbrettet. Prosjektet kombinerer maskinlæring, embedded, datasyn og ulike AI-algoritmer tilpasset sjakk.",
-    image: "chessar.webp",
-    leaders: ["Simon Sandvik Lee"],
+      "AI er større enn noen gang, og dette kurset gir deg en spennende introduksjon til hva kunstig intelligens egentlig er. Gjennom semesteret skal vi utforske hvordan AI fungerer, og hvordan det kan brukes til alt fra å oppdage kreft til å oppnå toppscore i Flappy Bird. Kurset består av mindre kursøkter/prosjekter som gir deg både praktisk erfaring og et dypere innblikk i hvordan AI er bygd opp. På denne måten får du ikke bare en grunnleggende forståelse av teknologien, men også nyttig kunnskap du kan ta med deg videre , enten du er nysgjerrig på AI i forskning, spill eller hverdagsbruk.",
+    image: "aicrash.png",
+    leaders: ["Maia Austigard", "Mina Aldolaimi"],
   },
   {
     name: "Cogito Web",
     description:
       "Har du lyst til å lære deg moderne webutvikling og hvordan man deployer AI-prosjekter til produksjon? Da er dette prosjektet for deg. Vi skal bygge ut Cogito-nettsiden i en voldsom skala. Dette prosjektet har tre underprosjekter: Cogito Login, Cogito Community og Cogito Prosjekter",
-    image: "cogito.png",
+    image: "web.png",
     leaders: ["Simon Sandvik Lee"],
   },
 ];

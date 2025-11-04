@@ -346,8 +346,7 @@ export const articles: ArticleType[] = [
           name: "Eduard Prokhorikhin",
           role: "Leder",
           github: "https://github.com/Eduard-Prokhorikhin",
-          linkedIn:
-            "https://www.linkedin.com/in/eduard-prokhorikhin-77b0a5330/",
+          linkedIn: "https://www.linkedin.com/in/eduard-prokhorikhin/",
         },
         {
           name: "Øystein Kvandal",
@@ -424,8 +423,7 @@ export const articles: ArticleType[] = [
           name: "Eduard Prokhorikhin",
           role: "Leder",
           github: "https://github.com/Eduard-Prokhorikhin",
-          linkedIn:
-            "https://www.linkedin.com/in/eduard-prokhorikhin-77b0a5330/",
+          linkedIn: "https://www.linkedin.com/in/eduard-prokhorikhin/",
         },
         {
           name: "Einride Osland",
@@ -672,5 +670,76 @@ export const articles: ArticleType[] = [
     semester: "Vår",
     year: 2025,
     github: "https://github.com/CogitoNTNU/chessar",
+  },
+  {
+    articleId: "doctor-ai",
+    landingPage: {
+      title: "Doctor AI",
+      description: "Bruke KI for å diagnostisere sykdommer i røntgenbilder.",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "I Doctor AI-prosjektet kombinerer vi dyp læring og avansert bildebehandling for å analysere medisinske bilder med høy presisjon. Leger bruker ofte betydelig tid på å tolke komplekse røntgen- og MR-bilder, men med datasyn og U-Net-arkitekturen kan mye av dette arbeidet automatiseres. Vi oppnådde en F1-score på 0,957 og en IoU/Jaccard-score på 0,918 i lungesegmentering, og har også gjennomført klassifisering av bryst-røntgenbilder og segmentering av pneumothorax. Denne teknologien har potensial til å redusere arbeidsbelastningen for helsepersonell, gjøre diagnoser raskere og mer presise, og i siste instans redde liv.",
+      funFacts: [
+        "Ved bruk av Transfer Learning kunne vi trene ResNet18 backbone på våre mindre datasett og oppnå høy nøyaktighet.",
+        "Modellene våre er mulig å trene på en vanlig laptop med og uten GPU",
+        "Modellene har rask inferens, noe som gjør dem egnet for sanntidsdiagnostisering.",
+      ],
+      links: [
+        "https://arxiv.org/pdf/1505.04597",
+        "https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation",
+        "https://www.kaggle.com/datasets/tolgadincer/labeled-chest-xray-images",
+        "https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks",
+      ],
+      technologies: [
+        "Python 3",
+        "PyTorch",
+        "Keras + visualkeras",
+        "Matplotlib",
+        "U-NET",
+        "tqdm",
+        "Image Segmentation and classification",
+      ],
+    },
+    resultsPageIsVideo: false,
+    teamPage: {
+      team: [
+        {
+          name: "Vilhjalmur Arnar Vilhjalmsson",
+          role: "Leder",
+          github: "https://github.com/villi02",
+          linkedIn:
+            "https://www.linkedin.com/in/vilhjalmur-arnar-vilhjalmsson/",
+        },
+        {
+          name: "Sveinung Myhre",
+          role: "Leder",
+          github: "https://github.com/svemyh",
+          linkedIn: "https://www.linkedin.com/in/s-myhre/",
+        },
+        {
+          name: "Erik Bohne",
+          role: "Medlem",
+          github: "https://github.com/erikbohne",
+          linkedIn: "https://www.linkedin.com/in/erik-nymo-bohne-25868321a/",
+        },
+        {
+          name: "Joel Constantinos",
+          role: "Medlem",
+          github: "https://github.com/joelconstantinos",
+          linkedIn: "https://www.linkedin.com/in/joel-constantinos-0b1aa5293/",
+        },
+        {
+          name: "Ine Zhao",
+          role: "Medlem",
+          github: "https://github.com/inezhao",
+          linkedIn: "https://www.linkedin.com/in/ine-zhao-0b1aa5293/",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2023,
+    github: "https://github.com/CogitoNTNU/Doctor-AI",
   },
 ];

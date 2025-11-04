@@ -11,6 +11,11 @@ export type MemberType = {
   linkedIn: string;
 };
 
+export type EventBannerType =
+  | "open-walk-in"
+  | "open-registration"
+  | "members-only";
+
 export type EventType = {
   name: string;
   date: Date;
@@ -21,7 +26,7 @@ export type EventType = {
   image?: StaticImageData;
   link?: string;
   pinned?: boolean;
-  openForAll?: boolean;
+  bannerType?: EventBannerType;
 };
 
 export type EventApply = {
@@ -58,6 +63,7 @@ export type ArticleType = {
   articleId: string;
   landingPage: ArticleLandingPage;
   descriptionPage: ArticleDescriptionPage;
+  resultsPageIsVideo?: boolean;
   teamPage: ArticleTeamPage;
   semester: "Høst" | "Vår";
   year: number;
