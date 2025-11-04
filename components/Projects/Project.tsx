@@ -32,11 +32,13 @@ const Project = ({
         >
           {released ? (
             <>
-              <div className="absolute top-4 left-4 group-hover:opacity-100 opacity-0 transition-opacity">
-                <Link href={github}>
-                  <Icon icon="Github" size={"40px"} />
-                </Link>
-              </div>
+              {name !== "TV2 x Cogito" && (
+                <div className="absolute top-4 left-4 group-hover:opacity-100 opacity-0 transition-opacity">
+                  <Link href={github}>
+                    <Icon icon="Github" size={"40px"} />
+                  </Link>
+                </div>
+              )}
               <div className="w-full h-full z-50 flex items-center justify-center">
                 {hybrid ? (
                   // Clean split view for hybrid projects
