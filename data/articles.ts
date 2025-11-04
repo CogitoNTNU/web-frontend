@@ -604,6 +604,74 @@ export const articles: ArticleType[] = [
     github: "https://github.com/CogitoNTNU/DiffusionModel",
   },
   {
+    articleId: "chessar",
+    landingPage: {
+      title: "ChessAR",
+      description:
+        "Hvorfor slite med sjakkstrategi når du kan få synet til en sjakk stormester?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "ChessAR-prosjektet hadde som mål å utvikle AR-briller som kan ta bilder av et sjakkbrett og umiddelbart vise anbefalinger fra en AI-modell som analyserer stillingen. For å få dette til, trengte vi en datasynmodell som kunne gjenkjenne sjakkbrikker og brettet i et kamerabilde, konvertere dette til FEN-notasjon, sende det til sjakkmotoren Stockfish for analyse, og deretter strømme anbefalingene tilbake til brillene. Da vi oppdaget at det ikke fantes eksisterende datasynmodeller som var sterke nok til å møte kravene våre, bygde vi vår egen. Vi tok utgangspunkt i en forhåndstrent YOLO-modell fra COCO-datasettet og finjusterte den på titusenvis av syntetisk genererte bilder av sjakkbrett laget i Unity. Ved å kombinere data-augmentering og transfer learning, trente vi en YOLOv12-modell som deretter ble kombinert med matriseoperasjoner for å oversette gjenkjente brikker til korrekt FEN-notasjon. Resultatet ble en datasynmodell som gjenkjenner sjakkbrikker med 95 % precision og 93 % mAP@50 på testsettet. I tillegg bygde vi en egen server fra bunnen av for å motta bildeinput, kjøre analysen og levere resultatene i sanntid.",
+      funFacts: [
+        "Det ble generert i Unity titallstusen bilder av sjakkbrett for å trene modellen.",
+        "Med Data augmentation og transfer learning klarte vi å trene en datasynmodell som gjenkjenner sjakkbrikker med 95% Precision og 93% mAP@50! på test",
+      ],
+      links: [
+        "https://www.figma.com/deck/NCsHLnrie9BkfOhUIqJ1PC/Minimal-Design-Critique-Presentation?node-id=1-952&t=asmgJP5vGX0sfBkX-1",
+      ],
+      technologies: [
+        "Unity",
+        "C#",
+        "Python 3",
+        "OpenCV",
+        "Pytorch",
+        "YOLOv8",
+        "Ultralytics",
+        "Whishbone",
+        "Stockfish",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Simon Sandvik Lee",
+          role: "Leder",
+          github: "https://github.com/sandviklee",
+          linkedIn: "",
+        },
+        {
+          name: "Alice Zheng",
+          role: "Medlem",
+          github: "https://github.com/A1ice-Z",
+          linkedIn: "",
+        },
+        {
+          name: "Håkon Støren",
+          role: "Medlem",
+          github: "https://github.com/Hako2807",
+          linkedIn: "",
+        },
+        {
+          name: "Jessica Liu",
+          role: "Medlem",
+          github: "https://github.com/JessicaLiu03",
+          linkedIn: "",
+        },
+        {
+          name: "Vetle Støren",
+          role: "Medlem",
+          github: "https://github.com/Vetlets05",
+          linkedIn: "",
+        },
+      ],
+    },
+    semester: "Vår",
+    year: 2025,
+    github: "https://github.com/CogitoNTNU/chessar",
+  },
+  {
     articleId: "doctor-ai",
     landingPage: {
       title: "Doctor AI",
