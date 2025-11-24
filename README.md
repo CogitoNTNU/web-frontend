@@ -47,7 +47,7 @@ git clone https://github.com/CogitoNTNU/web-frontend.git
 2. Change into the directory
 
 ```bash
-cd Cogito-Website
+cd web-frontend
 ```
 
 3. Install dependencies

@@ -2,6 +2,14 @@ import { ProjectApply, ProjectType } from "../lib/types";
 
 export const CogitoProjects: ProjectType[] = [
   {
+    name: "GeoGuessrAI",
+    github: "https://github.com/CogitoNTNU/GeoGuessrAI",
+    img: "/Projects/ProjectLogos/geoguessrai.png",
+    playable: false,
+    released: true,
+    url: "/projects/geoguessrai",
+  },
+  {
     name: "Marketing AI",
     github: "https://github.com/CogitoNTNU/MarketingAI",
     img: "/Projects/Cards/MarketingAI.png",

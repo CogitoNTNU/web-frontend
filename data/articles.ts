@@ -545,6 +545,94 @@ export const articles: ArticleType[] = [
     github: "https://github.com/CogitoNTNU/SudokuSolver",
   },
   {
+    articleId: "geoguessrai",
+    landingPage: {
+      title: "GEOGUESSR AI",
+      description:
+        "Hvordan kan vi bruke datasyn og maskinlæring til å spille GeoGuessr bedre enn mennesker?",
+      isVideo: false,
+    },
+    descriptionPage: {
+      description:
+        "<p>GeoGuessrAI-teamet utviklet en datasyn-basert AI-modell som kan spille det populære geografispillet GeoGuessr! Dette betyr at modellen kan ta inn enten ett bilde, eller 4 bilder fra det samme stedet som utgjør et 360-graders panorama-bilde, og gi ut koordinater for hvor den tror bildet/bildene er fra i verden, eller rettere sagt de 117 landene med Google Street View-dekning. Gruppen samlet inn mer enn 600 000 bilder fra rundt om i verden for å trene opp modellen sin.</p><br /><p>Arkitekturen baserer seg på en forskningsartikkel (lenke nederst) skrevet av noen studenter ved MIT, med noen forenklinger og tilpasninger, samt flere custom løsninger. Modellen bruker blant annet embedding-modellene CLIP fra OpenAI og TinyViT (Tiny Vision Transformer) til å lage en såkalt &quot;geo-embedding&quot;, altså en stor vektor som beskriver et gitt bilde. Denne vektoren mates så inn i et nevralt nettverk som har som oppgave å si hvilken &quot;geocell&quot; den tror at bildet befinner seg i. Vi delte verden opp i mer enn 12 000 geocells - disse kan tenkes på som de omtrentlige kommunegrensene rundt omkring i de aktuelle landene, med enkelte oppdelinger og sammenslåinger for å ha et lignende antall punkter i hver geocell.</p><br /><p>Når modellen så har valgt riktig geocell sammenligner den geo-embedding-vektoren med punktene i den aktuelle geocellen, og velger så ett av punktene (som er punktene fra datasettet det trenes på) å gi ut som svar. Dette betyr at modellen alltid vil gi ut koordinatene til ett av punktene i treningssettet som svar, den kan ikke gi ut vilkårlige koordinater. Det vil si at dette er et klassifiserings-problem (den velger en av de mulige punktene), ikke et regresjonproblem (den gir ut et vilkårlig koordinat). Ifølge MIT-studentene er regresjon et mye vanskeligere problem i dette tilfellet, og vi valgte derfor å stole på dem akkurat her :).</p>",
+      funFacts: [
+        "Den gjennomsnittlige person får en poengsum på 2100 i GeoGuessr med distance på world map."
+      ],
+      links: [
+        "https://github.com/CogitoNTNU/GeoGuessrAI",
+      ],
+      technologies: [
+        "Python",
+        "Torchvision (Pytorch)",
+        "Vision Transformers",
+        "OpenAI CLIP",
+        "TinyVit",
+        "AWS S3",
+      ],
+    },
+    teamPage: {
+      team: [
+        {
+          name: "Daniel Neukirch Hansen",
+          role: "Leder",
+          github: "https://github.com/danielnhansen",
+          linkedIn: "https://www.linkedin.com/in/daniel-neukirch-hansen-475895263/",
+        },
+        {
+          name: "Jens Martin Norheim Berget",
+          role: "Leder",
+          github: "https://github.com/jmnorheim",
+          linkedIn: "https://www.linkedin.com/in/jens-martin-norheim-berget-87560b141/",
+        },
+        {
+          name: "Magnus Vesterøy Bryne",
+          role: "Leder",
+          github: "https://github.com/mvbryne",
+          linkedIn: "https://www.linkedin.com/in/magnus-bryne-0495b2264/",
+        },
+        {
+          name: "Sondre Pettersen",
+          role: "Medlem",
+          github: "https://github.com/sondrpe",
+          linkedIn: "https://www.linkedin.com/in/sondre-pettersenn/",
+        },
+        {
+          name: "Håkon Støren",
+          role: "Medlem",
+          github: "https://github.com/Hako2807",
+          linkedIn: "https://www.linkedin.com/in/h%C3%A5kon-st%C3%B8ren-0b5258322/",
+        },
+        {
+          name: "Vetle Støren",
+          role: "Medlem",
+          github: "https://github.com/Vetlets05",
+          linkedIn: "https://www.linkedin.com/in/vetle-st%C3%B8ren-661259322/",
+        },
+        {
+          name: "Romeo Henriksen",
+          role: "Medlem",
+          github: "https://github.com/RomseBoms",
+          linkedIn: "https://www.linkedin.com/in/romeo-henriksen/",
+        },
+        {
+          name: "Parleen Brar",
+          role: "Medlem",
+          github: "https://github.com/Parleenb",
+          linkedIn: "https://www.linkedin.com/in/parleen-brar-2a5057233/",
+        },
+        {
+          name: "Per Henrik Bergene Holm",
+          role: "Medlem",
+          github: "https://github.com/perhber",
+          linkedIn: "https://www.linkedin.com/in/per-henrik-bergene-holm/",
+        }
+      ],
+    },
+    semester: "Høst",
+    year: 2025,
+    github: "https://github.com/CogitoNTNU/GeoGuessrAI",
+  },
+  {
     articleId: "diffusion-model",
     landingPage: {
       title: "Diffusion Model",
