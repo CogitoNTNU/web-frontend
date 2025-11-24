@@ -637,6 +637,7 @@ const Team = () => {
       "Vetle Støren": "/Projects/Articles/geoguessrai/vetle.jpeg",
       "Parleen Brar": "/Projects/Articles/geoguessrai/parleen.jpeg",
       "Per Henrik Bergene Holm": "/Projects/Articles/geoguessrai/ph.jpeg",
+      "Romeo Henriksen": "/Projects/Articles/geoguessrai/romeo.png",
     };
 
     return {
