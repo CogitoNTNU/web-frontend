@@ -185,11 +185,4 @@ export const projectsApply: ProjectApply[] = [
     image: "rockstar.png",
     leaders: ["Øystein Kvandal"],
   },
-  {
-    name: "Web Team (TRENGER MERE BESKRIVELSE)",
-    description:
-      "Hovedmål: Bygge nettsiden videre, mens vi innfører de nye i både AI og webteknologier. ",
-    image: "web.png",
-    leaders: ["Simon Sandvik Lee"],
-  },
 ];
