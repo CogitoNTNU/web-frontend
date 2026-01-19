@@ -354,7 +354,6 @@ const VervForm = ({ isDue }: VervFormProps) => {
   const [chosenPositions, setChosenPositions] = useState<Array<string>>([]);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
 
-  const formData = new FormData();
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
   const togglePosition = (name: string) => {
@@ -364,19 +363,16 @@ const VervForm = ({ isDue }: VervFormProps) => {
   };
 
   const sendApplication = () => {
-    formData.append("first_name", firstName);
-    formData.append("last_name", lastName);
-    formData.append("email", email);
-    formData.append("phone_number", phone.replaceAll(" ", ""));
-    formData.append("about", about);
+    const data = {
+      FirstName: firstName,
+      LastName: lastName,
+      Email: email,
+      PhoneNumber: phone.replaceAll(" ", ""),
+      Projects: chosenPositions, // array directly, not stringified
+      ApplicationText: about,
+    };
 
-    // IMPORTANT: matches the backend contract
-    // projects_to_join will now carry the selected VERV names (e.g. ["Marketing"])
-    formData.append("projects_to_join", JSON.stringify(chosenPositions));
-
-    // No "lead" for verv
-    formData.append("lead", "false");
-    mutate(formData);
+    mutate(data);
   };
 
   return (
