@@ -22,7 +22,7 @@ const Apply = () => {
   );
 
   const [activeTab, setActiveTab] = useState<TabKey>("medlem");
-  const dueDate = new Date("2026-01-30T23:59:59"); // Application deadline
+  const dueDate = new Date("2026-02-06T23:59:59"); // Application deadline
 
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
@@ -371,6 +371,8 @@ const VervForm = ({ isDue }: VervFormProps) => {
       Projects: chosenPositions, // array directly, not stringified
       ApplicationText: about,
     };
+
+    console.log(data);
 
     mutate(data);
   };
