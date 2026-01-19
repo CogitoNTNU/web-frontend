@@ -22,7 +22,7 @@ const Apply = () => {
   );
 
   const [activeTab, setActiveTab] = useState<TabKey>("medlem");
-  const dueDate = new Date("2026-02-01T23:59:59"); // Application deadline
+  const dueDate = new Date("2026-01-30T23:59:59"); // Application deadline
 
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
@@ -70,7 +70,7 @@ const Apply = () => {
           <div className="tablet:w-[80%] w-[110%] h-fit pb-8 bg-white rounded-b-3xl rounded-tr-3xl z-[60]">
             <div className="phone:flex flex-row w-full justify-between items-center phone:px-8 px-4 pt-8 pb-4">
               <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark">
-                Søknad - Høstsemesteret {new Date().getFullYear()}
+                Søknad - Vårsemesteret {new Date().getFullYear()}
               </p>
               <p className="laptop:text-[20px] text-[16px] text-blue-dark">
                 Frist:{" "}
@@ -165,13 +165,12 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
   const sendApplication = () => {
-    formData.append("first_name", firstName);
-    formData.append("last_name", lastName);
-    formData.append("email", email);
-    formData.append("phone_number", phone.replaceAll(" ", ""));
-    formData.append("about", about);
-    formData.append("projects_to_join", JSON.stringify(chosenProjects));
-    formData.append("lead", lead.toString());
+    formData.append("FirstName", firstName);
+    formData.append("LastName", lastName);
+    formData.append("Email", email);
+    formData.append("PhoneNumber", phone.replaceAll(" ", ""));
+    formData.append("Projects", JSON.stringify(chosenProjects));
+    formData.append("ApplicationText", about);
     mutate(formData);
   };
 
