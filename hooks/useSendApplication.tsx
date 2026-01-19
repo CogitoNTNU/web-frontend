@@ -6,7 +6,10 @@ type sendApplicationProps = {
 };
 
 const sendApplication = async (formData: FormData) => {
-  await axios.post(`${process.env.endpoint}/api/temp-member-application`, formData);
+  await axios.post(
+    `${process.env.endpoint}/api/temp-member-application`,
+    formData
+  );
 };
 
 export const useSendApplication = ({ setErrorArray }: sendApplicationProps) => {
