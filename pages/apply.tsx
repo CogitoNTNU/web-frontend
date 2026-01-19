@@ -22,7 +22,7 @@ const Apply = () => {
   );
 
   const [activeTab, setActiveTab] = useState<TabKey>("medlem");
-  const dueDate = new Date("2025-08-29T23:59:59"); // Application deadline
+  const dueDate = new Date("2026-02-01T23:59:59"); // Application deadline
 
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
@@ -263,7 +263,7 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                 Velg minst 3 prosjekter
               </p>
             </div>
-            <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex h-[32rem] overflow-y-scroll">
+            <div className="tablet:py-4 py-2 w-full tablet:flex-wrap tablet:gap-x-4 flex-wrap flex overflow-y-scroll">
               {projectsApply.map((project) => (
                 <ProjectCard
                   key={project.name}
