@@ -161,17 +161,19 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
   const [lead, setLead] = useState<boolean>(false);
   const [errorArray, setErrorArray] = useState<Array<string>>([]);
   const teamLead = false;
-  const formData = new FormData();
   const { mutate, isSuccess: sent } = useSendApplication({ setErrorArray });
 
   const sendApplication = () => {
-    formData.append("FirstName", firstName);
-    formData.append("LastName", lastName);
-    formData.append("Email", email);
-    formData.append("PhoneNumber", phone.replaceAll(" ", ""));
-    formData.append("Projects", JSON.stringify(chosenProjects));
-    formData.append("ApplicationText", about);
-    mutate(formData);
+    const data = {
+      FirstName: firstName,
+      LastName: lastName,
+      Email: email,
+      PhoneNumber: phone.replaceAll(" ", ""),
+      Projects: chosenProjects, // array directly, not stringified
+      ApplicationText: about,
+    };
+
+    mutate(data);
   };
 
   const toggleProjectSelection = (projectName: string) => {
