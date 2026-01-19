@@ -146,7 +146,7 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "Geoguessr-AI",
     description:
-      "Vi skal bygge en AI-modell som kan spille Geoguessr bedre enn Rainbolt (en av verdens beste spillere)! Bli med om du ønsker å lære mer om klassiske teknikker og dyp læring innen Computer Vision, vi eksperimenterer oss sammen frem til den beste løsningsmetoden! Prosjektet har tre ledere: Jens og Daniel som går 5. klasse Datateknologi og Magnus som går 5. klasse Indøk Data. Vel møtt!",
+      "NB: Prosjektet tar ikke opp nye medlemmer dette semesteret (vår 2026), takker for interessen likevel! Vi skal bygge en AI-modell som kan spille Geoguessr bedre enn Rainbolt (en av verdens beste spillere)! Bli med om du ønsker å lære mer om klassiske teknikker og dyp læring innen Computer Vision, vi eksperimenterer oss sammen frem til den beste løsningsmetoden! Prosjektet har tre ledere: Jens og Daniel som går 5. klasse Datateknologi og Magnus som går 5. klasse Indøk Data.",
     image: "geoguessrai.png",
     leaders: ["Daniel N Hansen", "Jens Martin Norheim Berget", "Magnus Bryne"],
   },
