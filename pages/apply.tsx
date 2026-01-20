@@ -15,7 +15,7 @@ import Navbar from "../components/Navbar/Navbar";
 
 type TabKey = "medlem" | "verv";
 
-const SYSTEM_DOWN = true;
+const SYSTEM_DOWN = false;
 
 const Apply = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
