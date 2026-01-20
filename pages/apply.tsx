@@ -15,6 +15,8 @@ import Navbar from "../components/Navbar/Navbar";
 
 type TabKey = "medlem" | "verv";
 
+const SYSTEM_DOWN = true;
+
 const Apply = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<ProjectApply | null>(
@@ -56,7 +58,6 @@ const Apply = () => {
             >
               <p className="font-medium">Medlem</p>
             </button>
-
             <button
               aria-label="Verv"
               onClick={() => setActiveTab("verv")}
@@ -81,7 +82,15 @@ const Apply = () => {
               </p>
             </div>
             <div className="w-full h-fit flex justify-center">
-              <div className="w-[95%] h-fit rounded-4xl">
+              <div className="w-[95%] h-fit rounded-2xl relative">
+                {SYSTEM_DOWN && (
+                  <div className="absolute inset-0 bg-gray-200/80 backdrop-blur-sm z-10 rounded-4xl flex items-center justify-center p-8 rounded-2xl">
+                    <p className="text-center text-blue-darkest font-medium tablet:text-[20px] text-[18px]">
+                      Vi opplever problemer med våre systemer akkurat nå. Prøv
+                      igjen senere
+                    </p>
+                  </div>
+                )}
                 {isDueDate(dueDate) ? (
                   <Due />
                 ) : activeTab === "medlem" ? (
@@ -380,7 +389,7 @@ const VervForm = ({ isDue }: VervFormProps) => {
   return (
     <>
       {!sent ? (
-        <div className="bg-gray-lighter rounded-lg">
+        <div className="bg-gray-lighter rounded-2xl">
           <div className="px-6 py-2">
             <p className="laptop:text-[20px] text-[16px] pt-4">
               Personlig Informasjon
