@@ -144,6 +144,13 @@ export const CogitoProjects: ProjectType[] = [
 
 export const projectsApply: ProjectApply[] = [
   {
+    name: "CancerVision",
+    description:
+      "CancerVision is an AI project that uses computer vision and deep learning to segment brain tumors from MRI scans. It identifies tumor regions such as the core, edema, and enhancing areas to support medical analysis and treatment planning. The aim is to build accurate models that reduce manual work and improve consistency in diagnosis. There are no requirements to join. All that matters is curiosity, motivation, and a willingness to help. Experience level does not matter. Join us and help build tools that can save lives.",
+    image: "cancervision.png",
+    leaders: ["Muhammad Muwaffaq"],
+  },
+  {
     name: "Geoguessr-AI",
     description:
       "NB: Prosjektet tar ikke opp nye medlemmer dette semesteret (vår 2026), takker for interessen likevel! Vi skal bygge en AI-modell som kan spille Geoguessr bedre enn Rainbolt (en av verdens beste spillere)! Bli med om du ønsker å lære mer om klassiske teknikker og dyp læring innen Computer Vision, vi eksperimenterer oss sammen frem til den beste løsningsmetoden! Prosjektet har tre ledere: Jens og Daniel som går 5. klasse Datateknologi og Magnus som går 5. klasse Indøk Data.",
