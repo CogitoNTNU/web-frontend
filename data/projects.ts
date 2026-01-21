@@ -188,7 +188,7 @@ export const projectsApply: ProjectApply[] = [
     description:
       "Et nybegynervennlig prosjekt som fokuserer på kortsiktig aksjeprediktjon ved bruk av historiske data, feature engineering og gradient boosting-modeller. Vi starter med grunnleggende mål før vi eventuelt utvider til eksterne indikatorer som nyheter.",
     image: "stocks.png",
-    leaders: ["Vegard", "Aleksandar Mirkovic"],
+    leaders: ["Aleksandar Mirkovic", "Vegard Aa Albretsen"],
   },
   {
     name: "GymBro AI",
