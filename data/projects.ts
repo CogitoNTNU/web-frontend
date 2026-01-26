@@ -146,14 +146,14 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "CancerVision",
     description:
-      "CancerVision is an AI project that uses computer vision and deep learning to segment brain tumors from MRI scans. It identifies tumor regions such as the core, edema, and enhancing areas to support medical analysis and treatment planning. The aim is to build accurate models that reduce manual work and improve consistency in diagnosis. There are no requirements to join. All that matters is curiosity, motivation, and a willingness to help. Experience level does not matter. Join us and help build tools that can save lives.",
+      "CancerVision er et KI-prosjekt som bruker datasyn og dyp læring til å segmentere hjernesvulster fra MR-bilder. Det identifiserer svulstområder som kjernen, ødem og forsterkende områder for å støtte medisinsk analyse og behandlingsplanlegging. Målet er å bygge nøyaktige modeller som reduserer manuelt arbeid og forbedrer konsistens i diagnostisering. Det er ingen krav for å bli med. Alt som betyr noe er nysgjerrighet, motivasjon og vilje til å hjelpe. Erfaringsnivå spiller ingen rolle. Bli med og hjelp oss å bygge verktøy som kan redde liv.",
     image: "cancervision.png",
     leaders: ["Muhammad Muwaffaq"],
   },
   {
-    name: "DeepTactics Prompt vs Planning",
+    name: "DeepTactics",
     description:
-      "We are building strong, general game-playing agents that learn purely through self-play. We pit two approaches head-to-head: post-trained LLM policies for multi-agent reasoning (LoRA, GRPO) and opponent modeling vs search-driven deep RL (policy/value networks + MCTS/simulation, with belief-aware planning for imperfect information), across games like Chess, Connect Four, and Liar’s Dice, then run a progressive-policy tournament to see what wins: reasoning, planning, or a hybrid.",
+      "Vi bygger sterke, generelle spillagenter som lærer utelukkende gjennom selvspill. Vi setter to tilnærminger opp mot hverandre: post-trente LLM-policyer for multi-agent resonnering (LoRA, GRPO) og motstandermodellering mot søkedrevet dyp RL (policy/verdi-nettverk + MCTS/simulering, med tro-bevisst planlegging for ufullstendig informasjon), på tvers av spill som sjakk, fire på rad og Liar's Dice. Deretter kjører vi en progressiv policy-turnering for å se hva som vinner: resonnering, planlegging, eller en hybrid.",
     image: "deeptactics-prompt-vs-planning.png",
     leaders: [
       "Sverre Nystad",
@@ -172,7 +172,7 @@ export const projectsApply: ProjectApply[] = [
   {
     name: "Grip",
     description:
-      "The Cogito Bionic Hand Project aims to design, prototype, and test a functional robotic hand controlled by a user’s muscle activity and/or neural signals. Using non-invasive sensors (such as surface EMG), the system will interpret the user’s intent and translate it into precise hand movements.",
+      "Cogito Bionic Hand-prosjektet har som mål å designe, prototype og teste en funksjonell robothånd kontrollert av brukerens muskelaktivitet og/eller nevrale signaler. Ved hjelp av ikke-invasive sensorer (som overflate-EMG) vil systemet tolke brukerens intensjon og oversette den til presise håndbevegelser.",
     image: "grip.png",
     leaders: ["Tobias Fremming"],
   },
@@ -203,5 +203,12 @@ export const projectsApply: ProjectApply[] = [
       "Et ambisiøst prosjekt som kombinerer AI-musikk generering med voice cloning-teknologi! Vi skal bruke de nyeste SOTA-verktøyene for musikkskaping og trene på ekte stemmesampler. Målet er å utforske grensene for AI-kreativitet og lage noe virkelig unikt med moderne AI-teknologi.",
     image: "rockstar.png",
     leaders: ["Øystein Kvandal"],
+  },
+  {
+    name: "Web Teamet",
+    description:
+      "Web teamet har ansvar for Cogito NTNUs digitale tilstedeværelse utenom sosiale medier. Hovedprosjektet vårt er Cogito Community, en plattform som samler KI-interesserte på Gløshaugen. Her jobber vi med å videreutvikle plattformen og introdusere nye funksjoner som clickops-deploying av prosjekter og en egen prosjekteditor. Automatisering står sentralt i alt vi gjør. Hos oss går du dypere enn bare web rammeverk. Du får forståelse for fundamentale web devops teknologier og lærer å velge riktig verktøy for riktig oppgave.",
+    image: "web.png",
+    leaders: ["Simon Sandvik Lee"],
   },
 ];
