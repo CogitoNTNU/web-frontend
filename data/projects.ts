@@ -151,7 +151,14 @@ export const projectsApply: ProjectApply[] = [
     leaders: ["Muhammad Muwaffaq"],
   },
   {
-    name: "DeepTactics",
+    name: "Cogito x TV2",
+    description:
+      "TV2 x Cogito er et samarbeid mellom Cogito NTNU og TV 2 hvor vi utforsker hvordan kunstig intelligens kan gi bedre innsikt i hva som engasjerer leserne på tv2.no! Ved å analysere artikkeldata og ulike mønstre på hvordan brukere bruker siden, kommer vi til å se på hvordan maskinlæring kan brukes til å forstå innhold og gi oss innsikt i hvordan vi kan gjøre artikler enda bedre. Prosjektet kombinerer dataanalyse, maskinlæring og design.",
+    image: "cogitoxtv2.png",
+    leaders: ["Magnus Løver"],
+  },
+  {
+    name: "DeepTactics - Prompt vs Planning",
     description:
       "Vi bygger sterke, generelle spillagenter som lærer utelukkende gjennom selvspill. Vi setter to tilnærminger opp mot hverandre: post-trente LLM-policyer for multi-agent resonnering (LoRA, GRPO) og motstandermodellering mot søkedrevet dyp RL (policy/verdi-nettverk + MCTS/simulering, med tro-bevisst planlegging for ufullstendig informasjon), på tvers av spill som sjakk, fire på rad og Liar's Dice. Deretter kjører vi en progressiv policy-turnering for å se hva som vinner: resonnering, planlegging, eller en hybrid.",
     image: "deeptactics-prompt-vs-planning.png",
@@ -163,16 +170,9 @@ export const projectsApply: ProjectApply[] = [
     ],
   },
   {
-    name: "Geoguessr-AI",
-    description:
-      "Vi skal bygge en AI-modell som kan spille Geoguessr bedre enn Rainbolt (en av verdens beste spillere)! Bli med om du ønsker å lære mer om klassiske teknikker og dyp læring innen Computer Vision, vi eksperimenterer oss sammen frem til den beste løsningsmetoden!",
-    image: "geoguessrai.png",
-    leaders: ["Daniel N Hansen", "Jens Martin Norheim Berget", "Magnus Bryne"],
-  },
-  {
     name: "Grip",
     description:
-      "Cogito Bionic Hand-prosjektet har som mål å designe, prototype og teste en funksjonell robothånd kontrollert av brukerens muskelaktivitet og/eller nevrale signaler. Ved hjelp av ikke-invasive sensorer (som overflate-EMG) vil systemet tolke brukerens intensjon og oversette den til presise håndbevegelser.",
+      "Cogito Bionic Hand-prosjektet har som mål å designe, prototype og teste en funksjonell robothånd kontrollert av brukerens muskelaktivitet og/eller nevrale signaler. Ved hjelp av ikke-invasive sensorer (som overflate-EMG) vil systemet tolke brukerens intensjon og oversette den til presise håndbevegelser. Ser spesielt etter folk med erfaring inne produktdesign og materialvalg for å forbedre protesen.",
     image: "grip.png",
     leaders: ["Tobias Fremming"],
   },
@@ -195,20 +195,13 @@ export const projectsApply: ProjectApply[] = [
     description:
       "Bruk Garmin-sensorer og AI for å gjenkjenne treningsøvelser og telle repetisjoner automatisk! Vi skal utforske AI pose estimation for å vurdere treningsform og utvikle et system som kan hjelpe folk med å forbedre treningsrutinene sine. Prosjektet kombinerer maskinvare (Arduino) med AI for en praktisk anvendelse.",
     image: "gymbro.png",
-    leaders: ["Dennis Jevne"],
-  },
-  {
-    name: "Make Sverre a Rock Star",
-    description:
-      "Et ambisiøst prosjekt som kombinerer AI-musikk generering med voice cloning-teknologi! Vi skal bruke de nyeste SOTA-verktøyene for musikkskaping og trene på ekte stemmesampler. Målet er å utforske grensene for AI-kreativitet og lage noe virkelig unikt med moderne AI-teknologi.",
-    image: "rockstar.png",
-    leaders: ["Øystein Kvandal"],
+    leaders: ["Dennis Jevne", "Jens Gretland Valderhaug"],
   },
   {
     name: "Web Teamet",
     description:
       "Web teamet har ansvar for Cogito NTNUs digitale tilstedeværelse utenom sosiale medier. Hovedprosjektet vårt er Cogito Community, en plattform som samler KI-interesserte på Gløshaugen. Her jobber vi med å videreutvikle plattformen og introdusere nye funksjoner som clickops-deploying av prosjekter og en egen prosjekteditor. Automatisering står sentralt i alt vi gjør. Hos oss går du dypere enn bare web rammeverk. Du får forståelse for fundamentale web devops teknologier og lærer å velge riktig verktøy for riktig oppgave.",
     image: "web.png",
-    leaders: ["Simon Sandvik Lee"],
+    leaders: ["Simon Sandvik Lee", "Eduard Prokhorikhin"],
   },
 ];
