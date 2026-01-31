@@ -155,7 +155,7 @@ export const projectsApply: ProjectApply[] = [
     description:
       "TV2 x Cogito er et samarbeid mellom Cogito NTNU og TV 2 hvor vi utforsker hvordan kunstig intelligens kan gi bedre innsikt i hva som engasjerer leserne på tv2.no! Ved å analysere artikkeldata og ulike mønstre på hvordan brukere bruker siden, kommer vi til å se på hvordan maskinlæring kan brukes til å forstå innhold og gi oss innsikt i hvordan vi kan gjøre artikler enda bedre. Prosjektet kombinerer dataanalyse, maskinlæring og design.",
     image: "cogitoxtv2.png",
-    leaders: ["Magnus Løver"],
+    leaders: ["Magnus Løwer"],
   },
   {
     name: "DeepTactics - Prompt vs Planning",
