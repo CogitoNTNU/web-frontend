@@ -204,4 +204,11 @@ export const projectsApply: ProjectApply[] = [
     image: "web.png",
     leaders: ["Simon Sandvik Lee", "Eduard Prokhorikhin"],
   },
+  {
+    name: "Cogito x Ode",
+    description:
+      "Cogito x Ode er et samarbeid med startupen Ode. Gjennom å gjøre skreddersydd musikk tilgjengelig, vil Ode øke livskvaliteten til mennesker med demens. Prosjektet utforsker hvordan multi-agent systemer kan løse et klassisk problem i anbefalingssystemer: Hvordan bygge et system som lærer når du ikke har data å lære fra? Ved å kombinere multi-agent research med reinforcement learning, skaper vi et selvlærende system som motvirker hallusinasjoner og bygger opp et datagrunnlag før vi har nok brukerinteraksjoner. Prosjektet bruker moderne AI-teknikker (multi-agent, RL, collaborative filtering) for å oppnå reell samfunnsnytte. Ikke nøl med å kontakt dersom du har spørsmål!",
+    image: "ode.png",
+    leaders: ["Jakob Nordang"],
+  },
 ];
