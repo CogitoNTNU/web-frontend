@@ -2,6 +2,47 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+const COUNTDOWN_TARGET = new Date("2026-02-06T18:00");
+const dueDate = new Date("2026-02-06T23:59:59");
+
+function getTimeRemaining(target: Date) {
+  const total = target.getTime() - new Date().getTime();
+  const seconds = Math.max(Math.floor((total / 1000) % 60), 0);
+  const minutes = Math.max(Math.floor((total / 1000 / 60) % 60), 0);
+  const hours = Math.max(Math.floor((total / (1000 * 60 * 60)) % 24), 0);
+  const days = Math.max(Math.floor(total / (1000 * 60 * 60 * 24)), 0);
+  return { total, days, hours, minutes, seconds };
+}
+
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState(getTimeRemaining(COUNTDOWN_TARGET));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeRemaining(COUNTDOWN_TARGET));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Remove the timer if the due date has passed
+  if (Date.now() > dueDate.getTime()) {
+    return null;
+  }
+  // Update display when countdown ends
+  if (timeLeft.total <= 0) {
+    return (
+    <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
+      Vi går gjennom søknadene
+      </span>
+    );
+  }
+
+  return (
+    <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
+      Søknadsfrist om {timeLeft.days}d {timeLeft.hours}t {timeLeft.minutes}m {timeLeft.seconds}s
+    </span>
+  );
+};
 import { useRouter } from "next/router";
 import classNames from "classnames";
 import Hamburger from "hamburger-react";
@@ -164,7 +205,11 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
         </Link>
         {!onlyLogo && (
           <div className="flex-row h-full w-full ">
-            <div className="laptop:flex flex-row h-full w-full justify-end hidden gap-[40px]">
+            <div className="laptop:flex flex-row h-full w-full justify-end hidden gap-[40px] items-center">
+              {/* Countdown Timer (desktop) */}
+              <div className="flex items-center h-full pr-4">
+                <CountdownTimer />
+              </div>
               {navbarLinks.map((data) => (
                 <Link key={data.title} href={data.link}>
                   <div className="h-full flex justify-center items-center group">
@@ -198,6 +243,10 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
             className="fixed right-0 top-0 bg-blue-darker w-full h-full px-24 z-[90]"
           >
             <div className="flex flex-col justify-end text-end gap-4 pt-[120px]">
+              {/* Countdown Timer (mobile) */}
+              <motion.div variants={itemVariants} className="pb-2">
+                <CountdownTimer />
+              </motion.div>
               {navbarLinks.map((data) => (
                 <motion.div key={data.title} variants={itemVariants}>
                   <Link onClick={() => burgerChangePage()} href={data.link}>
