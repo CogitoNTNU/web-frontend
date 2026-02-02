@@ -31,15 +31,16 @@ const CountdownTimer = () => {
   // Update display when countdown ends
   if (timeLeft.total <= 0) {
     return (
-    <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
-      Vi går gjennom søknadene
+      <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
+        Vi går gjennom søknadene
       </span>
     );
   }
 
   return (
     <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
-      Søknadsfrist om {timeLeft.days}d {timeLeft.hours}t {timeLeft.minutes}m {timeLeft.seconds}s
+      Søknadsfrist om {timeLeft.days}d {timeLeft.hours}t {timeLeft.minutes}m{" "}
+      {timeLeft.seconds}s
     </span>
   );
 };

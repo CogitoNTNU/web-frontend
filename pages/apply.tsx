@@ -77,12 +77,14 @@ const Apply = () => {
               </p>
               <p className="laptop:text-[20px] text-[16px] text-blue-dark underline decoration-2">
                 Frist:{" "}
-                {displayDueDate.toLocaleDateString("no-NO", {
-                  day: "2-digit",
-                  month: "2-digit",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                }).replace(",", " ")}
+                {displayDueDate
+                  .toLocaleDateString("no-NO", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })
+                  .replace(",", " ")}
               </p>
             </div>
             <div className="w-full h-fit flex justify-center">
