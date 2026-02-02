@@ -12,6 +12,7 @@ import ProjectCard from "../components/Projects/ProjectCard";
 import { ProjectApply } from "../lib/types";
 import { projectsApply } from "../data/projects";
 import Navbar from "../components/Navbar/Navbar";
+import Image from "next/image";
 
 type TabKey = "medlem" | "verv";
 
@@ -98,6 +99,7 @@ const Apply = () => {
                     mode="medlem"
                     handleProjectInfoClick={handleProjectInfoClick}
                     isDue={isDueDate(dueDate)}
+                    setActiveTab={setActiveTab}
                   />
                 ) : (
                   <VervForm isDue={isDueDate(dueDate)} />
@@ -159,8 +161,9 @@ interface FormProps {
   handleProjectInfoClick: (project: ProjectApply) => void;
   isDue: boolean;
   mode?: "medlem";
+  setActiveTab?: (tab: TabKey) => void;
 }
-const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
+const Form = ({ handleProjectInfoClick, isDue, setActiveTab }: FormProps) => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -288,6 +291,33 @@ const Form = ({ handleProjectInfoClick, isDue }: FormProps) => {
                   onInfoClick={handleProjectInfoClick}
                 />
               ))}
+              {/* TEMP FIX FOR VISIBILITY */}
+              <div
+                onClick={() => setActiveTab && setActiveTab("verv")}
+                className="laptop:w-[335px] w-full"
+              >
+                <div
+                  className={`relative flex items-center gap-4 rounded-xl my-2 tablet:hover:bg-pink-default tablet:hover:text-white cursor-pointer bg-gray-light`}
+                >
+                  <div className="relative w-20 h-20 overflow-hidden">
+                    <Image
+                      src={`/Projects/ProjectLogos/cogito_blue.svg`}
+                      alt="Cogito Logo"
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-l-lg"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col justify-center">
+                    <div className="flex items-center justify-between w-full">
+                      <p className="phone:font-semibold phone:text-lg text-md font-medium">
+                        Marketing
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* TEMP FIX FOR VISIBILITY */}
             </div>
           </div>
 
