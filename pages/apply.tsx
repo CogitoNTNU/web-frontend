@@ -26,6 +26,7 @@ const Apply = () => {
 
   const [activeTab, setActiveTab] = useState<TabKey>("medlem");
   const dueDate = new Date("2026-02-06T23:59:59"); // Application deadline
+  const displayDueDate = new Date("2026-02-06T18:00");
 
   const handleProjectInfoClick = (project: ProjectApply) => {
     setSelectedProject(project);
@@ -74,12 +75,14 @@ const Apply = () => {
               <p className="font-bold laptop:text-[30px] tablet:text-[26px] text-[18px] text-blue-dark">
                 Søknad - Vårsemesteret {new Date().getFullYear()}
               </p>
-              <p className="laptop:text-[20px] text-[16px] text-blue-dark">
+              <p className="laptop:text-[20px] text-[16px] text-blue-dark underline decoration-2">
                 Frist:{" "}
-                {dueDate.toLocaleDateString("no-NO", {
+                {displayDueDate.toLocaleDateString("no-NO", {
                   day: "2-digit",
                   month: "2-digit",
-                })}
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }).replace(",", " ")}
               </p>
             </div>
             <div className="w-full h-fit flex justify-center">
