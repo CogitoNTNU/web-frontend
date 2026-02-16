@@ -8,10 +8,13 @@ import { hardcodedEvents } from "../data/events";
 import Footer from "../components/Footer/Footer";
 // import { applicationEvent2025, hardcodedEvents } from "../data/events";
 import Navbar from "../components/Navbar/Navbar";
+import { FcCalendar } from "react-icons/fc";
 
 const Calendar = () => {
   const eventData = hardcodedEvents;
 
+  const GOOGLE_CAL_LINK =
+    "https://calendar.google.com/calendar/u/0?cid=Y181ZjY2NmNkYTU3YmM1NThlZWQyOGEyNjNkMmFkYTdlYjc1NTYzMTI0ODYyZGNlZGE1NTZiY2E4ODlkN2E1NjQ4QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20";
   return (
     <>
       <Head>
@@ -29,9 +32,20 @@ const Calendar = () => {
         className="w-full h-full laptop:pt-[150px] pt-[125px]"
       >
         <div className="w-full px-4 sm:px-12 md:px-32 flex flex-col justify-start items-start gap-12">
-          <p className="bg-gray-default px-8 rounded-2xl font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wide drop-shadow-3xl">
-            Kommende hendelser
-          </p>
+          <div className="flex flex-col">
+            <p className="bg-gray-default px-8 rounded-2xl font-bold text-white laptop:text-[80px] tablet:text-[70px] text-[42px] tracking-wide drop-shadow-3xl">
+              Kommende hendelser
+            </p>
+            <a
+              href={GOOGLE_CAL_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-gray-default hover:bg-gray-darker text-white font-semibold px-4 py-2 rounded-xl shadow-lg transition-colors duration-200"
+            >
+              <FcCalendar className="text-2xl" />
+              Legg til i Google Kalender
+            </a>
+          </div>
           <div className="flex flex-wrap justify-center xl:justify-start gap-12">
             {/* <ApplicationProcessCard
               applicationProcessData={applicationEvent2025}
