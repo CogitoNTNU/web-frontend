@@ -14,50 +14,51 @@ import sverreogolav from "../public/Team/SverreOgOlav.jpg";
 import { useGetMembers } from "../hooks/useGetMembers";
 import Navbar from "../components/Navbar/Navbar";
 
+const radioButtons = ["Alle Medlemmer", "Styret", "Prosjektmedlemmer", "Web"];
+const projectButtons = [
+  "Bedriftssamarbeid",
+  "Cogitron",
+  "Deeptactics",
+  "Diffusion Models",
+  "Infor",
+  "SudokuAI",
+  "TetrisAI",
+  "TutorAI",
+  "Training Planner",
+];
+const projectMetaData = [
+  { title: projectButtons[0], leaderCount: 2 },
+  { title: projectButtons[1], leaderCount: 2 },
+  { title: projectButtons[2], leaderCount: 2 },
+  { title: projectButtons[3], leaderCount: 1 },
+  { title: projectButtons[4], leaderCount: 2 },
+  { title: projectButtons[5], leaderCount: 1 },
+  { title: projectButtons[6], leaderCount: 1 },
+  { title: projectButtons[7], leaderCount: 2 },
+  { title: projectButtons[8], leaderCount: 3 },
+  { title: projectButtons[9], leaderCount: 1 },
+];
+const pagesMetaData = [
+  {
+    name: "Styret",
+    description:
+      "Styret har ansvar for organisasjonens daglige drift og styrer både prosjekt- og kurskvelder",
+  },
+  {
+    name: "Prosjektmedlemmer",
+    description:
+      "Prosjektmedlemmene er kjernen i alt Cogito gjør. De står bak alle prosjekter produsert av Cogito.",
+  },
+  {
+    name: "Web",
+    description:
+      "Webgruppen står bak det tekniske i Cogito. Mesteparten av arbeidet går til utvikling av nettsiden.",
+  },
+];
+
 const Team = () => {
   const [title, setTitle] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
-  const radioButtons = ["Alle Medlemmer", "Styret", "Prosjektmedlemmer", "Web"];
-  const projectButtons = [
-    "Bedriftssamarbeid",
-    "Cogitron",
-    "Deeptactics",
-    "Diffusion Models",
-    "Infor",
-    "SudokuAI",
-    "TetrisAI",
-    "TutorAI",
-    "Training Planner",
-  ];
-  const projectMetaData = [
-    { title: projectButtons[0], leaderCount: 2 },
-    { title: projectButtons[1], leaderCount: 2 },
-    { title: projectButtons[2], leaderCount: 2 },
-    { title: projectButtons[3], leaderCount: 1 },
-    { title: projectButtons[4], leaderCount: 2 },
-    { title: projectButtons[5], leaderCount: 1 },
-    { title: projectButtons[6], leaderCount: 1 },
-    { title: projectButtons[7], leaderCount: 2 },
-    { title: projectButtons[8], leaderCount: 3 },
-    { title: projectButtons[9], leaderCount: 1 },
-  ];
-  const pagesMetaData = [
-    {
-      name: "Styret",
-      description:
-        "Styret har ansvar for organisasjonens daglige drift og styrer både prosjekt- og kurskvelder",
-    },
-    {
-      name: "Prosjektmedlemmer",
-      description:
-        "Prosjektmedlemmene er kjernen i alt Cogito gjør. De står bak alle prosjekter produsert av Cogito.",
-    },
-    {
-      name: "Web",
-      description:
-        "Webgruppen står bak det tekniske i Cogito. Mesteparten av arbeidet går til utvikling av nettsiden.",
-    },
-  ];
 
   const [currentClicked, setCurrentClicked] =
     useState<string>("Alle Medlemmer");
@@ -101,7 +102,7 @@ const Team = () => {
     const pageObject = pagesMetaData.filter((x) => x.name == currentClicked)[0];
     setTitle(pageObject.name);
     setDesc(pageObject.description);
-  }, [rawMembers, currentProject]);
+  }, [rawMembers, currentProject, currentClicked]);
 
   return (
     <>

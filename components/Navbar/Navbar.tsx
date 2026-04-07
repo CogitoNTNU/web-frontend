@@ -237,8 +237,14 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
               {navbarLinks.map((data) => (
                 <Link key={data.title} href={data.link}>
                   <div className="h-full flex justify-center items-center group">
-                    <div className={page !== data.actual && hoverClass}>
-                      <span className={page == data.actual && buttonClass}>
+                    <div
+                      className={page !== data.actual ? hoverClass : undefined}
+                    >
+                      <span
+                        className={
+                          page == data.actual ? buttonClass : undefined
+                        }
+                      >
                         {data.title}
                       </span>
                     </div>
@@ -275,7 +281,11 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                 <motion.div key={data.title} variants={itemVariants}>
                   <Link onClick={() => burgerChangePage()} href={data.link}>
                     <div className="text-white font-medium text-[20px]">
-                      <span className={page == data.actual && buttonClass}>
+                      <span
+                        className={
+                          page == data.actual ? buttonClass : undefined
+                        }
+                      >
                         {data.title}
                       </span>
                     </div>

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -225,10 +226,13 @@ const TV2xCogito = () => {
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            <img
+            <Image
               src="/Projects/Articles/tv2xcogito/1.jpg"
               alt="TV2 x Cogito Team"
               className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              priority
             />
             {/* Dark overlay for better text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#100118] via-[#100118]/80 to-transparent" />
@@ -244,10 +248,12 @@ const TV2xCogito = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="tablet:w-[180px] w-[120px]"
               >
-                <img
+                <Image
                   src="/Projects/ProjectLogos/tv2xcogito_whitetrans.png"
                   alt="TV2 x Cogito Logo"
                   className="w-full drop-shadow-2xl"
+                  width={180}
+                  height={180}
                 />
               </motion.div>
 
@@ -319,10 +325,12 @@ const TV2xCogito = () => {
               transition={{ duration: 1.5, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <img
+              <Image
                 src="/Projects/Articles/tv2xcogito/0.jpg"
                 alt="TV2 x Cogito Workshop"
                 className="w-full h-full object-cover"
+                fill
+                sizes="100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-[#100118] via-[#100118]/70 to-[#100118]" />
             </motion.div>
@@ -663,10 +671,12 @@ const TV2xCogito = () => {
                           <div className="relative bg-[#100118] border border-[#702eff]/30 rounded-2xl p-8 group-hover:border-[#702eff] transition-all">
                             <div className="flex items-center gap-6">
                               {member.image && (
-                                <img
+                                <Image
                                   src={member.image}
                                   alt={member.name}
                                   className="w-32 h-32 rounded-2xl object-cover border-3 border-[#702eff]/50 shadow-lg"
+                                  width={128}
+                                  height={128}
                                 />
                               )}
                               <div className="flex-1">
@@ -728,10 +738,12 @@ const TV2xCogito = () => {
                         >
                           <div className="flex items-center gap-4">
                             {member.image && (
-                              <img
+                              <Image
                                 src={member.image}
                                 alt={member.name}
                                 className="w-20 h-20 rounded-xl object-cover border-2 border-white/20 shadow-md"
+                                width={80}
+                                height={80}
                               />
                             )}
                             <div className="flex-1">
@@ -816,10 +828,12 @@ const TV2xCogito = () => {
                             >
                               <div className="flex items-center gap-5">
                                 {member.image && (
-                                  <img
+                                  <Image
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-24 h-24 rounded-xl object-cover border-2 border-[#702eff]/30 shadow-lg"
+                                    className="w-20 h-20 rounded-xl object-cover border-2 border-white/20 shadow-md"
+                                    width={80}
+                                    height={80}
                                   />
                                 )}
                                 <div className="flex-1">
@@ -875,10 +889,12 @@ const TV2xCogito = () => {
                             >
                               <div className="flex items-center gap-5">
                                 {member.image && (
-                                  <img
+                                  <Image
                                     src={member.image}
                                     alt={member.name}
                                     className="w-24 h-24 rounded-xl object-cover border-2 border-[#ffbf94]/30 shadow-lg"
+                                    width={96}
+                                    height={96}
                                   />
                                 )}
                                 <div className="flex-1">
@@ -941,10 +957,12 @@ const TV2xCogito = () => {
                         >
                           <div className="flex items-center gap-4">
                             {member.image && (
-                              <img
+                              <Image
                                 src={member.image}
                                 alt={member.name}
                                 className="w-20 h-20 rounded-xl object-cover border-2 border-white/20 shadow-md"
+                                width={80}
+                                height={80}
                               />
                             )}
                             <div className="flex-1">

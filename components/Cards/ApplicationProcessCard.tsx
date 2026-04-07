@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Button from "../Buttons/Button";
 import Link from "next/link";
+import Image from "next/image";
 import { EventApply } from "../../lib/types";
 
 interface ApplicationProcessCardProps {
@@ -16,10 +17,12 @@ const ApplicationProcessCard: React.FC<ApplicationProcessCardProps> = ({
       <div className="w-full mb-5 flex justify-between phone:flex-row flex-col text-white">
         <h2 className="phone:w-[50%] w-full phone:text-2xl text-lg font-bold flex items-center gap-4">
           {applicationProcessData.pinned && (
-            <img
+            <Image
               className="w-6 h-6"
               src="/Calendar/white-pin.png"
               alt="Pinned event"
+              width={24}
+              height={24}
             />
           )}
           {applicationProcessData.title}
