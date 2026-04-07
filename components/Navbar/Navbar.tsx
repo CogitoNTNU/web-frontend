@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 const COUNTDOWN_TARGET = new Date("2026-02-06T18:00");
 const dueDate = new Date("2026-02-06T23:59:59");
@@ -16,8 +17,10 @@ function getTimeRemaining(target: Date) {
 
 const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState(getTimeRemaining(COUNTDOWN_TARGET));
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       setTimeLeft(getTimeRemaining(COUNTDOWN_TARGET));
     }, 1000);
@@ -28,19 +31,36 @@ const CountdownTimer = () => {
   if (Date.now() > dueDate.getTime()) {
     return null;
   }
+
+  // SSR-safe placeholder with fixed dimensions
+  if (!mounted) {
+    return (
+      <span className="inline-flex items-center text-white font-semibold bg-pink-default px-3 py-2 rounded-xl h-[40px] w-[200px]">
+        <span className="text-sm">Laster...</span>
+      </span>
+    );
+  }
+
   // Update display when countdown ends
   if (timeLeft.total <= 0) {
     return (
-      <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
+      <span className="inline-flex items-center text-white font-semibold bg-pink-default px-3 py-2 rounded-xl h-[40px]">
         Vi går gjennom søknadene
       </span>
     );
   }
 
   return (
-    <span className="text-white font-semibold bg-pink-default px-3 py-1 rounded-xl">
-      Søknadsfrist om {timeLeft.days}d {timeLeft.hours}t {timeLeft.minutes}m{" "}
-      {timeLeft.seconds}s
+    <span
+      className="inline-flex items-center gap-1 text-white font-semibold bg-pink-default px-3 py-2 rounded-xl h-[40px] font-mono"
+      style={{ fontVariantNumeric: "tabular-nums" }}
+    >
+      <span className="text-xs mr-1 hidden sm:inline">Søknadsfrist:</span>
+      <span>{String(timeLeft.days).padStart(2, "0")}d</span>
+      <span className="mx-0.5">:</span>
+      <span>{String(timeLeft.hours).padStart(2, "0")}t</span>
+      <span className="mx-0.5">:</span>
+      <span>{String(timeLeft.minutes).padStart(2, "0")}m</span>
     </span>
   );
 };
@@ -196,10 +216,13 @@ const Navbar = ({ page, onlyLogo = false }: NavbarProps) => {
                 </span>
               </div>
             ) : (
-              <img
+              <Image
                 className="tablet:w-[90px] w-[80px]"
                 src="/cogito_white.svg"
-                alt="logo"
+                alt="Cogito NTNU logo"
+                width={90}
+                height={90}
+                priority
               />
             )}
           </div>

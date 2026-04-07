@@ -42,6 +42,13 @@ const App = ({
       <HydrationBoundary state={pageProps.dehydratedState}>
         <Head>
           <link rel="icon" type="image/x-icon" href="/cogito_white.svg" />
+          <link
+            rel="preload"
+            href="/font/Lexend/Lexend-VariableFont_wght.ttf"
+            as="font"
+            type="font/ttf"
+            crossOrigin="anonymous"
+          />
         </Head>
         <Particles
           id="tsparticles"

@@ -22,7 +22,7 @@ const Button = ({ text, type, link }: ButtonProps) => {
   return (
     <Link href={link} className="flex justify-center w-fit h-fit items-center">
       <p
-        className={`text-white tracking-wide px-12 py-3 rounded-2xl  ${getColor()}`}
+        className={`text-white tracking-wide px-4 sm:px-8 lg:px-12 py-3 rounded-2xl whitespace-nowrap ${getColor()}`}
       >
         {text}
       </p>
@@ -47,7 +47,7 @@ const ProjectBanner = ({
   playable,
   github,
 }: ProjectBannerProps) => (
-  <div className="relative h-[30rem] w-full flex justify-start px-12 py-8">
+  <div className="relative h-[30rem] w-full flex justify-start px-4 sm:px-8 lg:px-12 py-8">
     <div className="z-50 h-full flex flex-col justify-center">
       <Image
         src={bannerImg}
@@ -56,7 +56,9 @@ const ProjectBanner = ({
         height={400}
         draggable={false}
       />
-      <p className="text-lg text-white w-3/6 pl-8 pt-4">{description}</p>
+      <p className="text-lg text-white w-full sm:w-4/6 lg:w-3/6 pl-4 sm:pl-8 pt-4">
+        {description}
+      </p>
       <div className="flex gap-x-6 px-8 pt-4">
         {playable ? (
           <Button text="Prøv ut her" type="play" link={link} />
@@ -98,13 +100,13 @@ const Projects = () => {
         <title>Prosjekter - Cogito NTNU</title>
       </Head>
       <Navbar page="projects" />
-      <main className="h-fit w-full pt-44 justify-center items-center flex-col px-20">
+      <main className="h-fit w-full pt-44 justify-center items-center flex-col px-4 sm:px-8 lg:px-20">
         <ProjectCarousel />
         <div className="pt-16 pb-12">
           <p className="text-white font-semibold text-3xl tracking-wide">
             Prosjekt Galleri
           </p>
-          <div className="flex pt-8 gap-x-12 gap-y-4 flex-wrap">
+          <div className="grid pt-8 gap-4 sm:gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
             {CogitoProjects.sort((firstProject, secondProject) => {
               if (firstProject.released === secondProject.released) return 0;
               if (firstProject.released) return -1;

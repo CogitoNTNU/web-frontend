@@ -16,18 +16,23 @@
 
 @font-face {
   font-family: "Lexend Deca";
-  src: url("../public/font/Lexend/Lexend-VariableFont_wght.ttf");
+  src: url("../public/font/Lexend/Lexend-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Lexend Deca";
+  font-family: "Lexend Deca", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   background-color: #13395b;
   overscroll-behavior: none;
   max-width: 100vw;
   height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
