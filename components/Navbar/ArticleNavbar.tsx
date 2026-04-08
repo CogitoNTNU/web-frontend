@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaChevronLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -17,7 +18,13 @@ const ProjectNavbar = ({ semester }: ProjectNavbarProps) => {
         <FaChevronLeft className="text-white text-4xl cursor-pointer" />
       </Link>
       <Link href={"/"} className="w-36 flex justify-center">
-        <img className="w-[80px]" src="/cogito_white.svg" alt="logo" />
+        <Image
+          className="w-[80px]"
+          src="/cogito_white.svg"
+          alt="logo"
+          width={80}
+          height={80}
+        />
       </Link>
       <p className="text-2xl text-white cursor-default w-36">{semester}</p>
     </motion.nav>

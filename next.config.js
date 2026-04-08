@@ -5,6 +5,6 @@ module.exports = {
   env: {
     endpoint: "https://backend.cogito-ntnu.no",
     endpointMarketingAI: "https://marketingai.cogito-ntnu.no",
-    google_api_key: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
+    google_api_key: process.env.NEXT_PUBLIC_GOOGLE_API_KEY || "",
   },
 };

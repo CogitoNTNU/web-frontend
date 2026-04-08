@@ -46,17 +46,30 @@ const Member = ({
               </div>
               <div className="px-4 pb-4 hidden group-hover:flex gap-2 z-50">
                 {linkedinURL && (
-                  <a href={linkedinURL}>
+                  <a
+                    href={linkedinURL}
+                    aria-label={`${name} LinkedIn profil`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Icon icon={"Linkedin"} color="gray" />
                   </a>
                 )}
                 {githubURL && (
-                  <a href={githubURL}>
+                  <a
+                    href={githubURL}
+                    aria-label={`${name} GitHub profil`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Icon icon={"Github"} color="gray" />
                   </a>
                 )}
                 {mailURL && (
-                  <a href={`mailto:${mailURL}`}>
+                  <a
+                    href={`mailto:${mailURL}`}
+                    aria-label={`Send e-post til ${name}`}
+                  >
                     <Icon icon={"Mail"} color="gray" />
                   </a>
                 )}
@@ -66,7 +79,7 @@ const Member = ({
               loader={imageURL ? imageLoader : null}
               className="object-cover w-full h-full rounded-3xl transition-transform transform group-hover:scale-105 ease-in"
               src={imageURL ? imageURL : "/Team/NoImage.svg"}
-              alt="image"
+              alt={`${name} - ${title}`}
               width={30}
               height={40}
             />
@@ -79,7 +92,7 @@ const Member = ({
                 loader={imageURL ? imageLoader : null}
                 className="object-cover w-full h-[265px]"
                 src={imageURL ? imageURL : "/Team/NoImage.svg"}
-                alt="image"
+                alt={`${name} - ${title}`}
                 width={30}
                 height={40}
               />
@@ -93,17 +106,33 @@ const Member = ({
 
             <div className="px-4 pb-4 gap-4 justify-center flex">
               {linkedinURL && (
-                <a href={linkedinURL} className="z-[60]">
+                <a
+                  href={linkedinURL}
+                  className="z-[60]"
+                  aria-label={`${name} LinkedIn profil`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Icon icon={"Linkedin"} color="white" />
                 </a>
               )}
               {githubURL && (
-                <a href={githubURL} className="z-[60]">
+                <a
+                  href={githubURL}
+                  className="z-[60]"
+                  aria-label={`${name} GitHub profil`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Icon icon={"Github"} color="white" />
                 </a>
               )}
               {mailURL && (
-                <a href={`mailto:${mailURL}`} className="z-[60]">
+                <a
+                  href={`mailto:${mailURL}`}
+                  className="z-[60]"
+                  aria-label={`Send e-post til ${name}`}
+                >
                   <Icon icon={"Mail"} color="white" />
                 </a>
               )}

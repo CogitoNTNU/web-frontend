@@ -49,10 +49,12 @@ const MarketingAI = () => {
         {!data && !isFetching && !error && (
           <header className="tablet:h-[480px] h-[300px] w-full bg-red-default overflow-hidden">
             <div className="flex justify-start w-full h-full tablet:px-[6%] px-[2%] items-center relative tablet:-bottom-20 -bottom-20 ">
-              <img
+              <Image
                 className="pt-2 tablet:w-[280px] phone:w-[180px] w-[120px] relative z-[100]"
                 src="/Logos/MarketingAILogo.png"
                 alt="companylogo"
+                width={280}
+                height={100}
               />
               <div className="text-white drop-shadow-2xl z-[100]">
                 <motion.p
@@ -277,10 +279,13 @@ const MarketingAI = () => {
         )}
         {data && (
           <header className="h-[480px] w-full bg-black-default overflow-hidden flex justify-center items-center">
-            <img
+            <Image
               className="object-cover tablet:w-[500px] w-[400px]"
-              src={data?.image_url}
-            ></img>
+              src={data?.image_url || ""}
+              alt="Generated image"
+              width={500}
+              height={500}
+            />
           </header>
         )}
         {isFetching && (
@@ -314,20 +319,24 @@ const MarketingAI = () => {
           </div>
           <div className="flex justify-center gap-4">
             <div className="text-center">
-              <img
+              <Image
                 className="tablet:w-[200px] w-[100px] rounded-sm"
                 src="/Logos/stepOne.png"
                 alt="step one"
+                width={200}
+                height={200}
               />
               <p className="text-white tablet:text-xl text-[12px] tracking-wider">
                 1. Prompt
               </p>
             </div>
             <div className="text-center">
-              <img
+              <Image
                 className="tablet:w-[204px] w-[104px] rounded-sm"
                 src="/Logos/stepTwo.png"
                 alt="step two"
+                width={204}
+                height={204}
               />
               <p className="text-white tablet:text-xl text-[12px] tracking-wider ">
                 2. Enjoy

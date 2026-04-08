@@ -33,12 +33,14 @@ const About = () => {
       <Navbar page="about" />
       <main className="overflow-hidden">
         <div className="flex items-center justify-center phone:pt-[160px] pt-[130px]">
-          <div className="md:hidden visible">
-            <img
+          <div className="md:hidden visible relative">
+            <Image
               className="absolute inset-0 w-full h-full object-cover md:rounded-r-3xl"
               draggable="false"
               alt="Cogito"
-              src="./HomePage/FolkFraCogito.webp"
+              src="/HomePage/FolkFraCogito.webp"
+              fill
+              sizes="100vw"
             />
           </div>
 
@@ -89,11 +91,13 @@ const About = () => {
                 </div>
               </div>
               <div className="flex-none relative w-[50%] h-[600px] hidden md:block">
-                <img
+                <Image
                   className="absolute inset-0 w-full h-full object-cover rounded-r-3xl"
                   draggable="false"
                   alt="Cogito"
-                  src="./HomePage/FolkFraCogito.webp"
+                  src="/HomePage/FolkFraCogito.webp"
+                  fill
+                  sizes="50vw"
                 />
               </div>
             </div>

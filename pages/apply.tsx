@@ -130,10 +130,12 @@ const Due = () => {
     <>
       <div className="tablet:h-80 h-[500px] laptop:flex tablet:gap-8 items-center justify-center w-full">
         <div className="laptop:flex justify-center laptop:w-fit hidden">
-          <img
+          <Image
             className="tablet:w-[130px] w-[100px] stroke-blue-darker"
             src="/cogito_blue.svg"
             alt="logo"
+            width={130}
+            height={130}
           />
         </div>
         <div className="laptop:w-[600px] w-fit tracking-wide tablet:px-2 px-3 h-full laptop:flex items-center">
@@ -146,10 +148,12 @@ const Due = () => {
               Besøk prosjektsiden vår for å utforske tidligere prosjekter.
             </span>
           </p>
-          <img
+          <Image
             className="tablet:w-[130px] w-[100px]"
             src="/Test/Hamster-blank.png"
             alt="hamster meme"
+            width={130}
+            height={130}
           />
           <p className="laptop:hidden block text-[18px] pt-4 leading-7 tracking-wide text-blue-darkest">
             <span className="font-semibold">Men fortvil ikke! </span>Vi vil søke

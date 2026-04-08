@@ -26,7 +26,7 @@ const Project = ({
 }: ProjectProps) => {
   return (
     <div className={`${released && "group"} relative`}>
-      <div className="h-[20rem] w-[14rem] relative">
+      <div className="h-[14rem] sm:h-[16rem] md:h-[20rem] w-full relative">
         <div
           className={`${released ? "group-hover:bg-black-dark opacity-90 transition-all" : "bg-black-dark opacity-90"} h-full w-full  z-50 relative rounded-3xl`}
         >

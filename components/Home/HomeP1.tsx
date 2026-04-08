@@ -41,8 +41,8 @@ const HomeP1 = () => {
 
         <motion.div
           className="absolute w-[120vw] h-[110vh]"
-          initial={{ opacity: 0, scale: 25 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
           transition={{
             duration: 1.2,
             delay: 0,
@@ -52,14 +52,17 @@ const HomeP1 = () => {
           <Image
             priority={true}
             draggable={false}
+            decoding="async"
             src={SunImg}
+            alt="Sun"
+            fill
+            sizes="120vw"
             className="absolute w-full h-full object-cover"
             style={{
               transform: `translateX(calc(-2.5% + ${
                 -mousePos.x * 0.04
               }px)) translateY(calc(-5% + ${-mousePos.y * 0.05}px))`,
             }}
-            alt="Sun"
           />
         </motion.div>
         <div className="absolute flex justify-center items-center w-full h-full phone:ml-[30px] ml-[10px] pb-[100px] desktop:leading-[80px] leading-[60px]">
@@ -102,8 +105,8 @@ const HomeP1 = () => {
         </div>
         <motion.div
           className="absolute mr-[20px] w-[110%] h-[110%]"
-          initial={{ opacity: 0, scale: 10 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 1.02 }}
+          animate={{ scale: 1 }}
           transition={{
             duration: 0.8,
             delay: 0.4,
@@ -113,9 +116,11 @@ const HomeP1 = () => {
           <Image
             priority
             draggable={false}
-            loading="eager"
+            decoding="async"
             src={TheatreImg}
             alt="Theatre"
+            fill
+            sizes="110vw"
             className="absolute w-full h-full object-cover"
             style={{
               transform: `translateX(calc(-2.5% + ${
@@ -127,8 +132,8 @@ const HomeP1 = () => {
 
         <motion.div
           className="absolute items-center w-[110%] h-full mr-[100px]"
-          initial={{ opacity: 1, scale: 200, y: 200 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ scale: 1.1, y: 50 }}
+          animate={{ scale: 1, y: 0 }}
           transition={{
             duration: 1,
             delay: 0.2,
@@ -136,16 +141,17 @@ const HomeP1 = () => {
           }}
         >
           <Image
-            priority
             draggable={false}
-            loading="eager"
+            decoding="async"
             src={StageImg}
             alt="Stage"
+            fill
+            sizes="110vw"
             className="absolute w-full h-full object-cover"
             style={{
               transform: `translateX(calc(${
                 -mousePos.x * 0.02
-              }px)) translateY(calc( 
+              }px)) translateY(calc(
                                 ${-mousePos.y * 0.01}px))`,
             }}
           />

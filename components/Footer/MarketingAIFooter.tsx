@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => {
@@ -8,10 +9,12 @@ const Footer = () => {
       <footer className="flex flex-row w-full h-[140px] bg-purple items-center px-[4%] py-[4%] text-white">
         <Link href={`/`}>
           <div className="flex flex-row items-center justify-center">
-            <img
+            <Image
               className="pt-2 tablet:w-[130px] w-[60px]"
               src="/Logos/MarketingAILogo.png"
               alt="companylogo"
+              width={130}
+              height={50}
             />
             <div className="w-[100px]">
               <p className="tablet:w-[150px] w-[80px] font-semibold tablet:text-lg text-[8px]">

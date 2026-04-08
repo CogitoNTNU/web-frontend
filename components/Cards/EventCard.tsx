@@ -22,10 +22,12 @@ const EventCard: React.FC<EventType> = (props) => {
       <div className="w-full mb-[12px] flex justify-between phone:flex-row flex-col text-white">
         <h2 className="phone:w-auto w-full phone:text-2xl text-[17px] font-bold tracking-wide flex items-center gap-4">
           {pinned && (
-            <img
+            <Image
               className="w-6 h-6"
               src="/Calendar/white-pin.png"
               alt="Pinned event"
+              width={24}
+              height={24}
             />
           )}
           {eventName}
